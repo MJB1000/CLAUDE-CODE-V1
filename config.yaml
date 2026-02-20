@@ -1,0 +1,57 @@
+# Scheduled Prompt Deployment Configuration
+# ------------------------------------------
+
+# The prompt to send to Claude on each scheduled run.
+prompt: |
+  Summarize the current state of this project. Identify any outstanding
+  issues, recent changes, and suggest next steps.
+
+# The system prompt that sets context for the Claude conversation.
+system_prompt: |
+  You are a project analyst reviewing a software project. Be concise
+  and actionable. Focus on what matters most.
+
+# Schedule configuration (24-hour time format).
+schedule:
+  # Time of day to run (HH:MM in 24h format, UTC by default).
+  time: "09:00"
+  # Timezone for the schedule (IANA timezone name).
+  timezone: "UTC"
+  # Days of the week to run. Use lowercase English day names.
+  # Options: monday, tuesday, wednesday, thursday, friday, saturday, sunday
+  days:
+    - monday
+    - tuesday
+    - wednesday
+    - thursday
+    - friday
+
+# Claude model configuration.
+model:
+  # Model ID to use.
+  name: "claude-opus-4-6"
+  # Maximum tokens in the response.
+  max_tokens: 4096
+
+# Project context: files or directories to include as context in the prompt.
+# Paths are relative to the working directory (--project-dir).
+project_context:
+  # Glob patterns for files to include as context.
+  include:
+    - "*.md"
+    - "src/**/*.py"
+    - "docs/**/*.md"
+  # Glob patterns for files to exclude.
+  exclude:
+    - "**/__pycache__/**"
+    - "*.pyc"
+    - ".git/**"
+  # Maximum total characters of context to include (to stay within token limits).
+  max_context_chars: 100000
+
+# Output configuration.
+output:
+  # Directory to write response files to (relative to --project-dir).
+  directory: "prompt_outputs"
+  # Whether to print the response to stdout as well.
+  print_stdout: true
