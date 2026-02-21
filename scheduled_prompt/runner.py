@@ -14,6 +14,16 @@ from .context import gather_context
 
 def run_prompt(config: AppConfig, project_dir: Path) -> str:
     """Send the configured prompt to Claude and return the response text."""
+    import os
+
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        print(
+            "Error: ANTHROPIC_API_KEY environment variable is not set.\n"
+            "Set it with: export ANTHROPIC_API_KEY='sk-ant-...'",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
     client = anthropic.Anthropic()
 
     # Build project context.
@@ -31,14 +41,21 @@ def run_prompt(config: AppConfig, project_dir: Path) -> str:
         f"Sending prompt to {config.model.name}..."
     )
 
-    with client.messages.stream(
-        model=config.model.name,
-        max_tokens=config.model.max_tokens,
-        thinking={"type": "adaptive"},
-        system=config.system_prompt.strip(),
-        messages=[{"role": "user", "content": user_content}],
-    ) as stream:
-        response = stream.get_final_message()
+    try:
+        with client.messages.stream(
+            model=config.model.name,
+            max_tokens=config.model.max_tokens,
+            thinking={"type": "adaptive"},
+            system=config.system_prompt.strip(),
+            messages=[{"role": "user", "content": user_content}],
+        ) as stream:
+            response = stream.get_final_message()
+    except anthropic.AuthenticationError:
+        print("Error: Invalid ANTHROPIC_API_KEY.", file=sys.stderr)
+        sys.exit(1)
+    except anthropic.APIConnectionError as e:
+        print(f"Error: Could not connect to Claude API: {e}", file=sys.stderr)
+        sys.exit(1)
 
     # Extract text from response content blocks.
     text_parts: list[str] = []
