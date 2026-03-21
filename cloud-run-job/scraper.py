@@ -306,6 +306,102 @@ def upload_snapshot(brand_id, date_str, html):
         print(f"  [GCS] Failed to upload {brand_id}: {e}", file=sys.stderr)
 
 
+# ── Google Shopping scraper ──────────────────────────────────────────────────────
+
+GOOGLE_SHOPPING_QUERIES = {
+    "AU": {
+        "query": "ford territory 2009 wiper blades",
+        "domain": "google.com.au",
+        "currency": "AUD",
+    },
+    "NZ": {
+        "query": "ford territory 2009 wiper blades",
+        "domain": "google.co.nz",
+        "currency": "NZD",
+    },
+}
+
+
+def scrape_google_shopping(market, config):
+    """Scrape Google Shopping results for a market."""
+    query = urllib.request.quote(config["query"])
+    url = f"https://www.{config['domain']}/search?q={query}&tbm=shop"
+
+    print(f"  Scraping Google Shopping ({market})...")
+    status, html = fetch_url(url, timeout=20)
+
+    if not html:
+        print(f"    → Failed (HTTP {status})")
+        return None
+
+    text = html_to_text(html)
+
+    # Extract price listings from Google Shopping HTML
+    # Prices appear as $XX.XX patterns near product titles
+    listings = []
+    price_pattern = re.compile(r'\$(\d+(?:\.\d{2})?)')
+    prices_found = []
+
+    # Split into rough product blocks by finding price clusters
+    for match in price_pattern.finditer(html):
+        try:
+            p = float(match.group(1))
+            if 5 < p < 500:  # Wiper blade price range
+                prices_found.append(p)
+
+                # Try to extract surrounding context for seller/title
+                start = max(0, match.start() - 300)
+                end = min(len(html), match.end() + 100)
+                block = html[start:end]
+                block_text = html_to_text(block).strip()
+
+                # Clean up the text for a title
+                title_parts = [t.strip() for t in block_text.split("\n") if len(t.strip()) > 10]
+                title = title_parts[0][:100] if title_parts else ""
+
+                # Avoid duplicate prices in same block
+                if not any(abs(l["price"] - p) < 0.01 for l in listings):
+                    listings.append({
+                        "price": p,
+                        "title": title,
+                        "seller": "",
+                        "currency": config["currency"],
+                    })
+        except ValueError:
+            pass
+
+    # Sort by price
+    listings.sort(key=lambda x: x["price"])
+
+    # Deduplicate and limit
+    seen_prices = set()
+    unique = []
+    for l in listings:
+        rounded = round(l["price"], 2)
+        if rounded not in seen_prices:
+            seen_prices.add(rounded)
+            unique.append(l)
+    listings = unique[:15]
+
+    all_prices = [l["price"] for l in listings]
+
+    result = {
+        "listings": listings,
+        "listing_count": len(listings),
+        "min_price": min(all_prices) if all_prices else None,
+        "max_price": max(all_prices) if all_prices else None,
+        "avg_price": round(sum(all_prices) / len(all_prices), 2) if all_prices else None,
+        "query": config["query"],
+        "market": market,
+    }
+
+    print(f"    → {len(listings)} listings, "
+          f"range ${result['min_price']:.2f}-${result['max_price']:.2f}" if all_prices
+          else f"    → No listings found")
+
+    return result
+
+
 # ── Main scraper ────────────────────────────────────────────────────────────────
 
 def scrape_brand(brand, date_str):
@@ -394,12 +490,26 @@ def main():
         # Be polite — delay between requests
         time.sleep(2)
 
+    # Scrape Google Shopping
+    print()
+    print("Scraping Google Shopping...")
+    google_shopping = {}
+    for market, config in GOOGLE_SHOPPING_QUERIES.items():
+        try:
+            result = scrape_google_shopping(market, config)
+            if result:
+                google_shopping[market] = result
+        except Exception as e:
+            print(f"  [ERROR] Google Shopping {market}: {e}", file=sys.stderr)
+        time.sleep(3)
+
     # Build payload
     payload = {
         "date": date_str,
         "day_of_week": day_of_week,
         "is_weekend": is_weekend,
         "sites": sites,
+        "google_shopping": google_shopping,
     }
 
     # POST to ingest

@@ -1,0 +1,50 @@
+# Cloud Build config for automated deployment
+# Trigger this from a GitHub push or manually:
+#   gcloud builds submit --config cloud-run-job/cloudbuild.yaml cloud-run-job/
+
+substitutions:
+  _REGION: australia-southeast1
+  _JOB_NAME: wiper-intel-scraper
+  _REPO_NAME: wiper-intel
+
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/${_JOB_NAME}:${SHORT_SHA}'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/${_JOB_NAME}:latest'
+      - '.'
+    dir: 'cloud-run-job'
+
+  # Push to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - '--all-tags'
+      - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/${_JOB_NAME}'
+
+  # Deploy Cloud Run Job
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'jobs'
+      - 'deploy'
+      - '${_JOB_NAME}'
+      - '--image=${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/${_JOB_NAME}:${SHORT_SHA}'
+      - '--region=${_REGION}'
+      - '--task-timeout=600'
+      - '--max-retries=1'
+      - '--memory=512Mi'
+      - '--cpu=1'
+      - '--set-secrets=WIPER_INTEL_SECRET=WIPER_INTEL_SECRET:latest,INGEST_URL=INGEST_URL:latest'
+      - '--quiet'
+
+images:
+  - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/${_JOB_NAME}:${SHORT_SHA}'
+  - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/${_JOB_NAME}:latest'
+
+options:
+  logging: CLOUD_LOGGING_ONLY

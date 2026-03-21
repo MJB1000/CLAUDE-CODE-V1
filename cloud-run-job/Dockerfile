@@ -8,8 +8,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy scraper
+# Copy scripts
 COPY scraper.py .
+COPY backfill_wayback.py .
 
 # Run as non-root
 USER scraper
