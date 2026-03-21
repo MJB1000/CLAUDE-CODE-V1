@@ -1,0 +1,12 @@
+{
+  "routes": [
+    { "src": "/wiper-intel", "dest": "/wiper-intel.html" },
+    { "src": "/api/(.*)",    "dest": "/api/$1" }
+  ],
+  "crons": [
+    {
+      "path": "/api/weekly-digest",
+      "schedule": "0 21 * * 0"
+    }
+  ]
+}
