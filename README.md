@@ -31,6 +31,8 @@ Each agent has a defined role, reads only what it needs, and communicates throug
 | `REVIEW-FEEDBACK.md` | Designer | Copywriter, Strategist |
 | `CAMPAIGN-LOG.md` | All (Strategist owns) | All |
 | `SESSION-CHECKPOINT.md` | Strategist | All |
+| `RETRO.md` | Strategist (post-publish) | All |
+| `PLAYBOOK.md` | Strategist | Strategist (at project start) |
 
 ## Quick Start
 
@@ -63,13 +65,19 @@ marketing-team/
 │   ├── REVIEW-REQUEST.md
 │   ├── REVIEW-FEEDBACK.md
 │   ├── CAMPAIGN-LOG.md
-│   └── SESSION-CHECKPOINT.md
+│   ├── SESSION-CHECKPOINT.md
+│   └── RETRO.md
+├── skills/
+│   └── token-optimizer.md     # 5 behavioral rules for token discipline
+├── deliverables/              # Published content artifacts
+├── retros/                    # Retrospective archive (one per deliverable)
 ├── templates/
 │   ├── project-folder/        # Named personas (Sofia, Charlie, Dana)
 │   └── generic/               # Blank slate with [CUSTOMIZE] placeholders
 ├── CLAUDE.md                  # Session router — token rules, file loading
 ├── METHODOLOGY.md             # Framework philosophy and research
 ├── INSTALL.md                 # Installation guide
+├── PLAYBOOK.md                # Cross-campaign memory (validated/observed patterns)
 ├── CHANGELOG.md               # Version history
 ├── README.md
 └── setup                      # Installation script
@@ -83,11 +91,18 @@ Two starting points:
 
 ## Workflow
 
-1. **Strategist** talks with the Creative Director, identifies the need, writes `STRATEGY-BRIEF.md`
-2. **Copywriter** reads the brief, writes the content, submits `REVIEW-REQUEST.md`
-3. **Designer** reviews against brand, audience, and brief — writes `REVIEW-FEEDBACK.md`
-4. **Copywriter** addresses feedback, re-submits if needed
-5. **Strategist** confirms with Creative Director, publishes, logs to `CAMPAIGN-LOG.md`
+1. **Strategist** talks with Creative Director, writes `STRATEGY-BRIEF.md` (with split DoD)
+2. **Copywriter** writes plan, gets approval, writes content, self-checks DoD, submits `REVIEW-REQUEST.md`
+3. **Designer** reviews (Round 1), locks passing sections, writes `REVIEW-FEEDBACK.md`
+4. **Copywriter** fixes must-fix items, re-submits with change log
+5. **Designer** reviews only changed sections (Round 2), clears
+6. **Strategist** presents to CD, logs decision, publishes, writes `RETRO.md`
+7. **Strategist** checks metrics at 7 days and 30 days, updates `PLAYBOOK.md`
+
+### Learning Loop
+```
+Publish → Retro (day 0) → 7-day metrics → 30-day metrics → Playbook updated → Next brief informed
+```
 
 ## Token Discipline
 

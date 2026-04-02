@@ -12,6 +12,9 @@
 
 Do not start writing until the brief is complete and unambiguous.
 
+**Brief expiry check:** If the brief date is older than 14 days, STOP. Signal Strategist
+that the brief needs reconfirmation before you proceed. Do not write against a stale brief.
+
 ---
 
 ## Who You Are

@@ -48,8 +48,23 @@ Brief date: [date]
 - [Pattern from previous deliverables, if any]
 
 ### Definition of Done
-- [ ] [Verifiable completion criterion]
-- [ ] [Verifiable completion criterion]
+
+*Split into self-checkable (Copywriter verifies before submitting) and review-dependent (Designer evaluates).*
+
+**Self-checkable (Copywriter confirms in REVIEW-REQUEST.md):**
+- [ ] [Mechanical criterion — e.g., "Headline under 12 words"]
+- [ ] [Structural criterion — e.g., "CTA appears in both placements"]
+- [ ] [Compliance criterion — e.g., "All stats tagged SOURCE NEEDED"]
+
+**Review-dependent (Designer evaluates):**
+- [ ] [Judgment criterion — e.g., "Tone matches brief: confident, not salesy"]
+- [ ] [Audience criterion — e.g., "Language resonates with target audience"]
+- [ ] [Brand criterion — e.g., "No drift from brief messaging"]
+
+*For batch deliverables, add per-item criteria:*
+
+**Per-item (if batched):**
+- [ ] [Item-specific criterion — e.g., "Email 2 includes ingredient breakdown"]
 
 ---
 

@@ -24,9 +24,26 @@ Deliverable: [description]
 
 - [New constraint or flag for future briefs — e.g., "always mark social proof as placeholder until data team verifies"]
 
-## Metrics (if available)
+## Metrics
 
-- [Post-publish performance data — click rate, conversion, engagement]
-- [Comparison to objective set in brief]
+### At Publish (day 0)
+- Metrics to track: [what to measure — click rate, conversion, open rate, etc.]
+- Objective from brief: [what success looks like]
+- Tracking link / dashboard: [where to check]
+
+### 7-Day Check-In (Strategist updates this section)
+- Date checked: [date or "pending"]
+- Results: [actual numbers vs objective]
+- Verdict: [on track / underperforming / outperforming]
+- Action: [none / iterate / escalate to CD]
+
+### 30-Day Final (Strategist updates this section)
+- Date checked: [date or "pending"]
+- Results: [final numbers]
+- Pattern validated: [which learned patterns from this deliverable were confirmed by data?]
+- Pattern invalidated: [which assumptions were wrong?]
+
+*Update PLAYBOOK.md: move confirmed patterns from "observed" to "validated."
+Remove or annotate patterns that data invalidated.*
 
 ---

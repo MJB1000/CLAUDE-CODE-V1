@@ -21,10 +21,13 @@ Ready for Review: YES / NO
 
 ## Definition of Done — Self-Check
 
-*From the brief. Check each item before submitting.*
+*Self-checkable criteria from the brief only. Review-dependent criteria are Designer's job.*
 
-- [ ] [Criterion from brief] — [actual result]
-- [ ] [Criterion from brief] — [actual result]
+- [x] [Self-checkable criterion] — [actual result, e.g., "Headline: 9 words (limit 12)"]
+- [ ] [Self-checkable criterion that failed] — [what happened, why]
+
+*Review-dependent criteria (tone, audience fit, brand alignment) are NOT self-checked.
+Designer evaluates these — do not mark them here.*
 
 ## Creative Choices Not in Brief
 

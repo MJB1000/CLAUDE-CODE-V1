@@ -27,6 +27,20 @@
 
 ---
 
+## Pending External Clearances
+
+*Content tagged [SOURCE NEEDED] or [PLACEHOLDER] awaiting external team response.*
+
+| ID | Deliverable | Content | Owner | Requested | Status | Cleared |
+|---|---|---|---|---|---|---|
+| C1 | [N] | [e.g., "47% faster close" stat] | [Data team] | [date] | Pending | — |
+
+*When an external team clears content, Strategist updates Status to "Cleared" and
+inserts the verified content into the deliverable. If rejected, Strategist updates
+the deliverable to remove or replace the content and logs to Known Gaps.*
+
+---
+
 ## Known Gaps
 
 *Out-of-scope items logged for future deliverables.*

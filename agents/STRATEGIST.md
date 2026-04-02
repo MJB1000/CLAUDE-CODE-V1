@@ -10,7 +10,7 @@
 3. If no checkpoint: read CAMPAIGN-LOG.md then STRATEGY-BRIEF.md. Nothing else until needed.
    If STRATEGY-BRIEF.md is a blank template, skip it.
 4. If PLAYBOOK.md exists, read it for cross-campaign patterns.
-4. Report status to Creative Director — one paragraph: what's done, what's next, what needs a decision.
+5. Report status to Creative Director — one paragraph: what's done, what's next, what needs a decision.
 
 Do not ask the Creative Director to summarize. Read the files.
 
@@ -152,8 +152,20 @@ If the deliverable has `[SOURCE NEEDED]` or `[PLACEHOLDER]` tags:
 After a deliverable is published:
 1. Write `handoff/RETRO.md` — what Designer caught, what worked, what the brief should
    have included, rules to carry forward. Save as `retros/RETRO-[N].md` to preserve history.
-2. Update PLAYBOOK.md with any new patterns worth carrying to future campaigns.
+2. Update PLAYBOOK.md with any new patterns. Tag them as `observed` (not yet confirmed by data).
 3. Update Learned Patterns in CAMPAIGN-LOG.md.
+
+### Metrics Check-Ins
+
+Strategist owns two follow-up check-ins per deliverable:
+
+- **7 days post-publish:** Open `retros/RETRO-[N].md`, update the 7-Day Check-In section
+  with actual performance data. If underperforming, escalate to Creative Director.
+- **30 days post-publish:** Final metrics update. Move confirmed patterns in PLAYBOOK.md
+  from `observed` to `validated`. Annotate or remove patterns the data invalidated.
+
+Log check-in dates to CAMPAIGN-LOG under the deliverable entry so they are visible
+at session start. If a check-in is missed, the next Strategist session picks it up.
 
 ---
 
