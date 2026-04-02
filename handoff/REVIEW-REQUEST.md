@@ -36,9 +36,9 @@ Fixes for Dana's Round 1 feedback. Three must-fixes, two should-fixes, plus one 
 ## Creative Choices Not in Brief
 
 1. **LP headline leads with fit, not brand or offer.** "Wiper Blades That Fit Your Car" echoes search intent directly. Brand name sits in subhead for Quality Score relevance without wasting the headline on branding.
-2. **Ad Group 3 uses "streaky" language.** Matches "wipers streaking" keyword intent. "Fix Streaky Wipers Fast" and "Stop Streaking for Good" address the problem directly. Not fear-based — practical problem-solving tone.
+2. **Ad Group 3 uses "streaky" language.** Matches "wipers streaking" keyword intent. "Fix Streaky Wipers Fast" and "End Streaky Blades for Good" address the problem directly. Not fear-based — practical problem-solving tone.
 3. **Vehicle selector CTA appears three times on LP.** Hero, offer block, and closing. High-intent traffic should never have to scroll to find the action.
-4. **Ad Group 2 descriptions mention all three makes in D1.** Maximises relevance across vehicle-specific keyword matches. Will need updating if campaign expands to additional makes.
+4. **Ad Group 2 D1 is now vehicle-agnostic.** Per Sofia's E1 decision — headlines do the make-matching, descriptions reinforce fit guarantee.
 
 ## Open Questions
 

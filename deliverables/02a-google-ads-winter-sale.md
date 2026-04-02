@@ -15,7 +15,7 @@
 | # | Headline | Chars |
 |---|---|---|
 | 1 | WiperTech Winter Wiper Sale | 27 |
-| 2 | Free Same-Day Wiper Shipping | 28 |
+| 2 | Fast Same-Day Wiper Shipping | 28 |
 | 3 | 15% Off Winter Wiper Blades | 27 |
 | 4 | Save 15% on Wiper Blades | 25 |
 | 5 | WiperTech Wiper Blades | 22 |

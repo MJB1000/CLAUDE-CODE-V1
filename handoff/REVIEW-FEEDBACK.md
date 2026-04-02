@@ -60,11 +60,38 @@ Reviewed 02a (3 ad groups, 45 headlines, 12 descriptions) and 02b (full landing 
 
 ---
 
-<!-- Round 2 template (copy and fill when needed):
+## Round 2 — 2026-04-02
 
-## Round 2 — [date]
+Ready for Copywriter: NO
 
-Ready for Copywriter: YES / NO
+### Must Fix
+
+- **02a:AG1 H2 — "Free Same-Day Wiper Shipping"** — The brief does not substantiate free shipping. Same-day shipping is a confirmed claim; free shipping is not. "Free" is an unsubstantiated operational claim — the same category as the shipping cut-off time (Known Gap G3). If WiperTech does offer free shipping, Sofia needs to confirm it before it runs in ads. Replace "Free" with a different qualifier, or use a different shipping-angle headline that does not make a cost claim. Example: "Same-Day Wiper Shipping" or "Fast Same-Day Wiper Shipping."
+
+### Should Fix
+
+None.
+
+### Escalate to Strategist
+
+- **Free shipping claim** — Does WiperTech offer free shipping? If yes, add to brief's confirmed claims. If no, H2 must drop "Free." This is an operational fact, not a creative decision.
+
+### Cleared
+
+- **AG1 H6 fix (Round 1 Must Fix 1):** "Fits 500+ Car Models in AU" — non-superlative, fit angle, does not duplicate H7's social proof. Cleared.
+- **AG3 H9 fix (Round 1 Must Fix 2):** "End Streaky Blades for Good" — "Blades" present for disambiguation. No double-meaning risk when headline assembles independently. Cleared.
+- **AG1 H2 fix (Round 1 Must Fix 3):** Redundancy with H1/H3 is resolved — shipping angle is a genuine new dimension. But "Free" introduces a new unsubstantiated claim. Partially cleared (redundancy fixed; new claim blocks).
+- **AG2 D1 fix (Round 1 Should Fix 1):** Vehicle-agnostic description per Sofia's E1. "Guaranteed match for your make and model" is stronger than the 3-make listing. Cleared.
+- **AG1 H7 char count (Round 1 Should Fix 2):** Table now shows 25. Correct. Cleared.
+- **AG1 D4 bonus fix:** "Over 50,000 five-star reviews" replaces superlative. Stat-based, consistent with E2 constraint. Cleared.
+- **02b Trust Signals bonus fix:** "rated by real Australian drivers" replaces superlative. Cleared.
+- **02b Closing CTA fix (Round 1 Should Fix 4):** "Your perfect-fit wipers, shipped today — 15% off." Single flowing line, drives action. Stronger than the three fragments. Cleared.
+
+---
+
+## Round 3 — 2026-04-02
+
+Ready for Copywriter: YES
 
 ### Must Fix
 None.
@@ -76,6 +103,8 @@ None.
 None.
 
 ### Cleared
-[Summary of what was re-reviewed and passed. Reference fixes from Round 1.]
+AG1 H2 "Free Same-Day Wiper Shipping" → "Fast Same-Day Wiper Shipping." Unsubstantiated "Free" claim removed per Sofia's escalation decision (free shipping not confirmed for wiper blades). "Fast" is defensible given same-day shipping is a confirmed claim.
 
--->
+All Round 1 and Round 2 fixes verified. All locked sections hold. Deliverable 2 is clear.
+
+---
