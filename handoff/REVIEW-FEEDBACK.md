@@ -21,8 +21,13 @@ Ready for Copywriter: YES / NO
 
 - [Question] — [Why this cannot be resolved at the content level]
 
+## Locked Sections
+*Passed this round. Do not re-review in subsequent rounds unless Copywriter changes them.*
+
+- [Section name] — passed
+
 ## Cleared
 
-[One sentence confirming what was reviewed and passed]
+[Brief summary of what was reviewed and passed. List sections if multiple.]
 
 ---

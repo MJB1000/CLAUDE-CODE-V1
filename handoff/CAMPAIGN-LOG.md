@@ -18,9 +18,11 @@
 - Date: [date]
 - Files created/modified:
   - `file.md` — [what changed]
+- Copywriter plan: [one sentence summary of approach]
 - Decisions documented:
   - [Decision and rationale]
 - Designer feedback summary: [one sentence]
+- Escalations: [any escalations and their resolution, or "none"]
 - Published: YES / NO — [platform/channel] — [date]
 
 ---
@@ -29,9 +31,9 @@
 
 *Out-of-scope items logged for future deliverables.*
 
-| ID | Description | Logged |
-|---|---|---|
-| G1 | [Description of gap] | [date] |
+| ID | Description | Logged | Status | Resolved |
+|---|---|---|---|---|
+| G1 | [Description of gap] | [date] | Open | — |
 
 ---
 
@@ -42,5 +44,15 @@
 | Decision | Date |
 |---|---|
 | [What was decided and why] | [date] |
+
+---
+
+## Learned Patterns
+
+*Accumulated lessons from completed deliverables. Strategist reads at brief-writing time.*
+
+| Pattern | Source | Deliverable |
+|---|---|---|
+| [What was learned — e.g., "Always mark social proof as placeholder"] | [Who caught it — e.g., "Dana Round 1"] | [N] |
 
 ---

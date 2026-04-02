@@ -61,8 +61,12 @@ Ready for Copywriter: YES / NO
 [Requires a strategy or brand decision.]
 - [What the question is] — [Why you cannot resolve it at the content level]
 
+## Locked Sections
+[Sections that passed this round. Do not re-review in subsequent rounds unless Copywriter changes them.]
+- [Section name] — passed
+
 ## Cleared
-[One sentence: what was reviewed and passed.]
+[Brief summary of what was reviewed and passed.]
 ```
 
 ---

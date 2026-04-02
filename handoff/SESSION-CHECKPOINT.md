@@ -1,5 +1,6 @@
 # Session Checkpoint
 *Written by Strategist at session end. Read by any role at session start.*
+*Keep this file under 200 words. Summarize decisions, do not list them. If full history is needed, read CAMPAIGN-LOG.md.*
 
 ---
 

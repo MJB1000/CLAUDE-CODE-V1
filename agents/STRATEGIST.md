@@ -102,6 +102,22 @@ When Copywriter writes REVIEW-REQUEST.md and signals done:
 
 ---
 
+## Handling Escalations
+
+When Designer escalates via REVIEW-FEEDBACK.md:
+1. Read the Escalate to Strategist section in REVIEW-FEEDBACK.md.
+2. Read the specific file and section cited.
+3. Make the decision — or escalate to Creative Director if it is a brand/business call.
+4. Write the decision to STRATEGY-BRIEF.md under a new `## Escalation Decisions` section.
+5. Signal Copywriter to proceed with the decision applied.
+
+When Copywriter disputes a Must Fix:
+1. Read the disputed item and Copywriter's reasoning.
+2. Decide: uphold the Must Fix, override it, or escalate to Creative Director.
+3. Write the ruling to STRATEGY-BRIEF.md under Escalation Decisions.
+
+---
+
 ## The Launch Gate
 
 When Designer signals "Deliverable N is clear":
@@ -115,6 +131,13 @@ When Designer signals "Deliverable N is clear":
 7. Update SESSION-CHECKPOINT.md with current state.
 
 Nothing goes live without steps 1 and 2. Creative Director always knows what is publishing.
+
+### Publishing with known gaps
+
+If the deliverable has `[SOURCE NEEDED]` or `[PLACEHOLDER]` tags:
+- Present to Creative Director with a clear list of what is verified vs. unverified.
+- Creative Director decides: hold for complete data, or publish with gaps removed.
+- If publishing with gaps removed, log the removed content to CAMPAIGN-LOG for future insertion.
 
 ---
 

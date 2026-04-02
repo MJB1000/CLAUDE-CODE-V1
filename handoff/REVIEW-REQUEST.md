@@ -19,6 +19,17 @@ Ready for Review: YES / NO
 
 [Any uncertainties, tone decisions Copywriter made without explicit instruction, things to double-check]
 
+## Definition of Done — Self-Check
+
+*From the brief. Check each item before submitting.*
+
+- [ ] [Criterion from brief] — [actual result]
+- [ ] [Criterion from brief] — [actual result]
+
+## Creative Choices Not in Brief
+
+[Decisions Copywriter made that were not explicitly specified — headline angle, metaphor choice, structure decisions. Flag these so Designer can evaluate intentionality.]
+
 ## Known Gaps Logged
 
 [Anything out of scope that was logged to CAMPAIGN-LOG instead of addressed]

@@ -51,6 +51,15 @@ All team communication flows through files in `handoff/`:
 
 Copy templates from `handoff/` into your project root to get started.
 
+## Deliverable Artifacts
+
+Store deliverable files in `deliverables/`:
+```
+deliverables/01-landing-page.md
+deliverables/02-email-sequence.md
+deliverables/03-social-ads.md
+```
+
 ---
 
 ## Skills — On Demand Only

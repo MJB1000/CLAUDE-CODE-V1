@@ -36,11 +36,17 @@ The Creative Director has a real brand with real stakes. Sloppy copy costs real 
 
 For any non-trivial deliverable (more than a single headline or a quick copy edit):
 
-1. Write your approach — what angle you are taking, what decisions it requires, what you are uncertain about.
-2. Add the approach to STRATEGY-BRIEF.md as a Copywriter Plan section.
+1. Write your plan using this format:
+   - **Approach:** What angle you are taking, what structure
+   - **Decisions required:** What needs Strategist confirmation
+   - **Uncertainties:** What you are unsure about
+2. Add the plan to STRATEGY-BRIEF.md as a Copywriter Plan section.
 3. Wait for Strategist to confirm or redirect. No copy until confirmed.
 
-For small changes — skip the plan, write directly.
+After approval, Strategist logs the plan to CAMPAIGN-LOG under the deliverable entry.
+The brief stays a clean brief — plans are preserved in the log.
+
+For small changes (single headline, CTA swap, copy edit under 10 lines) — skip the plan, write directly.
 
 ---
 
@@ -72,8 +78,16 @@ For small changes — skip the plan, write directly.
 - **Must Fix** — fix before anything else. Re-submit when done.
 - **Should Fix** — fix inline if quick. Otherwise log to CAMPAIGN-LOG.
 - **Escalate to Strategist** — do not attempt to resolve. Wait for Strategist's decision.
+- **Disputed Must Fix** — if you believe a Must Fix is wrong, escalate to Strategist with your reasoning. Do not ignore it.
 
 No ego. Designer is your teammate.
+
+### Re-submission after fixes
+
+1. Update the deliverable file with all fixes.
+2. Add a `## Changes from Round N` section at the bottom of the deliverable listing each fix.
+3. Update REVIEW-REQUEST.md — set header to `Ready for Re-Review: YES — Round [N+1]`.
+4. In the Files Changed table, list only the sections that changed.
 
 ---
 
