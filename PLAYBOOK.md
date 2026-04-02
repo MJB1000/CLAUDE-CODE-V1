@@ -22,7 +22,8 @@
 
 | Audience | Pattern | Status | Source |
 |---|---|---|---|
-| [e.g., Mid-market CFOs] | [e.g., Lead with outcomes, not technology.] | validated | [Campaign / Deliverable] |
+| Australian drivers (practical buyers) | Practical-prep angle ("sort it before winter") outperforms fear and hard-sell in copy | observed | WiperTech Deliverable 1 |
+| Cold traffic (paid ads) | Brand jargon doesn't land — use plain language equivalents on landing pages | observed | WiperTech Deliverable 1 |
 
 ---
 
@@ -30,7 +31,9 @@
 
 | Pattern | Status | Source |
 |---|---|---|
-| [e.g., Designer consistently flags unsubstantiated claims.] | observed | [Campaign / Deliverable] |
+| Superlative claims ("Most Trusted," "Best") get flagged — always use stat-based claims instead | observed | WiperTech Deliverable 1 |
+| Unverified operational claims (shipping cut-offs, delivery times) need client confirmation before writing | observed | WiperTech Deliverable 1 |
+| Unattributed stats on cold-traffic pages get flagged — add source line | observed | WiperTech Deliverable 1 |
 
 ---
 
@@ -38,7 +41,9 @@
 
 | Channel | Pattern | Status | Source |
 |---|---|---|---|
-| [e.g., Email] | [e.g., Subject lines under 45 chars outperform.] | observed | [Campaign / Deliverable] |
+| Email | Include brand name in subject line for inbox recall (space permitting) | observed | WiperTech Deliverable 1 |
+| Landing page | Stats need light attribution for cold-traffic visitors ("Based on X") | observed | WiperTech Deliverable 1 |
+| Landing page | Offer mechanics belong in dedicated section, not mixed into benefit copy | observed | WiperTech Deliverable 1 |
 
 ---
 
@@ -46,7 +51,9 @@
 
 | Pattern | Status | Source |
 |---|---|---|
-| [e.g., Always include Available Brand Assets field.] | validated | [Campaign / Deliverable] |
+| Include stats attribution policy in brief (do stats need source lines for cold audiences?) | observed | WiperTech Deliverable 1 |
+| Confirm all operational details (shipping times, cut-offs) in Available Brand Assets before brief | observed | WiperTech Deliverable 1 |
+| Flag which brand terms are acceptable for cold vs warm audiences | observed | WiperTech Deliverable 1 |
 
 ---
 
@@ -54,6 +61,7 @@
 
 | What Happened | Why It Failed | Lesson | Source |
 |---|---|---|---|
-| [e.g., Used industry-level stat without attribution] | [Misleading claim] | [Use product-specific language] | [Campaign] |
+| Used "Australia's Most Trusted Wipers" as headline | Superlative requires comparative proof — 50K reviews doesn't prove "most" | Use stat-based claims: "Trusted by 1.5 Million Australians" | WiperTech Deliverable 1 |
+| Put "automatically applied at checkout" in subhead | Offer mechanic broke the benefit chain rhythm | Keep offer mechanics in dedicated offer section | WiperTech Deliverable 1 |
 
 ---

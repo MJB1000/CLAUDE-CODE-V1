@@ -6,15 +6,15 @@
 ## Current Status
 
 - Active deliverable: 1 (batch: 1a email, 1b landing page, 1c social ads) — WiperTech Winter Sale
-- Last completed: None (first deliverable)
-- Published: NO
+- Last completed: 1 (batch) — WiperTech Winter Sale — 2026-04-02
+- Published: YES
 
 ---
 
 ## Deliverable History
 
 ### Deliverable 1 (batch) — WiperTech Winter Sale Campaign
-- Status: in progress — copy written, awaiting Designer review
+- Status: complete — CD approved, published
 - Date: 2026-04-02
 - Files created/modified:
   - `handoff/STRATEGY-BRIEF.md` — brief written by Sofia
@@ -30,9 +30,10 @@
   - No fear-based messaging — practical and warm
   - Stats confirmed current by CD — use as fact, no verification tags needed
   - Offer: auto-applied at checkout, no promo code, ends May 30
-- Designer feedback summary: [pending]
-- Escalations: none
-- Published: NO
+- Designer feedback summary: Round 1 — 3 must-fix (unsubstantiated superlative, unverified shipping time, stats attribution), 4 should-fix (brand in subject, subhead cleanup, jargon removal, ad rhythm). Round 2 — all clear.
+- Escalations: 2pm shipping cut-off (removed, logged G3), stats attribution policy (added to LP only)
+- Published: YES — CD approved 2026-04-02
+- CD sign-off: "Ship" — approved all 3 pieces as-is
 
 ---
 
@@ -78,6 +79,11 @@
 
 | Pattern | Source | Deliverable |
 |---|---|---|
-| [First campaign — no patterns yet] | — | — |
+| Unattributed stats need source line on cold-traffic landing pages | Dana Round 1 | 1 |
+| Superlative claims ("Most Trusted") need comparative proof — use stat-based claims instead | Dana Round 1 | 1 |
+| Brand jargon (e.g., "AeroFlex") doesn't land on cold audiences — use plain language on LP | Dana Round 1 | 1 |
+| Include brand name in email subject lines for inbox recall | Dana Round 1 | 1 |
+| Operational claims (shipping cut-offs) need client confirmation before copy ships | Dana Round 1 | 1 |
+| Offer mechanics belong in dedicated offer section, not in benefit-chain copy | Dana Round 1 | 1 |
 
 ---

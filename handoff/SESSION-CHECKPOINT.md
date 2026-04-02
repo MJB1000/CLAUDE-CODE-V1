@@ -5,21 +5,27 @@
 ---
 
 ## Last Updated
-[Date]
+2026-04-02
 
 ## Current State
-[One or two sentences: where the campaign stands right now]
+Deliverable 1 (WiperTech Winter Sale — email, landing page, 3 social ads) is published. CD approved. All copy is final in `deliverables/`. Retrospective written. Playbook updated with 13 observed patterns from first campaign.
 
 ## Active Deliverable
-[What is in progress, who has it, what stage it is at]
+None — Deliverable 1 is complete. Ready for next brief or 7-day metrics check-in.
 
 ## Decisions Made This Session
-- [Bullet list of decisions made]
+- 15% off wiper blades only, practical-prep angle, auto-applied at checkout, ends May 30
+- Stats confirmed by CD, no verification tags needed
+- Stats attribution required on cold-traffic landing pages (Sofia escalation decision)
+- 2pm shipping cut-off removed (unverified), general "same-day" used instead
+- "AeroFlex" → "aerodynamic" for cold audiences
 
 ## Next Actions
-- [What happens next and who does it]
+- 7-day metrics check-in due ~2026-04-09 (update retros/RETRO-1.md)
+- 30-day metrics check-in due ~2026-05-02
+- Known Gap G3: get same-day shipping cut-off time from client for future campaigns
 
 ## Open Questions for Creative Director
-- [Anything pending a human decision]
+- None currently. Next brief whenever ready.
 
 ---
