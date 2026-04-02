@@ -42,6 +42,45 @@ Each agent has a defined role, reads only what it needs, and communicates throug
 
 See [INSTALL.md](INSTALL.md) for detailed setup.
 
+## Repository Structure
+
+```
+marketing-team/
+├── agents/                    # Agent definitions (generic, customizable)
+│   ├── STRATEGIST.md
+│   ├── COPYWRITER.md
+│   └── DESIGNER.md
+├── config/
+│   └── team.yml.example       # Team names, publish targets, brand assets
+├── docs/
+│   ├── customizing-your-team.md
+│   └── token-optimization.md
+├── examples/
+│   ├── session-start.md       # Copy-paste session prompts
+│   └── campaign-walkthrough.md # Full deliverable from brief to publish
+├── handoff/                   # Inter-agent handoff templates
+│   ├── STRATEGY-BRIEF.md
+│   ├── REVIEW-REQUEST.md
+│   ├── REVIEW-FEEDBACK.md
+│   ├── CAMPAIGN-LOG.md
+│   └── SESSION-CHECKPOINT.md
+├── templates/
+│   ├── project-folder/        # Named personas (Sofia, Charlie, Dana)
+│   └── generic/               # Blank slate with [CUSTOMIZE] placeholders
+├── CLAUDE.md                  # Session router — token rules, file loading
+├── METHODOLOGY.md             # Framework philosophy and research
+├── INSTALL.md                 # Installation guide
+├── CHANGELOG.md               # Version history
+├── README.md
+└── setup                      # Installation script
+```
+
+## Templates
+
+Two starting points:
+- **`templates/project-folder/`** — Named personas (Sofia the Strategist, Charlie the Copywriter, Dana the Designer) with full backstories ready to use
+- **`templates/generic/`** — Clean slate with `[CUSTOMIZE THIS SECTION]` placeholders for your own personas
+
 ## Workflow
 
 1. **Strategist** talks with the Creative Director, identifies the need, writes `STRATEGY-BRIEF.md`

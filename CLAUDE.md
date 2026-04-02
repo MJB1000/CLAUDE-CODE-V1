@@ -18,7 +18,7 @@ Do not re-read files already in context this session.
 ## Session Start — Every Role
 
 1. Load your token-optimizer skill if you have one — first, before anything else.
-2. Check `SESSION-CHECKPOINT.md` — if active and recent, read it. That is your state.
+2. Check `SESSION-CHECKPOINT.md` — if dated within 7 days, read it. That is your state.
 3. Load your role file: `agents/STRATEGIST.md` · `agents/COPYWRITER.md` · `agents/DESIGNER.md`
 4. If no checkpoint — Strategist reads `CAMPAIGN-LOG.md` + `STRATEGY-BRIEF.md` only.
 
@@ -36,6 +36,8 @@ Do not re-read files already in context this session.
 | REVIEW-REQUEST.md | Designer loads at review start |
 | REVIEW-FEEDBACK.md | Copywriter loads after Designer signals done |
 
+Add project-specific reference files here as your campaign grows.
+
 ---
 
 ## Handoff Files
@@ -48,3 +50,14 @@ All team communication flows through files in `handoff/`:
 - `SESSION-CHECKPOINT.md` — Strategist writes at session end
 
 Copy templates from `handoff/` into your project root to get started.
+
+---
+
+## Skills — On Demand Only
+
+Load the skill the task needs. Not at session start.
+
+`token-optimizer` — always first. Controls how the team reads, thinks, and responds.
+
+Add your marketing-specific skills below:
+[your skills here]

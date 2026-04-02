@@ -59,3 +59,35 @@ brand:
 ```
 
 Agents will reference these when the brief calls for it — they will not load them by default (token discipline).
+
+## Renaming Role Files
+
+If you rename the roles entirely (e.g., Strategist → "Campaign Lead"), update the file names
+and all references:
+
+1. Rename `agents/STRATEGIST.md` → `agents/CAMPAIGN-LEAD.md`
+2. Update CLAUDE.md session router to reference the new file name
+3. Update `config/team.yml` persona_file path
+4. Update handoff templates if they reference role names in headers
+
+## Adding Skills
+
+If you use skills (Claude Code SKILL.md files), reference them in the role files under
+a Skills section. List the skill name and when to load it. Do not load all skills at
+session start — load them when the task requires them.
+
+```
+## Skills
+- `brand-voice-checker` — load when reviewing tone compliance
+- `seo-analyzer` — load when writing content for organic search
+```
+
+## Using a Template
+
+For new projects, copy one of the template sets into your project root:
+
+- `templates/project-folder/` — pre-built personas, ready to use immediately
+- `templates/generic/` — blank slate, customize everything
+
+Then edit the CLAUDE.md router and persona files to match your brand, your standards,
+and your publish target.
