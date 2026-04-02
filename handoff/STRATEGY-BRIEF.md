@@ -3,119 +3,146 @@
 
 ---
 
-## Deliverable 1 — WiperTech Winter Sale Campaign
+## Deliverable 2 (batch) — WiperTech Winter Sale: Google Ads + Landing Page
 
 Brief date: 2026-04-02
 
 ### Audience
-- Australian drivers who own a car and will face winter driving conditions (rain, fog, low visibility)
-- Skews practical — they maintain their car but don't obsess over it. They replace wipers when they notice streaking, not on a schedule.
-- Online buyers comfortable purchasing auto accessories via e-commerce
-- Mix of existing WiperTech customers (email list) and new prospects (paid social, search)
-- Pain trigger: the first heavy winter rain where they can't see properly
+- Australian drivers actively searching for wiper blade replacement
+- High intent — they are already looking. They do not need to be convinced they need wipers, they need to be convinced WiperTech is the right choice.
+- Mix of: "my wipers are bad right now" (urgent) and "winter is coming, I should sort this" (planned)
+- They are comparing options — price, fit, shipping speed, reviews
+- Likely seeing ads from auto stores (Supercheap Auto, Repco) and generic Amazon/eBay listings
 
 ### Audience Context
-- Most drivers don't think about wipers until they fail. Winter is the moment they notice.
-- They have likely bought cheap wipers from an auto store before and been disappointed
-- Skeptical of premium pricing for something they see as a commodity — need to understand why WiperTech is different
-- They don't know about AeroFlex technology, natural rubber, or vehicle-specific fitment
+- They know what wiper blades are. They do not need education on why wipers matter.
+- They have likely bought cheap wipers before and been disappointed (or they haven't and are price-anchored to $15-20 commodity blades)
+- They are searching by vehicle make ("Toyota Corolla wiper blades") or by need ("best wiper blades for rain")
+- Competitors are competing on price and convenience (click and collect from store). WiperTech competes on fit, quality, and delivered-to-door.
 
 ### Available Brand Assets
-- **Exists:** 50,000+ five-star reviews (can reference volume, not specific quotes without approval), 1.5M+ blades sold, Perfect Fit Guarantee, 1-year warranty, 2-minute install, same-day shipping
-- **Does NOT exist:** No approved customer testimonials for this campaign. No winter-specific imagery. No existing winter sale landing page. No influencer content.
-- All review/stat claims are from the WiperTech website — mark as [VERIFY WITH CLIENT] for exact current numbers
+- Stats confirmed: 50,000+ five-star reviews, 1.5M+ blades sold
+- Perfect Fit Guarantee, 1-year warranty, 2-minute install, same-day shipping
+- Offer: 15% off, auto-applied at checkout, ends May 30
+- No approved customer testimonials (stat-based proof only)
+- Landing page from Deliverable 1b exists but was designed for social/email traffic — this LP needs to match Google search intent directly
 
 ### Objective
-- Primary: drive winter sale conversions (wiper blade purchases) using 15% off offer
-- Secondary: educate new customers on why WiperTech is worth the premium over auto-store brands
+- Primary: drive wiper blade purchases from Google Search traffic during the winter sale
+- Secondary: capture high-intent searchers before they buy commodity blades from auto stores
 
 ### Key Message
-- Winter rain is weeks away — now is the time to sort your wipers, not when you're squinting through a downpour. 15% off makes it easy.
+- WiperTech fits your exact car, ships today, and is 15% off right now. Stop guessing with generic blades.
 
 ### Tone & Voice
-- Practical, Aussie-direct, warm but not blokey. Like a mate who's good with cars giving you a heads-up.
-- No fear-mongering ("you could crash!"). No corporate speak. No hard-sell urgency tactics.
-- Confident — WiperTech knows their product is better. They don't need to shout about it.
-- Match the existing site voice: "Stop worrying about your wipers" / "I can't believe I put it off for so long"
+- Same as Deliverable 1: practical, Aussie-direct, warm. Like a mate who's good with cars.
+- BUT more direct and benefit-dense — Google Ads reward brevity and clarity. Every character must earn its place.
+- No fluff, no clever wordplay. Search ads are scanned, not read.
 
 ### Channel
-- **Batch deliverable:** 3 pieces sharing the same messaging:
-  - **1a:** Email — launch announcement to existing customer list
-  - **1b:** Landing page — standalone winter sale page for paid traffic
-  - **1c:** Social ad copy — 2-3 Facebook/Instagram ad variants
+
+**2a — Google Responsive Search Ads (3 ad groups)**
+
+Ad Group 1: Generic winter wipers
+- Keywords: "winter wiper blades," "best wiper blades for rain," "wiper blades Australia"
+
+Ad Group 2: Vehicle-specific (top 3 makes by AU market share)
+- Keywords: "Toyota wiper blades," "Mazda wiper blades," "Hyundai wiper blades"
+
+Ad Group 3: Replacement/urgent
+- Keywords: "wiper blade replacement," "wipers streaking," "new wiper blades"
+
+Each ad group needs:
+- 15 headlines (max 30 characters each)
+- 4 descriptions (max 90 characters each)
+- Google mixes these — they must work in any combination
+
+**2b — Google Ads landing page**
+
+Dedicated LP for Google traffic. Different from Deliverable 1b because:
+- Visitor has high intent (already searching). Less education needed, more conversion focus.
+- Must match ad copy closely (Google Quality Score depends on ad-to-LP relevance)
+- Needs a vehicle selector / "Find Your Wipers" tool prominently above the fold
+- Shorter than 1b — hero + 2-3 trust signals + offer + CTA. Not a full argument page.
 
 ### Constraints
 
-**Email (1a):**
-- Subject line: max 45 characters
-- Preview text: max 90 characters
-- Body: 150-200 words
-- Single CTA button
-- Must include: offer (15% off), code/mechanism, expiry, and one reason to act now
-- Must work for both past buyers (re-order) and prospects who haven't bought yet
+**Google Ads (2a):**
+- Headlines: max 30 characters each, 15 per ad group
+- Descriptions: max 90 characters each, 4 per ad group
+- No exclamation marks in headlines (Google policy)
+- No "click here" or "buy now" in ads
+- No ALL CAPS
+- Vehicle makes ARE allowed in ads (unlike brand content — specificity converts in search)
+- Offer (15% off) must appear in at least 2 headlines per ad group
+- "WiperTech" brand name in at least 3 headlines per ad group
 
-**Landing page (1b):**
-- Headline: max 10 words
-- Subhead: max 25 words
-- 3 value props: heading (max 8 words) + body (max 40 words each)
-- Social proof section (stats from site — not fabricated testimonials)
-- CTA appears twice (top + bottom)
-- Must include: offer details, how to redeem, product selector or "find your wipers" link
-
-**Social ads (1c):**
-- Primary text: max 125 characters per variant
-- Headline: max 40 characters per variant
-- 2-3 variants testing different angles (practical prep, social proof, offer-first)
-- All variants drive to the landing page (1b)
+**Landing page (2b):**
+- Headline: max 8 words — must echo the search intent, not just the brand message
+- Subhead: max 20 words
+- 2-3 trust signals (not full value props — just proof points with icons/numbers)
+- Vehicle selector / "Find Your Wipers" CTA above the fold
+- Offer block: 15% off, auto-applied, ends May 30
+- Social proof: stat-based (same as 1b) WITH attribution for cold traffic
+- Total page copy: under 150 words (this is a conversion page, not an education page)
+- Must include "WiperTech" in headline or subhead for ad-to-LP relevance
 
 **Global constraints:**
-- Offer: 15% off — confirm with client whether this is a code, auto-applied, or site-wide
-- No unsubstantiated claims. Stats from site must be tagged [VERIFY WITH CLIENT]
-- No fabricated reviews or testimonials
-- Product name: "WiperTech" — one word, capital W capital T
-- Do not reference specific vehicle makes in the copy (too many to be inclusive)
-- No fear-based messaging. Practical, not scary.
+- Offer: 15% off, auto-applied at checkout, ends May 30
+- No unsubstantiated claims
+- "WiperTech" — one word, capital W capital T
+- No fear-based messaging
+- Stats attribution required on LP: "Based on WiperTech.com.au reviews and sales data"
 
 ### Deliverables
-1a. Email (subject line + preview text + body + CTA)
-1b. Landing page (headline, subhead, 3 value props, social proof, 2x CTA, offer details)
-1c. Social ad copy (2-3 variants: primary text + headline each)
+2a. Google Responsive Search Ads — 3 ad groups (15 headlines + 4 descriptions each)
+2b. Google Ads landing page — hero + trust signals + offer + CTA
 
 ### Flags
-- Flag: We do not have client-approved review quotes. Use stat-based social proof only (e.g., "50,000+ five-star reviews"). Mark all stats [VERIFY WITH CLIENT].
-- Flag: The 15% off is applied automatically at checkout — no promo code needed. Write copy as "15% off automatically applied at checkout" or similar. Remove [OFFER MECHANISM] placeholder.
-- Flag: Sale ends May 30. Write "Ends May 30" in all pieces. Remove [SALE END DATE] placeholder.
-- Flag: Site stats (50,000+ reviews, 1.5M+ blades sold) are confirmed current. Remove [VERIFY WITH CLIENT] tags — these can be stated as fact.
-- Flag: Do not reference the cleaning kits in sale copy. This sale is wiper blades only.
+- Flag: Vehicle makes ARE allowed in Google Ads (override Deliverable 1 rule). Use Toyota, Mazda, Hyundai — top 3 AU market share. Do not use other makes without Sofia's approval.
+- Flag: Headlines must work in ANY combination — Google mixes them. Do not write headlines that only make sense paired with specific descriptions.
+- Flag: No exclamation marks in headlines (Google Ads policy).
+- Flag: Landing page must echo search intent. If someone searches "Toyota wiper blades," the LP should feel relevant even though it's not Toyota-specific. The vehicle selector solves this — make it prominent.
+- Flag: Same-day shipping — do NOT specify a cut-off time (Known Gap G3 from Deliverable 1).
 
 ### Learned Patterns
-*First deliverable — no prior patterns.*
+*From CAMPAIGN-LOG Deliverable 1:*
+- Unattributed stats need source line on cold-traffic landing pages
+- Superlative claims ("Most Trusted") need comparative proof — use stat-based claims
+- Brand jargon doesn't land on cold audiences — use plain language
+- Include brand name in headlines for recall
+- Offer mechanics belong in dedicated section, not mixed into benefit copy
+- Operational claims (shipping times) need client confirmation
 
 ### Definition of Done
 
 **Self-checkable (Charlie confirms):**
-- [ ] All word counts within constraints
-- [ ] 15% off offer mentioned in all three pieces
-- [ ] Stats used as confirmed fact (no [VERIFY] tags needed)
-- [ ] No fabricated testimonials
-- [ ] "WiperTech" spelled correctly everywhere
-- [ ] No vehicle-specific makes referenced
+- [ ] All headlines ≤ 30 characters
+- [ ] All descriptions ≤ 90 characters
+- [ ] 15 headlines + 4 descriptions per ad group (3 ad groups)
+- [ ] No exclamation marks in headlines
+- [ ] "WiperTech" in at least 3 headlines per ad group
+- [ ] 15% off in at least 2 headlines per ad group
+- [ ] Vehicle makes used only in Ad Group 2 (Toyota, Mazda, Hyundai)
+- [ ] Landing page under 150 words total
+- [ ] Stats attribution on landing page
 - [ ] No fear-based language
-- [ ] No cleaning kit references
-- [ ] Offer stated as "automatically applied at checkout" (no code)
-- [ ] "Ends May 30" included in all 3 pieces
+- [ ] Same-day shipping claim does not specify cut-off time
+- [ ] "WiperTech" spelled correctly everywhere
 
 **Review-dependent (Dana evaluates):**
-- [ ] Tone matches brief: practical Aussie-direct, warm, not blokey or corporate
-- [ ] Messaging consistent across all 3 pieces (email, landing page, ads point same direction)
-- [ ] Landing page works as standalone argument for someone with zero WiperTech context
-- [ ] Social ads stop the scroll — would you actually pause on this?
-- [ ] No drift from practical-prep angle into fear or hard-sell territory
+- [ ] Headlines work in any combination (no dependent pairs)
+- [ ] Ad copy differentiates from generic auto-store messaging
+- [ ] Landing page feels relevant to someone who searched "wiper blades [make]"
+- [ ] Trust signals are scannable (not paragraphs)
+- [ ] Vehicle selector / "Find Your Wipers" CTA is unmissably prominent
+- [ ] Tone consistent with Deliverable 1 (practical, Aussie-direct)
 
 **Per-item:**
-- [ ] Email: works for both past buyers and new prospects
-- [ ] Landing page: includes offer details + path to purchase
-- [ ] Social ads: 2-3 genuinely different angles, not rewording of the same line
+- [ ] Ad Group 1 headlines cover: brand, offer, winter timing, quality/fit, social proof
+- [ ] Ad Group 2 headlines cover: vehicle-specific fit, brand, offer
+- [ ] Ad Group 3 headlines cover: urgency/replacement, easy fix, offer, shipping speed
+- [ ] Landing page matches ad messaging closely (Quality Score alignment)
 
 ---
 
@@ -131,8 +158,8 @@ Strategist approval: [ ] Approved / [ ] Redirect — see notes below
 ## Escalation Decisions
 *Sofia writes decisions here when Designer or Copywriter escalates.*
 
-### E1 — 2pm shipping cut-off (escalated by Dana)
-**Decision:** Remove "order before 2pm" — we don't have confirmed cut-off time. Use general "same-day shipping" claim (matches email wording). Logged as Known Gap G3 for client confirmation.
+### E1 — AG2 description strategy (escalated by Dana)
+**Decision:** Keep the 3-group structure. Make AG2 descriptions vehicle-agnostic — let the headlines do the make-matching. Replace D1 with a fit-focused description that works for any vehicle search. This avoids diluting relevance when Google shows Toyota-searchers a description mentioning Mazda.
 
-### E2 — Stats attribution on landing page (escalated by Dana)
-**Decision:** Add light attribution to landing page social proof section: "Based on WiperTech.com.au reviews and sales data." Email does not need attribution (audience is existing customers). This applies to landing page only (cold traffic from paid ads).
+### E2 — Superlative pattern recurring (escalated by Dana)
+**Decision:** Added to Global Constraints: "No unsubstantiated superlatives (Best, Most Trusted, #1, Best-Rated). Use stat-based claims instead." This should be caught at self-check going forward.

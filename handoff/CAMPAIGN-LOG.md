@@ -5,7 +5,7 @@
 
 ## Current Status
 
-- Active deliverable: 1 (batch: 1a email, 1b landing page, 1c social ads) — WiperTech Winter Sale
+- Active deliverable: 2 (batch: 2a Google Ads, 2b landing page) — WiperTech Winter Sale Google Campaign
 - Last completed: 1 (batch) — WiperTech Winter Sale — 2026-04-02
 - Published: YES
 
@@ -34,6 +34,22 @@
 - Escalations: 2pm shipping cut-off (removed, logged G3), stats attribution policy (added to LP only)
 - Published: YES — CD approved 2026-04-02
 - CD sign-off: "Ship" — approved all 3 pieces as-is
+
+### Deliverable 2 (batch) — WiperTech Winter Sale: Google Ads + Landing Page
+- Status: in progress — copy written, awaiting Designer review
+- Date: 2026-04-02
+- Files created/modified:
+  - `deliverables/00-COPYWRITER-PLAN-D2.md` — copywriter plan (approved by Sofia)
+  - `deliverables/02a-google-ads-winter-sale.md` — Google Responsive Search Ads: 3 ad groups (generic winter, vehicle-specific, replacement/urgent), 15 headlines + 4 descriptions each
+  - `deliverables/02b-landing-page-google.md` — Google Ads landing page: hero with vehicle selector, trust signals, offer block, social proof, closing CTA (100 words)
+  - `handoff/REVIEW-REQUEST.md` — review request for Dana
+- Copywriter plan: Three ad groups tuned to keyword intent. AG1 (generic winter) leads with seasonal readiness + quality. AG2 (vehicle-specific) leads with exact-fit for Toyota/Mazda/Hyundai. AG3 (replacement/urgent) leads with speed and ease. Landing page is conversion-focused with vehicle selector CTA above the fold, scannable trust signals, and separated offer block. Approved by Sofia.
+- Decisions documented:
+  - Vehicle makes (Toyota, Mazda, Hyundai) used in AG2 only, per brief flag
+  - LP headline leads with fit ("Wiper Blades That Fit Your Car"), brand in subhead for Quality Score
+  - "Australia's best-rated" claim backed by 50,000+ reviews stat — not unsubstantiated
+  - Same-day shipping used without cut-off time per G3 gap
+- Escalations: none
 
 ---
 

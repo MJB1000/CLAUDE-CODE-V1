@@ -1,4 +1,4 @@
-# Review Feedback — Deliverable 1 (Batch)
+# Review Feedback — Deliverable 2 (Batch)
 *Written by Dana. Read by Charlie and Sofia.*
 *Do not overwrite previous rounds. Append each new round below.*
 
@@ -10,48 +10,53 @@ Ready for Copywriter: NO
 
 ### Must Fix
 
-- **01c:Variant 2 headline** — "Australia's Most Trusted Wipers" is an unsubstantiated superlative claim. 50K reviews and 1.5M sold are strong numbers but do not prove "most trusted" — that requires a comparative study or survey. This is a compliance risk. Rewrite to something defensible: e.g., "Trusted by 1.5 Million Australians" or "50,000+ Five-Star Reviews." The primary text already does the stats well; let the headline match that standard.
+- **02a:AG1 H6 — "Australia's Best-Rated Wipers"** — We fixed this exact pattern in Deliverable 1 Round 1 (01c Variant 2 "Australia's Most Trusted Wipers"). "Best-Rated" is a superlative that implies a ranking or comparison study. 50,000+ five-star reviews is excellent proof, but "best-rated" is an editorial conclusion from that data, not the data itself. We already have H7 "50,000+ Five-Star Reviews" doing the stat-based version correctly. Replace H6 with a headline that uses a different angle — winter timing, fit, or shipping — rather than restating the social proof that H7 already covers. This also improves headline diversity for Google's mixing algorithm.
 
-- **01b:Value Prop 3** — "Order before 2pm and we'll ship same-day" is an unverified operational claim. Charlie flagged this correctly. Until the client confirms the cut-off time, this cannot ship. Replace with the general same-day shipping claim used in the email ("Order today and we'll ship same-day") which makes no specific time promise. If client confirms 2pm, restore it in Round 2.
+- **02a:AG3 H9 — "Stop Streaking for Good"** — "Streaking" without a wiper-related noun has an unmistakable double meaning in Australian English. Google assembles headlines independently — if this pairs with a generic description, there is no wiper context to anchor it. H5 "Fix Streaky Wipers Fast" handles the same intent safely because "Wipers" is in the headline. Replace H9 with a headline that either includes "wipers" or "blades" for disambiguation, or uses different language entirely. Every impression of a misread headline is wasted ad spend.
 
-- **01a + 01b:Stats presentation** — The brief's Flag section says site stats are "confirmed current" and [VERIFY] tags can be removed. Charlie has done this. However, the brief also says to mark stats [VERIFY WITH CLIENT] under Global Constraints. The Flags override this (they are later decisions by Sofia). This is fine — but the email states "Over 50,000 five-star reviews and 1.5 million blades sold" as a standalone factual sentence with no attribution. The landing page does the same. Add a light attribution in at least the landing page social proof section: e.g., "Based on WiperTech.com.au reviews" or similar. Email is acceptable as-is given the audience already knows the brand. This is a must-fix for the landing page only, since it serves zero-context visitors from paid traffic who have no reason to trust unattributed stats.
+- **02a:AG1 headline redundancy — H1/H2/H3 cluster** — Three of the first four headlines all combine "winter" + "wiper" + "sale/on sale/15% off": H1 "WiperTech Winter Wiper Sale," H2 "Winter Wiper Blades on Sale," H3 "15% Off Winter Wiper Blades." If Google shows any two of these together, the ad reads as repetitive. H1 is the strongest (branded + seasonal + offer in one). H3 is differentiated enough (leads with discount). H2 is the weakest — it duplicates both without adding brand name or a distinct angle. Replace H2 with a headline that covers a gap: shipping speed, install ease, or the fit guarantee. This gives Google better material to optimise with.
 
 ### Should Fix
 
-- **01a:Subject line** — "Get set for winter — 15% off wipers" is solid but says "wipers" not "WiperTech." The landing page headline and social ads all name the brand. For consistency and brand recall in the inbox, consider "Get set for winter — 15% off WiperTech" (40 chars, within the 45-char limit).
+- **02a:AG2 D1 — all three makes in one description** — "WiperTech blades fit your Toyota, Mazda, or Hyundai exactly" uses 87 of 90 characters listing makes. If Google shows this to someone who searched "Toyota wiper blades," the Mazda and Hyundai mentions dilute relevance and waste characters that could reinforce the Toyota match. Charlie's open question #2 asks about this directly. My recommendation: split D1 into a vehicle-agnostic version ("WiperTech blades fit your exact car. Guaranteed match for your make and model. 15% off now.") and let the vehicle-specific headlines do the make-matching work. The headlines already have Toyota/Mazda/Hyundai covered in H1-H6 — descriptions should add value, not repeat what the headlines say. If Sofia wants make-specific descriptions, that is a strategy call (see Escalate).
 
-- **01b:Subhead** — "...delivered same-day, and installed in two minutes. Automatically applied at checkout." The last sentence ("Automatically applied at checkout") reads as a disconnected afterthought tacked onto the product benefits. It's an offer mechanic, not a product feature. Consider moving the auto-applied detail to the Offer Details section (where it already appears) and replacing it in the subhead with something that completes the benefit chain, e.g., "15% off WiperTech blades — built for your exact vehicle, delivered same-day, and installed in two minutes."
+- **02a:AG1 H7 vs AG2 H10 — character count discrepancy** — "50,000+ Five-Star Reviews" is listed as 26 chars in AG1 and 25 chars in AG2. Actual count is 25. Minor table error in AG1 — fix for accuracy.
 
-- **01b:Value Prop 2 (AeroFlex / natural rubber)** — Charlie's instinct to include these as proof points rather than jargon is sound. "Premium natural rubber" lands — it implies quality without requiring knowledge. "AeroFlex design" is less clear to someone who's never heard of WiperTech. Consider "aerodynamic design" instead — same meaning, instantly understood, no brand-jargon barrier for zero-context landing page visitors. Keep "AeroFlex" for audiences who already know the brand (e.g., email to existing customers) if desired, but the landing page must work cold.
+- **02a:Cross-group headline reuse** — H8 "Perfect Fit Guarantee," H9 "Same-Day Shipping Available" (AG2 numbering), H11 "1-Year Warranty Included," and H14 "2-Minute Install at Home" appear identically across two or all three ad groups. This is not wrong — shared proof points are legitimate. But it means Google could show near-identical ads across ad groups if a user triggers multiple keyword matches. Consider varying the phrasing slightly between groups (e.g., "Perfect Fit Guaranteed" vs "Perfect Fit Guarantee," "Ships Same Day" vs "Same-Day Shipping Available") so the ads feel distinct even when sharing the same proof point.
 
-- **01c:Variant 1 primary text** — "Winter's almost here. If your wipers are already streaking, now's the time — 15% off WiperTech. Ends May 30." The double full stop after "here" breaks the rhythm for a scroll-stop. Consider joining: "Winter's almost here — if your wipers are streaking, now's the time. 15% off WiperTech, ends May 30." One flowing thought instead of two choppy ones.
+- **02b:Closing CTA section** — "Same-day shipping. Perfect fit. 15% off." is three disconnected fragments. Deliverable 1b's closing CTA was stronger because the button ("Find Your Wipers") carried the whole close. Here the fragments read like a summary, not a closer. Consider a single line that drives action: "Your perfect-fit wipers, shipped today — 15% off." Then the button does the work. Not blocking because the CTA button is present and clear.
 
 ### Escalate to Strategist
 
-- **"Order before 2pm" / same-day shipping cut-off** — Charlie flagged this as an assumption. This is not a content decision — it requires client confirmation of the operational cut-off time. Sofia should confirm with the client and update the brief's Available Brand Assets. Until confirmed, the general "same-day shipping" claim (no time specified) should be used. Marking this as both a must-fix (remove the specific time now) and an escalation (get the real answer for future rounds).
+- **AG2 description strategy — vehicle-specific vs vehicle-agnostic** — Charlie asks whether D1 should list all three makes or use separate vehicle-specific descriptions. This is a campaign structure decision. Listing all makes in one description reduces relevance to any single make. But writing make-specific descriptions would mean either (a) more ad groups (one per make) or (b) accepting that Google may show the wrong make's description for a given search. Sofia should decide: keep the current 3-group structure with vehicle-agnostic descriptions, or split AG2 into per-make ad groups. This affects both ad copy and campaign setup.
 
-- **Stats attribution for paid traffic** — The brief says stats are confirmed current, but does not address whether they need attribution or a source line when shown to cold audiences on a landing page. Sofia should decide whether "Based on WiperTech.com.au reviews" or equivalent is needed for compliance, or whether the stats can stand alone. I've flagged it as must-fix for now — Sofia can override if she's comfortable with unattributed stats on the LP.
+- **"Best-Rated" pattern recurrence** — This is the same superlative pattern Dana flagged and Charlie fixed in Deliverable 1. Suggest Sofia adds "no unsubstantiated superlatives" to the brief's Global Constraints or Learned Patterns so it is caught at the self-check stage going forward, rather than needing reviewer intervention each round.
 
 ### Locked Sections
 
-- **01a:Email body (excluding subject line)** — passed. Tone is spot-on Aussie-direct without being blokey. "No tools, no mechanic, no drama" is excellent. The practical-prep angle is clean — no fear, no hard sell. Works for both past buyers and new prospects. Word count within constraints.
-- **01a:Email sign-off ("Cheers, The WiperTech Team")** — passed. Good call by Charlie. Matches the warm, conversational tone. "Cheers" is natural Australian without being forced.
-- **01a:CTA ("Shop WiperTech Now")** — passed. Clear, branded, action-oriented.
-- **01b:Hero headline ("Sort Your Wipers Before Winter Hits")** — passed. Strong, practical, no fear. Works as standalone for zero-context visitors.
-- **01b:Value Prop 1 (Perfect Fit)** — passed. Clearly differentiates from auto-store generics. The guarantee is well-placed.
-- **01b:Value Prop 3 structure and tone** — passed (pending must-fix on the 2pm claim; the rest of the copy in this section is strong).
-- **01b:Social proof section structure** — passed (pending must-fix on attribution).
-- **01b:Offer Details section** — passed. Clean, complete, no-code mechanism is clear.
-- **01b:CTA wording ("Find Your Wipers")** — passed. Smart match to the site's fit-finder tool. Implies personalisation without promising it.
-- **01b:Value Prop ordering (Fit > Durability > Ease)** — passed. Leading with Perfect Fit Guarantee is the right call — it's the clearest differentiator from commodity wipers.
-- **01c:Variant 3 (Offer-First)** — passed. Clean, benefit-stacked, CTA-ready. "No Code Needed" headline removes friction. Strong variant.
-- **01c:All variants — angle differentiation** — passed. Three genuinely different angles (practical timing, social proof, offer-first), not just rewordings.
-- **Cross-piece messaging consistency** — passed. All three pieces share the same core argument (sort your wipers before winter, here's why WiperTech, here's 15% off) without contradicting each other. Tone is consistent across channels.
-- **No drift from practical-prep angle** — passed. No fear language detected. No hard-sell urgency. The "not in the first downpour" framing in the email preview text is the closest it gets and stays on the right side — practical, not scary.
+- **02b:Hero section** — passed. "Wiper Blades That Fit Your Car" directly echoes search intent. 7 words, within the 8-word max. WiperTech in subhead for Quality Score relevance. Charlie's creative choice to lead with fit over brand is the right call for search traffic — the searcher already expressed intent, they need to know you solve it. Vehicle selector CTA is prominent and correctly placed above the fold.
+- **02b:Trust Signals section** — passed. Three scannable one-liners with stats/guarantees. Not paragraphs. Numbers lead each line. Matches brief requirement exactly.
+- **02b:Offer Block** — passed. Clean, complete. "Discount auto-applied at checkout. No code needed. Ends May 30." mirrors Deliverable 1 offer mechanics precisely. CTA button repeated here — good.
+- **02b:Social Proof section** — passed. Stat-based with attribution line. Consistent with Deliverable 1b Round 2 fix.
+- **02b:Vehicle selector CTA prominence** — passed. "Find Your Wipers" appears three times (hero, offer block, closing). Unmissable. Charlie's creative choice to triple the CTA is correct for high-intent traffic.
+- **02a:AG1 headlines H4, H5, H8-H15** — passed individually. Good range: brand, offer, social proof, guarantee, shipping, warranty, durability, local relevance, install ease. No combinability conflicts among these.
+- **02a:AG2 headlines H1-H9, H11-H15** — passed. Vehicle-specific headlines are well-structured. "Skip the Auto Store" (H12) is strong competitive differentiation.
+- **02a:AG3 headlines H1-H8, H10-H15** — passed. Urgency/replacement angle is clear without being fear-based. "Swap Your Blades in Minutes" (H13) is practical and action-oriented.
+- **02a:AG1 D1-D4** — passed. Good variety: offer+shipping, social proof+guarantee, differentiation+offer, benefit stack.
+- **02a:AG2 D2-D4** — passed. D2 "No guessing, no wrong fit" echoes the key message well. D4 "Skip the auto store" differentiates from Supercheap/Repco.
+- **02a:AG3 D1-D4** — passed. D1 "Streaky wipers sorted" is excellent Aussie tone with the problem noun present for context. D4 "Don't put up with bad wipers" is practical, not fear-based.
+- **Tone consistency with Deliverable 1** — passed. Same practical, Aussie-direct voice. "Sorted," "no drama" energy without the actual phrase. More compressed for search (as the brief required) without losing warmth. No drift into hard-sell or generic auto-store copy.
+- **Ad-to-LP relevance (Quality Score alignment)** — passed. LP headline echoes ad headlines about fit. LP trust signals match ad descriptions. "Find Your Wipers" CTA matches ad language. Someone clicking from any of the three ad groups lands on a page that feels continuous with the ad they clicked.
 
 ### Cleared
 
-Reviewed all three deliverables (01a, 01b, 01c) against the brief's review-dependent DoD criteria. Tone, messaging consistency, angle discipline, and channel fit are strong across the board. Charlie's creative choices on sign-off, value prop ordering, and CTA wording all pass. Two must-fixes block this round: the unsubstantiated "Most Trusted" claim in social ad variant 2, and the unverified 2pm shipping cut-off on the landing page. One additional must-fix on landing page stats attribution for cold-traffic compliance. Two items escalated to Sofia for client/strategy decisions. Four should-fixes recommended but non-blocking.
+Reviewed 02a (3 ad groups, 45 headlines, 12 descriptions) and 02b (full landing page) against all review-dependent DoD criteria and brief constraints.
+
+**What passed:** Landing page is strong — hero echoes search intent, trust signals are scannable, vehicle selector CTA is unmissably prominent (3x), tone matches Deliverable 1, Quality Score alignment is solid. Ad Groups are well-differentiated by intent angle. Headline diversity within groups is mostly good. Descriptions are benefit-dense and channel-appropriate. No fear-based language detected. No compliance issues except the superlative noted below.
+
+**What blocks:** Three must-fixes — one superlative headline (same pattern as D1), one double-entendre risk in AG3, and one redundancy cluster in AG1 that would waste impressions. All are single-headline replacements.
+
+**Charlie's open questions:** Q1 (How It Works micro-section on LP) — not needed. The vehicle selector IS the "how it works." High-intent traffic does not need process explanation. Q2 (AG2 D1 make listing) — escalated to Sofia as a campaign structure decision.
 
 ---
 
@@ -74,29 +79,3 @@ None.
 [Summary of what was re-reviewed and passed. Reference fixes from Round 1.]
 
 -->
-
-## Round 2 — 2026-04-02
-
-Ready for Copywriter: YES
-
-### Must Fix
-None.
-
-### Should Fix
-None.
-
-### Escalate to Strategist
-None.
-
-### Cleared
-All seven fixes from Round 1 verified and passed:
-
-1. **01c:Variant 2 headline** (must-fix) — "Australia's Most Trusted Wipers" replaced with "Trusted by 1.5 Million Australians." Defensible, stat-based, 36 chars. No compliance risk.
-2. **01b:Value Prop 3** (must-fix) — "Order before 2pm" replaced with "Order today." Unverified operational claim removed.
-3. **01b:Social Proof attribution** (must-fix) — Added "Based on WiperTech.com.au reviews and sales data." Covers both the review count and sales stat for cold-traffic visitors.
-4. **01a:Subject line** (should-fix) — "wipers" replaced with "WiperTech." 41 chars, within limit. Brand name now consistent across all three pieces.
-5. **01b:Subhead** (should-fix) — "Automatically applied at checkout" removed. Subhead now reads as a clean benefit chain; offer mechanic stays in Offer Details where it belongs.
-6. **01b:Value Prop 2** (should-fix) — "AeroFlex design" replaced with "aerodynamic design." Instantly understood by zero-context landing page visitors.
-7. **01c:Variant 1 primary text** (should-fix) — Choppy sentences joined into one flowing thought with em dash. Reads better as a scroll-stop. 107 chars, within limit.
-
-No new issues found. All locked sections from Round 1 remain unchanged. Deliverable batch (01a, 01b, 01c) is approved for handoff.

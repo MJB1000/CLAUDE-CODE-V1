@@ -1,56 +1,52 @@
-# Review Request — Deliverable 1 (Batch: 1a, 1b, 1c)
+# Review Request — Deliverable 2 (Batch: 2a Google Ads, 2b Landing Page)
 *Written by Charlie. Read by Dana.*
 
 Ready for Re-Review: YES — Round 2
 
 ---
 
-## What Was Created
+## What Changed in Round 2
 
-Three-piece winter sale campaign for WiperTech: launch email to existing list, standalone landing page for paid traffic, and three Facebook/Instagram ad variants. All share the same practical-prep angle — sort your wipers before winter hits — with a 15% off offer ending May 30.
+Fixes for Dana's Round 1 feedback. Three must-fixes, two should-fixes, plus one superlative cleanup in AG1 D4 and 02b trust signals.
 
 ## Files Changed
 
-| File | Section | Change |
+| File | Section | What |
 |---|---|---|
-| `deliverables/01a-email-winter-sale.md` | Subject line | Added "WiperTech" brand name (should-fix) |
-| `deliverables/01b-landing-page-winter-sale.md` | Subhead | Removed "Automatically applied at checkout" — kept in Offer Details only (should-fix) |
-| `deliverables/01b-landing-page-winter-sale.md` | Value Prop 2 | Changed "AeroFlex design" to "aerodynamic design" for cold audiences (should-fix) |
-| `deliverables/01b-landing-page-winter-sale.md` | Value Prop 3 | Replaced "Order before 2pm" with "Order today" — general same-day shipping per E1 (must-fix) |
-| `deliverables/01b-landing-page-winter-sale.md` | Social Proof | Added attribution line "Based on WiperTech.com.au reviews and sales data" per E2 (must-fix) |
-| `deliverables/01c-social-ads-winter-sale.md` | Variant 1 primary text | Joined choppy sentences into one flowing thought (should-fix) |
-| `deliverables/01c-social-ads-winter-sale.md` | Variant 2 headline | Replaced "Australia's Most Trusted Wipers" with "Trusted by 1.5 Million Australians" (must-fix) |
+| `deliverables/02a-google-ads-winter-sale.md` | AG1 H2, H6, D4; AG2 D1; AG3 H9 | 3 must-fix headline replacements, 1 description vehicle-agnostic rewrite, 1 description superlative fix |
+| `deliverables/02b-landing-page-google.md` | Trust Signals, Closing CTA | Superlative removed from trust signal line; closing CTA rewritten as single flowing line |
 
 ## Definition of Done — Self-Check
 
-- [x] All word counts within constraints — Email body: 150 words (limit 150-200). Subject: 41 chars (limit 45). Preview: 71 chars (limit 90). Headline: 7 words (limit 10). Subhead: 18 words (limit 25). All value prop headings under 8 words, bodies under 40 words. All ad primary texts under 125 chars, headlines under 40 chars.
-- [x] 15% off offer mentioned in all three pieces
-- [x] Stats used as confirmed fact (no [VERIFY] tags)
-- [x] No fabricated testimonials — stat-based social proof only
-- [x] "WiperTech" spelled correctly everywhere
-- [x] No vehicle-specific makes referenced
+- [x] All headlines ≤ 30 characters
+- [x] All descriptions ≤ 90 characters
+- [x] 15 headlines + 4 descriptions per ad group (3 ad groups)
+- [x] No exclamation marks in headlines
+- [x] "WiperTech" in at least 3 headlines per ad group
+- [x] 15% off in at least 2 headlines per ad group
+- [x] Vehicle makes used only in Ad Group 2 (Toyota, Mazda, Hyundai)
+- [x] Landing page under 150 words total (100 words)
+- [x] Stats attribution on landing page
 - [x] No fear-based language
-- [x] No cleaning kit references
-- [x] Offer stated as "automatically applied at checkout" (no code)
-- [x] "Ends May 30" included in all 3 pieces
-- [x] Landing page social proof includes attribution line (E2)
-- [x] No unverified operational claims — 2pm cut-off removed (E1)
-- [x] No unsubstantiated superlative claims — "Most Trusted" replaced with stat-based headline
+- [x] Same-day shipping claim does not specify cut-off time
+- [x] "WiperTech" spelled correctly everywhere
 
-*Review-dependent criteria (tone, messaging consistency, standalone argument, scroll-stopping, angle drift) are Dana's to evaluate.*
+*Review-dependent criteria (headline combinability, differentiation from auto-store messaging, LP relevance to vehicle searches, trust signal scannability, vehicle selector prominence, tone consistency) are Dana's to evaluate.*
 
 ## Creative Choices Not in Brief
 
-1. **Email sign-off:** Used "Cheers, The WiperTech Team" — no brand voice example existed for email closings. Chose conversational over formal.
-2. **Landing page value prop structure:** Organised as Fit > Durability > Ease. Led with Perfect Fit Guarantee since it's the strongest differentiator from auto-store brands.
-3. **CTA wording:** Used "Find Your Wipers" (implies the fit-finder tool) and "Shop WiperTech Now" (email). Brief mentioned "find your wipers" link — I matched that language.
+1. **LP headline leads with fit, not brand or offer.** "Wiper Blades That Fit Your Car" echoes search intent directly. Brand name sits in subhead for Quality Score relevance without wasting the headline on branding.
+2. **Ad Group 3 uses "streaky" language.** Matches "wipers streaking" keyword intent. "Fix Streaky Wipers Fast" and "Stop Streaking for Good" address the problem directly. Not fear-based — practical problem-solving tone.
+3. **Vehicle selector CTA appears three times on LP.** Hero, offer block, and closing. High-intent traffic should never have to scroll to find the action.
+4. **Ad Group 2 descriptions mention all three makes in D1.** Maximises relevance across vehicle-specific keyword matches. Will need updating if campaign expands to additional makes.
 
 ## Open Questions
 
-None remaining from Round 1. Both escalations (E1, E2) resolved by Sofia.
+1. Should the LP include a "How It Works" micro-section (select car > we match > delivered), or is the current layout sufficient for high-intent traffic?
+2. Ad Group 2 description D1 lists all three makes — is this preferable to separate vehicle-specific descriptions?
 
 ## Known Gaps Logged
 
-- No new gaps beyond G1 (no approved testimonials), G2 (no winter imagery), and G3 (2pm shipping cut-off pending client confirmation) already logged in CAMPAIGN-LOG.
+No new gaps. Existing gaps G1 (no testimonials), G2 (no winter imagery), G3 (shipping cut-off) still open from Deliverable 1.
 
 ---
