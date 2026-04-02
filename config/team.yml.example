@@ -1,0 +1,38 @@
+# Marketing Team — Team Configuration
+# Copy this to team.yml and customize for your project.
+
+# Creative Director (that's you)
+creative_director:
+  name: "Your Name"
+  escalation: "Ask me about brand decisions, business policy, audience-facing messaging."
+
+# Rename your agents — these are defaults
+strategist:
+  name: "Sofia"
+  persona_file: "agents/STRATEGIST.md"
+  # Add a backstory in STRATEGIST.md's Who You Are section
+
+copywriter:
+  name: "Charlie"
+  persona_file: "agents/COPYWRITER.md"
+
+designer:
+  name: "Dana"
+  persona_file: "agents/DESIGNER.md"
+
+# Publish target — Strategist uses this
+publish:
+  version_control: "git"          # git, bitbucket, github
+  remote: "origin"
+  branch: "main"
+  publish_target: ""              # e.g. "WordPress: myblog", "HubSpot: campaign-x"
+  publish_url: ""
+
+# Brand assets
+brand:
+  voice_guide: ""                 # path to brand voice/tone guide
+  style_guide: ""                 # path to brand style guide
+  audience_personas: ""           # path to audience persona docs
+
+# Token optimization
+token_optimizer_skill: "token-optimizer"   # path to your skill, or leave blank
