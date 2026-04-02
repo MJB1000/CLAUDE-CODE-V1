@@ -1,29 +1,32 @@
 # Campaign Log
-*Shared record. Strategist owns. All roles update.*
+*Shared record. Sofia owns. All roles update.*
 
 ---
 
 ## Current Status
 
-- Active deliverable: [N — description]
-- Last completed: [N — description] — [date]
-- Published: YES / NO
+- Active deliverable: 1 (batch: 1a email, 1b landing page, 1c social ads) — WiperTech Winter Sale
+- Last completed: None (first deliverable)
+- Published: NO
 
 ---
 
 ## Deliverable History
 
-### Deliverable [N] — [Description]
-- Status: [in progress / complete / blocked]
-- Date: [date]
+### Deliverable 1 (batch) — WiperTech Winter Sale Campaign
+- Status: in progress — brief written, awaiting Copywriter plan
+- Date: 2026-04-02
 - Files created/modified:
-  - `file.md` — [what changed]
-- Copywriter plan: [one sentence summary of approach]
+  - `handoff/STRATEGY-BRIEF.md` — brief written by Sofia
+- Copywriter plan: [pending]
 - Decisions documented:
-  - [Decision and rationale]
-- Designer feedback summary: [one sentence]
-- Escalations: [any escalations and their resolution, or "none"]
-- Published: YES / NO — [platform/channel] — [date]
+  - CD direction: 15% off, practical-prep angle, no existing assets
+  - Sale is wiper blades only (not cleaning kits)
+  - No fear-based messaging — practical and warm
+  - Stats from website are usable but must be tagged [VERIFY WITH CLIENT]
+- Designer feedback summary: [pending]
+- Escalations: none
+- Published: NO
 
 ---
 
@@ -33,11 +36,9 @@
 
 | ID | Deliverable | Content | Owner | Requested | Status | Cleared |
 |---|---|---|---|---|---|---|
-| C1 | [N] | [e.g., "47% faster close" stat] | [Data team] | [date] | Pending | — |
-
-*When an external team clears content, Strategist updates Status to "Cleared" and
-inserts the verified content into the deliverable. If rejected, Strategist updates
-the deliverable to remove or replace the content and logs to Known Gaps.*
+| C1 | 1 | 15% off mechanism (code vs auto-applied vs link) | Client | 2026-04-02 | Pending | — |
+| C2 | 1 | Sale end date | Client | 2026-04-02 | Pending | — |
+| C3 | 1 | Exact current review count (50,000+?) and blades sold (1.5M+?) | Client | 2026-04-02 | Pending | — |
 
 ---
 
@@ -47,7 +48,8 @@ the deliverable to remove or replace the content and logs to Known Gaps.*
 
 | ID | Description | Logged | Status | Resolved |
 |---|---|---|---|---|
-| G1 | [Description of gap] | [date] | Open | — |
+| G1 | No approved customer testimonials for any campaign | 2026-04-02 | Open | — |
+| G2 | No winter-specific imagery or creative assets | 2026-04-02 | Open | — |
 
 ---
 
@@ -57,16 +59,18 @@ the deliverable to remove or replace the content and logs to Known Gaps.*
 
 | Decision | Date |
 |---|---|
-| [What was decided and why] | [date] |
+| Winter sale is 15% off, wiper blades only | 2026-04-02 |
+| Angle: practical prep ("get ready before winter"), not fear or hard-sell | 2026-04-02 |
+| No existing customer testimonials — use stat-based social proof only | 2026-04-02 |
 
 ---
 
 ## Learned Patterns
 
-*Accumulated lessons from completed deliverables. Strategist reads at brief-writing time.*
+*Accumulated lessons from completed deliverables. Sofia reads at brief-writing time.*
 
 | Pattern | Source | Deliverable |
 |---|---|---|
-| [What was learned — e.g., "Always mark social proof as placeholder"] | [Who caught it — e.g., "Dana Round 1"] | [N] |
+| [First campaign — no patterns yet] | — | — |
 
 ---
