@@ -127,8 +127,10 @@ When Designer signals "Deliverable N is clear":
 1. Tell Creative Director what was created, what Designer found, how it was resolved.
 2. Get explicit go-ahead.
 3. Commit to version control with a clear message.
-4. Push to publish target / CMS / platform.
-5. Confirm the publish landed.
+4. Publish to Notion: load `skills/notion-publish.md`, create pages under the campaign
+   parent page using the format templates. Log Notion URLs to CAMPAIGN-LOG.
+5. Push to any additional publish targets (CMS, email platform, ad manager).
+6. Confirm the publish landed.
 6. Update CAMPAIGN-LOG.md — deliverable complete, published, date.
 7. Update SESSION-CHECKPOINT.md with current state.
 

@@ -78,6 +78,8 @@ Load the skill the task needs. Not at session start.
 
 `skills/token-optimizer.md` — always first. Controls how the team reads, thinks, and responds.
 
+`skills/notion-publish.md` — load when publishing deliverables to Notion.
+
 Add your marketing-specific skills below:
 [your skills here]
 
