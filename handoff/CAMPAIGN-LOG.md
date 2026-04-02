@@ -14,16 +14,22 @@
 ## Deliverable History
 
 ### Deliverable 1 (batch) — WiperTech Winter Sale Campaign
-- Status: in progress — brief written, awaiting Copywriter plan
+- Status: in progress — copy written, awaiting Designer review
 - Date: 2026-04-02
 - Files created/modified:
   - `handoff/STRATEGY-BRIEF.md` — brief written by Sofia
-- Copywriter plan: [pending]
+  - `deliverables/00-COPYWRITER-PLAN.md` — copywriter plan (approved by Sofia)
+  - `deliverables/01a-email-winter-sale.md` — email: subject, preview, body, CTA
+  - `deliverables/01b-landing-page-winter-sale.md` — landing page: headline, subhead, 3 value props, social proof, 2x CTA, offer details
+  - `deliverables/01c-social-ads-winter-sale.md` — 3 social ad variants (practical timing, social proof, offer-first)
+  - `handoff/REVIEW-REQUEST.md` — review request for Dana
+- Copywriter plan: Practical-prep angle across all pieces. "Sort your wipers before winter hits." Email opens with timing hook, one differentiator, offer. Landing page leads with fit guarantee, then durability, then ease. Three ad variants test timing, social proof, and offer-first angles. Approved by Sofia.
 - Decisions documented:
   - CD direction: 15% off, practical-prep angle, no existing assets
   - Sale is wiper blades only (not cleaning kits)
   - No fear-based messaging — practical and warm
-  - Stats from website are usable but must be tagged [VERIFY WITH CLIENT]
+  - Stats confirmed current by CD — use as fact, no verification tags needed
+  - Offer: auto-applied at checkout, no promo code, ends May 30
 - Designer feedback summary: [pending]
 - Escalations: none
 - Published: NO
@@ -36,9 +42,9 @@
 
 | ID | Deliverable | Content | Owner | Requested | Status | Cleared |
 |---|---|---|---|---|---|---|
-| C1 | 1 | 15% off mechanism (code vs auto-applied vs link) | Client | 2026-04-02 | Pending | — |
-| C2 | 1 | Sale end date | Client | 2026-04-02 | Pending | — |
-| C3 | 1 | Exact current review count (50,000+?) and blades sold (1.5M+?) | Client | 2026-04-02 | Pending | — |
+| C1 | 1 | 15% off mechanism (code vs auto-applied vs link) | Client | 2026-04-02 | Cleared | 2026-04-02 — auto-applied at checkout |
+| C2 | 1 | Sale end date | Client | 2026-04-02 | Cleared | 2026-04-02 — ends May 30 |
+| C3 | 1 | Exact current review count and blades sold | Client | 2026-04-02 | Cleared | 2026-04-02 — stats confirmed current |
 
 ---
 
@@ -50,6 +56,7 @@
 |---|---|---|---|---|
 | G1 | No approved customer testimonials for any campaign | 2026-04-02 | Open | — |
 | G2 | No winter-specific imagery or creative assets | 2026-04-02 | Open | — |
+| G3 | Same-day shipping cut-off time unconfirmed (2pm?) — needs client input | 2026-04-02 | Open | — |
 
 ---
 

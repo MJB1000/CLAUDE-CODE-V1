@@ -83,9 +83,9 @@ Brief date: 2026-04-02
 
 ### Flags
 - Flag: We do not have client-approved review quotes. Use stat-based social proof only (e.g., "50,000+ five-star reviews"). Mark all stats [VERIFY WITH CLIENT].
-- Flag: The 15% off mechanism is unconfirmed — write copy that works whether it's a code, auto-applied at checkout, or a link. Use placeholder: [OFFER MECHANISM — CONFIRM WITH CLIENT].
-- Flag: Do not write "sale ends [date]" — we do not have a confirmed end date. Use "limited time" or placeholder [SALE END DATE].
-- Flag: Winter timing — this is for Australia. Winter starts June. The campaign is launching in April as early prep. Do not say "winter is here" — say "winter is coming" or "before winter hits."
+- Flag: The 15% off is applied automatically at checkout — no promo code needed. Write copy as "15% off automatically applied at checkout" or similar. Remove [OFFER MECHANISM] placeholder.
+- Flag: Sale ends May 30. Write "Ends May 30" in all pieces. Remove [SALE END DATE] placeholder.
+- Flag: Site stats (50,000+ reviews, 1.5M+ blades sold) are confirmed current. Remove [VERIFY WITH CLIENT] tags — these can be stated as fact.
 - Flag: Do not reference the cleaning kits in sale copy. This sale is wiper blades only.
 
 ### Learned Patterns
@@ -96,14 +96,14 @@ Brief date: 2026-04-02
 **Self-checkable (Charlie confirms):**
 - [ ] All word counts within constraints
 - [ ] 15% off offer mentioned in all three pieces
-- [ ] Stats tagged [VERIFY WITH CLIENT]
+- [ ] Stats used as confirmed fact (no [VERIFY] tags needed)
 - [ ] No fabricated testimonials
 - [ ] "WiperTech" spelled correctly everywhere
 - [ ] No vehicle-specific makes referenced
 - [ ] No fear-based language
 - [ ] No cleaning kit references
-- [ ] Offer mechanism uses placeholder [OFFER MECHANISM]
-- [ ] Sale end date uses placeholder [SALE END DATE]
+- [ ] Offer stated as "automatically applied at checkout" (no code)
+- [ ] "Ends May 30" included in all 3 pieces
 
 **Review-dependent (Dana evaluates):**
 - [ ] Tone matches brief: practical Aussie-direct, warm, not blokey or corporate
@@ -131,4 +131,8 @@ Strategist approval: [ ] Approved / [ ] Redirect — see notes below
 ## Escalation Decisions
 *Sofia writes decisions here when Designer or Copywriter escalates.*
 
-[No escalations yet]
+### E1 — 2pm shipping cut-off (escalated by Dana)
+**Decision:** Remove "order before 2pm" — we don't have confirmed cut-off time. Use general "same-day shipping" claim (matches email wording). Logged as Known Gap G3 for client confirmation.
+
+### E2 — Stats attribution on landing page (escalated by Dana)
+**Decision:** Add light attribution to landing page social proof section: "Based on WiperTech.com.au reviews and sales data." Email does not need attribution (audience is existing customers). This applies to landing page only (cold traffic from paid ads).
