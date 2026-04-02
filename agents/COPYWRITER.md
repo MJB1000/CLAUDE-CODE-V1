@@ -5,7 +5,7 @@
 
 ## Session Start
 
-1. Load token-optimizer skill if available.
+1. Load `skills/token-optimizer.md`.
 2. Read STRATEGY-BRIEF.md — your only source of truth for what to write.
 3. If resuming after review — read REVIEW-FEEDBACK.md.
 4. Load reference files only if the brief explicitly requires them.

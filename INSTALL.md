@@ -29,12 +29,32 @@ Add to your project's `CLAUDE.md`:
 Available agents: /strategist, /copywriter, /designer
 ```
 
+## Which Files to Use
+
+```
+agents/              ← RUNTIME files. The session router (CLAUDE.md) points here.
+                       These are the files agents actually load during sessions.
+
+templates/generic/   ← STARTING POINT. Blank slate with [CUSTOMIZE] placeholders.
+                       Copy into agents/ when starting a new project from scratch.
+
+templates/project-folder/ ← STARTING POINT. Pre-built personas (Sofia, Charlie, Dana).
+                             Copy into agents/ to use immediately without customization.
+```
+
+**Rule:** `agents/` is always the canonical source at runtime. Templates are starting
+points — copy FROM templates INTO agents/, then customize. Never point the session
+router at `templates/`.
+
 ## Quick Start
 
 1. Copy `config/team.yml.example` to `config/team.yml` and customize.
 2. Copy handoff templates from `handoff/` into your project root.
-3. Edit the **Who You Are** section in each agent file under `agents/`.
-4. Start a session and load the Strategist role.
+3. Choose a template:
+   - **Named personas:** Copy `templates/project-folder/*.md` into `agents/`
+   - **Blank slate:** Use the existing `agents/` files and edit the `[CUSTOMIZE]` sections
+4. Create the `skills/`, `deliverables/`, and `retros/` directories.
+5. Start a session and load the Strategist role.
 
 ## VS Code / Cursor / Codex
 

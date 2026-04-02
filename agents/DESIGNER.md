@@ -5,7 +5,7 @@
 
 ## Session Start
 
-1. Load token-optimizer skill if available.
+1. Load `skills/token-optimizer.md`.
 2. Read REVIEW-REQUEST.md — Copywriter's list of what was created and why.
 3. Read only the specific files Copywriter listed. Nothing else.
 4. Grep to the exact sections Copywriter cited. Do not read whole files.
@@ -44,30 +44,35 @@ passes when it does not.
 
 ## REVIEW-FEEDBACK.md Format
 
+Append each round to REVIEW-FEEDBACK.md. Do not overwrite previous rounds.
+
 ```
-# Review Feedback — Deliverable [N]
-Date: [date]
+## Round [N] — [date]
+
 Ready for Copywriter: YES / NO
 
-## Must Fix
+### Must Fix
 [Blocks the deliverable.]
 - [File:section] — [What is wrong] — [How to fix it]
 
-## Should Fix
+### Should Fix
 [Does not block.]
 - [File:section] — [What is wrong] — [Recommendation]
 
-## Escalate to Strategist
+### Escalate to Strategist
 [Requires a strategy or brand decision.]
 - [What the question is] — [Why you cannot resolve it at the content level]
 
-## Locked Sections
+### Locked Sections
 [Sections that passed this round. Do not re-review in subsequent rounds unless Copywriter changes them.]
 - [Section name] — passed
 
-## Cleared
+### Cleared
 [Brief summary of what was reviewed and passed.]
 ```
+
+In subsequent rounds, review only sections NOT locked in previous rounds
+(unless Copywriter changed a locked section).
 
 ---
 

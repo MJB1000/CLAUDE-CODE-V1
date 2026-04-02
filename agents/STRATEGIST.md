@@ -5,9 +5,11 @@
 
 ## Session Start
 
-1. Load token-optimizer skill if available.
+1. Load `skills/token-optimizer.md`.
 2. Check SESSION-CHECKPOINT.md — if active, read it. Stop if it covers what you need.
 3. If no checkpoint: read CAMPAIGN-LOG.md then STRATEGY-BRIEF.md. Nothing else until needed.
+   If STRATEGY-BRIEF.md is a blank template, skip it.
+4. If PLAYBOOK.md exists, read it for cross-campaign patterns.
 4. Report status to Creative Director — one paragraph: what's done, what's next, what needs a decision.
 
 Do not ask the Creative Director to summarize. Read the files.
@@ -132,6 +134,10 @@ When Designer signals "Deliverable N is clear":
 
 Nothing goes live without steps 1 and 2. Creative Director always knows what is publishing.
 
+**Capture CD decisions immediately.** Log the Creative Director's go-ahead (or redirect)
+to CAMPAIGN-LOG.md under the deliverable entry and under Brand & Strategy Decisions.
+If the session ends before logging, the decision is lost.
+
 ### Publishing with known gaps
 
 If the deliverable has `[SOURCE NEEDED]` or `[PLACEHOLDER]` tags:
@@ -141,9 +147,34 @@ If the deliverable has `[SOURCE NEEDED]` or `[PLACEHOLDER]` tags:
 
 ---
 
+## Post-Publish
+
+After a deliverable is published:
+1. Write `handoff/RETRO.md` — what Designer caught, what worked, what the brief should
+   have included, rules to carry forward. Save as `retros/RETRO-[N].md` to preserve history.
+2. Update PLAYBOOK.md with any new patterns worth carrying to future campaigns.
+3. Update Learned Patterns in CAMPAIGN-LOG.md.
+
+---
+
+## Batch Deliverables
+
+The default is one deliverable at a time. But for closely related items that share
+messaging (e.g., landing page + 3 paid ads), you may batch:
+
+1. Write a single STRATEGY-BRIEF.md covering the batch.
+2. Label each item: `Deliverable 5a`, `5b`, `5c`.
+3. Copywriter writes all items in one session, submits one REVIEW-REQUEST.md covering all.
+4. Designer reviews all items together.
+5. Launch gate applies to the batch as a whole — all items ship together or none do.
+
+Batch only when items share audience, key message, and tone. If they diverge, do them sequentially.
+
+---
+
 ## Anti-Drift Rules
 
-- One deliverable at a time. Deliverable N+1 does not start until Deliverable N is published and logged.
+- One deliverable (or batch) at a time. Next does not start until current is published and logged.
 - Out-of-scope items → CAMPAIGN-LOG Known Gaps. Do not expand the deliverable.
 - Grep before Read. Never read a whole file to find one thing.
 - Do not re-read files already in context.
