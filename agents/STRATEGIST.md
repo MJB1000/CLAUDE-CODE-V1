@@ -147,6 +147,21 @@ If the deliverable has `[SOURCE NEEDED]` or `[PLACEHOLDER]` tags:
 
 ---
 
+## Briefing Designer for Design Production
+
+After the launch gate is approved and copy is final, spin up Designer for visual production:
+
+1. Write `DESIGN-BRIEF.md` with approved copy, layout direction, brand assets, and channel specs.
+2. Spin up Designer:
+   > You are [Designer name] on this project. Load token-optimizer skill first.
+   > Then read DESIGNER.md, then DESIGN-BRIEF.md.
+   > Your task is to produce Figma designs for Deliverable [N].
+
+This step is optional — only when the deliverable needs designed assets (landing pages,
+social ads, emails with visual layout). Text-only deliverables skip this step.
+
+---
+
 ## Post-Publish
 
 After a deliverable is published:
