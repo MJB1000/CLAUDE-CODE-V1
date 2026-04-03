@@ -1,55 +1,29 @@
 # Campaign Log
-*Shared record. Sofia owns. All roles update.*
+*Shared record. Strategist owns. All roles update.*
 
 ---
 
 ## Current Status
 
-- Active deliverable: 2 (batch: 2a Google Ads, 2b landing page) — WiperTech Winter Sale Google Campaign
-- Last completed: 1 (batch) — WiperTech Winter Sale — 2026-04-02
-- Published: YES
+- Active deliverable: [N — description]
+- Last completed: [N — description] — [date]
+- Published: YES / NO
 
 ---
 
 ## Deliverable History
 
-### Deliverable 1 (batch) — WiperTech Winter Sale Campaign
-- Status: complete — CD approved, published
-- Date: 2026-04-02
+### Deliverable [N] — [Description]
+- Status: [in progress / complete / blocked]
+- Date: [date]
 - Files created/modified:
-  - `handoff/STRATEGY-BRIEF.md` — brief written by Sofia
-  - `deliverables/00-COPYWRITER-PLAN.md` — copywriter plan (approved by Sofia)
-  - `deliverables/01a-email-winter-sale.md` — email: subject, preview, body, CTA
-  - `deliverables/01b-landing-page-winter-sale.md` — landing page: headline, subhead, 3 value props, social proof, 2x CTA, offer details
-  - `deliverables/01c-social-ads-winter-sale.md` — 3 social ad variants (practical timing, social proof, offer-first)
-  - `handoff/REVIEW-REQUEST.md` — review request for Dana
-- Copywriter plan: Practical-prep angle across all pieces. "Sort your wipers before winter hits." Email opens with timing hook, one differentiator, offer. Landing page leads with fit guarantee, then durability, then ease. Three ad variants test timing, social proof, and offer-first angles. Approved by Sofia.
+  - `file.md` — [what changed]
+- Copywriter plan: [one sentence summary of approach]
 - Decisions documented:
-  - CD direction: 15% off, practical-prep angle, no existing assets
-  - Sale is wiper blades only (not cleaning kits)
-  - No fear-based messaging — practical and warm
-  - Stats confirmed current by CD — use as fact, no verification tags needed
-  - Offer: auto-applied at checkout, no promo code, ends May 30
-- Designer feedback summary: Round 1 — 3 must-fix (unsubstantiated superlative, unverified shipping time, stats attribution), 4 should-fix (brand in subject, subhead cleanup, jargon removal, ad rhythm). Round 2 — all clear.
-- Escalations: 2pm shipping cut-off (removed, logged G3), stats attribution policy (added to LP only)
-- Published: YES — CD approved 2026-04-02
-- CD sign-off: "Ship" — approved all 3 pieces as-is
-
-### Deliverable 2 (batch) — WiperTech Winter Sale: Google Ads + Landing Page
-- Status: in progress — copy written, awaiting Designer review
-- Date: 2026-04-02
-- Files created/modified:
-  - `deliverables/00-COPYWRITER-PLAN-D2.md` — copywriter plan (approved by Sofia)
-  - `deliverables/02a-google-ads-winter-sale.md` — Google Responsive Search Ads: 3 ad groups (generic winter, vehicle-specific, replacement/urgent), 15 headlines + 4 descriptions each
-  - `deliverables/02b-landing-page-google.md` — Google Ads landing page: hero with vehicle selector, trust signals, offer block, social proof, closing CTA (100 words)
-  - `handoff/REVIEW-REQUEST.md` — review request for Dana
-- Copywriter plan: Three ad groups tuned to keyword intent. AG1 (generic winter) leads with seasonal readiness + quality. AG2 (vehicle-specific) leads with exact-fit for Toyota/Mazda/Hyundai. AG3 (replacement/urgent) leads with speed and ease. Landing page is conversion-focused with vehicle selector CTA above the fold, scannable trust signals, and separated offer block. Approved by Sofia.
-- Decisions documented:
-  - Vehicle makes (Toyota, Mazda, Hyundai) used in AG2 only, per brief flag
-  - LP headline leads with fit ("Wiper Blades That Fit Your Car"), brand in subhead for Quality Score
-  - "Australia's best-rated" claim backed by 50,000+ reviews stat — not unsubstantiated
-  - Same-day shipping used without cut-off time per G3 gap
-- Escalations: none
+  - [Decision and rationale]
+- Designer feedback summary: [one sentence]
+- Escalations: [any escalations and their resolution, or "none"]
+- Published: YES / NO — [platform/channel] — [date]
 
 ---
 
@@ -59,9 +33,11 @@
 
 | ID | Deliverable | Content | Owner | Requested | Status | Cleared |
 |---|---|---|---|---|---|---|
-| C1 | 1 | 15% off mechanism (code vs auto-applied vs link) | Client | 2026-04-02 | Cleared | 2026-04-02 — auto-applied at checkout |
-| C2 | 1 | Sale end date | Client | 2026-04-02 | Cleared | 2026-04-02 — ends May 30 |
-| C3 | 1 | Exact current review count and blades sold | Client | 2026-04-02 | Cleared | 2026-04-02 — stats confirmed current |
+| C1 | [N] | [e.g., "47% faster close" stat] | [Data team] | [date] | Pending | — |
+
+*When an external team clears content, Strategist updates Status to "Cleared" and
+inserts the verified content into the deliverable. If rejected, Strategist updates
+the deliverable to remove or replace the content and logs to Known Gaps.*
 
 ---
 
@@ -71,9 +47,7 @@
 
 | ID | Description | Logged | Status | Resolved |
 |---|---|---|---|---|
-| G1 | No approved customer testimonials for any campaign | 2026-04-02 | Open | — |
-| G2 | No winter-specific imagery or creative assets | 2026-04-02 | Open | — |
-| G3 | Same-day shipping cut-off time unconfirmed (2pm?) — needs client input | 2026-04-02 | Open | — |
+| G1 | [Description of gap] | [date] | Open | — |
 
 ---
 
@@ -83,23 +57,16 @@
 
 | Decision | Date |
 |---|---|
-| Winter sale is 15% off, wiper blades only | 2026-04-02 |
-| Angle: practical prep ("get ready before winter"), not fear or hard-sell | 2026-04-02 |
-| No existing customer testimonials — use stat-based social proof only | 2026-04-02 |
+| [What was decided and why] | [date] |
 
 ---
 
 ## Learned Patterns
 
-*Accumulated lessons from completed deliverables. Sofia reads at brief-writing time.*
+*Accumulated lessons from completed deliverables. Strategist reads at brief-writing time.*
 
 | Pattern | Source | Deliverable |
 |---|---|---|
-| Unattributed stats need source line on cold-traffic landing pages | Dana Round 1 | 1 |
-| Superlative claims ("Most Trusted") need comparative proof — use stat-based claims instead | Dana Round 1 | 1 |
-| Brand jargon (e.g., "AeroFlex") doesn't land on cold audiences — use plain language on LP | Dana Round 1 | 1 |
-| Include brand name in email subject lines for inbox recall | Dana Round 1 | 1 |
-| Operational claims (shipping cut-offs) need client confirmation before copy ships | Dana Round 1 | 1 |
-| Offer mechanics belong in dedicated offer section, not in benefit-chain copy | Dana Round 1 | 1 |
+| [What was learned] | [Who caught it] | [N] |
 
 ---
