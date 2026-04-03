@@ -105,10 +105,14 @@ in Figma using the Figma MCP server tools.
 
 Read `DESIGN-BRIEF.md` — Strategist writes this after copy clears. It contains:
 - Approved copy (from deliverables/)
+- Design system reference (from design-systems/) — load `skills/design-systems.md` if present
 - Layout direction (wireframe, hierarchy, spacing)
 - Brand assets (colors, fonts, logos — from brand guide or client)
 - Channel specs (dimensions, platform requirements)
 - Reference examples (if any)
+
+If a `design-systems/[client].md` file is referenced in the brief, read it first.
+It defines the full visual system: colors, typography, spacing, components, elevation.
 
 ### Figma tools available
 

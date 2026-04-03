@@ -80,6 +80,8 @@ Load the skill the task needs. Not at session start.
 
 `skills/notion-publish.md` — load when publishing deliverables to Notion.
 
+`skills/design-systems.md` — load when Designer is producing visual assets. References DESIGN.md files in `design-systems/`.
+
 Add your marketing-specific skills below:
 [your skills here]
 

@@ -68,7 +68,10 @@ marketing-team/
 │   ├── SESSION-CHECKPOINT.md
 │   └── RETRO.md
 ├── skills/
-│   └── token-optimizer.md     # 5 behavioral rules for token discipline
+│   ├── token-optimizer.md     # 5 behavioral rules for token discipline
+│   ├── notion-publish.md      # Format templates for Notion publishing
+│   └── design-systems.md      # DESIGN.md integration for visual production
+├── design-systems/            # Client visual systems (DESIGN.md format)
 ├── deliverables/              # Published content artifacts
 ├── retros/                    # Retrospective archive (one per deliverable)
 ├── templates/

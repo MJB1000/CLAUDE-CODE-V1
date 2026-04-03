@@ -7,6 +7,11 @@
 - Files: [list of deliverable files to pull copy from]
 - Copy is FINAL. Designer places it exactly as written. No edits.
 
+## Design System
+- File: [design-systems/client-name.md — or "none, create from scratch"]
+- Override: [any deviations from the system for this deliverable]
+- Reference: [if no client system, reference from awesome-design-md collection]
+
 ## Figma Workspace
 - File: [Figma file URL — existing file or "create new"]
 - Page/frame: [where to work within the file]
