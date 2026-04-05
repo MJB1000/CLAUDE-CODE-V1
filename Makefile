@@ -77,7 +77,7 @@ smoke-test: ## Run production smoke test (checks all endpoints)
 	bash scripts/smoke_test.sh
 
 health: ## Quick health check against production
-	@curl -sf https://wt-dashboards.vercel.app/api/health | python3 -m json.tool
+	@curl -sf https://dashboard-theta-five-15.vercel.app/api/health | python3 -m json.tool
 
 # ── Secrets ─────────────────────────────────────────────────────────────────────
 

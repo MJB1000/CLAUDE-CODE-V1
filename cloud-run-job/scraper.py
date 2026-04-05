@@ -23,7 +23,7 @@ from html.parser import HTMLParser
 
 # ── Config ──────────────────────────────────────────────────────────────────────
 
-INGEST_URL = os.environ.get("INGEST_URL", "https://wt-dashboards.vercel.app/api/ingest")
+INGEST_URL = os.environ.get("INGEST_URL", "https://dashboard-theta-five-15.vercel.app/api/ingest")
 SECRET = os.environ.get("WIPER_INTEL_SECRET", "changeme")
 GCS_BUCKET = os.environ.get("GCS_BUCKET", "")
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")

@@ -11,7 +11,7 @@ const spec = {
     contact: { email: "matthew@wipertech.com.au" },
   },
   servers: [
-    { url: "https://wt-dashboards.vercel.app", description: "Production" },
+    { url: "https://dashboard-theta-five-15.vercel.app", description: "Production" },
     { url: "http://localhost:3000", description: "Local development" },
   ],
   paths: {

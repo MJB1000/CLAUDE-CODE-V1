@@ -27,7 +27,7 @@ if [[ -f "$ENV_FILE" ]]; then
   set -a; source "$ENV_FILE"; set +a
 fi
 
-INGEST_URL="${INGEST_URL:-https://wt-dashboards.vercel.app/api/ingest}"
+INGEST_URL="${INGEST_URL:-https://dashboard-theta-five-15.vercel.app/api/ingest}"
 WIPER_INTEL_SECRET="${WIPER_INTEL_SECRET:-changeme}"
 
 echo "╔══════════════════════════════════════════════════╗"

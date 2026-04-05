@@ -274,7 +274,7 @@ function buildDigestHtml(history, alerts, latest, shopping, ownData, saleState, 
 
   <!-- CTA -->
   <div class="card" style="text-align:center;background:#111">
-    <a href="https://wt-dashboards.vercel.app/wiper-intel" style="display:inline-block;background:#c8f135;color:#111;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px">Open Live Dashboard →</a>
+    <a href="https://dashboard-theta-five-15.vercel.app/wiper-intel" style="display:inline-block;background:#c8f135;color:#111;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px">Open Live Dashboard →</a>
   </div>
 
   <div class="footer">
@@ -310,6 +310,6 @@ function buildDigestText(history, alerts, latest, shopping, ownData, landscape) 
     "Recent alerts:",
     ...alerts.slice(0, 10).map(a => `  ${a.brand} — ${a.message}`),
     "",
-    "Dashboard: https://wt-dashboards.vercel.app/wiper-intel",
+    "Dashboard: https://dashboard-theta-five-15.vercel.app/wiper-intel",
   ].filter(l => l !== undefined && l !== null).join("\n");
 }

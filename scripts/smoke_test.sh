@@ -9,7 +9,7 @@ set -euo pipefail
 #   bash scripts/smoke_test.sh https://wt-dashboards.vercel.app   # custom base
 #   WIPER_INTEL_SECRET=key bash scripts/smoke_test.sh             # with auth
 
-BASE_URL="${1:-https://wt-dashboards.vercel.app}"
+BASE_URL="${1:-https://dashboard-theta-five-15.vercel.app}"
 SECRET="${WIPER_INTEL_SECRET:-}"
 PASS=0
 FAIL=0
