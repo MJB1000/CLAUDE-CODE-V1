@@ -2,7 +2,7 @@
 // Triggered by Vercel Cron every Monday 07:00 AEST (21:00 UTC Sunday)
 // Composes a full weekly intelligence briefing email
 
-const { kv } = require("@vercel/kv");
+const { kv } = require("./_kv");
 const nodemailer = require("nodemailer");
 
 const SECRET     = process.env.WIPER_INTEL_SECRET || "changeme";

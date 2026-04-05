@@ -3,7 +3,7 @@
 // GET /api/export?format=csv  (default)
 // GET /api/export?format=json
 
-const { kv } = require("@vercel/kv");
+const { kv } = require("./_kv");
 
 const SECRET = process.env.WIPER_INTEL_SECRET || "changeme";
 

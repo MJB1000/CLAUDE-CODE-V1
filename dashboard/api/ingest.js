@@ -2,7 +2,7 @@
 // Handles AU + NZ data, anomaly detection, sale duration tracking,
 // day-of-week normalisation, canary failure alerts, Wipertech own data
 
-const { kv } = require("@vercel/kv");
+const { kv } = require("./_kv");
 
 const SECRET      = process.env.WIPER_INTEL_SECRET || "changeme";
 const MAX_ALERTS  = 200;
@@ -48,6 +48,7 @@ module.exports = async function handler(req, res) {
   if (!date || !Array.isArray(sites))
     return res.status(400).json({ error: "Missing date or sites array" });
 
+  try {
   const now = new Date().toISOString();
 
   // ── Load state ─────────────────────────────────────────────────────────────
@@ -63,7 +64,7 @@ module.exports = async function handler(req, res) {
   const newAlerts = [];
 
   // ── Load rolling history for anomaly detection ────────────────────────────
-  const histKeys = historyKeys.slice(-30);
+  const histKeys = (historyKeys || []).slice(-30);
   const histSnapshots = histKeys.length > 0
     ? await Promise.all(histKeys.map(k => kv.get(`wiper:history:${k}`).catch(() => null)))
     : [];
@@ -207,14 +208,14 @@ module.exports = async function handler(req, res) {
   };
 
   // Update history keys list
-  const allKeys = [...new Set([...historyKeys, date])].sort().slice(-MAX_HISTORY);
+  const allKeys = [...new Set([...(historyKeys || []), date])].sort().slice(-MAX_HISTORY);
 
   await Promise.all([
     kv.set("wiper:latest",           snapshot),
     kv.set(`wiper:history:${date}`,  snapshot),
     kv.set("wiper:history_keys",     allKeys),
     kv.set("wiper:sale_state",       updatedSaleMap),
-    kv.set("wiper:alerts",           [...newAlerts, ...existingAlerts].slice(0, MAX_ALERTS)),
+    kv.set("wiper:alerts",           [...newAlerts, ...(existingAlerts || [])].slice(0, MAX_ALERTS)),
   ]);
 
   // Store Google Shopping separately for easy access
@@ -236,4 +237,8 @@ module.exports = async function handler(req, res) {
     new_alerts: newAlerts.length,
     alerts: newAlerts,
   });
+  } catch (err) {
+    console.error("Ingest error:", err);
+    return res.status(500).json({ error: err.message || "Internal error" });
+  }
 };

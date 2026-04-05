@@ -2,7 +2,7 @@
 // Health check endpoint for monitoring and uptime checks
 // GET /api/health → { status: "ok", ... }
 
-const { kv } = require("@vercel/kv");
+const { kv } = require("./_kv");
 
 module.exports = async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");

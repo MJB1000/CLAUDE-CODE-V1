@@ -16,9 +16,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Install Playwright + Chromium browser
-RUN playwright install chromium
-
 # Copy scripts
 COPY scraper.py .
 COPY agents.py .
@@ -26,10 +23,11 @@ COPY backfill_wayback.py .
 COPY config.json .
 
 # Create output dir for screenshots (owned by scraper user)
-RUN mkdir -p /app/output/screenshots && chown -R scraper:scraper /app/output
+RUN mkdir -p /app/output/screenshots && chown -R scraper:scraper /app
 
-# Run as non-root
+# Run as non-root — install Playwright browser as this user so cache path matches
 USER scraper
+RUN playwright install chromium
 
 # Cloud Run Jobs call the entrypoint and expect it to exit 0 on success
 ENTRYPOINT ["python", "-u", "scraper.py"]

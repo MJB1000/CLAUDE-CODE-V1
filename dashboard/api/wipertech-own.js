@@ -16,7 +16,7 @@
 //   "note": "Spring sale 2025"
 // }
 
-const { kv } = require("@vercel/kv");
+const { kv } = require("./_kv");
 
 const SECRET = process.env.WIPER_INTEL_SECRET || "changeme";
 

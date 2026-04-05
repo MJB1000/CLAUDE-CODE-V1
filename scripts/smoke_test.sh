@@ -27,13 +27,13 @@ check() {
 
   if [[ "$status" == "$expected_status" ]]; then
     printf "  %-35s %s\n" "$label" "OK ($status)"
-    ((PASS++))
+    PASS=$((PASS + 1))
   elif [[ "$status" == "000" ]]; then
     printf "  %-35s %s\n" "$label" "UNREACHABLE"
-    ((FAIL++))
+    FAIL=$((FAIL + 1))
   else
     printf "  %-35s %s (expected %s)\n" "$label" "FAIL ($status)" "$expected_status"
-    ((FAIL++))
+    FAIL=$((FAIL + 1))
   fi
 }
 
@@ -44,10 +44,10 @@ check_content() {
 
   if echo "$body" | grep -qi "$expected_text"; then
     printf "  %-35s %s\n" "$label" "OK (contains '$expected_text')"
-    ((PASS++))
+    PASS=$((PASS + 1))
   else
     printf "  %-35s %s\n" "$label" "FAIL (missing '$expected_text')"
-    ((FAIL++))
+    FAIL=$((FAIL + 1))
   fi
 }
 
@@ -74,7 +74,7 @@ if echo "$health_body" | python3 -c "import sys,json; d=json.load(sys.stdin); pr
   true
 else
   echo "  Could not parse health response"
-  ((WARN++))
+  WARN=$((WARN + 1))
 fi
 
 # ── Dashboard content ────────────────────────────���─────────────────────────────
@@ -91,10 +91,10 @@ sec_headers=$(curl -sI "$BASE_URL/wiper-intel" 2>/dev/null || echo "")
 for header in "x-content-type-options" "x-frame-options" "referrer-policy"; do
   if echo "$sec_headers" | grep -qi "$header"; then
     printf "  %-35s %s\n" "$header" "OK"
-    ((PASS++))
+    PASS=$((PASS + 1))
   else
     printf "  %-35s %s\n" "$header" "MISSING"
-    ((FAIL++))
+    FAIL=$((FAIL + 1))
   fi
 done
 
@@ -105,17 +105,27 @@ if [[ -n "$SECRET" ]]; then
   check "GET  /api/export?format=json"  "$BASE_URL/api/export?format=json&key=$SECRET"
   check "GET  /api/export?format=csv"   "$BASE_URL/api/export?format=csv&key=$SECRET"
   check "GET  /api/wipertech-own"       "$BASE_URL/api/wipertech-own"
-  check "POST /api/ingest (no body)"    "$BASE_URL/api/ingest" "400" "auth"
+  # POST with auth but no valid body should return 400
+  ingest_status=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+    -H "X-API-Key: $SECRET" -H "Content-Type: application/json" \
+    -d '{}' "$BASE_URL/api/ingest" 2>/dev/null)
+  if [[ "$ingest_status" == "400" ]]; then
+    printf "  %-35s %s\n" "POST /api/ingest (no body)" "OK ($ingest_status)"
+    PASS=$((PASS + 1))
+  else
+    printf "  %-35s %s (expected 400)\n" "POST /api/ingest (no body)" "FAIL ($ingest_status)"
+    FAIL=$((FAIL + 1))
+  fi
 
   # Check rate limit headers
   rl_headers=$(curl -sI -X POST -H "X-API-Key: $SECRET" -H "Content-Type: application/json" \
     -d '{}' "$BASE_URL/api/ingest" 2>/dev/null || echo "")
   if echo "$rl_headers" | grep -qi "x-ratelimit"; then
     printf "  %-35s %s\n" "Rate limit headers" "OK"
-    ((PASS++))
+    PASS=$((PASS + 1))
   else
     printf "  %-35s %s\n" "Rate limit headers" "NOT PRESENT"
-    ((WARN++))
+    WARN=$((WARN + 1))
   fi
 else
   echo ""
@@ -129,10 +139,10 @@ openapi_body=$(curl -sf "$BASE_URL/api/openapi" 2>/dev/null || echo "{}")
 paths_count=$(echo "$openapi_body" | python3 -c "import sys,json; print(len(json.load(sys.stdin).get('paths',{})))" 2>/dev/null || echo "0")
 if [[ "$paths_count" -ge 5 ]]; then
   printf "  %-35s %s\n" "Endpoint count" "OK ($paths_count paths)"
-  ((PASS++))
+  PASS=$((PASS + 1))
 else
   printf "  %-35s %s\n" "Endpoint count" "FAIL ($paths_count paths, expected 5+)"
-  ((FAIL++))
+  FAIL=$((FAIL + 1))
 fi
 
 # ── Summary ─────────────────────────────────────────────────────��────────────

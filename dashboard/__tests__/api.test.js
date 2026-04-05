@@ -3,7 +3,7 @@
  * Run: npx jest --config jest.config.js
  */
 
-// ── Mock @vercel/kv ─────────────────────────────────────────────────────────────
+// ── Mock KV store ───────────────────────────────────────────────────────────────
 
 const mockKvStore = {};
 
@@ -18,7 +18,7 @@ const mockKv = {
   }),
 };
 
-jest.mock("@vercel/kv", () => ({ kv: mockKv }));
+jest.mock("../api/_kv", () => ({ kv: mockKv }));
 
 // ── Mock nodemailer ─────────────────────────────────────────────────────────────
 
@@ -69,7 +69,7 @@ describe("api/ingest.js", () => {
   beforeEach(() => {
     resetKvStore();
     jest.resetModules();
-    jest.mock("@vercel/kv", () => ({ kv: mockKv }));
+    jest.mock("../api/_kv", () => ({ kv: mockKv }));
     handler = require("../api/ingest.js");
   });
 
@@ -442,7 +442,7 @@ describe("api/data.js", () => {
   beforeEach(() => {
     resetKvStore();
     jest.resetModules();
-    jest.mock("@vercel/kv", () => ({ kv: mockKv }));
+    jest.mock("../api/_kv", () => ({ kv: mockKv }));
     handler = require("../api/data.js");
   });
 
@@ -527,7 +527,7 @@ describe("api/health.js", () => {
   beforeEach(() => {
     resetKvStore();
     jest.resetModules();
-    jest.mock("@vercel/kv", () => ({ kv: mockKv }));
+    jest.mock("../api/_kv", () => ({ kv: mockKv }));
     handler = require("../api/health.js");
   });
 
@@ -597,7 +597,7 @@ describe("api/wipertech-own.js", () => {
   beforeEach(() => {
     resetKvStore();
     jest.resetModules();
-    jest.mock("@vercel/kv", () => ({ kv: mockKv }));
+    jest.mock("../api/_kv", () => ({ kv: mockKv }));
     handler = require("../api/wipertech-own.js");
   });
 
@@ -689,7 +689,7 @@ describe("api/weekly-digest.js", () => {
   beforeEach(() => {
     resetKvStore();
     jest.resetModules();
-    jest.mock("@vercel/kv", () => ({ kv: mockKv }));
+    jest.mock("../api/_kv", () => ({ kv: mockKv }));
     jest.mock("nodemailer", () => ({
       createTransport: jest.fn(() => ({ sendMail: mockSendMail })),
     }));

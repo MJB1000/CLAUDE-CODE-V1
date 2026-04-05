@@ -1,7 +1,7 @@
 // api/data.js  v2
 // Serves AU+NZ data, Google Shopping, sale duration, anomaly flags, alerts
 
-const { kv } = require("@vercel/kv");
+const { kv } = require("./_kv");
 
 module.exports = async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
