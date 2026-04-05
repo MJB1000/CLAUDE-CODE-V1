@@ -22,6 +22,61 @@ from scraper import (
 )
 
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+SCREENSHOT_DIR = os.environ.get("SCREENSHOT_DIR", os.path.join(os.path.dirname(__file__) or ".", "output", "screenshots"))
+
+# Playwright availability — lazy import
+_playwright_available = None
+
+def is_playwright_available():
+    global _playwright_available
+    if _playwright_available is None:
+        try:
+            from playwright.sync_api import sync_playwright  # noqa: F401
+            _playwright_available = True
+        except ImportError:
+            _playwright_available = False
+    return _playwright_available
+
+
+def fetch_with_browser(url, screenshot_path=None, timeout_ms=30000):
+    """
+    Fetch a URL using Playwright headless Chromium.
+    Returns (http_status, rendered_html, screenshot_bytes_or_None).
+    """
+    from playwright.sync_api import sync_playwright
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            viewport={"width": 1280, "height": 900},
+        )
+        page = context.new_page()
+
+        try:
+            response = page.goto(url, wait_until="networkidle", timeout=timeout_ms)
+            status = response.status if response else 0
+
+            # Wait a beat for late-loading JS content
+            page.wait_for_timeout(2000)
+
+            # Get fully rendered HTML
+            html = page.content()
+
+            # Screenshot
+            screenshot = None
+            if screenshot_path:
+                os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
+                screenshot = page.screenshot(full_page=True, path=screenshot_path)
+
+            return status, html, screenshot
+
+        except Exception as e:
+            print(f"    [BROWSER] Error fetching {url}: {e}", file=sys.stderr)
+            return 0, "", None
+        finally:
+            context.close()
+            browser.close()
 
 
 def call_claude(system_prompt, user_prompt, max_tokens=500):
@@ -69,11 +124,27 @@ class ResearcherAgent:
     def research_competitor(self, competitor, date_str):
         """
         Fetch a competitor's site and extract all available data.
+        Uses Playwright for renderer:"browser" sites, urllib for renderer:"http".
         Returns a raw data dict — no interpretation applied.
         """
-        print(f"  [RESEARCHER] Scraping {competitor['name']} ({competitor.get('market', 'AU')})...")
+        renderer = competitor.get("renderer", "http")
+        use_browser = renderer == "browser" and is_playwright_available()
 
-        status, html = fetch_url(competitor["url"])
+        method_label = "BROWSER" if use_browser else "HTTP"
+        print(f"  [RESEARCHER/{method_label}] Scraping {competitor['name']} ({competitor.get('market', 'AU')})...")
+
+        # ── Fetch page ──────────────────────────────────────────────────────
+        screenshot_path = None
+        if use_browser:
+            screenshot_path = os.path.join(
+                SCREENSHOT_DIR, date_str, f"{competitor['id']}.png"
+            )
+            status, html, _screenshot = fetch_with_browser(
+                competitor["url"], screenshot_path=screenshot_path
+            )
+        else:
+            status, html = fetch_url(competitor["url"])
+
         if not html:
             return self._error_result(competitor, status)
 
@@ -88,11 +159,14 @@ class ResearcherAgent:
         intensity = calc_promotion_intensity(promos, text)
         is_on_sale = intensity >= 15 and len(promos) > 0
 
-        # Product-specific price
+        # ── Product-specific price ──────────────────────────────────────────
         product_price = None
         product_url = competitor.get("product_url")
         if product_url:
-            p_status, p_html = fetch_url(product_url)
+            if use_browser:
+                p_status, p_html, _ = fetch_with_browser(product_url)
+            else:
+                p_status, p_html = fetch_url(product_url)
             if p_html:
                 price = extract_territory_price(p_html)
                 if price:
@@ -137,9 +211,11 @@ class ResearcherAgent:
             "territory_price": product_price,
             "raw_text_length": len(text),
             "ai_raw_extract": ai_raw_extract,
+            "renderer": method_label.lower(),
+            "screenshot": screenshot_path if screenshot_path and os.path.exists(screenshot_path) else None,
         }
 
-        print(f"    → intensity={intensity}, on_sale={is_on_sale}, promos={len(promos)}")
+        print(f"    → intensity={intensity}, on_sale={is_on_sale}, promos={len(promos)}, renderer={method_label}")
         return result
 
     def _error_result(self, competitor, status):

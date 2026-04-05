@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, os.path.dirname(__file__))
 
-from agents import ResearcherAgent, AnalystAgent
+from agents import ResearcherAgent, AnalystAgent, is_playwright_available, fetch_with_browser
 from scraper import load_config
 
 
@@ -45,6 +45,83 @@ class TestConfigLoading(unittest.TestCase):
         config = load_config("/nonexistent/path/config.json")
         assert "competitors" in config
         assert "target_brand" in config
+
+    def test_config_renderer_field(self):
+        config = load_config(os.path.join(os.path.dirname(__file__), "config.json"))
+        for comp in config["competitors"]:
+            renderer = comp.get("renderer", "http")
+            assert renderer in ("http", "browser"), f"{comp['id']} has invalid renderer: {renderer}"
+
+    def test_config_has_browser_and_http_competitors(self):
+        config = load_config(os.path.join(os.path.dirname(__file__), "config.json"))
+        renderers = set(c.get("renderer", "http") for c in config["competitors"])
+        assert "browser" in renderers, "Expected at least one browser-rendered competitor"
+        assert "http" in renderers, "Expected at least one http-rendered competitor"
+
+
+class TestPlaywrightAvailability(unittest.TestCase):
+
+    def test_playwright_check_returns_bool(self):
+        result = is_playwright_available()
+        assert isinstance(result, bool)
+
+    @patch("agents.is_playwright_available", return_value=False)
+    @patch("agents.fetch_url")
+    @patch("agents.upload_snapshot")
+    def test_falls_back_to_http_when_playwright_unavailable(self, mock_upload, mock_fetch, mock_pw):
+        mock_fetch.return_value = (200, "<html><body>repco store</body></html>")
+        config = load_config(os.path.join(os.path.dirname(__file__), "config.json"))
+        agent = ResearcherAgent(config)
+        # Find a browser-configured competitor
+        browser_comp = next(c for c in config["competitors"] if c.get("renderer") == "browser")
+        result = agent.research_competitor(browser_comp, "2025-04-05")
+        assert result["http_status"] == 200
+        assert result["renderer"] == "http"  # Fell back to HTTP
+
+
+class TestFetchWithBrowser(unittest.TestCase):
+
+    @patch("playwright.sync_api.sync_playwright")
+    def test_browser_fetch_success(self, mock_pw_cls):
+        # Mock the full Playwright chain
+        mock_page = unittest.mock.MagicMock()
+        mock_page.content.return_value = "<html><body>Rendered content</body></html>"
+        mock_response = unittest.mock.MagicMock()
+        mock_response.status = 200
+        mock_page.goto.return_value = mock_response
+
+        mock_context = unittest.mock.MagicMock()
+        mock_context.new_page.return_value = mock_page
+        mock_browser = unittest.mock.MagicMock()
+        mock_browser.new_context.return_value = mock_context
+
+        mock_pw = unittest.mock.MagicMock()
+        mock_pw.chromium.launch.return_value = mock_browser
+        mock_pw_cls.return_value.__enter__ = unittest.mock.MagicMock(return_value=mock_pw)
+        mock_pw_cls.return_value.__exit__ = unittest.mock.MagicMock(return_value=False)
+
+        status, html, screenshot = fetch_with_browser("https://example.com")
+        assert status == 200
+        assert "Rendered content" in html
+
+    @patch("playwright.sync_api.sync_playwright")
+    def test_browser_fetch_failure(self, mock_pw_cls):
+        mock_page = unittest.mock.MagicMock()
+        mock_page.goto.side_effect = Exception("Navigation timeout")
+
+        mock_context = unittest.mock.MagicMock()
+        mock_context.new_page.return_value = mock_page
+        mock_browser = unittest.mock.MagicMock()
+        mock_browser.new_context.return_value = mock_context
+
+        mock_pw = unittest.mock.MagicMock()
+        mock_pw.chromium.launch.return_value = mock_browser
+        mock_pw_cls.return_value.__enter__ = unittest.mock.MagicMock(return_value=mock_pw)
+        mock_pw_cls.return_value.__exit__ = unittest.mock.MagicMock(return_value=False)
+
+        status, html, screenshot = fetch_with_browser("https://example.com")
+        assert status == 0
+        assert html == ""
 
 
 class TestResearcherAgent(unittest.TestCase):
@@ -94,6 +171,15 @@ class TestResearcherAgent(unittest.TestCase):
         result = self.agent.research_competitor(comp, "2025-04-05")
 
         assert result["canary_pass"] is False
+
+    @patch("agents.fetch_url")
+    @patch("agents.upload_snapshot")
+    def test_research_includes_renderer_field(self, mock_upload, mock_fetch):
+        mock_fetch.return_value = (200, "<html><body>autowipers shop</body></html>")
+        comp = self.config["competitors"][0]
+        result = self.agent.research_competitor(comp, "2025-04-05")
+        assert "renderer" in result
+        assert result["renderer"] in ("http", "browser")
 
 
 class TestAnalystAgent(unittest.TestCase):
