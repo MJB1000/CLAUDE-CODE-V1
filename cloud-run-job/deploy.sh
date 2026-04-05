@@ -105,11 +105,21 @@ gcloud run jobs deploy "$JOB_NAME" \
   --project="$PROJECT_ID" \
   --task-timeout=600 \
   --max-retries=1 \
-  --memory=512Mi \
+  --memory=2Gi \
   --cpu=1 \
   --set-secrets="WIPER_INTEL_SECRET=WIPER_INTEL_SECRET:latest,INGEST_URL=INGEST_URL:latest" \
   --set-env-vars="GCS_BUCKET=${GCS_BUCKET:-}" \
   --quiet
+
+# Optionally wire ANTHROPIC_API_KEY if secret exists
+if gcloud secrets describe "ANTHROPIC_API_KEY" --project="$PROJECT_ID" &>/dev/null; then
+  echo "→ Wiring ANTHROPIC_API_KEY secret..."
+  gcloud run jobs update "$JOB_NAME" \
+    --region="$REGION" \
+    --project="$PROJECT_ID" \
+    --update-secrets="ANTHROPIC_API_KEY=ANTHROPIC_API_KEY:latest" \
+    --quiet
+fi
 
 # ── Step 6: Create/update Cloud Scheduler ───────────────────────────────────────
 echo "→ Setting up Cloud Scheduler (${SCHEDULE})..."

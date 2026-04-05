@@ -37,7 +37,7 @@ steps:
       - '--region=${_REGION}'
       - '--task-timeout=600'
       - '--max-retries=1'
-      - '--memory=512Mi'
+      - '--memory=2Gi'
       - '--cpu=1'
       - '--set-secrets=WIPER_INTEL_SECRET=WIPER_INTEL_SECRET:latest,INGEST_URL=INGEST_URL:latest'
       - '--quiet'

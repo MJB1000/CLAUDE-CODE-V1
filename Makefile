@@ -49,6 +49,36 @@ backfill-dry-run: ## Backfill dry run (no POST to ingest)
 backfill-30: ## Backfill last 30 days
 	cd cloud-run-job && python3 backfill_wayback.py --days 30
 
+# ── Testing ─────────────────────────────────────────────────────────────────────
+
+test: ## Run all tests (Python + JS)
+	cd cloud-run-job && python3 -m pytest test_scraper.py test_backfill.py test_agents.py -q
+	cd dashboard && npx jest --config jest.config.js
+
+test-python: ## Run Python tests only
+	cd cloud-run-job && python3 -m pytest test_scraper.py test_backfill.py test_agents.py -v
+
+test-js: ## Run JS tests only
+	cd dashboard && npx jest --config jest.config.js
+
+dry-run: ## Run scraper locally with capture server (no prod impact)
+	cd cloud-run-job && python3 local_receiver.py 9999 &
+	sleep 1
+	cd cloud-run-job && INGEST_URL=http://localhost:9999/api/ingest \
+		WIPER_INTEL_SECRET=changeme GCS_BUCKET= ANTHROPIC_API_KEY= \
+		python3 scraper.py
+	@echo ""
+	@echo "Payload saved to cloud-run-job/output/last_payload.json"
+	@kill %1 2>/dev/null || true
+
+# ── Health / Smoke ──────────────────────────────────────────────────────────────
+
+smoke-test: ## Run production smoke test (checks all endpoints)
+	bash scripts/smoke_test.sh
+
+health: ## Quick health check against production
+	@curl -sf https://wt-dashboards.vercel.app/api/health | python3 -m json.tool
+
 # ── Secrets ─────────────────────────────────────────────────────────────────────
 
 secrets: ## Create GCP secrets (interactive)
@@ -61,4 +91,10 @@ secrets: ## Create GCP secrets (interactive)
 		url=$${url:-https://wt-dashboards.vercel.app/api/ingest} && \
 		echo -n "$$url" | gcloud secrets create INGEST_URL --data-file=- 2>/dev/null || \
 		echo -n "$$url" | gcloud secrets versions add INGEST_URL --data-file=-
+	@echo "Creating ANTHROPIC_API_KEY (optional)..."
+	@read -rp "Enter Anthropic API key (or press Enter to skip): " akey && \
+		if [ -n "$$akey" ]; then \
+			echo -n "$$akey" | gcloud secrets create ANTHROPIC_API_KEY --data-file=- 2>/dev/null || \
+			echo -n "$$akey" | gcloud secrets versions add ANTHROPIC_API_KEY --data-file=-; \
+		fi
 	@echo "Done. Secrets created."
