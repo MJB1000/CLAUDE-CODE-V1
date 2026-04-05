@@ -64,11 +64,14 @@ def fetch_with_browser(url, screenshot_path=None, timeout_ms=30000):
             # Get fully rendered HTML
             html = page.content()
 
-            # Screenshot
+            # Screenshot (best-effort, don't fail the whole fetch)
             screenshot = None
             if screenshot_path:
-                os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
-                screenshot = page.screenshot(full_page=True, path=screenshot_path)
+                try:
+                    os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
+                    screenshot = page.screenshot(full_page=True, path=screenshot_path, timeout=10000)
+                except Exception:
+                    pass  # Screenshot is optional — don't fail the scrape
 
             return status, html, screenshot
 
