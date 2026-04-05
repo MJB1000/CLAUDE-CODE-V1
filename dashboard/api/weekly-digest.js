@@ -40,8 +40,9 @@ module.exports = async function handler(req, res) {
       return res.status(200).json({ ok: false, reason: "No history available yet" });
     }
 
-    const digestHtml = buildDigestHtml(history, alerts, latest, shopping, ownData, saleState);
-    const digestText = buildDigestText(history, alerts, latest, shopping, ownData);
+    const landscape = await kv.get("wiper:landscape_summary").catch(() => null);
+    const digestHtml = buildDigestHtml(history, alerts, latest, shopping, ownData, saleState, landscape);
+    const digestText = buildDigestText(history, alerts, latest, shopping, ownData, landscape);
 
     if (SMTP_USER && SMTP_PASS) {
       const transporter = nodemailer.createTransport({
@@ -73,7 +74,7 @@ module.exports = async function handler(req, res) {
 
 // ── Build digest HTML ──────────────────────────────────────────────────────────
 
-function buildDigestHtml(history, alerts, latest, shopping, ownData, saleState) {
+function buildDigestHtml(history, alerts, latest, shopping, ownData, saleState, landscape) {
   const sites    = latest?.sites || [];
   const auSites  = sites.filter(s => s.market === "AU" || !s.market);
   const nzSites  = sites.filter(s => s.market === "NZ");
@@ -169,8 +170,15 @@ function buildDigestHtml(history, alerts, latest, shopping, ownData, saleState) 
     </div>
   </div>
 
+  ${landscape?.summary ? `
+  <!-- AI Landscape Analysis -->
+  <div class="card" style="border-left:3px solid #c8f135">
+    <div class="section-title">AI Competitive Analysis</div>
+    <div style="font-size:13px;line-height:1.6;color:#333">${landscape.summary}</div>
+  </div>` : ""}
+
   ${ownData ? `
-  <!-- Wipertech own position -->
+  <!-- Own position -->
   <div class="card">
     <div class="section-title">Wipertech Position</div>
     <div style="display:flex;align-items:center;gap:12px">
@@ -277,7 +285,7 @@ function buildDigestHtml(history, alerts, latest, shopping, ownData, saleState) 
 </div></body></html>`;
 }
 
-function buildDigestText(history, alerts, latest, shopping, ownData) {
+function buildDigestText(history, alerts, latest, shopping, ownData, landscape) {
   const sites       = latest?.sites || [];
   const onSale      = sites.filter(s => s.is_on_sale);
   const weekRange   = history.length >= 2
@@ -292,7 +300,9 @@ function buildDigestText(history, alerts, latest, shopping, ownData) {
     `Brands on sale: ${onSale.length} of ${sites.length}`,
     `Lowest AU Territory price: ${auPrices.length ? "$" + auPrices[0].territory_price.price.toFixed(2) + " (" + auPrices[0].name + ")" : "—"}`,
     "",
-    ownData ? `Wipertech: ${ownData.active ? "SALE ACTIVE — " + (ownData.promo?.raw_text || "") : "No active promotion"}` : "",
+    landscape?.summary ? `AI Analysis: ${landscape.summary}` : "",
+    "",
+    ownData ? `Own position: ${ownData.active ? "SALE ACTIVE — " + (ownData.promo?.raw_text || "") : "No active promotion"}` : "",
     "",
     "Active sales:",
     ...onSale.map(s => `  ${s.name} [${s.market || "AU"}]: ${(s.promos || [])[0]?.raw_text?.substring(0, 60) || "—"}`),

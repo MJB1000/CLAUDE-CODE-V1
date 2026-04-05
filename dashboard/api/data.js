@@ -35,9 +35,14 @@ module.exports = async function handler(req, res) {
       history = snaps.filter(Boolean);
     }
 
+    const landscape = await kv.get("wiper:landscape_summary").catch(() => null);
+    const ownData   = await kv.get("wiper:own_data").catch(() => null);
+
     return res.status(200).json({
       latest, alerts, history, shopping,
       sale_state: saleState,
+      landscape_summary: landscape,
+      own_data: ownData,
     });
   } catch (err) {
     return res.status(500).json({ error: "KV error", detail: err.message });

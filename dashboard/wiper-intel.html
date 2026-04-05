@@ -248,9 +248,15 @@
     <div class="stat-card"><div class="label">NZ brands</div><div class="value" id="statNZ">—</div><div class="detail" id="statNZDetail"></div></div>
   </div>
 
-  <!-- Wipertech own position -->
+  <!-- AI Landscape Analysis -->
+  <div class="card" id="landscapeCard" style="display:none;border-left:3px solid var(--accent)">
+    <div class="card-title">AI Competitive Analysis</div>
+    <div id="landscapeContent" style="font-size:14px;line-height:1.6"></div>
+  </div>
+
+  <!-- Own position -->
   <div class="own-card" id="ownCard" style="display:none">
-    <div class="card-title">Your Position — Wipertech</div>
+    <div class="card-title" id="ownTitle">Your Position</div>
     <div id="ownContent"></div>
   </div>
 
@@ -565,6 +571,12 @@ function render() {
   document.getElementById("statNZ").textContent = nzSites.length;
   document.getElementById("statNZDetail").textContent = nzSites.filter(s => s.is_on_sale).length + " on sale";
 
+  // Landscape summary (from Analyst agent)
+  if (DATA.landscape_summary?.summary) {
+    document.getElementById("landscapeCard").style.display = "block";
+    document.getElementById("landscapeContent").textContent = DATA.landscape_summary.summary;
+  }
+
   // Own position
   renderOwnPosition();
 
@@ -578,9 +590,7 @@ function render() {
 // ── Own position ───────────────────────────────────────────────────────────────
 async function renderOwnPosition() {
   try {
-    const res = await fetch(API_BASE + "/wipertech-own");
-    const data = await res.json();
-    const own = data.own_data;
+    const own = DATA?.own_data;
     if (!own) return;
 
     document.getElementById("ownCard").style.display = "block";

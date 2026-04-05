@@ -1,0 +1,111 @@
+{
+  "project": {
+    "name": "Wiper Intel",
+    "slug": "wiper-intel",
+    "description": "Competitive intelligence for the Australian wiper blade market"
+  },
+
+  "target_brand": {
+    "name": "Wipertech",
+    "market": "AU",
+    "website": "https://www.wipertech.com.au/",
+    "contact_email": "matthew@wipertech.com.au",
+    "product_category": "wiper blades",
+    "reference_product": "Ford Territory 2009 Wiper Blades",
+    "reference_search_query": "ford territory 2009 wiper blades"
+  },
+
+  "competitors": [
+    {
+      "id": "autowipers_au",
+      "name": "AutoWipers AU",
+      "market": "AU",
+      "type": "specialist",
+      "url": "https://www.autowipers.com.au/",
+      "product_url": "https://www.autowipers.com.au/ford-territory-wiper-blades",
+      "canary": "autowipers"
+    },
+    {
+      "id": "wiperblades_au",
+      "name": "WiperBlades.com.au",
+      "market": "AU",
+      "type": "specialist",
+      "url": "https://www.wiperblades.com.au/",
+      "product_url": "https://www.wiperblades.com.au/ford-territory",
+      "canary": "wiper"
+    },
+    {
+      "id": "repco_au",
+      "name": "Repco",
+      "market": "AU",
+      "type": "retailer",
+      "url": "https://www.repco.com.au/",
+      "product_url": null,
+      "canary": "repco"
+    },
+    {
+      "id": "supercheap_au",
+      "name": "Supercheap Auto",
+      "market": "AU",
+      "type": "retailer",
+      "url": "https://www.supercheapauto.com.au/",
+      "product_url": null,
+      "canary": "supercheap"
+    },
+    {
+      "id": "bosch_au",
+      "name": "Bosch AU",
+      "market": "AU",
+      "type": "oem",
+      "url": "https://www.boschwiperblades.com.au/",
+      "product_url": null,
+      "canary": "bosch"
+    },
+    {
+      "id": "wiperblades_nz",
+      "name": "WiperBlades NZ",
+      "market": "NZ",
+      "type": "specialist",
+      "url": "https://www.wiperblades.co.nz/",
+      "product_url": "https://www.wiperblades.co.nz/ford-territory",
+      "canary": "wiper"
+    },
+    {
+      "id": "repco_nz",
+      "name": "Repco NZ",
+      "market": "NZ",
+      "type": "retailer",
+      "url": "https://www.repco.co.nz/",
+      "product_url": null,
+      "canary": "repco"
+    }
+  ],
+
+  "markets": ["AU", "NZ"],
+
+  "google_shopping": {
+    "AU": {
+      "domain": "google.com.au",
+      "currency": "AUD"
+    },
+    "NZ": {
+      "domain": "google.co.nz",
+      "currency": "NZD"
+    }
+  },
+
+  "dashboard": {
+    "title": "Competitive Dashboard",
+    "logo_text": "WT / WIPER INTEL",
+    "accent_color": "#c8f135",
+    "dashboard_url": "https://wt-dashboards.vercel.app/wiper-intel"
+  },
+
+  "alerts": {
+    "email_to": "matthew@wipertech.com.au",
+    "email_from": "alerts@wipertech.com.au",
+    "price_threshold": 1.00,
+    "anomaly_sigma": 2.0,
+    "min_history_for_anomaly": 14
+  }
+}

@@ -216,6 +216,13 @@ module.exports = async function handler(req, res) {
     await kv.set("wiper:shopping:latest",  google_shopping);
   }
 
+  // Store landscape summary if provided
+  if (body.landscape_summary) {
+    await kv.set("wiper:landscape_summary", {
+      date, summary: body.landscape_summary, target_brand: body.target_brand || "",
+    });
+  }
+
   return res.status(200).json({
     ok: true, date,
     brands_processed: sites.length,

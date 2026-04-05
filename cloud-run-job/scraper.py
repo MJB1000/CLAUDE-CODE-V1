@@ -462,46 +462,105 @@ def scrape_brand(brand, date_str):
     return site
 
 
+def load_config(config_path=None):
+    """Load config.json — supports brand-agnostic competitor definitions."""
+    if not config_path:
+        config_path = os.path.join(os.path.dirname(__file__) or ".", "config.json")
+    if os.path.exists(config_path):
+        with open(config_path, "r") as f:
+            return json.load(f)
+    # Fallback to hardcoded BRANDS for backward compatibility
+    return {
+        "target_brand": {"name": "Unknown", "market": "AU", "product_category": "products"},
+        "competitors": BRANDS,
+        "google_shopping": GOOGLE_SHOPPING_QUERIES,
+        "dashboard": {"title": "Competitive Dashboard"},
+    }
+
+
 def main():
     now = datetime.now(AEST)
     date_str = now.strftime("%Y-%m-%d")
     day_of_week = now.weekday()  # 0=Monday
     is_weekend = day_of_week >= 5
 
-    print(f"=== Wiper Intel Scraper — {date_str} (day={day_of_week}, weekend={is_weekend}) ===")
+    # Load config
+    config = load_config()
+    target = config.get("target_brand", {})
+    competitors = config.get("competitors", BRANDS)
+    shopping_config = config.get("google_shopping", GOOGLE_SHOPPING_QUERIES)
+    project_name = config.get("project", {}).get("name", "Competitive Intel")
+
+    print(f"=== {project_name} Scraper — {date_str} (day={day_of_week}, weekend={is_weekend}) ===")
+    print(f"Target brand: {target.get('name', 'Unknown')}")
     print(f"Ingest URL: {INGEST_URL}")
-    print(f"Brands to scrape: {len(BRANDS)}")
+    print(f"Competitors to scrape: {len(competitors)}")
     print()
 
-    sites = []
-    for brand in BRANDS:
+    # ── AGENT 1: RESEARCHER — gather raw data ──────────────────────────────
+    use_agents = ANTHROPIC_API_KEY or True  # Always use agent architecture
+    if use_agents:
         try:
-            site = scrape_brand(brand, date_str)
+            from agents import ResearcherAgent, AnalystAgent
+            researcher = ResearcherAgent(config)
+            analyst = AnalystAgent(config)
+        except ImportError:
+            use_agents = False
+
+    print("Phase 1: Research (data gathering)")
+    sites = []
+    for comp in competitors:
+        try:
+            if use_agents:
+                site = researcher.research_competitor(comp, date_str)
+            else:
+                brand = {**comp, "territory_url": comp.get("product_url"), "canary": comp.get("canary", "")}
+                site = scrape_brand(brand, date_str)
             sites.append(site)
         except Exception as e:
-            print(f"  [ERROR] {brand['name']}: {e}", file=sys.stderr)
+            print(f"  [ERROR] {comp['name']}: {e}", file=sys.stderr)
             sites.append({
-                "id": brand["id"], "name": brand["name"],
-                "market": brand["market"], "type": brand["type"],
-                "url": brand["url"], "http_status": 0,
+                "id": comp["id"], "name": comp["name"],
+                "market": comp.get("market", "AU"), "type": comp.get("type", ""),
+                "url": comp["url"], "http_status": 0,
                 "is_on_sale": False, "promotion_intensity": 0,
                 "promos": [], "error": str(e),
             })
-        # Be polite — delay between requests
         time.sleep(2)
 
-    # Scrape Google Shopping
+    # ── AGENT 2: ANALYST — interpret data ──────────────────────────────────
+    landscape_summary = ""
+    if use_agents and sites:
+        print()
+        print("Phase 2: Analysis (competitive interpretation)")
+        try:
+            analysis = analyst.analyze_landscape(sites, date_str)
+            sites = analysis["sites"]  # Now enriched with claude_summary
+            landscape_summary = analysis.get("landscape_summary", "")
+            market_stats = analysis.get("market_stats", {})
+            if landscape_summary:
+                print(f"  [ANALYST] {landscape_summary[:120]}...")
+            print(f"  [ANALYST] Stats: {json.dumps(market_stats)}")
+        except Exception as e:
+            print(f"  [ANALYST ERROR] {e}", file=sys.stderr)
+
+    # ── Google Shopping ────────────────────────────────────────────────────
     print()
     print("Scraping Google Shopping...")
     google_shopping = {}
-    for market, config in GOOGLE_SHOPPING_QUERIES.items():
-        try:
-            result = scrape_google_shopping(market, config)
-            if result:
-                google_shopping[market] = result
-        except Exception as e:
-            print(f"  [ERROR] Google Shopping {market}: {e}", file=sys.stderr)
-        time.sleep(3)
+    for market, mkt_config in shopping_config.items():
+        if isinstance(mkt_config, dict) and "domain" in mkt_config:
+            search_query = target.get("reference_search_query", "")
+            full_config = {**mkt_config, "query": search_query} if search_query else mkt_config
+            if "query" not in full_config:
+                continue
+            try:
+                result = scrape_google_shopping(market, full_config)
+                if result:
+                    google_shopping[market] = result
+            except Exception as e:
+                print(f"  [ERROR] Google Shopping {market}: {e}", file=sys.stderr)
+            time.sleep(3)
 
     # Build payload
     payload = {
@@ -510,6 +569,8 @@ def main():
         "is_weekend": is_weekend,
         "sites": sites,
         "google_shopping": google_shopping,
+        "landscape_summary": landscape_summary,
+        "target_brand": target.get("name", ""),
     }
 
     # POST to ingest

@@ -10,7 +10,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy scripts
 COPY scraper.py .
+COPY agents.py .
 COPY backfill_wayback.py .
+COPY config.json .
 
 # Run as non-root
 USER scraper
