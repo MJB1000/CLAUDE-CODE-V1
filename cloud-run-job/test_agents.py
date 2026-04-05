@@ -79,6 +79,33 @@ class TestPlaywrightAvailability(unittest.TestCase):
         assert result["renderer"] == "http"  # Fell back to HTTP
 
 
+class TestFetchDuration(unittest.TestCase):
+    """TDD: Researcher should report fetch_duration_ms in results."""
+
+    def setUp(self):
+        self.config = load_config(os.path.join(os.path.dirname(__file__), "config.json"))
+        self.agent = ResearcherAgent(self.config)
+
+    @patch("agents.fetch_url")
+    @patch("agents.upload_snapshot")
+    def test_result_includes_fetch_duration_ms(self, mock_upload, mock_fetch):
+        mock_fetch.return_value = (200, "<html><body>autowipers shop</body></html>")
+        comp = self.config["competitors"][0]  # http renderer
+        result = self.agent.research_competitor(comp, "2025-04-05")
+        assert "fetch_duration_ms" in result, "Result must include fetch_duration_ms"
+        assert isinstance(result["fetch_duration_ms"], (int, float))
+        assert result["fetch_duration_ms"] >= 0
+
+    @patch("agents.fetch_url")
+    @patch("agents.upload_snapshot")
+    def test_failed_fetch_still_has_duration(self, mock_upload, mock_fetch):
+        mock_fetch.return_value = (503, "")
+        comp = self.config["competitors"][0]
+        result = self.agent.research_competitor(comp, "2025-04-05")
+        assert "fetch_duration_ms" in result, "Even failed fetches must report duration"
+        assert result["fetch_duration_ms"] >= 0
+
+
 class TestFetchWithBrowser(unittest.TestCase):
 
     @patch("playwright.sync_api.sync_playwright")

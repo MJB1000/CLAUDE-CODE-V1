@@ -15,6 +15,7 @@ Falls back to rule-based logic when API key is not available.
 import json
 import os
 import sys
+import time as _time
 import urllib.request
 from scraper import (
     html_to_text, detect_promos, calc_promotion_intensity,
@@ -134,6 +135,7 @@ class ResearcherAgent:
         print(f"  [RESEARCHER/{method_label}] Scraping {competitor['name']} ({competitor.get('market', 'AU')})...")
 
         # ── Fetch page ──────────────────────────────────────────────────────
+        t0 = _time.monotonic()
         screenshot_path = None
         if use_browser:
             screenshot_path = os.path.join(
@@ -144,9 +146,10 @@ class ResearcherAgent:
             )
         else:
             status, html = fetch_url(competitor["url"])
+        fetch_duration_ms = round((_time.monotonic() - t0) * 1000)
 
         if not html:
-            return self._error_result(competitor, status)
+            return self._error_result(competitor, status, fetch_duration_ms)
 
         text = html_to_text(html)
 
@@ -212,13 +215,14 @@ class ResearcherAgent:
             "raw_text_length": len(text),
             "ai_raw_extract": ai_raw_extract,
             "renderer": method_label.lower(),
+            "fetch_duration_ms": fetch_duration_ms,
             "screenshot": screenshot_path if screenshot_path and os.path.exists(screenshot_path) else None,
         }
 
         print(f"    → intensity={intensity}, on_sale={is_on_sale}, promos={len(promos)}, renderer={method_label}")
         return result
 
-    def _error_result(self, competitor, status):
+    def _error_result(self, competitor, status, fetch_duration_ms=0):
         return {
             "id": competitor["id"],
             "name": competitor["name"],
@@ -229,6 +233,7 @@ class ResearcherAgent:
             "is_on_sale": False,
             "promotion_intensity": 0,
             "promos": [],
+            "fetch_duration_ms": fetch_duration_ms,
             "error": f"Failed to fetch (HTTP {status})",
         }
 
