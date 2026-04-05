@@ -298,6 +298,7 @@
             <th data-sort="deal">Deal</th>
             <th data-sort="sale_duration_days">Duration <span class="sort-arrow"></span></th>
             <th data-sort="territory_price">Price <span class="sort-arrow"></span></th>
+            <th data-sort="fetch_duration_ms">Fetch <span class="sort-arrow"></span></th>
           </tr>
         </thead>
         <tbody id="brandsTable"></tbody>
@@ -314,6 +315,7 @@
         <button class="filter-btn" data-atype="price_change">Prices</button>
         <button class="filter-btn" data-atype="new_promo_code">Promos</button>
         <button class="filter-btn" data-atype="anomaly">Anomalies</button>
+        <button class="filter-btn" data-atype="slow_fetch">Slow</button>
       </div>
     </div>
     <div class="card" id="alertsList">
@@ -639,6 +641,7 @@ function renderBrands() {
       case "promotion_intensity": av = a.promotion_intensity || 0; bv = b.promotion_intensity || 0; break;
       case "sale_duration_days": av = a.sale_duration_days || 0; bv = b.sale_duration_days || 0; break;
       case "territory_price": av = a.territory_price?.price || 999; bv = b.territory_price?.price || 999; break;
+      case "fetch_duration_ms": av = a.fetch_duration_ms || 0; bv = b.fetch_duration_ms || 0; break;
       default: av = 0; bv = 0;
     }
     return sortDir * ((av > bv) - (av < bv));
@@ -652,6 +655,9 @@ function renderBrands() {
     const deal = s.claude_summary || promo?.raw_text?.substring(0, 60) || "—";
     const dur = s.sale_duration_days || 0;
     const price = s.territory_price?.price;
+    const fetchMs = s.fetch_duration_ms || 0;
+    const fetchSec = (fetchMs / 1000).toFixed(1);
+    const fetchColor = fetchMs > 10000 ? "var(--red)" : fetchMs > 5000 ? "var(--orange)" : "var(--muted)";
     const mktBadge = s.market === "NZ"
       ? '<span class="badge badge-nz">NZ</span>'
       : '<span class="badge badge-au">AU</span>';
@@ -672,6 +678,7 @@ function renderBrands() {
       <td style="font-size:12px;color:#555;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(deal)}</td>
       <td style="font-family:monospace;color:${dur > 5 ? 'var(--orange)' : 'var(--muted)'}">${dur > 0 ? dur + "d" : "—"}</td>
       <td style="font-family:monospace;font-weight:${price ? '600' : '400'};color:${price ? 'var(--green)' : 'var(--muted)'}">${price ? "$" + price.toFixed(2) : "—"}</td>
+      <td style="font-family:monospace;font-size:12px;color:${fetchColor}" title="${s.renderer || 'http'}">${fetchMs ? fetchSec + "s" : "—"}</td>
     </tr>`;
   }).join("");
 }

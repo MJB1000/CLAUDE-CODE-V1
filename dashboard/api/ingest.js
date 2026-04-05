@@ -191,6 +191,13 @@ module.exports = async function handler(req, res) {
         message: "Canary check failed — parser may be broken",
         detail: `Site returned ${site.http_status} but brand name not found in HTML` });
     }
+
+    // ── Slow fetch alert ──────────────────────────────────────────────────
+    if (site.fetch_duration_ms && site.fetch_duration_ms > 10000) {
+      newAlerts.push({ type: "slow_fetch", ts: now, brand: site.name, market,
+        message: `Slow fetch: ${(site.fetch_duration_ms / 1000).toFixed(1)}s`,
+        detail: `Renderer: ${site.renderer || "http"}, status: ${site.http_status}` });
+    }
   }
 
   // ── Persist ────────────────────────────────────────────────────────────────

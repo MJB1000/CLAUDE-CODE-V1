@@ -53,6 +53,7 @@ module.exports = async function handler(req, res) {
       "canary_pass", "http_status", "promo_count",
       "top_promo_text", "top_promo_code", "top_discount_pct",
       "anomaly", "anomaly_zscore", "claude_summary",
+      "fetch_duration_ms", "renderer",
     ];
 
     const rows = sites.map(s => {
@@ -76,6 +77,8 @@ module.exports = async function handler(req, res) {
         s.anomaly ? "yes" : "no",
         s.anomaly_zscore || "",
         (s.claude_summary || "").replace(/"/g, '""'),
+        s.fetch_duration_ms || "",
+        s.renderer || "http",
       ];
     });
 

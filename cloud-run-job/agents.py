@@ -219,7 +219,7 @@ class ResearcherAgent:
             "screenshot": screenshot_path if screenshot_path and os.path.exists(screenshot_path) else None,
         }
 
-        print(f"    → intensity={intensity}, on_sale={is_on_sale}, promos={len(promos)}, renderer={method_label}")
+        print(f"    → intensity={intensity}, on_sale={is_on_sale}, promos={len(promos)}, renderer={method_label}, {fetch_duration_ms}ms")
         return result
 
     def _error_result(self, competitor, status, fetch_duration_ms=0):
