@@ -7,6 +7,20 @@ const { kv } = require("@vercel/kv");
 const SECRET      = process.env.WIPER_INTEL_SECRET || "changeme";
 const MAX_ALERTS  = 200;
 const MAX_HISTORY = 90;
+const RATE_LIMIT_MAX     = parseInt(process.env.RATE_LIMIT_MAX || "10");
+const RATE_LIMIT_WINDOW  = parseInt(process.env.RATE_LIMIT_WINDOW || "60"); // seconds
+
+async function checkRateLimit(req) {
+  const ip = req.headers["x-forwarded-for"]?.split(",")[0]?.trim() || "unknown";
+  const key = `ratelimit:ingest:${ip}`;
+  try {
+    const count = await kv.incr(key);
+    if (count === 1) await kv.expire(key, RATE_LIMIT_WINDOW);
+    return { allowed: count <= RATE_LIMIT_MAX, count, limit: RATE_LIMIT_MAX };
+  } catch {
+    return { allowed: true, count: 0, limit: RATE_LIMIT_MAX };
+  }
+}
 
 module.exports = async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -17,6 +31,14 @@ module.exports = async function handler(req, res) {
 
   const apiKey = req.headers["x-api-key"] || req.query.key;
   if (apiKey !== SECRET) return res.status(401).json({ error: "Unauthorized" });
+
+  // Rate limiting
+  const rl = await checkRateLimit(req);
+  res.setHeader("X-RateLimit-Limit", rl.limit);
+  res.setHeader("X-RateLimit-Remaining", Math.max(0, rl.limit - rl.count));
+  if (!rl.allowed) {
+    return res.status(429).json({ error: "Rate limit exceeded", retry_after: RATE_LIMIT_WINDOW });
+  }
 
   let body;
   try { body = typeof req.body === "string" ? JSON.parse(req.body) : req.body; }

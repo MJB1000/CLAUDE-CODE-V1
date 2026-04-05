@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "npx vercel dev",
     "deploy": "npx vercel --prod",
-    "lint": "node -e 'require(\"./api/data.js\"); require(\"./api/ingest.js\"); require(\"./api/health.js\"); console.log(\"All API routes load OK\")'",
+    "lint": "node -e 'require(\"./api/data.js\"); require(\"./api/ingest.js\"); require(\"./api/health.js\"); require(\"./api/export.js\"); require(\"./api/openapi.js\"); console.log(\"All API routes load OK\")'",
+    "test": "jest --config jest.config.js",
     "test-ingest": "curl -s -X POST -H 'Content-Type: application/json' -H 'X-API-Key: changeme' -d '{\"date\":\"2025-01-01\",\"sites\":[],\"day_of_week\":3,\"is_weekend\":false}' http://localhost:3000/api/ingest | node -e 'process.stdin.pipe(process.stdout)'",
     "test-health": "curl -s http://localhost:3000/api/health | node -e 'process.stdin.pipe(process.stdout)'"
   },

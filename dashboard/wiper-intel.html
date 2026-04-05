@@ -161,6 +161,43 @@
     padding: 12px 18px; margin-bottom: 16px; font-size: 13px; color: var(--red);
   }
 
+  /* Auth overlay */
+  .auth-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,.85); z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .auth-box {
+    background: #fff; border-radius: 14px; padding: 36px; max-width: 380px; width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,.3); text-align: center;
+  }
+  .auth-box .logo { font-family: monospace; font-size: 12px; color: var(--accent-dark); letter-spacing: .12em; margin-bottom: 12px; }
+  .auth-box h2 { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+  .auth-box p { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+  .auth-box input {
+    width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px;
+    font-size: 14px; margin-bottom: 14px; outline: none; text-align: center;
+    font-family: monospace;
+  }
+  .auth-box input:focus { border-color: var(--accent-dark); }
+  .auth-box button {
+    width: 100%; padding: 10px; background: var(--accent-dark); color: #fff;
+    border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer;
+  }
+  .auth-box .error { color: var(--red); font-size: 12px; margin-top: 8px; display: none; }
+
+  /* Export bar */
+  .export-bar {
+    display: flex; gap: 8px; align-items: center; justify-content: flex-end;
+    margin-bottom: 16px;
+  }
+  .export-btn {
+    background: var(--card); border: 1px solid var(--border); padding: 5px 12px;
+    border-radius: 6px; font-size: 11px; cursor: pointer; color: var(--muted);
+    text-decoration: none; transition: all .15s;
+  }
+  .export-btn:hover { border-color: #999; color: var(--text); }
+
   /* Responsive */
   @media (max-width: 768px) {
     .header { flex-direction: column; align-items: flex-start; gap: 12px; }
@@ -172,6 +209,18 @@
 </style>
 </head>
 <body>
+
+<!-- Auth overlay -->
+<div class="auth-overlay" id="authOverlay" style="display:none">
+  <div class="auth-box">
+    <div class="logo">WT / WIPER INTEL</div>
+    <h2>Dashboard Access</h2>
+    <p>Enter your API key to view the dashboard</p>
+    <input type="password" id="authKeyInput" placeholder="API key" autocomplete="off">
+    <button onclick="submitAuth()">Unlock</button>
+    <div class="error" id="authError">Invalid key. Please try again.</div>
+  </div>
+</div>
 
 <div class="container">
   <!-- Header -->
@@ -227,6 +276,10 @@
         <button class="filter-btn" data-sale="off">No Sale</button>
       </div>
       <input type="text" class="search-input" id="brandSearch" placeholder="Search brands...">
+    </div>
+    <div class="export-bar">
+      <a class="export-btn" id="exportCsv" href="#" onclick="exportData('csv')">Export CSV</a>
+      <a class="export-btn" id="exportJson" href="#" onclick="exportData('json')">Export JSON</a>
     </div>
     <div class="card">
       <table>
@@ -303,22 +356,99 @@
 <script>
 // ── State ──────────────────────────────────────────────────────────────────────
 let DATA = null;
-let sortCol = "promotion_intensity";
-let sortDir = -1;
-let filterMarket = "all";
-let filterSale = "all";
-let filterAlertType = "all";
+let sortCol = localStorage.getItem("wi_sortCol") || "promotion_intensity";
+let sortDir = parseInt(localStorage.getItem("wi_sortDir") || "-1");
+let filterMarket = localStorage.getItem("wi_filterMarket") || "all";
+let filterSale = localStorage.getItem("wi_filterSale") || "all";
+let filterAlertType = localStorage.getItem("wi_filterAlertType") || "all";
 let searchQuery = "";
+let authKey = localStorage.getItem("wi_auth_key") || "";
 
 const API_BASE = "/api";
+const DASHBOARD_AUTH = true; // set false to disable auth gate
+
+function saveState() {
+  localStorage.setItem("wi_sortCol", sortCol);
+  localStorage.setItem("wi_sortDir", sortDir);
+  localStorage.setItem("wi_filterMarket", filterMarket);
+  localStorage.setItem("wi_filterSale", filterSale);
+  localStorage.setItem("wi_filterAlertType", filterAlertType);
+}
+
+// ── Auth ───────────────────────────────────────────────────────────────────────
+function checkAuth() {
+  if (!DASHBOARD_AUTH) return true;
+  if (authKey) return true;
+  document.getElementById("authOverlay").style.display = "flex";
+  document.getElementById("authKeyInput").focus();
+  return false;
+}
+
+function submitAuth() {
+  const input = document.getElementById("authKeyInput");
+  const key = input.value.trim();
+  if (!key) return;
+
+  // Verify key against the health endpoint (doesn't need auth, but validates the key exists)
+  fetch(API_BASE + "/data?key=" + encodeURIComponent(key))
+    .then(r => {
+      // The data endpoint doesn't require auth, so we verify by trying export
+      return fetch(API_BASE + "/export?format=json&key=" + encodeURIComponent(key));
+    })
+    .then(r => {
+      if (r.ok) {
+        authKey = key;
+        localStorage.setItem("wi_auth_key", key);
+        document.getElementById("authOverlay").style.display = "none";
+        loadData();
+      } else {
+        document.getElementById("authError").style.display = "block";
+        input.value = "";
+        input.focus();
+      }
+    })
+    .catch(() => {
+      document.getElementById("authError").style.display = "block";
+    });
+}
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Enter" && document.getElementById("authOverlay").style.display === "flex") {
+    submitAuth();
+  }
+});
 
 // ── Init ───────────────────────────────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
+  if (!checkAuth()) return;
+  restoreFilters();
   initTabs();
   initFilters();
   initSort();
   loadData();
 });
+
+function restoreFilters() {
+  // Restore active tab from localStorage
+  const savedTab = localStorage.getItem("wi_activeTab");
+  if (savedTab) {
+    document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
+    document.querySelectorAll(".tab-panel").forEach(x => x.classList.remove("active"));
+    const tab = document.querySelector(`.tab[data-tab="${savedTab}"]`);
+    if (tab) { tab.classList.add("active"); document.getElementById("tab-" + savedTab)?.classList.add("active"); }
+  }
+
+  // Restore filter button states
+  document.querySelectorAll("#marketFilter .filter-btn").forEach(b => {
+    b.classList.toggle("active", b.dataset.market === filterMarket);
+  });
+  document.querySelectorAll("#saleFilter .filter-btn").forEach(b => {
+    b.classList.toggle("active", b.dataset.sale === filterSale);
+  });
+  document.querySelectorAll("#alertTypeFilter .filter-btn").forEach(b => {
+    b.classList.toggle("active", b.dataset.atype === filterAlertType);
+  });
+}
 
 function initTabs() {
   document.querySelectorAll(".tab").forEach(t => {
@@ -327,6 +457,7 @@ function initTabs() {
       document.querySelectorAll(".tab-panel").forEach(x => x.classList.remove("active"));
       t.classList.add("active");
       document.getElementById("tab-" + t.dataset.tab).classList.add("active");
+      localStorage.setItem("wi_activeTab", t.dataset.tab);
     });
   });
 }
@@ -337,7 +468,7 @@ function initFilters() {
       document.querySelectorAll("#marketFilter .filter-btn").forEach(x => x.classList.remove("active"));
       b.classList.add("active");
       filterMarket = b.dataset.market;
-      renderBrands();
+      saveState(); renderBrands();
     });
   });
   document.querySelectorAll("#saleFilter .filter-btn").forEach(b => {
@@ -345,7 +476,7 @@ function initFilters() {
       document.querySelectorAll("#saleFilter .filter-btn").forEach(x => x.classList.remove("active"));
       b.classList.add("active");
       filterSale = b.dataset.sale;
-      renderBrands();
+      saveState(); renderBrands();
     });
   });
   document.querySelectorAll("#alertTypeFilter .filter-btn").forEach(b => {
@@ -353,7 +484,7 @@ function initFilters() {
       document.querySelectorAll("#alertTypeFilter .filter-btn").forEach(x => x.classList.remove("active"));
       b.classList.add("active");
       filterAlertType = b.dataset.atype;
-      renderAlerts();
+      saveState(); renderAlerts();
     });
   });
   document.getElementById("brandSearch").addEventListener("input", e => {
@@ -367,7 +498,7 @@ function initSort() {
     th.addEventListener("click", () => {
       const col = th.dataset.sort;
       if (sortCol === col) { sortDir *= -1; } else { sortCol = col; sortDir = -1; }
-      renderBrands();
+      saveState(); renderBrands();
     });
   });
 }
@@ -656,6 +787,13 @@ function renderShopping() {
       </table>
     </div>`;
   }).join("");
+}
+
+// ── Export ────────────────────────────────────────────────────────────────────
+function exportData(format) {
+  if (!authKey) { alert("Please authenticate first."); return; }
+  const url = API_BASE + "/export?format=" + format + "&key=" + encodeURIComponent(authKey);
+  window.open(url, "_blank");
 }
 
 // ── Utilities ──────────────────────────────────────────────────────────────────

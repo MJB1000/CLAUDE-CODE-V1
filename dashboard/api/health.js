@@ -49,6 +49,20 @@ module.exports = async function handler(req, res) {
     return res.status(503).json(checks);
   }
 
+  // Uptime monitoring: include ping-friendly response time
+  checks.response_time_ms = Date.now() - Date.parse(checks.timestamp);
+  checks.version = "2.0.0";
+  checks.endpoints = {
+    data: "/api/data",
+    ingest: "/api/ingest",
+    export: "/api/export",
+    health: "/api/health",
+    openapi: "/api/openapi",
+    summarize: "/api/summarize",
+    digest: "/api/weekly-digest",
+    own: "/api/wipertech-own",
+  };
+
   const statusCode = checks.status === "ok" ? 200 : checks.status === "degraded" ? 200 : 503;
   return res.status(statusCode).json(checks);
 };
