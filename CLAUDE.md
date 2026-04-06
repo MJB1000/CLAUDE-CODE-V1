@@ -111,6 +111,8 @@ Load the skill the task needs. Not at session start.
 
 `skills/design-systems.md` — load when Designer is producing visual assets. References DESIGN.md files in `design-systems/`.
 
+`skills/figma-production.md` — load before any `use_figma` call. Contains critical Figma API rules, marketing design workflow (6 steps), and channel-specific dimensions.
+
 `skills/research.md` — load when Strategist needs market/competitor intelligence before writing a brief.
 
 `skills/notion-knowledge.md` — load when querying or updating the team's shared knowledge in Notion (clients, patterns, swipe file, campaign tracker).

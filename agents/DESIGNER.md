@@ -108,6 +108,10 @@ In subsequent rounds, review only sections NOT locked in previous rounds
 After copy is cleared and the launch gate is approved, Designer produces visual assets
 in Figma using the Figma MCP server tools.
 
+**Load `skills/figma-production.md` before any Figma work.** It contains critical rules
+for `use_figma` (color ranges, font loading, one-action-per-call) and the 6-step
+marketing design workflow.
+
 ### When Strategist briefs you for design
 
 Read `DESIGN-BRIEF.md` — Strategist writes this after copy clears. It contains:
