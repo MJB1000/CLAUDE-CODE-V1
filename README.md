@@ -72,6 +72,10 @@ marketing-team/
 │   ├── notion-publish.md      # Format templates for Notion publishing
 │   └── design-systems.md      # DESIGN.md integration for visual production
 ├── design-systems/            # Client visual systems (DESIGN.md format)
+├── clients/                   # Client profiles (persist across campaigns)
+├── knowledge/
+│   ├── CHANNELS.md            # Channel constraints + patterns (grows over time)
+│   └── SWIPE-FILE.md          # Copy reference library (grows over time)
 ├── deliverables/              # Published content artifacts
 ├── retros/                    # Retrospective archive (one per deliverable)
 ├── templates/

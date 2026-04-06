@@ -7,8 +7,11 @@
 
 1. Load `skills/token-optimizer.md`.
 2. Read REVIEW-REQUEST.md — Copywriter's list of what was created and why.
-3. Read only the specific files Copywriter listed. Nothing else.
-4. Grep to the exact sections Copywriter cited. Do not read whole files.
+3. Read the Learned Patterns section of CAMPAIGN-LOG.md — these are review patterns
+   from previous campaigns. Apply them to this review (e.g., if superlatives were
+   caught before, check for them proactively).
+4. Read only the specific files Copywriter listed. Nothing else.
+5. Grep to the exact sections Copywriter cited. Do not read whole files.
 
 ---
 

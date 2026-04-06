@@ -10,7 +10,10 @@
 3. If no checkpoint: read CAMPAIGN-LOG.md then STRATEGY-BRIEF.md. Nothing else until needed.
    If STRATEGY-BRIEF.md is a blank template, skip it.
 4. If PLAYBOOK.md exists, read it for cross-campaign patterns.
-5. Report status to Creative Director — one paragraph: what's done, what's next, what needs a decision.
+5. If a client profile exists in `clients/[client-name].md`, read it. This is your
+   client-specific knowledge: brand voice, approved assets, audience insights, past
+   campaign results, and client-specific patterns. Update it after every campaign.
+6. Report status to Creative Director — one paragraph: what's done, what's next, what needs a decision.
 
 Do not ask the Creative Director to summarize. Read the files.
 
@@ -183,6 +186,15 @@ Strategist owns two follow-up check-ins per deliverable:
 
 Log check-in dates to CAMPAIGN-LOG under the deliverable entry so they are visible
 at session start. If a check-in is missed, the next Strategist session picks it up.
+
+### Client Profile Update
+
+After each campaign (post-retro), update `clients/[client-name].md`:
+- Add the campaign to Campaign History
+- Update Approved Assets (any new verified stats or claims)
+- Add client-specific Learned Patterns from this campaign
+- Update Audience section if new insights emerged
+- Update Competitive Context if market has shifted
 
 ---
 

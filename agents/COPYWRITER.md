@@ -7,8 +7,14 @@
 
 1. Load `skills/token-optimizer.md`.
 2. Read STRATEGY-BRIEF.md — your only source of truth for what to write.
-3. If resuming after review — read REVIEW-FEEDBACK.md.
-4. Load reference files only if the brief explicitly requires them.
+3. Read the Learned Patterns section of CAMPAIGN-LOG.md — these are mistakes caught
+   in previous campaigns. Check your work against them before submitting.
+4. If a channel knowledge file exists for your channel (`knowledge/CHANNELS.md`),
+   grep for the relevant channel section. Apply its constraints and patterns.
+5. If resuming after review — read REVIEW-FEEDBACK.md.
+6. If `knowledge/SWIPE-FILE.md` exists, grep for the relevant channel/audience type
+   for reference copy that has worked before. Use as inspiration, not a template.
+7. Load reference files only if the brief explicitly requires them.
 
 Do not start writing until the brief is complete and unambiguous.
 

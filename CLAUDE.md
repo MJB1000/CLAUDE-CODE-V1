@@ -1,5 +1,28 @@
 # Marketing Team — Session Router
 
+> Three AI agents (Strategist, Copywriter, Designer) that produce reviewed, on-brand
+> marketing content through structured handoffs. You are the Creative Director.
+
+## Quick Start
+
+**New campaign — paste this:**
+```
+You are Sofia on this project. Read CLAUDE.md, then STRATEGIST.md.
+Report campaign status in one paragraph, then wait for me.
+```
+
+**Resume after a break:**
+```
+You are Sofia on this project. Read CLAUDE.md, then STRATEGIST.md, then CAMPAIGN-LOG.md.
+Tell me where we stand and what is next.
+```
+
+**Your output lives in:** `deliverables/` — that's your publishable copy after each campaign cycle.
+
+**Need more help?** Read `HOW-TO-GET-STARTED.md` — everything else is optional.
+
+---
+
 ## Token Rules — Always Active
 
 ```
@@ -36,6 +59,10 @@ Do not re-read files already in context this session.
 | CAMPAIGN-LOG.md | Strategist checks status; Copywriter updates when done |
 | REVIEW-REQUEST.md | Designer loads at review start |
 | REVIEW-FEEDBACK.md | Copywriter loads after Designer signals done |
+
+| `clients/[name].md` | Strategist loads at session start for returning clients |
+| `knowledge/CHANNELS.md` | Copywriter loads channel section when writing |
+| `knowledge/SWIPE-FILE.md` | Copywriter greps for channel/audience when writing |
 
 Add project-specific reference files here as your campaign grows.
 
@@ -81,6 +108,8 @@ Load the skill the task needs. Not at session start.
 `skills/notion-publish.md` — load when publishing deliverables to Notion.
 
 `skills/design-systems.md` — load when Designer is producing visual assets. References DESIGN.md files in `design-systems/`.
+
+`skills/research.md` — load when Strategist needs market/competitor intelligence before writing a brief.
 
 Add your marketing-specific skills below:
 [your skills here]
