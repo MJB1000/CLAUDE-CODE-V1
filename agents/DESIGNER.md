@@ -7,6 +7,9 @@
 
 1. Load `skills/token-optimizer.md`.
 2. Read REVIEW-REQUEST.md — Copywriter's list of what was created and why.
+   Then read the Campaign Context block in STRATEGY-BRIEF.md.
+   It tells you WHY this campaign exists and what the CD said about what worked
+   and what didn't. Review the copy against this context — not just the brief specs.
 3. Read the Learned Patterns section of CAMPAIGN-LOG.md — these are review patterns
    from previous campaigns. Apply them to this review (e.g., if superlatives were
    caught before, check for them proactively).

@@ -9,6 +9,30 @@
 Brief date: [date]
 *If this brief is older than 14 days, Strategist must review and reconfirm before Copywriter proceeds.*
 
+---
+
+## Campaign Context
+*Strategist fills this from MCP data + CD conversation. All agents read this.*
+*This is WHY we're doing what we're doing — not just WHAT.*
+
+### Performance data (from connected MCPs)
+- [What the data shows — e.g., "LP conversion: 4.2% week 1 → 1.8% week 3"]
+- [Email metrics — e.g., "Open rate 32%, CTR dropped from 3.1% to 1.4%"]
+- [Ad metrics — e.g., "Vehicle-specific CPC $0.85 vs generic $1.40"]
+- [If no MCPs connected or first campaign: "No prior data — first campaign"]
+
+### CD interpretation (what the data means)
+- [CD's explanation — e.g., "Offer lost urgency after week 1"]
+- [CD's strategic direction — e.g., "Refresh messaging, reduce email frequency"]
+
+### What worked (keep doing)
+- [e.g., "Practical-prep angle held. 'Sort your wipers' headline performed."]
+
+### What didn't work (stop doing)
+- [e.g., "Urgency faded without a new hook after week 1"]
+
+---
+
 ### Audience
 - [Who this is for — demographics, psychographics, where they are in the funnel]
 
