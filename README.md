@@ -32,6 +32,8 @@ Each agent has a defined role, reads only what it needs, and communicates throug
 | `CAMPAIGN-LOG.md` | All (Strategist owns) | All |
 | `SESSION-CHECKPOINT.md` | Strategist | All |
 | `RETRO.md` | Strategist (post-publish) | All |
+| `DESIGN-BRIEF.md` | Strategist (after copy approved) | Designer |
+| `DESIGN-REQUEST.md` | Designer (Figma output) | Strategist |
 | `PLAYBOOK.md` | Strategist | Strategist (at project start) |
 
 ## Quick Start
@@ -66,10 +68,15 @@ marketing-team/
 │   ├── REVIEW-FEEDBACK.md
 │   ├── CAMPAIGN-LOG.md
 │   ├── SESSION-CHECKPOINT.md
+│   ├── DESIGN-BRIEF.md
+│   ├── DESIGN-REQUEST.md
 │   └── RETRO.md
 ├── skills/
 │   ├── token-optimizer.md     # 5 behavioral rules for token discipline
 │   ├── notion-publish.md      # Format templates for Notion publishing
+│   ├── notion-knowledge.md    # Shared knowledge layer (Notion databases)
+│   ├── brief-quality.md       # 10-point brief scoring rubric
+│   ├── research.md            # Market/competitor intelligence via web
 │   └── design-systems.md      # DESIGN.md integration for visual production
 ├── design-systems/            # Client visual systems (DESIGN.md format)
 ├── clients/                   # Client profiles (persist across campaigns)

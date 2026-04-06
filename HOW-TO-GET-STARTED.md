@@ -40,7 +40,7 @@ This gives you Sofia (Strategist), Charlie (Copywriter), and Dana (Designer) —
 ### Step 3: Create working directories
 
 ```bash
-mkdir -p deliverables retros
+mkdir -p deliverables retros clients design-systems
 ```
 
 ### Step 4: Verify the structure
@@ -50,7 +50,10 @@ You should have:
 your-project/
 ├── agents/STRATEGIST.md, COPYWRITER.md, DESIGNER.md   ← role definitions
 ├── handoff/STRATEGY-BRIEF.md, REVIEW-REQUEST.md, ...   ← handoff templates
-├── skills/token-optimizer.md                            ← loaded every session
+├── skills/token-optimizer.md + 5 other skills           ← loaded on demand
+├── knowledge/CHANNELS.md, SWIPE-FILE.md                 ← grows over time
+├── clients/                                             ← client profiles
+├── design-systems/                                      ← visual systems
 ├── deliverables/                                        ← your output goes here
 ├── retros/                                              ← post-publish learning
 ├── CLAUDE.md                                            ← session router

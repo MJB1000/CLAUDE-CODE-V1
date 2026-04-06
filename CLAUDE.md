@@ -59,6 +59,8 @@ Do not re-read files already in context this session.
 | CAMPAIGN-LOG.md | Strategist checks status; Copywriter updates when done |
 | REVIEW-REQUEST.md | Designer loads at review start |
 | REVIEW-FEEDBACK.md | Copywriter loads after Designer signals done |
+| DESIGN-BRIEF.md | Designer loads at design production start |
+| DESIGN-REQUEST.md | Strategist reads after Designer completes Figma work |
 
 | `clients/[name].md` | Strategist loads at session start for returning clients |
 | `knowledge/CHANNELS.md` | Copywriter loads channel section when writing |

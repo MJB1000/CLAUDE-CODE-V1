@@ -69,7 +69,7 @@ Use `mcp__notion__API-create-a-data-source` for each.
 
 ## Agent-Specific Queries
 
-### Sofia (Strategist) — reads at brief-writing time
+### Strategist — reads at brief-writing time
 
 **Get client profile:**
 ```
@@ -89,7 +89,7 @@ Query Campaign Tracker DB → filter: Client = "[client]" → sort: Publish Date
 → Returns: past campaigns, outcomes, open metric check-ins
 ```
 
-### Charlie (Copywriter) — reads at writing time
+### Copywriter — reads at writing time
 
 **Get swipe file for this channel + audience:**
 ```
@@ -104,7 +104,7 @@ Query Patterns DB → filter: Channel = "[channel]" AND Category = "channel"
 → Returns: constraints + patterns specific to this channel
 ```
 
-### Dana (Designer) — reads at review time
+### Designer — reads at review time
 
 **Get review patterns for this channel:**
 ```
@@ -116,7 +116,7 @@ Query Patterns DB → filter: Category = "review" AND Channel = "[channel]"
 
 ## Auto-Populate After Each Campaign
 
-### Post-retro (Sofia runs this after writing RETRO.md):
+### Post-retro (Strategist runs this after writing RETRO.md):
 
 **1. Save patterns to Patterns DB:**
 - Read retros/RETRO-[N].md "Rules to Carry Forward" section
@@ -125,12 +125,12 @@ Query Patterns DB → filter: Category = "review" AND Channel = "[channel]"
   - Category = [infer from context: review/channel/brief/audience]
   - Channel = [from brief]
   - Status = "observed"
-  - Source = "Campaign [name], Dana Round [N]" or "Retro"
+  - Source = "Campaign [name], Designer Round [N]" or "Retro"
   - Date = today
 
 **2. Save winning copy to Swipe File DB:**
 - Read the cleared deliverable files
-- Extract: headlines, CTAs, subject lines, value props that Dana locked in Round 1
+- Extract: headlines, CTAs, subject lines, value props that Designer locked in Round 1
   (these are the sections that passed first time — strongest copy)
 - For each: create row in Swipe File DB with:
   - Copy = the actual text
@@ -145,7 +145,7 @@ Query Patterns DB → filter: Category = "review" AND Channel = "[channel]"
 - Update: Approved Stats (if new stats were confirmed), Last Updated
 - Add campaign to Campaign Tracker DB
 
-### At 30-day retro (Sofia runs this):
+### At 30-day retro (Strategist runs this):
 
 **4. Promote or invalidate patterns:**
 - Query Patterns DB → filter: Campaign = "[this campaign]" AND Status = "observed"

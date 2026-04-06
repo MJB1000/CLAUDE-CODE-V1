@@ -174,7 +174,7 @@ Every deliverable page follows this structure:
    - Use the appropriate format template above
    - Set page properties if publishing to a database (Status: Published, Channel, Date)
 3. **Append the formatted content** using `append-a-block`
-4. **Add a review history section** at the bottom summarizing what Dana caught
+4. **Add a review history section** at the bottom summarizing what the Designer caught
 5. **Log the Notion page URL** to CAMPAIGN-LOG under the deliverable entry
 
 ## Notion Workspace Structure (Recommended)

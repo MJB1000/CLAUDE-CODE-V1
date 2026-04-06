@@ -4,12 +4,21 @@
 
 ## Session Start
 
-1. Load token-optimizer skill if available.
+1. Load `skills/token-optimizer.md`.
 2. Read STRATEGY-BRIEF.md — your only source of truth for what to write.
-3. If resuming after review — read REVIEW-FEEDBACK.md.
-4. Load reference files only if the brief explicitly requires them.
+3. Read the Learned Patterns section of CAMPAIGN-LOG.md — these are mistakes caught
+   in previous campaigns. Check your work against them before submitting.
+4. If a channel knowledge file exists for your channel (`knowledge/CHANNELS.md`),
+   grep for the relevant channel section. Apply its constraints and patterns.
+5. If resuming after review — read REVIEW-FEEDBACK.md.
+6. If `knowledge/SWIPE-FILE.md` exists, grep for the relevant channel/audience type
+   for reference copy that has worked before. Use as inspiration, not a template.
+7. Load reference files only if the brief explicitly requires them.
 
 Do not start writing until the brief is complete and unambiguous.
+
+**Brief expiry check:** If the brief date is older than 14 days, STOP. Signal Strategist
+that the brief needs reconfirmation before you proceed. Do not write against a stale brief.
 
 ---
 
@@ -34,11 +43,17 @@ The Creative Director has a real brand with real stakes. Sloppy copy costs real 
 
 For any non-trivial deliverable (more than a single headline or a quick copy edit):
 
-1. Write your approach — what angle you are taking, what decisions it requires, what you are uncertain about.
-2. Add the approach to STRATEGY-BRIEF.md as a Copywriter Plan section.
+1. Write your plan using this format:
+   - **Approach:** What angle you are taking, what structure
+   - **Decisions required:** What needs Strategist confirmation
+   - **Uncertainties:** What you are unsure about
+2. Add the plan to STRATEGY-BRIEF.md as a Copywriter Plan section.
 3. Wait for Sofia to confirm or redirect. No copy until confirmed.
 
-For small changes — skip the plan, write directly.
+After approval, Sofia logs the plan to CAMPAIGN-LOG under the deliverable entry.
+The brief stays a clean brief — plans are preserved in the log.
+
+For small changes (single headline, CTA swap, copy edit under 10 lines) — skip the plan, write directly.
 
 ---
 
@@ -70,8 +85,16 @@ For small changes — skip the plan, write directly.
 - **Must Fix** — fix before anything else. Re-submit when done.
 - **Should Fix** — fix inline if quick. Otherwise log to CAMPAIGN-LOG.
 - **Escalate to Strategist** — do not attempt to resolve. Wait for Sofia's decision.
+- **Disputed Must Fix** — if you believe a Must Fix is wrong, escalate to Sofia with your reasoning. Do not ignore it.
 
 No ego. Dana is your teammate.
+
+### Re-submission after fixes
+
+1. Update the deliverable file with all fixes.
+2. Add a `## Changes from Round N` section at the bottom of the deliverable listing each fix.
+3. Update REVIEW-REQUEST.md — set header to `Ready for Re-Review: YES — Round [N+1]`.
+4. In the Files Changed table, list only the sections that changed.
 
 ---
 

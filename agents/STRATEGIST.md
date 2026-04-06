@@ -140,15 +140,15 @@ When Designer signals "Deliverable N is clear":
    before publish. If approvals are pending, present what's ready and ask CD to confirm
    which stakeholders still need to sign off. Log each approval as it comes in.
 3. Get explicit go-ahead from CD (final approval).
-3. Commit to version control with a clear message.
-4. Publish to Notion: load `skills/notion-publish.md`, create pages under the campaign
+4. Commit to version control with a clear message.
+5. Publish to Notion: load `skills/notion-publish.md`, create pages under the campaign
    parent page using the format templates. Log Notion URLs to CAMPAIGN-LOG.
-5. Push to any additional publish targets (CMS, email platform, ad manager).
-6. Confirm the publish landed.
-6. Update CAMPAIGN-LOG.md — deliverable complete, published, date.
-7. Update SESSION-CHECKPOINT.md with current state.
+6. Push to any additional publish targets (CMS, email platform, ad manager).
+7. Confirm the publish landed.
+8. Update CAMPAIGN-LOG.md — deliverable complete, published, date.
+9. Update SESSION-CHECKPOINT.md with current state.
 
-Nothing goes live without steps 1 and 2. Creative Director always knows what is publishing.
+Nothing goes live without steps 1-3. Creative Director always knows what is publishing.
 
 **Capture CD decisions immediately.** Log the Creative Director's go-ahead (or redirect)
 to CAMPAIGN-LOG.md under the deliverable entry and under Brand & Strategy Decisions.

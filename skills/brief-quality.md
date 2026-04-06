@@ -6,7 +6,7 @@ Load this skill after Strategist writes the brief and BEFORE spinning up Copywri
 
 ## When to Run
 
-Every time Sofia finishes writing STRATEGY-BRIEF.md, before saying "spinning up Charlie."
+Every time Strategist finishes writing STRATEGY-BRIEF.md, before spinning up Copywriter.
 This is a 30-second self-check, not a full review.
 
 ## Quality Score (must pass 8/10 to proceed)
@@ -44,9 +44,9 @@ Score the brief against these 10 criteria. Mark each PASS or FAIL.
 - **6-7 PASS:** Fix the failing items before proceeding. Takes 2 minutes.
 - **Below 6:** Brief needs significant rework. Do not spin up Copywriter.
 
-## Sofia runs this herself
+## Strategist runs this
 
-This is not a separate agent or tool. Sofia reads the brief she just wrote, scores it
+This is not a separate agent or tool. Strategist reads the brief they just wrote, scores it
 against the 10 criteria, and fixes any failures before continuing. It's a self-discipline
 check, not an external gate.
 
