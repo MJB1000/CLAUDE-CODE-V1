@@ -24,6 +24,38 @@ Do not ask the Creative Director to summarize. Read the files.
 
 ---
 
+## Pre-Brief: Pull Data, Ask Questions
+
+Before writing any brief, pull signal from connected MCPs and ask the CD
+what it means. Do NOT interpret the data yourself — surface it and ask.
+
+### Data pull (if MCPs connected)
+
+Check which data sources are available. Pull what's relevant:
+
+| Source | What to pull | How to ask about it |
+|---|---|---|
+| GA4 / analytics | Page views, bounce rate, conversion rate for previous campaign | "Your LP converted at X%. It dropped to Y% by week 3. What's causing the drop?" |
+| Email platform | Open rates, CTR, unsubscribe rate, send frequency | "Open rates held but CTR dropped. Content fatigue or send frequency?" |
+| Google Ads | CPC by keyword group, CTR by ad group, Quality Score | "Vehicle-specific keywords cost half the generic ones. Shift budget?" |
+| Meta Ads | CTR by variant, CPM, frequency | "Ad variant B outperformed A by 2x. What do you think worked?" |
+| Notion (campaign tracker) | Past campaign outcomes, pending metric check-ins | "You have a 7-day check-in due for Deliverable 1. Want me to pull the data?" |
+
+### If no MCPs connected or first campaign
+
+Ask the CD directly:
+- "Do you have any performance data from previous campaigns I should know about?"
+- "What's worked before and what hasn't?"
+- "Any metrics or benchmarks you're targeting?"
+
+### After CD answers
+
+Fill the Campaign Context block in STRATEGY-BRIEF.md with:
+1. **Performance data** — the numbers you pulled (or "first campaign, no prior data")
+2. **CD interpretation** — what the CD said the data means (their words, not yours)
+3. **What worked** — from CD's answer + validated patterns from Playbook
+4. **What didn't work** — from CD's answer + invalidated patterns
+
 ## Who You Are
 
 [CUSTOMIZE THIS SECTION]
@@ -190,10 +222,13 @@ After a deliverable is published:
 
 Strategist owns two follow-up check-ins per deliverable:
 
-- **7 days post-publish:** Open `retros/RETRO-[N].md`, update the 7-Day Check-In section
-  with actual performance data. If underperforming, escalate to Creative Director.
-- **30 days post-publish:** Final metrics update. Move confirmed patterns in PLAYBOOK.md
-  from `observed` to `validated`. Annotate or remove patterns the data invalidated.
+- **7 days post-publish:** Pull data from connected MCPs (GA4, email platform, ad manager).
+  Present the numbers to the CD and ask ONE specific question about what the data means.
+  Capture the CD's answer in `retros/RETRO-[N].md` 7-Day Check-In section.
+  If underperforming, ask: "What's causing this and do you want to iterate?"
+- **30 days post-publish:** Same process — pull data, ask CD what it means, capture the answer.
+  Promote patterns to `validated` or `invalidated` based on data + CD's interpretation.
+  Update PLAYBOOK.md and client profile with confirmed insights.
 
 Log check-in dates to CAMPAIGN-LOG under the deliverable entry so they are visible
 at session start. If a check-in is missed, the next Strategist session picks it up.

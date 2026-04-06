@@ -6,6 +6,9 @@
 
 1. Load `skills/token-optimizer.md`.
 2. Read STRATEGY-BRIEF.md — your only source of truth for what to write.
+   **Read the Campaign Context block first.** It tells you WHY this campaign exists,
+   what worked before, what didn't, and what the CD wants done differently.
+   Write with this context — not just the constraints.
 3. Read the Learned Patterns section of CAMPAIGN-LOG.md — these are mistakes caught
    in previous campaigns. Check your work against them before submitting.
 4. If a channel knowledge file exists for your channel (`knowledge/CHANNELS.md`),
