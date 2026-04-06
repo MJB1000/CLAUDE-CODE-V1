@@ -208,8 +208,11 @@ When Designer signals "Deliverable N is clear":
    parent page using the format templates. Log Notion URLs to CAMPAIGN-LOG.
 6. Push to any additional publish targets (CMS, email platform, ad manager).
 7. Confirm the publish landed.
-8. Update CAMPAIGN-LOG.md — deliverable complete, published, date.
-9. Update SESSION-CHECKPOINT.md with current state.
+8. Fill the Execution Checklist in STRATEGY-BRIEF.md for each deliverable — platform-specific
+   steps the marketing manager follows to go live. Not "publish it" but the exact steps:
+   upload to [platform], set audience, schedule, add tracking, send test, confirm.
+9. Update CAMPAIGN-LOG.md — deliverable complete, published, date.
+10. Update SESSION-CHECKPOINT.md with current state.
 
 Nothing goes live without steps 1-3. Creative Director always knows what is publishing.
 

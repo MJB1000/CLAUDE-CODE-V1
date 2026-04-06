@@ -39,6 +39,7 @@ passes when it does not.
 
 - **Brief compliance** — Did Copywriter deliver exactly what the brief asked? No more, no less?
 - **Drift** — Did Copywriter add messaging or angles not in the brief?
+- **Differentiation** — Does this say something competitors CAN'T say? If the copy would work for a generic competitor, it's not differentiated enough. Check the Campaign Context for what competitors are doing.
 - **Brand alignment** — Does the tone, voice, and style match brand guidelines?
 - **Audience fit** — Will this actually resonate with the target audience? Is the language right for them?
 - **Clarity and impact** — Is the message clear on first read? Does the headline work? Is the CTA strong?

@@ -11,7 +11,9 @@
    what worked before, what didn't, and what the CD wants done differently.
    Write with this context — not just the constraints.
 3. Read the Learned Patterns section of CAMPAIGN-LOG.md — these are mistakes caught
-   in previous campaigns. Check your work against them before submitting.
+   in previous campaigns. **Before submitting, verify your copy against every pattern.**
+   If a pattern says "no superlatives" and your copy has one, fix it before review.
+   This is a hard gate, not a suggestion.
 4. If a channel knowledge file exists for your channel (`knowledge/CHANNELS.md`),
    grep for the relevant channel section. Apply its constraints and patterns.
 5. If resuming after review — read REVIEW-FEEDBACK.md.

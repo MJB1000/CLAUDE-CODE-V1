@@ -60,6 +60,29 @@ Brief date: [date]
 ### Constraints
 - [Word count, format, compliance requirements, deadlines, etc.]
 
+### Production Specs (per deliverable)
+
+*What the designer/developer/platform operator needs beyond the copy.*
+
+| Deliverable | Platform | Image/Visual | Dimensions | Technical Notes |
+|---|---|---|---|---|
+| [e.g., Email] | [Klaviyo] | [Hero image: product shot / none] | [600px wide] | [HTML template: single column, brand header] |
+| [e.g., Landing page] | [Shopify / Webflow] | [Hero: lifestyle photo / product] | [Responsive, mobile-first] | [Vehicle selector widget above fold] |
+| [e.g., Social ad] | [Meta Ads Manager] | [Product photo / lifestyle / UGC style] | [1080x1080 feed, 1080x1920 stories] | [Link to LP] |
+| [e.g., Google Ads] | [Google Ads] | [N/A — text only] | [N/A] | [3 ad groups, responsive search] |
+
+### Execution Checklist (per deliverable)
+
+*Strategist fills this at launch gate. Marketing manager follows it to go live.*
+
+**[Deliverable name]:**
+1. [ ] [Platform-specific step — e.g., "Upload to Klaviyo, select Winter Sale template"]
+2. [ ] [Audience step — e.g., "Set segment: all subscribers, exclude unsubscribed last 30 days"]
+3. [ ] [Scheduling step — e.g., "Schedule for Tuesday 9am AEST"]
+4. [ ] [Tracking step — e.g., "Add UTM: source=email, medium=winter-sale, campaign=wipertech-2026"]
+5. [ ] [Verification step — e.g., "Send test to [CD email], confirm rendering"]
+6. [ ] [Go-live step — e.g., "Confirm send / publish / activate"]
+
 ### Deliverables
 1. [First thing to write]
 2. [Second thing]
