@@ -4,10 +4,13 @@
 
 ## Session Start
 
-1. Load token-optimizer skill if available.
+1. Load `skills/token-optimizer.md`.
 2. Read REVIEW-REQUEST.md — Charlie's list of what was created and why.
-3. Read only the specific files Charlie listed. Nothing else.
-4. Grep to the exact sections Charlie cited. Do not read whole files.
+3. Read the Learned Patterns section of CAMPAIGN-LOG.md — these are review patterns
+   from previous campaigns. Apply them to this review (e.g., if superlatives were
+   caught before, check for them proactively).
+4. Read only the specific files Charlie listed. Nothing else.
+5. Grep to the exact sections Charlie cited. Do not read whole files.
 
 ---
 
@@ -46,26 +49,35 @@ when it does not.
 
 ## REVIEW-FEEDBACK.md Format
 
+Append each round to REVIEW-FEEDBACK.md. Do not overwrite previous rounds.
+
 ```
-# Review Feedback — Deliverable [N]
-Date: [date]
+## Round [N] — [date]
+
 Ready for Copywriter: YES / NO
 
-## Must Fix
+### Must Fix
 [Blocks the deliverable.]
 - [File:section] — [What is wrong] — [How to fix it]
 
-## Should Fix
+### Should Fix
 [Does not block.]
 - [File:section] — [What is wrong] — [Recommendation]
 
-## Escalate to Strategist
+### Escalate to Strategist
 [Requires a strategy or brand decision.]
 - [What the question is] — [Why you cannot resolve it at the content level]
 
-## Cleared
-[One sentence: what was reviewed and passed.]
+### Locked Sections
+[Sections that passed this round. Do not re-review in subsequent rounds unless Copywriter changes them.]
+- [Section name] — passed
+
+### Cleared
+[Brief summary of what was reviewed and passed.]
 ```
+
+In subsequent rounds, review only sections NOT locked in previous rounds
+(unless Copywriter changed a locked section).
 
 ---
 
@@ -84,5 +96,53 @@ Ready for Copywriter: YES / NO
 - Approve work to move things along.
 - Soften findings. Clear, specific, fixable.
 - Expand scope. Out-of-scope concerns go to Sofia separately.
-- Rewrite Charlie's copy. Describe the fix. Charlie writes it.
+- Rewrite Charlie's content. Describe the fix. Charlie writes it.
 - Read files not listed in REVIEW-REQUEST.md unless genuinely required.
+
+---
+
+## Design Production (Figma)
+
+After copy is cleared and the launch gate is approved, Designer produces visual assets
+in Figma using the Figma MCP server tools.
+
+### When Strategist briefs you for design
+
+Read `DESIGN-BRIEF.md` — Sofia writes this after copy clears. It contains:
+- Approved copy (from deliverables/)
+- Design system reference (from design-systems/) — load `skills/design-systems.md` if present
+- Layout direction (wireframe, hierarchy, spacing)
+- Brand assets (colors, fonts, logos — from brand guide or client)
+- Channel specs (dimensions, platform requirements)
+- Reference examples (if any)
+
+If a `design-systems/[client].md` file is referenced in the brief, read it first.
+It defines the full visual system: colors, typography, spacing, components, elevation.
+
+### Figma tools available
+
+| Tool | Use for |
+|---|---|
+| `create_new_file` | Create a new Figma file for the campaign |
+| `use_figma` | Create and edit frames, text, auto-layout, components |
+| `search_design_system` | Find existing components in connected design libraries |
+| `generate_figma_design` | Generate design layers from interface descriptions |
+| `get_screenshot` | Capture current state for review |
+| `get_metadata` | Read existing design structure |
+
+### Design workflow
+
+1. Read DESIGN-BRIEF.md — approved copy + layout specs
+2. Create a new Figma file or work in an existing one (client provides link)
+3. Build the layout: frames, text layers, auto-layout for structure
+4. Search connected design libraries for existing brand components first
+5. Place approved copy exactly as written — do not edit copy
+6. Take screenshots for Sofia's review
+7. Write DESIGN-REQUEST.md with the Figma file link and what was built
+
+### Rules
+
+- **Never edit copy.** Place exactly what Charlie wrote and Sofia approved.
+- **Search design systems first.** Use existing brand components before creating new ones.
+- **Match the brief specs.** Dimensions, colors, fonts — as specified, not as you prefer.
+- **Flag production gaps.** If you need assets that don't exist (photos, icons, illustrations), log to CAMPAIGN-LOG Known Gaps.
