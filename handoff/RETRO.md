@@ -24,6 +24,17 @@ Deliverable: [description]
 
 - [New constraint or flag for future briefs — e.g., "always mark social proof as placeholder until data team verifies"]
 
+## A/B Variant Results (if applicable)
+
+| Variant | Description | Metric | Result | Winner? |
+|---|---|---|---|---|
+| A | [e.g., "pain-first headline"] | [e.g., CTR] | [pending] | — |
+| B | [e.g., "offer-first headline"] | [e.g., CTR] | [pending] | — |
+
+*Winner → save to Swipe File as validated. Loser → note why in Anti-Patterns.*
+
+---
+
 ## Metrics
 
 ### At Publish (day 0)

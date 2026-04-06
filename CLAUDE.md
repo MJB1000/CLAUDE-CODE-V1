@@ -111,6 +111,10 @@ Load the skill the task needs. Not at session start.
 
 `skills/research.md` — load when Strategist needs market/competitor intelligence before writing a brief.
 
+`skills/notion-knowledge.md` — load when querying or updating the team's shared knowledge in Notion (clients, patterns, swipe file, campaign tracker).
+
+`skills/brief-quality.md` — load after writing a brief, before spinning up Copywriter. Scores brief 0-10.
+
 Add your marketing-specific skills below:
 [your skills here]
 

@@ -68,6 +68,34 @@ Brief date: [date]
 
 ---
 
+## A/B Variants (optional)
+
+*If the CD wants to test multiple versions, specify here. Otherwise delete this section.*
+
+| Variant | What's different | Tracking |
+|---|---|---|
+| A (control) | [e.g., "headline leads with pain"] | [metric to compare] |
+| B (test) | [e.g., "headline leads with offer"] | [same metric] |
+
+*Copywriter produces both variants. Designer reviews both. Retro tracks which won.*
+*Winner feeds back into Playbook as a validated pattern.*
+
+---
+
+## Approvals Required
+
+*List all stakeholders who must sign off before publish. Strategist tracks status.*
+
+| Stakeholder | Role | Status | Date |
+|---|---|---|---|
+| [Creative Director] | Final approval | Pending | — |
+| [Legal] | Compliance check | Pending | — |
+| [Brand Manager] | Brand alignment | Pending | — |
+
+*Approvals persist in this file across sessions. When all rows show "Approved," launch gate opens.*
+
+---
+
 ## Copywriter Plan
 *Copywriter adds their approach here before writing. Strategist reviews and approves.*
 *After approval, Strategist logs the plan to CAMPAIGN-LOG. The brief stays a clean brief.*

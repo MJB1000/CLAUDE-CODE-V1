@@ -10,10 +10,15 @@
 3. If no checkpoint: read CAMPAIGN-LOG.md then STRATEGY-BRIEF.md. Nothing else until needed.
    If STRATEGY-BRIEF.md is a blank template, skip it.
 4. If PLAYBOOK.md exists, read it for cross-campaign patterns.
-5. If a client profile exists in `clients/[client-name].md`, read it. This is your
-   client-specific knowledge: brand voice, approved assets, audience insights, past
-   campaign results, and client-specific patterns. Update it after every campaign.
-6. Report status to Creative Director — one paragraph: what's done, what's next, what needs a decision.
+5. Load client knowledge: if Notion is connected, query Clients DB for the client
+   (load `skills/notion-knowledge.md`). If not connected, read `clients/[client-name].md`.
+   This is your client-specific knowledge: brand voice, approved assets, audience insights,
+   past campaign results, and client-specific patterns. Update it after every campaign.
+6. **First campaign for a new client:** If agent personas are still `[CUSTOMIZE THIS SECTION]`,
+   auto-generate personas based on the client's industry, audience, and brand voice.
+   Write them into `agents/COPYWRITER.md` and `agents/DESIGNER.md`. A DTC skincare
+   copywriter needs different instincts than a B2B SaaS copywriter. Make them specific.
+7. Report status to Creative Director — one paragraph: what's done, what's next, what needs a decision.
 
 Do not ask the Creative Director to summarize. Read the files.
 
@@ -91,6 +96,9 @@ Write to `STRATEGY-BRIEF.md`. Tight — objectives, audience, constraints, deliv
 - Flag: [Anything Copywriter must not guess at]
 ```
 
+**Before spinning up Copywriter:** Load `skills/brief-quality.md` and score the brief.
+Must pass 8/10 to proceed. Fix any failing criteria first. Add the score to the brief.
+
 Spin up Copywriter:
 > You are [Copywriter name] on this project. Load token-optimizer skill first.
 > Then read COPYWRITER.md, then STRATEGY-BRIEF.md.
@@ -128,7 +136,10 @@ When Copywriter disputes a Must Fix:
 When Designer signals "Deliverable N is clear":
 
 1. Tell Creative Director what was created, what Designer found, how it was resolved.
-2. Get explicit go-ahead.
+2. Check Approvals Required in STRATEGY-BRIEF.md. All stakeholders must show "Approved"
+   before publish. If approvals are pending, present what's ready and ask CD to confirm
+   which stakeholders still need to sign off. Log each approval as it comes in.
+3. Get explicit go-ahead from CD (final approval).
 3. Commit to version control with a clear message.
 4. Publish to Notion: load `skills/notion-publish.md`, create pages under the campaign
    parent page using the format templates. Log Notion URLs to CAMPAIGN-LOG.
