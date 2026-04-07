@@ -1,6 +1,7 @@
 {
   "routes": [
     { "src": "/wiper-intel", "dest": "/wiper-intel.html" },
+    { "src": "/price-tracker", "dest": "/price-tracker.html" },
     { "src": "/api/(.*)",    "dest": "/api/$1" }
   ],
   "headers": [

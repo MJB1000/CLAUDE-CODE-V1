@@ -3,6 +3,7 @@
 // day-of-week normalisation, canary failure alerts, Wipertech own data
 
 const { kv } = require("./_kv");
+const { appendRow } = require("./_sheets");
 
 const SECRET      = process.env.WIPER_INTEL_SECRET || "changeme";
 const MAX_ALERTS  = 200;
@@ -230,6 +231,46 @@ module.exports = async function handler(req, res) {
       date, summary: body.landscape_summary, target_brand: body.target_brand || "",
     });
   }
+
+  // ── Log prices to Google Sheets + store per-brand price history ────────────
+  try {
+    const brandId = body.brand_id;
+    if (brandId) {
+      const periods = (await kv.get(`periods:${brandId}`).catch(() => null)) || [];
+      const activePeriod = periods.find(p => date >= p.start_date && date <= p.end_date);
+      const periodType = activePeriod?.type || "bau";
+
+      const priceRecords = [];
+      for (const site of sites) {
+        const price = site.territory_price?.price;
+        if (price) {
+          const record = {
+            date,
+            competitor_id: site.id,
+            competitor_name: site.name,
+            price,
+            period_type: periodType,
+            period_label: activePeriod?.label || "",
+            is_on_sale: site.is_on_sale || false,
+            intensity: site.promotion_intensity || 0,
+          };
+          priceRecords.push(record);
+
+          await appendRow("Prices", [
+            date, brandId, site.id, site.name, site.market || "AU",
+            price, periodType, activePeriod?.label || "",
+            site.is_on_sale ? "YES" : "NO", site.promotion_intensity || 0,
+          ]).catch(() => {}); // best-effort
+        }
+      }
+
+      // Append to per-brand price history in KV
+      if (priceRecords.length) {
+        const existing = (await kv.get(`prices:${brandId}`).catch(() => null)) || [];
+        await kv.set(`prices:${brandId}`, [...existing, ...priceRecords].slice(-500));
+      }
+    }
+  } catch { /* sheets/price logging is best-effort */ }
 
   return res.status(200).json({
     ok: true, date,
