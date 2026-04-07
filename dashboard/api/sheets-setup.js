@@ -77,7 +77,7 @@ module.exports = async function handler(req, res) {
 
   try {
     const token = await getAccessToken();
-    if (!token) return res.status(500).json({ error: "Failed to get access token" });
+    if (!token) return res.status(500).json({ error: "Failed to get access token", sa_email: (() => { try { return JSON.parse(SERVICE_ACCOUNT).client_email } catch { return "parse_failed" } })(), sa_len: SERVICE_ACCOUNT.length });
 
     // Create spreadsheet
     const spreadsheet = await gapi("POST", "https://sheets.googleapis.com/v4/spreadsheets", token, {
