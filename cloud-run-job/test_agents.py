@@ -226,10 +226,10 @@ class TestAnalystAgent(unittest.TestCase):
         sites = [
             {"id": "a", "name": "Brand A", "market": "AU", "is_on_sale": True,
              "promotion_intensity": 40, "promos": [{"raw_text": "20% off", "discount_pct": 20}],
-             "territory_price": {"price": 29.95}},
+             "product_price": {"price": 29.95}},
             {"id": "b", "name": "Brand B", "market": "AU", "is_on_sale": False,
              "promotion_intensity": 0, "promos": [],
-             "territory_price": {"price": 39.95}},
+             "product_price": {"price": 39.95}},
         ]
         result = self.agent.analyze_landscape(sites, "2025-04-05")
 

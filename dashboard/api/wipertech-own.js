@@ -28,7 +28,7 @@ module.exports = async function handler(req, res) {
 
   // GET — read current own-data state
   if (req.method === "GET") {
-    const own = await kv.get("wiper:own_data").catch(() => null);
+    const own = await kv.get("intel:own_data").catch(() => null);
     return res.status(200).json({ own_data: own });
   }
 
@@ -52,7 +52,7 @@ module.exports = async function handler(req, res) {
     note: note || "",
   };
 
-  await kv.set("wiper:own_data", ownData);
+  await kv.set("intel:own_data", ownData);
 
   return res.status(200).json({ ok: true, own_data: ownData });
 };

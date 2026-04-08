@@ -9,10 +9,10 @@ module.exports = async function handler(req, res) {
 
   try {
     const [latest, alerts, shopping, saleState] = await Promise.all([
-      kv.get("wiper:latest").catch(() => null),
-      kv.get("wiper:alerts").catch(() => []),
-      kv.get("wiper:shopping:latest").catch(() => null),
-      kv.get("wiper:sale_state").catch(() => {}),
+      kv.get("intel:latest").catch(() => null),
+      kv.get("intel:alerts").catch(() => []),
+      kv.get("intel:shopping:latest").catch(() => null),
+      kv.get("intel:sale_state").catch(() => {}),
     ]);
 
     // Enrich sites with sale duration from state
@@ -27,16 +27,16 @@ module.exports = async function handler(req, res) {
     // Optional: pull history for charting
     let history = [];
     if (req.query.history === "1") {
-      const histKeys = (await kv.get("wiper:history_keys").catch(() => [])) || [];
+      const histKeys = (await kv.get("intel:history_keys").catch(() => [])) || [];
       const last30   = histKeys.slice(-30);
       const snaps    = await Promise.all(
-        last30.map(k => kv.get(`wiper:history:${k}`).catch(() => null))
+        last30.map(k => kv.get(`intel:history:${k}`).catch(() => null))
       );
       history = snaps.filter(Boolean);
     }
 
-    const landscape = await kv.get("wiper:landscape_summary").catch(() => null);
-    const ownData   = await kv.get("wiper:own_data").catch(() => null);
+    const landscape = await kv.get("intel:landscape_summary").catch(() => null);
+    const ownData   = await kv.get("intel:own_data").catch(() => null);
 
     return res.status(200).json({
       latest, alerts, history, shopping,

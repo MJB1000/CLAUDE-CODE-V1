@@ -162,7 +162,7 @@ const spec = {
         is_on_sale: { type: "boolean" },
         promotion_intensity: { type: "integer", minimum: 0, maximum: 100 },
         promos: { type: "array", items: { type: "object" } },
-        territory_price: { type: "object", properties: {
+        product_price: { type: "object", properties: {
           price: { type: "number" }, url: { type: "string" },
         }},
       }},

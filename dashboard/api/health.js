@@ -18,7 +18,7 @@ module.exports = async function handler(req, res) {
   };
 
   try {
-    const latest = await kv.get("wiper:latest").catch(() => null);
+    const latest = await kv.get("intel:latest").catch(() => null);
     checks.kv = "connected";
 
     if (latest) {
@@ -39,7 +39,7 @@ module.exports = async function handler(req, res) {
       checks.warning = "No scrape data found — run the scraper first";
     }
 
-    const alerts = await kv.get("wiper:alerts").catch(() => []);
+    const alerts = await kv.get("intel:alerts").catch(() => []);
     checks.alerts_count = (alerts || []).length;
 
   } catch (err) {

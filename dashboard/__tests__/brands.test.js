@@ -444,7 +444,7 @@ describe("Ingest + Sheets integration", () => {
             is_on_sale: true,
             promotion_intensity: 35,
             promos: [{ raw_text: "20% off", discount_pct: 20 }],
-            territory_price: { price: 29.99, url: "https://comp.com/product" },
+            product_price: { price: 29.99, url: "https://comp.com/product" },
           },
         ],
         day_of_week: 2,

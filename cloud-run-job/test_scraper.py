@@ -19,7 +19,7 @@ from scraper import (
     html_to_text,
     detect_promos,
     calc_promotion_intensity,
-    extract_territory_price,
+    extract_product_price,
     upload_snapshot,
     scrape_brand,
     scrape_google_shopping,
@@ -256,28 +256,28 @@ class TestExtractTerritoryPrice(unittest.TestCase):
 
     def test_basic_price(self):
         html = '<span class="price">$29.95</span>'
-        assert extract_territory_price(html) == 29.95
+        assert extract_product_price(html) == 29.95
 
     def test_multiple_prices_returns_lowest(self):
         html = '<span>$49.95</span><span>$29.95</span><span>$39.95</span>'
-        assert extract_territory_price(html) == 29.95
+        assert extract_product_price(html) == 29.95
 
     def test_ignores_prices_outside_range(self):
         html = '$3.00 $29.95 $999.99'
-        assert extract_territory_price(html) == 29.95
+        assert extract_product_price(html) == 29.95
 
     def test_no_prices(self):
         html = '<p>No prices here</p>'
-        assert extract_territory_price(html) is None
+        assert extract_product_price(html) is None
 
     def test_prices_at_boundaries(self):
         html = '$5.00 $5.01 $499.99 $500.00'
-        result = extract_territory_price(html)
+        result = extract_product_price(html)
         assert result == 5.01  # 5.00 excluded (not >5), 500 excluded (not <500)
 
     def test_integer_prices(self):
         html = '$25 $30 $45'
-        assert extract_territory_price(html) == 25.0
+        assert extract_product_price(html) == 25.0
 
     def test_price_in_complex_html(self):
         html = '''
@@ -287,7 +287,7 @@ class TestExtractTerritoryPrice(unittest.TestCase):
             <span class="save">Save $15.00!</span>
         </div>
         '''
-        assert extract_territory_price(html) == 15.0  # lowest valid
+        assert extract_product_price(html) == 15.0  # lowest valid
 
 
 # ── Brand Definitions Tests ──────────────────────────────────────────────────────
@@ -410,7 +410,7 @@ class TestScrapeBrand(unittest.TestCase):
 
     @patch("scraper.upload_snapshot")
     @patch("scraper.fetch_url")
-    def test_territory_price_extraction(self, mock_fetch, mock_upload):
+    def test_product_price_extraction(self, mock_fetch, mock_upload):
         # First call: main page, Second call: territory page
         mock_fetch.side_effect = [
             (200, "<html><body><p>Welcome to autowipers</p></body></html>"),
@@ -419,8 +419,8 @@ class TestScrapeBrand(unittest.TestCase):
         brand = BRANDS[0]  # has territory_url
         result = scrape_brand(brand, "2025-03-21")
 
-        assert result["territory_price"] is not None
-        assert result["territory_price"]["price"] == 34.95
+        assert result["product_price"] is not None
+        assert result["product_price"]["price"] == 34.95
 
     @patch("scraper.upload_snapshot")
     @patch("scraper.fetch_url")
@@ -429,7 +429,7 @@ class TestScrapeBrand(unittest.TestCase):
         brand = BRANDS[2]  # repco_au, territory_url=None
         result = scrape_brand(brand, "2025-03-21")
 
-        assert result["territory_price"] is None
+        assert result["product_price"] is None
         mock_fetch.assert_called_once()  # Only main page, no territory fetch
 
 
@@ -638,7 +638,7 @@ class TestEdgeCases(unittest.TestCase):
 
     def test_extract_price_with_malformed_html(self):
         html = '<div class="price">$29.95</div><<<<>>>not valid $19.99'
-        price = extract_territory_price(html)
+        price = extract_product_price(html)
         assert price == 19.99
 
     def test_html_to_text_with_entities(self):

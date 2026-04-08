@@ -95,8 +95,8 @@ describe("api/ingest.js", () => {
   });
 
   test("accepts API key from query param", async () => {
-    mockKvStore["wiper:alerts"] = [];
-    mockKvStore["wiper:history_keys"] = [];
+    mockKvStore["intel:alerts"] = [];
+    mockKvStore["intel:history_keys"] = [];
 
     const req = createReq({
       headers: {},
@@ -136,8 +136,8 @@ describe("api/ingest.js", () => {
   });
 
   test("processes valid payload with empty sites", async () => {
-    mockKvStore["wiper:alerts"] = [];
-    mockKvStore["wiper:history_keys"] = [];
+    mockKvStore["intel:alerts"] = [];
+    mockKvStore["intel:history_keys"] = [];
 
     const req = createReq({
       body: {
@@ -156,8 +156,8 @@ describe("api/ingest.js", () => {
   });
 
   test("processes valid payload with sites", async () => {
-    mockKvStore["wiper:alerts"] = [];
-    mockKvStore["wiper:history_keys"] = [];
+    mockKvStore["intel:alerts"] = [];
+    mockKvStore["intel:history_keys"] = [];
 
     const req = createReq({
       body: {
@@ -190,14 +190,14 @@ describe("api/ingest.js", () => {
 
   test("detects sale_started alert", async () => {
     // Pre-populate with previous snapshot (no sale)
-    mockKvStore["wiper:latest"] = {
+    mockKvStore["intel:latest"] = {
       date: "2025-03-20",
       sites: [
         { id: "test_brand", is_on_sale: false, promos: [], promotion_intensity: 0 },
       ],
     };
-    mockKvStore["wiper:alerts"] = [];
-    mockKvStore["wiper:history_keys"] = [];
+    mockKvStore["intel:alerts"] = [];
+    mockKvStore["intel:history_keys"] = [];
 
     const req = createReq({
       body: {
@@ -228,17 +228,17 @@ describe("api/ingest.js", () => {
   });
 
   test("detects sale_ended alert", async () => {
-    mockKvStore["wiper:latest"] = {
+    mockKvStore["intel:latest"] = {
       date: "2025-03-20",
       sites: [
         { id: "test_brand", is_on_sale: true, promos: [{ raw_text: "sale" }] },
       ],
     };
-    mockKvStore["wiper:sale_state"] = {
+    mockKvStore["intel:sale_state"] = {
       test_brand: { start_date: "2025-03-18", consecutive_days: 3, last_intensity: 40 },
     };
-    mockKvStore["wiper:alerts"] = [];
-    mockKvStore["wiper:history_keys"] = [];
+    mockKvStore["intel:alerts"] = [];
+    mockKvStore["intel:history_keys"] = [];
 
     const req = createReq({
       body: {
@@ -262,14 +262,14 @@ describe("api/ingest.js", () => {
   });
 
   test("detects price_change alert", async () => {
-    mockKvStore["wiper:latest"] = {
+    mockKvStore["intel:latest"] = {
       date: "2025-03-20",
       sites: [
-        { id: "test_brand", territory_price: { price: 39.95 }, promos: [] },
+        { id: "test_brand", product_price: { price: 39.95 }, promos: [] },
       ],
     };
-    mockKvStore["wiper:alerts"] = [];
-    mockKvStore["wiper:history_keys"] = [];
+    mockKvStore["intel:alerts"] = [];
+    mockKvStore["intel:history_keys"] = [];
 
     const req = createReq({
       body: {
@@ -280,7 +280,7 @@ describe("api/ingest.js", () => {
           {
             id: "test_brand", name: "Test Brand", market: "AU",
             is_on_sale: false, promotion_intensity: 0, promos: [],
-            territory_price: { price: 29.95 },
+            product_price: { price: 29.95 },
           },
         ],
       },
@@ -295,12 +295,12 @@ describe("api/ingest.js", () => {
   });
 
   test("detects new_promo_code alert", async () => {
-    mockKvStore["wiper:latest"] = {
+    mockKvStore["intel:latest"] = {
       date: "2025-03-20",
       sites: [{ id: "test_brand", promos: [] }],
     };
-    mockKvStore["wiper:alerts"] = [];
-    mockKvStore["wiper:history_keys"] = [];
+    mockKvStore["intel:alerts"] = [];
+    mockKvStore["intel:history_keys"] = [];
 
     const req = createReq({
       body: {
@@ -325,9 +325,9 @@ describe("api/ingest.js", () => {
   });
 
   test("detects canary_fail alert", async () => {
-    mockKvStore["wiper:latest"] = { date: "2025-03-20", sites: [] };
-    mockKvStore["wiper:alerts"] = [];
-    mockKvStore["wiper:history_keys"] = [];
+    mockKvStore["intel:latest"] = { date: "2025-03-20", sites: [] };
+    mockKvStore["intel:alerts"] = [];
+    mockKvStore["intel:history_keys"] = [];
 
     const req = createReq({
       body: {
@@ -351,8 +351,8 @@ describe("api/ingest.js", () => {
   });
 
   test("stores google_shopping data", async () => {
-    mockKvStore["wiper:alerts"] = [];
-    mockKvStore["wiper:history_keys"] = [];
+    mockKvStore["intel:alerts"] = [];
+    mockKvStore["intel:history_keys"] = [];
 
     const shopping = {
       AU: { listings: [{ price: 29.95 }], min_price: 29.95, max_price: 29.95 },
@@ -370,13 +370,13 @@ describe("api/ingest.js", () => {
     const res = createRes();
     await handler(req, res);
 
-    expect(mockKv.set).toHaveBeenCalledWith("wiper:shopping:2025-03-21", shopping);
-    expect(mockKv.set).toHaveBeenCalledWith("wiper:shopping:latest", shopping);
+    expect(mockKv.set).toHaveBeenCalledWith("intel:shopping:2025-03-21", shopping);
+    expect(mockKv.set).toHaveBeenCalledWith("intel:shopping:latest", shopping);
   });
 
   test("handles string body (JSON parse)", async () => {
-    mockKvStore["wiper:alerts"] = [];
-    mockKvStore["wiper:history_keys"] = [];
+    mockKvStore["intel:alerts"] = [];
+    mockKvStore["intel:history_keys"] = [];
 
     const req = createReq({
       body: JSON.stringify({
@@ -399,15 +399,15 @@ describe("api/ingest.js", () => {
   });
 
   test("tracks sale duration across days", async () => {
-    mockKvStore["wiper:latest"] = {
+    mockKvStore["intel:latest"] = {
       date: "2025-03-20",
       sites: [{ id: "b1", is_on_sale: true, promos: [{ raw_text: "sale" }] }],
     };
-    mockKvStore["wiper:sale_state"] = {
+    mockKvStore["intel:sale_state"] = {
       b1: { start_date: "2025-03-18", consecutive_days: 3, last_intensity: 30 },
     };
-    mockKvStore["wiper:alerts"] = [];
-    mockKvStore["wiper:history_keys"] = [];
+    mockKvStore["intel:alerts"] = [];
+    mockKvStore["intel:history_keys"] = [];
 
     const req = createReq({
       body: {
@@ -427,7 +427,7 @@ describe("api/ingest.js", () => {
     await handler(req, res);
 
     // Check the site was annotated with duration
-    const snapshot = mockKvStore["wiper:latest"];
+    const snapshot = mockKvStore["intel:latest"];
     const site = snapshot.sites.find(s => s.id === "b1");
     expect(site.sale_duration_days).toBe(4);
     expect(site.sale_start_date).toBe("2025-03-18");
@@ -447,13 +447,13 @@ describe("api/data.js", () => {
   });
 
   test("returns latest data", async () => {
-    mockKvStore["wiper:latest"] = {
+    mockKvStore["intel:latest"] = {
       date: "2025-03-21",
       sites: [{ id: "test", sale_duration_days: 0 }],
     };
-    mockKvStore["wiper:alerts"] = [{ type: "sale_started" }];
-    mockKvStore["wiper:shopping:latest"] = { AU: {} };
-    mockKvStore["wiper:sale_state"] = {};
+    mockKvStore["intel:alerts"] = [{ type: "sale_started" }];
+    mockKvStore["intel:shopping:latest"] = { AU: {} };
+    mockKvStore["intel:sale_state"] = {};
 
     const req = createReq({ method: "GET", query: {} });
     const res = createRes();
@@ -466,12 +466,12 @@ describe("api/data.js", () => {
   });
 
   test("returns history when requested", async () => {
-    mockKvStore["wiper:latest"] = { date: "2025-03-21", sites: [] };
-    mockKvStore["wiper:alerts"] = [];
-    mockKvStore["wiper:sale_state"] = {};
-    mockKvStore["wiper:history_keys"] = ["2025-03-20", "2025-03-21"];
-    mockKvStore["wiper:history:2025-03-20"] = { date: "2025-03-20", sites: [] };
-    mockKvStore["wiper:history:2025-03-21"] = { date: "2025-03-21", sites: [] };
+    mockKvStore["intel:latest"] = { date: "2025-03-21", sites: [] };
+    mockKvStore["intel:alerts"] = [];
+    mockKvStore["intel:sale_state"] = {};
+    mockKvStore["intel:history_keys"] = ["2025-03-20", "2025-03-21"];
+    mockKvStore["intel:history:2025-03-20"] = { date: "2025-03-20", sites: [] };
+    mockKvStore["intel:history:2025-03-21"] = { date: "2025-03-21", sites: [] };
 
     const req = createReq({ method: "GET", query: { history: "1" } });
     const res = createRes();
@@ -482,14 +482,14 @@ describe("api/data.js", () => {
   });
 
   test("enriches sites with sale duration from state", async () => {
-    mockKvStore["wiper:latest"] = {
+    mockKvStore["intel:latest"] = {
       date: "2025-03-21",
       sites: [{ id: "b1", sale_duration_days: 0 }],
     };
-    mockKvStore["wiper:sale_state"] = {
+    mockKvStore["intel:sale_state"] = {
       b1: { consecutive_days: 5, start_date: "2025-03-16" },
     };
-    mockKvStore["wiper:alerts"] = [];
+    mockKvStore["intel:alerts"] = [];
 
     const req = createReq({ method: "GET", query: {} });
     const res = createRes();
@@ -532,12 +532,12 @@ describe("api/health.js", () => {
   });
 
   test("returns ok when data is fresh", async () => {
-    mockKvStore["wiper:latest"] = {
+    mockKvStore["intel:latest"] = {
       date: "2025-03-21",
       scraped_at: new Date().toISOString(),
       sites: [{ id: "a" }, { id: "b" }],
     };
-    mockKvStore["wiper:alerts"] = [{ type: "test" }];
+    mockKvStore["intel:alerts"] = [{ type: "test" }];
 
     const req = createReq({ method: "GET" });
     const res = createRes();
@@ -552,7 +552,7 @@ describe("api/health.js", () => {
 
   test("returns degraded when data is stale", async () => {
     const staleDate = new Date(Date.now() - 48 * 60 * 60 * 1000).toISOString();
-    mockKvStore["wiper:latest"] = {
+    mockKvStore["intel:latest"] = {
       date: "2025-03-19",
       scraped_at: staleDate,
       sites: [],
@@ -602,7 +602,7 @@ describe("api/wipertech-own.js", () => {
   });
 
   test("GET returns current own data", async () => {
-    mockKvStore["wiper:own_data"] = {
+    mockKvStore["intel:own_data"] = {
       active: true,
       market: "AU",
       promo: { raw_text: "20% off" },
@@ -705,10 +705,10 @@ describe("api/weekly-digest.js", () => {
   });
 
   test("allows cron-triggered requests", async () => {
-    mockKvStore["wiper:history_keys"] = ["2025-03-20"];
-    mockKvStore["wiper:history:2025-03-20"] = { date: "2025-03-20", sites: [] };
-    mockKvStore["wiper:alerts"] = [];
-    mockKvStore["wiper:latest"] = { date: "2025-03-20", sites: [] };
+    mockKvStore["intel:history_keys"] = ["2025-03-20"];
+    mockKvStore["intel:history:2025-03-20"] = { date: "2025-03-20", sites: [] };
+    mockKvStore["intel:alerts"] = [];
+    mockKvStore["intel:latest"] = { date: "2025-03-20", sites: [] };
 
     const req = createReq({
       method: "GET",
@@ -722,16 +722,16 @@ describe("api/weekly-digest.js", () => {
   });
 
   test("returns HTML when no SMTP configured", async () => {
-    mockKvStore["wiper:history_keys"] = ["2025-03-20"];
-    mockKvStore["wiper:history:2025-03-20"] = {
+    mockKvStore["intel:history_keys"] = ["2025-03-20"];
+    mockKvStore["intel:history:2025-03-20"] = {
       date: "2025-03-20",
       sites: [
         { id: "test", name: "Test", market: "AU", is_on_sale: true, promotion_intensity: 50, promos: [{ raw_text: "50% off" }] }
       ],
     };
-    mockKvStore["wiper:alerts"] = [];
-    mockKvStore["wiper:latest"] = mockKvStore["wiper:history:2025-03-20"];
-    mockKvStore["wiper:sale_state"] = {};
+    mockKvStore["intel:alerts"] = [];
+    mockKvStore["intel:latest"] = mockKvStore["intel:history:2025-03-20"];
+    mockKvStore["intel:sale_state"] = {};
 
     const req = createReq({
       method: "GET",
@@ -752,7 +752,7 @@ describe("api/weekly-digest.js", () => {
   });
 
   test("handles no history gracefully", async () => {
-    mockKvStore["wiper:history_keys"] = [];
+    mockKvStore["intel:history_keys"] = [];
 
     const req = createReq({
       method: "GET",

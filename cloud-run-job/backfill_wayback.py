@@ -32,7 +32,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from scraper import (
     BRANDS, AEST, SECRET, INGEST_URL,
     html_to_text, detect_promos, calc_promotion_intensity,
-    extract_territory_price, post_json,
+    extract_product_price, post_json,
 )
 
 WAYBACK_CDX_API = "https://web.archive.org/cdx/search/cdx"
@@ -103,7 +103,7 @@ def process_snapshot(brand, html, date_str):
         "is_on_sale": is_on_sale,
         "promotion_intensity": intensity,
         "promos": promos,
-        "territory_price": None,
+        "product_price": None,
         "source": "wayback",
     }
 

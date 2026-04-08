@@ -112,7 +112,55 @@ def html_to_text(html):
     return extractor.get_text()
 
 
+FIRECRAWL_API_KEY = os.environ.get("FIRECRAWL_API_KEY", "")
+
 # ── HTTP helpers ────────────────────────────────────────────────────────────────
+
+def fetch_with_firecrawl(url, api_key=None):
+    """Fetch a URL via Firecrawl API. Returns (status, markdown, html)."""
+    api_key = api_key or FIRECRAWL_API_KEY
+    try:
+        payload = json.dumps({
+            "url": url,
+            "formats": ["markdown", "html"],
+        }).encode()
+        req = urllib.request.Request(
+            "https://api.firecrawl.dev/v2/scrape",
+            data=payload,
+            method="POST",
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+        )
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            raw = resp.read()
+            data = json.loads(raw.decode("utf-8", errors="replace"))
+
+        if not data.get("success"):
+            return 0, "", ""
+
+        content = data.get("data", {})
+        status = content.get("metadata", {}).get("statusCode", 200)
+        return status, content.get("markdown", ""), content.get("html", "")
+    except Exception as e:
+        print(f"  [FIRECRAWL] Error: {e}", file=sys.stderr)
+        return 0, "", ""
+
+
+def fetch_url_smart(url, timeout=30):
+    """Smart fetcher: use Firecrawl if available, else HTTP. Returns (status, text)."""
+    api_key = os.environ.get("FIRECRAWL_API_KEY", "")
+    if api_key:
+        status, markdown, html = fetch_with_firecrawl(url, api_key)
+        if status > 0:
+            # Prefer markdown for promo detection (cleaner text)
+            return status, markdown or html_to_text(html) if html else markdown
+        # Fall back to HTTP on Firecrawl failure
+        print(f"  [FIRECRAWL] Failed, falling back to HTTP for {url}")
+
+    return fetch_url(url, timeout)
+
 
 def fetch_url(url, timeout=30):
     """Fetch a URL with retries and return (status_code, html_text)."""
@@ -273,7 +321,7 @@ def calc_promotion_intensity(promos, text):
     return min(score, 100)
 
 
-def extract_territory_price(html_text):
+def extract_product_price(html_text):
     """Try to extract a product price from a territory-specific page."""
     prices = []
     for pattern in PRICE_PATTERNS:
@@ -429,13 +477,13 @@ def scrape_brand(brand, date_str):
     is_on_sale = intensity >= 15 and len(promos) > 0
 
     # Territory price
-    territory_price = None
+    product_price = None
     if brand.get("territory_url"):
         t_status, t_html = fetch_url(brand["territory_url"])
         if t_html:
-            price = extract_territory_price(t_html)
+            price = extract_product_price(t_html)
             if price:
-                territory_price = {
+                product_price = {
                     "price": price,
                     "url": brand["territory_url"],
                     "http_status": t_status,
@@ -455,7 +503,7 @@ def scrape_brand(brand, date_str):
         "is_on_sale": is_on_sale,
         "promotion_intensity": intensity,
         "promos": promos,
-        "territory_price": territory_price,
+        "product_price": product_price,
     }
 
     print(f"    → intensity={intensity}, on_sale={is_on_sale}, promos={len(promos)}")

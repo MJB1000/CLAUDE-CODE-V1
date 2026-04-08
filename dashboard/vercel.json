@@ -1,6 +1,6 @@
 {
   "routes": [
-    { "src": "/wiper-intel", "dest": "/wiper-intel.html" },
+    { "src": "/dashboard", "dest": "/dashboard.html" },
     { "src": "/price-tracker", "dest": "/price-tracker.html" },
     { "src": "/api/(.*)",    "dest": "/api/$1" }
   ],
@@ -16,7 +16,7 @@
       ]
     },
     {
-      "source": "/wiper-intel",
+      "source": "/dashboard",
       "headers": [
         { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; frame-ancestors 'none'" }
       ]

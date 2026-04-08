@@ -19,7 +19,7 @@ import time as _time
 import urllib.request
 from scraper import (
     html_to_text, detect_promos, calc_promotion_intensity,
-    extract_territory_price, fetch_url, upload_snapshot,
+    extract_product_price, fetch_url, upload_snapshot,
 )
 
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
@@ -174,7 +174,7 @@ class ResearcherAgent:
             else:
                 p_status, p_html = fetch_url(product_url)
             if p_html:
-                price = extract_territory_price(p_html)
+                price = extract_product_price(p_html)
                 if price:
                     product_price = {
                         "price": price,
@@ -214,7 +214,7 @@ class ResearcherAgent:
             "is_on_sale": is_on_sale,
             "promotion_intensity": intensity,
             "promos": promos,
-            "territory_price": product_price,
+            "product_price": product_price,
             "raw_text_length": len(text),
             "ai_raw_extract": ai_raw_extract,
             "renderer": method_label.lower(),
@@ -261,7 +261,7 @@ class AnalystAgent:
         print(f"  [ANALYST] Analyzing {len(sites)} competitors for {self.target['name']}...")
 
         on_sale = [s for s in sites if s.get("is_on_sale")]
-        priced = [s for s in sites if s.get("territory_price")]
+        priced = [s for s in sites if s.get("product_price")]
         avg_intensity = (
             sum(s.get("promotion_intensity", 0) for s in sites) / len(sites)
             if sites else 0
@@ -282,7 +282,7 @@ class AnalystAgent:
                 "on_sale_count": len(on_sale),
                 "avg_intensity": round(avg_intensity),
                 "price_leader": priced[0]["name"] if priced else None,
-                "lowest_price": min(s["territory_price"]["price"] for s in priced) if priced else None,
+                "lowest_price": min(s["product_price"]["price"] for s in priced) if priced else None,
             },
         }
 
@@ -331,7 +331,7 @@ class AnalystAgent:
             f"- {s['name']} [{s.get('market','AU')}]: "
             f"{'ON SALE' if s.get('is_on_sale') else 'no sale'}, "
             f"intensity={s.get('promotion_intensity',0)}, "
-            f"{'price=$'+str(s['territory_price']['price']) if s.get('territory_price') else 'no price'}"
+            f"{'price=$'+str(s['product_price']['price']) if s.get('product_price') else 'no price'}"
             f"{', ' + s.get('claude_summary','') if s.get('claude_summary') else ''}"
             for s in sites
         )
@@ -370,8 +370,8 @@ class AnalystAgent:
             parts.append("Moderate promotion intensity across the market.")
 
         if priced:
-            lowest = min(s["territory_price"]["price"] for s in priced)
-            leader = next(s["name"] for s in priced if s["territory_price"]["price"] == lowest)
+            lowest = min(s["product_price"]["price"] for s in priced)
+            leader = next(s["name"] for s in priced if s["product_price"]["price"] == lowest)
             parts.append(f"Price leader: {leader} at ${lowest:.2f}.")
 
         return " ".join(parts)

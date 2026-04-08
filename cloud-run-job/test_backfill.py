@@ -174,13 +174,13 @@ class TestProcessSnapshot(unittest.TestCase):
 
         assert result["canary_pass"] is True
 
-    def test_snapshot_territory_price_is_none(self):
+    def test_snapshot_product_price_is_none(self):
         brand = BRANDS[0]
         html = "<html><body><p>autowipers test</p></body></html>"
         result = process_snapshot(brand, html, "2025-01-15")
 
         # Backfill doesn't fetch territory pages
-        assert result["territory_price"] is None
+        assert result["product_price"] is None
 
     def test_all_brands_processable(self):
         """Verify process_snapshot works for every brand definition."""

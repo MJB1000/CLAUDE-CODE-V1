@@ -54,10 +54,10 @@ module.exports = async function handler(req, res) {
 
   // ── Load state ─────────────────────────────────────────────────────────────
   const [prevSnapshot, saleState, historyKeys, existingAlerts] = await Promise.all([
-    kv.get("wiper:latest").catch(() => null),
-    kv.get("wiper:sale_state").catch(() => ({})),
-    kv.get("wiper:history_keys").catch(() => []),
-    kv.get("wiper:alerts").catch(() => []),
+    kv.get("intel:latest").catch(() => null),
+    kv.get("intel:sale_state").catch(() => ({})),
+    kv.get("intel:history_keys").catch(() => []),
+    kv.get("intel:alerts").catch(() => []),
   ]);
 
   const prevMap   = Object.fromEntries(((prevSnapshot || {}).sites || []).map(s => [s.id, s]));
@@ -67,7 +67,7 @@ module.exports = async function handler(req, res) {
   // ── Load rolling history for anomaly detection ────────────────────────────
   const histKeys = (historyKeys || []).slice(-30);
   const histSnapshots = histKeys.length > 0
-    ? await Promise.all(histKeys.map(k => kv.get(`wiper:history:${k}`).catch(() => null)))
+    ? await Promise.all(histKeys.map(k => kv.get(`intel:history:${k}`).catch(() => null)))
     : [];
   const validHistory = histSnapshots.filter(Boolean);
 
@@ -150,8 +150,8 @@ module.exports = async function handler(req, res) {
     }
 
     // ── Price alerts ────────────────────────────────────────────────────────
-    const currPrice = site.territory_price?.price;
-    const prevPrice = prev?.territory_price?.price;
+    const currPrice = site.product_price?.price;
+    const prevPrice = prev?.product_price?.price;
     const threshold = parseFloat(process.env.PRICE_ALERT_THRESHOLD || "1.00");
 
     if (currPrice && prevPrice && Math.abs(currPrice - prevPrice) >= threshold) {
@@ -165,7 +165,7 @@ module.exports = async function handler(req, res) {
     if (currPrice && !prevPrice) {
       newAlerts.push({ type: "price_found", ts: now, brand: site.name, market,
         message: `Territory price now tracked: $${currPrice.toFixed(2)}`,
-        detail: site.territory_price?.url || "" });
+        detail: site.product_price?.url || "" });
     }
 
     // ── Anomaly detection ───────────────────────────────────────────────────
@@ -212,22 +212,22 @@ module.exports = async function handler(req, res) {
   const allKeys = [...new Set([...(historyKeys || []), date])].sort().slice(-MAX_HISTORY);
 
   await Promise.all([
-    kv.set("wiper:latest",           snapshot),
-    kv.set(`wiper:history:${date}`,  snapshot),
-    kv.set("wiper:history_keys",     allKeys),
-    kv.set("wiper:sale_state",       updatedSaleMap),
-    kv.set("wiper:alerts",           [...newAlerts, ...(existingAlerts || [])].slice(0, MAX_ALERTS)),
+    kv.set("intel:latest",           snapshot),
+    kv.set(`intel:history:${date}`,  snapshot),
+    kv.set("intel:history_keys",     allKeys),
+    kv.set("intel:sale_state",       updatedSaleMap),
+    kv.set("intel:alerts",           [...newAlerts, ...(existingAlerts || [])].slice(0, MAX_ALERTS)),
   ]);
 
   // Store Google Shopping separately for easy access
   if (google_shopping) {
-    await kv.set(`wiper:shopping:${date}`, google_shopping);
-    await kv.set("wiper:shopping:latest",  google_shopping);
+    await kv.set(`intel:shopping:${date}`, google_shopping);
+    await kv.set("intel:shopping:latest",  google_shopping);
   }
 
   // Store landscape summary if provided
   if (body.landscape_summary) {
-    await kv.set("wiper:landscape_summary", {
+    await kv.set("intel:landscape_summary", {
       date, summary: body.landscape_summary, target_brand: body.target_brand || "",
     });
   }
@@ -242,7 +242,7 @@ module.exports = async function handler(req, res) {
 
       const priceRecords = [];
       for (const site of sites) {
-        const price = site.territory_price?.price;
+        const price = site.product_price?.price;
         if (price) {
           const record = {
             date,

@@ -24,23 +24,23 @@ module.exports = async function handler(req, res) {
 
   try {
     // Load last 7 days of history
-    const histKeys = (await kv.get("wiper:history_keys").catch(() => [])) || [];
+    const histKeys = (await kv.get("intel:history_keys").catch(() => [])) || [];
     const last7    = histKeys.slice(-7);
     const snaps    = await Promise.all(
-      last7.map(k => kv.get(`wiper:history:${k}`).catch(() => null))
+      last7.map(k => kv.get(`intel:history:${k}`).catch(() => null))
     );
     const history  = snaps.filter(Boolean);
-    const alerts   = (await kv.get("wiper:alerts").catch(() => [])) || [];
-    const latest   = await kv.get("wiper:latest").catch(() => null);
-    const shopping = await kv.get("wiper:shopping:latest").catch(() => null);
-    const ownData  = await kv.get("wiper:own_data").catch(() => null);
-    const saleState = (await kv.get("wiper:sale_state").catch(() => {})) || {};
+    const alerts   = (await kv.get("intel:alerts").catch(() => [])) || [];
+    const latest   = await kv.get("intel:latest").catch(() => null);
+    const shopping = await kv.get("intel:shopping:latest").catch(() => null);
+    const ownData  = await kv.get("intel:own_data").catch(() => null);
+    const saleState = (await kv.get("intel:sale_state").catch(() => {})) || {};
 
     if (!history.length) {
       return res.status(200).json({ ok: false, reason: "No history available yet" });
     }
 
-    const landscape = await kv.get("wiper:landscape_summary").catch(() => null);
+    const landscape = await kv.get("intel:landscape_summary").catch(() => null);
     const digestHtml = buildDigestHtml(history, alerts, latest, shopping, ownData, saleState, landscape);
     const digestText = buildDigestText(history, alerts, latest, shopping, ownData, landscape);
 
@@ -89,7 +89,7 @@ function buildDigestHtml(history, alerts, latest, shopping, ownData, saleState, 
   const onSaleToday = sites.filter(s => s.is_on_sale);
 
   // Price leader (lowest Territory price AU)
-  const auPrices = auSites.map(s => ({ name: s.name, price: s.territory_price?.price }))
+  const auPrices = auSites.map(s => ({ name: s.name, price: s.product_price?.price }))
     .filter(s => s.price).sort((a, b) => a.price - b.price);
 
   // Anomalies this week
@@ -290,15 +290,15 @@ function buildDigestText(history, alerts, latest, shopping, ownData, landscape) 
   const onSale      = sites.filter(s => s.is_on_sale);
   const weekRange   = history.length >= 2
     ? `${history[0].date} to ${history[history.length - 1].date}` : "this week";
-  const auPrices    = sites.filter(s => (s.market === "AU" || !s.market) && s.territory_price?.price)
-    .sort((a, b) => a.territory_price.price - b.territory_price.price);
+  const auPrices    = sites.filter(s => (s.market === "AU" || !s.market) && s.product_price?.price)
+    .sort((a, b) => a.product_price.price - b.product_price.price);
 
   return [
     `WIPER INTEL — Weekly Digest (${weekRange})`,
     "=".repeat(50),
     "",
     `Brands on sale: ${onSale.length} of ${sites.length}`,
-    `Lowest AU Territory price: ${auPrices.length ? "$" + auPrices[0].territory_price.price.toFixed(2) + " (" + auPrices[0].name + ")" : "—"}`,
+    `Lowest AU Territory price: ${auPrices.length ? "$" + auPrices[0].product_price.price.toFixed(2) + " (" + auPrices[0].name + ")" : "—"}`,
     "",
     landscape?.summary ? `AI Analysis: ${landscape.summary}` : "",
     "",

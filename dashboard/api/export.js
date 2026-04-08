@@ -23,10 +23,10 @@ module.exports = async function handler(req, res) {
 
   try {
     const [latest, alerts, shopping, saleState] = await Promise.all([
-      kv.get("wiper:latest").catch(() => null),
-      kv.get("wiper:alerts").catch(() => []),
-      kv.get("wiper:shopping:latest").catch(() => null),
-      kv.get("wiper:sale_state").catch(() => {}),
+      kv.get("intel:latest").catch(() => null),
+      kv.get("intel:alerts").catch(() => []),
+      kv.get("intel:shopping:latest").catch(() => null),
+      kv.get("intel:sale_state").catch(() => {}),
     ]);
 
     const sites = latest?.sites || [];
@@ -49,7 +49,7 @@ module.exports = async function handler(req, res) {
     const headers = [
       "id", "name", "market", "type", "url",
       "is_on_sale", "promotion_intensity", "sale_duration_days",
-      "sale_start_date", "territory_price", "territory_price_url",
+      "sale_start_date", "product_price", "product_price_url",
       "canary_pass", "http_status", "promo_count",
       "top_promo_text", "top_promo_code", "top_discount_pct",
       "anomaly", "anomaly_zscore", "claude_summary",
@@ -66,8 +66,8 @@ module.exports = async function handler(req, res) {
         s.promotion_intensity || 0,
         saleDur,
         s.sale_start_date || "",
-        s.territory_price?.price || "",
-        s.territory_price?.url || "",
+        s.product_price?.price || "",
+        s.product_price?.url || "",
         s.canary_pass === false ? "FAIL" : "ok",
         s.http_status || "",
         (s.promos || []).length,

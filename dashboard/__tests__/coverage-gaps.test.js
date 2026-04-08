@@ -133,12 +133,12 @@ describe("Ingest — Anomaly detection", () => {
     for (let i = 1; i <= 14; i++) {
       const d = `2026-03-${String(i).padStart(2, "0")}`;
       historyKeys.push(d);
-      mockKvStore[`wiper:history:${d}`] = {
+      mockKvStore[`intel:history:${d}`] = {
         date: d, sites: [{ id: "comp_1", promotion_intensity: 3 + (i % 3) }],
       };
     }
-    mockKvStore["wiper:history_keys"] = historyKeys;
-    mockKvStore["wiper:alerts"] = [];
+    mockKvStore["intel:history_keys"] = historyKeys;
+    mockKvStore["intel:alerts"] = [];
 
     const req = createReq({
       body: {
@@ -167,12 +167,12 @@ describe("Ingest — Anomaly detection", () => {
     for (let i = 1; i <= 5; i++) {
       const d = `2026-03-${String(i).padStart(2, "0")}`;
       historyKeys.push(d);
-      mockKvStore[`wiper:history:${d}`] = {
+      mockKvStore[`intel:history:${d}`] = {
         date: d, sites: [{ id: "comp_1", promotion_intensity: 5 }],
       };
     }
-    mockKvStore["wiper:history_keys"] = historyKeys;
-    mockKvStore["wiper:alerts"] = [];
+    mockKvStore["intel:history_keys"] = historyKeys;
+    mockKvStore["intel:alerts"] = [];
 
     const req = createReq({
       body: {
@@ -205,14 +205,14 @@ describe("Ingest — Sale state transitions", () => {
 
   test("tracks consecutive sale days", async () => {
     // Day 1 — sale starts
-    mockKvStore["wiper:sale_state"] = {
+    mockKvStore["intel:sale_state"] = {
       comp_1: { start_date: "2026-04-05", consecutive_days: 2, last_intensity: 30, market: "AU" },
     };
-    mockKvStore["wiper:latest"] = {
+    mockKvStore["intel:latest"] = {
       sites: [{ id: "comp_1", is_on_sale: true, promotion_intensity: 30 }],
     };
-    mockKvStore["wiper:history_keys"] = [];
-    mockKvStore["wiper:alerts"] = [];
+    mockKvStore["intel:history_keys"] = [];
+    mockKvStore["intel:alerts"] = [];
 
     const req = createReq({
       body: {
@@ -225,19 +225,19 @@ describe("Ingest — Sale state transitions", () => {
 
     expect(res._status).toBe(200);
     // Sale state should show consecutive_days = 3
-    const updatedState = mockKvStore["wiper:sale_state"];
+    const updatedState = mockKvStore["intel:sale_state"];
     expect(updatedState.comp_1.consecutive_days).toBe(3);
   });
 
   test("records sale end with duration", async () => {
-    mockKvStore["wiper:sale_state"] = {
+    mockKvStore["intel:sale_state"] = {
       comp_1: { start_date: "2026-04-01", consecutive_days: 5, last_intensity: 40, market: "AU" },
     };
-    mockKvStore["wiper:latest"] = {
+    mockKvStore["intel:latest"] = {
       sites: [{ id: "comp_1", is_on_sale: true }],
     };
-    mockKvStore["wiper:history_keys"] = [];
-    mockKvStore["wiper:alerts"] = [];
+    mockKvStore["intel:history_keys"] = [];
+    mockKvStore["intel:alerts"] = [];
 
     const req = createReq({
       body: {
@@ -411,8 +411,8 @@ describe("Ingest — price history + period tagging", () => {
   });
 
   test("stores price history keyed by brand_id", async () => {
-    mockKvStore["wiper:history_keys"] = [];
-    mockKvStore["wiper:alerts"] = [];
+    mockKvStore["intel:history_keys"] = [];
+    mockKvStore["intel:alerts"] = [];
     mockKvStore["periods:brand_x"] = [
       { id: "p1", brand_id: "brand_x", type: "sale", start_date: "2026-04-01", end_date: "2026-04-30" },
     ];
@@ -423,7 +423,7 @@ describe("Ingest — price history + period tagging", () => {
         sites: [{
           id: "c1", name: "Comp", market: "AU", is_on_sale: true,
           promotion_intensity: 25, promos: [],
-          territory_price: { price: 19.99 },
+          product_price: { price: 19.99 },
         }],
       },
     });
@@ -440,8 +440,8 @@ describe("Ingest — price history + period tagging", () => {
   });
 
   test("defaults to BAU when no matching period", async () => {
-    mockKvStore["wiper:history_keys"] = [];
-    mockKvStore["wiper:alerts"] = [];
+    mockKvStore["intel:history_keys"] = [];
+    mockKvStore["intel:alerts"] = [];
     // No periods defined
 
     const req = createReq({
@@ -450,7 +450,7 @@ describe("Ingest — price history + period tagging", () => {
         sites: [{
           id: "c1", name: "Comp", market: "AU", is_on_sale: false,
           promotion_intensity: 0, promos: [],
-          territory_price: { price: 34.99 },
+          product_price: { price: 34.99 },
         }],
       },
     });
@@ -462,9 +462,9 @@ describe("Ingest — price history + period tagging", () => {
     expect(prices[0].period_type).toBe("bau");
   });
 
-  test("skips price logging when no territory_price", async () => {
-    mockKvStore["wiper:history_keys"] = [];
-    mockKvStore["wiper:alerts"] = [];
+  test("skips price logging when no product_price", async () => {
+    mockKvStore["intel:history_keys"] = [];
+    mockKvStore["intel:alerts"] = [];
 
     const req = createReq({
       body: {
@@ -472,7 +472,7 @@ describe("Ingest — price history + period tagging", () => {
         sites: [{
           id: "c1", name: "Comp", market: "AU", is_on_sale: false,
           promotion_intensity: 0, promos: [],
-          // no territory_price
+          // no product_price
         }],
       },
     });
@@ -502,11 +502,11 @@ describe("Ingest — alert limits", () => {
 
   test("caps stored alerts at MAX_ALERTS (200)", async () => {
     // Pre-fill 199 existing alerts
-    mockKvStore["wiper:alerts"] = Array.from({ length: 199 }, (_, i) => ({
+    mockKvStore["intel:alerts"] = Array.from({ length: 199 }, (_, i) => ({
       type: "old", ts: "2026-01-01", brand: `Brand ${i}`, message: `Alert ${i}`,
     }));
-    mockKvStore["wiper:history_keys"] = [];
-    mockKvStore["wiper:latest"] = { sites: [] };
+    mockKvStore["intel:history_keys"] = [];
+    mockKvStore["intel:latest"] = { sites: [] };
 
     // Ingest with 5 new sale_started alerts
     const sites = Array.from({ length: 5 }, (_, i) => ({
@@ -523,7 +523,7 @@ describe("Ingest — alert limits", () => {
 
     expect(res._status).toBe(200);
     // Total should be capped at 200
-    const storedAlerts = mockKvStore["wiper:alerts"];
+    const storedAlerts = mockKvStore["intel:alerts"];
     expect(storedAlerts.length).toBeLessThanOrEqual(200);
     // New alerts should be at the front
     expect(storedAlerts[0].type).toBe("sale_started");
