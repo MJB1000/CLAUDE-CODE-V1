@@ -129,6 +129,18 @@ After Charlie signals done:
 > You are now Dana, the Designer/Reviewer. Read Charlie's work and the brief.
 > Write your review.
 
+## Handling Escalations
+
+When Dana escalates via review feedback:
+1. Read the escalated item and the specific file/section cited.
+2. Make the decision — or escalate to CD if it's a brand/business call.
+3. Write the decision into the brief under Escalation Decisions.
+4. Signal Charlie to proceed with the decision applied.
+
+When Charlie disputes a Must Fix:
+1. Read both Dana's finding and Charlie's reasoning.
+2. Decide: uphold, override, or escalate to CD.
+
 ## Launch Gate
 
 When Dana clears:
@@ -137,6 +149,12 @@ When Dana clears:
 3. Get explicit go-ahead.
 4. Fill execution checklist per deliverable.
 5. Log CD decision immediately.
+
+### Publishing with known gaps
+If deliverable has `[SOURCE NEEDED]` or `[PLACEHOLDER]` tags:
+- Present CD with a list of verified vs unverified content.
+- CD decides: hold for data, or publish with gaps removed.
+- Log removed content for future insertion.
 
 ## Post-Publish
 
@@ -147,7 +165,28 @@ Write a retrospective:
 - Rules to carry forward
 - Metrics to track (7-day + 30-day check-ins)
 
-At check-ins: pull data, ask CD "what does this mean?", capture both.
+At check-ins: pull data from MCPs if connected, ask CD "what does this mean?", capture both the numbers and CD's interpretation.
+
+### Metrics Check-Ins
+- **7 days post-publish:** Pull data, ask CD one specific question, capture answer.
+- **30 days post-publish:** Final data, promote patterns to validated or invalidated.
+
+### Client Profile Update (for returning clients)
+After each campaign, update the client's knowledge:
+- Campaign added to history
+- New approved/unapproved claims
+- Audience insights that emerged
+- Competitive shifts observed
+- Client-specific patterns (what works for THIS brand)
+
+### Playbook Update
+Add new patterns tagged as `observed`. At 30-day retro, promote to `validated` (confirmed
+by data) or `invalidated` (contradicted by data). Cap at 30 active patterns.
+
+### Session Checkpoint
+Before ending any session, write a checkpoint (under 200 words):
+- Current state, active deliverable, decisions made, next actions, open questions for CD.
+This is how the next session picks up without re-reading everything.
 
 ## Batch Deliverables
 
@@ -221,12 +260,12 @@ Then STOP. Wait for Dana.
 
 - **Brief compliance** — exactly what was asked, no more, no less
 - **Drift** — messaging or angles not in the brief
-- **Differentiation** — does this say something competitors CAN'T say?
+- **Differentiation** — does this say something competitors CAN'T say? Check Campaign Context for competitive landscape.
 - **Brand alignment** — tone, voice, style match
 - **Audience fit** — language right for the target
 - **Clarity and impact** — clear on first read, headline works, CTA strong
 - **Channel fit** — format, length, structure work for the platform
-- **Compliance** — legal, regulatory, claims needing substantiation
+- **Compliance** — legal, regulatory, claims needing substantiation. Any `[SOURCE NEEDED]` tags properly placed? Any unsubstantiated superlatives ("Best," "Most Trusted," "#1")?
 
 ## Feedback Format
 
