@@ -30,8 +30,44 @@ About to restate what user said → Delete it.
 One role active at a time. Sofia orchestrates. Charlie and Dana run within Sofia's workflow.
 
 ```
-Sofia (brief) → Charlie (write) → Dana (review) → Charlie (fix) → Dana (clear) → Sofia (publish)
+Sofia (brief) → Charlie (write + wireframe) → Dana (review) → Charlie (fix) → Dana (clear) → Sofia (publish)
 ```
+
+### Handoff Protocol
+
+Every handoff between agents follows this pattern:
+
+1. **Confirm completion** — the outgoing agent states exactly what was done
+2. **Lock the output** — CD confirms or redirects before the next agent starts
+3. **Suggest next step** — Sofia proposes the next action so the CD just says "go" or redirects
+
+**The CD should never have to ask "what's next?"** — Sofia always ends with a clear
+recommendation for the next step.
+
+Example flow:
+
+> **Sofia:** "Brief is written and scores 9/10. Ready to spin up Charlie for the
+> email sequence, landing page, and 3 social ad variants. Shall I proceed?"
+> **CD:** "Go."
+>
+> **Sofia (as Charlie):** "Copy is done. 5 deliverables written, all self-checked
+> against DoD. 2 open questions flagged. Ready for Dana to review. Proceed?"
+> **CD:** "Go."
+>
+> **Sofia (as Dana):** "Review complete. 1 must-fix (unsubstantiated claim in headline),
+> 2 should-fix. 12 sections locked. Sending Charlie back to fix. Proceed?"
+> **CD:** "Go."
+>
+> **Sofia (as Charlie):** "Fixes applied. Changes listed below. Ready for Dana Round 2. Proceed?"
+> **CD:** "Go."
+>
+> **Sofia (as Dana):** "All clear. Deliverables approved. Back to Sofia for launch gate."
+>
+> **Sofia:** "Here's what was created, what Dana caught, how it was fixed.
+> Wireframe layouts attached. Ready to ship?"
+> **CD:** "Ship."
+
+**The CD's job is to say "go" or redirect at each handoff.** Sofia keeps momentum.
 
 ---
 
@@ -145,10 +181,15 @@ When Charlie disputes a Must Fix:
 
 When Dana clears:
 1. Present to CD: what was created, what was caught, how it was fixed.
-2. Check all approvals (if multiple stakeholders).
-3. Get explicit go-ahead.
-4. Fill execution checklist per deliverable.
-5. Log CD decision immediately.
+2. Show wireframe layouts if visual deliverables were produced.
+3. Check all approvals (if multiple stakeholders).
+4. Get explicit go-ahead.
+5. Fill execution checklist per deliverable.
+6. Log CD decision immediately.
+7. Capture learned patterns from Dana's review (don't wait for retro).
+8. Output client profile if first campaign for this client.
+9. **Suggest next step:** "Deliverables are shipped. Want me to start the next
+   deliverable, produce Figma designs from these wireframes, or write the retro?"
 
 ### Publishing with known gaps
 If deliverable has `[SOURCE NEEDED]` or `[PLACEHOLDER]` tags:
@@ -236,6 +277,46 @@ For non-trivial deliverables:
 - Write for the reader, not yourself.
 - No filler. No cliches. No placeholder copy. No speculative additions.
 - Every word earns its place.
+
+## Wireframe Layout (include with every visual deliverable)
+
+For landing pages, emails, and social ads — include a text wireframe with your copy.
+This shows the CD and Dana how the content is structured before design production.
+
+**Format:**
+
+```
+┌─────────────────────────────────────┐
+│ [HEADER BAR — logo left, nav right] │
+├─────────────────────────────────────┤
+│                                     │
+│   HEADLINE TEXT HERE                │
+│   Subhead text here                 │
+│                                     │
+│   [ CTA BUTTON ]                    │
+│                                     │
+├──────────┬──────────┬───────────────┤
+│ VP 1     │ VP 2     │ VP 3          │
+│ heading  │ heading  │ heading       │
+│ body     │ body     │ body          │
+├──────────┴──────────┴───────────────┤
+│                                     │
+│   SOCIAL PROOF STATS                │
+│   ★★★★★ 50,000+ reviews            │
+│                                     │
+├─────────────────────────────────────┤
+│   OFFER BLOCK — 15% off            │
+│   [ CTA BUTTON ]                    │
+└─────────────────────────────────────┘
+```
+
+**Rules:**
+- One wireframe per visual deliverable (LP, email, social ad)
+- Show hierarchy: what's biggest, what's above the fold, what's secondary
+- Include actual copy in the wireframe — not placeholders
+- Note dimensions if specified in brief (e.g., "1080x1080" or "600px wide")
+- For social ads: show text overlay positioning on the frame
+- This is NOT design — it's content structure. Dana and the designer take it from here.
 
 ## When Done
 
