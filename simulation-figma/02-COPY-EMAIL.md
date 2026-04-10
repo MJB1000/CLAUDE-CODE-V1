@@ -9,7 +9,7 @@
 
 ## Copywriter Plan (confirmed by Sofia)
 
-- **Approach:** Lead with the outcome (sorted mornings), not the mechanism (subscription). One witty line in the subhead. Body copy addresses the objection head-on (cancel anytime, no commitment). CTA reframes subscription as "Get Started" — action-oriented, no commitment language.
+- **Approach:** Lead with the outcome (sorted mornings), not the mechanism (subscription). One witty line in the subhead. Body copy addresses the objection head-on (cancel anytime, no commitment). CTA reframes subscription as "Get Your Free Bag" — action-oriented, no commitment language.
 - **Decisions required:** None — brief is clear.
 - **Uncertainties:** Hero image direction — using placeholder per brief. No testimonials available, so social proof section is omitted entirely rather than faked.
 

@@ -4,6 +4,7 @@
 **Brief quality score:** 9/10 (passes gate)
 **Client:** Mornings (DTC specialty coffee)
 **Strategist:** Sofia
+**Creative Director:** [Human]
 
 ---
 
@@ -23,7 +24,8 @@
 
 **Who:** Urban professionals, 28-40. Daily specialty coffee drinkers. They already know good coffee. They buy from local roasters, specialty online brands, or high-end grocery. Income: mid-to-high. Location: primarily Australian metro areas.
 
-**Audience context:**
+### Audience Context
+
 - **What they know:** They understand single origin vs blend. They have opinions about roast profiles. They are NOT beginners.
 - **What competitors say:** "Discover new roasters," "Curated for you," "Never run out." Generic convenience messaging. Most subscription brands lead with variety/discovery.
 - **What objections they bring:** "I don't want to be locked in." "What if I don't like it?" "I already have a go-to roaster." "Subscriptions are annoying to cancel."
@@ -237,4 +239,4 @@ None this round. Budget and timeline do not support variants. Establish baseline
 
 | Stakeholder | Role | Status | Date |
 |---|---|---|---|
-| Creative Director | Final approval | Pending | — |
+| Creative Director | Final approval | Pending | -- |
