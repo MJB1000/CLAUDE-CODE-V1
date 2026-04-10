@@ -114,6 +114,25 @@ Include all of these sections:
 
 ### Objective, Key Message, Tone & Voice, Channel, Constraints
 
+### Design Specs (per visual deliverable)
+
+*These flow from the brief into Charlie's wireframe and Dana's Figma build.
+Specify once here — Charlie includes them in wireframes, Dana uses them in Figma.*
+
+| Spec | Value |
+|---|---|
+| Primary font | [e.g., Inter / brand font] |
+| Headline size | [e.g., 32px bold] |
+| Body size | [e.g., 16px regular] |
+| CTA button | [e.g., 48px height, rounded, filled] |
+| Background color | [e.g., #FFFFFF or "brand white"] |
+| Text color | [e.g., #1A1A1A] |
+| Accent / CTA color | [e.g., #2563EB or "brand blue"] |
+| Section padding | [e.g., 40px vertical, 24px horizontal] |
+| Design system file | [e.g., design-systems/client.md or "none — use defaults above"] |
+
+*If no brand specs exist, use these defaults: Inter, 32/16px, #FFFFFF bg, #1A1A1A text, #2563EB CTA.*
+
 ### Production Specs (per deliverable)
 | Deliverable | Platform | Image/Visual | Dimensions | Technical Notes |
 
@@ -188,8 +207,15 @@ When Dana clears:
 6. Log CD decision immediately.
 7. Capture learned patterns from Dana's review (don't wait for retro).
 8. Output client profile if first campaign for this client.
-9. **Suggest next step:** "Deliverables are shipped. Want me to start the next
-   deliverable, produce Figma designs from these wireframes, or write the retro?"
+9. Output a **Campaign Summary Document** for the CD (shareable with stakeholders):
+   - Strategy: positioning, audience, channels, key message
+   - What was produced: list of deliverables with one-line descriptions
+   - Quality process: what Dana caught and how it was resolved
+   - Wireframe previews for visual deliverables
+   - Execution checklists per deliverable
+   - Metrics to track + check-in schedule
+10. **Suggest next step:** "Deliverables are shipped. Want me to start the next
+    deliverable, produce Figma designs from these wireframes, or write the retro?"
 
 ### Publishing with known gaps
 If deliverable has `[SOURCE NEEDED]` or `[PLACEHOLDER]` tags:
@@ -283,40 +309,139 @@ For non-trivial deliverables:
 For landing pages, emails, and social ads — include a text wireframe with your copy.
 This shows the CD and Dana how the content is structured before design production.
 
-**Format:**
+### Email wireframe template (600px wide)
 
 ```
-┌─────────────────────────────────────┐
-│ [HEADER BAR — logo left, nav right] │
+┌─────────────────────────────────────┐ 600px
+│ [LOGO]              [View online]   │ ← header
+├─────────────────────────────────────┤
+│ Preheader: [preview text here]      │ ← hidden preheader
 ├─────────────────────────────────────┤
 │                                     │
-│   HEADLINE TEXT HERE                │
-│   Subhead text here                 │
+│ [HERO IMAGE / PRODUCT SHOT ZONE]    │ ← image or color block
 │                                     │
-│   [ CTA BUTTON ]                    │
+├─────────────────────────────────────┤
+│                                     │
+│  Headline text here (H1)            │
+│                                     │
+│  Body paragraph 1...                │
+│  Body paragraph 2...                │
+│                                     │
+│  ┌─────────────────────┐            │
+│  │   [ CTA BUTTON ]    │            │ ← primary CTA
+│  └─────────────────────┘            │
+│                                     │
+├─────────────────────────────────────┤
+│  Secondary content / proof points   │ ← optional section
+├─────────────────────────────────────┤
+│  Sign-off: Cheers, [Brand] Team     │
+│  [Unsubscribe] · [Preferences]      │ ← footer
+└─────────────────────────────────────┘
+```
+
+### Social ad wireframe template (1080x1080 feed)
+
+```
+┌─────────────────────────────────────┐ 1080x1080
+│ [LOGO — top left corner]            │
+│                                     │
+│                                     │
+│    ┌─────────────────────────┐      │
+│    │  PRODUCT / IMAGE ZONE   │      │ ← center: photo, product, UGC
+│    │  (placeholder if none)  │      │
+│    └─────────────────────────┘      │
+│                                     │
+│  ─────────────────────────────────  │
+│                                     │
+│  HEADLINE TEXT (large, bold)        │ ← bottom third: text overlay zone
+│  Supporting line (smaller)          │
+│                                     │
+│  ┌─────────────────────┐            │
+│  │   [ CTA BUTTON ]    │            │ ← CTA at bottom
+│  └─────────────────────┘            │
+│                                     │
+│  OFFER TAG: "15% off — ends May 30" │ ← offer badge / corner tag
+└─────────────────────────────────────┘
+```
+
+### Social ad wireframe (1080x1920 stories)
+
+```
+┌───────────────────┐ 1080x1920
+│ [LOGO — top]      │
+│                   │
+│                   │
+│ ┌───────────────┐ │
+│ │  PRODUCT /    │ │ ← top half: visual zone
+│ │  IMAGE ZONE   │ │
+│ │               │ │
+│ └───────────────┘ │
+│                   │
+│ HEADLINE          │ ← bottom half: text + CTA
+│ (large, bold)     │
+│                   │
+│ Supporting line   │
+│                   │
+│ ┌───────────────┐ │
+│ │ [ CTA / SWIPE]│ │
+│ └───────────────┘ │
+│                   │
+│ OFFER TAG         │
+└───────────────────┘
+```
+
+### Landing page wireframe template
+
+```
+┌─────────────────────────────────────┐ 1440px (desktop)
+│ [LOGO]         [NAV]    [CTA BTN]   │ ← sticky header
+├─────────────────────────────────────┤
+│                                     │
+│   HEADLINE TEXT (H1, large)         │
+│   Subhead text (H2, medium)         │ ← hero section
+│                                     │
+│   [ PRIMARY CTA BUTTON ]            │
 │                                     │
 ├──────────┬──────────┬───────────────┤
 │ VP 1     │ VP 2     │ VP 3          │
+│ [icon]   │ [icon]   │ [icon]        │ ← value props (3-col)
 │ heading  │ heading  │ heading       │
 │ body     │ body     │ body          │
 ├──────────┴──────────┴───────────────┤
 │                                     │
-│   SOCIAL PROOF STATS                │
-│   ★★★★★ 50,000+ reviews            │
+│   SOCIAL PROOF: stats + attribution │ ← proof section
 │                                     │
 ├─────────────────────────────────────┤
-│   OFFER BLOCK — 15% off            │
-│   [ CTA BUTTON ]                    │
+│   OFFER BLOCK — headline + details  │
+│   [ CTA BUTTON ]                    │ ← offer + CTA repeat
+├─────────────────────────────────────┤
+│   Footer: links · legal · © brand   │
 └─────────────────────────────────────┘
 ```
 
-**Rules:**
-- One wireframe per visual deliverable (LP, email, social ad)
+### Design spec block (include at bottom of each wireframe)
+
+*Pull values from the brief's Design Specs section. Dana uses these to build in Figma.*
+
+```
+## Design Spec
+- Dimensions: [e.g., 600px wide / 1080x1080]
+- Font: [e.g., Inter — headline 32px bold, body 16px regular]
+- Colors: bg [#FFFFFF], text [#1A1A1A], CTA [#2563EB], accent [brand color]
+- CTA button: [height, corner radius, text style]
+- Section padding: [e.g., 40px vertical]
+- Image zones: [what goes there — product shot / lifestyle / placeholder / none]
+- Design system: [reference file or "none — use specs above"]
+```
+
+### Rules
+- One wireframe per visual deliverable (LP, email, each ad variant)
 - Show hierarchy: what's biggest, what's above the fold, what's secondary
 - Include actual copy in the wireframe — not placeholders
-- Note dimensions if specified in brief (e.g., "1080x1080" or "600px wide")
-- For social ads: show text overlay positioning on the frame
-- This is NOT design — it's content structure. Dana and the designer take it from here.
+- Mark image zones clearly — text overlay vs product/photo vs empty space
+- Include the design spec block — this is what bridges wireframe → Figma
+- For ad variants: produce one wireframe per variant if copy positioning differs
+- This is NOT final design — it's content structure + specs. Dana builds from here.
 
 ## When Done
 
