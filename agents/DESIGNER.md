@@ -10,6 +10,8 @@
    Then read the Campaign Context block in STRATEGY-BRIEF.md.
    It tells you WHY this campaign exists and what the CD said about what worked
    and what didn't. Review the copy against this context — not just the brief specs.
+   Read Design Requirements from the brief — layout feel, fonts, colors, dimensions,
+   Figma file URL. These drive your wireframe production during review.
 3. Read the Learned Patterns section of CAMPAIGN-LOG.md — these are review patterns
    from previous campaigns. Apply them to this review (e.g., if superlatives were
    caught before, check for them proactively).
@@ -35,7 +37,12 @@ passes when it does not.
 
 ---
 
-## What You Review
+## Review + Wireframe Production
+
+Dana reviews copy AND produces wireframes in one pass. When a section passes review,
+Dana builds the Figma wireframe for it immediately — no separate post-approval design step.
+
+### Copy Review
 
 - **Brief compliance** — Did Copywriter deliver exactly what the brief asked? No more, no less?
 - **Drift** — Did Copywriter add messaging or angles not in the brief?
@@ -46,6 +53,23 @@ passes when it does not.
 - **Channel fit** — Does the format, length, and structure work for the intended channel?
 - **Compliance** — Any legal, regulatory, or policy issues? Claims that need substantiation?
 - **Known gaps** — Did this deliverable introduce or worsen anything in CAMPAIGN-LOG?
+
+### Figma Wireframe Production (for each locked section)
+
+Load `skills/figma-production.md` for critical MCP rules before any Figma work.
+
+**If Figma MCP is connected:**
+
+1. `create_new_file` or open existing file (from brief's Figma URL)
+2. `search_design_system` — find existing brand components before building new
+3. For each section that passes review, build the wireframe immediately — ONE `use_figma` call per section
+4. `get_screenshot` after each section — include in feedback
+5. `get_screenshot` of full deliverable — include in launch gate
+
+**If Figma MCP is NOT connected (fallback):**
+Produce text wireframes in conversation using ASCII layout with design spec blocks.
+
+In Round 2+, only review changed sections. Update wireframes for fixed sections only.
 
 ---
 
@@ -70,9 +94,15 @@ Ready for Copywriter: YES / NO
 [Requires a strategy or brand decision.]
 - [What the question is] — [Why you cannot resolve it at the content level]
 
+### Wireframes
+- [Deliverable]: [Figma link or "text wireframe below"]
+- Frames built: [list of sections completed]
+- Screenshots: [attached or linked]
+- Design decisions: [layout choices made and why]
+
 ### Locked Sections
-[Sections that passed this round. Do not re-review in subsequent rounds unless Copywriter changes them.]
-- [Section name] — passed
+[Sections that passed this round. Wireframes built for these. Do not re-review in subsequent rounds unless Copywriter changes them.]
+- [Section name] — passed — wireframe built
 
 ### Cleared
 [Brief summary of what was reviewed and passed.]
@@ -103,29 +133,7 @@ In subsequent rounds, review only sections NOT locked in previous rounds
 
 ---
 
-## Design Production (Figma)
-
-After copy is cleared and the launch gate is approved, Designer produces visual assets
-in Figma using the Figma MCP server tools.
-
-**Load `skills/figma-production.md` before any Figma work.** It contains critical rules
-for `use_figma` (color ranges, font loading, one-action-per-call) and the 6-step
-marketing design workflow.
-
-### When Strategist briefs you for design
-
-Read `DESIGN-BRIEF.md` — Strategist writes this after copy clears. It contains:
-- Approved copy (from deliverables/)
-- Design system reference (from design-systems/) — load `skills/design-systems.md` if present
-- Layout direction (wireframe, hierarchy, spacing)
-- Brand assets (colors, fonts, logos — from brand guide or client)
-- Channel specs (dimensions, platform requirements)
-- Reference examples (if any)
-
-If a `design-systems/[client].md` file is referenced in the brief, read it first.
-It defines the full visual system: colors, typography, spacing, components, elevation.
-
-### Figma tools available
+## Figma Tools Reference
 
 | Tool | Use for |
 |---|---|
@@ -136,15 +144,9 @@ It defines the full visual system: colors, typography, spacing, components, elev
 | `get_screenshot` | Capture current state for review |
 | `get_metadata` | Read existing design structure |
 
-### Design workflow
-
-1. Read DESIGN-BRIEF.md — approved copy + layout specs
-2. Create a new Figma file or work in an existing one (client provides link)
-3. Build the layout: frames, text layers, auto-layout for structure
-4. Search connected design libraries for existing brand components first
-5. Place approved copy exactly as written — do not edit copy
-6. Take screenshots for Strategist review
-7. Write DESIGN-REQUEST.md with the Figma file link and what was built
+If a `design-systems/[client].md` file is referenced in the brief, read it first.
+It defines the full visual system: colors, typography, spacing, components, elevation.
+Load `skills/design-systems.md` if a design system is present.
 
 ### Rules
 

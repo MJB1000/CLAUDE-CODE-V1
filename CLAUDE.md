@@ -59,8 +59,6 @@ Do not re-read files already in context this session.
 | CAMPAIGN-LOG.md | Strategist checks status; Copywriter updates when done |
 | REVIEW-REQUEST.md | Designer loads at review start |
 | REVIEW-FEEDBACK.md | Copywriter loads after Designer signals done |
-| DESIGN-BRIEF.md | Designer loads at design production start |
-| DESIGN-REQUEST.md | Strategist reads after Designer completes Figma work |
 
 | `clients/[name].md` | Strategist loads at session start for returning clients |
 | `knowledge/CHANNELS.md` | Copywriter loads channel section when writing |
@@ -78,8 +76,6 @@ All team communication flows through files in `handoff/`:
 - `REVIEW-FEEDBACK.md` — Designer writes, Copywriter reads
 - `CAMPAIGN-LOG.md` — shared record, Strategist owns
 - `SESSION-CHECKPOINT.md` — Strategist writes at session end
-- `DESIGN-BRIEF.md` — Strategist writes (after copy approved), Designer reads
-- `DESIGN-REQUEST.md` — Designer writes (Figma output), Strategist reads
 - `RETRO.md` — Strategist writes after publish (never overwritten — one per deliverable)
 
 Copy templates from `handoff/` into your project root to get started.
@@ -128,13 +124,11 @@ Add your marketing-specific skills below:
 
 Agents run sequentially, not concurrently. One active session at a time:
 
-1. **Strategist session** — plans, writes brief, spins up Copywriter as a sub-agent.
+1. **Strategist session** — plans, writes brief (with design requirements), spins up Copywriter.
 2. **Copywriter session** — writes content, signals done, session ends.
-3. **Strategist session** — reads Copywriter output, spins up Designer as a sub-agent.
-4. **Designer session** — reviews, writes feedback, session ends.
+3. **Strategist session** — reads Copywriter output, spins up Designer.
+4. **Designer session** — reviews copy AND produces Figma wireframes for locked sections, session ends.
 5. **Strategist session** — manages fixes, launch gate, publish.
-6. **(Optional) Strategist session** — writes design brief, spins up Designer for Figma production.
-7. **Designer session** — produces Figma designs from approved copy, session ends.
 
 Strategist is the orchestrator. Copywriter and Designer sessions start and end within
 Strategist's workflow. They do not run concurrently and do not communicate directly.

@@ -159,6 +159,11 @@ Write to `STRATEGY-BRIEF.md`. Tight — objectives, audience, constraints, deliv
 - Flag: [Anything Copywriter must not guess at]
 ```
 
+**Design Requirements:** Derive Design Requirements from your strategy decisions — positioning
+informs layout feel, audience informs font size and contrast, channel informs dimensions,
+and tone informs color warmth and CTA style. Dana reads these and builds Figma wireframes
+that match during her review pass.
+
 **Before spinning up Copywriter:** Load `skills/brief-quality.md` and score the brief.
 Must pass 8/10 to proceed. Fix any failing criteria first. Add the score to the brief.
 
@@ -171,10 +176,13 @@ Spin up Copywriter:
 
 ## Briefing Designer
 
+Dana reviews copy AND produces Figma wireframes simultaneously. When a section passes
+review, Dana builds the wireframe for it immediately — no separate design production step.
+
 When Copywriter writes REVIEW-REQUEST.md and signals done:
 > You are [Designer name] on this project. Load token-optimizer skill first.
 > Then read DESIGNER.md, then REVIEW-REQUEST.md, then only the files Copywriter listed.
-> Write findings to REVIEW-FEEDBACK.md.
+> Review copy and build Figma wireframes for locked sections. Write findings to REVIEW-FEEDBACK.md.
 
 ---
 
@@ -228,19 +236,6 @@ If the deliverable has `[SOURCE NEEDED]` or `[PLACEHOLDER]` tags:
 - If publishing with gaps removed, log the removed content to CAMPAIGN-LOG for future insertion.
 
 ---
-
-## Briefing Designer for Design Production
-
-After the launch gate is approved and copy is final, spin up Designer for visual production:
-
-1. Write `DESIGN-BRIEF.md` with approved copy, layout direction, brand assets, and channel specs.
-2. Spin up Designer:
-   > You are [Designer name] on this project. Load token-optimizer skill first.
-   > Then read DESIGNER.md, then DESIGN-BRIEF.md.
-   > Your task is to produce Figma designs for Deliverable [N].
-
-This step is optional — only when the deliverable needs designed assets (landing pages,
-social ads, emails with visual layout). Text-only deliverables skip this step.
 
 ---
 

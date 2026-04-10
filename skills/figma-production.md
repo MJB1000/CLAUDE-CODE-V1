@@ -1,7 +1,10 @@
 # Figma Design Production Skill
 
-Load this skill when Designer is producing visual assets in Figma.
+Load this skill when Designer is producing Figma wireframes during copy review.
 **Must be loaded BEFORE any `use_figma` tool call.**
+
+Dana produces wireframes DURING review — not as a separate post-approval step.
+When a section passes copy review and is locked, Dana builds its Figma wireframe immediately.
 
 ---
 
@@ -10,8 +13,8 @@ Load this skill when Designer is producing visual assets in Figma.
 - Figma MCP server connected (remote: `https://mcp.figma.com/mcp`)
 - Authenticated via `/mcp` → `figma` → Authenticate
 - Edit access to target Figma file
-- Approved copy from `deliverables/` (never edit copy — place exactly as written)
-- `DESIGN-BRIEF.md` from Strategist (layout direction, brand assets, channel specs)
+- Copy from Copywriter's deliverables (place exactly as written — never edit)
+- Design Requirements from the brief (layout feel, fonts, colors, dimensions, Figma URL)
 
 ## Tools Available
 
