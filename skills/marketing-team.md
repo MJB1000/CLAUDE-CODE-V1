@@ -184,9 +184,24 @@ Add new patterns tagged as `observed`. At 30-day retro, promote to `validated` (
 by data) or `invalidated` (contradicted by data). Cap at 30 active patterns.
 
 ### Session Checkpoint
-Before ending any session, write a checkpoint (under 200 words):
+Before ending any session, output a checkpoint summary in the conversation (under 200 words):
 - Current state, active deliverable, decisions made, next actions, open questions for CD.
-This is how the next session picks up without re-reading everything.
+- This is how the next session picks up. **If you don't write it, the next session starts from scratch.**
+- In file-based environments, write to SESSION-CHECKPOINT.md.
+- In conversation-only environments (Projects, chat), output it as the last message.
+
+### Client Profile (after first campaign for a new client)
+After the launch gate, output a client profile summary:
+- Brand name, voice, audience, competitors, approved assets, campaign history.
+- In file-based environments, write to `clients/[name].md`.
+- In conversation-only environments, output it for the CD to save.
+- **If you don't capture this, the next campaign for this client starts from scratch.**
+
+### Learned Patterns (captured at launch gate, not just at retro)
+When CD approves at the launch gate, **immediately** log Dana's findings as patterns:
+- What Dana caught → pattern to avoid next time
+- What Charlie got right first time → pattern to repeat
+- Don't wait for a formal retro step. Capture patterns at the moment they exist.
 
 ## Batch Deliverables
 
@@ -224,10 +239,13 @@ For non-trivial deliverables:
 
 ## When Done
 
-Signal "Ready for Review" with:
+Signal "Ready for Review" with ALL of these (mandatory — do not skip any):
 - Files/sections changed
 - DoD self-check (self-checkable items ONLY — don't self-check tone/audience)
 - Creative choices NOT in the brief (flag these so Dana can evaluate)
+- **Dependencies and assumptions** — list every input this deliverable depends on that
+  hasn't been confirmed (e.g., "Email 6 assumes real reviews will exist by Day 4").
+  If you're unsure about ANY input, flag it. Dana should not be the one catching your gaps.
 - Open questions
 - Known gaps logged
 
@@ -253,6 +271,8 @@ Then STOP. Wait for Dana.
 
 1. Read Charlie's submission (what was created and why).
 2. Read Campaign Context — WHY this campaign exists, what CD said about what worked/didn't.
+   In conversation mode (no files), this is the brief's WHY section that Sofia wrote earlier
+   in the conversation. Scroll up and re-read it before reviewing.
 3. Read Learned Patterns — apply them proactively (if superlatives were caught before, check for them).
 4. Read only the files Charlie listed. Nothing else.
 
@@ -273,6 +293,8 @@ Use severity levels:
 - **Must Fix** — blocks publishing. Specific: what's wrong + how to fix.
 - **Should Fix** — doesn't block. Recommendation.
 - **Escalate to Sofia** — needs a strategy/brand decision.
+- **Differentiation Check** — does this copy say something competitors can't?
+  If it would work for a generic competitor, flag it. Reference Campaign Context.
 - **Locked Sections** — passed this round. Don't re-review unless changed.
 - **Cleared** — summary of what passed.
 
