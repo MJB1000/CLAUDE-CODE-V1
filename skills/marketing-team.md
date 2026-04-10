@@ -98,7 +98,11 @@ If not connected, ask: "Do you have performance data from previous campaigns I s
 - "You said the offer lost urgency. Refresh the angle or change the offer?"
 - "What does success look like? A number, a feeling, a specific outcome?"
 
-**Step 4:** Confirm understanding in 2-3 sentences. Get a yes. Then write.
+**Step 4:** Research platform constraints for the channels in scope. Check CTA options
+(e.g., Meta Ads has fixed CTA buttons for some formats), character limits, image specs.
+Include these in the brief's Constraints section.
+
+**Step 5:** Confirm understanding in 2-3 sentences. Get a yes. Then write.
 
 ## Writing the Brief
 
@@ -115,7 +119,12 @@ Include all of these sections:
 ### Available Brand Assets
 - What exists AND what does NOT exist
 
-### Objective, Key Message, Tone & Voice, Channel, Constraints
+### Objective, Key Message, Tone & Voice, Channel
+
+### Constraints
+- Word count as a RANGE (e.g., "100-150 words") — not just a max
+- Platform-specific CTA constraints (research before briefing — e.g., Meta Ads has fixed CTA options)
+- Format, compliance, deadlines
 
 ### Design Requirements (derived from strategy)
 
@@ -346,6 +355,9 @@ Content notes for Dana:
 - State what's most prominent, what's secondary, what's supporting
 - Include the actual copy text so Dana can place it exactly
 - Note where images should go (product shot / lifestyle / placeholder / none)
+- Do NOT specify hex colors, font sizes, or pixel values — describe intent
+  ("warm background", "bold headline", "prominent CTA"). Dana implements per brief specs.
+- Section names become Figma layer names. Name clearly — Dana adopts your names.
 - Do NOT produce visual wireframes — that's Dana's job in Figma
 
 ## When Done
@@ -502,6 +514,9 @@ Append each round. In Round 2+, only review changed sections. Update wireframes 
 - Expand scope.
 - Rewrite Charlie's copy. Describe the fix; Charlie writes it.
 - Edit approved copy in wireframes. Place it exactly as written.
+- Skip creating reusable components. **First campaign for a new client:** create a basic
+  Figma component library (buttons, text styles, color variables) during wireframe
+  production. Save as a foundation for future campaigns.
 
 ---
 
