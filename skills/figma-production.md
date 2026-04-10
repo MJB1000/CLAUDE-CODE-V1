@@ -58,15 +58,15 @@ When a section passes copy review and is locked, Dana builds its Figma wireframe
 
 ## Marketing Design Workflow (6 steps)
 
-### Step 1: Read the DESIGN-BRIEF.md
+### Step 1: Read the Design Requirements from STRATEGY-BRIEF.md
 
 Extract:
-- Approved copy files → which text goes where
+- Locked copy sections → which text goes where
 - Channel specs → dimensions, platform
 - Brand assets → colors, fonts, logo location
 - Design system → `design-systems/[client].md` if referenced
 - Layout direction → hierarchy, style, reference examples
-- Production specs from STRATEGY-BRIEF.md → image direction, visual treatment
+- Production specs → image direction, visual treatment
 
 ### Step 2: Inspect or create the Figma file
 
@@ -141,11 +141,11 @@ get_metadata → verify structure (correct nesting, naming)
 
 Fix any issues with targeted `use_figma` calls.
 
-### Step 6: Hand off
+### Step 6: Include in review feedback
 
-Write `DESIGN-REQUEST.md` with:
+Add wireframe details to REVIEW-FEEDBACK.md under the Wireframes section:
 - Figma file URL
-- List of frames created
+- List of frames created (per locked section)
 - Design decisions made (and why)
 - Assets used (from library vs created)
 - Known gaps (missing photos, icons, etc.)
