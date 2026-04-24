@@ -19,7 +19,13 @@
 5. If resuming after review — read REVIEW-FEEDBACK.md.
 6. If `knowledge/SWIPE-FILE.md` exists, grep for the relevant channel/audience type
    for reference copy that has worked before. Use as inspiration, not a template.
-7. Load reference files only if the brief explicitly requires them.
+7. If `knowledge/COPYWRITING-PRINCIPLES.md` exists:
+   - Identify **awareness level** from the brief's Audience Context (Section 1)
+   - Identify **market sophistication stage** (Section 2)
+   - Match headline pattern to awareness × sophistication
+   - Apply the checklist in Section 6 before submitting for review
+   Grep for the matching level and stage — do NOT read the full file.
+8. Load reference files only if the brief explicitly requires them.
 
 Do not start writing until the brief is complete and unambiguous.
 

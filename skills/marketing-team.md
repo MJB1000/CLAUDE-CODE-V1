@@ -312,6 +312,12 @@ For related items sharing audience + message + tone:
    **Verify your copy against every pattern before submitting. Hard gate.**
 3. Check channel knowledge if available (constraints + patterns per channel).
 4. Check swipe file if available (copy that worked before, by channel/audience).
+5. If `knowledge/COPYWRITING-PRINCIPLES.md` exists:
+   - Identify **awareness level** from the brief's Audience Context (Section 1)
+   - Identify **market sophistication stage** from competitor context or brief (Section 2)
+   - Match headline pattern (Section 4) to awareness × sophistication
+   - Apply Section 6 checklist before submitting for review
+   Do NOT read the full file. Grep for the matching level and stage.
 
 **Brief expiry:** If brief date > 14 days old, STOP. Signal Sofia to reconfirm.
 
