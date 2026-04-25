@@ -84,25 +84,52 @@ Example flow:
 
 Do not ask the CD to summarize. Read the context.
 
-## Pre-Brief: Pull Data, Then Ask Questions
+## Pre-Brief: Discovery Diagnostic, Then Questions
 
-Before writing any brief, build context through conversation. NOT a one-shot step — keep asking.
+Before writing any brief, run the diagnostic, then build context through conversation.
+**Maximum 3 question rounds.** After 3, state assumptions explicitly and proceed.
 
-**Step 1:** If analytics MCPs are connected (GA4, email platform, ad manager), pull relevant data first.
-If not connected, ask: "Do you have performance data from previous campaigns I should see?"
+### Step 1: Run the Discovery Diagnostic
 
-**Step 2:** Open with what you found + your first questions.
-> "Your LP converted at 4.2% week 1, dropping to 1.8% by week 3. What's causing the drop?"
+Pull or ask for these 10 data points. Present them as a data picture BEFORE asking opinions.
 
-**Step 3:** Keep asking until the brief is clear. Follow up on every answer.
-- "You said the offer lost urgency. Refresh the angle or change the offer?"
-- "What does success look like? A number, a feeling, a specific outcome?"
+| # | Data point | Source |
+|---|---|---|
+| 1 | Top 3 traffic sources (last 30 days) | GA4 or CD |
+| 2 | Top 3 landing pages by conversion rate | GA4 or CD |
+| 3 | ROAS by channel (if paid) | Ad platform or CD |
+| 4 | Email flow performance (open/CTR for last 3 sends) | Email platform or CD |
+| 5 | Cart abandon rate | GA4/Shopify or CD |
+| 6 | Last campaign's best-performing deliverable + why | CD or campaign log |
+| 7 | Last campaign's worst-performing deliverable + why | CD or campaign log |
+| 8 | Current offer / promotion (if any) | CD |
+| 9 | Competitor activity (what they're running right now) | WebSearch or CD |
+| 10 | Audience size / list size / traffic volume | Platform or CD |
 
-**Step 4:** Research platform constraints for the channels in scope. Check CTA options
-(e.g., Meta Ads has fixed CTA buttons for some formats), character limits, image specs.
-Include these in the brief's Constraints section.
+If MCPs connected: pull 1-5 automatically. If not: ask CD for what they have.
+**Present the data picture first, then ask what it means.**
 
-**Step 5:** Confirm understanding in 2-3 sentences. Get a yes. Then write.
+### Step 2: Open with the data + first questions (Round 1)
+
+> "Here's what I see: your email CTR dropped from 3.1% to 1.4% over 3 sends.
+> Cart abandon is 72%. Top LP converts at 4.2%. Two questions:
+> 1. Is the CTR drop content fatigue or send frequency?
+> 2. The 72% abandon rate — is that normal for your category?"
+
+### Step 3: Follow up on answers (Round 2-3, max)
+
+- "You said over-sending. What frequency feels right?"
+- "What does success look like? A number?"
+- "Your competitor launched a similar offer. Does that change positioning?"
+
+**After Round 3: if anything is still unclear, state assumptions explicitly.**
+> "I'm assuming the audience is solution-aware based on search traffic. If wrong, redirect me."
+
+### Step 4: Research platform constraints
+
+Check CTA options, character limits, image specs for each channel in scope.
+
+### Step 5: Confirm understanding in 2-3 sentences. Get a yes. Then write.
 
 ## Writing the Brief
 
@@ -113,11 +140,39 @@ Include all of these sections:
 - CD interpretation (what the data means, in their words)
 - What worked (keep doing) / What didn't work (stop doing)
 
-### Audience + Audience Context
-- Who they are, what they know, what competitors say, what objections they bring
+### Audience Canvas (required — Schwartz doesn't work without this)
+
+| Dimension | Fill this |
+|---|---|
+| **Who** | Demographics, psychographics, funnel stage |
+| **Current belief** | What they currently believe about this problem/category |
+| **Desired state** | What they want to feel, achieve, or become |
+| **Friction** | What's stopping them (price, trust, complexity, inertia) |
+| **Channels** | Where they consume content, what they scroll, what they search |
+| **Prior treatment** | What they've already tried (competitors, DIY, nothing) |
+| **Awareness level** | Most aware → Completely unaware (from COPYWRITING-PRINCIPLES.md) |
+| **Sophistication stage** | Stage 1-5 (from COPYWRITING-PRINCIPLES.md) |
+
+### Audience Context
+- What competitors are saying that this audience has heard
+- What objections or skepticism they bring
 
 ### Available Brand Assets
 - What exists AND what does NOT exist
+
+### Campaign Archetype
+
+Pick one. This shapes the brief structure, tone, and deliverable mix.
+
+| Archetype | Focus | Typical deliverables | Key metric |
+|---|---|---|---|
+| **Acquisition** | New customers, cold traffic, first purchase | LP, ads, email capture, Google Ads | CPA, ROAS, CVR |
+| **Retention / Lifecycle** | Existing customers, repeat purchase, LTV | Email flows, loyalty offers, winback | Repeat rate, LTV, churn |
+| **Product Launch** | New product to market, awareness + conversion | Full campaign (email + ads + LP + PR) | Revenue in first 30 days |
+| **Promotional / Sale** | Time-bound offer, urgency, clearance | Email, ads, LP with countdown | Revenue, units moved, AOV |
+| **Brand / Awareness** | Positioning, category entry, thought leadership | Content, social, PR, partnerships | Reach, engagement, brand recall |
+
+*If the campaign doesn't fit an archetype, state why and what makes it different.*
 
 ### Objective, Key Message, Tone & Voice, Channel
 
@@ -175,27 +230,65 @@ Dana reads these and builds Figma wireframes that match.*
 - Patterns from previous campaigns (if any)
 
 ### Definition of Done
+
 **Self-checkable (Charlie confirms):** mechanical criteria — word counts, tags, spelling
+
+**Per-deliverable platform specs:**
+| Deliverable | Character limits | Mobile check | Platform-specific |
+|---|---|---|---|
+| Email | Subject ≤45, preview ≤90, body per brief | Preview in mobile client | Dark-mode safe colors, alt text on images, fallback fonts |
+| Social ad | Primary ≤125 (40 visible before "more"), headline ≤40 | Thumb-stop test | Platform CTA options checked, aspect ratio matched |
+| Landing page | Headline ≤10 words, body per brief | Mobile-first layout | Responsive breakpoints noted, above-fold content defined |
+| Google Ads | Headlines ≤30, descriptions ≤90 | N/A | No exclamation in headlines, no ALL CAPS, combinability tested |
+
 **Review-dependent (Dana evaluates):** tone, audience fit, brand alignment, differentiation
 
-### A/B Variants (optional)
-| Variant | What's different | Tracking metric |
+### A/B Variants (minimum 2 if testing)
+
+*Variants without hypotheses are spaghetti. Each variant tests a specific angle.*
+
+| Variant | Angle | Hypothesis | Metric | Audience segment |
+|---|---|---|---|---|
+| A (control) | [e.g., mechanism-led] | "Mechanism headlines outperform outcome headlines for solution-aware audiences" | [CTR / CVR] | [segment] |
+| B (test) | [e.g., outcome-led] | "Outcome-first works better for this audience because they're tired of mechanism claims" | [same metric] | [same segment] |
+
+*At retro: winner validated → Playbook. Loser → Anti-Patterns with reasoning.*
+
+### Measurement Plan (required — every campaign ships with this)
+
+| Element | Value |
+|---|---|
+| Primary KPI | [e.g., subscription signups / revenue / ROAS] |
+| Secondary KPIs | [e.g., CTR, open rate, CPA, AOV] |
+| Target | [e.g., "100 subscriptions in 30 days" or "3:1 ROAS"] |
+| Minimum detectable effect | [e.g., "15% improvement over baseline to declare a winner"] |
+| Observation window | [e.g., "7 days for email, 14 days for ads"] |
+| Who reads the data | [CD / Sofia at check-in / automated] |
+| Data source | [GA4 / email platform / ad manager] |
+
+*Without this, the Learning Loop has nothing to learn from.*
 
 ### Approvals Required
 | Stakeholder | Role | Status | Date |
 
-## Brief Quality Check (must pass 8/10 before spinning up Charlie)
+## Brief Quality Rubric (score each 1-5, must average ≥4 to proceed)
 
-1. Audience is specific (not "people who buy things")
-2. Audience context filled (2 of 3 sub-fields)
-3. Key message is one sentence (<30 words)
-4. Tone guidance is actionable (comparison or specific qualities)
-5. Constraints have numbers
-6. Available brand assets — both exists + doesn't exist filled
-7. At least one flag per deliverable
-8. Learned patterns included (if any exist)
-9. DoD has both self-checkable + review-dependent items
-10. Brief date is set
+*Sofia runs this on every brief. No more self-grading from the ether — this is the rubric.*
+
+| # | Dimension | 1 (fail) | 3 (adequate) | 5 (strong) | Score |
+|---|---|---|---|---|---|
+| 1 | **Audience canvas** | "People who buy things" | Demographics only | Full canvas: who, belief, desire, friction, channels, prior treatment, awareness, sophistication |  |
+| 2 | **Key message** | Paragraph / multiple messages | One sentence, >30 words | One sentence, <30 words, single takeaway |  |
+| 3 | **Tone guidance** | "Professional but fun" | Comparison ("like a smart friend") | Comparison + specific do's/don'ts + reference example |  |
+| 4 | **Constraints** | None | Word counts as maximums | Word count RANGES + platform CTA constraints + format specs |  |
+| 5 | **Brand assets** | Not mentioned | Listed what exists | What exists AND what does NOT exist |  |
+| 6 | **Flags** | None | 1 flag total | ≥1 flag per deliverable |  |
+| 7 | **Learned patterns** | Not checked | Checked, none relevant | Relevant patterns included from Playbook |  |
+| 8 | **Campaign archetype** | Not stated | Stated but not shaped | Archetype selected, deliverable mix matches |  |
+| 9 | **Measurement plan** | No metrics | Primary KPI only | KPI + target + MDE + observation window + data source |  |
+| 10 | **Design requirements** | Not filled | Dimensions only | Full strategy→design derivation with specs |  |
+
+**Average ≥4:** proceed to Charlie. **Average 3-3.9:** fix weak dimensions first. **Below 3:** rework.
 
 ## Spinning Up Charlie
 
@@ -225,8 +318,16 @@ When Charlie disputes a Must Fix:
 When Dana clears:
 1. Present to CD: what was created, what was caught, how it was fixed.
 2. Show wireframe layouts if visual deliverables were produced.
-3. Check all approvals (if multiple stakeholders).
-4. Get explicit go-ahead.
+3. **Claims Gate** — scan all copy for:
+   - Comparative claims ("better than," "faster than," "#1")
+   - Before/after claims (especially health, beauty, finance)
+   - Testimonial accuracy (real person, real result, approved?)
+   - Environmental/sustainability claims
+   - Price/discount accuracy
+   - Any claim that needs substantiation under ACL/advertising standards
+   Flag anything unsubstantiated for CD sign-off. Do NOT ship uncleared claims.
+4. Check all approvals (if multiple stakeholders).
+5. Get explicit go-ahead.
 5. Fill execution checklist per deliverable.
 6. Log CD decision immediately.
 7. Capture learned patterns from Dana's review (don't wait for retro).
@@ -369,6 +470,18 @@ Content notes for Dana:
 ## When Done
 
 Signal "Ready for Review" with ALL of these (mandatory — do not skip any):
+
+### Show Your Work (required — makes Schwartz auditable)
+```
+Reasoning trail:
+- Awareness level: [e.g., "Solution-aware — they want the outcome, don't know our product"]
+- Sophistication stage: [e.g., "Stage 4 — mechanism claims are exhausted in this category"]
+- Headline pattern: [e.g., "#4 Identity-first — because Stage 5 market responds to tribe, not claims"]
+- Desire channeled: [e.g., "Convenience desire — they hate the complexity of current solutions"]
+- CTA rationale: [e.g., "Diagnostic CTA — solution-aware audience needs to see relevance before committing"]
+```
+
+### Submission checklist
 - Files/sections changed
 - DoD self-check (self-checkable items ONLY — don't self-check tone/audience)
 - Creative choices NOT in the brief (flag these so Dana can evaluate)
@@ -528,11 +641,21 @@ Append each round. In Round 2+, only review changed sections. Update wireframes 
 
 ## How to Use This Skill
 
+**Canonical repo:** `github.com/MJB1000/marketing-team`
+**Raw URL:** `https://raw.githubusercontent.com/MJB1000/marketing-team/main/marketing-team.md`
+
+### Reading order (why it matters)
+1. **CLAUDE.md** (if in Cowork) — sets token rules, session routing. Auto-loaded.
+2. **marketing-team.md** (this file) — the full skill. All agent roles, workflow, templates.
+3. **knowledge/COPYWRITING-PRINCIPLES.md** (if exists) — Charlie greps for awareness + sophistication.
+
+CLAUDE.md is the frame. This file is the operating system. Knowledge files are reference.
+
 ### In Claude.ai Projects
 1. Create a Project → add this file as knowledge → start chatting.
 
 ### In Claude Cowork
-1. Connect to `github.com/MJB1000/CLAUDE-CODE-V1` → Claude reads CLAUDE.md → paste session prompt.
+1. Connect to `github.com/MJB1000/marketing-team` → Claude reads CLAUDE.md → paste session prompt.
 
 ### In any Claude conversation
 1. Paste this entire file at the start of a conversation.
