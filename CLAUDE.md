@@ -7,19 +7,19 @@
 
 **New campaign — paste this:**
 ```
-You are Sofia on this project. Read CLAUDE.md, then STRATEGIST.md.
+You are Sofia on this project. Read CLAUDE.md, then marketing-team.md.
 Report campaign status in one paragraph, then wait for me.
 ```
 
 **Resume after a break:**
 ```
-You are Sofia on this project. Read CLAUDE.md, then STRATEGIST.md, then CAMPAIGN-LOG.md.
+You are Sofia on this project. Read CLAUDE.md, then marketing-team.md.
 Tell me where we stand and what is next.
 ```
 
 **Your output lives in:** `deliverables/` — that's your publishable copy after each campaign cycle.
 
-**Need more help?** Read `HOW-TO-GET-STARTED.md` — everything else is optional.
+**Need more help?** Read `marketing-team.md` — everything is in one file.
 
 ---
 
@@ -40,83 +40,19 @@ Do not re-read files already in context this session.
 
 ## Session Start — Every Role
 
-1. Load `skills/token-optimizer.md` — first, before anything else.
-2. Check `SESSION-CHECKPOINT.md` — if dated within 7 days, read it. That is your state.
-3. Load your role file: `agents/STRATEGIST.md` · `agents/COPYWRITER.md` · `agents/DESIGNER.md`
-4. If no checkpoint — Strategist reads `CAMPAIGN-LOG.md` + `STRATEGY-BRIEF.md` only.
-5. If `STRATEGY-BRIEF.md` is a blank template, skip it.
+1. Load `marketing-team.md` — this contains all agent roles, workflow, and templates.
+2. If `knowledge/COPYWRITING-PRINCIPLES.md` exists, Charlie greps it for awareness level + sophistication stage before writing.
+3. Follow the role instructions in `marketing-team.md` for your assigned role.
 
 **Creative Director role is set by the human. Do not ask.**
 
 ---
 
-## Reference Files — On Demand Only
-
-| File | Load when |
-|---|---|
-| Campaign spec | Strategist needs it; checkpoint doesn't cover it |
-| STRATEGY-BRIEF.md | Copywriter and Designer load at task start |
-| CAMPAIGN-LOG.md | Strategist checks status; Copywriter updates when done |
-| REVIEW-REQUEST.md | Designer loads at review start |
-| REVIEW-FEEDBACK.md | Copywriter loads after Designer signals done |
-
-| `clients/[name].md` | Strategist loads at session start for returning clients |
-| `knowledge/CHANNELS.md` | Copywriter loads channel section when writing |
-| `knowledge/SWIPE-FILE.md` | Copywriter greps for channel/audience when writing |
-
-Add project-specific reference files here as your campaign grows.
-
----
-
-## Handoff Files
-
-All team communication flows through files in `handoff/`:
-- `STRATEGY-BRIEF.md` — Strategist writes, Copywriter reads
-- `REVIEW-REQUEST.md` — Copywriter writes, Designer reads
-- `REVIEW-FEEDBACK.md` — Designer writes, Copywriter reads
-- `CAMPAIGN-LOG.md` — shared record, Strategist owns
-- `SESSION-CHECKPOINT.md` — Strategist writes at session end
-- `RETRO.md` — Strategist writes after publish (never overwritten — one per deliverable)
-
-Copy templates from `handoff/` into your project root to get started.
-
-### Review Feedback Versioning
-
-Designer appends to `REVIEW-FEEDBACK.md` rather than overwriting. Each round gets a
-dated section header (`## Round N — [date]`). This preserves review history for
-retrospectives and learning.
-
-## Deliverable Artifacts
-
-Store deliverable files in `deliverables/`:
-```
-deliverables/01-landing-page.md
-deliverables/02-email-sequence.md
-deliverables/03-social-ads.md
-```
-
----
-
 ## Skills — On Demand Only
 
-Load the skill the task needs. Not at session start.
+`marketing-team.md` — the complete skill. All 3 agents, orchestration, brief template, review format, learning loop, Figma wireframe production.
 
-`skills/token-optimizer.md` — always first. Controls how the team reads, thinks, and responds.
-
-`skills/notion-publish.md` — load when publishing deliverables to Notion.
-
-`skills/design-systems.md` — load when Designer is producing visual assets. References DESIGN.md files in `design-systems/`.
-
-`skills/figma-production.md` — load before any `use_figma` call. Contains critical Figma API rules, marketing design workflow (6 steps), and channel-specific dimensions.
-
-`skills/research.md` — load when Strategist needs market/competitor intelligence before writing a brief.
-
-`skills/notion-knowledge.md` — load when querying or updating the team's shared knowledge in Notion (clients, patterns, swipe file, campaign tracker).
-
-`skills/brief-quality.md` — load after writing a brief, before spinning up Copywriter. Scores brief 0-10.
-
-Add your marketing-specific skills below:
-[your skills here]
+`knowledge/COPYWRITING-PRINCIPLES.md` — Charlie's Breakthrough Advertising reference. Awareness levels, sophistication stages, headline frameworks.
 
 ---
 
@@ -138,6 +74,6 @@ Strategist's workflow. They do not run concurrently and do not communicate direc
 ## Creative Director Decisions
 
 All Creative Director decisions must be captured in files, not just conversation:
-- Strategist logs CD decisions to `CAMPAIGN-LOG.md` under Brand & Strategy Decisions.
-- Launch gate sign-offs are recorded in `CAMPAIGN-LOG.md` under the deliverable entry.
+- Strategist logs CD decisions immediately.
+- Launch gate sign-offs are recorded.
 - If a session ends before logging a CD decision, it is lost. Log immediately.
