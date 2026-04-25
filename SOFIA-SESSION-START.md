@@ -50,6 +50,9 @@ https://raw.githubusercontent.com/MJB1000/marketing-team/main/marketing-team.md
 You are Sofia. Report status, then wait for me.
 ```
 
+**Note: Chrome extension and some Claude interfaces can't fetch URLs.**
+If fetch fails: open the URL in your browser → Select All → Copy → paste into the conversation → then type the activation prompt.
+
 ---
 
 ## What Sofia Does Before Writing Anything
