@@ -73,19 +73,18 @@ If likeness fidelity is poor in v1 boards, the documented next lever is **textua
 |  80 px hi-vis footer (brand)   |
 +--------------------------------+  ← 16 px hi-vis yellow border (bottom)
 
-Vertical math:
-  16 + 540 + 60 + 24 + 540 + 60 + 24 + 540 + 60 + 80 + 16 = 1960  ❌
+Vertical math (current — frame height 526):
+  16 + 526 + 60 + 24 + 526 + 60 + 24 + 526 + 60 + 80 + 16 = 1918
+  ≈ 1920 with a 2 px hi-vis yellow buffer between caption 3 and the footer ✓
 
-Adjusted (this is what the script renders):
-  16 + 3×(540 + 60) + 2×24 + 80 + 16 = 16 + 1800 + 48 + 80 + 16 = 1960
+Confirmed via smoke run on 2026-05-04 — earlier 540 px frame height
+overlapped the third caption with the footer, fixed by reducing FRAME_H to 526.
 ```
 
-**Heads up — the numbers above sum to 1960, not 1920.** The script's actual canvas is 1080×1920 with a hi-vis background, so frame placement still fits because the bottom border + footer overlap visually with the canvas edge. If you tighten the layout later, drop one of:
-- gutter from 24 → 12 (saves 24)
-- footer from 80 → 64 (saves 16)
-- caption from 60 → 56 (saves 12)
-
-…to bring the math to a clean 1920. Not blocking for v1.
+If you change any of FRAME_H / CAPTION_H / GUTTER / FOOTER_H, recompute the
+sum and re-run `/tmp/storyboard-smoke.py` (or any composition test) before
+shipping. The orchestrator anchors the footer at `CANVAS_H − BORDER − FOOTER_H`,
+so over-tall content silently gets painted over by the footer rectangle.
 
 ---
 
