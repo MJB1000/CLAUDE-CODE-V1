@@ -98,6 +98,39 @@ def discover_founders(client):
     return found
 
 
+def load_founder_anchors(client):
+    """Extract verbatim face-anchor blockquotes from clients/<client>.md.
+
+    Looks for the pattern:
+        ### Founder A — ...
+        ...
+        **Face anchor — repeat verbatim in every beat prompt:**
+        > <one or more blockquote lines>
+
+    Returns {"Founder A": "<anchor text>", "Founder B": "<anchor text>"}, or {}
+    if the profile file is missing or unparseable. Missing anchors are silently
+    skipped — image refs alone still work, just with weaker likeness lock.
+    """
+    profile = REPO_ROOT / "clients" / f"{client}.md"
+    if not profile.exists():
+        return {}
+    text = profile.read_text(encoding="utf-8")
+    anchors = {}
+    pattern = re.compile(
+        r"###\s+(Founder\s+[AB])\b.*?"
+        r"\*\*Face anchor[^*]*\*\*[^\n]*\n((?:>[^\n]*\n?)+)",
+        re.DOTALL | re.IGNORECASE,
+    )
+    for match in pattern.finditer(text):
+        name = match.group(1).strip()
+        block = match.group(2)
+        anchor_lines = [line.lstrip("> ").rstrip() for line in block.splitlines() if line.startswith(">")]
+        anchor = " ".join(anchor_lines).strip()
+        if anchor:
+            anchors[name] = anchor
+    return anchors
+
+
 def discover_machine(client):
     base = REPO_ROOT / "clients" / "assets" / client
     for ext in ("jpg", "jpeg", "png", "webp"):
@@ -373,11 +406,17 @@ def main():
 
     # Generate 3 frames
     style_descriptor = preset.get("style", "")
+    anchors = load_founder_anchors(args.client)
+    anchor_clause = ""
+    if anchors:
+        bits = [f"**{name}** — {text}" for name, text in anchors.items()]
+        anchor_clause = (
+            "\n\nPersistent characters (preserve these traits exactly across all frames, "
+            "even when the beat changes pose, action, or setting):\n" + "\n".join(bits)
+        )
     machine_clause = (
-        " Persistent character: the same compact orange mini-excavator with a dark navy-black "
-        "protective canopy, as in the reference image. Persistent characters: Founder A and "
-        "Founder B from the reference portraits — preserve their facial features, hair, and "
-        "build across all frames."
+        " Persistent object: the same compact orange mini-excavator with a dark navy-black "
+        "protective canopy, as in the reference image."
     )
     frame_pngs = []
     for idx, beat in enumerate(beats):
@@ -385,7 +424,7 @@ def main():
             f"{PENCIL_STYLE}\n\n"
             f"Beat {idx+1} of 3 — {beat}.\n\n"
             f"Setting and brand context: {style_descriptor[:600]}.\n"
-            f"{machine_clause}\n\n"
+            f"{machine_clause}{anchor_clause}\n\n"
             "IMPORTANT: do NOT render any logos, brand names, or printed text on the machine "
             "or in the scene. Pencil-sketch only — no colour."
         )

@@ -27,15 +27,35 @@
 
 ## Founders
 
-> Image references for character-consistent generation across storyboards and campaign visuals.
-> The storyboard skill loads these automatically from the paths below.
+> Persistent character anchors for storyboards and campaign visuals.
+> The storyboard orchestrator reads both the **textual anchors** and the
+> **image references** from this block on every run. Image refs lock likeness;
+> text anchors keep that likeness stable across stylised output (pencil
+> sketches, illustrations, etc.) where the model otherwise drifts.
 
-| Name slot | Display name | Reference image | Notes |
-|---|---|---|---|
-| **Founder A** | *(set on first storyboard run)* | `clients/assets/diggerlid/founders/founder-a.jpg` | Head-and-shoulders portrait, neutral lighting, face clearly visible. |
-| **Founder B** | *(set on first storyboard run)* | `clients/assets/diggerlid/founders/founder-b.jpg` | Head-and-shoulders portrait, neutral lighting, face clearly visible. |
+### Founder A — *(name pending)*
 
-**Optional machine reference:** `clients/assets/diggerlid/excavator.jpg` — if present, attached as an object reference for excavator continuity across frames.
+**Image reference:** `clients/assets/diggerlid/founders/founder-a.jpg` *(awaiting upload)*
+**Multi-angle backups:** `clients/assets/diggerlid/founders/raw/founder-a-*.jpg`
+
+**Face anchor — repeat verbatim in every beat prompt:**
+> Australian male, mid-30s, oval-to-rectangular face shape with even proportions and a strong jawline. Short dark-brown hair, faded short on the sides, slightly fuller on top. Dark, full eyebrows. Medium-set brown eyes. Straight medium-length nose. Defined upper lip with a relaxed, friendly mouth. Clear lightly-tanned complexion with **light short stubble across jaw and chin — never a full beard, never clean-shaven**. Solid broad-shouldered build.
+
+**Default attire:** black DiggerLid hoodie with the bold yellow lowercase "D" logo on the chest, black DiggerLid baseball cap with the same logo on the front. Swap when the beat clearly calls for different clothing (e.g. on-site, customer meeting), but keep the cap unless the beat says otherwise.
+
+### Founder B — *(name pending)*
+
+**Image reference:** `clients/assets/diggerlid/founders/founder-b.jpg` *(awaiting upload)*
+**Multi-angle backups:** `clients/assets/diggerlid/founders/raw/founder-b-*.jpg`
+
+**Face anchor — repeat verbatim in every beat prompt:**
+> Australian male, mid-30s, oval slimmer face with softer jawline. Mid-brown hair worn in a clean side part, short on the sides, slightly longer styled on top. Medium-thickness mid-brown eyebrows. Medium-set eyes. Medium straight nose. **Distinctive thick full chevron moustache covering the upper lip and extending just past the corners of the mouth — clean-shaven elsewhere, no beard.** Clear fair-to-medium complexion. Medium athletic build, slightly slimmer than Founder A.
+
+**Default attire:** beige/khaki utility shirt-jacket (shacket) buttoned over a black t-shirt, light-blue jeans. Swap when the beat clearly calls for different clothing.
+
+### Optional excavator reference
+
+`clients/assets/diggerlid/excavator.jpg` — if present, attached as an object reference for compact-excavator continuity across frames. Anchor descriptor: *compact orange mini-excavator with a sturdy dark navy-black DiggerShield-style protective canopy mounted on the operator cab*.
 
 ## Competitive Context
 - **Key competitors:** *(to be filled in during first competitive research pass)*
