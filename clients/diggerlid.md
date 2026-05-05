@@ -39,9 +39,9 @@
 **Multi-angle backups:** `clients/assets/diggerlid/founders/raw/founder-a-*.jpg`
 
 **Face anchor — repeat verbatim in every beat prompt:**
-> Australian male, mid-30s, oval-to-rectangular face shape with even proportions and a strong jawline. Short dark-brown hair, faded short on the sides, slightly fuller on top. Dark, full eyebrows. Medium-set brown eyes. Straight medium-length nose. Defined upper lip beneath a **neatly-trimmed dark moustache that sits above the lip line — clean-shaven on the cheeks and chin, no beard**. Clear lightly-tanned complexion. Solid broad-shouldered build, noticeably heavier-set than Founder B.
+> Australian male, mid-30s, oval-to-rectangular face shape with even proportions and a strong jawline. **Always wears a black baseball cap with the brim facing forward** — dark hair just visible at the temples below the cap line. Dark, full eyebrows. Medium-set brown eyes. Straight medium-length nose. Defined upper lip beneath a **neatly-trimmed dark moustache that sits above the lip line — clean-shaven on the cheeks and chin, no beard**. Clear lightly-tanned complexion. Solid broad-shouldered build, noticeably heavier-set than Founder B.
 
-**Default attire:** black DiggerLid hoodie with the bold yellow lowercase "D" logo on the chest, black DiggerLid baseball cap with the same logo on the front. Swap when the beat clearly calls for different clothing (e.g. on-site, customer meeting), but keep the cap unless the beat says otherwise.
+**Default attire:** black DiggerLid hoodie with the bold yellow lowercase "D" logo on the chest. Swap the hoodie when the beat clearly calls for different clothing (e.g. high-vis on a worksite). The cap stays on regardless — it is part of the face anchor above.
 
 ### Founder B — *(name pending)*
 

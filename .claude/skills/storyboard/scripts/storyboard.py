@@ -65,6 +65,29 @@ PENCIL_STYLE = (
     "board pulled from an artist's sketchbook. 16:9 cinematic framing."
 )
 
+# Run on the brand-context descriptor before injecting it into a monochrome beat
+# prompt. Strips obvious render-as-color cues so the model doesn't paint an
+# orange excavator into a pencil sketch (regression observed on db0adc8).
+_COLOR_SANITISER = [
+    (r"\borange\b", "compact"),
+    (r"\bdark navy-black\b", "dark"),
+    (r"\bnavy-black\b", "dark"),
+    (r"\bnavy\b", "dark"),
+    (r"\bhi-vis safety-yellow\b", "high-visibility"),
+    (r"\bhi-vis yellow\b", "high-visibility"),
+    (r"\bsafety-yellow\b", "high-visibility"),
+    (r"\bvivid hazard yellow\b", "high-visibility"),
+    (r"\(#[0-9A-Fa-f]{3,8}\)", ""),
+    (r"#[0-9A-Fa-f]{6}", ""),
+]
+
+
+def _strip_color_cues(text):
+    out = text
+    for pattern, repl in _COLOR_SANITISER:
+        out = re.sub(pattern, repl, out, flags=re.IGNORECASE)
+    return out
+
 
 # ------------------------- Helpers -------------------------
 
@@ -405,7 +428,7 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Generate 3 frames
-    style_descriptor = preset.get("style", "")
+    style_descriptor = _strip_color_cues(preset.get("style", ""))
     anchors = load_founder_anchors(args.client)
     anchor_clause = ""
     if anchors:
@@ -415,8 +438,8 @@ def main():
             "even when the beat changes pose, action, or setting):\n" + "\n".join(bits)
         )
     machine_clause = (
-        " Persistent object: the same compact orange mini-excavator with a dark navy-black "
-        "protective canopy, as in the reference image."
+        " Persistent object: the same compact mini-excavator with its dark protective "
+        "canopy mounted on the operator cab, as in the reference image."
     )
     frame_pngs = []
     for idx, beat in enumerate(beats):
@@ -425,8 +448,12 @@ def main():
             f"Beat {idx+1} of 3 — {beat}.\n\n"
             f"Setting and brand context: {style_descriptor[:600]}.\n"
             f"{machine_clause}{anchor_clause}\n\n"
-            "IMPORTANT: do NOT render any logos, brand names, or printed text on the machine "
-            "or in the scene. Pencil-sketch only — no colour."
+            "RENDER MODE OVERRIDE: any colour words appearing above (orange, yellow, "
+            "navy, etc.) are identifying labels only — they describe what the brand "
+            "looks like in real life. For THIS render the artwork is fully monochrome "
+            "graphite pencil — no colour fills, no orange paint, no yellow accents. "
+            "Pencil tones only across every object and figure. Do NOT render any logos, "
+            "brand names, or printed text on the machine or in the scene."
         )
         png_bytes = generate_frame(beat_prompt, reference_images, preset, api_key, args.model)
         frame_pngs.append(png_bytes)
