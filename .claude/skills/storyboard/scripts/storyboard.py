@@ -41,18 +41,21 @@ FONT_PATH = Path("/tmp/fonts/Outfit.ttf")
 # Gemini config
 DEFAULT_MODEL = "gemini-3.1-flash-image-preview"
 RESOLUTION = "2K"
-ASPECT = "16:9"
+ASPECT = "9:16"
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
-# Layout (1080x1920 9:16) — see references/style-recipes.md for the math
-CANVAS_W, CANVAS_H = 1080, 1920
+# Layout (1920x1080 landscape) — three 9:16 portrait frames side-by-side.
+# See references/style-recipes.md for the math diagram.
+CANVAS_W, CANVAS_H = 1920, 1080
 BORDER_PX = 16
-FRAME_W = CANVAS_W - 2 * BORDER_PX  # 1048
-FRAME_H = 526
+FRAME_W = 502
+FRAME_H = 892
 CAPTION_H = 60
 GUTTER = 24
 FOOTER_H = 80
-# Math: 16 + 3×526 + 3×60 + 2×24 + 80 + 16 = 1920 ✓
+OUTER_PAD = 167  # left/right hi-vis padding outside the 3-frame strip
+# Math W: 2*16 + 2*167 + 3*502 + 2*24 = 1920 ✓
+# Math H: 16 + 892 + 60 + 16 + 80 + 16 = 1080 ✓
 HIVIS_YELLOW = (255, 230, 0)
 NAVY = (26, 31, 46)
 WHITE = (255, 255, 255)
@@ -62,7 +65,8 @@ PENCIL_STYLE = (
     "fully monochrome with no colour anywhere in the artwork. Loose hand-drawn pencil lines, "
     "gentle hatched shading and feathered edges, subtle paper grain. Simplified facial "
     "features in the style of a director's pre-production storyboard. The kind of thumbnail "
-    "board pulled from an artist's sketchbook. 16:9 cinematic framing."
+    "board pulled from an artist's sketchbook. 9:16 vertical/portrait framing for social "
+    "media — composed for a tall narrow panel with the key subject vertically dominant."
 )
 
 # Run on the brand-context descriptor before injecting it into a monochrome beat
@@ -303,8 +307,7 @@ def generate_frame(beat_prompt, reference_images, preset, api_key, model):
 
 
 def compose_storyboard(frame_pngs, beats, brand_name, output_path):
-    """Composite 3 frame images into a 1080x1920 9:16 canvas with caption strips."""
-    # Sanity: 16 + 3*(540+60) + 2*24 + 80 + 16 = 1920 ✓
+    """Composite 3 portrait frames side-by-side on a 1920x1080 landscape canvas."""
     canvas = Image.new("RGB", (CANVAS_W, CANVAS_H), HIVIS_YELLOW)
     draw = ImageDraw.Draw(canvas)
 
@@ -315,27 +318,27 @@ def compose_storyboard(frame_pngs, beats, brand_name, output_path):
         caption_font = ImageFont.load_default()
         footer_font = ImageFont.load_default()
 
-    y = BORDER_PX
     labels = ["1. Setup", "2. Action", "3. Resolution"]
-    caption_max_w = FRAME_W - 32  # 16 px padding on each side of the strip
+    caption_max_w = FRAME_W - 32  # 16 px text padding on each side
+    y_frame = BORDER_PX
+    y_caption = y_frame + FRAME_H
+    x = BORDER_PX + OUTER_PAD
+
     for idx, png_bytes in enumerate(frame_pngs):
         # Frame artwork
         frame = Image.open(__import__("io").BytesIO(png_bytes)).convert("RGB")
         frame = frame.resize((FRAME_W, FRAME_H), Image.LANCZOS)
-        canvas.paste(frame, (BORDER_PX, y))
-        y += FRAME_H
+        canvas.paste(frame, (x, y_frame))
 
-        # Caption strip — auto-fit beat text to the strip width, ellipsise overflow
-        draw.rectangle([BORDER_PX, y, BORDER_PX + FRAME_W, y + CAPTION_H], fill=NAVY)
+        # Caption strip directly under the frame (same width as the frame)
+        draw.rectangle([x, y_caption, x + FRAME_W, y_caption + CAPTION_H], fill=NAVY)
         text = _fit_caption(draw, labels[idx], beats[idx], caption_font, caption_max_w)
-        draw.text((BORDER_PX + 16, y + (CAPTION_H - 28) // 2 - 2),
+        draw.text((x + 16, y_caption + (CAPTION_H - 28) // 2 - 2),
                   text, fill=WHITE, font=caption_font)
-        y += CAPTION_H
 
-        if idx < 2:
-            y += GUTTER  # hi-vis yellow gutter (already canvas bg)
+        x += FRAME_W + GUTTER
 
-    # Footer brand strip
+    # Footer brand strip — spans the full inner width below the frame row
     footer_y = CANVAS_H - BORDER_PX - FOOTER_H
     draw.rectangle([BORDER_PX, footer_y, CANVAS_W - BORDER_PX, footer_y + FOOTER_H],
                    fill=HIVIS_YELLOW)

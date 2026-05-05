@@ -50,41 +50,45 @@ If likeness fidelity is poor in v1 boards, the documented next lever is **textua
 
 ---
 
-## Layout math — 1080×1920 (9:16)
+## Layout math — 1920×1080 (landscape, three 9:16 portraits)
 
 ```
-+--------------------------------+  ← 16 px hi-vis yellow border (top)
-|  Frame 1 (1048 × 540)          |
-|--------------------------------|  ← 60 px navy caption strip
-|  1. Setup  ·  <beat text>      |
-+--------------------------------+
-|       24 px hi-vis gutter      |
-+--------------------------------+
-|  Frame 2 (1048 × 540)          |
-|--------------------------------|
-|  2. Action  ·  <beat text>     |
-+--------------------------------+
-|       24 px hi-vis gutter      |
-+--------------------------------+
-|  Frame 3 (1048 × 540)          |
-|--------------------------------|
-|  3. Resolution  ·  <beat text> |
-+--------------------------------+
-|  80 px hi-vis footer (brand)   |
-+--------------------------------+  ← 16 px hi-vis yellow border (bottom)
++------------------------- 1920 wide -------------------------+
+| 16 px hi-vis yellow border (top)                            |
+|                                                             |
+| 167 px |+--------+  24  +--------+  24  +--------+| 167 px  |
+|  pad   ||FRAME 1 |  px  |FRAME 2 |  px  |FRAME 3 ||  pad    |
+|        || 502×892|gutter| 502×892|gutter| 502×892||         |
+|        ||  9:16  |      |  9:16  |      |  9:16  ||         |
+|        |+--------+      +--------+      +--------+|         |
+|        ||  CAP 1 |      |  CAP 2 |      |  CAP 3 || 60 px navy |
+|        |+--------+      +--------+      +--------+|         |
+|                                                             |
+| 16 px hi-vis gap                                            |
++-------------------------------------------------------------+
+|  80 px hi-vis yellow footer — DIGGERLID wordmark in navy    |
++-------------------------------------------------------------+
+| 16 px hi-vis yellow border (bottom)                         |
++-------------------------------------------------------------+
+1080 tall
 
-Vertical math (current — frame height 526):
-  16 + 526 + 60 + 24 + 526 + 60 + 24 + 526 + 60 + 80 + 16 = 1918
-  ≈ 1920 with a 2 px hi-vis yellow buffer between caption 3 and the footer ✓
-
-Confirmed via smoke run on 2026-05-04 — earlier 540 px frame height
-overlapped the third caption with the footer, fixed by reducing FRAME_H to 526.
+Width:   2*16 + 2*167 + 3*502 + 2*24 = 32 + 334 + 1506 + 48 = 1920 ✓
+Height:  16 + 892 + 60 + 16 + 80 + 16 = 1080 ✓
 ```
 
-If you change any of FRAME_H / CAPTION_H / GUTTER / FOOTER_H, recompute the
-sum and re-run `/tmp/storyboard-smoke.py` (or any composition test) before
-shipping. The orchestrator anchors the footer at `CANVAS_H − BORDER − FOOTER_H`,
-so over-tall content silently gets painted over by the footer rectangle.
+Each Gemini generation now requests `aspectRatio: "9:16"` so the model returns
+portrait-composed artwork. PIL just resizes to 502×892 and pastes.
+
+The brand colour treatment stays the same as the original vertical layout —
+hi-vis yellow lives in the margins/gutters/footer, never inside the artwork.
+Per-frame caption strips are flush under each portrait (502 px wide each)
+rather than spanning the full canvas — keeps each frame visually self-contained.
+
+If you change any of FRAME_W / FRAME_H / GUTTER / OUTER_PAD / FOOTER_H,
+recompute both sums and verify with a quick stub-frame composition test
+before shipping. The orchestrator pins the footer at
+`CANVAS_H − BORDER − FOOTER_H`, so over-tall content silently gets painted
+over by the footer rectangle.
 
 ---
 

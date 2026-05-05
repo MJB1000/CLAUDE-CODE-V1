@@ -1,6 +1,6 @@
 ---
 name: storyboard
-description: "Generate a 3-frame social-media storyboard from a narrative prompt + dropped images or video. Triggers on /storyboard, '3-frame storyboard', '3-frame social board', 'pencil sketch storyboard', 'social board from this'. User drops a prompt and source media; this skill produces a single 1080x1920 9:16 PNG with three character-consistent pencil-sketch frames featuring persistent founders, plus optional Trello attachment."
+description: "Generate a 3-frame social-media storyboard from a narrative prompt + dropped images or video. Triggers on /storyboard, '3-frame storyboard', '3-frame social board', 'pencil sketch storyboard', 'social board from this'. User drops a prompt and source media; this skill produces a single 1920x1080 landscape PNG with three character-consistent 9:16 portrait pencil-sketch frames sitting side-by-side, plus optional Trello attachment."
 argument-hint: "<narrative — describe the 3 beats with arrows or commas>"
 ---
 
@@ -8,7 +8,7 @@ argument-hint: "<narrative — describe the 3 beats with arrows or commas>"
 
 ## What this skill does
 
-User drops 1+ images (or a short MP4) into the chat with a prompt describing a 3-beat narrative. This skill generates 3 character-consistent pencil-sketch frames featuring the configured founders + machine reference, composites them into a 1080×1920 9:16 image with brand-coloured margins and beat captions, and renders the result inline so the user can download it. Optionally attaches to a Trello card.
+User drops 1+ images (or a short MP4) into the chat with a prompt describing a 3-beat narrative. This skill generates 3 character-consistent 9:16 portrait pencil-sketch frames featuring the configured founders + machine reference, composites them side-by-side into a single 1920×1080 landscape image with brand-coloured margins and per-frame captions, and renders the result inline so the user can download it. Optionally attaches to a Trello card.
 
 **Default client:** `diggerlid`. Override with the `--client` flag if the user names another preset.
 
