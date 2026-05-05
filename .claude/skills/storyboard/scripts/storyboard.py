@@ -89,6 +89,28 @@ def _strip_color_cues(text):
     return out
 
 
+def _fit_caption(draw, label, beat, font, max_width):
+    """Build the caption string and trim the beat portion until it fits the strip.
+
+    Always renders `<label>  ·  <beat>`. If the full text overflows max_width
+    pixels at the given font, progressively chops characters off the end of
+    the beat and replaces with `…` until it fits. Label and separator stay
+    intact — they are short enough that they always fit.
+    """
+    text = f"{label}  ·  {beat}"
+    bbox = draw.textbbox((0, 0), text, font=font)
+    if bbox[2] - bbox[0] <= max_width:
+        return text
+    trimmed = beat
+    while len(trimmed) > 1:
+        trimmed = trimmed[:-1].rstrip()
+        candidate = f"{label}  ·  {trimmed}…"
+        bbox = draw.textbbox((0, 0), candidate, font=font)
+        if bbox[2] - bbox[0] <= max_width:
+            return candidate
+    return f"{label}  ·  …"
+
+
 # ------------------------- Helpers -------------------------
 
 
@@ -295,6 +317,7 @@ def compose_storyboard(frame_pngs, beats, brand_name, output_path):
 
     y = BORDER_PX
     labels = ["1. Setup", "2. Action", "3. Resolution"]
+    caption_max_w = FRAME_W - 32  # 16 px padding on each side of the strip
     for idx, png_bytes in enumerate(frame_pngs):
         # Frame artwork
         frame = Image.open(__import__("io").BytesIO(png_bytes)).convert("RGB")
@@ -302,10 +325,9 @@ def compose_storyboard(frame_pngs, beats, brand_name, output_path):
         canvas.paste(frame, (BORDER_PX, y))
         y += FRAME_H
 
-        # Caption strip
+        # Caption strip — auto-fit beat text to the strip width, ellipsise overflow
         draw.rectangle([BORDER_PX, y, BORDER_PX + FRAME_W, y + CAPTION_H], fill=NAVY)
-        beat_text = beats[idx][:80]
-        text = f"{labels[idx]}  ·  {beat_text}"
+        text = _fit_caption(draw, labels[idx], beats[idx], caption_font, caption_max_w)
         draw.text((BORDER_PX + 16, y + (CAPTION_H - 28) // 2 - 2),
                   text, fill=WHITE, font=caption_font)
         y += CAPTION_H
@@ -446,14 +468,21 @@ def main():
         beat_prompt = (
             f"{PENCIL_STYLE}\n\n"
             f"Beat {idx+1} of 3 — {beat}.\n\n"
-            f"Setting and brand context: {style_descriptor[:600]}.\n"
+            "SETTING PRECEDENCE: take the location and environment cues directly "
+            "from the beat sentence above. If the beat names a specific place "
+            "(bush, beach, warehouse, depot, indoors, etc.) render THAT place. "
+            "Do NOT default to the brand's typical environment when the beat "
+            "specifies a different one.\n\n"
+            f"Brand visual identity (apply only when the beat doesn't fix a "
+            f"different setting): {style_descriptor[:500]}.\n"
             f"{machine_clause}{anchor_clause}\n\n"
-            "RENDER MODE OVERRIDE: any colour words appearing above (orange, yellow, "
-            "navy, etc.) are identifying labels only — they describe what the brand "
-            "looks like in real life. For THIS render the artwork is fully monochrome "
-            "graphite pencil — no colour fills, no orange paint, no yellow accents. "
-            "Pencil tones only across every object and figure. Do NOT render any logos, "
-            "brand names, or printed text on the machine or in the scene."
+            "RENDER MODE OVERRIDE: any colour words appearing above (orange, "
+            "yellow, navy, etc.) are identifying labels only — they describe what "
+            "the brand looks like in real life. For THIS render the artwork is "
+            "fully monochrome graphite pencil — no colour fills, no orange paint, "
+            "no yellow accents. Pencil tones only across every object and figure. "
+            "Do NOT render any logos, brand names, or printed text on the machine "
+            "or in the scene."
         )
         png_bytes = generate_frame(beat_prompt, reference_images, preset, api_key, args.model)
         frame_pngs.append(png_bytes)
