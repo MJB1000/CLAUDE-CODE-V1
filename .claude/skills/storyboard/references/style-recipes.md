@@ -50,45 +50,55 @@ If likeness fidelity is poor in v1 boards, the documented next lever is **textua
 
 ---
 
-## Layout math — 1920×1080 (landscape, three 9:16 portraits)
+## Layout math — 1920×1080 (v5: thin yellow border + cream paper)
+
+v5 amended the brand-colour treatment per user request: the yellow background
+became a thin border, the interior is now cream sketch paper, and the caption
+strip got taller to support 2 lines of text when the beat overflows.
 
 ```
 +------------------------- 1920 wide -------------------------+
-| 16 px hi-vis yellow border (top)                            |
-|                                                             |
-| 167 px |+--------+  24  +--------+  24  +--------+| 167 px  |
-|  pad   ||FRAME 1 |  px  |FRAME 2 |  px  |FRAME 3 ||  pad    |
-|        || 502×892|gutter| 502×892|gutter| 502×892||         |
-|        ||  9:16  |      |  9:16  |      |  9:16  ||         |
+| 8 px hi-vis yellow border (top, also left + right)          |
+|------------------------- cream interior --------------------|
+|                  16 px cream top breathing room             |
+| 175 px |+--------+  24  +--------+  24  +--------+| 175 px  |
+|  cream ||FRAME 1 |  px  |FRAME 2 |  px  |FRAME 3 ||  cream  |
+|  pad   || 502×892|cream | 502×892|cream | 502×892||  pad    |
+|        ||  9:16  |gutter|  9:16  |gutter|  9:16  ||         |
 |        |+--------+      +--------+      +--------+|         |
-|        ||  CAP 1 |      |  CAP 2 |      |  CAP 3 || 60 px navy |
+|        || CAP 1  |      | CAP 2  |      | CAP 3  || 100 px navy
+|        || up to 2|      | up to 2|      | up to 2|| (room for 2-line wrap)
+|        || lines  |      | lines  |      | lines  ||         |
 |        |+--------+      +--------+      +--------+|         |
-|                                                             |
-| 16 px hi-vis gap                                            |
+|              16 px cream gap                                |
 +-------------------------------------------------------------+
-|  80 px hi-vis yellow footer — DIGGERLID wordmark in navy    |
-+-------------------------------------------------------------+
-| 16 px hi-vis yellow border (bottom)                         |
+|        48 px hi-vis yellow footer — DIGGERLID wordmark      |
 +-------------------------------------------------------------+
 1080 tall
 
-Width:   2*16 + 2*167 + 3*502 + 2*24 = 32 + 334 + 1506 + 48 = 1920 ✓
-Height:  16 + 892 + 60 + 16 + 80 + 16 = 1080 ✓
+Width:   2*8 + 2*175 + 3*502 + 2*24 = 16 + 350 + 1506 + 48 = 1920 ✓
+Height:  8 + 16 + 892 + 100 + 16 + 48 = 1080 ✓
 ```
 
-Each Gemini generation now requests `aspectRatio: "9:16"` so the model returns
-portrait-composed artwork. PIL just resizes to 502×892 and pastes.
+**Caption wrapping (`_wrap_caption`):**
+1. Try `<label>  ·  <beat>` on one line. If it fits, render single-line centred.
+2. Otherwise greedy-fill line 1 with words from the beat after the label/separator,
+   spill the rest to line 2. Both lines render, vertically centred together.
+3. Only ellipsise (`…`) if the second line still overflows after step 2.
 
-The brand colour treatment stays the same as the original vertical layout —
-hi-vis yellow lives in the margins/gutters/footer, never inside the artwork.
-Per-frame caption strips are flush under each portrait (502 px wide each)
-rather than spanning the full canvas — keeps each frame visually self-contained.
+Line height for the 28pt caption font is 34 px; 2 lines = 68 px, leaves 16 px
+of vertical padding inside the 100-px strip.
 
-If you change any of FRAME_W / FRAME_H / GUTTER / OUTER_PAD / FOOTER_H,
-recompute both sums and verify with a quick stub-frame composition test
-before shipping. The orchestrator pins the footer at
-`CANVAS_H − BORDER − FOOTER_H`, so over-tall content silently gets painted
-over by the footer rectangle.
+**Brand presence:** hi-vis yellow now appears only in (a) the 8-px perimeter
+border and (b) the 48-px brand-wordmark footer at the bottom. The footer + the
+bottom border merge visually into one 56-px yellow strip. Inside the working
+area everything sits on cream — closer to a real director's storyboard sheet,
+less ad-magazine billboard.
+
+If you change any of FRAME_W / FRAME_H / GUTTER / OUTER_PAD / FOOTER_H /
+CAPTION_H / TOP_GAP, recompute both sums and verify with a stub-frame test
+before shipping. The footer is anchored at `CANVAS_H − BORDER − FOOTER_H`,
+so over-tall content silently gets painted over by the footer rectangle.
 
 ---
 
