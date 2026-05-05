@@ -50,11 +50,13 @@ If likeness fidelity is poor in v1 boards, the documented next lever is **textua
 
 ---
 
-## Layout math — 1920×1080 (v5: thin yellow border + cream paper)
+## Layout math — 1920×1080 (v6: adaptive frame sizing)
 
-v5 amended the brand-colour treatment per user request: the yellow background
-became a thin border, the interior is now cream sketch paper, and the caption
-strip got taller to support 2 lines of text when the beat overflows.
+v6 made the layout adaptive: caption strips can wrap to as many lines as
+needed (after a 50-word truncation), and the portrait frames shrink while
+preserving 9:16 aspect to make room. v5's brand-colour treatment is
+preserved — thin yellow border, cream sketch-paper interior, brand
+wordmark in a small yellow strip at the bottom.
 
 ```
 +------------------------- 1920 wide -------------------------+
@@ -80,14 +82,43 @@ Width:   2*8 + 2*175 + 3*502 + 2*24 = 16 + 350 + 1506 + 48 = 1920 ✓
 Height:  8 + 16 + 892 + 100 + 16 + 48 = 1080 ✓
 ```
 
-**Caption wrapping (`_wrap_caption`):**
-1. Try `<label>  ·  <beat>` on one line. If it fits, render single-line centred.
-2. Otherwise greedy-fill line 1 with words from the beat after the label/separator,
-   spill the rest to line 2. Both lines render, vertically centred together.
-3. Only ellipsise (`…`) if the second line still overflows after step 2.
+**Adaptive sizing (`_resolve_layout`):**
 
-Line height for the 28pt caption font is 34 px; 2 lines = 68 px, leaves 16 px
-of vertical padding inside the 100-px strip.
+Caption width depends on frame width, which depends on caption height, which
+depends on caption line count, which depends on caption width. The function
+iterates up to 5 times until `frame_w` stops shrinking — at that point the
+wrap is computed at the same width we'll render with, so captions never
+overflow horizontally.
+
+- Initial guess: `frame_w = MAX_FRAME_W = 502` (the v5 width).
+- Each iteration: re-wrap all 3 beats at the current `caption_max_w =
+  frame_w − 32`, find the longest wrap (`max_lines`), recompute
+  `caption_h = max_lines × 34 + 16`, recompute `frame_h` from the
+  remaining vertical budget (capped at MAX_FRAME_H = 892, floored at 200),
+  recompute `frame_w = round(frame_h × 9/16)`.
+- Loop exits as soon as the new `frame_w` is no longer shrinking.
+
+For real-world beats this converges in 1–2 passes:
+
+| Caption lines (longest beat) | caption_h | frame_h | frame_w |
+|---|---|---|---|
+| 1 | 50 | 892 | 502 |
+| 2 | 84 | 892 | 502 |
+| 3 | 118 | 874 | 492 |
+| 4 | 152 | 840 | 472 |
+| 5 | 186 | 806 | 453 |
+| 6 | 220 | 772 | 434 |
+| 8 | 288 | 704 | 396 |
+
+**Caption wrapping (`_wrap_caption`):**
+1. Truncate the beat to MAX_CAPTION_WORDS (50) up front. Excess words drop
+   off the end with a `…`.
+2. If `<label>  ·  <beat>` fits one line at `caption_max_w`, return it.
+3. Otherwise greedy word-fill line by line. Line 1 carries the label
+   prefix; subsequent lines are beat-text only.
+4. Only chop a word character-by-character (with `…`) if a single word is
+   wider than `caption_max_w` — vanishingly rare with normal English at
+   the layout's strip widths.
 
 **Brand presence:** hi-vis yellow now appears only in (a) the 8-px perimeter
 border and (b) the 48-px brand-wordmark footer at the bottom. The footer + the

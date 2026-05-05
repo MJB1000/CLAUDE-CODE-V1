@@ -45,22 +45,22 @@ ASPECT = "9:16"
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 # Layout (1920x1080 landscape) — three 9:16 portrait frames side-by-side.
-# v5 amendments: thin yellow border around the canvas, cream paper background
-# (no more flooded yellow), taller 2-line-capable caption strips, smaller footer.
-# See references/style-recipes.md for the diagram.
+# v6: layout is now adaptive — frame size shrinks (maintaining 9:16 aspect) to
+# make room when captions need extra lines. Captions cap at 50 words but can
+# wrap to as many lines as needed.
 CANVAS_W, CANVAS_H = 1920, 1080
 BORDER_PX = 8           # thin yellow border on top/left/right
-FRAME_W = 502
-FRAME_H = 892
-CAPTION_H = 100         # accommodates up to 2 lines of caption text at 28pt
+MAX_FRAME_W = 502       # frame width when captions are short (1-2 lines)
+MAX_FRAME_H = 892       # 9:16 of 502 — used when captions don't force shrink
 CAPTION_LINE_H = 34     # rendered line height for the 28pt caption font
+CAPTION_VPAD = 16       # vertical padding inside caption strip (8 top + 8 bottom)
 GUTTER = 24             # cream gap between frames
-FOOTER_H = 48           # yellow footer strip with brand wordmark (replaces the bottom border)
-OUTER_PAD = 175         # cream padding on each outer side of the 3-frame strip
+FOOTER_H = 48           # yellow footer strip with brand wordmark
 TOP_GAP = 16            # cream breathing room below the top border
 CAPTION_TO_FOOTER_GAP = 16   # cream gap between captions and footer
-# Math W: 2*8 + 2*175 + 3*502 + 2*24 = 1920 ✓
-# Math H: 8 + 16 + 892 + 100 + 16 + 48 = 1080 ✓
+MAX_CAPTION_WORDS = 50  # hard cap on words per beat caption (truncated with …)
+# Vertical budget for FRAME_H + caption_h combined:
+VERT_BUDGET = CANVAS_H - BORDER_PX - TOP_GAP - CAPTION_TO_FOOTER_GAP - FOOTER_H  # 992
 HIVIS_YELLOW = (255, 230, 0)
 CREAM_BG = (250, 248, 240)   # warm off-white, evokes pencil-sketch paper
 NAVY = (26, 31, 46)
@@ -104,63 +104,54 @@ def _measure(draw, text, font):
     return bbox[2] - bbox[0]
 
 
-def _wrap_caption(draw, label, beat, font, max_width, max_lines=2):
+def _truncate_words(text, max_words=MAX_CAPTION_WORDS):
+    """Hard cap a beat at max_words, appending an ellipsis if truncated."""
+    words = text.split()
+    if len(words) <= max_words:
+        return text
+    return " ".join(words[:max_words]) + "…"
+
+
+def _wrap_caption(draw, label, beat, font, max_width):
     """Return a list of caption lines that fit within max_width pixels.
 
-    Strategy:
-    1. If `<label>  ·  <beat>` fits on one line, return it.
-    2. Otherwise, the first line is `<label>  ·  <words…>` filling as much
-       of the beat as fits. The remaining beat words go on line 2. If line 2
-       still overflows, chop characters off and append `…`.
-    3. If even max_lines don't accommodate the whole beat, the last line is
-       ellipsised. Lines beyond max_lines are dropped.
-
-    The label always sits on line 1, intact. The user asked specifically that
-    overflow drops onto a second line and that line is shown — so we preserve
-    as much of the beat as possible across both lines before ellipsising.
+    No line cap — wraps to as many lines as needed to display the full
+    (already 50-word-truncated) beat. Label sits inline on line 1 before
+    the first words of the beat. Greedy word-by-word fill per line; only
+    falls back to character-level chop + `…` if a single word is wider
+    than max_width (rare with normal English at the layout's caption width).
     """
+    beat = _truncate_words(beat)
     one_line = f"{label}  ·  {beat}"
     if _measure(draw, one_line, font) <= max_width:
         return [one_line]
 
-    if max_lines < 2:
-        # Single-line caller — fall back to ellipsis behaviour
-        trimmed = beat
-        while trimmed:
-            candidate = f"{label}  ·  {trimmed}…"
-            if _measure(draw, candidate, font) <= max_width:
-                return [candidate]
-            trimmed = trimmed[:-1].rstrip()
-        return [f"{label}  ·  …"]
-
-    # Two-line wrap: greedy word fill on line 1, remainder on line 2.
     words = beat.split()
-    line1_words, line2_words = [], list(words)
-    line1_prefix = f"{label}  ·  "
-    while line2_words:
-        candidate = line1_prefix + " ".join(line1_words + [line2_words[0]])
+    lines = []
+    label_prefix = f"{label}  ·  "
+    line_words = []
+    pending_words = list(words)
+    current_prefix = label_prefix  # Only line 1 carries the label
+    while pending_words:
+        candidate = current_prefix + " ".join(line_words + [pending_words[0]])
         if _measure(draw, candidate, font) <= max_width:
-            line1_words.append(line2_words.pop(0))
-        else:
-            break
+            line_words.append(pending_words.pop(0))
+            continue
+        if not line_words:
+            # Single word is wider than the strip — chop it character-by-character
+            word = pending_words.pop(0)
+            while word and _measure(draw, current_prefix + word + "…", font) > max_width:
+                word = word[:-1]
+            lines.append(current_prefix + (word + "…" if word else "…"))
+            current_prefix = ""
+            continue
+        lines.append(current_prefix + " ".join(line_words))
+        line_words = []
+        current_prefix = ""
 
-    if not line1_words:
-        # Couldn't fit even one word after the label — let line 1 take the first word anyway
-        line1_words = [line2_words.pop(0)] if line2_words else [""]
-
-    line1 = line1_prefix + " ".join(line1_words)
-    line2_text = " ".join(line2_words)
-
-    if _measure(draw, line2_text, font) <= max_width:
-        return [line1] if not line2_text else [line1, line2_text]
-
-    # Line 2 still too long — ellipsise it
-    while line2_text:
-        candidate = line2_text + "…"
-        if _measure(draw, candidate, font) <= max_width:
-            return [line1, candidate]
-        line2_text = line2_text[:-1].rstrip()
-    return [line1, "…"]
+    if line_words:
+        lines.append(current_prefix + " ".join(line_words))
+    return lines or [f"{label}  ·  "]
 
 
 # ------------------------- Helpers -------------------------
@@ -354,11 +345,49 @@ def generate_frame(beat_prompt, reference_images, preset, api_key, model):
 # ------------------------- Composition -------------------------
 
 
+def _resolve_layout(draw, beats, labels, font):
+    """Compute caption wrap, caption strip height, frame size, and outer padding.
+
+    Iterates up to 5 times until self-consistent: caption width depends on
+    frame width, which depends on caption height, which depends on caption
+    line count, which depends on caption width. Loop exits when the frame
+    width stops shrinking, at which point `wrapped` was computed against the
+    same frame_w that we'll render with — guaranteeing no horizontal overflow.
+
+    Minimum frame_h is clamped at 200 px to handle pathological cases where
+    captions are so long they'd otherwise leave no room for artwork.
+    """
+    frame_w = MAX_FRAME_W
+    frame_h = MAX_FRAME_H
+    caption_h = CAPTION_LINE_H + CAPTION_VPAD
+    wrapped = None
+    for _ in range(5):
+        caption_max_w = frame_w - 32
+        wrapped = [
+            _wrap_caption(draw, labels[i], beats[i], font, caption_max_w)
+            for i in range(3)
+        ]
+        max_lines = max(len(w) for w in wrapped)
+        caption_h = max_lines * CAPTION_LINE_H + CAPTION_VPAD
+        frame_h = max(200, min(MAX_FRAME_H, VERT_BUDGET - caption_h))
+        new_frame_w = round(frame_h * 9 / 16)
+        if new_frame_w >= frame_w:
+            # Frames don't need to shrink further. Current wrap was computed
+            # at this same frame_w (or wider), so the captions fit cleanly.
+            break
+        frame_w = new_frame_w
+    outer_pad = max(0, (CANVAS_W - 2 * BORDER_PX - 3 * frame_w - 2 * GUTTER) // 2)
+    return wrapped, caption_h, frame_h, frame_w, outer_pad
+
+
 def compose_storyboard(frame_pngs, beats, brand_name, output_path):
     """Composite 3 portrait frames side-by-side on a 1920x1080 cream canvas
-    with a thin hi-vis yellow border and a small yellow brand footer."""
-    # Start with the canvas painted yellow, then paint the cream interior on top.
-    # Result: an 8-px yellow border around the entire canvas with cream inside.
+    with a thin hi-vis yellow border and a small yellow brand footer.
+
+    Layout is adaptive: the per-caption strip height grows to fit however
+    many lines the longest beat needs (after the 50-word truncation), and
+    the frames shrink to compensate while preserving 9:16 aspect.
+    """
     canvas = Image.new("RGB", (CANVAS_W, CANVAS_H), HIVIS_YELLOW)
     draw = ImageDraw.Draw(canvas)
     draw.rectangle(
@@ -374,37 +403,48 @@ def compose_storyboard(frame_pngs, beats, brand_name, output_path):
         footer_font = ImageFont.load_default()
 
     labels = ["1. Setup", "2. Action", "3. Resolution"]
-    caption_max_w = FRAME_W - 32  # 16 px text padding on each side
+    wrapped, caption_h, frame_h, frame_w, outer_pad = _resolve_layout(
+        draw, beats, labels, caption_font
+    )
+
     y_frame = BORDER_PX + TOP_GAP
-    y_caption = y_frame + FRAME_H
-    x = BORDER_PX + OUTER_PAD
+    y_caption = y_frame + frame_h
+    x = BORDER_PX + outer_pad
 
     for idx, png_bytes in enumerate(frame_pngs):
         # Frame artwork
         frame = Image.open(__import__("io").BytesIO(png_bytes)).convert("RGB")
-        frame = frame.resize((FRAME_W, FRAME_H), Image.LANCZOS)
+        frame = frame.resize((frame_w, frame_h), Image.LANCZOS)
         canvas.paste(frame, (x, y_frame))
 
-        # Caption strip directly under the frame
-        draw.rectangle([x, y_caption, x + FRAME_W, y_caption + CAPTION_H], fill=NAVY)
-        lines = _wrap_caption(draw, labels[idx], beats[idx],
-                              caption_font, caption_max_w, max_lines=2)
+        # Caption strip directly under the frame, height adapts to line count
+        draw.rectangle(
+            [x, y_caption, x + frame_w, y_caption + caption_h], fill=NAVY
+        )
+        lines = wrapped[idx]
         total_h = len(lines) * CAPTION_LINE_H
-        first_line_y = y_caption + (CAPTION_H - total_h) // 2 - 2
+        first_line_y = y_caption + (caption_h - total_h) // 2 - 2
         for i, line in enumerate(lines):
-            draw.text((x + 16, first_line_y + i * CAPTION_LINE_H),
-                      line, fill=WHITE, font=caption_font)
+            draw.text(
+                (x + 16, first_line_y + i * CAPTION_LINE_H),
+                line,
+                fill=WHITE,
+                font=caption_font,
+            )
 
-        x += FRAME_W + GUTTER
+        x += frame_w + GUTTER
 
-    # Footer brand strip — sits flush against the bottom border (both yellow,
-    # so they read as a single 56-px brand strip with the wordmark centred).
+    # Footer brand strip — anchored at the bottom, full canvas width
     footer_y = CANVAS_H - BORDER_PX - FOOTER_H
     draw.rectangle([0, footer_y, CANVAS_W, CANVAS_H], fill=HIVIS_YELLOW)
     bbox = draw.textbbox((0, 0), brand_name, font=footer_font)
     tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
-    draw.text(((CANVAS_W - tw) // 2, footer_y + (FOOTER_H - th) // 2),
-              brand_name, fill=NAVY, font=footer_font)
+    draw.text(
+        ((CANVAS_W - tw) // 2, footer_y + (FOOTER_H - th) // 2),
+        brand_name,
+        fill=NAVY,
+        font=footer_font,
+    )
 
     canvas.save(output_path, "PNG", optimize=True)
 
