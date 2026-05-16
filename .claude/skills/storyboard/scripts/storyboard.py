@@ -40,7 +40,8 @@ FONT_PATH = Path("/tmp/fonts/Outfit.ttf")
 
 # Gemini config
 DEFAULT_MODEL = "gemini-3.1-flash-image-preview"
-RESOLUTION = "2K"
+DEFAULT_RESOLUTION = "1K"  # 1K is the efficient default; pass --resolution 2K for HQ
+VALID_RESOLUTIONS = {"512", "1K", "2K", "4K"}
 ASPECT = "9:16"
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
@@ -288,7 +289,7 @@ def _has_ffmpeg():
 # ------------------------- Gemini -------------------------
 
 
-def generate_frame(beat_prompt, reference_images, preset, api_key, model):
+def generate_frame(beat_prompt, reference_images, preset, api_key, model, resolution):
     """Single REST call to Gemini with multi-image character references. Returns PNG bytes."""
     parts = [{"text": beat_prompt}]
     for label, path in reference_images:
@@ -300,7 +301,8 @@ def generate_frame(beat_prompt, reference_images, preset, api_key, model):
         "contents": [{"parts": parts}],
         "generationConfig": {
             "responseModalities": ["TEXT", "IMAGE"],
-            "imageConfig": {"aspectRatio": ASPECT},
+            # imageSize is the real resolution lever — must be uppercase.
+            "imageConfig": {"aspectRatio": ASPECT, "imageSize": resolution},
         },
     }
     url = f"{API_BASE}/{model}:generateContent?key={api_key}"
@@ -488,13 +490,13 @@ def trello_attach(card_id, file_path):
 # ------------------------- Cost log -------------------------
 
 
-def log_cost(model, prompt_summary):
+def log_cost(model, resolution, prompt_summary):
     if not COST_TRACKER.exists():
         return
     try:
         subprocess.run(
             ["python3", str(COST_TRACKER), "log",
-             "--model", model, "--resolution", RESOLUTION,
+             "--model", model, "--resolution", resolution,
              "--prompt", prompt_summary[:100]],
             capture_output=True, check=False,
         )
@@ -514,12 +516,18 @@ def main():
     p.add_argument("--trello-card-id", default=None, help="Trello card ID for attachment")
     p.add_argument("--api-key", default=None, help="Google AI API key (or env GOOGLE_AI_API_KEY)")
     p.add_argument("--model", default=DEFAULT_MODEL)
+    p.add_argument("--resolution", default=DEFAULT_RESOLUTION,
+                   help=f"Frame resolution: 512 | 1K | 2K | 4K (default: {DEFAULT_RESOLUTION}). "
+                        "1K is the efficient default; 2K for HQ finals.")
     p.add_argument("--output-dir", default=str(DEFAULT_OUTPUT_DIR))
     args = p.parse_args()
 
     api_key = args.api_key or os.environ.get("GOOGLE_AI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
     if not api_key:
         fail("No API key. Set GOOGLE_AI_API_KEY or pass --api-key.")
+
+    if args.resolution not in VALID_RESOLUTIONS:
+        fail(f"Invalid resolution '{args.resolution}'. Valid: {sorted(VALID_RESOLUTIONS)}")
 
     preset = load_preset(args.client)
     founders = discover_founders(args.client)
@@ -586,9 +594,11 @@ def main():
             "Do NOT render any logos, brand names, or printed text on the machine "
             "or in the scene."
         )
-        png_bytes = generate_frame(beat_prompt, reference_images, preset, api_key, args.model)
+        png_bytes = generate_frame(beat_prompt, reference_images, preset, api_key,
+                                   args.model, args.resolution)
         frame_pngs.append(png_bytes)
-        log_cost(args.model, f"storyboard {args.client} beat {idx+1}: {beat[:60]}")
+        log_cost(args.model, args.resolution,
+                 f"storyboard {args.client} beat {idx+1}: {beat[:60]}")
 
     # Compose
     slug = re.sub(r"[^a-z0-9]+", "-", args.prompt.lower())[:40].strip("-") or "storyboard"
@@ -608,7 +618,7 @@ def main():
         "beats": beats,
         "frames": len(frame_pngs),
         "model": args.model,
-        "resolution": RESOLUTION,
+        "resolution": args.resolution,
         "trello_url": trello_url,
         "trello_error": trello_err,
     }, indent=2))

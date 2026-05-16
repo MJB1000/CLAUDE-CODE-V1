@@ -1,0 +1,118 @@
+{
+  "project": "diggerlid-pro-storyboard",
+  "description": "DiggerLid PRO Excavator Enclosure 45s Meta ad — 12-frame storyboard.",
+  "output_dir": "deliverables/diggerlid-pro-storyboard",
+  "default_resolution": "1K",
+  "aspect": "9:16",
+  "asset_refs": {
+    "founder-a": "clients/assets/diggerlid/founders/founder-a.jpg",
+    "founder-b": "clients/assets/diggerlid/founders/founder-b.jpg",
+    "logo": "clients/assets/diggerlid/logo-primary.png"
+  },
+  "frames": [
+    {
+      "n": 1,
+      "id": "A",
+      "slug": "hero-hook",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere in the artwork. Any colour words below (yellow excavator, olive-green tarp, etc.) are descriptive labels identifying the real-world subject, NOT render instructions. The cream paper is the only off-white. One frame from a 12-frame storyboard series for a single 45-second ad.\n\n[Context] Opening hero shot — establishes the $250k asset at stake.\n[Visual] A Caterpillar 320 excavator parked alone at the edge of an Australian rural worksite at golden hour. Boom and bucket lowered. The operator cab is completely EMPTY and unprotected — no operator inside, no silhouette in the cab. In the foreground a tradesman in dusty hi-vis walks away from the machine, back to camera, silhouette stark against the low sun. Long shadows across compacted dirt and gravel. Eucalyptus and dust haze in the distance.\n[Format] 9:16 vertical.\n[Style] B&W storyboard sketch, loose pencil and marker lines, rough cinematic composition, no text."
+    },
+    {
+      "n": 2,
+      "id": "B",
+      "slug": "problem-expansion",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere in the artwork. Any colour words below (yellow excavator, olive-green tarp, etc.) are descriptive labels identifying the real-world subject, NOT render instructions. The cream paper is the only off-white. One frame from a 12-frame storyboard series for a single 45-second ad.\n\n[Context] Problem agitation — an excavator cab vulnerable to weather and exposure overnight.\n[Visual] Close-up side-angle of an excavator cab at stormy dusk. A canvas tarp is half-draped over the cab roof, flapping wildly in heavy wind, partially exposing the operator seat and joystick controls inside. Rain streaks the cab glass. Heavy storm clouds, low setting sun behind. Mood of vulnerability.\n[Format] 9:16 vertical.\n[Style] B&W storyboard sketch, loose pencil and marker lines, dramatic side-lighting, no text. Use tonal weight to suggest materials — no colour fills."
+    },
+    {
+      "n": 3,
+      "id": "C",
+      "slug": "villain-reveal",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere in the artwork. Any colour words below (yellow excavator, olive-green tarp, etc.) are descriptive labels identifying the real-world subject, NOT render instructions. The cream paper is the only off-white. One frame from a 12-frame storyboard series for a single 45-second ad.\n\n[Context] Villain reveal — the cost of choosing cheap canvas tarps.\n[Visual] A three-panel vertical split frame. Top panel: extreme macro of a sun-bleached canvas tarp torn at a corroded brass grommet, fabric threads frayed. Middle panel: macro of a cracked UV-damaged dashboard plastic, hairline fractures spider-webbing. Bottom panel: macro of a corroded control panel, rust-pitted metal buttons and rust streaks rendered as pencil shading. Across the top panel only, a hand-stamped REJECTED mark sharpied diagonally across the canvas — this stamp is the ONLY coloured element in the entire frame, rendered in DiggerLid yellow #f5eb19.\n[Format] 9:16 vertical, three stacked panels.\n[Style] B&W storyboard sketch, high editorial contrast. The REJECTED stamp is the only colour anywhere — no other colour fills."
+    },
+    {
+      "n": 4,
+      "id": "D",
+      "slug": "war-metaphor-pivot",
+      "refs": [
+        "founder-a",
+        "founder-b"
+      ],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere in the artwork. Any colour words below (yellow excavator, olive-green tarp, etc.) are descriptive labels identifying the real-world subject, NOT render instructions. The cream paper is the only off-white. One frame from a 12-frame storyboard series for a single 45-second ad.\n\nPersistent characters: Founder A and Founder B, two real Australian tradesmen — preserve their faces from the reference portraits. Founder A: broad-shouldered, neatly-trimmed dark moustache, always wears a black baseball cap. Founder B: slimmer, thick full chevron moustache, mid-brown side-parted hair, no cap, clean-shaven cheeks and chin.\n\n[Context] Transition beat — the two DiggerLid founders introduce the solution. Direct address to camera. Show the OLD vs NEW contrast.\n[Visual] Founder A and Founder B standing side-by-side at a workshop bench, looking down the lens. Navy work shirts, sleeves rolled, dust on forearms. Founder A on the LEFT (black cap) holds a clean folded section of grey ripstop fabric — sharp, neat, engineered. Founder B on the RIGHT (no cap, chevron moustache) holds an OBVIOUSLY OLD and WORN canvas tarp — sun-bleached, frayed at the edges, with holes and a torn grommet hanging loose. The contrast between the two pieces of fabric must be unmistakable. Behind them: pegboard with hand tools, a cutting mat on the bench.\n[Format] 9:16 vertical.\n[Style] B&W storyboard sketch, documentary portrait composition, no text. Strict pencil monochrome — no skin tones, no coloured mat."
+    },
+    {
+      "n": 5,
+      "id": "E1",
+      "slug": "pattern-templates",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere in the artwork. Any colour words below (yellow excavator, olive-green tarp, etc.) are descriptive labels identifying the real-world subject, NOT render instructions. The cream paper is the only off-white. One frame from a 12-frame storyboard series for a single 45-second ad.\n\n[Context] Skunkworks reveal — pattern engineering. Shows the three engineered sizes.\n[Visual] Top-down overhead view of a workshop bench with a cutting mat (pencil shading, not coloured). Fanned across the mat: three large paper pattern templates for excavator covers, each labelled in handwritten thick black marker — XS 3.76m, S 3.76-4.18m, M 4.18-4.48m. Labels crisp, large, legible. A metal tape measure runs diagonally. A roll of ripstop fabric in the upper corner.\n[Format] 9:16 vertical.\n[Style] B&W storyboard sketch, flat-lay overhead composition, size labels in legible thick black marker — the only text in the frame."
+    },
+    {
+      "n": 6,
+      "id": "E2",
+      "slug": "cover-installation",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere in the artwork. Any colour words below (yellow excavator, olive-green tarp, etc.) are descriptive labels identifying the real-world subject, NOT render instructions. The cream paper is the only off-white. One frame from a 12-frame storyboard series for a single 45-second ad.\n\n[Context] Solution beat — the engineered cover being installed on a real excavator at a worksite. Single 3/4 angle, NOT a split panel.\n[Visual] Single 3/4 angle composition at a sunlit outdoor Australian worksite — open sky, dirt ground, dust. A custom-fitted DiggerLid PRO Enclosure cover is being pulled snug over the cab of a Caterpillar 320 excavator. In the same frame, a tradesman's gloved hand clips a black YKK plastic side-release buckle onto a DiggerLid-branded tie-down tether point on the side of the cab. The cover is taut, no slack. One unified composition — do not split into panels.\n[Format] 9:16 vertical, single composition.\n[Style] B&W storyboard sketch, dynamic action composition, strict pencil monochrome, no colour fills."
+    },
+    {
+      "n": 7,
+      "id": "F",
+      "slug": "ykk-fashion-editorial",
+      "refs": [],
+      "resolution": null,
+      "prompt": "Render this frame as a clean minimalist Australian/European designer-brand fashion editorial photograph (NOT a sketch). PURE WHITE seamless studio backdrop. A model wears a soft slightly-loose white cotton crew-neck tee tucked into light wash medium-weight relaxed/wide-leg blue denim jeans with classic five-pocket construction and tonal contrast stitching, plus burnt-cognac suede flat shoes. Soft even daylight, shadow-free. Hair pulled back. Premium minimalist register, hyperreal denim texture.\n\n[Context] Connotative leap — moves YKK hardware from industrial accessory to premium designer-apparel register.\n[Visual] Tight three-quarter angle close-up cropped from upper thigh to lower belt line. The brass YKK zipper pull at the front fly fills roughly 25% of the frame, perfectly TACK-SHARP with the embossed 'YKK' letters legible. The denim weave around the fly is in soft focus, getting dreamier toward the edges. The model's body, face and any visible skin are SOFT-FOCUSED / BLURRED — anonymous, identity not readable. A blur of the model's hand hovers near the pocket.\n[Format] 9:16 vertical.\n[Style] Editorial fashion photography, beautiful natural side light, hyperreal denim and brass detail, shallow depth of field. The YKK zipper pull is the only sharp element. Warm neutrals, light indigo denim, brass, cognac."
+    },
+    {
+      "n": 8,
+      "id": "G",
+      "slug": "materials-credentialing",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere in the artwork. Any colour words below (yellow excavator, olive-green tarp, etc.) are descriptive labels identifying the real-world subject, NOT render instructions. The cream paper is the only off-white. One frame from a 12-frame storyboard series for a single 45-second ad.\n\n[Context] Materials credentialing — DiggerLid's fabric is the same class used on commercial transport trucks.\n[Visual] A two-panel vertical split frame. Top panel: extreme macro of grey 490 GSM PVC-coated polyester ripstop fabric, the characteristic cross-hatched ripstop reinforcement weave catching light. Bottom panel: a B-double semi-trailer truck on a wet rural Australian highway in heavy rain at dusk, tarpaulin-covered freight, wet bitumen reflecting taillights.\n[Format] 9:16 vertical, two stacked panels.\n[Style] B&W storyboard sketch, hyperreal weave detail on the fabric panel, gritty atmospheric mood on the truck panel, no text."
+    },
+    {
+      "n": 9,
+      "id": "H",
+      "slug": "spec-litany",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere in the artwork. Any colour words below (yellow excavator, olive-green tarp, etc.) are descriptive labels identifying the real-world subject, NOT render instructions. The cream paper is the only off-white. One frame from a 12-frame storyboard series for a single 45-second ad.\n\n[Context] Feature-dense montage — proves the PRO Enclosure does everything a cheap tarp cannot.\n[Visual] A four-panel grid (2x2). Top-left: a tradesman climbing into an excavator cab through a clear PVC front window unzipped and rolled up on a fitted grey cover. Top-right: extreme macro of a hand pressing UV-protected black Velcro onto grey ripstop fabric. Bottom-left: 3/4 rear view of an excavator with a roll-up cooling vent panel open, heat shimmer rising. Bottom-right: interior cab POV looking down at a smartphone plugged into a 12-volt accessory port on the dashboard.\n[Format] 9:16 vertical, 2x2 grid.\n[Style] B&W storyboard sketch, each panel a distinct feature demonstration, no text."
+    },
+    {
+      "n": 10,
+      "id": "I",
+      "slug": "heritage-credentialing",
+      "refs": [
+        "founder-a",
+        "founder-b"
+      ],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere in the artwork. Any colour words below (yellow excavator, olive-green tarp, etc.) are descriptive labels identifying the real-world subject, NOT render instructions. The cream paper is the only off-white. One frame from a 12-frame storyboard series for a single 45-second ad.\n\nPersistent characters: Founder A and Founder B, two real Australian tradesmen — preserve their faces from the reference portraits. Founder A: broad-shouldered, neatly-trimmed dark moustache, always wears a black baseball cap. Founder B: slimmer, thick full chevron moustache, mid-brown side-parted hair, no cap, clean-shaven cheeks and chin.\n\n[Context] Heritage credentialing — the makers and the years that license the brand promise.\n[Visual] Wide workshop interior. Founder A and Founder B at a long wooden bench: Founder A (black cap) threading grey ripstop fabric through a heavy-duty industrial sewing machine; Founder B (chevron moustache, no cap) inspecting a folded finished excavator cover. Behind them on a brick wall hangs a piece of brown cardboard with SEVEN YEARS handwritten in thick white sharpie. Pegboard of hand tools above the bench, a cutting mat on the surface, dust motes drifting.\n[Format] 9:16 vertical.\n[Style] B&W storyboard sketch, warm authentic maker aesthetic, the SEVEN YEARS sign clear and legible — no other text."
+    },
+    {
+      "n": 11,
+      "id": "L",
+      "slug": "brutality-test",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere in the artwork. Any colour words below (yellow excavator, olive-green tarp, etc.) are descriptive labels identifying the real-world subject, NOT render instructions. The cream paper is the only off-white. One frame from a 12-frame storyboard series for a single 45-second ad.\n\n[Context] Climactic brutality test — the cover survives a real excavator bucket pressing down on the cab.\n[Visual] Edge-to-edge frame — fill the entire 9:16 canvas, NO sketchbook page edges, NO photo-of-a-page meta framing. Dramatic wide low-angle shot at a dusty Australian worksite. A 7-tonne excavator with its boom fully extended, the toothed metal bucket pressing DOWN with visible weight directly onto the roof of a second stationary excavator. The second cab is fitted with a DiggerLid PRO Enclosure cover — visibly compressed under the weight, deflected downward, but structurally intact, no rip or tear. Heavy dust hangs in the air. Late-afternoon light, hard cast shadows.\n[Format] 9:16 vertical, edge-to-edge composition.\n[Style] B&W storyboard sketch, low heroic camera angle, action-documentary energy, no sketchbook framing, no text."
+    },
+    {
+      "n": 12,
+      "id": "M",
+      "slug": "tagline-drop",
+      "refs": [
+        "logo"
+      ],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere in the artwork. Any colour words below (yellow excavator, olive-green tarp, etc.) are descriptive labels identifying the real-world subject, NOT render instructions. The cream paper is the only off-white. One frame from a 12-frame storyboard series for a single 45-second ad.\n\nThe DiggerLid logo lockup attached as a reference image is the OFFICIAL company logo — render it in storyboard sketch style faithfully matching the structure of the reference.\n\n[Context] Brand outro — DiggerLid wordmark and tagline lockup over the surviving covered cab.\n[Visual] Tight medium shot of an excavator cab fitted with the grey DiggerLid PRO Enclosure cover (pencil monochrome). DiggerLid-branded tie-down tether points around the cab — render these in DiggerLid yellow as small accent details. Across the lower third: the DiggerLid wordmark/logo lockup matching the attached reference image — black horizontal bar, white 'DiggerLid' letterforms with a thick DiggerLid-yellow strikethrough across the upper portion of the letters, small (R) at the end. Below the logo bar, the tagline \"WE'RE DIGGIN' IT!\" in a distressed grunge stamp typeface, in solid black ink.\n[Format] 9:16 vertical, edge-to-edge.\n[Style] B&W storyboard sketch base. The only colours: DiggerLid yellow #f5eb19 on the logo strikethrough bar and on the small tie-down tether-point accents. Everything else pencil monochrome."
+    }
+  ]
+}

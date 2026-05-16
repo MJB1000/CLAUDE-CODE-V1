@@ -54,10 +54,13 @@ python3 .claude/skills/storyboard/scripts/storyboard.py \
   --prompt "<the user's narrative, exactly as given>" \
   --client diggerlid \
   --source <path1> [--source <path2> ...] \
+  [--resolution 1K|2K] \
   [--trello-card-id <ID>]
 ```
 
-Pass `GOOGLE_AI_API_KEY` via env (already set in this environment per the banana skill setup). The script prints a JSON object on stdout with `path`, `beats`, `frames`, `trello_url`, `trello_error`.
+Pass `GOOGLE_AI_API_KEY` via env (already set in this environment per the banana skill setup). The script prints a JSON object on stdout with `path`, `beats`, `frames`, `resolution`, `trello_url`, `trello_error`.
+
+**Resolution:** defaults to `1K` — the efficient default for composite boards. Pass `--resolution 2K` only when the user explicitly wants an HQ final. `imageSize` is the real API resolution lever; do not raise it speculatively.
 
 ### 4. Render the output inline
 
@@ -74,10 +77,59 @@ This is the "downloadable image" UX — the user can right-click → save from t
 One concise paragraph:
 - File path (relative to repo root)
 - The 3 beats the orchestrator used (so the user can sanity-check the split)
-- Cost note: `Frames generated: 3 (~$0.234 total at 2K, gemini-3.1-flash-image-preview)`
+- Cost note: `Frames generated: 3 (~$0.117 total at 1K, gemini-3.1-flash-image-preview)` — at 1K each frame is $0.039; 2K is $0.078
 - Trello status: ✓ URL, or "skipped — TRELLO_API_KEY not set", or the error message
 
 If likeness fidelity looks off in the rendered frames (founder faces don't match the reference portraits), tell the user once: "Likeness can drift on stylised output. If this happens repeatedly, we have a documented v2 lever — adding 2-line textual anchors per founder. Want me to wire that in?" Don't volunteer it more than once per session.
+
+## Multi-frame sequence mode (manifest-driven, per-frame regeneration)
+
+The composite mode above produces ONE 3-panel board. For longer storyboards —
+a full ad with N individually-numbered frames (e.g. the 12-beat DiggerLid PRO
+ad) — use `scripts/storyboard-batch.py`, which is driven by a JSON **manifest**.
+
+The manifest is the persistent source of truth: it holds every frame's number,
+beat id, slug, prompt, reference images, and resolution. Because it persists,
+**a single frame can be regenerated without re-running the whole set or
+re-typing its prompt.**
+
+### Generating the whole sequence
+
+```bash
+python3 .claude/skills/storyboard/scripts/storyboard-batch.py \
+  --manifest deliverables/<project>.json [--resolution 1K|2K]
+```
+
+### Regenerating ONE frame — the "image 7, change X" workflow
+
+When the user says *"image 7, make the sky darker"* (or any per-frame edit):
+
+1. Open the manifest JSON, find the frame by its `n` (number) or `id` (beat).
+2. Edit that frame's `prompt` string with the requested change. Edit only the
+   one frame's entry — leave the other 11 untouched.
+3. Regenerate just that frame:
+   ```bash
+   python3 .claude/skills/storyboard/scripts/storyboard-batch.py \
+     --manifest deliverables/<project>.json --frame 7
+   ```
+   `--frame` accepts the number (`7`) or the beat id (`F`). Only that PNG is
+   re-rendered; the zip is rebuilt automatically; the other frames are not
+   touched and not re-billed.
+4. Read the regenerated PNG inline so the user sees the result.
+
+### Resolution in batch mode
+
+`storyboard-batch.py` defaults to the manifest's `default_resolution` (set to
+`1K`). Override per run with `--resolution 2K` for an HQ pass. Recommended
+flow: draft the whole sequence at 1K, review, then re-run only the approved
+frames at 2K. Never pay 2K for frames that may be discarded.
+
+### Manifest location & creation
+
+Manifests live next to their output, e.g. `deliverables/diggerlid-pro-storyboard.json`
+drives `deliverables/diggerlid-pro-storyboard/`. The schema is documented in the
+header of `storyboard-batch.py`. To start a new multi-frame project, write a
+manifest with one entry per frame (each with a complete self-contained prompt).
 
 ## Decision rules — what NOT to do
 
