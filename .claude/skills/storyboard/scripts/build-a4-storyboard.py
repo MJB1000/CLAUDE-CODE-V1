@@ -23,7 +23,7 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 BEATS = [
     ("01-A-hero-hook.png",          "A",  "HERO HOOK"),
-    ("02-B-problem-empty-box.png",  "B",  "PROBLEM · EMPTY BOX"),
+    ("02-B-problem-empty-box.png",  "B",  "PROBLEM"),
     ("03-C-villain-tarp-fails.png", "C",  "VILLAIN · TARP FAILS"),
     ("04-D-three-things.png",       "D",  "THREE THINGS"),
     ("05-E-diggerlid-born.png",     "E",  "DIGGERLID BORN"),
