@@ -7,7 +7,10 @@
   "asset_refs": {
     "founder-a": "clients/assets/diggerlid/founders/founder-a.jpg",
     "founder-b": "clients/assets/diggerlid/founders/founder-b.jpg",
-    "logo": "clients/assets/diggerlid/logo-primary.png"
+    "logo": "clients/assets/diggerlid/logo-primary.png",
+    "product-enclosure-side": "clients/assets/diggerlid/products/raw/productphotosdl1.jpeg",
+    "product-enclosure-front": "clients/assets/diggerlid/products/raw/productphotosdl5.jpeg",
+    "product-enclosure-detail": "clients/assets/diggerlid/products/raw/productphotosdl8.jpeg"
   },
   "frames": [
     {
