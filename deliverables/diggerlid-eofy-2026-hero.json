@@ -15,8 +15,21 @@
   "auto_refs": [
     {
       "id": "product-pro-enclosure",
-      "triggers": ["diggershield", "diggerlid pro", "pro enclosure", "pro excavator enclosure", "diggerlid enclosure", "diggerlid pro enclosure", "lear front", "diggerlid cover"],
-      "refs": ["product-enclosure-side", "product-enclosure-front", "product-enclosure-detail"]
+      "triggers": [
+        "diggershield",
+        "diggerlid pro",
+        "pro enclosure",
+        "pro excavator enclosure",
+        "diggerlid enclosure",
+        "diggerlid pro enclosure",
+        "lear front",
+        "diggerlid cover"
+      ],
+      "refs": [
+        "product-enclosure-side",
+        "product-enclosure-front",
+        "product-enclosure-detail"
+      ]
     }
   ],
   "frames": [
@@ -32,7 +45,9 @@
       "n": 2,
       "id": "B",
       "slug": "bury-the-taxman",
-      "refs": ["founder-a"],
+      "refs": [
+        "founder-a"
+      ],
       "resolution": null,
       "prompt": "Bold cartoon illustration for a Shopify EOFY sale hero banner, 16:9 widescreen landscape composition.\n\n[Context] EOFY playful 'Bury the Taxman' concept — the founder buries a worried taxman character under a mound of dirt while celebrating the sale.\n\n[Visual] Vibrant high-energy cartoon-illustrated scene. On the LEFT side of the frame, Luke (one of the DiggerLid founders — preserve his face exactly from the reference portrait attached: broad-shouldered, dark moustache, wearing a black baseball cap with the brim facing forward) is cartoonified into a stylised illustration of himself: same face and cap, now in a loud Hawaiian shirt printed with dollar-sign motifs, sunglasses on, mid-swing with a shovel scooping a load of dirt high into the air, grinning broadly, mouth open mid-laugh. To his RIGHT, partially buried in a tall mound of fresh brown dirt, a sad cartoon taxman character pokes out — bald, glasses, holding a tax calculator and a stack of paperwork, only his head and shoulders above the dirt, comically panicked expression. A grey tombstone behind him reads 'TAX MAN' in carved letters. Above the scene a yellow comic-style sunburst radiates outward, dollar-bill and gold-coin confetti rains down across the frame. Across the lower-centre of the frame, the headline text 'EOFY SALE' rendered in massive bold cartoon-display typography — chunky red-and-white letters with thick black outline, slight 3D extrusion. Above Luke's head a comic speech bubble reads 'BURY THE TAXMAN!' in bold black sans-serif.\n\n[Format] 16:9 widescreen landscape, hero banner aspect.\n\n[Style] Vibrant cartoon-illustrated promotional poster style — heavy black outlines, saturated primary colours, comic-strip energy, slight halftone shading. DiggerLid brand colours threaded through: red, yellow, navy. Hyper-energetic, fun, on-brand for an Australian tradie audience. Render the speech-bubble text 'BURY THE TAXMAN!' and the hero text 'EOFY SALE' clearly and legibly — no other text in the artwork."
     },
@@ -43,6 +58,14 @@
       "refs": [],
       "resolution": null,
       "prompt": "Hyperreal premium product hero photograph with bold 3D typography for a Shopify EOFY sale landing page, 16:9 widescreen landscape composition.\n\n[Context] Brand-premium EOFY hero — keeps DiggerLid's polished product-photography register from the studio reference shots while integrating the digging metaphor through massive sculpted-earth typography in the foreground.\n\n[Visual] Wide cinematic composition. Mid-ground: a yellow XCMG XE17U mini-excavator fitted with the grey DiggerLid PRO Enclosure cover, three-quarter angle, sits on a clean polished-concrete worksite floor with subtle warm spotlight from above and a soft cinematic studio backdrop (deep charcoal-grey gradient, matching the product-reference photography). The yellow DiggerLid tether tabs on the cover catch the light. In the LOWER FOREGROUND, dominating the bottom half of the frame, rises a massive 3D sculpted-earth block-letter installation spelling 'EOFY SALE' — the letters appear cast from compacted dark-brown topsoil, faces of the letters textured with realistic earth grain, edges crisply chiseled like architectural lettering. A small mound of loose dirt sits at the base of each letter, with stray clods scattered around. Across the very top of the 'EOFY SALE' text, a bold horizontal DiggerLid-yellow strikethrough bar (#f5eb19) cuts across the upper portion of the letterforms — same visual treatment as the DiggerLid wordmark logo. Warm rim-lighting on the dirt letters and machine. Premium, cinematic, brand-aligned.\n\n[Format] 16:9 widescreen landscape, hero banner aspect.\n\n[Style] Hyperreal cinematic product photography fused with hero 3D typographic design. Dark moody studio palette — charcoal background, warm rim-light highlights, rich earth-brown letterforms, DiggerLid yellow as the only colour accent on the strikethrough bar. Premium luxury-product-launch register. ONLY the text 'EOFY SALE' appears in the artwork — no taglines, no logos, no other words."
+    },
+    {
+      "n": 4,
+      "id": "D",
+      "slug": "hero-text-left-layout",
+      "refs": [],
+      "resolution": null,
+      "prompt": "Hyperreal cinematic studio photograph for a Shopify EOFY sale landing-page hero, composed specifically for text-overlay layout. 16:9 widescreen landscape.\n\n[Context] DiggerLid EOFY 2026 hero — the left third of the frame is INTENTIONALLY EMPTY because Shopify-rendered headline copy and CTA buttons will be overlaid there in post-production. The right two-thirds carries the hero product visual.\n\n[Visual] Cinematic 16:9 widescreen composition.\n\nLEFT THIRD OF THE FRAME (from the left edge to approximately 33% of the frame width): PURE CLEAN NEGATIVE SPACE — a smooth dark charcoal-grey gradient backdrop, no objects, no equipment, no dirt, no text, no logos, no bright highlights, no distracting elements whatsoever. Just a subtle warm vignette in the lower-left corner. This zone is reserved for Shopify-rendered headline text overlay; it must read clearly under white or yellow type.\n\nRIGHT TWO-THIRDS OF THE FRAME: hero shot of a yellow XCMG XE17U compact mini-excavator fitted with the grey DiggerLid PRO Enclosure cover (preserve the cover's silhouette, panels, and yellow tether tabs from the product reference images attached). Three-quarter angle, cab roughly centred within the right two-thirds, boom and bucket extending forward-right. The machine sits on a polished concrete studio floor under a warm directional rim-light from above-right — the rim-light catches the top edge of the cover and the yellow tether tabs glint as small bright accents. The DiggerLid wordmark printed on the cover is visible (faithful to the product reference).\n\nFOREGROUND, RIGHT TWO-THIRDS ONLY (do NOT let this spill into the left third): dramatic mounds of freshly-dug dark-brown topsoil at the base of the machine and spreading toward the lower-right corner — loose dirt clods, scattered crumbs, one prominent small mound. The dirt is purely TEXTURAL — it anchors the visual to the dig metaphor without forming letters, words, or any readable shapes.\n\nA thin DiggerLid-yellow horizontal accent ribbon runs along the bottom edge of the right two-thirds only — small, decorative, evoking the brand's wordmark strikethrough treatment.\n\n[Format] 16:9 widescreen landscape, ~1920x1080 hero banner aspect.\n\n[Style] Hyperreal cinematic studio product photography matching the polish of the DiggerLid product reference shots. Dark moody charcoal palette with warm directional rim-lighting from above-right. Premium luxury-product-launch register.\n\nABSOLUTELY NO TEXT, NO WORDMARKS, NO LOGOS, NO LETTERFORMS anywhere in the artwork except the small 'DiggerLid' wordmark printed on the cover itself (faithful to product reference). The dirt mounds must NOT spell out any letters or words. DiggerLid yellow #f5eb19 is permitted only on the tether tabs and the thin bottom accent ribbon — everything else stays in the dark cinematic palette."
     }
   ]
 }
