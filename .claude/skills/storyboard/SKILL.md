@@ -117,6 +117,40 @@ When the user says *"image 7, make the sky darker"* (or any per-frame edit):
    touched and not re-billed.
 4. Read the regenerated PNG inline so the user sees the result.
 
+### Auto-attached product references (content-triggered)
+
+The manifest can declare `auto_refs` rules that scan each frame's prompt for
+trigger words and auto-attach reference images on match. This is how product
+photos get pulled in automatically — e.g. "any frame mentioning the DiggerLid
+PRO Enclosure attaches the product reference images."
+
+Manifest shape:
+```json
+"auto_refs": [
+  {
+    "id": "product-pro-enclosure",
+    "triggers": ["diggershield", "pro enclosure", "lear front"],
+    "refs": ["product-enclosure-front", "product-enclosure-side"]
+  }
+]
+```
+
+How it behaves:
+- Any frame whose prompt contains at least one trigger word (case-insensitive)
+  gets the rule's `refs` appended to its effective reference list.
+- Auto-refs whose asset key is NOT yet in `asset_refs` are silently skipped —
+  the rule stays DORMANT until you register the asset. This lets you wire up
+  the rules before pushing product photos; activation is automatic the moment
+  the asset key appears.
+- Per-frame opt-out: set `"skip_auto_refs": true` on a frame to suppress all
+  auto-attaches for just that frame.
+- The batch tool prints which auto-refs fired (and which are dormant) in the
+  per-frame log line, so you can sanity-check the matching.
+
+When the user pushes new product photos, the workflow is: drop the files into
+`asset_refs`, then re-run `storyboard-batch.py --frame <n>` on each affected
+frame to pick up the now-active references.
+
 ### Resolution in batch mode
 
 `storyboard-batch.py` defaults to the manifest's `default_resolution` (set to

@@ -35,17 +35,34 @@ MANIFEST SCHEMA
       "founder-a": "clients/assets/diggerlid/founders/founder-a.jpg",
       "logo":      "clients/assets/diggerlid/logo-primary.png"
     },
+    "auto_refs": [                       # OPTIONAL: content-triggered ref rules
+      {
+        "id": "product-enclosure",
+        "triggers": ["diggershield", "pro enclosure"],
+        "refs": ["product-enclosure-1", "product-enclosure-2"]
+      }
+    ],
     "frames": [
       {
         "n": 1,                          # frame number (1-based, stable)
         "id": "A",                       # short beat id
         "slug": "hero-hook",             # filename slug
-        "refs": ["founder-a"],           # keys into asset_refs (or [] )
+        "refs": ["founder-a"],           # explicit keys into asset_refs
+        "skip_auto_refs": false,         # OPTIONAL: opt out of auto_refs for this frame
         "resolution": null,              # null = use default_resolution
         "prompt": "<full self-contained prompt>"
       }
     ]
   }
+
+AUTO_REFS
+  Each auto_ref rule scans every frame's prompt for any of its trigger words
+  (case-insensitive substring match). When a rule matches, its `refs` are
+  added to that frame's effective reference image list (deduplicated against
+  the frame's explicit `refs`). Auto-refs whose asset key is not registered
+  in `asset_refs` are silently skipped — the rule stays DORMANT until you
+  populate the asset. This lets you wire the rule up before pushing assets;
+  the moment the asset key appears in `asset_refs`, the rule starts firing.
 
 Output files are named `<NN>-<id>-<slug>.png` (zero-padded). The zip is
 `<output_dir>.zip`.
@@ -208,22 +225,52 @@ def main():
     for f in selected:
         n, fid, slug = f["n"], f["id"], f["slug"]
         resolution = args.resolution or f.get("resolution") or default_res
+
+        # Explicit refs from the frame entry (strict — fail if key unknown)
+        explicit_refs = list(f.get("refs", []))
+
+        # Auto-applied refs from manifest-level rules that match the prompt.
+        # Each rule: {"id": "...", "triggers": ["word1", ...], "refs": ["asset-key", ...]}
+        # A rule fires when ANY trigger word appears (case-insensitive) in the
+        # frame's prompt. Auto-refs whose asset key is not yet registered are
+        # silently skipped — the rule stays dormant until you add the asset.
+        # Set per-frame "skip_auto_refs": true to opt a single frame out.
+        auto_applied = []
+        auto_dormant = []
+        if not f.get("skip_auto_refs", False):
+            prompt_lower = f["prompt"].lower()
+            for rule in manifest.get("auto_refs", []):
+                triggers = [t.lower() for t in rule.get("triggers", [])]
+                if any(t in prompt_lower for t in triggers):
+                    for k in rule.get("refs", []):
+                        if k in explicit_refs or k in auto_applied:
+                            continue
+                        if k in asset_refs:
+                            auto_applied.append(k)
+                        else:
+                            auto_dormant.append(k)
+
         ref_pairs = []
-        for key in f.get("refs", []):
+        for key in explicit_refs:
             if key not in asset_refs:
                 fail(f"Frame {n} ({fid}) references unknown asset '{key}'. "
                      f"Known: {sorted(asset_refs)}")
             ref_pairs.append((key, resolve_path(asset_refs[key])))
+        for key in auto_applied:
+            ref_pairs.append((key, resolve_path(asset_refs[key])))
 
         ref_summary = ", ".join(k for k, _ in ref_pairs) if ref_pairs else "no refs"
-        print(f"[{n:02d}/{fid}] {slug} — {resolution}, {ref_summary}", flush=True)
+        auto_note = f"  [auto: {','.join(auto_applied)}]" if auto_applied else ""
+        dormant_note = f"  [dormant auto-refs: {','.join(auto_dormant)}]" if auto_dormant else ""
+        print(f"[{n:02d}/{fid}] {slug} — {resolution}, {ref_summary}{auto_note}{dormant_note}",
+              flush=True)
 
         png = generate_frame(f["prompt"], ref_pairs, aspect, resolution, api_key)
         out = output_dir / f"{n:02d}-{fid}-{slug}.png"
         out.write_bytes(png)
         log_cost(resolution, f"{manifest.get('project','storyboard')} frame {n} {fid}")
         results.append({"n": n, "id": fid, "path": str(out), "resolution": resolution,
-                        "bytes": len(png)})
+                        "auto_refs_applied": auto_applied, "bytes": len(png)})
         print(f"  saved {out.name} ({len(png):,} bytes)", flush=True)
 
     zip_path, count = rebuild_zip(output_dir)

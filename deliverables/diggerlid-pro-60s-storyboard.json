@@ -113,5 +113,53 @@
       "resolution": null,
       "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from an 11-frame storyboard series for a 60-second ad.\n\nPersistent characters: Luke and Joel — the two DiggerLid founders, two real Australian tradesmen. Preserve their faces exactly from the reference portraits attached. LUKE = broad-shouldered build, neatly-trimmed dark moustache, ALWAYS wears a black baseball cap with the brim facing forward, dark hair just visible at the temples below the cap line. JOEL = slimmer build, distinctive thick full chevron moustache, mid-brown hair worn in a clean side part, NO cap, clean-shaven on the cheeks and chin.\n\n[Context] Finisher — both founders with the cover trophy. Single hero shot, NO brand frame, NO logo lockup in this image.\n[Visual] Single composition — no panel splits, no brand-frame panel, no wordmark anywhere. Luke (black cap, dark moustache) and Joel (chevron moustache, no cap) standing shoulder-to-shoulder directly in front of the XCMG XE17U, both holding the dusty track-marked grey DiggerLid PRO Enclosure cover UP between them at shoulder height like a trophy, grinning at the camera. Track marks clearly visible across the cover surface as diagonal imprints. Worksite setting behind them — dirt ground, low workshop wall, golden-hour light suggested with directional pencil strokes. The frame ends on this trophy moment.\n[Format] 9:16 vertical, single composition.\n[Style] B&W storyboard sketch on cream paper, warm portraiture, hyperreal sketch detail on the founders' faces and the track-marked cover. No colour, no text, no logo, no wordmark."
     }
+  ],
+  "auto_refs": [
+    {
+      "id": "product-pro-enclosure",
+      "description": "DiggerLid PRO Excavator Enclosure product references — auto-attach whenever the prompt mentions the enclosure / cover / DiggerShield.",
+      "triggers": [
+        "diggershield",
+        "diggerlid pro",
+        "pro enclosure",
+        "pro excavator enclosure",
+        "diggerlid enclosure",
+        "the diggerlid cover",
+        "diggerlid pro enclosure",
+        "lear front"
+      ],
+      "refs": [
+        "product-enclosure-front",
+        "product-enclosure-side",
+        "product-enclosure-detail"
+      ]
+    },
+    {
+      "id": "product-pro-mat",
+      "description": "Pro Mat product references.",
+      "triggers": [
+        "pro mat",
+        "diggerlid mat",
+        "padded mat",
+        "the pro mat"
+      ],
+      "refs": [
+        "product-mat-flat",
+        "product-mat-folded"
+      ]
+    },
+    {
+      "id": "product-hauler",
+      "description": "Hauler kit bag product references.",
+      "triggers": [
+        "hauler",
+        "diggerlid hauler",
+        "the hauler"
+      ],
+      "refs": [
+        "product-hauler-loaded",
+        "product-hauler-zipped"
+      ]
+    }
   ]
 }
