@@ -29,7 +29,7 @@ Machine-readable map: `clients/assets/diggerlid/product-catalogue.json`
 | [Quicky Combo](https://diggerlid.com/products/quicky-combo-1) | $135.00 | 4 | `quicky combo`, `grease combo` |
 | [KAJO Grease Gun](https://diggerlid.com/products/kajo-two-handed-grease-gun) | $149.00 | 4 | `kajo grease gun`, `kajo gun`, `grease gun`, `kajo` |
 | [Battery Grease Gun KAJO Adapter](https://diggerlid.com/products/kajo-adapter) | $79.00 | 4 | `kajo adapter`, `battery grease gun adapter`, `grease gun adapter` |
-| [KAJO Grease Packs](https://diggerlid.com/products/kajo-grease-cartridge-lzr2-ep2) | $16.70 | 4 | `kajo grease packs`, `grease cartridge`, `grease pack`, `lzr2`, `hd800` |
+| [KAJO Grease Packs](https://diggerlid.com/products/kajo-grease-cartridge-lzr2-ep2) | $16.70 | 4 | `kajo grease packs`, `grease cartridge`, `grease pack`, `lzr2`, `hd800`, `grease tube` |
 
 ## Storage, Bags & Mats
 

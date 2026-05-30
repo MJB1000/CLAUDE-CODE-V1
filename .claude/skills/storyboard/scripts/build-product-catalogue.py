@@ -68,7 +68,7 @@ ALIASES = {
     "draw-bar-cover": ["drawbar cover", "draw bar cover", "draw bar", "drawbar"],
     "kajo-two-handed-grease-gun": ["kajo grease gun", "kajo gun", "grease gun", "kajo"],
     "kajo-adapter": ["kajo adapter", "battery grease gun adapter", "grease gun adapter"],
-    "kajo-grease-cartridge-lzr2-ep2": ["kajo grease packs", "grease cartridge", "grease pack", "lzr2", "hd800"],
+    "kajo-grease-cartridge-lzr2-ep2": ["kajo grease packs", "grease cartridge", "grease tube", "grease pack", "lzr2", "hd800"],
     "grease-coupler": ["grease coupler", "quick release coupler", "coupler"],
     "quicky-combo-1": ["quicky combo", "grease combo"],
     "the-hauler-luggage-bag": ["hauler bag", "the hauler", "hauler", "luggage bag", "kit bag"],
