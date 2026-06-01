@@ -1,0 +1,42 @@
+{
+  "project": "diggerlid-excavator-silhouette-v2",
+  "description": "Four silhouette options — two 2D vector, two 3D matte-black renders.",
+  "output_dir": "deliverables/diggerlid-excavator-silhouette-v2",
+  "default_resolution": "1K",
+  "aspect": "16:9",
+  "asset_refs": {},
+  "frames": [
+    {
+      "n": 1,
+      "id": "SIL-1",
+      "slug": "2d-side-profile",
+      "refs": [],
+      "resolution": null,
+      "prompt": "A clean black silhouette of a compact mini-excavator on a pure white background, classic side-on profile view. Tracks on the ground, operator cab in the centre, hydraulic boom extended forward and bent down at the elbow with the bucket touching the ground in a digging-ready position. The silhouette is solid pure black, sharp edges, no shading, no gradients, no internal detail. The background is pure white, completely clean, no shadow underneath, no horizon line. Centred composition with generous negative space.\n[Format] 16:9 horizontal.\n[Style] Clean vector-style silhouette icon. Pure two-tone: solid black on solid white. No greys, no colour, no text."
+    },
+    {
+      "n": 2,
+      "id": "SIL-2",
+      "slug": "2d-three-quarter",
+      "refs": [],
+      "resolution": null,
+      "prompt": "A clean black silhouette of a compact mini-excavator on a pure white background, dynamic three-quarter front-angle view. The viewer is positioned slightly to the front-right of the machine, looking at the operator cab face and the boom angling out to the left, bucket extended forward and slightly lowered toward the ground. Tracks visible in foreshortened perspective. The silhouette is solid pure black, sharp clean edges, no shading, no gradients, no internal detail. The background is pure white, completely clean, no shadow, no horizon line. Hero-angle composition with generous negative space.\n[Format] 16:9 horizontal.\n[Style] Clean vector-style silhouette icon. Pure two-tone: solid black on solid white. No greys, no colour, no text."
+    },
+    {
+      "n": 3,
+      "id": "SIL-3",
+      "slug": "3d-matte-side",
+      "refs": [],
+      "resolution": null,
+      "prompt": "A 3D-rendered matte-black compact mini-excavator on a clean white seamless studio backdrop, photographed in side-on profile view. The machine is rendered as a fully three-dimensional dark sculptural form — matte-black paint finish with subtle directional rim-lighting from above-right picking out the edges of the cab roof, boom, and bucket lip. Soft form shadow on the ground directly under the tracks indicating mass. All surface detail (panels, hoses, decals) is suppressed under the unified matte-black finish — the machine reads as a sculptural silhouette with depth and dimensionality, not flat. Subtle ambient occlusion under the boom and cab. Tracks on the ground, boom forward and bent down with bucket touching the ground. Centred composition.\n[Format] 16:9 horizontal.\n[Style] Premium 3D product render, matte-black single-material treatment, soft studio lighting, museum-piece feel. No text, no logos, no colour, no surface decals."
+    },
+    {
+      "n": 4,
+      "id": "SIL-4",
+      "slug": "3d-matte-hero",
+      "refs": [],
+      "resolution": null,
+      "prompt": "A 3D-rendered matte-black compact mini-excavator on a clean white seamless studio backdrop, photographed at a dramatic low three-quarter hero angle — the camera looking up at the machine from front-left. The machine is rendered as a fully three-dimensional dark sculptural form — matte-black paint finish with strong directional rim-lighting from upper-back catching the silhouette outline, a softer fill from upper-front giving subtle form-definition on the cab and boom. Soft form shadow on the ground under the tracks. All surface detail (panels, hoses, decals) is suppressed under the unified matte-black finish — the machine reads as a sculptural silhouette with depth and dimensionality, hero-presentation feel. Boom raised slightly, bucket curled toward the cab, ready stance. Subtle floor reflection beneath the tracks suggesting a polished studio surface.\n[Format] 16:9 horizontal.\n[Style] Premium 3D product render, matte-black single-material treatment, dramatic hero studio lighting, museum-piece feel. No text, no logos, no colour, no surface decals."
+    }
+  ]
+}
