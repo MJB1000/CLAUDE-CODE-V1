@@ -1,0 +1,42 @@
+{
+  "project": "diggerlid-excavator-parts-silhouette",
+  "description": "Zoomed-in silhouettes of distinctive excavator parts — mix of 2D vector and 3D matte renders.",
+  "output_dir": "deliverables/diggerlid-excavator-parts-silhouette",
+  "default_resolution": "1K",
+  "aspect": "16:9",
+  "asset_refs": {},
+  "frames": [
+    {
+      "n": 1,
+      "id": "PART-1",
+      "slug": "2d-bucket",
+      "refs": [],
+      "resolution": null,
+      "prompt": "A tightly cropped black silhouette of an excavator BUCKET on a pure white background. The view is a dramatic close-up of just the bucket and the lower end of the dipper arm — the bucket teeth (four to five chunky steel teeth) clearly visible along the leading edge, the curved scoop body, the pivot pin attaching it to the arm. The silhouette is solid pure black, sharp clean edges, no shading, no gradients, no internal detail. The background is pure white, completely clean, no shadow. Centred composition with the bucket filling the majority of the frame, generous negative space around it.\n[Format] 16:9 horizontal.\n[Style] Clean vector-style silhouette icon. Pure two-tone: solid black on solid white. No greys, no colour, no text."
+    },
+    {
+      "n": 2,
+      "id": "PART-2",
+      "slug": "2d-boom-elbow",
+      "refs": [],
+      "resolution": null,
+      "prompt": "A tightly cropped black silhouette of an excavator BOOM ELBOW JOINT on a pure white background. The view shows the V-shaped articulation where the main boom meets the dipper arm, with the hydraulic ram cylinder running alongside the joint clearly visible — the cylindrical ram, the piston rod extending out, the pin joints at each end. Both boom segments crop out at the edges of the frame so the joint and the ram are the hero. The silhouette is solid pure black, sharp clean edges, no shading, no gradients, no internal detail. The background is pure white, completely clean, no shadow. Centred composition with the elbow filling the majority of the frame.\n[Format] 16:9 horizontal.\n[Style] Clean vector-style silhouette icon. Pure two-tone: solid black on solid white. No greys, no colour, no text."
+    },
+    {
+      "n": 3,
+      "id": "PART-3",
+      "slug": "3d-track",
+      "refs": [],
+      "resolution": null,
+      "prompt": "A tightly cropped 3D-rendered matte-black side view of an excavator TRACK ASSEMBLY on a clean white seamless studio backdrop. The frame is filled with just the rubber/steel track running along the ground — the drive sprocket at one end, the idler wheel at the other, multiple road wheels along the bottom edge, the track shoes/lugs visible across the surface of the track belt. The track is rendered as a fully three-dimensional dark sculptural form — matte-black finish with subtle directional rim-lighting from above picking out the edges of each track shoe, the sprocket teeth, and the road-wheel hubs. Soft form shadow on the ground directly under the track. All surface detail is suppressed under the unified matte-black finish — the track reads as a sculptural silhouette with depth and dimensionality. The cab and boom are NOT visible — only the track. Subtle ambient occlusion between the road wheels.\n[Format] 16:9 horizontal.\n[Style] Premium 3D product render, matte-black single-material treatment, soft studio lighting. No text, no logos, no colour, no decals."
+    },
+    {
+      "n": 4,
+      "id": "PART-4",
+      "slug": "3d-cab",
+      "refs": [],
+      "resolution": null,
+      "prompt": "A tightly cropped 3D-rendered matte-black three-quarter view of an excavator OPERATOR CAB on a clean white seamless studio backdrop. The frame is filled with just the cab/canopy structure — the angled front windscreen frame, the side door frame, the roof, the operator joystick mounts visible inside the doorway. The cab top is the upper edge of the frame; the cab base meets the slewing platform at the lower edge with the start of the counterweight just visible at one corner. The cab is rendered as a fully three-dimensional dark sculptural form — matte-black finish with strong directional rim-lighting from upper-back catching the silhouette of the roof and ROPS frame, softer fill from upper-front giving subtle form-definition on the windscreen pillars and the door. The boom and tracks are NOT in frame — only the cab. Soft floor reflection beneath, subtle ambient occlusion in the recesses of the door cavity.\n[Format] 16:9 horizontal.\n[Style] Premium 3D product render, matte-black single-material treatment, dramatic hero studio lighting. No text, no logos, no colour, no decals."
+    }
+  ]
+}
