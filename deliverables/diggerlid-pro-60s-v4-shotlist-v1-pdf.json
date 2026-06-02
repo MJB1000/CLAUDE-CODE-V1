@@ -1,0 +1,30 @@
+{
+  "project": "diggerlid-pro-60s-v4-shotlist-v1",
+  "title": "DIGGERLID PRO · 60s SHOTLIST · V1 (rain-sad)",
+  "version": "v1",
+  "output_dir": "deliverables/diggerlid-pro-60s-v4-shotlist-v1-pdf",
+  "frames": [
+    {"id": "A1",  "title": "PALLET STOP",       "caption": "XE17U dragged to a stop on the warehouse floor.",     "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/01-A1-pallet-stop.png"},
+    {"id": "A2",  "title": "DRONE HAUL",        "caption": "Top-down drone shot of the flatbed haul.",            "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/02-A2-drone-haul.png"},
+    {"id": "A4",  "title": "RAIN, NO COVER",    "caption": "Luke on the track in the rain — VO silence.",         "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/24-A4-operator-in-rain-unhappy.png"},
+    {"id": "B1",  "title": "HYPE HERO",         "caption": "Supercar reveal — rim-lit, dark studio.",             "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/03-B1-hype-hero.png"},
+    {"id": "C",   "title": "TARP GAG",          "caption": "Wind takes the tarp. Ocky straps snap.",              "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/05-C-tarp-gag.png"},
+    {"id": "D",   "title": "BROTHERS + COVER",  "caption": "Founders touching the fitted cover.",                 "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/06-D-brothers-touching-machine.png"},
+    {"id": "E",   "title": "THE REVEAL",        "caption": "Cover perfectly fitted. God-rays. Yellow tethers.",   "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/07-E-the-reveal.png"},
+    {"id": "F1",  "title": "TOUGH AS NAILS",    "caption": "Luke knuckle-tapping the top of the cover.",          "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/25-F1b-f1b-tap-top.png"},
+    {"id": "F2",  "title": "SEE EVERYTHING",    "caption": "Joel inside the cab, through the clear panel.",       "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/26-F2b-f2b-cab-view.png"},
+    {"id": "F3",  "title": "FIT LIKE A GLOVE",  "caption": "Luke cinching the strap through the buckle.",         "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/27-F3b-f3b-cinch-strap.png"},
+    {"id": "G1",  "title": "RIPSTOP MACRO",     "caption": "490 GSM PVC-coated polyester weave.",                 "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/11-G1-ripstop-macro.png"},
+    {"id": "G2",  "title": "NULLARBOR",         "caption": "Road train, same fabric class.",                      "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/12-G2-nullarbor-road-train.png"},
+    {"id": "H",   "title": "GLOBE",             "caption": "Globe of customer machines, yellow pins.",            "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/13-H-globe-with-pins.png"},
+    {"id": "I1",  "title": "DRIVING WIND",      "caption": "Cover taut, debris streaks past.",                    "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/14-I1-driving-wind.png"},
+    {"id": "I2",  "title": "HAIL",              "caption": "Hailstones bouncing off the PVC.",                    "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/15-I2-hail.png"},
+    {"id": "I3",  "title": "HEAVY RAIN",        "caption": "Water sheeting off, cover impervious.",               "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/16-I3-heavy-rain.png"},
+    {"id": "J1",  "title": "TUG OF WAR",        "caption": "Cover tied to each machine's rear, pulling apart.",   "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/17-J1-tug-of-war-back-tied.png"},
+    {"id": "J2",  "title": "CRUSH TEST",        "caption": "Excavator tracks grinding over the cover.",           "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/18-J2a-crush-test.png"},
+    {"id": "K1",  "title": "PRO MAT",           "caption": "Operator on the mat + magnet inset.",                 "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/20-K1-pro-mat.png"},
+    {"id": "K2",  "title": "THE HAULER",        "caption": "Bag loaded, shouldered, walked to the ute.",          "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/21-K2-the-hauler.png"},
+    {"id": "L1",  "title": "HOODIES (MERCH)",   "caption": "Boys repping the DiggerLid Workwear Hoodie.",         "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/22-L1-brothers-in-hoodies.png"},
+    {"id": "L2",  "title": "BRAND FRAME",       "caption": "Clean wordmark end-frame.",                           "image": "deliverables/diggerlid-pro-60s-storyboard-v4-sketch/28-L2-brand-frame.png"}
+  ]
+}
