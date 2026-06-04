@@ -17,6 +17,11 @@ USAGE
   # Frame 7 can be addressed by number (7) or by beat id (F)
   storyboard-batch.py --manifest path/to/frames.json --frame F
 
+  # Regenerate every frame inside a single beat group (only valid when the
+  # manifest is organised under "beats"). Useful for re-rendering "Act 2"
+  # without touching the rest.
+  storyboard-batch.py --manifest path/to/frames.json --beat act-2-cover
+
   # Resolution: 1K default. Opt into HQ per run.
   storyboard-batch.py --manifest path/to/frames.json --frame 7 --resolution 2K
 
@@ -26,6 +31,11 @@ PER-FRAME EDIT WORKFLOW
   3. Run with --frame <n>. Only that PNG is regenerated; the zip is rebuilt.
 
 MANIFEST SCHEMA
+  Two equivalent shapes — flat or beat-grouped. Beat-grouped is preferred
+  because it powers both `--beat <id>` filtering here AND the beat-section
+  pagination in pdf-export.py from the same single file.
+
+  Flat shape:
   {
     "project": "diggerlid-pro-storyboard",
     "output_dir": "deliverables/diggerlid-pro-storyboard",
@@ -48,12 +58,38 @@ MANIFEST SCHEMA
         "id": "A",                       # short beat id
         "slug": "hero-hook",             # filename slug
         "refs": ["founder-a"],           # explicit keys into asset_refs
-        "skip_auto_refs": false,         # OPTIONAL: opt out of auto_refs for this frame
+        "skip_auto_refs": false,         # OPTIONAL: opt out of auto_refs
         "resolution": null,              # null = use default_resolution
-        "prompt": "<full self-contained prompt>"
+        "prompt": "<full self-contained prompt>",
+        "title":   "HERO HOOK",          # OPTIONAL: PDF display title
+        "caption": "XE17U lands clean."  # OPTIONAL: PDF one-line caption
       }
     ]
   }
+
+  Beat-grouped shape (preferred):
+  {
+    "project": ..., "output_dir": ..., "default_resolution": ...,
+    "aspect": ..., "asset_refs": {...}, "auto_refs": [...],
+    "beats": [
+      {
+        "id": "act-1-arrival",
+        "title": "ACT 1 — ARRIVAL",
+        "description": "The machine arrives.",     # OPTIONAL
+        "frames": [
+          { "n": 1, "id": "A1", "slug": "pallet-stop", "refs": [],
+            "prompt": "...", "title": "PALLET STOP",
+            "caption": "XE17U dragged to a stop." },
+          ...
+        ]
+      },
+      { "id": "act-2-cover", "title": "ACT 2 — THE COVER",
+        "frames": [...] }
+    ]
+  }
+
+  Beat-grouped manifests are auto-flattened into a "frames" list on load,
+  preserving each frame's parent beat id (in the internal "_beat" field).
 
 AUTO_REFS
   Each auto_ref rule scans every frame's prompt for any of its trigger words
@@ -184,7 +220,10 @@ def main():
     ap = argparse.ArgumentParser(description="Manifest-driven storyboard frame generator")
     ap.add_argument("--manifest", required=True, help="Path to the frames manifest JSON")
     ap.add_argument("--frame", default=None,
-                    help="Regenerate only this frame (number or beat id). Omit for the full set.")
+                    help="Regenerate only this frame (number or id). Omit for the full set.")
+    ap.add_argument("--beat", default=None,
+                    help="Regenerate every frame inside this beat group (id from beats[].id). "
+                         "Only valid for manifests that use the beats shape.")
     ap.add_argument("--resolution", default=None,
                     help="Override resolution: 512 | 1K | 2K | 4K. Default: manifest default_resolution or 1K.")
     ap.add_argument("--api-key", default=None, help="Google AI API key (or env GOOGLE_AI_API_KEY)")
@@ -208,6 +247,16 @@ def main():
     asset_refs = manifest.get("asset_refs", {})
     output_dir = resolve_path(manifest["output_dir"])
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Auto-flatten "beats" shape into a "frames" list, tagging each frame with
+    # its parent beat id so --beat filtering works.
+    if "beats" in manifest and "frames" not in manifest:
+        flat = []
+        for beat in manifest["beats"]:
+            for fr in beat.get("frames", []):
+                fr.setdefault("_beat", beat.get("id"))
+                flat.append(fr)
+        manifest["frames"] = flat
     frames = manifest["frames"]
 
     # Select which frames to generate
@@ -218,6 +267,12 @@ def main():
         if not selected:
             available = ", ".join(f"{fr['n']}/{fr['id']}" for fr in frames)
             fail(f"No frame matching '{args.frame}'. Available: {available}")
+    elif args.beat is not None:
+        target = args.beat.strip()
+        selected = [f for f in frames if str(f.get("_beat", "")) == target]
+        if not selected:
+            beats = ", ".join(b.get("id", "?") for b in manifest.get("beats", []))
+            fail(f"No frames inside beat '{args.beat}'. Available beats: {beats or '(none — manifest has no beats)'}")
     else:
         selected = frames
 
