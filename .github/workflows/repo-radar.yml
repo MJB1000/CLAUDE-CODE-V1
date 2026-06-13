@@ -10,7 +10,6 @@ on:
 
 permissions:
   contents: write                # commit the digest + seen.json
-  issues: write                  # open the digest issue
 
 concurrency:
   group: repo-radar
@@ -33,7 +32,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-          CREATE_ISSUE: "true"
+          # Email delivery — set these repo secrets to receive the digest:
+          #   GMAIL_USERNAME      your full Gmail address
+          #   GMAIL_APP_PASSWORD  a Google App Password (not your normal password)
+          #   EMAIL_TO            (optional) where to send; defaults to GMAIL_USERNAME
+          SEND_EMAIL: "true"
+          SMTP_USER: ${{ secrets.GMAIL_USERNAME }}
+          SMTP_PASS: ${{ secrets.GMAIL_APP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
         run: python repo-radar/radar.py
 
       - name: Commit digest

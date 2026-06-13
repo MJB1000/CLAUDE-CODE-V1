@@ -6,8 +6,12 @@ that are gaining stars, ranks them by momentum (stars/day), drops anything
 already reported, writes a dated markdown digest, and (optionally) opens a
 GitHub issue with the results.
 
+Delivery is configurable:
+    SEND_EMAIL=true   + SMTP_USER/SMTP_PASS (+ EMAIL_TO)   → email the digest
+    CREATE_ISSUE=true + GITHUB_TOKEN/GITHUB_REPOSITORY      → open a GitHub issue
+
 Zero runtime deps except PyYAML. Auth via the GITHUB_TOKEN env var — optional
-for searching (improves rate limits) but required to open an issue.
+for searching (improves rate limits), required only to open an issue.
 
 Usage:
     GITHUB_TOKEN=<token> python repo-radar/radar.py        # full run
@@ -15,15 +19,20 @@ Usage:
 """
 from __future__ import annotations
 
+import html as html_lib
 import json
 import math
 import os
+import re
+import smtplib
+import ssl
 import sys
 import time
 import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
+from email.message import EmailMessage
 from pathlib import Path
 
 try:
@@ -86,6 +95,85 @@ def create_issue(title, body):
     except urllib.error.HTTPError as e:  # pragma: no cover - network
         print(f"! issue creation failed ({e.code}): {e.read().decode()[:200]}",
               file=sys.stderr)
+
+
+# --------------------------------------------------------------------------- #
+# Email delivery
+# --------------------------------------------------------------------------- #
+def md_to_html(md):
+    """Render the digest markdown as a clean, email-client-friendly HTML body."""
+    def inline(s):
+        s = html_lib.escape(s)
+        # Stash `code` spans first so their contents escape no further markup
+        # (e.g. the underscores in `CLAUDE_MEMORY` must not become italics).
+        codes = []
+
+        def stash(m):
+            codes.append(m.group(1))
+            return f"\x00{len(codes) - 1}\x00"
+
+        s = re.sub(r"`([^`]+)`", stash, s)
+        s = re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)",
+                   r'<a href="\2" style="color:#2563eb;text-decoration:none">\1</a>', s)
+        s = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", s)
+        # Underscore italics only at word boundaries — never inside snake_case.
+        s = re.sub(r"(?<!\w)_([^_\n]+?)_(?!\w)", r"<em>\1</em>", s)
+        s = re.sub(r"\x00(\d+)\x00",
+                   lambda m: '<code style="background:#f3f3f3;padding:1px 4px;'
+                             f'border-radius:3px;font-size:13px">{codes[int(m.group(1))]}</code>',
+                   s)
+        return s
+
+    out = ['<div style="font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,'
+           'sans-serif;max-width:680px;margin:0 auto;color:#1a1a1a;line-height:1.5">']
+    for raw in md.splitlines():
+        line = raw.rstrip()
+        if not line.strip():
+            continue
+        if line.startswith("# "):
+            out.append(f'<h1 style="font-size:22px;margin:0 0 4px">{inline(line[2:])}</h1>')
+        elif line.startswith("## "):
+            out.append(f'<h2 style="font-size:16px;margin:26px 0 8px;'
+                       f'border-bottom:1px solid #eee;padding-bottom:4px">{inline(line[3:])}</h2>')
+        elif line.strip() == "---":
+            out.append('<hr style="border:none;border-top:1px solid #eee;margin:24px 0">')
+        elif line.lstrip().startswith(">"):
+            out.append(f'<div style="color:#555;font-size:14px;margin:2px 0 6px 16px">'
+                       f'{inline(line.lstrip()[1:].strip())}</div>')
+        elif re.match(r"^\d+\.\s", line):
+            item = inline(re.sub(r"^\d+\.\s", "", line))
+            out.append(f'<div style="margin-top:12px">{item}</div>')
+        else:
+            out.append(f'<p style="color:#444;font-size:14px">{inline(line)}</p>')
+    out.append("</div>")
+    return "\n".join(out)
+
+
+def send_email(subject, markdown):
+    host = os.environ.get("SMTP_HOST", "smtp.gmail.com")
+    port = int(os.environ.get("SMTP_PORT", "587"))
+    user = os.environ.get("SMTP_USER", "").strip()
+    pwd = os.environ.get("SMTP_PASS", "").strip()
+    to = (os.environ.get("EMAIL_TO") or user).strip()
+    if not (user and pwd and to):
+        print("! email not configured (need SMTP_USER, SMTP_PASS) — skipping",
+              file=sys.stderr)
+        return
+    msg = EmailMessage()
+    msg["Subject"] = subject
+    msg["From"] = user
+    msg["To"] = to
+    msg.set_content(markdown)
+    msg.add_alternative(md_to_html(markdown), subtype="html")
+    try:
+        ctx = ssl.create_default_context()
+        with smtplib.SMTP(host, port, timeout=30) as s:
+            s.starttls(context=ctx)
+            s.login(user, pwd)
+            s.send_message(msg)
+        print(f"Emailed digest to {to}")
+    except Exception as e:  # pragma: no cover - network
+        print(f"! email send failed: {e}", file=sys.stderr)
 
 
 # --------------------------------------------------------------------------- #
@@ -221,11 +309,19 @@ def main():
             seen_repos[r["full_name"]] = now.strftime("%Y-%m-%d")
     SEEN.write_text(json.dumps(seen, indent=2, sort_keys=True) + "\n")
 
-    want_issue = os.environ.get("CREATE_ISSUE", "").lower() in ("1", "true", "yes")
-    if want_issue and new_count and REPO and TOKEN:
-        create_issue(f"🛰️ Repo Radar — {now:%Y-%m-%d} ({new_count} new)", digest)
-    elif want_issue and not new_count:
-        print("No new repos — skipping issue.")
+    subject = f"🛰️ Repo Radar — {now:%Y-%m-%d} ({new_count} new)"
+
+    if os.environ.get("SEND_EMAIL", "").lower() in ("1", "true", "yes"):
+        if new_count:
+            send_email(subject, digest)
+        else:
+            print("No new repos — skipping email.")
+
+    if os.environ.get("CREATE_ISSUE", "").lower() in ("1", "true", "yes"):
+        if new_count and REPO and TOKEN:
+            create_issue(subject, digest)
+        elif not new_count:
+            print("No new repos — skipping issue.")
 
 
 # --------------------------------------------------------------------------- #

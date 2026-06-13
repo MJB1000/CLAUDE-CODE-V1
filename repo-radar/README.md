@@ -21,7 +21,23 @@ Your interests were inferred from your repos (`CLAUDE_MEMORY`,
 4. Anything already in `seen.json` is dropped, so each digest shows only repos
    you haven't been shown before.
 5. The digest is written to `digests/YYYY-MM-DD.md` (+ `digests/latest.md`),
-   committed back to the repo, and posted as a **GitHub issue** you can read.
+   committed back to the repo, and **emailed to you**.
+
+## Email delivery (set up once)
+
+The Action emails the digest via Gmail SMTP. Add three repo secrets
+(**Settings → Secrets and variables → Actions**):
+
+| Secret | Value |
+|---|---|
+| `GMAIL_USERNAME` | your full Gmail address |
+| `GMAIL_APP_PASSWORD` | a Google **App Password** — create at <https://myaccount.google.com/apppasswords> (requires 2-Step Verification). Not your normal password. |
+| `EMAIL_TO` | *(optional)* where to send; defaults to `GMAIL_USERNAME` |
+
+Until those are set the email step just logs "not configured" and skips — the
+digest is still committed to `digests/`. Prefer a GitHub issue instead of (or as
+well as) email? Set `CREATE_ISSUE: "true"` in the workflow and restore
+`issues: write` under `permissions`.
 
 ## Tuning it — `interests.yml`
 
@@ -52,8 +68,8 @@ GITHUB_TOKEN=<your_token> python repo-radar/radar.py     # writes a digest
 python repo-radar/radar.py --selftest                    # offline sanity check
 ```
 
-`GITHUB_TOKEN` is optional for searching (it just raises rate limits) but
-required to open the issue. In CI the Action supplies it automatically.
+`GITHUB_TOKEN` is optional for searching (it just raises rate limits). To test
+email locally: `SEND_EMAIL=true SMTP_USER=you@gmail.com SMTP_PASS=<app-pw> python repo-radar/radar.py`.
 
 ## Files
 
@@ -64,8 +80,8 @@ required to open the issue. In CI the Action supplies it automatically.
 | `seen.json` | Memory of repos already surfaced — prevents repeats. |
 | `digests/` | Dated digests; `latest.md` always mirrors the newest. |
 
-## Want a different delivery channel?
+## Want another delivery channel?
 
-The engine already produces clean markdown. Easy follow-ups if you want them:
-email the digest via the Gmail integration, push it to a Notion "Repo Radar"
-page, or post to Slack — say the word and I'll wire it in.
+Email is wired in. The engine produces clean markdown, so pushing the same
+digest to a Notion "Repo Radar" page or a Slack channel is a small follow-up —
+say the word and I'll add it.
