@@ -1,0 +1,59 @@
+# Repo Radar — what to hunt for.
+# Inferred from your repos (CLAUDE_MEMORY, knowledge-vault-mcp-server,
+# claude-mcp-setup, video-vision, MEETING-EMOTION-ANALYSER, marketing-team,
+# wipertech-comment-dashboard, session-signal, family-dashboard ...).
+# Edit freely — add/remove queries and themes, then the next run picks them up.
+
+settings:
+  created_within_days: 120        # only repos created this recently count as "new"
+  min_stars: 50                   # floor to cut noise; raise to be pickier
+  per_theme: 6                    # max repos shown per theme each digest
+  languages: []                   # optional allowlist e.g. [Python, TypeScript]; empty = any
+  exclude_owners: [MJB1000]       # skip your own repos
+  exclude_keywords:               # cut listicles, courses, curricula, dead mirrors
+    - awesome
+    - "awesome-"
+    - roadmap
+    - free-courses
+    - interview
+    - cheatsheet
+    - "100-days"
+
+# Each theme is a set of GitHub search queries. The script appends the recency +
+# star floor automatically, sorts by stars, then re-ranks by momentum (stars/day).
+# Query syntax = GitHub repo search: topic:x, "phrase in:name,description", language:x ...
+themes:
+  - name: AI agents & LLM tooling
+    queries:
+      - "topic:mcp"
+      - "topic:model-context-protocol"
+      - "topic:ai-agents"
+      - "topic:agent-framework"
+      - "topic:llm-agent"
+      - "topic:rag"
+      - "claude anthropic in:name,description,readme"
+      - "mcp server in:name,description"
+
+  - name: Multimodal AI
+    queries:
+      - "topic:multimodal"
+      - "topic:vision-language-model"
+      - "topic:video-understanding"
+      - "topic:speech-to-text"
+      - "emotion recognition in:name,description"
+      - "video analysis in:name,description"
+
+  - name: Marketing & analytics tech
+    queries:
+      - "topic:marketing-automation"
+      - "topic:product-analytics"
+      - "analytics dashboard in:name,description"
+      - "attribution marketing in:name,description"
+      - "sentiment analysis in:name,description"
+
+  - name: Web/app dev stack
+    queries:
+      - "topic:supabase"
+      - "topic:shadcn-ui"
+      - "nextjs starter in:name,description"
+      - "saas boilerplate in:name,description"

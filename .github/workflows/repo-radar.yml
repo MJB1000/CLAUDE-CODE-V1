@@ -1,0 +1,45 @@
+name: Repo Radar
+
+# Finds new, fast-rising GitHub repos matching the interests in
+# repo-radar/interests.yml, writes a dated digest, and opens an issue.
+
+on:
+  schedule:
+    - cron: "0 8 * * 1"        # every Monday 08:00 UTC
+  workflow_dispatch: {}          # run on demand from the Actions tab
+
+permissions:
+  contents: write                # commit the digest + seen.json
+  issues: write                  # open the digest issue
+
+concurrency:
+  group: repo-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install pyyaml
+
+      - name: Run Repo Radar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          CREATE_ISSUE: "true"
+        run: python repo-radar/radar.py
+
+      - name: Commit digest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add repo-radar/digests repo-radar/seen.json
+          git diff --cached --quiet || git commit -m "Repo Radar digest $(date -u +%Y-%m-%d)"
+          git push
