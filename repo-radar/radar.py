@@ -202,7 +202,8 @@ def render(results, now, new_count, within, min_stars):
     if new_count:
         lines += [
             f"_{new_count} new repos, created in the last {within} days, "
-            f"≥{min_stars}⭐, ranked by momentum (stars/day)._",
+            f"≥{min_stars}⭐ (some lanes set their own floor), "
+            f"ranked by momentum (stars/day)._",
             "",
         ]
     else:
@@ -248,7 +249,6 @@ def collect(cfg, now):
     excl_kw = [k.lower() for k in (st.get("exclude_keywords") or [])]
 
     since = (now - timedelta(days=within)).strftime("%Y-%m-%d")
-    filt = f"created:>={since} stars:>={min_stars}"
 
     seen = json.loads(SEEN.read_text()) if SEEN.exists() else {"repos": {}}
     seen_repos = seen.setdefault("repos", {})
@@ -259,6 +259,8 @@ def collect(cfg, now):
 
     for theme in cfg.get("themes", []):
         name = theme["name"]
+        theme_min = int(theme.get("min_stars", min_stars))
+        filt = f"created:>={since} stars:>={theme_min}"
         bucket = {}
         for q in theme.get("queries", []):
             full_q = f"{q} {filt}"

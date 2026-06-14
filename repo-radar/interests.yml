@@ -6,7 +6,7 @@
 
 settings:
   created_within_days: 120        # only repos created this recently count as "new"
-  min_stars: 50                   # floor to cut noise; raise to be pickier
+  min_stars: 150                  # global popularity floor; a theme can override with its own min_stars
   per_theme: 6                    # max repos shown per theme each digest
   languages: []                   # optional allowlist e.g. [Python, TypeScript]; empty = any
   exclude_owners: [MJB1000]       # skip your own repos
@@ -57,3 +57,40 @@ themes:
       - "topic:shadcn-ui"
       - "nextjs starter in:name,description"
       - "saas boilerplate in:name,description"
+
+  - name: Self-development & productivity
+    queries:
+      - "topic:personal-knowledge-management"
+      - "topic:second-brain"
+      - "topic:productivity"
+      - "topic:quantified-self"
+      - "topic:zettelkasten"
+      - "habit tracker in:name,description"
+      - "life os in:name,description"
+
+  - name: Claude & agent design craft
+    min_stars: 80                 # niche corner — lower the floor so it isn't starved
+    queries:
+      - "topic:prompt-engineering"
+      - "topic:context-engineering"
+      - "claude code skill in:name,description"
+      - "subagent OR multi-agent in:name,description"
+      - "topic:llm-evaluation"
+      - "agent design in:name,description"
+
+  - name: Community & social media management
+    queries:
+      - "topic:social-media-management"
+      - "topic:community-management"
+      - "social media scheduler in:name,description"
+      - "social media automation in:name,description"
+      - "discord community bot in:name,description"
+
+  - name: Customer-service AI agents
+    queries:
+      - "topic:customer-support"
+      - "topic:conversational-ai"
+      - "customer service agent in:name,description"
+      - "support ticket ai in:name,description"
+      - "helpdesk ai in:name,description"
+      - "ai chatbot support in:name,description"
