@@ -1,0 +1,21 @@
+{
+  "project": "test-founders-bow",
+  "description": "System test of storyboard-batch.py — one frame, two founders + bowed micro excavator.",
+  "output_dir": "deliverables/test-founders-bow",
+  "default_resolution": "1K",
+  "aspect": "9:16",
+  "asset_refs": {
+    "founder-a": "clients/assets/diggerlid/founders/founder-a.jpg",
+    "founder-b": "clients/assets/diggerlid/founders/founder-b.jpg"
+  },
+  "frames": [
+    {
+      "n": 1,
+      "id": "TEST",
+      "slug": "founders-bow",
+      "refs": ["founder-a", "founder-b"],
+      "resolution": null,
+      "prompt": "Warm celebratory documentary photograph, 9:16 vertical.\n\nPersistent characters: the two DiggerLid founders, two real Australian tradesmen — preserve their faces exactly from the reference portraits. Founder A: broad-shouldered, neatly-trimmed dark moustache, wearing his black baseball cap. Founder B: slimmer build, thick full chevron moustache, mid-brown side-parted hair, no cap, clean-shaven cheeks and chin.\n\n[Context] System test image — the two founders next to a brand-new machine.\n[Visual] The two DiggerLid founders standing side-by-side, directly next to a brand-new compact micro excavator. The micro excavator is spotless and factory-fresh — glossy yellow paintwork gleaming, tracks clean, not a speck of dust. Sitting on top of the excavator cab roof is an enormous celebratory gift bow, like a car-dealership delivery bow — big looping ribbon, bright and festive. Both founders grin broadly at the camera, proud and stoked, one resting a hand on the machine. Navy work shirts with sleeves rolled. Clean bright workshop or driveway setting, soft natural daylight.\n[Format] 9:16 vertical aspect ratio.\n[Style] Warm documentary photography, hyperreal detail on the founders' faces and the machine, celebratory mood, natural light. No text or watermark."
+    }
+  ]
+}

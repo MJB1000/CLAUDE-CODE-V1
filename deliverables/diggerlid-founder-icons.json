@@ -1,0 +1,61 @@
+{
+  "project": "diggerlid-founder-icons",
+  "description": "Founder DBA icon set — six options across silhouette, line-art and mascot styles, treating Luke and Joel as recognisable brand marks.",
+  "output_dir": "deliverables/diggerlid-founder-icons",
+  "default_resolution": "1K",
+  "aspect": "1:1",
+  "asset_refs": {
+    "founder-a": "clients/assets/diggerlid/founders/founder-a.jpg",
+    "founder-b": "clients/assets/diggerlid/founders/founder-b.jpg"
+  },
+  "frames": [
+    {
+      "n": 1,
+      "id": "ICN-1",
+      "slug": "luke-silhouette-head",
+      "refs": ["founder-a"],
+      "resolution": null,
+      "prompt": "A clean black silhouette icon of Luke — the DiggerLid founder. Preserve his distinctive head-and-shoulders SHAPE from the reference portrait attached. Solid black silhouette of his head and upper torso on a pure white background, viewed front-on. The recognisable contour features must be unmistakable: the BLACK BASEBALL CAP with the brim facing forward (clear forward-brim profile cutting across the upper silhouette), the broad shoulders, the suggestion of a moustache silhouette on the upper lip. No facial features (no eyes, nose, mouth lines) — pure solid silhouette only. Sharp clean edges, no shading, no gradients, no internal detail. Pure two-tone: solid black on solid white. Centred composition with generous negative space.\n[Format] 1:1 square.\n[Style] Clean vector-style silhouette icon, brand-mark grade. No greys, no colour, no text."
+    },
+    {
+      "n": 2,
+      "id": "ICN-2",
+      "slug": "joel-silhouette-head",
+      "refs": ["founder-b"],
+      "resolution": null,
+      "prompt": "A clean black silhouette icon of Joel — the DiggerLid founder. Preserve his distinctive head-and-shoulders SHAPE from the reference portrait attached. Solid black silhouette of his head and upper torso on a pure white background, viewed front-on. The recognisable contour features must be unmistakable: the SIDE-PARTED HAIR (clean side-part visible at the top of the silhouette, short on the sides), NO cap, the suggestion of his thick CHEVRON MOUSTACHE silhouette extending past the corners of the mouth on the upper lip area. No facial features (no eyes, nose, mouth lines) — pure solid silhouette only. Sharp clean edges, no shading, no gradients, no internal detail. Pure two-tone: solid black on solid white. Centred composition.\n[Format] 1:1 square.\n[Style] Clean vector-style silhouette icon, brand-mark grade. No greys, no colour, no text."
+    },
+    {
+      "n": 3,
+      "id": "ICN-3",
+      "slug": "duo-silhouette-paired",
+      "refs": ["founder-a", "founder-b"],
+      "resolution": null,
+      "prompt": "A clean black DUAL silhouette icon of both DiggerLid founders side-by-side, treated as a single brand mark. Preserve both their distinctive head-and-shoulders SHAPES from the reference portraits attached. Two solid black silhouettes on a pure white background, viewed front-on, shoulders just touching in the centre. LEFT silhouette = Luke: BLACK BASEBALL CAP with brim facing forward cutting across the upper silhouette, broad shoulders, suggestion of moustache. RIGHT silhouette = Joel: no cap, clean SIDE-PARTED HAIR contour at the top of the silhouette, slightly slimmer shoulders, suggestion of his thick CHEVRON MOUSTACHE on the upper lip. No facial features — pure solid silhouettes only. Sharp clean edges, no shading, no gradients. Pure two-tone: solid black on solid white. Centred composition, generous negative space.\n[Format] 1:1 square.\n[Style] Clean vector-style dual silhouette brand mark. No greys, no colour, no text."
+    },
+    {
+      "n": 4,
+      "id": "ICN-4",
+      "slug": "luke-line-art",
+      "refs": ["founder-a"],
+      "resolution": null,
+      "prompt": "A minimalist single-weight black line-art icon of Luke — the DiggerLid founder. Preserve his face exactly from the reference portrait attached but rendered as a clean continuous-line illustration. Black line-only drawing on a pure white background: even-weight outlines defining the contour of his BLACK BASEBALL CAP (brim forward), face shape, the curve of his NEATLY-TRIMMED DARK MOUSTACHE sitting above the lip line, eyes as small simple shapes, a single line for the nose, a curve for the smile, hint of broad shoulders below. Looks like a tattoo or stamp design — bold confident lines, no shading, no fill, no greys. Pure two-tone line drawing. Centred composition with generous negative space.\n[Format] 1:1 square.\n[Style] Minimal one-weight line-art icon, tattoo-stamp aesthetic. No fill, no colour, no text."
+    },
+    {
+      "n": 5,
+      "id": "ICN-5",
+      "slug": "joel-line-art",
+      "refs": ["founder-b"],
+      "resolution": null,
+      "prompt": "A minimalist single-weight black line-art icon of Joel — the DiggerLid founder. Preserve his face exactly from the reference portrait attached but rendered as a clean continuous-line illustration. Black line-only drawing on a pure white background: even-weight outlines defining his SIDE-PARTED HAIR (no cap), face shape, the iconic THICK FULL CHEVRON MOUSTACHE covering the upper lip and extending just past the corners of the mouth, eyes as small simple shapes, a single line for the nose, a curve for the smile, hint of shoulders below. Looks like a tattoo or stamp design — bold confident lines, no shading, no fill, no greys. Pure two-tone line drawing. Centred composition.\n[Format] 1:1 square.\n[Style] Minimal one-weight line-art icon, tattoo-stamp aesthetic. No fill, no colour, no text."
+    },
+    {
+      "n": 6,
+      "id": "ICN-6",
+      "slug": "duo-mascot-cartoon",
+      "refs": ["founder-a", "founder-b"],
+      "resolution": null,
+      "prompt": "A bold cartoon mascot brand-mark icon of both DiggerLid founders side-by-side, designed as a single circular badge. Preserve both their faces from the reference portraits attached but stylized as a chunky cartoon — heavy black outlines, simple flat-colour fills, mascot-style proportions (slightly oversized heads, square shoulders). LEFT = Luke: BLACK BASEBALL CAP with brim facing forward, neatly-trimmed dark moustache, clean-shaven elsewhere, navy DiggerLid hoodie with a small yellow 'd' logo on the chest. RIGHT = Joel: side-parted mid-brown hair (no cap), thick chevron moustache, beige shacket over a black tee. Both grinning, thumbs-up or arms-crossed, looking at the camera. Composition: both founders bust-up inside a clean circular border, the badge sitting on a pure white background, generous negative space around the circle. Flat-colour palette: navy hoodie, beige shacket, yellow accents, peach skin, black outlines.\n[Format] 1:1 square.\n[Style] Chunky cartoon brand-mascot badge, heavy black outlines, flat saturated fills, no shading. No text inside the badge."
+    }
+  ]
+}

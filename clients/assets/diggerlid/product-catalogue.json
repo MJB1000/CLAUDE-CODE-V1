@@ -1,0 +1,572 @@
+{
+  "source": "https://diggerlid.com",
+  "fetched": "2026-05-21",
+  "note": "Auto-built from Shopify products.json. Image paths are repo-relative. Use the aliases to resolve a casual product mention to its image set.",
+  "categories": {
+    "covers-enclosures": [
+      "draw-bar-cover",
+      "digger-lid-quicky-cover",
+      "pro-excavator-enclosure",
+      "diggerlid-digger-shield-kit",
+      "universal-engine-covers",
+      "skid-steer-loader-cover",
+      "diggerlid-1-tonne-excavator-cover",
+      "diggerlid-mini-loader-cover",
+      "digger-lid-1-7"
+    ],
+    "grease-lubrication": [
+      "grease-coupler",
+      "quicky-combo-1",
+      "kajo-two-handed-grease-gun",
+      "kajo-adapter",
+      "kajo-grease-cartridge-lzr2-ep2"
+    ],
+    "storage-mats": [
+      "the-hauler-luggage-bag",
+      "pro-mat",
+      "drink-tool-caddy"
+    ],
+    "apparel": [
+      "work-tee",
+      "diggerlid-trucker-cap",
+      "diggerlid-workwear-hoodie",
+      "diggerlid-beanie"
+    ],
+    "accessories-novelty": [
+      "diggerwipes",
+      "excavator-boom-bottle-opener",
+      "diggerlid-hydraulic-coupling-cap-set",
+      "excavator-phone-cradle"
+    ],
+    "bundles": [
+      "extras-pack"
+    ]
+  },
+  "products": {
+    "diggerwipes": {
+      "title": "Digger Wipes",
+      "handle": "diggerwipes",
+      "category": "accessories-novelty",
+      "type": "Cleaning WIpes",
+      "price_aud": "15.00",
+      "url": "https://diggerlid.com/products/diggerwipes",
+      "aliases": [
+        "digger wipes",
+        "diggerwipes",
+        "wipes",
+        "cleaning wipes"
+      ],
+      "total_images_on_site": 4,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/diggerwipes/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerwipes/02.png",
+        "clients/assets/diggerlid/products/catalogue/diggerwipes/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerwipes/04.jpg"
+      ]
+    },
+    "the-hauler-luggage-bag": {
+      "title": "The Hauler Luggage Bag",
+      "handle": "the-hauler-luggage-bag",
+      "category": "storage-mats",
+      "type": "Luggage",
+      "price_aud": "599.00",
+      "url": "https://diggerlid.com/products/the-hauler-luggage-bag",
+      "aliases": [
+        "hauler bag",
+        "the hauler",
+        "hauler",
+        "luggage bag",
+        "kit bag"
+      ],
+      "total_images_on_site": 18,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/the-hauler-luggage-bag/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/the-hauler-luggage-bag/02.png",
+        "clients/assets/diggerlid/products/catalogue/the-hauler-luggage-bag/03.png",
+        "clients/assets/diggerlid/products/catalogue/the-hauler-luggage-bag/04.jpg"
+      ]
+    },
+    "pro-mat": {
+      "title": "PRO Mat",
+      "handle": "pro-mat",
+      "category": "storage-mats",
+      "type": "Heavy Machinery Parts & Accessories",
+      "price_aud": "219.00",
+      "url": "https://diggerlid.com/products/pro-mat",
+      "aliases": [
+        "pro mat",
+        "magnet mat",
+        "padded mat",
+        "work mat"
+      ],
+      "total_images_on_site": 10,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/pro-mat/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/pro-mat/02.png",
+        "clients/assets/diggerlid/products/catalogue/pro-mat/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/pro-mat/04.jpg"
+      ]
+    },
+    "extras-pack": {
+      "title": "Dighead's Bundle",
+      "handle": "extras-pack",
+      "category": "bundles",
+      "type": "",
+      "price_aud": "99.00",
+      "url": "https://diggerlid.com/products/extras-pack",
+      "aliases": [
+        "digheads bundle",
+        "dighead's bundle",
+        "extras pack"
+      ],
+      "total_images_on_site": 1,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/extras-pack/01-featured.jpg"
+      ]
+    },
+    "draw-bar-cover": {
+      "title": "Draw Bar Cover",
+      "handle": "draw-bar-cover",
+      "category": "covers-enclosures",
+      "type": "Trailer Hitches",
+      "price_aud": "129.00",
+      "url": "https://diggerlid.com/products/draw-bar-cover",
+      "aliases": [
+        "drawbar cover",
+        "draw bar cover",
+        "draw bar",
+        "drawbar"
+      ],
+      "total_images_on_site": 11,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/draw-bar-cover/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/draw-bar-cover/02.png",
+        "clients/assets/diggerlid/products/catalogue/draw-bar-cover/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/draw-bar-cover/04.jpg"
+      ]
+    },
+    "grease-coupler": {
+      "title": "Quick Release Grease Coupler",
+      "handle": "grease-coupler",
+      "category": "grease-lubrication",
+      "type": "Grease Guns",
+      "price_aud": "29.00",
+      "url": "https://diggerlid.com/products/grease-coupler",
+      "aliases": [
+        "grease coupler",
+        "quick release coupler",
+        "coupler"
+      ],
+      "total_images_on_site": 5,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/grease-coupler/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/grease-coupler/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/grease-coupler/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/grease-coupler/04.jpg"
+      ]
+    },
+    "digger-lid-quicky-cover": {
+      "title": "Quicky Cover",
+      "handle": "digger-lid-quicky-cover",
+      "category": "covers-enclosures",
+      "type": "Heavy Machinery Parts & Accessories",
+      "price_aud": "119.00",
+      "url": "https://diggerlid.com/products/digger-lid-quicky-cover",
+      "aliases": [
+        "quicky cover",
+        "quicky"
+      ],
+      "total_images_on_site": 9,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/digger-lid-quicky-cover/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/digger-lid-quicky-cover/02.png",
+        "clients/assets/diggerlid/products/catalogue/digger-lid-quicky-cover/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/digger-lid-quicky-cover/04.jpg"
+      ]
+    },
+    "quicky-combo-1": {
+      "title": "Quicky Combo",
+      "handle": "quicky-combo-1",
+      "category": "grease-lubrication",
+      "type": "",
+      "price_aud": "135.00",
+      "url": "https://diggerlid.com/products/quicky-combo-1",
+      "aliases": [
+        "quicky combo",
+        "grease combo"
+      ],
+      "total_images_on_site": 8,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/quicky-combo-1/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/quicky-combo-1/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/quicky-combo-1/03.png",
+        "clients/assets/diggerlid/products/catalogue/quicky-combo-1/04.jpg"
+      ]
+    },
+    "drink-tool-caddy": {
+      "title": "Drink/ Tool Caddy",
+      "handle": "drink-tool-caddy",
+      "category": "storage-mats",
+      "type": "Heavy Machinery Parts & Accessories",
+      "price_aud": "49.00",
+      "url": "https://diggerlid.com/products/drink-tool-caddy",
+      "aliases": [
+        "drink caddy",
+        "tool caddy",
+        "drink/tool caddy",
+        "caddy"
+      ],
+      "total_images_on_site": 7,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/drink-tool-caddy/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/drink-tool-caddy/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/drink-tool-caddy/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/drink-tool-caddy/04.jpg"
+      ]
+    },
+    "kajo-two-handed-grease-gun": {
+      "title": "KAJO Grease Gun",
+      "handle": "kajo-two-handed-grease-gun",
+      "category": "grease-lubrication",
+      "type": "Grease Guns",
+      "price_aud": "149.00",
+      "url": "https://diggerlid.com/products/kajo-two-handed-grease-gun",
+      "aliases": [
+        "kajo grease gun",
+        "kajo gun",
+        "grease gun",
+        "kajo"
+      ],
+      "total_images_on_site": 6,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/kajo-two-handed-grease-gun/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/kajo-two-handed-grease-gun/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/kajo-two-handed-grease-gun/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/kajo-two-handed-grease-gun/04.jpg"
+      ]
+    },
+    "kajo-adapter": {
+      "title": "Battery Grease Gun KAJO Adapter",
+      "handle": "kajo-adapter",
+      "category": "grease-lubrication",
+      "type": "Grease Guns",
+      "price_aud": "79.00",
+      "url": "https://diggerlid.com/products/kajo-adapter",
+      "aliases": [
+        "kajo adapter",
+        "battery grease gun adapter",
+        "grease gun adapter"
+      ],
+      "total_images_on_site": 10,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/kajo-adapter/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/kajo-adapter/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/kajo-adapter/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/kajo-adapter/04.jpg"
+      ]
+    },
+    "kajo-grease-cartridge-lzr2-ep2": {
+      "title": "KAJO Grease Packs",
+      "handle": "kajo-grease-cartridge-lzr2-ep2",
+      "category": "grease-lubrication",
+      "type": "",
+      "price_aud": "16.70",
+      "url": "https://diggerlid.com/products/kajo-grease-cartridge-lzr2-ep2",
+      "aliases": [
+        "kajo grease packs",
+        "grease cartridge",
+        "grease pack",
+        "lzr2",
+        "hd800",
+        "grease tube"
+      ],
+      "total_images_on_site": 10,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/kajo-grease-cartridge-lzr2-ep2/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/kajo-grease-cartridge-lzr2-ep2/02.png",
+        "clients/assets/diggerlid/products/catalogue/kajo-grease-cartridge-lzr2-ep2/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/kajo-grease-cartridge-lzr2-ep2/04.jpg"
+      ]
+    },
+    "work-tee": {
+      "title": "Work Tee",
+      "handle": "work-tee",
+      "category": "apparel",
+      "type": "",
+      "price_aud": "39.00",
+      "url": "https://diggerlid.com/products/work-tee",
+      "aliases": [
+        "work tee",
+        "work t-shirt",
+        "diggerlid tee",
+        "tee"
+      ],
+      "total_images_on_site": 4,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/work-tee/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/work-tee/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/work-tee/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/work-tee/04.jpg"
+      ]
+    },
+    "diggerlid-trucker-cap": {
+      "title": "Trucker Cap",
+      "handle": "diggerlid-trucker-cap",
+      "category": "apparel",
+      "type": "",
+      "price_aud": "49.00",
+      "url": "https://diggerlid.com/products/diggerlid-trucker-cap",
+      "aliases": [
+        "trucker cap",
+        "diggerlid cap",
+        "cap"
+      ],
+      "total_images_on_site": 8,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/diggerlid-trucker-cap/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-trucker-cap/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-trucker-cap/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-trucker-cap/04.jpg"
+      ]
+    },
+    "diggerlid-workwear-hoodie": {
+      "title": "Work Hoodie",
+      "handle": "diggerlid-workwear-hoodie",
+      "category": "apparel",
+      "type": "Hoodie",
+      "price_aud": "79.00",
+      "url": "https://diggerlid.com/products/diggerlid-workwear-hoodie",
+      "aliases": [
+        "work hoodie",
+        "diggerlid hoodie",
+        "hoodie"
+      ],
+      "total_images_on_site": 4,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/diggerlid-workwear-hoodie/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-workwear-hoodie/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-workwear-hoodie/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-workwear-hoodie/04.jpg"
+      ]
+    },
+    "pro-excavator-enclosure": {
+      "title": "Pro Excavator Enclosure",
+      "handle": "pro-excavator-enclosure",
+      "category": "covers-enclosures",
+      "type": "Heavy Machinery Parts & Accessories",
+      "price_aud": "699.00",
+      "url": "https://diggerlid.com/products/pro-excavator-enclosure",
+      "aliases": [
+        "pro enclosure",
+        "pro excavator enclosure",
+        "excavator enclosure",
+        "diggerlid pro"
+      ],
+      "total_images_on_site": 25,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/pro-excavator-enclosure/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/pro-excavator-enclosure/02.png",
+        "clients/assets/diggerlid/products/catalogue/pro-excavator-enclosure/03.png",
+        "clients/assets/diggerlid/products/catalogue/pro-excavator-enclosure/04.jpg"
+      ]
+    },
+    "diggerlid-digger-shield-kit": {
+      "title": "DiggerShield Kit",
+      "handle": "diggerlid-digger-shield-kit",
+      "category": "covers-enclosures",
+      "type": "Window Screens",
+      "price_aud": "1400.00",
+      "url": "https://diggerlid.com/products/diggerlid-digger-shield-kit",
+      "aliases": [
+        "diggershield",
+        "digger shield",
+        "diggershield kit",
+        "shield kit"
+      ],
+      "total_images_on_site": 27,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/diggerlid-digger-shield-kit/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-digger-shield-kit/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-digger-shield-kit/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-digger-shield-kit/04.jpg"
+      ]
+    },
+    "universal-engine-covers": {
+      "title": "Universal / Engine Covers",
+      "handle": "universal-engine-covers",
+      "category": "covers-enclosures",
+      "type": "Heavy Machinery Parts & Accessories",
+      "price_aud": "114.00",
+      "url": "https://diggerlid.com/products/universal-engine-covers",
+      "aliases": [
+        "universal cover",
+        "engine cover",
+        "universal engine cover"
+      ],
+      "total_images_on_site": 7,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/universal-engine-covers/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/universal-engine-covers/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/universal-engine-covers/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/universal-engine-covers/04.jpg"
+      ]
+    },
+    "skid-steer-loader-cover": {
+      "title": "Skid Steer Loader Cover",
+      "handle": "skid-steer-loader-cover",
+      "category": "covers-enclosures",
+      "type": "Heavy Machinery Parts & Accessories",
+      "price_aud": "399.00",
+      "url": "https://diggerlid.com/products/skid-steer-loader-cover",
+      "aliases": [
+        "skid steer cover",
+        "skid steer loader cover",
+        "skid steer"
+      ],
+      "total_images_on_site": 13,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/skid-steer-loader-cover/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/skid-steer-loader-cover/02.png",
+        "clients/assets/diggerlid/products/catalogue/skid-steer-loader-cover/03.png",
+        "clients/assets/diggerlid/products/catalogue/skid-steer-loader-cover/04.jpg"
+      ]
+    },
+    "excavator-boom-bottle-opener": {
+      "title": "Excavator Boom Bottle Opener",
+      "handle": "excavator-boom-bottle-opener",
+      "category": "accessories-novelty",
+      "type": "",
+      "price_aud": "15.00",
+      "url": "https://diggerlid.com/products/excavator-boom-bottle-opener",
+      "aliases": [
+        "bottle opener",
+        "boom bottle opener",
+        "excavator bottle opener"
+      ],
+      "total_images_on_site": 4,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/excavator-boom-bottle-opener/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/excavator-boom-bottle-opener/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/excavator-boom-bottle-opener/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/excavator-boom-bottle-opener/04.jpg"
+      ]
+    },
+    "diggerlid-1-tonne-excavator-cover": {
+      "title": "Micro Excavator Cover",
+      "handle": "diggerlid-1-tonne-excavator-cover",
+      "category": "covers-enclosures",
+      "type": "Heavy Machinery Parts & Accessories",
+      "price_aud": "299.00",
+      "url": "https://diggerlid.com/products/diggerlid-1-tonne-excavator-cover",
+      "aliases": [
+        "micro excavator cover",
+        "1 tonne cover",
+        "micro cover"
+      ],
+      "total_images_on_site": 3,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/diggerlid-1-tonne-excavator-cover/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-1-tonne-excavator-cover/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-1-tonne-excavator-cover/03.jpg"
+      ]
+    },
+    "diggerlid-mini-loader-cover": {
+      "title": "Mini Loader Cover",
+      "handle": "diggerlid-mini-loader-cover",
+      "category": "covers-enclosures",
+      "type": "Heavy Machinery Parts & Accessories",
+      "price_aud": "249.00",
+      "url": "https://diggerlid.com/products/diggerlid-mini-loader-cover",
+      "aliases": [
+        "mini loader cover",
+        "mini loader"
+      ],
+      "total_images_on_site": 8,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/diggerlid-mini-loader-cover/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-mini-loader-cover/02.png",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-mini-loader-cover/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-mini-loader-cover/04.jpg"
+      ]
+    },
+    "diggerlid-hydraulic-coupling-cap-set": {
+      "title": "Hydraulic Coupling Cap Set",
+      "handle": "diggerlid-hydraulic-coupling-cap-set",
+      "category": "accessories-novelty",
+      "type": "Heavy Machinery Parts & Accessories",
+      "price_aud": "15.00",
+      "url": "https://diggerlid.com/products/diggerlid-hydraulic-coupling-cap-set",
+      "aliases": [
+        "coupling cap set",
+        "hydraulic cap set",
+        "coupling caps"
+      ],
+      "total_images_on_site": 7,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/diggerlid-hydraulic-coupling-cap-set/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-hydraulic-coupling-cap-set/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-hydraulic-coupling-cap-set/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-hydraulic-coupling-cap-set/04.jpg"
+      ]
+    },
+    "diggerlid-beanie": {
+      "title": "DIGHEAD  Beanie",
+      "handle": "diggerlid-beanie",
+      "category": "apparel",
+      "type": "Hats",
+      "price_aud": "29.00",
+      "url": "https://diggerlid.com/products/diggerlid-beanie",
+      "aliases": [
+        "beanie",
+        "dighead beanie"
+      ],
+      "total_images_on_site": 4,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/diggerlid-beanie/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-beanie/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-beanie/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/diggerlid-beanie/04.jpg"
+      ]
+    },
+    "excavator-phone-cradle": {
+      "title": "Excavator Phone Cradle",
+      "handle": "excavator-phone-cradle",
+      "category": "accessories-novelty",
+      "type": "Mobile Phone Stands",
+      "price_aud": "39.00",
+      "url": "https://diggerlid.com/products/excavator-phone-cradle",
+      "aliases": [
+        "phone cradle",
+        "excavator phone cradle",
+        "phone holder"
+      ],
+      "total_images_on_site": 10,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/excavator-phone-cradle/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/excavator-phone-cradle/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/excavator-phone-cradle/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/excavator-phone-cradle/04.jpg"
+      ]
+    },
+    "digger-lid-1-7": {
+      "title": "1.7 Tonne Excavator Cover",
+      "handle": "digger-lid-1-7",
+      "category": "covers-enclosures",
+      "type": "Heavy Machinery Parts & Accessories",
+      "price_aud": "399.00",
+      "url": "https://diggerlid.com/products/digger-lid-1-7",
+      "aliases": [
+        "1.7 tonne cover",
+        "1.7t excavator cover",
+        "1.7 tonne excavator cover"
+      ],
+      "total_images_on_site": 8,
+      "images": [
+        "clients/assets/diggerlid/products/catalogue/digger-lid-1-7/01-featured.jpg",
+        "clients/assets/diggerlid/products/catalogue/digger-lid-1-7/02.jpg",
+        "clients/assets/diggerlid/products/catalogue/digger-lid-1-7/03.jpg",
+        "clients/assets/diggerlid/products/catalogue/digger-lid-1-7/04.jpg"
+      ]
+    }
+  }
+}

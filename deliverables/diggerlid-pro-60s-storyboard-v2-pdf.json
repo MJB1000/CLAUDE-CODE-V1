@@ -1,0 +1,21 @@
+{
+  "project": "diggerlid-pro-60s-v2",
+  "title": "DIGGERLID PRO · 60s STORYBOARD · V2",
+  "version": "v2",
+  "output_dir": "deliverables/diggerlid-pro-60s-storyboard-v2-pdf",
+  "frames": [
+    {"id": "A",  "title": "DELIVERY",       "caption": "XE17U arrives on a pallet, factory-fresh.",         "image": "deliverables/diggerlid-pro-60s-storyboard-v2/01-A-delivery-pallet.png"},
+    {"id": "B",  "title": "REVEAL RAMP-UP", "caption": "Dynamic camera build to the impressive machine.",  "image": "deliverables/diggerlid-pro-60s-storyboard-v2/02-B-ramp-up-reveal.png"},
+    {"id": "C",  "title": "TARP & OCKY",    "caption": "Founders trying to cover it the bush-fix way.",    "image": "deliverables/diggerlid-pro-60s-storyboard-v2/03-C-tarp-ocky-on.png"},
+    {"id": "D",  "title": "FOUNDERS",       "caption": "Crossed arms, flanking the machine, ready.",       "image": "deliverables/diggerlid-pro-60s-storyboard-v2/04-D-founders-crossed-arms.png"},
+    {"id": "E",  "title": "GOD RAY",        "caption": "Cover settles. Yellow tethers catch the light.",   "image": "deliverables/diggerlid-pro-60s-storyboard-v2/05-E-god-ray-covered.png"},
+    {"id": "F1", "title": "ZIP MACRO",      "caption": "YKK heavy-duty zip mid-engagement.",               "image": "deliverables/diggerlid-pro-60s-storyboard-v2/06-F1-zip-macro.png"},
+    {"id": "F2", "title": "PANEL MACRO",    "caption": "Lear Front clear-PVC vision panel.",               "image": "deliverables/diggerlid-pro-60s-storyboard-v2/07-F2-panel-macro.png"},
+    {"id": "G1", "title": "RIPSTOP MACRO",  "caption": "490 GSM PVC-coated polyester weave.",              "image": "deliverables/diggerlid-pro-60s-storyboard-v2/08-G1-ripstop-macro.png"},
+    {"id": "G2", "title": "NULLARBOR",      "caption": "Road train tarps — same material class.",          "image": "deliverables/diggerlid-pro-60s-storyboard-v2/09-G2-nullarbor-road-train.png"},
+    {"id": "H",  "title": "AUSTRALIA MAP",  "caption": "Customer machine locations, nationwide.",          "image": "deliverables/diggerlid-pro-60s-storyboard-v2/10-H-australia-map.png"},
+    {"id": "I1", "title": "DRIVEN OVER",    "caption": "Excavator track rolls over the cover.",            "image": "deliverables/diggerlid-pro-60s-storyboard-v2/11-I1-driven-over.png"},
+    {"id": "I2", "title": "TUG OF WAR",     "caption": "Founders stress-test the cover, both ends.",       "image": "deliverables/diggerlid-pro-60s-storyboard-v2/12-I2-tug-of-war.png"},
+    {"id": "J",  "title": "RANGE",          "caption": "The wider product family — Pro Mat, Hauler, KAJO.","image": "deliverables/diggerlid-pro-60s-storyboard-v2/13-J-product-collection.png"}
+  ]
+}

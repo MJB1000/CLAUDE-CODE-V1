@@ -1,0 +1,222 @@
+{
+  "project": "diggerlid-pro-60s-storyboard-singles",
+  "description": "60s storyboard — multi-panel beats split into single-shot frames. F→F1-F4, G→G1-G2, H→H1-H9, I→I1-I2, J→J1-J3. D, E, K kept single.",
+  "output_dir": "deliverables/diggerlid-pro-60s-storyboard-singles",
+  "default_resolution": "1K",
+  "aspect": "9:16",
+  "asset_refs": {
+    "founder-a": "clients/assets/diggerlid/founders/founder-a.jpg",
+    "founder-b": "clients/assets/diggerlid/founders/founder-b.jpg",
+    "logo": "clients/assets/diggerlid/logo-primary.png",
+    "product-enclosure-side": "clients/assets/diggerlid/products/raw/productphotosdl1.jpeg",
+    "product-enclosure-front": "clients/assets/diggerlid/products/raw/productphotosdl5.jpeg",
+    "product-enclosure-detail": "clients/assets/diggerlid/products/raw/productphotosdl8.jpeg"
+  },
+  "frames": [
+    {
+      "n": 4,
+      "id": "D",
+      "slug": "three-things",
+      "refs": ["founder-a", "founder-b"],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from an 11-frame storyboard series for a 60-second ad.\n\nPersistent characters: Luke and Joel — the two DiggerLid founders, two real Australian tradesmen. Preserve their faces exactly from the reference portraits attached. LUKE = broad-shouldered build, neatly-trimmed dark moustache, ALWAYS wears a black baseball cap with the brim facing forward, dark hair just visible at the temples below the cap line. JOEL = slimmer build, distinctive thick full chevron moustache, mid-brown hair worn in a clean side part, NO cap, clean-shaven on the cheeks and chin.\n\n[Context] Two-brothers credentialing — the three product principles delivered as yellow-on-black overlay punches.\n[Visual] Workshop bench setting. Luke (black cap, dark moustache) and Joel (chevron moustache, no cap, side-parted hair) standing side-by-side at a wooden workshop bench, both looking directly down the lens, navy work shirts with sleeves rolled, dust on forearms. Behind them: pegboard with hand tools, a green cutting mat on the bench. Floating in front of them in the lower-mid frame, layered over the scene, three stacked rectangular YELLOW-ON-BLACK overlay bars reading top-to-bottom: \"1. TOUGH AS NAILS\" / \"2. 360° VISIBILITY\" / \"3. FITS LIKE A GLOVE\". Each bar is a clean black rectangle with the text in bold sans-serif DiggerLid yellow #f5eb19. The three bars are the ONLY coloured elements in the frame.\n[Format] 9:16 vertical, single composition with typographic overlay.\n[Style] B&W storyboard sketch on cream paper for the founders and the workshop. The three overlay bars are flat editorial typography, the only colour. Documentary portrait composition. No other text."
+    },
+    {
+      "n": 5,
+      "id": "E",
+      "slug": "diggerlid-born",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from an 11-frame storyboard series for a 60-second ad.\n\n[Context] Midpoint anchor — the moment the DiggerLid exists. Single reverent shot, no cuts. Comic-epic register, played straight.\n[Visual] Low heroic camera angle. The XCMG XE17U excavator centred on a dusty worksite floor, the grey DiggerLid PRO Enclosure cover ALREADY SETTLED snugly onto the operator cab — taut, fitted, no slack, no parachute, no mid-air descent. From above, heavenly god-rays of light stream down through atmospheric dust, illuminating the covered cab from directly overhead. Lens-flare hint at the top of the frame where the rays converge. Around the cab, four DiggerLid-yellow tether points catch the light, glowing as the only coloured highlights — small but distinct. Dust motes drift in the rays. The cover is the hero — quiet, fitted, blessed by light.\n[Format] 9:16 vertical, single composition.\n[Style] B&W storyboard sketch on cream paper, dramatic god-ray lighting suggested with directional pencil strokes, cinematic awe. DiggerLid yellow #f5eb19 ONLY on the four tether-point accents around the cab — every other element pencil monochrome. No text."
+    },
+    {
+      "n": 6,
+      "id": "F1",
+      "slug": "feature-ykk-buckle",
+      "refs": ["founder-a"],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\nPersistent character: Luke — DiggerLid founder. Preserve face from reference portrait attached. Broad-shouldered, neatly-trimmed dark moustache, ALWAYS wears a black baseball cap with the brim facing forward.\n\n[Context] Feature spec macro — the YKK side-release buckle, hardware-grade credentialing.\n[Visual] Extreme tight macro of a black YKK side-release buckle mid-clip, the two halves about to engage. Embossed \"YKK\" letters legible on the buckle face. Luke's hand (the edge of his black cap brim just visible at the top of frame) holding one half of the buckle, the strap webbing taut. Side lighting picking out the moulded plastic ridges. Single composition.\n[Format] 9:16 vertical, single tight macro shot.\n[Style] B&W storyboard sketch on cream paper, hyperreal sketch detail on hardware. No colour, no text — the \"YKK\" embossed letters on the buckle are the only legible mark in the frame."
+    },
+    {
+      "n": 7,
+      "id": "F2",
+      "slug": "feature-lear-front",
+      "refs": ["founder-b"],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\nPersistent character: Joel — DiggerLid founder. Preserve face from reference portrait attached. Slimmer build, distinctive thick full chevron moustache, mid-brown hair worn in a clean side part, NO cap, clean-shaven cheeks and chin.\n\n[Context] Feature spec macro — the Lear Front clear-PVC lower vision panel, 360° visibility credential.\n[Visual] Foreground hero: the Lear Front clear-PVC lower vision panel of the cover, unzipped and rolled up neatly, the clear PVC sheet catching light, the chunky YKK zip visible along the seam. Mid-ground: Joel (chevron moustache) at the workshop bench behind it, cutting a sheet of clear PVC with a sharp utility knife, focused on his work. Workshop pegboard with tools visible behind him. Single composition with depth.\n[Format] 9:16 vertical, single shot.\n[Style] B&W storyboard sketch on cream paper, hyperreal sketch detail on the clear PVC and the zip. No colour, no text."
+    },
+    {
+      "n": 8,
+      "id": "F3",
+      "slug": "feature-velcro",
+      "refs": ["founder-a"],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\nPersistent character: Luke — DiggerLid founder. Preserve face from reference portrait attached. Broad-shouldered, neatly-trimmed dark moustache, ALWAYS wears a black baseball cap with the brim facing forward.\n\n[Context] Feature spec macro — UV-protected Velcro tab, fast-release fit credential.\n[Visual] Extreme tight macro of Luke's hand mid-yank, pulling a black UV-protected Velcro tab away from grey ripstop cover fabric. Velcro hook-and-loop fibres caught in motion, tiny lint threads pulling apart, slight blur on the action. Strong directional side lighting on the textured ripstop weave. Luke's forearm visible at the bottom of frame, edge of his black cap brim just visible in the top corner. Single composition.\n[Format] 9:16 vertical, single tight macro shot.\n[Style] B&W storyboard sketch on cream paper, hyperreal sketch detail on the Velcro fibres and ripstop weave, kinetic feel of mid-yank. No colour, no text."
+    },
+    {
+      "n": 9,
+      "id": "F4",
+      "slug": "feature-12v-port",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\n[Context] Feature spec macro — interior cab POV, 12V accessory port credential.\n[Visual] Interior cab POV looking down at the operator's dashboard inside the XCMG XE17U. A smartphone is plugged into a black 12-volt accessory port mounted on the dashboard, charging cable curling. A black soldering iron rests on a small workshop towel just within frame, suggesting this is a custom mod the founders installed. Beyond the dashboard, the joystick controls visible. Single composition.\n[Format] 9:16 vertical, single shot, top-down cab interior POV.\n[Style] B&W storyboard sketch on cream paper, hyperreal sketch detail on the dashboard, port, and cable. No colour, no text."
+    },
+    {
+      "n": 10,
+      "id": "G1",
+      "slug": "materials-ripstop-macro",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\n[Context] Materials credentialing macro — 490 GSM PVC-coated polyester ripstop, fabric-grade authority.\n[Visual] Extreme macro of grey 490 GSM PVC-coated polyester ripstop fabric, filling the frame. Dramatic side-lighting from a low angle picks out the cross-hatched ripstop reinforcement weave — diagonal grid pattern catching the light. Glossy PVC surface texture visible on the top side, with reinforcement threads woven in. A slight curl at one edge of the swatch reveals the layer thickness. Single composition.\n[Format] 9:16 vertical, single shot.\n[Style] B&W storyboard sketch on cream paper, hyperreal sketch detail on the weave, controlled side-light. No colour, no text."
+    },
+    {
+      "n": 11,
+      "id": "G2",
+      "slug": "materials-nullarbor-truck",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\n[Context] Materials credentialing connotative leap — same fabric class as the tarps hauling freight across the Nullarbor.\n[Visual] Anamorphic-feel wide cinematic shot of a B-double semi-trailer truck driving along a long, dead-straight stretch of the Eyre Highway across the Nullarbor at dusk in heavy rain. Tarp-covered freight on both trailers. Wet bitumen reflecting the truck's headlights and the low last-light from the horizon. Endless flat saltbush plain on both sides extending to vanishing-point horizon. Sense of immense distance and isolation. Single composition.\n[Format] 9:16 vertical, single wide cinematic landscape shot composed vertically.\n[Style] B&W storyboard sketch on cream paper, gritty atmospheric mood, anamorphic feel. No colour, no text."
+    },
+    {
+      "n": 12,
+      "id": "H1",
+      "slug": "ugc-pouring-rain",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\n[Context] UGC heritage frame — authentic customer photo, pouring rain.\n[Visual] Candid smartphone-style frame, slightly imperfect framing as if shot quickly by an operator. A compact mini-excavator fitted with a grey DiggerLid PRO Enclosure cover on the operator cab, parked on a muddy worksite during a pouring downpour. Diagonal rain streaks slashing across the frame. Wet mud splash around the tracks. Operator (small figure in hi-vis) walking past in the background. Hand-drawn UGC vibe. Single composition.\n[Format] 9:16 vertical, single composition with smartphone-photo feel.\n[Style] B&W storyboard sketch on cream paper, candid UGC hand. No colour, no text, no watermarks."
+    },
+    {
+      "n": 13,
+      "id": "H2",
+      "slug": "ugc-tasmania-snow",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\n[Context] UGC heritage frame — authentic customer photo, snow on a Tasmanian mountain site.\n[Visual] Candid smartphone-style frame. A compact mini-excavator fitted with a grey DiggerLid PRO Enclosure cover on the operator cab, parked at a remote Tasmanian mountain worksite. Falling snowflakes drifting across the frame, a light dusting of snow already settled on the cover and the tracks. Pine trees visible in the misty background, snow-capped mountain ridge beyond. Single composition.\n[Format] 9:16 vertical, single composition with smartphone-photo feel.\n[Style] B&W storyboard sketch on cream paper, candid UGC hand. No colour, no text, no watermarks."
+    },
+    {
+      "n": 14,
+      "id": "H3",
+      "slug": "ugc-hail-storm",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\n[Context] UGC heritage frame — authentic customer photo, hailstorm pummelling the cover.\n[Visual] Candid smartphone-style frame. A compact mini-excavator fitted with a grey DiggerLid PRO Enclosure cover on the operator cab. Hailstones — round ice pellets, marble-sized — caught mid-air bouncing off the cover surface, scattered on the ground around the tracks. Storm-dark sky above. Streetlights or worksite floodlights catching the hail in motion. Single composition.\n[Format] 9:16 vertical, single composition with smartphone-photo feel.\n[Style] B&W storyboard sketch on cream paper, candid UGC hand, kinetic hail energy. No colour, no text, no watermarks."
+    },
+    {
+      "n": 15,
+      "id": "H4",
+      "slug": "ugc-drought-farm",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\n[Context] UGC heritage frame — authentic customer photo, dusty drought-stricken farm.\n[Visual] Candid smartphone-style frame. A compact mini-excavator fitted with a grey DiggerLid PRO Enclosure cover on the operator cab, parked on a parched cracked-earth paddock on a drought-stricken outback farm. Cracked dry soil underfoot, dead grass tufts, distant windmill silhouette. Hazy heat shimmer in the air. Cover dusty but intact. Single composition.\n[Format] 9:16 vertical, single composition with smartphone-photo feel.\n[Style] B&W storyboard sketch on cream paper, candid UGC hand. No colour, no text, no watermarks."
+    },
+    {
+      "n": 16,
+      "id": "H5",
+      "slug": "ugc-tropical-monsoon",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\n[Context] UGC heritage frame — authentic customer photo, tropical Queensland monsoon.\n[Visual] Candid smartphone-style frame. A compact mini-excavator fitted with a grey DiggerLid PRO Enclosure cover on the operator cab, parked in a tropical Queensland worksite during a monsoon downpour. Heavy vertical rain, lush palm fronds bent under the wind in the background, water sheeting off the cover. Saturated muddy red earth around the tracks. Single composition.\n[Format] 9:16 vertical, single composition with smartphone-photo feel.\n[Style] B&W storyboard sketch on cream paper, candid UGC hand. No colour, no text, no watermarks."
+    },
+    {
+      "n": 17,
+      "id": "H6",
+      "slug": "ugc-outback-dust-storm",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\n[Context] UGC heritage frame — authentic customer photo, outback dust storm.\n[Visual] Candid smartphone-style frame. A compact mini-excavator fitted with a grey DiggerLid PRO Enclosure cover on the operator cab, half-obscured by a wall of red dust sweeping through an outback worksite. Machine outline barely visible through the haze. Sense of being swallowed by the storm. Single composition.\n[Format] 9:16 vertical, single composition with smartphone-photo feel.\n[Style] B&W storyboard sketch on cream paper, candid UGC hand, dust haze rendered as soft pencil graduation. No colour, no text, no watermarks."
+    },
+    {
+      "n": 18,
+      "id": "H7",
+      "slug": "ugc-snowy-mountains",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\n[Context] UGC heritage frame — authentic customer photo, cold misty Snowy Mountains morning.\n[Visual] Candid smartphone-style frame. A compact mini-excavator fitted with a grey DiggerLid PRO Enclosure cover on the operator cab, parked in a cold misty alpine valley in the Snowy Mountains at dawn. Heavy ground fog wrapping around the tracks. Frost on the cover surface. Snow gum eucalypts on a ridge behind, silhouetted in the mist. Single composition.\n[Format] 9:16 vertical, single composition with smartphone-photo feel.\n[Style] B&W storyboard sketch on cream paper, candid UGC hand, soft mist rendering. No colour, no text, no watermarks."
+    },
+    {
+      "n": 19,
+      "id": "H8",
+      "slug": "ugc-sleet-tasmania",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\n[Context] UGC heritage frame — authentic customer photo, sleet on a Tasmanian worksite.\n[Visual] Candid smartphone-style frame, tight on the working end of the machine. The bucket of a compact mini-excavator (fitted with a grey DiggerLid PRO Enclosure cover, partly visible at the back of frame) being pelted by sleet — half-rain, half-ice — sticking to the bucket teeth and the boom. Wet ground. Foggy, miserable Tasmanian-winter mood. Single composition.\n[Format] 9:16 vertical, single composition with smartphone-photo feel.\n[Style] B&W storyboard sketch on cream paper, candid UGC hand. No colour, no text, no watermarks."
+    },
+    {
+      "n": 20,
+      "id": "H9",
+      "slug": "ugc-golden-hour-after-storm",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\n[Context] UGC heritage frame — authentic customer photo, golden-hour worksite after the storm cleared.\n[Visual] Candid smartphone-style frame. A compact mini-excavator fitted with a grey DiggerLid PRO Enclosure cover on the operator cab, parked at the end of a long day on a suburban worksite. Storm has just cleared — wet ground reflecting the last warm directional light from a low sun. Steam rising off the cover. Long shadows from the boom across freshly-dug dirt mounds. Single composition.\n[Format] 9:16 vertical, single composition with smartphone-photo feel.\n[Style] B&W storyboard sketch on cream paper, candid UGC hand, golden-hour directional pencil light. No colour, no text, no watermarks."
+    },
+    {
+      "n": 21,
+      "id": "I1",
+      "slug": "track-test-roll-on",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\n[Context] Challenge experiment — the survival test. Single dramatic action frame: the track rolls onto the cover.\n[Visual] Low-angle worksite shot. The grey DiggerLid PRO Enclosure cover lies FLAT on the dirt directly in front of the XCMG XE17U excavator. The machine is mid-action — tracking slowly forward, the front edge of the rubber/metal track just rolling ONTO the surface of the cover, the fabric visibly compressed under the track. Dust kicked up around the tracks, light catching the leading track edge. Action-documentary energy. Single composition.\n[Format] 9:16 vertical, single shot. NO text overlay, no captions anywhere.\n[Style] B&W storyboard sketch on cream paper, heavy weight on the track-grind moment, kinetic. No colour, no text.\n\nABSOLUTELY NO TEXT IN THE ARTWORK: do not render any words, labels, captions, annotations, callouts, brand names, or wordmarks anywhere — not on the cover, not on the machine, not as floating labels. The product reference images attached include a 'DiggerLid' wordmark on the cover; preserve the cover SHAPE and PROPORTIONS from those references but DO NOT reproduce any text from them. This frame is pure imagery."
+    },
+    {
+      "n": 22,
+      "id": "I2",
+      "slug": "track-test-lift-up",
+      "refs": ["founder-a", "founder-b"],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\nPersistent characters: Luke and Joel — the two DiggerLid founders, two real Australian tradesmen. Preserve their faces exactly from the reference portraits attached. LUKE = broad-shouldered build, neatly-trimmed dark moustache, ALWAYS wears a black baseball cap with the brim facing forward, dark hair just visible at the temples below the cap line. JOEL = slimmer build, distinctive thick full chevron moustache, mid-brown hair worn in a clean side part, NO cap, clean-shaven on the cheeks and chin.\n\n[Context] Challenge experiment payoff — the cover survives. Quiet documentary moment after the track grind.\n[Visual] Worksite setting. Luke (black cap, dark moustache) crouches and lifts the grey DiggerLid PRO Enclosure cover by ONE corner, holding it up at chest height — visible diagonal track-mark imprints across the grey fabric, but NO rips, no tears, no holes. Cover intact. Joel (chevron moustache, no cap) stands next to him in the background, arms crossed, nodding in approval. The XE17U excavator visible behind them. Quiet documentary mood. Single composition.\n[Format] 9:16 vertical, single shot. NO text overlay, no captions anywhere.\n[Style] B&W storyboard sketch on cream paper, quiet documentary energy, hyperreal sketch detail on the track-marked cover. No colour, no text.\n\nABSOLUTELY NO TEXT IN THE ARTWORK: do not render any words, labels, captions, annotations, callouts, brand names, or wordmarks anywhere — not on the cover, not on the machine, not as floating labels. The product reference images attached include a 'DiggerLid' wordmark on the cover; preserve the cover SHAPE and PROPORTIONS from those references but DO NOT reproduce any text from them. This frame is pure imagery."
+    },
+    {
+      "n": 23,
+      "id": "J1",
+      "slug": "trojan-bridge-founders",
+      "refs": ["founder-a", "founder-b"],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\nPersistent characters: Luke and Joel — the two DiggerLid founders, two real Australian tradesmen. Preserve their faces exactly from the reference portraits attached. LUKE = broad-shouldered build, neatly-trimmed dark moustache, ALWAYS wears a black baseball cap with the brim facing forward, dark hair just visible at the temples below the cap line. JOEL = slimmer build, distinctive thick full chevron moustache, mid-brown hair worn in a clean side part, NO cap, clean-shaven on the cheeks and chin.\n\n[Context] Act-B pivot bridge — Luke leans into camera with a knowing look, gesturing back to the machine. Sets up the wider range.\n[Visual] Warm worksite wide. Luke (black cap, dark moustache) and Joel (chevron moustache, no cap) stand in the foreground, casual and confident. Luke is slightly forward-framed, half-turning toward camera as if mid-bridge-line, a relaxed grin. The XCMG XE17U excavator visible behind them with the dusty track-marked grey DiggerLid PRO Enclosure cover settled back on the cab. Golden-hour suggested with directional pencil strokes. Single composition.\n[Format] 9:16 vertical, single shot.\n[Style] B&W storyboard sketch on cream paper, warm portraiture, hyperreal sketch detail on the founders. No colour, no text.\n\nABSOLUTELY NO TEXT IN THE ARTWORK: do not render any words, labels, captions, annotations, callouts, brand names, or wordmarks anywhere. The product reference images attached include a 'DiggerLid' wordmark on the cover; preserve the cover SHAPE and PROPORTIONS but DO NOT reproduce any text from them."
+    },
+    {
+      "n": 24,
+      "id": "J2",
+      "slug": "trojan-pro-mat",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\n[Context] Act-B product introduction — the Pro Mat, padded waterproof work mat with magnetic underside.\n[Visual] An operator kneeling on a long unrolled padded waterproof Pro Mat under the boom of a mini-excavator, working on something. Mat clearly cushioning his knees against rough ground. Small inset detail at the upper-right of the frame, drawn in the same sketch style with a thin pencil border around it, showing a macro of the underside of the mat with a strong neodymium magnet holding a steel socket against the fabric. Folded mat in carry-bag form visible at the edge of the main scene. Single composition with one inset.\n[Format] 9:16 vertical, single shot with one corner inset.\n[Style] B&W storyboard sketch on cream paper, hyperreal sketch detail on the mat fabric and the magnet inset. No colour, no text."
+    },
+    {
+      "n": 25,
+      "id": "J3",
+      "slug": "trojan-hauler",
+      "refs": [],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\n[Context] Act-B product introduction — the Hauler kit bag.\n[Visual] A heavy-duty DiggerLid Hauler kit bag — large ballistic-fabric duffel with reinforced base, sturdy carry handles, shoulder strap. Open at the top, being loaded with tools: wooden hammer handle, adjustable wrench head, coiled rope all visible inside. A tradesman's hand mid-zipping the top closed. Background: another tradesman in the mid-distance shouldering the bag and walking toward a utility ute parked further back. Single composition with depth.\n[Format] 9:16 vertical, single shot.\n[Style] B&W storyboard sketch on cream paper, hyperreal sketch detail on the bag's stitching and hardware. No colour, no text, no logos."
+    },
+    {
+      "n": 26,
+      "id": "K",
+      "slug": "finisher",
+      "refs": ["founder-a", "founder-b"],
+      "resolution": null,
+      "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. The whole artwork is monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, minimal shading, rough cinematic composition. Pencil tones only — no colour fills anywhere unless the [Visual] block below explicitly calls out a DiggerLid yellow accent. The cream paper is the only off-white. One frame from the 60-second ad storyboard series.\n\nPersistent characters: Luke and Joel — the two DiggerLid founders, two real Australian tradesmen. Preserve their faces exactly from the reference portraits attached. LUKE = broad-shouldered build, neatly-trimmed dark moustache, ALWAYS wears a black baseball cap with the brim facing forward, dark hair just visible at the temples below the cap line. JOEL = slimmer build, distinctive thick full chevron moustache, mid-brown hair worn in a clean side part, NO cap, clean-shaven on the cheeks and chin.\n\n[Context] Finisher — both founders with the cover trophy. Single hero shot, NO brand frame, NO logo lockup in this image.\n[Visual] Single composition. Luke (black cap, dark moustache) and Joel (chevron moustache, no cap) standing shoulder-to-shoulder directly in front of the XCMG XE17U, both holding the dusty track-marked grey DiggerLid PRO Enclosure cover UP between them at shoulder height like a trophy, grinning at the camera. Track marks clearly visible across the cover surface as diagonal imprints. Worksite setting behind them — dirt ground, low workshop wall, golden-hour light suggested with directional pencil strokes. The frame ends on this trophy moment.\n[Format] 9:16 vertical, single composition.\n[Style] B&W storyboard sketch on cream paper, warm portraiture, hyperreal sketch detail on the founders' faces and the track-marked cover. No colour, no text, no logo, no wordmark."
+    }
+  ],
+  "auto_refs": [
+    {
+      "id": "product-pro-enclosure",
+      "description": "DiggerLid PRO Excavator Enclosure product references — auto-attach whenever the prompt mentions the enclosure / cover / DiggerShield.",
+      "triggers": [
+        "diggershield",
+        "diggerlid pro",
+        "pro enclosure",
+        "pro excavator enclosure",
+        "diggerlid enclosure",
+        "the diggerlid cover",
+        "diggerlid pro enclosure",
+        "lear front"
+      ],
+      "refs": [
+        "product-enclosure-front",
+        "product-enclosure-side",
+        "product-enclosure-detail"
+      ]
+    }
+  ]
+}
