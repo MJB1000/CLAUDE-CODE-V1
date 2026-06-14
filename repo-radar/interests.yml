@@ -94,3 +94,14 @@ themes:
       - "support ticket ai in:name,description"
       - "helpdesk ai in:name,description"
       - "ai chatbot support in:name,description"
+
+  - name: Meta inbox & omnichannel AI agents
+    min_stars: 40                 # emerging niche — low floor to catch early entrants
+    queries:
+      - "topic:chatwoot"
+      - "topic:whatsapp-bot"
+      - "omnichannel inbox in:name,description"
+      - "instagram dm in:name,description"
+      - "messenger bot ai in:name,description"
+      - "social inbox ai in:name,description"
+      - "lead qualification ai in:name,description"
