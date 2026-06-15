@@ -1,0 +1,51 @@
+name: Repo Radar
+
+# Finds new, fast-rising GitHub repos matching the interests in interests.yml,
+# writes a dated digest under digests/, commits it, and (optionally) emails it.
+
+on:
+  schedule:
+    - cron: "0 8 * * 1"        # every Monday 08:00 UTC
+  workflow_dispatch: {}          # run on demand from the Actions tab
+
+permissions:
+  contents: write                # commit the digest + seen.json
+
+concurrency:
+  group: repo-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run Repo Radar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          # Email delivery — set these repo secrets to receive the digest:
+          #   GMAIL_USERNAME      your full Gmail address
+          #   GMAIL_APP_PASSWORD  a Google App Password (not your normal password)
+          #   EMAIL_TO            (optional) where to send; defaults to GMAIL_USERNAME
+          SEND_EMAIL: "true"
+          SMTP_USER: ${{ secrets.GMAIL_USERNAME }}
+          SMTP_PASS: ${{ secrets.GMAIL_APP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: python radar.py
+
+      - name: Commit digest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add digests seen.json
+          git diff --cached --quiet || git commit -m "Repo Radar digest $(date -u +%Y-%m-%d)"
+          git push
