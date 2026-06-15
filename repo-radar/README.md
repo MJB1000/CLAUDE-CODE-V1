@@ -11,8 +11,9 @@ Your interests were inferred from your repos (`CLAUDE_MEMORY`,
 
 ## How it works
 
-1. A scheduled GitHub Action (`.github/workflows/repo-radar.yml`) runs every
-   **Monday 08:00 UTC** (and on-demand from the Actions tab).
+1. A scheduled GitHub Action (`.github/workflows/repo-radar.yml`) runs
+   **Tuesday & Friday at 08:00 AEST** (Mon/Thu 22:00 UTC; and on-demand from the
+   Actions tab).
 2. `radar.py` reads `interests.yml`, runs each theme's search queries against the
    GitHub Search API, filtered to repos **created in the last 120 days** with
    **≥50★**.

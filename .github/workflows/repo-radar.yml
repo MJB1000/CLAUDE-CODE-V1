@@ -5,7 +5,11 @@ name: Repo Radar
 
 on:
   schedule:
-    - cron: "0 8 * * 1"        # every Monday 08:00 UTC
+    # 08:00 AEST (UTC+10) = 22:00 UTC the previous day.
+    - cron: "0 22 * * 1"        # Tue 08:00 AEST  (Mon 22:00 UTC)
+    - cron: "0 22 * * 4"        # Fri 08:00 AEST  (Thu 22:00 UTC)
+    # NOTE: cron is UTC and can't follow daylight saving. During AEDT (UTC+11,
+    # ~Oct-Apr) these land at 09:00 local; shift to "0 21" if you want 08:00 then.
   workflow_dispatch: {}          # run on demand from the Actions tab
 
 permissions:

@@ -1,9 +1,10 @@
 # The Claude Code curation routine
 
 The GitHub Action (`.github/workflows/repo-radar.yml`) does the *scouting* — it
-finds repos and commits a raw digest under `repo-radar/digests/`. This routine
-adds the *judgment*: a Claude session reads the fresh digest and emails you a
-curated shortlist of what actually matters. Two ways to run it.
+finds repos and commits a raw digest under `repo-radar/digests/` on **Tuesday &
+Friday at 08:00 AEST** (Mon/Thu 22:00 UTC). This routine adds the *judgment*: a
+Claude session reads the fresh digest and emails you a curated shortlist of what
+actually matters. Two ways to run it.
 
 ---
 
@@ -11,8 +12,8 @@ curated shortlist of what actually matters. Two ways to run it.
 
 In Claude Code on the web: connect this repo, then create a **scheduled Action**.
 
-- **Schedule:** `0 9 * * 1` (Mondays 09:00 UTC — one hour after the radar Action
-  commits the digest).
+- **Schedule:** `0 23 * * 1` and `0 23 * * 4` (Mon/Thu 23:00 UTC = Tue/Fri 09:00
+  AEST — one hour after the radar Action commits the digest).
 - **Repo / branch:** `MJB1000/claude-code-v1` · `main`
 - **Connectors:** enable **Gmail** (to draft the email). GitHub is in scope.
 - **Network policy:** one that allows GitHub + Google APIs.
@@ -20,8 +21,8 @@ In Claude Code on the web: connect this repo, then create a **scheduled Action**
 Paste this as the prompt:
 
 ```
-You are my weekly Repo Radar curator for the MJB1000/claude-code-v1 repo.
-A GitHub Action runs every Monday 08:00 UTC and commits a fresh digest to
+You are my Repo Radar curator for the MJB1000/claude-code-v1 repo, run Tue & Fri.
+A GitHub Action runs Tue & Fri at 08:00 AEST and commits a fresh digest to
 repo-radar/digests/latest.md. Your job runs after it and adds the judgment the
 script can't. Work read-only: do NOT commit, push, or open PRs.
 
@@ -67,7 +68,8 @@ schedule**:
 name: Repo Radar — curate
 on:
   schedule:
-    - cron: "0 9 * * 1"     # 1h after the scout run
+    - cron: "0 23 * * 1"    # Tue 09:00 AEST — 1h after the scout run
+    - cron: "0 23 * * 4"    # Fri 09:00 AEST — 1h after the scout run
   workflow_dispatch: {}
 permissions:
   contents: read
