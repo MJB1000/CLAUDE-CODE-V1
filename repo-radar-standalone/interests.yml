@@ -105,3 +105,15 @@ themes:
       - "messenger bot ai in:name,description"
       - "social inbox ai in:name,description"
       - "lead qualification ai in:name,description"
+
+  - name: Wildcard — adjacent leverage
+    # Not in your stated lanes, but areas I think give you leverage: automation to
+    # wire your tools together, browser/computer-use agents, agent reliability,
+    # voice agents, design-to-code, and self-hosted breakouts. Retune or drop freely.
+    queries:
+      - "topic:workflow-automation"
+      - "topic:browser-automation"
+      - "topic:ai-observability"
+      - "topic:voice-assistant"
+      - "topic:design-to-code"
+      - "topic:self-hosted"

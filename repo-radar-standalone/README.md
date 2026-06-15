@@ -20,11 +20,15 @@ Configured in `interests.yml` (edit anytime):
 9. **Meta inbox & omnichannel AI agents** — Messenger/Instagram-DM/WhatsApp
    agents that classify, route, and draft initial replies (customers vs
    influencer prospects). See `watchlist.md` for the established baseline.
+10. **Wildcard — adjacent leverage** — a curated wildcard: automation,
+    browser/computer-use agents, AI observability, voice agents, design-to-code,
+    self-hosted breakouts. Things outside the core lanes worth a look.
 
 ## How it works
 
-1. A scheduled GitHub Action (`.github/workflows/radar.yml`) runs every
-   **Monday 08:00 UTC** (and on-demand from the Actions tab).
+1. A scheduled GitHub Action (`.github/workflows/radar.yml`) runs
+   **Tuesday & Friday at 08:00 AEST** (Mon/Thu 22:00 UTC; and on-demand from the
+   Actions tab).
 2. `radar.py` reads `interests.yml`, runs each lane's search queries against the
    GitHub Search API, filtered to repos **created in the last 120 days** above a
    star floor (global `min_stars`, or a per-lane override).
