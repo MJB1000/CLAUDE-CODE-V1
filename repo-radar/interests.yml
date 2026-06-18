@@ -7,8 +7,8 @@
 settings:
   created_within_days: 120        # only repos created this recently count as "new"
   min_stars: 150                  # global popularity floor; a theme can override with its own min_stars
-  per_theme: 6                    # max repos shown per theme each digest
-  header_image: ""                # optional banner image URL atop each digest; empty = placeholder slot
+  per_theme: 3                    # max repos shown per theme each digest
+  header_image: "https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png"  # banner atop each digest; empty = placeholder slot
   languages: []                   # optional allowlist e.g. [Python, TypeScript]; empty = any
   exclude_owners: [MJB1000]       # skip your own repos
   exclude_keywords:               # cut listicles, courses, curricula, dead mirrors
