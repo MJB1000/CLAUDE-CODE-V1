@@ -117,3 +117,37 @@ themes:
       - "topic:voice-assistant"
       - "topic:design-to-code"
       - "topic:self-hosted"
+
+  - name: Ads & paid growth
+    queries:
+      - "topic:facebook-ads"
+      - "topic:google-ads"
+      - "topic:digital-advertising"
+      - "meta ads in:name,description"
+      - "ad creative generator in:name,description"
+      - "paid media in:name,description"
+
+  - name: Short-form video & content production
+    queries:
+      - "topic:video-editing"
+      - "topic:short-video"
+      - "topic:tiktok"
+      - "captions generator in:name,description"
+      - "reels in:name,description"
+      - "storyboard ai in:name,description"
+
+  - name: E-commerce & Shopify
+    queries:
+      - "topic:shopify"
+      - "topic:ecommerce"
+      - "topic:headless-commerce"
+      - "shopify app in:name,description"
+      - "product feed in:name,description"
+
+  - name: Brand systems & creative ops
+    queries:
+      - "topic:design-system"
+      - "topic:brand-guidelines"
+      - "brand assets in:name,description"
+      - "digital asset management in:name,description"
+      - "creative automation in:name,description"
