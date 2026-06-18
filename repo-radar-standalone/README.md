@@ -23,12 +23,16 @@ Configured in `interests.yml` (edit anytime):
 10. **Wildcard — adjacent leverage** — a curated wildcard: automation,
     browser/computer-use agents, AI observability, voice agents, design-to-code,
     self-hosted breakouts. Things outside the core lanes worth a look.
+11. **Ads & paid growth** — Meta/Google ads tooling, ad-creative generation, paid media.
+12. **Short-form video & content production** — video editing, TikTok/Reels, captions, storyboarding.
+13. **E-commerce & Shopify** — Shopify apps, headless commerce, product feeds.
+14. **Brand systems & creative ops** — design systems, brand guidelines, DAM, creative automation.
 
 ## How it works
 
 1. A scheduled GitHub Action (`.github/workflows/radar.yml`) runs
-   **Tuesday & Friday at 08:00 AEST** (Mon/Thu 22:00 UTC; and on-demand from the
-   Actions tab).
+   **Mon, Wed & Sat at 08:00 AEST** (Sun/Tue/Fri 22:00 UTC; and on-demand from
+   the Actions tab).
 2. `radar.py` reads `interests.yml`, runs each lane's search queries against the
    GitHub Search API, filtered to repos **created in the last 120 days** above a
    star floor (global `min_stars`, or a per-lane override).
