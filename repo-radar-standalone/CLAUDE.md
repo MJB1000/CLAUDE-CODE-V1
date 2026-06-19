@@ -1,7 +1,7 @@
 # Repo Radar — project context for Claude
 
 This repo is a self-running GitHub trend radar. A scheduled GitHub Action runs
-`radar.py` weekly, which searches GitHub for new, fast-rising repos in the
+`radar.py` daily, which searches GitHub for new, fast-rising repos in the
 interest lanes defined in `interests.yml`, ranks them by momentum (stars/day),
 and writes a digest to `digests/`. A Claude Code routine (see `ROUTINE.md`) then
 curates that digest into an emailed shortlist.
@@ -9,7 +9,7 @@ curates that digest into an emailed shortlist.
 ## What you'll be asked to do here
 
 Usually one of:
-- **Curate the weekly digest** — read `digests/latest.md`, pick what matters,
+- **Curate the daily digest** — read `digests/latest.md`, pick what matters,
   draft an email. This is the routine in `ROUTINE.md`; follow it exactly.
 - **Tune the radar** — add/remove lanes or queries in `interests.yml`, adjust
   star floors. After any change, run `python radar.py --selftest` (offline) to
