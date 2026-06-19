@@ -7,7 +7,10 @@
 settings:
   created_within_days: 120        # only repos created this recently count as "new"
   min_stars: 150                  # global popularity floor; a theme can override with its own min_stars
-  per_theme: 3                    # max repos shown per theme each digest
+  per_theme: 3                    # headline "top momentum" picks per theme each digest
+  rising_count: 2                 # extra "rising fast" picks per theme (small repos gaining stars over ~7d)
+  rising_max_stars: 1500          # "small" ceiling for the rising-fast group
+  rising_within_days: 7           # cold-start window: brand-new small repos count as risers until 7-day history accrues
   header_image: "https://raw.githubusercontent.com/MJB1000/repo-radar/main/assets/banner.png"  # banner atop each digest; empty = placeholder slot
   languages: []                   # optional allowlist e.g. [Python, TypeScript]; empty = any
   exclude_owners: [MJB1000]       # skip your own repos
