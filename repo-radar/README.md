@@ -2,7 +2,7 @@
 
 Finds **new GitHub repos that are gaining stars fast** in the areas you actually
 work in — AI agents & LLM tooling, multimodal AI, marketing/analytics tech, and
-your web/app dev stack. Runs itself weekly and hands you a ranked digest.
+your web/app dev stack. Runs itself daily and hands you a ranked digest.
 
 Your interests were inferred from your repos (`CLAUDE_MEMORY`,
 `knowledge-vault-mcp-server`, `claude-mcp-setup`, `video-vision`,
@@ -12,8 +12,7 @@ Your interests were inferred from your repos (`CLAUDE_MEMORY`,
 ## How it works
 
 1. A scheduled GitHub Action (`.github/workflows/repo-radar.yml`) runs
-   **Mon, Wed & Sat at 08:00 AEST** (Sun/Tue/Fri 22:00 UTC; and on-demand from
-   the Actions tab).
+   **every day at 08:00 AEST** (22:00 UTC; and on-demand from the Actions tab).
 2. `radar.py` reads `interests.yml`, runs each theme's search queries against the
    GitHub Search API, filtered to repos **created in the last 120 days** with
    **≥50★**.

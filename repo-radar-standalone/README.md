@@ -1,9 +1,9 @@
-# 🛰️ Repo Radar
+# 🛰️ Repo Radar · v1.0
 
 Self-running GitHub trend radar. Finds **new repos that are gaining stars fast**
-in the areas you actually work in, ranks them by momentum, writes a weekly
+in the areas you actually work in, ranks them by momentum, writes a **daily**
 digest, emails it — and (optionally) has a Claude Code routine curate the digest
-down to what matters for you.
+down to what matters for you. See `CHANGELOG.md` for what's in this release.
 
 ## Interest lanes
 
@@ -31,8 +31,7 @@ Configured in `interests.yml` (edit anytime):
 ## How it works
 
 1. A scheduled GitHub Action (`.github/workflows/radar.yml`) runs
-   **Mon, Wed & Sat at 08:00 AEST** (Sun/Tue/Fri 22:00 UTC; and on-demand from
-   the Actions tab).
+   **every day at 08:00 AEST** (22:00 UTC; and on-demand from the Actions tab).
 2. `radar.py` reads `interests.yml`, runs each lane's search queries against the
    GitHub Search API, filtered to repos **created in the last 120 days** above a
    star floor (global `min_stars`, or a per-lane override).
