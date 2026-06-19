@@ -36,7 +36,11 @@ Configured in `interests.yml` (edit anytime):
 2. `radar.py` reads `interests.yml`, runs each lane's search queries against the
    GitHub Search API, filtered to repos **created in the last 120 days** above a
    star floor (global `min_stars`, or a per-lane override).
-3. Results are **ranked by momentum** — *stars per day* since creation.
+3. Each lane shows **5 repos**: the top `per_theme` (3) by **momentum** — *stars
+   per day* since creation — plus a **🌱 Rising fast** group of small repos
+   (≤ `rising_max_stars`) gaining stars over a **~7-day window**. The 7-day signal
+   comes from `stars.json`, a rolling star-count history the Action commits each
+   run; until it accrues, brand-new small repos fill the rising slots.
 4. Anything already in `seen.json` is dropped, so each digest is only new repos.
 5. The digest is written to `digests/YYYY-MM-DD.md` (+ `digests/latest.md`),
    committed back, and **emailed to you**.

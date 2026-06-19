@@ -28,9 +28,11 @@ prompt/context engineering, evals); (3) self-development / PKM tooling;
 ## Working rules
 
 - `radar.py` is stdlib + PyYAML only — keep it dependency-free.
-- Don't commit `digests/` or `seen.json` by hand; the Action owns those.
+- Don't commit `digests/`, `seen.json`, or `stars.json` by hand; the Action owns those.
 - `seen.json` is the de-dupe memory — never clear it unless deliberately
   re-seeding, or the next digest will repeat everything.
+- `stars.json` is the rolling star-count history powering the 7-day "rising fast"
+  group. Clearing it just resets that signal to the cold-start proxy for a week.
 - Grep before Read; don't re-read files already in context.
 - `watchlist.md` is the human baseline for the Meta-inbox lane — new entrants are
   measured against it.

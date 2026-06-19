@@ -43,6 +43,7 @@ except ImportError:  # pragma: no cover
 ROOT = Path(__file__).resolve().parent
 CONFIG = ROOT / "interests.yml"
 SEEN = ROOT / "seen.json"
+STARS = ROOT / "stars.json"        # rolling star-count history for 7-day velocity
 DIGESTS = ROOT / "digests"
 API = "https://api.github.com"
 TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
@@ -204,6 +205,45 @@ def score(repo, now):
     return composite, velocity
 
 
+def rising_velocity(fn, stars_now, history, now):
+    """Stars/day gained over a ~7-day window from history; None if no usable snapshot.
+
+    Picks the recorded snapshot whose age is closest to 7 days (within 4–12 days),
+    so this is a genuine recent-traction signal, not a since-creation average.
+    """
+    today = now.date()
+    best_age = best_stars = None
+    for d, s in history.get(fn, []):
+        try:
+            age = (today - datetime.strptime(d, "%Y-%m-%d").date()).days
+        except ValueError:
+            continue
+        if 4 <= age <= 12 and (best_age is None or abs(age - 7) < abs(best_age - 7)):
+            best_age, best_stars = age, s
+    if best_age is None:
+        return None
+    delta = (stars_now - best_stars) / best_age
+    return delta if delta > 0 else None
+
+
+def prune_history(history, now, keep_days=21):
+    """Drop snapshots older than keep_days; one entry per date (last wins)."""
+    today = now.date()
+    out = {}
+    for fn, snaps in history.items():
+        kept = {}
+        for d, s in snaps:
+            try:
+                age = (today - datetime.strptime(d, "%Y-%m-%d").date()).days
+            except ValueError:
+                continue
+            if 0 <= age <= keep_days:
+                kept[d] = s
+        if kept:
+            out[fn] = sorted([d, s] for d, s in kept.items())
+    return out
+
+
 # --------------------------------------------------------------------------- #
 # Rendering
 # --------------------------------------------------------------------------- #
@@ -220,7 +260,7 @@ def render(results, now, new_count, within, min_stars, header_image=""):
     # Header image slot: a banner if header_image is set, else an empty placeholder.
     lines += [f"![Repo Radar]({header_image})" if header_image else "<!-- image slot -->", ""]
     if new_count:
-        lines += [f"_{new_count} new · last {within}d · ≥{min_stars}⭐ · by momentum._", ""]
+        lines += [f"_{new_count} new · last {within}d · ≥{min_stars}⭐ · momentum + 7-day risers._", ""]
     else:
         lines += ["No new repos cleared the bar this run.", ""]
 
@@ -230,14 +270,19 @@ def render(results, now, new_count, within, min_stars, header_image=""):
         if not repos:
             lines += ["_Nothing new this run._", ""]
             continue
+        rising_header_shown = False
         for i, r in enumerate(repos, 1):
+            if r.get("_group") == "rising" and not rising_header_shown:
+                lines += ["", "🌱 **Rising fast** — small repos gaining stars (7d)", ""]
+                rising_header_shown = True
             lang = r.get("language") or "—"
             created = r["created_at"][:10]
             desc = clip((r.get("description") or "").strip()) or "_no description_"
+            rate = (f"📈 {r['_rising_label']}" if r.get("_group") == "rising"
+                    else f"{r['_vel']:.1f}/day")
             lines.append(
                 f"{i}. **[{r['full_name']}]({r['html_url']})** — "
-                f"⭐ {r['stargazers_count']:,} · {r['_vel']:.1f}/day · "
-                f"{lang} · since {created}"
+                f"⭐ {r['stargazers_count']:,} · {rate} · {lang} · since {created}"
             )
             lines.append(f"   > {desc}")
         lines.append("")
@@ -254,14 +299,19 @@ def collect(cfg, now):
     within = int(st.get("created_within_days", 120))
     min_stars = int(st.get("min_stars", 50))
     per_theme = int(st.get("per_theme", 6))
+    rising_count = int(st.get("rising_count", 2))           # extra "rising fast" picks per lane
+    rising_max_stars = int(st.get("rising_max_stars", 1500))  # "small" ceiling for risers
+    rising_within = int(st.get("rising_within_days", 7))     # cold-start window when no history
     langs = {l.lower() for l in (st.get("languages") or [])}
     excl_owners = {o.lower() for o in (st.get("exclude_owners") or [])}
     excl_kw = [k.lower() for k in (st.get("exclude_keywords") or [])]
 
     since = (now - timedelta(days=within)).strftime("%Y-%m-%d")
+    today = now.strftime("%Y-%m-%d")
 
     seen = json.loads(SEEN.read_text()) if SEEN.exists() else {"repos": {}}
     seen_repos = seen.setdefault("repos", {})
+    history = json.loads(STARS.read_text()) if STARS.exists() else {}
 
     run_seen = set()          # dedupe across themes within a single run
     results = []
@@ -293,22 +343,56 @@ def collect(cfg, now):
         for repo in bucket.values():
             repo["_score"], repo["_vel"] = score(repo, now)
             ranked.append(repo)
+            # record today's star count so future runs can measure 7-day deltas
+            history.setdefault(repo["full_name"], []).append([today, repo["stargazers_count"]])
         ranked.sort(key=lambda r: r["_score"], reverse=True)
 
-        fresh = [r for r in ranked if r["full_name"] not in seen_repos][:per_theme]
-        for r in fresh:
+        # 1) headline picks — top per_theme by momentum (stars/day since creation)
+        top = [r for r in ranked if r["full_name"] not in seen_repos][:per_theme]
+        for r in top:
+            r["_group"] = "top"
             run_seen.add(r["full_name"])
+
+        # 2) rising fast — small repos gaining stars over ~7 days. Prefer a real
+        # 7-day delta from history; fall back to brand-new small repos (all stars
+        # earned within rising_within days) until history accrues.
+        chosen = {r["full_name"] for r in top}
+        real, proxy = [], []
+        for r in ranked:
+            fn = r["full_name"]
+            if fn in chosen or fn in seen_repos or fn in run_seen:
+                continue
+            if r.get("stargazers_count", 0) > rising_max_stars:
+                continue
+            v7 = rising_velocity(fn, r["stargazers_count"], history, now)
+            if v7 is not None:
+                r["_rise"], r["_rising_label"] = v7, f"+{v7 * 7:.0f}⭐/7d"
+                real.append(r)
+            else:
+                age = max((now - parse_dt(r["created_at"])).days, 1)
+                if age <= rising_within * 2:
+                    r["_rise"] = r["_vel"]
+                    r["_rising_label"] = f"{r['stargazers_count']:,}⭐ in {age}d"
+                    proxy.append(r)
+        real.sort(key=lambda r: r["_rise"], reverse=True)
+        proxy.sort(key=lambda r: r["_rise"], reverse=True)
+        rising = (real + proxy)[:rising_count]
+        for r in rising:
+            r["_group"] = "rising"
+            run_seen.add(r["full_name"])
+
+        fresh = top + rising
         results.append((name, fresh))
         new_count += len(fresh)
 
-    return results, new_count, within, min_stars, seen, seen_repos
+    return results, new_count, within, min_stars, seen, seen_repos, history
 
 
 def main():
     cfg = yaml.safe_load(CONFIG.read_text())
     now = datetime.now(timezone.utc)
 
-    results, new_count, within, min_stars, seen, seen_repos = collect(cfg, now)
+    results, new_count, within, min_stars, seen, seen_repos, history = collect(cfg, now)
 
     header_image = (cfg.get("settings", {}) or {}).get("header_image", "")
     digest = render(results, now, new_count, within, min_stars, header_image)
@@ -321,6 +405,7 @@ def main():
         for r in repos:
             seen_repos[r["full_name"]] = now.strftime("%Y-%m-%d")
     SEEN.write_text(json.dumps(seen, indent=2, sort_keys=True) + "\n")
+    STARS.write_text(json.dumps(prune_history(history, now), sort_keys=True) + "\n")
 
     subject = f"🛰️ Repo Radar — {now:%Y-%m-%d} ({new_count} new)"
 
@@ -362,9 +447,28 @@ def selftest():
     ]
     for r in fake:
         r["_score"], r["_vel"] = score(r, now)
-    digest = render([("AI agents & LLM tooling", [fake[0]])], now, 1, 120, 50)
+
+    # one headline (top) pick + one small "rising fast" pick
+    top = fake[0]; top["_group"] = "top"
+    rising = {
+        "full_name": "acme/tiny-router", "html_url": "https://github.com/acme/tiny-router",
+        "name": "tiny-router", "description": "Small but surging inbox router.",
+        "owner": {"login": "acme"}, "language": "TypeScript", "stargazers_count": 320,
+        "created_at": (now - timedelta(days=6)).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "pushed_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "_group": "rising", "_rising_label": "+210⭐/7d",
+    }
+    rising["_score"], rising["_vel"] = score(rising, now)
+
+    # history round-trips and yields a positive 7-day velocity
+    hist = {"acme/tiny-router": [[(now - timedelta(days=7)).strftime("%Y-%m-%d"), 110]]}
+    assert rising_velocity("acme/tiny-router", 320, hist, now) > 0
+    assert prune_history(hist, now)  # keeps recent snapshot
+
+    digest = render([("AI agents & LLM tooling", [top, rising])], now, 2, 120, 50)
     assert "agent-kit" in digest
     assert "/day" in digest
+    assert "Rising fast" in digest and "+210⭐/7d" in digest
     assert fake[0]["_vel"] > 0
     print(digest)
     print("selftest OK")
