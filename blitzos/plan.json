@@ -1,8 +1,9 @@
 {
   "schema_version": 1,
   "generated_at": "2026-07-14",
-  "owner": "MJB1000",
-  "context_repo": "MJB1000/blitzos-context",
+  "context_repo": "DigBoi2026/blitzos-context",
+  "context_repo_owner": "DigBoi2026",
+  "member_owner": "MJB1000",
   "repos": [
     { "name_with_owner": "MJB1000/CLAUDE-CODE-V1", "branch": "main", "workstream": "Marketing System" },
     { "name_with_owner": "MJB1000/marketing-team", "branch": "main", "workstream": "Marketing System" },
@@ -25,5 +26,5 @@
     "Google Drive", "Gmail", "Google Calendar",
     "Supabase", "Vercel", "Knowledge Vault", "Granola", "Shopify"
   ],
-  "notes": "Thin build plan. Member source is never vendored; gitlinks only. DigBoi2026 repos are excluded here and belong in a separate single-owner context."
+  "notes": "Thin build plan. Member source is never vendored; gitlinks only. Context repo is hosted under DigBoi2026 but all pinned members are MJB1000-owned, so bootstrap uses an MJB1000-scoped fine-grained token. The DigBoi2026 DiggerLid source repos (CREATIVEOS, digger-lid-marketing) are not pinned here and belong in a separate context."
 }

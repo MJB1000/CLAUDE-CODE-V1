@@ -37,12 +37,16 @@ repo:
 ```bash
 # from the repo root
 git subtree split --prefix=blitzos -b blitzos-context           # isolate blitzos/ history
-# create an EMPTY private repo named blitzos-context on GitHub first, then:
-git push git@github.com:MJB1000/blitzos-context.git blitzos-context:main
+# create an EMPTY private repo named blitzos-context under DigBoi2026 first, then:
+git push git@github.com:DigBoi2026/blitzos-context.git blitzos-context:main
 ```
 
 Or simply copy the `blitzos/` folder into a fresh private repo. Keep it **private** — it maps
-your whole setup. Then update `plan.json` / `CLOUD-SETUP.md` if the owner or name changes.
+your whole setup.
+
+**Ownership:** the context repo is hosted under **DigBoi2026**, but the pinned member repos are
+**MJB1000**-owned. The bootstrap token (see `CLOUD-SETUP.md`) is therefore an MJB1000-scoped
+fine-grained token — hosting and member access are independent.
 
 ## Maintenance
 

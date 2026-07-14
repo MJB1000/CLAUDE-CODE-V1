@@ -4,7 +4,12 @@
 > This is a **thin context monorepo**: it pins member repos by reference (gitlinks) and carries
 > the shared work log. It never vendors source code or credentials.
 
-**Owner:** MJB1000 (github.com/MJB1000) · **Generated:** 2026-07-14
+**Context repo host:** DigBoi2026 (github.com/DigBoi2026) · **Member repos owner:** MJB1000
+· **Generated:** 2026-07-14
+
+> Note: this context repo is hosted under the DigBoi2026 account, but every pinned member below
+> is MJB1000-owned. The bootstrap token is therefore an **MJB1000**-scoped fine-grained token —
+> repo hosting and member access are independent.
 
 When you launch a cloud agent against this repo, read this file first, then read the latest file
 in `sessions/`. That tells you what the fleet already did so your work compounds instead of
