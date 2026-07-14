@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-14",
+  "owner": "MJB1000",
+  "context_repo": "MJB1000/blitzos-context",
+  "repos": [
+    { "name_with_owner": "MJB1000/CLAUDE-CODE-V1", "branch": "main", "workstream": "Marketing System" },
+    { "name_with_owner": "MJB1000/marketing-team", "branch": "main", "workstream": "Marketing System" },
+    { "name_with_owner": "MJB1000/repo-radar", "branch": "main", "workstream": "Marketing System" },
+    { "name_with_owner": "MJB1000/ACTUAL_BUDGET_V1", "branch": "main", "workstream": "Family/Finance" },
+    { "name_with_owner": "MJB1000/family-finance", "branch": "main", "workstream": "Family/Finance" },
+    { "name_with_owner": "MJB1000/family-dashboard-app", "branch": "main", "workstream": "Family/Finance" },
+    { "name_with_owner": "MJB1000/knowledge-vault", "branch": "main", "workstream": "Knowledge" },
+    { "name_with_owner": "MJB1000/knowledge-vault-mcp-server", "branch": "main", "workstream": "Knowledge" },
+    { "name_with_owner": "MJB1000/BOOK_INGEST", "branch": "main", "workstream": "Knowledge" },
+    { "name_with_owner": "MJB1000/framedrop", "branch": "main", "workstream": "Video/Vision" },
+    { "name_with_owner": "MJB1000/video-vision", "branch": "main", "workstream": "Video/Vision" },
+    { "name_with_owner": "MJB1000/supereyesee", "branch": "main", "workstream": "Video/Vision" },
+    { "name_with_owner": "MJB1000/CLAUDE_MEMORY", "branch": "main", "workstream": "Claude Tooling" },
+    { "name_with_owner": "MJB1000/session-signal", "branch": "main", "workstream": "Claude Tooling" },
+    { "name_with_owner": "MJB1000/claude-mcp-setup", "branch": "main", "workstream": "Claude Tooling" }
+  ],
+  "connectors": [
+    "github", "Notion", "Figma", "Canva", "Gamma",
+    "Google Drive", "Gmail", "Google Calendar",
+    "Supabase", "Vercel", "Knowledge Vault", "Granola", "Shopify"
+  ],
+  "notes": "Thin build plan. Member source is never vendored; gitlinks only. DigBoi2026 repos are excluded here and belong in a separate single-owner context."
+}
