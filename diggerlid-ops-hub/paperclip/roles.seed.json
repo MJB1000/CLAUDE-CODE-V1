@@ -1,0 +1,54 @@
+{
+  "_note": "DESIGN SEED — not Paperclip's schema. Map these fields to Paperclip's role/routine/policy API at deploy. Budgets are placeholders for you to set.",
+  "company": "DiggerLid",
+  "adapter": "claude-code",
+  "workspace": "blitzos-context (member: DiggerLid repos)",
+  "governance": {
+    "outbound_requires_approval": true,
+    "start_read_only": true,
+    "secrets_store": "paperclip-company-secret-store"
+  },
+  "roles": [
+    {
+      "title": "Chief of Staff",
+      "reports_to": null,
+      "spec": "agents/CHIEF-OF-STAFF.md",
+      "heartbeat": ["daily", "cron:0 7 * * 1"],
+      "budget_monthly": "SET_ME",
+      "read_scopes": ["shopify", "google-docs", "google-sheets", "calendar-plan-json", "ee-baseline"],
+      "write_scopes": ["scorecard", "weekly-meeting-doc", "projects-board", "watchlist", "decision-log"],
+      "policies": ["outbound-approval", "board-3gate-enforced"]
+    },
+    {
+      "title": "Scorekeeper",
+      "reports_to": "Chief of Staff",
+      "spec": "agents/SCOREKEEPER.md",
+      "heartbeat": ["daily", "month-end-close"],
+      "budget_monthly": "SET_ME_small",
+      "read_scopes": ["shopify", "ee-baseline", "meta(when-wired)", "klaviyo(when-wired)"],
+      "write_scopes": ["scorecard", "ee-baseline-actuals"],
+      "policies": ["no-interpolation", "flag-unmeasured"]
+    },
+    {
+      "title": "Launch & Project Marshal",
+      "reports_to": "Chief of Staff",
+      "spec": "agents/LAUNCH-MARSHAL.md",
+      "heartbeat": ["weekly", "event:calendar-tier-major"],
+      "budget_monthly": "SET_ME",
+      "read_scopes": ["calendar-plan-json", "projects-board", "ee-baseline"],
+      "write_scopes": ["launch-packs", "projects-board", "hot-wash"],
+      "policies": ["no-publish", "escalate-slips"],
+      "first_task": "Zip Mat launch pack (go-live 2026-08-05)"
+    },
+    {
+      "title": "Voice of Customer",
+      "reports_to": "Chief of Staff",
+      "spec": "agents/VOICE-OF-CUSTOMER.md",
+      "heartbeat": ["weekly", "monthly:friction-report"],
+      "budget_monthly": "SET_ME",
+      "read_scopes": ["reviews", "surveys", "support", "social-comments", "calendar"],
+      "write_scopes": ["insight-ledger", "projects-board"],
+      "policies": ["read-only-no-customer-contact"]
+    }
+  ]
+}
