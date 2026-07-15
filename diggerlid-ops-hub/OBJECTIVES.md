@@ -8,24 +8,23 @@ is how July ran a loss). The Scorekeeper measures these; the Chief of Staff repo
 |---|---|---|---|---|
 | 1 | **Revenue (ex GST)** | +20% on FY25/26 *(confirm once FY25/26 total backfilled)* | No month < 80% of plan | Shopify |
 | 2 | **MER** (spend ÷ rev) | ≤ 25% monthly | Review trigger at 30% for 7 straight days | Meta + Shopify |
-| 3 | **GPAM %** | **≥ 28%** *(revised from 40% — see below)* | Never < 20% two months running | EE model + Shopify + Meta |
+| 3 | **GPAM %** | **≥ 26%** *(DECIDED — see below)* | Never < 20% two months running | EE model + Shopify + Meta |
 | 4 | **GPAM $** | ≥ $112k/mo (covers ~$74.8k fixed + ~10% net) | GPAM$ > fixed costs every month = never a loss month | Same |
 | 5 | **Retention** | repeat rate 12.9% → 16%; grease→non-grease cross-sell 5% → 8% | Returning-customer rate ≥ 22% | Shopify + Klaviyo |
 | 6 | **CVR (BAU)** | ≥ 2.2% non-sale weeks | Alert < 1.5% for 5 days | Shopify |
 
-## Open decision — GPAM target (blocks Phase 0)
-GPAM 40% is **not reachable on today's cost base.** Variable costs run ~46% (VCR 0.44–0.48:
-product 40% + shipping/packaging/fees). At the 25% MER target the GPAM ceiling is ≈29%. The best
-actual month in 2026 was **Jan at 32.8%** (achieved at 20% MER). Running 40% against today's costs
-makes the scorecard read "losing" every month and trains the team to ignore it.
+## GPAM target — DECIDED: ≥ 26%
+Set by the Head of Growth. The math that makes 26% the right line:
+- GPAM% = (1 − VCR) − MER. With VCR ≈ 0.46, **GPAM% ≈ 0.54 − MER.**
+- So **26% GPAM requires MER ≤ ~28%.** At the 25% MER target, GPAM lands ~29% (headroom above 26%).
+- Best actual 2026 month was Jan 32.8% (at 20% MER); recent BAU months ran 18–26%. 26% is
+  achievable in BAU at target spend, and it correctly flags the risk months (heavy-sale periods,
+  where discounts lift VCR and spend lifts MER — that's where GPAM compresses).
 
-**Choose one:**
-- **(A) Adopt ≥28%** as the live target now. *(Recommended — defensible against the cost model.)*
-- **(B) Keep 40% as a destination** and open a cost-structure workstream to make it reachable:
-  shipping charged (already Projects Board rank #1, ICE 1000), price rises, per-SKU COGS reduction.
-
-Until chosen, the Scorekeeper reports GPAM% against **28%** and flags 40% as "aspirational, cost
-structure unchanged."
+**Implication for the Scorekeeper:** GPAM% is reported against **26%**; whenever a month is
+tracking below it, the primary lever to name is **MER** (pull spend efficiency) before price/COGS.
+40% remains a *destination* contingent on a cost-structure change (shipping charged — Board rank #1,
+price rises, per-SKU COGS), not the operating target.
 
 ## 2026 actuals (from the Ecommerce Equation baseline — the starting truth)
 | Mon | Rev (ex GST) | Ad spend | MER | GPAM % | Net profit |
