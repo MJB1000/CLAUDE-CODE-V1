@@ -20,8 +20,20 @@ meeting slide disagree, the Scorekeeper wins.
 - **Monday scorecard block** pre-filled into the Weekly Meeting doc.
 - **Month-end close** written back into the EE model (Aug–Dec stop being blank).
 
+## Weekly forecast routine (every Monday)
+Runs `scripts/forecast_engine.py` to re-forecast MER + sales for each month as the month progresses:
+1. **Pull** the in-progress month's month-to-date **net revenue** + **days elapsed** from Shopify;
+   lock any finished month into `ACTUALS`.
+2. **Ad spend / MER:** pull this month's spend from **Meta** (once wired) → real MER; until then,
+   enter the week's spend as a single number, or leave `ad_spend_mtd = None` and MER is flagged ASSUMED.
+3. **Run** the engine → completes the current month by run-rate, re-projects forward under both
+   scenarios (current trajectory vs target discipline), checks every month vs the 26% GPAM target.
+4. **Write** `data/forecast/YYYY-Www.md` (dated snapshot) and refresh `data/FORECAST.md`.
+5. **Flag drift** vs last week's snapshot in the Monday brief (e.g. "July completed forecast up $12k;
+   MER still assumed — wire Meta").
+
 ## Cadence
-Daily heartbeat · Monday deep-cut · month-end close.
+Daily heartbeat · **Monday forecast update** · month-end close.
 
 ## Guardrails
 Read-only. Never smooths or interpolates a number. When sources disagree (Shopify "social" vs Meta
