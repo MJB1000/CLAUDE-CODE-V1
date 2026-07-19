@@ -29,7 +29,7 @@ ACTUALS = {
 # --- month in progress: refresh weekly ---------------------------------------
 CURRENT = {
     'month': 'Jul', 'sale': False,
-    'mtd_net': 176383, 'days_elapsed': 15, 'days_in_month': 31,
+    'mtd_net': 221022, 'days_elapsed': 19, 'days_in_month': 31,
     'ad_spend_mtd': None,      # set to real Meta spend when wired; None -> use assumed_mer
     'assumed_mer': 0.43,       # recent EE-model level; replace with actual when spend known
 }

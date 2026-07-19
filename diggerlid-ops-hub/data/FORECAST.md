@@ -1,7 +1,10 @@
 # H2 2026 forecast — extrapolated from current data
 
+> **Latest weekly snapshot: `data/forecast/2026-W30.md`** (July MTD $221k over 19 days → completed ~$360.6k).
+> H2 blended GPAM unchanged: **21.1%** current trajectory / **24.4%** target discipline. FY26 net ~$4.81M.
+
 **Revenue basis:** Shopify `net_sales` (after discounts/returns, before GST), AUD. Jan–Jun actual;
-**July completed from mid-month run-rate** ($176k net through 15 days → ~$365k full month);
+**July completed from run-rate** (W30: $221k net through 19 days → ~$360.6k full month);
 Aug–Dec = **calendar-driven scenario** (Aug: Zip Mat launch + Father's Day; Nov: BFCM; Dec: Christmas).
 **These Aug–Dec revenue figures are scenario assumptions, not predictions.**
 
