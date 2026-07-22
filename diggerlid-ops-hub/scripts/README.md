@@ -2,7 +2,7 @@
 
 ## gsheet-ops-hub.gs — the live automation (F1 + F3 + F4)
 The single Google Apps Script that runs the whole daily loop free & autonomous on a Sheet:
-- **F1 `dailyImport()`** — pulls yesterday's Shopify sales into a "Daily Actuals" tab (`backfillThisMonth()` fills the month).
+- **F1 `dailyImport()`** — pulls yesterday's Shopify sales into a "Daily Actuals" tab, **one row per day**. `backfillThisMonth()` fills the current month; **`backfillYear()`** fills real day-by-day for every month so far (high-fidelity, one-off, re-runnable). Bulk-pulls orders with pagination and buckets each into its own day by `created_at`.
 - **F3 `computeScorecard()`** — reads actuals + CONFIG → writes "Scorecard" + "Forecast" tabs (GPAM/MER vs 26% target, both scenarios).
 - **F4 `sendDailyBrief()`** — composes the brief from the sheet + `/ai` calendar and **emails it from your address** (MailApp).
 - **F2 `getMetaSpend()`** — stub returning null; add META_TOKEN + META_ACCOUNT_ID tomorrow → MER goes fully real, no other change.

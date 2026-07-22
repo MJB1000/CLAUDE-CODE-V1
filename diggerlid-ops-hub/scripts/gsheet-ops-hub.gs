@@ -2,7 +2,8 @@
  * DiggerLid Ops Hub — one Google Apps Script that runs the whole daily loop, free & autonomous.
  * Bind it to your EE-model Google Sheet. One daily trigger → pull → compute → email.
  *
- *   F1  dailyImport()      pull yesterday's Shopify sales → "Daily Actuals" tab
+ *   F1  dailyImport()      pull yesterday's Shopify sales → "Daily Actuals" tab (one row/day)
+ *       backfillYear()     one-off: real day-by-day for every month so far (high-fidelity)
  *   F3  computeScorecard() read actuals + CONFIG → write "Scorecard" + "Forecast" tabs
  *   F4  sendDailyBrief()   read those + the /ai calendar → email the brief (from your address)
  *   F2  getMetaSpend()     STUB — returns null today; fill it tomorrow to make MER real
@@ -13,14 +14,15 @@
  *       =IMPORTRANGE("<master-sheet-id>","2026 Monthly Totals!A1:P60")
  *    Approve access once. This mirrors the admin's model live (revenue r8, MER r36, VCR r47…),
  *    read-only — you never write to their sheet. Set File → Settings → tz = Australia/Brisbane.
- * 2. Extensions → Apps Script → paste this file. (MER is read live from Totals!row36, current
- *    month's column — see modelMER_() / CONFIG.MODEL_*. Meta override still wins once F2 is wired.)
+ * 2. Extensions → Apps Script → paste this file. (MER is read live from the Totals tab —
+ *    modelMER_() self-locates the month column + MER row by label. Meta override wins once F2 is wired.)
  * 3. Shopify admin → Develop apps → create app → scope read_orders → install → copy token.
  * 4. Project Settings → Script properties:
  *       SHOP          = digger-lid.myshopify.com
  *       SHOPIFY_TOKEN = shpat_xxxx            (never in code/chat)
  *       BRIEF_TO      = matthew@diggerlid.com
- * 5. Run backfillThisMonth() once (authorises + fills the month so far).
+ * 5. Run backfillYear() once (authorises + fills real day-by-day for all of 2026 — a few min;
+ *    or backfillThisMonth() for just the current month if you want to start light).
  * 6. Run dailyRun() once to check the email arrives.
  * 7. Triggers (clock) → Add trigger → dailyRun → Time-driven → Day timer → 6–7am. Done.
  *
@@ -57,47 +59,60 @@ var CONFIG = {
   CAL_URL: 'https://diggerlid-calendar-henna.vercel.app/ai'
 };
 
-// ─────────────────────────── F1: Shopify import ───────────────────────────
-function dailyImport() { importRange_(dateNDaysAgo_(1), dateNDaysAgo_(1)); }
-function backfillThisMonth() {
-  var tz = Session.getScriptTimeZone(), now = new Date();
-  var first = new Date(now.getFullYear(), now.getMonth(), 1);
-  importRange_(Utilities.formatDate(first, tz, 'yyyy-MM-dd'), dateNDaysAgo_(1));
+// ─────────────────────────── F1: Shopify import (daily fidelity) ───────────────────────────
+// One row PER DAY in "Daily Actuals" (date, orders, gross, net, aov). Idempotent upserts.
+function dailyImport()      { importBulk_(dateNDaysAgo_(1), dateNDaysAgo_(1)); }   // trigger: yesterday
+function backfillThisMonth(){ importBulk_(monthFirst_(new Date().getMonth()), dateNDaysAgo_(1)); } // MTD
+// Full-year daily backfill — real day-by-day for every month so far. Run once (a few min).
+// Chunks month-by-month so each Shopify pull stays well inside Apps Script's time limit;
+// re-runnable any time (upserts overwrite, never duplicate).
+function backfillYear() {
+  var now = new Date(), end = dateNDaysAgo_(1);
+  for (var mo = 0; mo <= now.getMonth(); mo++) {
+    var last = monthLast_(mo); if (last > end) last = end;
+    importBulk_(monthFirst_(mo), last);
+  }
 }
-function importRange_(fromDay, toDay) {
+
+// Bulk-pull all orders in [fromDay,toDay] with pagination, bucket each into its own day
+// by created_at (in the sheet timezone), then upsert one row per day. Far fewer API calls
+// than one request per day, and buckets by the order's real timestamp.
+function importBulk_(fromDay, toDay) {
   var p = PropertiesService.getScriptProperties();
   var shop = p.getProperty('SHOP'), token = p.getProperty('SHOPIFY_TOKEN');
   if (!shop || !token) throw new Error('Set SHOP and SHOPIFY_TOKEN in Script properties.');
-  var sh = tab_('Daily Actuals', ['date','orders','gross','net','aov']);
-  var have = sh.getLastRow() > 1 ? sh.getRange(2,1,sh.getLastRow()-1,1).getValues().flat().map(String) : [];
-
-  var d = new Date(fromDay + 'T12:00:00'), end = new Date(toDay + 'T12:00:00');
-  while (d <= end) {
-    var day = Utilities.formatDate(d, Session.getScriptTimeZone(), 'yyyy-MM-dd');
-    var t = dayTotals_(shop, token, day);
-    var row = [day, t.orders, t.gross, t.net, t.orders ? t.net/t.orders : 0];
-    var idx = have.indexOf(day);
-    if (idx === -1) { sh.appendRow(row); have.push(day); }
-    else sh.getRange(idx+2, 1, 1, 5).setValues([row]);
-    d.setDate(d.getDate()+1);
-  }
-}
-function dayTotals_(shop, token, day) {
-  var orders=0, gross=0, net=0;
+  var tz = Session.getScriptTimeZone(), buckets = {};
   var url = 'https://'+shop+'/admin/api/'+CONFIG.API_VERSION+'/orders.json?status=any'
-    + '&created_at_min='+day+'T00:00:00&created_at_max='+day+'T23:59:59'
-    + '&limit=250&fields=id,total_price,subtotal_price,current_subtotal_price';
+    + '&created_at_min='+fromDay+'T00:00:00&created_at_max='+toDay+'T23:59:59'
+    + '&limit=250&fields=id,created_at,total_price,subtotal_price,current_subtotal_price';
   while (url) {
     var res = UrlFetchApp.fetch(url, {headers:{'X-Shopify-Access-Token':token}, muteHttpExceptions:true});
     if (res.getResponseCode() !== 200) throw new Error('Shopify '+res.getResponseCode()+': '+res.getContentText());
     (JSON.parse(res.getContentText()).orders||[]).forEach(function(o){
-      orders++; gross += +o.total_price||0; net += +(o.current_subtotal_price||o.subtotal_price||0);
+      var day = Utilities.formatDate(new Date(o.created_at), tz, 'yyyy-MM-dd');
+      var b = buckets[day] || (buckets[day] = {orders:0, gross:0, net:0});
+      b.orders++; b.gross += +o.total_price||0; b.net += +(o.current_subtotal_price||o.subtotal_price||0);
     });
     var link = res.getHeaders()['Link']||res.getHeaders()['link']||'';
     var m = link.match(/<([^>]+)>;\s*rel="next"/); url = m ? m[1] : null;
   }
-  return {orders:orders, gross:gross, net:net};
+  upsertDays_(buckets);
 }
+
+// Write/overwrite one row per day, keeping the tab sorted by date.
+function upsertDays_(buckets) {
+  var sh = tab_('Daily Actuals', ['date','orders','gross','net','aov']);
+  var have = sh.getLastRow() > 1 ? sh.getRange(2,1,sh.getLastRow()-1,1).getValues().flat().map(String) : [];
+  Object.keys(buckets).sort().forEach(function(day){
+    var b = buckets[day], row = [day, b.orders, b.gross, b.net, b.orders ? b.net/b.orders : 0];
+    var idx = have.indexOf(day);
+    if (idx === -1) { sh.appendRow(row); have.push(day); }
+    else sh.getRange(idx+2, 1, 1, 5).setValues([row]);
+  });
+  if (sh.getLastRow() > 2) sh.getRange(2,1,sh.getLastRow()-1,5).sort({column:1, ascending:true});
+}
+function monthFirst_(mOffsetFromJan){ var n=new Date(); return Utilities.formatDate(new Date(n.getFullYear(), mOffsetFromJan, 1), Session.getScriptTimeZone(), 'yyyy-MM-dd'); }
+function monthLast_(mOffsetFromJan){ var n=new Date(); return Utilities.formatDate(new Date(n.getFullYear(), mOffsetFromJan+1, 0), Session.getScriptTimeZone(), 'yyyy-MM-dd'); }
 
 // ─────────────────────────── F2: Meta (fill tomorrow) ───────────────────────────
 // Return current-month month-to-date ad spend, or null to fall back to MER_OVERRIDE.
