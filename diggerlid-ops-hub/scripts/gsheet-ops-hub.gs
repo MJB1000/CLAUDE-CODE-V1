@@ -9,9 +9,12 @@
  *   ▶  dailyRun()          orchestrator the trigger calls (import → compute → send)
  *
  * ── SETUP (once, ~15 min — do it signed in as matthew@diggerlid.com so email sends from you) ──
- * 1. Import the EE model xlsx into Google Sheets (Drive → Open with Google Sheets). Set
- *    File → Settings → timezone = Australia/Brisbane.
- * 2. Extensions → Apps Script → paste this file.
+ * 1. Make YOUR OWN sheet (don't touch the admin's master). In cell A1 of a tab named "Totals":
+ *       =IMPORTRANGE("<master-sheet-id>","2026 Monthly Totals!A1:P60")
+ *    Approve access once. This mirrors the admin's model live (revenue r8, MER r36, VCR r47…),
+ *    read-only — you never write to their sheet. Set File → Settings → tz = Australia/Brisbane.
+ * 2. Extensions → Apps Script → paste this file. (MER is read live from Totals!row36, current
+ *    month's column — see modelMER_() / CONFIG.MODEL_*. Meta override still wins once F2 is wired.)
  * 3. Shopify admin → Develop apps → create app → scope read_orders → install → copy token.
  * 4. Project Settings → Script properties:
  *       SHOP          = digger-lid.myshopify.com
@@ -37,8 +40,12 @@ var CONFIG = {
     'Jan': [239596, 0.20], 'Feb': [298749, 0.28], 'Mar': [301354, 0.32],
     'Apr': [331418, 0.32], 'May': [400329, 0.30], 'Jun': [778275, 0.25]
   },
-  // current-month MER until Meta is wired (F2). Keyed yyyy-MM. From EE model Accelerate_4.
+  // current-month MER until Meta is wired (F2). Keyed yyyy-MM. Fallback only.
   MER_OVERRIDE: { '2026-07': 0.37 },
+  // live read from the admin's model (IMPORTRANGE'd into a "Totals" tab). modelMER_()
+  // self-locates the month column (header "Jul 26") and the MER row (label starts "MER"),
+  // so it survives the admin inserting/moving rows. Just keep the tab named MODEL_TAB.
+  MODEL_TAB: 'Totals',
 
   // forward scenario: [net_rev, isSale, MER_current, MER_target]
   FORWARD: {
@@ -109,6 +116,43 @@ function getMetaSpend() {
   return (d.data && d.data[0]) ? parseFloat(d.data[0].spend) : null;
 }
 
+// Live MER from the admin's model (IMPORTRANGE'd into MODEL_TAB). Self-locating: finds the
+// current month's column by its "Jul 26" header and the MER row by a label starting "MER"
+// (so it ignores "3-day Rolling MER" and survives row inserts). Returns a fraction or null.
+function modelMER_() {
+  try {
+    var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(CONFIG.MODEL_TAB);
+    if (!sh) return null;
+    var data = sh.getDataRange().getValues();
+    var mon = CONFIG.MONTHS[new Date().getMonth()];               // 'Jul'
+    var yr2 = String(new Date().getFullYear() % 100);             // '26'
+
+    // 1) month column: header cell like "Jul 26"
+    var col = -1, hdr = -1;
+    for (var r = 0; r < data.length && col < 0; r++) {
+      for (var c = 0; c < data[r].length; c++) {
+        var cell = String(data[r][c]).trim();
+        if (cell.indexOf(mon) === 0 && cell.indexOf(yr2) > -1) { col = c; hdr = r; break; }
+      }
+    }
+    if (col < 0) return null;
+
+    // 2) MER row: first label (scanning down from the header) that starts with "MER"
+    var merRow = -1;
+    for (var r2 = hdr; r2 < data.length && merRow < 0; r2++) {
+      for (var c2 = 0; c2 < Math.min(3, data[r2].length); c2++) {
+        if (String(data[r2][c2]).trim().indexOf('MER') === 0) { merRow = r2; break; }
+      }
+    }
+    if (merRow < 0) return null;
+
+    var v = parseFloat(data[merRow][col]);
+    if (!(v > 0)) return null;
+    if (v > 1) v = v / 100;               // 37.33 (percent-number) → 0.3733; 0.3733 stays as-is
+    return (v < 1) ? v : null;            // sane MER only
+  } catch (e) { return null; }
+}
+
 // ─────────────────────────── F3: compute scorecard + forecast ───────────────────────────
 function computeScorecard() {
   var tz = Session.getScriptTimeZone(), now = new Date();
@@ -127,8 +171,13 @@ function computeScorecard() {
   });
   var fullRev = days ? Math.round(mtdNet/days*dim) : 0;
   var spend = getMetaSpend();
-  var mer = spend && mtdNet ? spend/mtdNet : (CONFIG.MER_OVERRIDE[ym] || 0.30);
-  var merSrc = spend ? 'real (Meta MTD)' : (CONFIG.MER_OVERRIDE[ym] ? 'model (EE)' : 'assumed');
+  var modelMer = modelMER_();
+  // Priority: real Meta MTD → live admin model (IMPORTRANGE) → EE override → assumed.
+  var mer, merSrc;
+  if (spend && mtdNet)      { mer = spend/mtdNet;               merSrc = 'real (Meta MTD)'; }
+  else if (modelMer != null){ mer = modelMer;                  merSrc = 'live model (admin)'; }
+  else if (CONFIG.MER_OVERRIDE[ym]) { mer = CONFIG.MER_OVERRIDE[ym]; merSrc = 'model (EE)'; }
+  else                      { mer = 0.30;                       merSrc = 'assumed'; }
   var vcr = CONFIG.VCR_BAU;
   var g = gp_(mer, vcr), gpamDollar = fullRev*g, netProfit = gpamDollar - CONFIG.FIXED_MONTHLY;
   var mtdAov = mtdOrders ? mtdNet/mtdOrders : 0;
@@ -193,7 +242,7 @@ function sendDailyBrief() {
     + cal
     + '<p style="font-size:12px;color:#888;border-top:1px solid #ddd;padding-top:10px;margin-top:14px">'
     + 'Auto-generated from the live model + Shopify + /ai. MER source: '+s.merSrc
-    + (s.merSrc==='model (EE)' ? ' — wire Meta (F2) to make it real.' : '.') + '</p></div>';
+    + (s.merSrc==='real (Meta MTD)' ? '.' : ' — wire Meta (F2) to make it spend-real.') + '</p></div>';
 
   MailApp.sendEmail({ to: to, subject: 'DiggerLid daily brief — '+s.mName+' '+(s.lastDay||''),
                       htmlBody: html, name: 'DiggerLid Ops Hub' });
