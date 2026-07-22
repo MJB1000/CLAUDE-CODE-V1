@@ -29,9 +29,10 @@ ACTUALS = {
 # --- month in progress: refresh weekly ---------------------------------------
 CURRENT = {
     'month': 'Jul', 'sale': False,
-    'mtd_net': 221022, 'days_elapsed': 19, 'days_in_month': 31,
+    'mtd_net': 251548, 'days_elapsed': 21, 'days_in_month': 31,
     'ad_spend_mtd': None,      # set to real Meta spend when wired; None -> use assumed_mer
-    'assumed_mer': 0.43,       # recent EE-model level; replace with actual when spend known
+    'assumed_mer': 0.37,       # REAL July MER from EE model Accelerate_4 (spend-backed), not a guess
+    'mer_note': 'real — EE model Accelerate_4 (spend-backed)',
 }
 
 # --- forward scenario: revenue + MER per scenario ----------------------------
@@ -55,7 +56,7 @@ def complete_current():
     if c['ad_spend_mtd']:
         mer = c['ad_spend_mtd'] / c['mtd_net']; mer_src = 'actual (MTD)'
     else:
-        mer = c['assumed_mer']; mer_src = 'ASSUMED — Meta not wired'
+        mer = c['assumed_mer']; mer_src = c.get('mer_note', 'ASSUMED — Meta not wired')
     return full_rev, mer, mer_src
 
 def flags(gp, net):

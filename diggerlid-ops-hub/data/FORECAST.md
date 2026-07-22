@@ -1,7 +1,8 @@
 # H2 2026 forecast — extrapolated from current data
 
-> **Latest weekly snapshot: `data/forecast/2026-W30.md`** (July MTD $221k over 19 days → completed ~$360.6k).
-> H2 blended GPAM unchanged: **21.1%** current trajectory / **24.4%** target discipline. FY26 net ~$4.81M.
+> **Latest: `data/forecast/2026-W30.md` (rev2, updated to Accelerate_4).** July MTD $251.5k over 21 days
+> → completed ~$371k. **July MER now 37% (real, spend-backed — not assumed)** → July loss narrows −$35k → **−$11.7k**.
+> H2 blended GPAM lifts to **21.9%** current / **25.3%** target discipline (target discipline now within a point of 26%). FY26 net ~$4.82M.
 
 **Revenue basis:** Shopify `net_sales` (after discounts/returns, before GST), AUD. Jan–Jun actual;
 **July completed from run-rate** (W30: $221k net through 19 days → ~$360.6k full month);
