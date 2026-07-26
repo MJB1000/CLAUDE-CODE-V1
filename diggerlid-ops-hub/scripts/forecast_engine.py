@@ -29,10 +29,10 @@ ACTUALS = {
 # --- month in progress: refresh weekly ---------------------------------------
 CURRENT = {
     'month': 'Jul', 'sale': False,
-    'mtd_net': 251548, 'days_elapsed': 21, 'days_in_month': 31,
-    'ad_spend_mtd': None,      # set to real Meta spend when wired; None -> use assumed_mer
-    'assumed_mer': 0.37,       # REAL July MER from EE model Accelerate_4 (spend-backed), not a guess
-    'mer_note': 'real — EE model Accelerate_4 (spend-backed)',
+    'mtd_net': 301728, 'days_elapsed': 26, 'days_in_month': 31,
+    'ad_spend_mtd': 135647,    # LIVE from Meta Graph API via /api/mer (F2 wired 26 Jul)
+    'assumed_mer': 0.37,       # fallback only — no longer used now that spend is live
+    'mer_note': 'ACTUAL — Meta API MTD',
 }
 
 # --- forward scenario: revenue + MER per scenario ----------------------------

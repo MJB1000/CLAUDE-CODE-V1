@@ -1,8 +1,13 @@
 # H2 2026 forecast — extrapolated from current data
 
-> **Latest: `data/forecast/2026-W30.md` (rev2, updated to Accelerate_4).** July MTD $251.5k over 21 days
-> → completed ~$371k. **July MER now 37% (real, spend-backed — not assumed)** → July loss narrows −$35k → **−$11.7k**.
-> H2 blended GPAM lifts to **21.9%** current / **25.3%** target discipline (target discipline now within a point of 26%). FY26 net ~$4.82M.
+> **Latest: `data/forecast/2026-W31.md` — MER IS NOW LIVE (Meta API wired 26 Jul).**
+> July MTD $301.7k over 26 days → completed ~$359.8k. **Real July MER = 45.0%** (spend $135.6k ÷ rev $301.7k),
+> not the 37% previously carried from the model. July GPAM **9.0%** → **net loss ≈ −$42.3k** (was −$11.7k).
+> H2 blended GPAM **20.8%** current / **24.3%** target discipline. FY26 net ~$4.81M.
+>
+> ⚠️ **Model vs live gap:** the admin's EE model shows July spend $106.1k / MER 37.3%; the Meta API returns
+> $132.3k MTD. Part is timing (the model is updated to ~22 Jul), but confirm the model's account coverage —
+> see "Reconcile" below. MER is no longer assumed for any month once the feed is running.
 
 **Revenue basis:** Shopify `net_sales` (after discounts/returns, before GST), AUD. Jan–Jun actual;
 **July completed from run-rate** (W30: $221k net through 19 days → ~$360.6k full month);

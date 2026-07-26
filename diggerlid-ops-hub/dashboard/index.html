@@ -104,15 +104,16 @@
 // Paste your deployed feed here to auto-populate (e.g. "https://diggerlid-calendar-henna.vercel.app/api/mer").
 // Leave "" to run in manual mode (type the spend). Note: a claude.ai Artifact sandbox blocks
 // external fetches — the live feed works when this page is hosted (e.g. on the same Vercel app).
-var FEED_URL = "";
+var FEED_URL = "https://diggerlid-mer.vercel.app/api/mer";
 
 // Baked current actuals (Shopify live pull, 2026-07-22) — used until the feed overrides them.
 var STATE = {
-  asOf: "22 Jul 2026",
-  mtd_net: 264093, mtd_orders: 1115, mtd_aov: 236.32, cvr: 0.0118,
-  today_net: 12544.92, today_orders: 61,
+  asOf: "26 Jul 2026",
+  mtd_net: 296409, mtd_orders: 1310, mtd_aov: 226.35, cvr: 0.0120,
+  today_net: 4928, today_orders: 25,
+  mtd_spend: 132324,                 // LIVE from Meta via /api/mer
   model_mer: 0.3733, vcr: 0.4529, gpam_target: 0.26, mer_target: 0.28, cvr_target: 0.022,
-  fixed: 74831, mer_source: "assumed"
+  fixed: 74831, mer_source: "live (Meta)"
 };
 
 var $=function(id){return document.getElementById(id)};
@@ -163,7 +164,9 @@ function renderCal(){
 
 function tryFeed(){
   if(!FEED_URL) return;
-  fetch(FEED_URL).then(function(r){return r.json()}).then(function(d){
+  // pass our live Shopify revenue so the feed can compute MER/GPAM without Shopify creds
+  var u = FEED_URL + (FEED_URL.indexOf('?')>-1?'&':'?') + 'rev=' + encodeURIComponent(STATE.mtd_net);
+  fetch(u).then(function(r){return r.json()}).then(function(d){
     if(!d||d.source==="error") return;
     if(d.mtd_net) STATE.mtd_net=d.mtd_net;
     if(d.orders) STATE.mtd_orders=d.orders;
@@ -183,6 +186,8 @@ function tryFeed(){
 // init
 renderMTD(); renderCal();
 $("rev").value=STATE.mtd_net; $("vcr").value=STATE.vcr;
+if(STATE.mtd_spend) $("spend").value=STATE.mtd_spend;   // live Meta spend — MER shows immediately
+compute();
 ["spend","rev","vcr"].forEach(function(id){$(id).addEventListener("input",compute)});
 tryFeed();
 </script>
