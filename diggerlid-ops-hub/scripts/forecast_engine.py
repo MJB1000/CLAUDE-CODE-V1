@@ -9,39 +9,54 @@ The Scorekeeper runs this every Monday:
   3. Save it to data/forecast/YYYY-Www.md and refresh data/FORECAST.md.
 
 Model (EE baseline):  GPAM% = (1 - VCR) - MER ;  GPAM$ = rev * GPAM% ;  Net = GPAM$ - FIXED.
-Revenue = Shopify net_sales (after discounts/returns, before GST), AUD.
 GPAM target = 26%.  MER target <= 25% (sale months <= 28%).
+
+REVENUE BASIS — **ex-GST** (EE model row 8, "Revenue Ex GST"), AUD.
+This is the basis the model's own P&L uses (Profit = Revenue Ex GST - Total Expenses), so MER
+and VCR are computed on it too. NOTE: the model *displays* MER/VCR divided by GST-INCLUSIVE
+revenue, which flatters both by ~9% (e.g. July shows MER 37.9% when the P&L basis is 41.1%).
+Always reconcile on ex-GST. Shopify net_sales runs ~4.4% below ex-GST revenue (it excludes
+shipping revenue) — bridge factor EXGST_PER_NETSALES below.
 
 MER note: if the in-progress month's ad_spend_mtd is None (Meta not wired), MER falls back
 to `assumed_mer` and is flagged. Once Meta is wired, pass real spend and MER becomes actual.
 """
 
 FIXED = 74831
-VCR_BAU, VCR_SALE = 0.46, 0.48
+# VCR from 2026 actuals on the ex-GST basis (was 0.46/0.48 — both were optimistic):
+#   BAU  months Jan/Feb/Mar/Jul: 47.3 / 44.8 / 47.6 / 47.3  -> ~46.8%
+#   Sale months Apr/May/Jun:     50.1 / 50.7 / 50.0         -> ~50.3%
+VCR_BAU, VCR_SALE = 0.468, 0.503
 GPAM_TARGET = 0.26
+EXGST_PER_NETSALES = 1.0437   # ex-GST revenue / Shopify net_sales (Jul: 335,475 / 321,436)
 
-# --- finished months: (net_revenue, realized_MER) -----------------------------
+# --- finished months: (net_revenue_exGST, realized_MER_exGST) -----------------
+# Source: EE model Accelerate_5, "2026 Monthly Totals" rows 8 (rev ex GST) and 31 (Meta spend).
 ACTUALS = {
-    'Jan': (239596, 0.20), 'Feb': (298749, 0.28), 'Mar': (301354, 0.32),
-    'Apr': (331418, 0.32), 'May': (400329, 0.30), 'Jun': (778275, 0.25),
+    'Jan': (241767, 0.1992), 'Feb': (306489, 0.2758), 'Mar': (311480, 0.3216),
+    'Apr': (341520, 0.3168), 'May': (416322, 0.2952), 'Jun': (807148, 0.2447),
 }
 
 # --- month in progress: refresh weekly ---------------------------------------
+# Revenue: Shopify net_sales MTD x EXGST_PER_NETSALES -> ex-GST basis.
+# Spend:   live Meta Graph API via /api/mer.
 CURRENT = {
     'month': 'Jul', 'sale': False,
-    'mtd_net': 301728, 'days_elapsed': 26, 'days_in_month': 31,
-    'ad_spend_mtd': 135647,    # LIVE from Meta Graph API via /api/mer (F2 wired 26 Jul)
-    'assumed_mer': 0.37,       # fallback only — no longer used now that spend is live
-    'mer_note': 'ACTUAL — Meta API MTD',
+    'mtd_net': round(343809 * EXGST_PER_NETSALES), 'days_elapsed': 29, 'days_in_month': 31,
+    'ad_spend_mtd': 150478,    # LIVE from Meta Graph API via /api/mer (29 Jul)
+    'assumed_mer': 0.37,       # fallback only — not used while spend is live
+    'mer_note': 'ACTUAL — Meta API MTD, ex-GST basis',
 }
 
-# --- forward scenario: revenue + MER per scenario ----------------------------
+# --- forward scenario: revenue (ex-GST) + MER per scenario --------------------
+# Revenue = calendar-driven scenario, converted to the ex-GST basis. NOT a prediction.
+# 'mer_current' now reflects the July-actual trajectory (~41% ex-GST), not the old 30% guess.
 FORWARD = {
-    'Aug': {'rev': 420000, 'sale': True,  'mer_current': 0.32, 'mer_target': 0.27},
-    'Sep': {'rev': 340000, 'sale': False, 'mer_current': 0.30, 'mer_target': 0.25},
-    'Oct': {'rev': 330000, 'sale': False, 'mer_current': 0.30, 'mer_target': 0.25},
-    'Nov': {'rev': 580000, 'sale': True,  'mer_current': 0.28, 'mer_target': 0.26},
-    'Dec': {'rev': 430000, 'sale': True,  'mer_current': 0.30, 'mer_target': 0.26},
+    'Aug': {'rev': 438354, 'sale': True,  'mer_current': 0.38, 'mer_target': 0.28},
+    'Sep': {'rev': 354858, 'sale': False, 'mer_current': 0.36, 'mer_target': 0.25},
+    'Oct': {'rev': 344421, 'sale': False, 'mer_current': 0.36, 'mer_target': 0.25},
+    'Nov': {'rev': 605346, 'sale': True,  'mer_current': 0.32, 'mer_target': 0.26},
+    'Dec': {'rev': 448791, 'sale': True,  'mer_current': 0.34, 'mer_target': 0.26},
 }
 
 def vcr(sale): return VCR_SALE if sale else VCR_BAU

@@ -1,13 +1,21 @@
 # H2 2026 forecast — extrapolated from current data
 
-> **Latest: `data/forecast/2026-W31.md` — MER IS NOW LIVE (Meta API wired 26 Jul).**
-> July MTD $301.7k over 26 days → completed ~$359.8k. **Real July MER = 45.0%** (spend $135.6k ÷ rev $301.7k),
-> not the 37% previously carried from the model. July GPAM **9.0%** → **net loss ≈ −$42.3k** (was −$11.7k).
-> H2 blended GPAM **20.8%** current / **24.3%** target discipline. FY26 net ~$4.81M.
+> **Latest: `data/forecast/2026-W31-rev2-accelerate5.md` — REBASED to ex-GST (Accelerate_5, 29 Jul).**
+> Model-vs-live spend gap is **resolved**: it was staleness, not account coverage (model now $138.0k
+> through 27 Jul vs live Meta $141.2k same date — a ~2% timing difference).
 >
-> ⚠️ **Model vs live gap:** the admin's EE model shows July spend $106.1k / MER 37.3%; the Meta API returns
-> $132.3k MTD. Part is timing (the model is updated to ~22 Jul), but confirm the model's account coverage —
-> see "Reconcile" below. MER is no longer assumed for any month once the feed is running.
+> **Two corrections that move the whole forecast:**
+> 1. **MER denominator.** The model *displays* MER ÷ GST-inclusive revenue (July: 37.9%), but its own P&L
+>    uses ex-GST (Profit = Revenue Ex GST − Total Expenses). On the P&L basis **July MER = 41.1%**. The
+>    displayed ratio flatters MER *and* VCR by ~9%. All figures here are now ex-GST.
+> 2. **VCR was optimistic.** 2026 actuals ex-GST: BAU 44.8–47.6% (~46.8%), sale months 50.0–50.7% (~50.3%).
+>    Prior assumption 46%/48% understated variable cost — corrected to **0.468 / 0.503**.
+>
+> July completes ~$383.6k ex-GST, MER 42%, GPAM 11.3%, **net ≈ −$31.6k**.
+> **H2 now −$56.6k on the current trajectory** vs **+$136.4k under target discipline** — a **$193k swing**
+> that rests entirely on MER. FY26 revenue ~$5.0M (ex-GST basis, higher than prior $4.8M net_sales basis).
+>
+> ⚠️ **No month clears 26% GPAM on the current trajectory.** Sep/Oct clear it only under discipline.
 
 **Revenue basis:** Shopify `net_sales` (after discounts/returns, before GST), AUD. Jan–Jun actual;
 **July completed from run-rate** (W30: $221k net through 19 days → ~$360.6k full month);
