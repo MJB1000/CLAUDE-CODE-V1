@@ -1,5 +1,12 @@
 # H2 2026 forecast — extrapolated from current data
 
+> **Trailing benchmarks now available:** `data/history/BENCHMARKS.md` — 13 months (Jul 25 → Jul 26) with
+> MER/GPAM/profit, from the 2025 (EE 6.0) + 2026 (EE 7.1) models, both restated ex-GST.
+> **13m avg: MER 29.6% (3.38x) · GPAM 20.2% · profit +$11,423/mo · AOV $312.86 · CVR 2.39% · CPA $85.88.**
+> Only 5 of 13 months were profitable — EOFY and BFCM carry the year.
+> **July 2026 is the worst MER in the window (41.4% / 2.42x).** PCP: AOV −36.4%, CVR −47.0%, but
+> VCR −13.7% and CPA −27.5% — costs improved, basket size regressed.
+
 > **Latest: `data/forecast/2026-W31-rev2-accelerate5.md` — REBASED to ex-GST (Accelerate_5, 29 Jul).**
 > Model-vs-live spend gap is **resolved**: it was staleness, not account coverage (model now $138.0k
 > through 27 Jul vs live Meta $141.2k same date — a ~2% timing difference).
