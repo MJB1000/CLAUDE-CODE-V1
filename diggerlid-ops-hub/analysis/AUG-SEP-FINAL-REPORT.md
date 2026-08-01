@@ -152,20 +152,29 @@ GPAM% = (1 − VCR) − CPA ÷ AOV
 
 **Price per item, July 2026:** Covers **$250.01** · Portable **$186.27** · Grease hardware **$39.06** · Grease tubes **$14.13**
 
-**The high-value cover range is in unit decline:**
+### What actually happened to AOV — corrected with the full 13‑month history
 
-| SKU | Jul 25 units | Jul 26 units | Change |
-|---|--:|--:|--:|
-| Pro Excavator Enclosure | 112 | 75 | **−33%** |
-| 1.7 Tonne Cover | 54 | 38 | −30% |
-| DiggerShield Kit | 10 | 5 | −50% |
-| Mini Loader Cover | 21 | 5 | −76% |
-| Skid Steer Cover | 12 | **0** | **−100%** |
-| **PRO Mat** | 0 | **407** | new |
+A Jul‑2025‑vs‑Jul‑2026 snapshot *looks* like covers collapsed (Pro Enclosure 112 → 75, −33%). **When you plot all 13 months, that is a mirage.** Cover units are flat around a stable baseline — July 2025 was simply an unusually strong month and July 2026 is a normal one.
 
-> **Grease is not the problem.** Grease's share of revenue is essentially unchanged vs PCP (47.8% → 48.3%). What changed is that **cover units fell across the entire range** while PRO Mat ($219) replaced enclosure ($582–602) volume at roughly a third of the price. Cover revenue per item fell **$381.98 → $250.01 (−35%)**.
+**Pro Excavator Enclosure — the $649–725 hero — BAU months (sale months excluded):**
+
+| Jul25 | Aug | Sep | Oct | Dec | Jan | Feb | Mar | Apr | May | Jul26 |
+|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| **112** | 84 | 59 | 97 | 82 | 59 | 71 | 73 | 48 | 87 | **75** |
+
+Mean of the BAU months ≈ **77 units**. Jul 2025 (112) was the outlier high; Jul 2026 (75) sits right on the baseline. It wobbles between ~48 and ~97 with **no downward trend**. The low‑volume SKUs ("Skid Steer to zero", "Mini Loader −76%") are just noise — Skid Steer sells ~5/month and did 24 in June; Mini Loader did 76 in June.
+
+**So what diluted AOV was not covers leaving — it was cheap new volume arriving on top of a flat cover business:**
+
+| Line | Jul 25 units | Jul 26 units |
+|---|--:|--:|
+| Hero enclosures | 213 | 129 *(≈ baseline)* |
+| **PRO Mat** ($219) | **0** | **407** |
+| **Quick Release Coupler** ($29) | 179 | **976** |
+
+> **The AOV collapse is mix dilution, not cover decline.** PRO Mat went 0 → 407/month and couplers 179 → 976 — roughly **1,100 sub‑$220 units a year ago didn't exist**. They pulled the average basket down. Grease's *share* is unchanged (47.8% → 48.3%); the enclosure business is *flat*. Nothing structural broke — the product range simply added two big low‑price lines and never bundled anything onto them.
 >
-> **That is the AOV collapse, in one line.**
+> **That is the AOV story, corrected. It matters because the fix is not "sell more covers" (Plan A, fighting a flat baseline) — it is "attach a second item to the cheap orders you're already winning" (Plan C, fixing dilution at its source).**
 
 ---
 
@@ -298,7 +307,7 @@ Profit went from −$25,283 to −$34,934.
 ### Impact and risk
 - ✅ **Simplest to run** — one owner, one metric, no media or site changes.
 - ❌ **Biggest single ask of the four** (+22.4% AOV in one month).
-- ❌ **Requires reversing a 12-month decline** in cover units — every cover SKU is falling and Skid Steer has gone to zero.
+- ❌ **Covers are flat, not declining — so there is no rebound to ride.** To lift AOV to $308 you must *grow* enclosure demand above a stable ~130/month baseline, which is a genuine marketing lift, not a recovery. Nothing pulls covers up on their own.
 - ❌ **Audience flat.** You enter BFCM with no more customers than today.
 
 ---
@@ -481,7 +490,7 @@ It uses the **same `META_TOKEN` / `META_ACCOUNT_ID`** already on that project �
 
 # PART 6 — What still isn't answered
 
-1. **Why are cover units down 33%?** This is the largest unexplained item in the report and the assumption underneath Plans A and B. Stock, price, ad share, competitor, or cannibalisation by PRO Mat — we don't know. **Resolve before committing spend.**
+1. ~~Why are cover units down 33%?~~ **RESOLVED (this revision).** The 13‑month data shows covers are *flat*, not declining — the −33% was a base‑effect artefact of comparing a peak month to a normal one. The AOV fall is mix dilution by PRO Mat and couplers, not a cover problem. No further investigation needed; this *strengthens* the case for Plan C (fix dilution) over Plan A (grow a flat line).
 2. **Actual product cost by category.** All GPAM maths uses the blended 34.21%. If covers and mats differ materially, every plan shifts.
 3. **Fixed costs.** Up 51.7% vs PCP; salaries are 76% of the base and drove 83% of the increase. This raised break-even GPAM by 6.7 points — **larger than any marketing lever in this report.** Out of scope for August, but it belongs on the agenda.
 4. **The coupler-only cohort.** Whether coupler-only buyers ever convert to non-grease is unresolved (n=4). ~500 more customers would settle it.
