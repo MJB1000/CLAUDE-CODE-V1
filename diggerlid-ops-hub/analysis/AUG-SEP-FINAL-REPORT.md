@@ -433,9 +433,74 @@ The evidence from 233 July orders:
 
 ---
 
-## 4.5 The engine behind Plan C — reallocating grease's marketing spend
+## 4.5 The core strategy — sell slightly more bundles, and stop paying to draw AOV down
 
-Plans C and D lift AOV and cut grease's share of the business. This is *how* — and it's a **spend decision, not a discount or a price change.** It reallocates the paid‑advertising budget away from low‑value grease acquisition.
+Plan C rests on **two gentle moves that together fix AOV without a single price rise.** This section proves both with data.
+
+> **The one‑line strategy: get slightly more orders to contain a second item (a "bundle"), while cutting the paid advertising that buys single‑item grease and accessory orders.** One lever pushes AOV up; the other stops something pushing it down.
+
+### 4.5.1 How grease and accessories draw AOV down — with the data
+
+**At item level, the drag is unmistakable** *(verified, ties to July net sales $366,852):*
+
+| Category | Revenue | Share | Items sold | **$ per item** |
+|---|--:|--:|--:|--:|
+| GREASE – tubes | $122,191 | 33.3% | 8,649 | **$14.13** |
+| GREASE – hardware (couplers/adapters) | $55,079 | 15.0% | 1,410 | **$39.06** |
+| **COVERS** | $89,002 | 24.3% | 356 | **$250.01** |
+| **PORTABLE (mats)** | $85,311 | 23.3% | 458 | **$186.27** |
+| ACCESSORIES | $15,085 | 4.1% | 1,014 | **$14.88** |
+
+A grease or accessory item is **$14–39**. A cover is **$250**, a mat **$186**. **Every grease/accessory‑only order that comes in single‑item pulls the average basket toward $14–42.**
+
+**The drawdown, as a waterfall** *(verified arithmetic on the real July book):*
+
+| Step | Orders | AOV (net) | vs actual |
+|---|--:|--:|--:|
+| **July actual** | 1,654 | **$221.80** | — |
+| Remove 270 coupler‑only orders (@ $42.49, all grease) | 1,384 | $256.78 | **+15.8%** |
+| Also remove ~83 accessory‑only orders (@ ~$35) | 1,301 | **$270.93** | **+22.2%** |
+
+> **This low‑value grease + accessory tail is ~21% of your orders and it holds AOV down by roughly $49.** These are almost all single‑item orders bought through paid ads — the exact orders the spend reallocation below stops funding.
+
+### 4.5.2 Why "slightly more bundles" is the up‑lever — with the data
+
+From 233 July orders:
+
+| | Share of orders | AOV (calibrated to actual) |
+|---|--:|--:|
+| **Single‑SKU orders** | **69%** | $191.31 |
+| **Multi‑SKU orders** (a bundle) | 31% | $289.66 |
+
+> **Attaching one more item is worth +$98.36 per order.** You don't need pricier products — you need *two* items instead of one.
+
+**"Slightly more bundles" — shifting the multi‑SKU share, everything else held:**
+
+| Multi‑SKU share | AOV (net) | AOV (model) | vs now |
+|---|--:|--:|--:|
+| 31% (today) | $221.80 | $251.54 | — |
+| 35% | $225.73 | $256.00 | +1.8% |
+| **40%** | **$230.65** | **$261.58** | **+4.0%** |
+| 45% | $235.57 | $267.16 | +6.2% |
+| 50% | $240.48 | $272.73 | +8.4% |
+
+**"Slightly more" = 31% → 40%** — roughly **nine more orders in every hundred gaining a second item.** That alone is +4.0% AOV. PRO Mat is the obvious target: it sells alone **91%** of the time.
+
+### 4.5.3 The two moves together
+
+| | AOV (net) | AOV (model) |
+|---|--:|--:|
+| July actual | $221.80 | $251.54 |
+| + stop paid single‑item grease/accessory tail | ~$258 | ~$293 |
+| + bundles 31% → 40% | **~$268–282** | **~$300–320** |
+
+> **Together they clear the Plan C AOV target ($283 model) — with headroom.** Neither move raises a price or cuts a margin. One sells a second item; the other stops paying to acquire the orders that have none. *(The combined figure assumes only a partial cut of the low‑value tail from paid — you do not need the full removal to hit target.)*
+
+---
+
+## 4.6 The engine that funds it — reallocating grease's marketing spend
+
+Section 4.5 is *what* changes on the storefront. This is *how the ad budget moves to make it happen* — a **spend decision, not a discount or a price change.**
 
 ### What the money is doing now (ELI5)
 
@@ -484,7 +549,7 @@ Think of your $160,554 monthly Meta budget as buying customers. Right now, **mos
 
 ---
 
-## 4.6 Side by side
+## 4.7 Side by side
 
 | Plan | Aug net | Sep net | **Aug+Sep** | Aug GPAM | Aug spend | New custs | Biggest ask |
 |---|--:|--:|--:|--:|--:|--:|---|
@@ -493,7 +558,7 @@ Think of your $160,554 monthly Meta budget as buying customers. Right now, **mos
 | **C** ATTACH + EFF ★ | +$20,426 | **+$69,167** | **+$89,592** | 20.0% | $160,038 | **+11%** | attach execution |
 | **D** BALANCED | +$20,307 | +$65,222 | +$85,528 | 20.5% | $153,990 | +8% | coordination |
 
-## 4.7 Recommendation
+## 4.8 Recommendation
 
 **Run Plan C. Hold Plan B as the fallback.**
 
