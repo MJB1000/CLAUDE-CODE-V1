@@ -1,0 +1,125 @@
+<style>
+  :root{
+    --black:#231f20;--yellow:#f5eb19;--yellow-40:#fbf7a3;
+    --paper:#faf9f6;--card:#ffffff;--ink:#231f20;--muted:#6f6a64;--faint:#94908a;
+    --hair:#e6e2da;--hair-strong:#d8d3c9;--band:#f3f0e8;--crit:#b23b2e;--good:#2f7d4f;
+    --track:#ece8e0;
+    --c-port:#f5eb19;--c-grease:#231f20;--c-cov:#a49a8d;--c-oth:#d8d3c9;
+    --shadow:0 1px 2px rgba(35,31,32,.05),0 8px 24px rgba(35,31,32,.05);
+    --sans:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    --cond:"Bahnschrift","DIN Alternate","Arial Narrow","Roboto Condensed",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --paper:#1a1718;--card:#231f20;--ink:#f3f0e8;--muted:#a9a39a;--faint:#7d7871;--hair:#3a3536;--hair-strong:#4a4546;--band:#201c1d;--track:#312c2d;
+    --c-grease:#efe9df;--c-cov:#8c8378;--c-oth:#4a4546;--good:#5fce8f;--crit:#e0776a;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);}}
+  :root[data-theme="dark"]{--paper:#1a1718;--card:#231f20;--ink:#f3f0e8;--muted:#a9a39a;--faint:#7d7871;--hair:#3a3536;--hair-strong:#4a4546;--band:#201c1d;--track:#312c2d;--c-grease:#efe9df;--c-cov:#8c8378;--c-oth:#4a4546;--good:#5fce8f;--crit:#e0776a;}
+  :root[data-theme="light"]{--paper:#faf9f6;--card:#ffffff;--ink:#231f20;--muted:#6f6a64;--faint:#94908a;--hair:#e6e2da;--hair-strong:#d8d3c9;--band:#f3f0e8;--track:#ece8e0;--c-grease:#231f20;--c-cov:#a49a8d;--c-oth:#d8d3c9;--good:#2f7d4f;--crit:#b23b2e;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 64px}
+  h1{font-family:var(--cond);font-weight:700;font-size:clamp(26px,4.5vw,38px);line-height:1.08;margin:.3em 0 .1em;text-wrap:balance}
+  h2{font-family:var(--cond);font-weight:700;font-size:19px;text-transform:uppercase;letter-spacing:.04em;margin:34px 0 4px}
+  .tnum{font-variant-numeric:tabular-nums}
+  header.mast{border-top:8px solid var(--black);padding-top:20px}
+  .mast-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .brand{font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.18em;text-transform:uppercase}
+  .brand .bar{background:var(--yellow);color:var(--black);padding:2px 8px;margin-right:2px}
+  .stamp{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:12px;color:var(--muted);border:1.5px solid var(--hair-strong);border-radius:2px;padding:4px 10px}
+  .meta{color:var(--muted);font-size:13.5px;margin-top:4px}
+
+  /* 100% stacked bar */
+  .stack{display:flex;height:62px;border-radius:10px;overflow:hidden;margin:20px 0 10px;box-shadow:var(--shadow);border:1px solid var(--hair)}
+  .seg{display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:700;font-size:15px;color:#231f20;overflow:hidden;white-space:nowrap}
+  .seg.port{background:var(--c-port)}
+  .seg.grease{background:var(--c-grease);color:#faf9f6}
+  :root[data-theme="dark"] .seg.grease,:root:not([data-theme]) .seg.grease{color:#231f20}
+  .seg.cov{background:var(--c-cov);color:#231f20}
+  .seg.oth{background:var(--c-oth);color:#231f20}
+  .keys{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+  .key{display:flex;align-items:center;gap:7px}
+  .sw{width:13px;height:13px;border-radius:3px;display:inline-block}
+  .sw.port{background:var(--c-port)}.sw.grease{background:var(--c-grease)}.sw.cov{background:var(--c-cov)}.sw.oth{background:var(--c-oth)}
+
+  /* labelled bars */
+  .rows{display:flex;flex-direction:column;gap:14px;margin:18px 0}
+  .row{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center}
+  .row .lab{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:14.5px}
+  .row .lab small{display:block;font-family:var(--sans);font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted);font-size:12px}
+  .track{position:relative;background:var(--track);border-radius:6px;height:34px;overflow:visible}
+  .fill{height:100%;border-radius:6px;display:flex;align-items:center;padding:0 10px;font-family:var(--cond);font-weight:700;font-size:14px;color:#231f20;min-width:44px}
+  .fill.port{background:var(--c-port)}
+  .fill.grease{background:var(--c-grease);color:#faf9f6}
+  :root[data-theme="dark"] .fill.grease,:root:not([data-theme]) .fill.grease{color:#231f20}
+  .fill.cov{background:var(--c-cov);color:#231f20}
+  .val{position:absolute;top:50%;transform:translateY(-50%);font-family:var(--cond);font-weight:700;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .breakeven{position:absolute;top:-6px;bottom:-6px;border-left:2px dashed var(--crit)}
+  .be-lab{position:absolute;top:-22px;font-family:var(--cond);font-weight:700;font-size:11px;color:var(--crit);text-transform:uppercase;letter-spacing:.03em;transform:translateX(-50%)}
+
+  .note{background:var(--yellow-40);border-left:6px solid var(--yellow);padding:13px 16px;border-radius:0 8px 8px 0;margin:22px 0 0}
+  :root[data-theme="dark"] .note,:root:not([data-theme]) .note{background:#2b2718}
+  .note .h{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:12.5px;margin-bottom:3px}
+  .sub{color:var(--muted);font-size:13.5px;margin:2px 0 0}
+  footer{margin-top:40px;border-top:1px solid var(--hair);padding-top:16px;color:var(--muted);font-size:12.5px}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div class="mast-top">
+      <div class="brand"><span class="bar">DIGGER</span>LID · MEDIA MIX</div>
+      <div class="stamp">Measured · July 2026</div>
+    </div>
+    <h1>Where the ad money goes — by product category</h1>
+    <div class="meta">Meta spend <strong>$162,325</strong>, July 2026 · measured live from <code>/api/campaigns</code> · 98% attributed by ad-set name.
+      Portable = Pro Mat + Hauler · Grease = grease + accessories + KAJO · Covers = all covers &amp; enclosures.</div>
+  </header>
+
+  <h2>Share of spend</h2>
+  <div class="stack" role="img" aria-label="Portable 46.2%, Grease 26.2%, Covers 25.3%, Other 2.3%">
+    <div class="seg port" style="width:46.2%">46.2%</div>
+    <div class="seg grease" style="width:26.2%">26.2%</div>
+    <div class="seg cov" style="width:25.3%">25.3%</div>
+    <div class="seg oth" style="width:2.3%"></div>
+  </div>
+  <div class="keys">
+    <span class="key"><span class="sw port"></span> Portable Protection — $74,972</span>
+    <span class="key"><span class="sw grease"></span> Grease — $42,524</span>
+    <span class="key"><span class="sw cov"></span> Covers — $41,122</span>
+    <span class="key"><span class="sw oth"></span> Other — $3,706</span>
+  </div>
+
+  <h2>Spend share, ranked</h2>
+  <div class="rows">
+    <div class="row"><div class="lab">Portable<small>Pro Mat + Hauler</small></div>
+      <div class="track"><div class="fill port" style="width:46.2%">46.2%</div></div></div>
+    <div class="row"><div class="lab">Grease<small>grease + accessories + KAJO</small></div>
+      <div class="track"><div class="fill grease" style="width:26.2%">26.2%</div></div></div>
+    <div class="row"><div class="lab">Covers<small>all covers + enclosures</small></div>
+      <div class="track"><div class="fill cov" style="width:25.3%">25.3%</div></div></div>
+  </div>
+
+  <h2>…but efficiency runs the other way</h2>
+  <p class="sub">Return on ad spend (Meta-attributed). Break-even at your ~48% VCR is <strong>ROAS ≈ 1.9</strong>. Bars scaled to 2.6×.</p>
+  <div class="rows">
+    <div class="row"><div class="lab">Portable</div>
+      <div class="track">
+        <div class="be-lab" style="left:73%">break-even 1.9</div>
+        <div class="breakeven" style="left:73%"></div>
+        <div class="fill port" style="width:55.4%">1.44</div>
+        <span class="val" style="left:calc(55.4% + 10px)">below break-even</span>
+      </div></div>
+    <div class="row"><div class="lab">Grease</div>
+      <div class="track"><div class="breakeven" style="left:73%"></div>
+        <div class="fill grease" style="width:92.7%">2.41</div></div></div>
+    <div class="row"><div class="lab">Covers</div>
+      <div class="track"><div class="breakeven" style="left:73%"></div>
+        <div class="fill cov" style="width:73.1%">1.90</div></div></div>
+  </div>
+
+  <div class="note"><div class="h">The one-sentence read</div>
+    We spend <strong>the most (46%) on Portable Protection</strong> — the product with the <strong>worst ROAS (1.44, below break-even)</strong> and 2.6% repurchase — and the <strong>least room to cut is Grease</strong>, which is the most efficient (2.41) and repeats. <strong>The budget is mapped upside-down to both efficiency and retention.</strong>
+  </div>
+
+  <footer>
+    Source: DiggerLid Meta feed (<code>diggerlid-mer.vercel.app/api/campaigns?level=adset</code>), July 2026, ex-GST context. ROAS is Meta last-click (undercounts true contribution) — the ranking, not the absolute, is the point. Companion: August &amp; September Metric Benchmarks.
+  </footer>
+</div>

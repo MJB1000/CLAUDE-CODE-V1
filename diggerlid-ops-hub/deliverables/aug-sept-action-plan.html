@@ -99,7 +99,7 @@
       <div class="stamp">Internal · For commitment</div>
     </div>
     <h1>August &amp; September Profitability Plan</h1>
-    <div class="meta">Targets: <strong>+$20,000 net in August · +$40,000 net in September</strong> — while still growing the audience for Black Friday. Prepared 1–2 Aug 2026 · All figures ex-GST · Sources: Shopify (live), Meta Graph API (live), EE models 2025 + 2026.</div>
+    <div class="meta">Targets: <strong>+$20,000 net in August · +$40,000 net in September</strong> — while still growing the audience for Black Friday. Prepared 1–2 Aug 2026 · <strong>Updated 2 Aug with measured per-product Meta spend.</strong> All figures ex-GST · Sources: Shopify (live), Meta Graph API (live per-product), EE models 2025 + 2026.</div>
   </header>
 
   <section>
@@ -177,14 +177,22 @@
   </section>
 
   <section>
-    <h2>The engine: bundles up, grease spend down</h2>
-    <div class="prose">
-      <ul class="clean">
-        <li><strong>Sell slightly more bundles.</strong> 69% of orders contain only one product; attaching a second is worth <strong>+$129 (+51%)</strong>. PRO Mat sells alone 91% of the time — the #2 revenue line has no cross-sell offer.</li>
-        <li><strong>Reallocate grease's paid spend.</strong> Grease is ~48% of revenue but ~71% of the inferred paid mix. Pull grease <em>prospecting</em> toward ~36% of spend and stop paying premium CPA to acquire low-value grease — grease revenue share drifts ~48% → ~38% and AOV lifts.</li>
-        <li><strong>Stop paying to draw AOV down.</strong> Coupler-only orders are 16.3% of orders but 2.4% of revenue — removing them from <em>paid acquisition</em> alone lifts AOV ~16%.</li>
-      </ul>
-    </div>
+    <h2>The engine: cut PRO Mat, protect grease, fund covers</h2>
+    <p class="prose"><strong>Correction — now measured (live Meta feed, 2 Aug).</strong> We'd assumed grease was ~71% of paid spend. It isn't. The measured July split flips the whole reallocation:</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Product</th><th class="tnum">July spend</th><th class="tnum">Share</th><th class="tnum">CPA</th><th class="tnum">ROAS</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr class="hi"><td><strong>PRO Mat</strong></td><td class="tnum">$74,682</td><td class="tnum">46.0%</td><td class="tnum">$194</td><td class="tnum">1.45</td><td>Most spend, worst efficiency, 2.6% repeat</td></tr>
+        <tr><td>Grease</td><td class="tnum">$42,524</td><td class="tnum">26.2%</td><td class="tnum">$74</td><td class="tnum">2.41</td><td>Efficient + repeats — don't cut</td></tr>
+        <tr><td>Covers</td><td class="tnum">$41,122</td><td class="tnum">25.3%</td><td class="tnum">$147</td><td class="tnum">1.90</td><td>Fund up + fix efficiency</td></tr>
+      </tbody>
+    </table></div>
+    <ul class="clean prose">
+      <li><strong>Cut PRO Mat — not grease.</strong> 46% of budget on the one-and-done, AOV-diluting line, at a ROAS (1.45) below the ~1.9 break-even. Pull it toward ~30%: kill the broad prospecting ($377 CPA ad set) and the 0-purchase creative tests.</li>
+      <li><strong>Protect grease.</strong> It's only 26% and your <em>most efficient</em> line (CPA $74, ROAS 2.41) — and it repeats. Move reorders to email (free), but don't gut efficient grease paid. The "cut grease" idea was built on a wrong inferred number.</li>
+      <li><strong>Fund covers + bundles with the freed budget.</strong> Covers are higher-AOV with a repeat tail; lifting cover ROAS from 1.90 is the best home for the money.</li>
+      <li><strong>Sell more bundles.</strong> 69% of orders are single-item; attaching a second is worth <strong>+$129 (+51%)</strong>. PRO Mat sells alone 91% of the time — the #2 revenue line has no cross-sell offer.</li>
+    </ul>
   </section>
 
   <section>
@@ -199,7 +207,7 @@
       </tbody>
     </table></div>
     <ul class="clean prose">
-      <li><strong>Grease is a retention engine, not a gateway.</strong> It repeats ~2× covers — but grease → &gt;$100 cover is only 5.2% (±2pt), no better than a cover buyer's own repeat. So keep grease as a cheap, high-repeat list engine; don't pay premium CPA betting on migration. This is exactly why we pull grease <em>prospecting</em> spend down.</li>
+      <li><strong>Grease is a retention engine, not a gateway.</strong> It repeats ~2× covers — but grease → &gt;$100 cover is only 5.2% (±2pt), no better than a cover buyer's own repeat. Keep grease as a cheap, high-repeat list engine; don't pay premium CPA betting on migration. Measured spend confirms grease paid is already lean (26%) and efficient — the cut belongs to PRO Mat, not grease.</li>
       <li><strong>Mats must pay back on order one</strong> (2.6% repurchase, p=0.014 vs covers). Fund PRO Mat as volume/list-building, not on an LTV that isn't there.</li>
       <li><strong>Covers are single-sale-plus-a-small-tail</strong> — the bundle attach in Plan C is how we add value to that first (and often only) order.</li>
     </ul>
@@ -223,7 +231,7 @@
     <h2>Still on the watch-list</h2>
     <ul class="clean prose">
       <li><strong>Fixed costs</strong> up 51.7% vs PCP — salaries drove 83% of it. Bigger than any marketing lever here; belongs on the agenda even though it's out of scope for August.</li>
-      <li><strong>Meta spend by campaign</strong> — current grease/cover spend split is <em>inferred from order share</em>, not measured. Deploying the campaign feed makes the reallocation decision-grade (~2 min).</li>
+      <li><strong>Meta spend by product</strong> — ✅ now <em>measured</em> via the live campaign feed, and it flipped the finding (PRO Mat, not grease, is over-funded). Still to wire: <em>revenue</em> into the feed so MER/GPAM compute live for the daily watch.</li>
       <li><strong>Product cost by category</strong> — all GPAM maths uses the blended 34.21%; if covers and mats differ materially, the plans shift.</li>
       <li><strong>Cash flow</strong> — August spend $146–163k lands before month-end revenue; BFCM needs ~$225k inside a 10-day window.</li>
     </ul>
