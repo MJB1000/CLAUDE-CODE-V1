@@ -101,13 +101,17 @@
     Spend chased volume, not efficiency: <strong>Grease</strong> ran the best ROAS all year (5.4 → 2.4) on a shrinking budget share, while <strong>Portable</strong> got the July cash injection at its worst-ever ROAS (1.44). The budget is mapped upside-down to both efficiency and retention.
   </div>
 
-  <h2>Cart → purchase rate <span style="font-size:13px;color:var(--muted);font-weight:400">(needs feed extension)</span></h2>
-  <div class="pending"><div class="h">Unlocks after a 30-second redeploy</div>
-    The live feed exposes spend, clicks, purchases and value — <strong>not</strong> <code>add_to_cart</code>. To chart cart→purchase by category, redeploy <code>api/campaigns.js</code> with the extra fields (add-to-cart, initiate-checkout, outbound clicks). I've got the one-paste ready — once it's live I'll pull Jan–Jul and drop the chart in here.</div>
+  <h2>Cart → purchase rate</h2>
+  <p class="sub">Purchases ÷ add-to-carts, by category. <strong style="color:var(--crit)">Read with care:</strong> Meta's add-to-cart pixel under-fired through H1, so ratios above the 100% funnel ceiling are a tracking gap, not reality. Trust the H2 trend.</p>
+  <div class="card"><svg id="c2pChart" viewBox="0 0 760 320" role="img" aria-label="Cart to purchase rate by category, Jan to Jul 2026"></svg></div>
+  <div class="note"><div class="h">The read (H2, reliable window)</div>
+    Once tracking stabilised, cart→purchase <strong>converged to ~26–29% across all three categories</strong> (Jul: Portable 27% · Grease 26% · Covers 29%). So cart-close is <em>not</em> where the categories differ — the efficiency gap is upstream, in click quality, CPA and AOV, not in how well each product closes from cart.</div>
 
-  <h2>Outbound clicks <span style="font-size:13px;color:var(--muted);font-weight:400">(needs feed extension)</span></h2>
-  <div class="pending"><div class="h">Same redeploy unlocks this</div>
-    Current feed returns <em>total</em> clicks, not Meta's <code>outbound_clicks</code>. The field-add above surfaces outbound clicks per ad set, so I can chart clicks-by-category month-by-month here.</div>
+  <h2>Outbound clicks</h2>
+  <p class="sub">Clicks that leave Meta for the site, by category — a proxy for demand/interest the ads generate.</p>
+  <div class="card"><svg id="obcChart" viewBox="0 0 760 320" role="img" aria-label="Outbound clicks by category, Jan to Jul 2026"></svg></div>
+  <div class="note"><div class="h">The read</div>
+    <strong>Covers pull the most click interest all year</strong> (and a big July spike to ~51k) — yet convert at only mid ROAS (1.90). That's a merchandising/AOV opportunity, not a demand problem. <strong>Portable's July click surge (~27k)</strong> landed right as its ROAS collapsed — we paid for clicks that didn't convert.</div>
 
   <footer>
     Source: DiggerLid Meta feed (<code>/api/campaigns?level=adset</code>), Jan–Jul 2026, ex-GST context. ROAS is Meta last-click and undercounts true contribution — the trend and ranking are the point, not the absolute. June "Other" ($80k) is untagged EOFY spend, shown as its own band for honesty. Companion: August &amp; September Metric Benchmarks.
@@ -178,6 +182,53 @@
     });
     s+=xlabels();
     document.getElementById('roasChart').innerHTML=s;
+  })();
+
+  var C2P={Portable:[264.3,214.1,99.0,112.7,46.7,30.2,27.2],
+           Grease:[212.8,149.3,81.6,109.6,37.3,30.4,26.0],
+           Covers:[196.0,118.2,102.4,120.2,43.9,30.0,28.8]};
+  var OBC={Portable:[8304,16421,11368,20557,14437,14251,26890],
+           Grease:[6884,7413,9435,19203,30233,29186,22578],
+           Covers:[23158,30669,30658,29393,24442,23280,50739]};
+
+  // ---- cart to purchase ----
+  (function(){
+    var yMax=280;
+    function Y(v){return PT+ih - Math.min(v,yMax)/yMax*ih;}
+    var s='';
+    var xA=X(0), xB=X(3);
+    s+='<rect x="'+xA.toFixed(1)+'" y="'+PT+'" width="'+(xB-xA).toFixed(1)+'" height="'+ih+'" fill="var(--crit)" fill-opacity="0.06"/>';
+    s+='<text x="'+((xA+xB)/2).toFixed(1)+'" y="'+(PT+13)+'" fill="var(--crit)" font-size="10.5" font-family="var(--cond)" font-weight="700" text-anchor="middle">H1 — ADD-TO-CART UNDER-TRACKED</text>';
+    for(var g=0; g<=250; g+=50){ var y=Y(g).toFixed(1);
+      s+='<line x1="'+PL+'" y1="'+y+'" x2="'+(W-PR)+'" y2="'+y+'" stroke="var(--hair)" stroke-width="1"/>';
+      s+='<text x="'+(PL-8)+'" y="'+(+y+4)+'" fill="var(--muted)" font-size="11" font-family="var(--sans)" text-anchor="end">'+g+'%</text>'; }
+    var yc=Y(100).toFixed(1);
+    s+='<line x1="'+PL+'" y1="'+yc+'" x2="'+(W-PR)+'" y2="'+yc+'" stroke="var(--crit)" stroke-width="1.5" stroke-dasharray="5 4"/>';
+    s+='<text x="'+(W-PR)+'" y="'+(+yc-6)+'" fill="var(--crit)" font-size="11" font-family="var(--cond)" font-weight="700" text-anchor="end">100% FUNNEL CEILING</text>';
+    ["Grease","Covers","Portable"].forEach(function(c){
+      var pl=[]; for(var i=0;i<n;i++) pl.push(X(i).toFixed(1)+','+Y(C2P[c][i]).toFixed(1));
+      s+='<polyline points="'+pl.join(' ')+'" fill="none" stroke="'+COL[c]+'" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>';
+      for(var i=0;i<n;i++) s+='<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(C2P[c][i]).toFixed(1)+'" r="3.2" fill="'+COL[c]+'" stroke="var(--card)" stroke-width="1.4"/>';
+    });
+    s+=xlabels();
+    document.getElementById('c2pChart').innerHTML=s;
+  })();
+
+  // ---- outbound clicks ----
+  (function(){
+    var yMax=55000;
+    function Y(v){return PT+ih - v/yMax*ih;}
+    var s='';
+    for(var g=0; g<=50000; g+=10000){ var y=Y(g).toFixed(1);
+      s+='<line x1="'+PL+'" y1="'+y+'" x2="'+(W-PR)+'" y2="'+y+'" stroke="var(--hair)" stroke-width="1"/>';
+      s+='<text x="'+(PL-8)+'" y="'+(+y+4)+'" fill="var(--muted)" font-size="11" font-family="var(--sans)" text-anchor="end">'+(g/1000)+'k</text>'; }
+    ["Covers","Grease","Portable"].forEach(function(c){
+      var pl=[]; for(var i=0;i<n;i++) pl.push(X(i).toFixed(1)+','+Y(OBC[c][i]).toFixed(1));
+      s+='<polyline points="'+pl.join(' ')+'" fill="none" stroke="'+COL[c]+'" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>';
+      for(var i=0;i<n;i++) s+='<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(OBC[c][i]).toFixed(1)+'" r="3.2" fill="'+COL[c]+'" stroke="var(--card)" stroke-width="1.4"/>';
+    });
+    s+=xlabels();
+    document.getElementById('obcChart').innerHTML=s;
   })();
 })();
 </script>
