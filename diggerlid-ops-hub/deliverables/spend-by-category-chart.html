@@ -163,9 +163,40 @@
     The <strong>LPV "Flagship" ad set bought 16,335 clicks — 16% of all July traffic — for just $1,300</strong>, because it's optimized for <strong>landing-page views, not purchases</strong> (1 purchase, ROAS 0.07). Near-free vanity traffic that converts ~zero. Combined with broad Covers/Grease/PRO-Mat prospecting (ROAS 0.84–0.91), <strong>the broad top-funnel layer is the whole traffic-surge-without-conversion problem</strong>. The fix sharpens: <strong>cut broad prospecting + LPV across products, protect the warm TOM layer</strong> — which converts at ROAS 2.9–4.3, including PRO Mat's own warm ad set (2.92). It's a funnel-stage problem as much as a product one.
   </div>
 
+  <h2>Platform &amp; audience — where the clicks came from</h2>
+
+  <h3>Platform: the surge was largely Instagram</h3>
+  <p class="sub">Instagram delivered <strong>42% of July's clicks on 25% of budget</strong> — but converted at 0.65%, a third of Facebook's rate. IG is the cheap-click, low-intent engine behind the traffic surge; Facebook converts 2.6× better.</p>
+  <div class="tblwrap2"><table class="tbl">
+    <thead><tr><th>Platform</th><th>Spend</th><th>Share</th><th>Clicks</th><th>Purch</th><th>ROAS</th><th>Click→purch</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Facebook</strong></td><td class="tnum2">$121,883</td><td class="tnum2">75%</td><td class="tnum2">59,113</td><td class="tnum2">1,007</td><td class="tnum2 good2">2.04</td><td class="tnum2 good2">1.70%</td></tr>
+      <tr><td><strong>Instagram</strong></td><td class="tnum2">$40,394</td><td class="tnum2">25%</td><td class="tnum2">43,289</td><td class="tnum2">283</td><td class="tnum2 bad2">1.33</td><td class="tnum2 bad2">0.65%</td></tr>
+    </tbody>
+  </table></div>
+  <p class="sub">Product mix by platform is similar (~70–78% Facebook across all three); Covers is the most Instagram-weighted (31% IG).</p>
+
+  <h3>Age: 35–54 is the money; under-35 just clicks</h3>
+  <div class="tblwrap2"><table class="tbl">
+    <thead><tr><th>Age</th><th>Spend share</th><th>Clicks</th><th>ROAS</th><th>Click→purch</th></tr></thead>
+    <tbody>
+      <tr><td>35–44</td><td class="tnum2">26%</td><td class="tnum2">23,247</td><td class="tnum2 good2">2.10</td><td class="tnum2">1.57%</td></tr>
+      <tr><td>25–34</td><td class="tnum2">21%</td><td class="tnum2">34,391</td><td class="tnum2 good2">2.20</td><td class="tnum2 bad2">0.91%</td></tr>
+      <tr><td>45–54</td><td class="tnum2">21%</td><td class="tnum2">14,378</td><td class="tnum2">1.85</td><td class="tnum2 good2">1.85%</td></tr>
+      <tr><td>55–64</td><td class="tnum2">19%</td><td class="tnum2">12,339</td><td class="tnum2">1.49</td><td class="tnum2">1.61%</td></tr>
+      <tr><td>65+</td><td class="tnum2">8%</td><td class="tnum2">6,390</td><td class="tnum2 bad2">1.12</td><td class="tnum2">1.06%</td></tr>
+      <tr><td>18–24</td><td class="tnum2">4%</td><td class="tnum2">11,707</td><td class="tnum2">1.89</td><td class="tnum2 bad2">0.65%</td></tr>
+    </tbody>
+  </table></div>
+  <p class="sub"><strong>35–54 converts best (1.57–1.85%).</strong> Under-35 generates ~46k clicks combined at roughly half the conversion — a big part of the low-intent surge. <strong>Gender:</strong> Male 82% of spend at ROAS 1.94; Female 17% at 1.49 — male-dominant fits the Charlie/Ron trade audience.</p>
+
+  <div class="note"><div class="h">Decomposition of the surge</div>
+    <strong>Instagram + under-35 audiences drove the low-converting July click volume; the profitable traffic is Facebook + 35–54 + male.</strong> Combined with the funnel read above (broad prospecting + LPV), the recovery is clear: shift budget toward <strong>Facebook, 35–54, warm/TOM audiences</strong>, and cut broad IG/young/LPV prospecting.
+  </div>
+
   <div style="border:1.5px dashed var(--hair-strong);border-radius:12px;padding:14px 16px;margin:14px 0;color:var(--muted)">
-    <strong style="color:var(--ink);font-family:var(--cond);text-transform:uppercase;letter-spacing:.04em;font-size:12.5px">Still to answer</strong><br>
-    <strong>Placement / platform</strong> (Facebook vs Instagram, Feed vs Reels/Stories) and <strong>demographics</strong> (age/gender) need Meta's <code>breakdowns</code> field, which the feed doesn't expose yet. One 30-second redeploy of a breakdown endpoint unlocks them, then these drop in here too.
+    <strong style="color:var(--ink);font-family:var(--cond);text-transform:uppercase;letter-spacing:.04em;font-size:12.5px">One still pending</strong><br>
+    <strong>Placement</strong> (Feed vs Reels vs Stories) — Meta blocks combining <code>platform_position</code> with conversion actions in one call, so it needs a spend/clicks-only placement query. Quick fix to the breakdown endpoint; platform, age and gender above are live.
   </div>
 
   <footer>
