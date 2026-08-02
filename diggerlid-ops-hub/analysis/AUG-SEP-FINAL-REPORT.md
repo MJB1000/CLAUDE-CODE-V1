@@ -611,8 +611,77 @@ It uses the **same `META_TOKEN` / `META_ACCOUNT_ID`** already on that project �
 1. ~~Why are cover units down 33%?~~ **RESOLVED (this revision).** The 13‑month data shows covers are *flat*, not declining — the −33% was a base‑effect artefact of comparing a peak month to a normal one. The AOV fall is mix dilution by PRO Mat and couplers, not a cover problem. No further investigation needed; this *strengthens* the case for Plan C (fix dilution) over Plan A (grow a flat line).
 2. **Actual product cost by category.** All GPAM maths uses the blended 34.21%. If covers and mats differ materially, every plan shifts.
 3. **Fixed costs.** Up 51.7% vs PCP; salaries are 76% of the base and drove 83% of the increase. This raised break-even GPAM by 6.7 points — **larger than any marketing lever in this report.** Out of scope for August, but it belongs on the agenda.
-4. **The coupler-only cohort.** Whether coupler-only buyers ever convert to non-grease is unresolved (n=4). ~500 more customers would settle it.
+4. ~~The coupler-only cohort.~~ **RESOLVED (Part 7).** Pulled to n=78 coupler-only within an n=893 cohort. Coupler-only convert to a >$100 non-grease item at 6.4% — statistically indistinguishable from grease bundles (5.6%, p=0.78). The earlier "n=4" result was small-sample noise. Grease→cover migration is real but rare (~5%) and no better than a cover buyer's own repeat rate; **do not pay a premium CPA betting on grease→cover conversion.**
 5. **Cash flow.** August spend $146k–163k lands before month-end revenue; BFCM will need ~$225k inside a 10-day window.
+
+---
+
+# PART 7 — Retention by first‑purchase category (RESOLVED)
+
+**Source:** Shopify Admin API, live 2 Aug 2026. Every customer's full order history was pulled and
+classified deterministically by product‑title keyword (script + raw pages archived). Two acquisition
+cohorts:
+
+- **Cohort A** — first order **Aug–Oct 2025**, **n = 893** buyers, **9–12 months** observed.
+- **Cohort B** — first order **30 Nov 2025–Feb 2026** (the BFCM PRO Mat launch), **n(mats) = 77**, ~**8 months** observed.
+
+**Definitions (plain English):**
+- **Repurchase** — placed at least one *later* order (any product).
+- **Cross‑sell** — a later order contained a **different category** than the first order.
+- **High‑value repurchase** — a later order contained **any item over $100** (same or different category).
+
+## 7.1 Repurchase, cross‑sell & high‑value repurchase by first purchase (Cohort A, n=893)
+
+| First purchase | n | **Repurchase** [95% CI] | **Cross‑sell** (diff cat) | **High‑value repurchase** (>$100 again) |
+|---|--:|--:|--:|--:|
+| **Grease** | 462 | **27.1%** [23–31] | 7.6% [5–10] | **22.3%** [19–26] |
+| **Covers** | 374 | **14.2%** [11–18] | 8.0% [6–11] | **11.5%** [9–15] |
+| **Accessories** | 52 | 19.2% [11–32] | 9.6% [4–21] | 9.6% [4–21] |
+| Portable (mats) | 1 | — not measurable in this window (mats launched later) | | |
+
+Grease repurchase (27.1%) vs covers (14.2%): **p < 0.0001** — grease brings people back ~2× as often.
+But grease repeats are overwhelmingly *more grease*; **cross‑sell to other categories is low and flat
+(~8%) regardless of entry product** (grease 7.6% vs covers 8.0%, p = 0.81).
+
+## 7.2 Covers vs Mats (Portable) — horizon‑matched (~8‑month window)
+
+Covers' observation clock is capped to 8 months so both cohorts get the same time to repeat.
+
+| First purchase | n | **Repurchase** | **Cross‑sell** | **High‑value repurchase** |
+|---|--:|--:|--:|--:|
+| **Covers** (8mo‑capped) | 374 | **12.0%** [9–16] | 5.9% [4–9] | **10.4%** [8–14] |
+| **Mats / Portable** | 77 | **2.6%** [1–9] | 1.3% [0–7] | **2.6%** [1–9] |
+| **Significance** | | **p = 0.014 ✅** | p = 0.10 (both low) | **p = 0.030 ✅** |
+
+*Covers over their full 9–12mo horizon: repurchase 14.2%, cross‑sell 8.0%, HV‑repurchase 11.5% (reference).*
+
+**Mats are the most one‑and‑done product in the range — significantly more so than covers.** 97 of 100
+PRO Mat buyers never place a second order, and when they do it is almost never another >$100 item.
+
+## 7.3 The retention ladder
+
+> **Grease 27%  ▸▸  Covers 12–14%  ▸  Mats 2.6%**
+
+- **Grease = the retention engine** — high repeat frequency (but of more grease, not covers).
+- **Covers = a single sale with a modest high‑value tail** (~10–12% buy another >$100 item).
+- **Mats = a pure single transaction** — no LTV tail at all.
+
+## 7.4 What this changes for spend
+
+1. **Mat CPA must pay back on the first order.** With ~2.6% repurchase there is no second order to
+   recover acquisition cost. If PRO Mat's CPA is high, that is a standalone‑profitability problem — not
+   something retention rescues. Funding mat prospecting is a **list‑building** decision, not an LTV one.
+2. **Covers are single‑sale‑with‑a‑small‑tail** — treat cover CPA as a single‑sale payback plus ~10% upside.
+3. **Grease's value is repeat frequency, not migration** — bid grease on grease‑on‑grease LTV, never on a
+   grease→cover bet (5.2% ±2pt, no better than baseline).
+4. This is the flip side of the AOV‑dilution story (Part 2): PRO Mat drove volume but replaced
+   repeat‑capable enclosure buyers with one‑and‑done mat buyers at a third of the price — hurting on
+   **both** first‑order value and repeat.
+
+**Caveat (honest):** the mat sample (n=77) is the **BFCM launch cohort** — deliberately chosen because it
+is the **longest‑observed and highest‑volume** mat group available. Newer mat buyers have had *less* time
+to repeat, so pulling them would bias repurchase *down*, not tighten it fairly. The clean way to firm up
+the mat number is to re‑observe this same cohort in a few months.
 
 ---
 
@@ -622,5 +691,6 @@ It uses the **same `META_TOKEN` / `META_ACCOUNT_ID`** already on that project �
 - Meta spend live via `/api/mer`: July $160,554 (full-month run rate from $155,375 through 30 Jul).
 - EE model P&L identity verified to the cent: `$335,474.95 − $362,033.32 = −$26,558.38`.
 - **Both EE models display MER and VCR divided by GST-inclusive revenue, flattering both by ~9%, while their own P&L uses ex-GST. Every figure in this report is ex-GST.**
-- Cohort: n=100 customers (43 grease-first). Order sample: n=233 across five July windows. Small-sample caveats stated inline.
+- **Retention cohorts (Part 7):** Cohort A n=893 buyers (first order Aug–Oct 2025, 9–12mo observed); Cohort B mats n=77 (BFCM launch, ~8mo). Classified deterministically by product‑title keyword; grease‑first arm reconciles at 462 across two independent classification passes. Significance via two‑proportion z‑tests; CIs are Wilson 95%. Raw pages + classifier scripts archived in the ops‑hub scratch workspace.
+- Earlier July order sample: n=233 across five July windows. Small-sample caveats stated inline.
 - CVR is quoted on an **orders ÷ sessions** basis (1.42%). Shopify's own CVR (1.27%) counts completed-checkout *sessions* and is not the right denominator for order-count modelling.
