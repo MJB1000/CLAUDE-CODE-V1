@@ -54,6 +54,15 @@
   .pending{border:1.5px dashed var(--hair-strong);border-radius:12px;padding:16px 18px;margin:14px 0;color:var(--muted)}
   .pending .h{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:13px;color:var(--ink);margin-bottom:4px}
   code{background:var(--band);padding:1px 5px;border-radius:4px;font-size:12.5px}
+  .tblwrap2{overflow-x:auto;border:1px solid var(--hair);border-radius:10px;box-shadow:var(--shadow);margin:14px 0}
+  table.tbl{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card)}
+  .tbl th,.tbl td{padding:9px 11px;text-align:right;white-space:nowrap}
+  .tbl th:first-child,.tbl td:first-child{text-align:left;white-space:normal}
+  .tbl thead th{background:var(--black);color:#f3f0e8;font-family:var(--cond);text-transform:uppercase;letter-spacing:.03em;font-size:11.5px;font-weight:700}
+  .tbl tbody tr+tr td{border-top:1px solid var(--hair)}
+  .tbl td.tnum2{font-variant-numeric:tabular-nums}
+  .bad2{color:var(--crit);font-weight:700}.good2{color:var(--good);font-weight:700}
+  h3{font-family:var(--cond);font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.03em;margin:26px 0 2px}
   footer{margin-top:40px;border-top:1px solid var(--hair);padding-top:16px;color:var(--muted);font-size:12.5px}
 </style>
 
@@ -123,6 +132,40 @@
   </div>
   <div class="note"><div class="h">What actually happened</div>
     Paid outbound clicks rose ~50% MoM to ~100k, led by <strong>Covers (+118%)</strong> and <strong>Portable (+89%)</strong>; Grease clicks fell 23%. Yet ROAS fell in both scaled lines (Covers 2.83→1.90, Portable 2.59→1.44) while <strong>cart→purchase held ~27–29%</strong> — the checkout closed fine. So the extra traffic was <strong>cheaper but lower-intent and lower-AOV</strong>, poured mostly into Portable (the one-and-done, AOV-diluting line). Same story on the Shopify side: <strong>116,420 sessions</strong> (+52% vs May) at just <strong>~$3.15 revenue/session</strong> and <strong>1.42% CVR</strong>. <strong>July = far more traffic at worse quality — that's the MER blowout, not a conversion or site fault.</strong>
+  </div>
+
+  <h2>Where the July traffic came from — and did it convert?</h2>
+  <p class="sub"><strong>Answer: mostly not.</strong> Nearly half of July's clicks came from broad prospecting that converted at 0.5% and returned $0.84 per $1. The converting traffic is the smaller warm/retargeting layer. Audience/funnel inferred from campaign names.</p>
+  <div class="tblwrap2"><table class="tbl">
+    <thead><tr><th>Audience / funnel</th><th>Clicks</th><th>Share</th><th>Spend</th><th>ROAS</th><th>Click→purch</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Broad prospecting</strong> (ASC / TOF / Broad)</td><td class="tnum2">50,240</td><td class="tnum2">49%</td><td class="tnum2">$67,872</td><td class="tnum2 bad2">0.84</td><td class="tnum2 bad2">0.53%</td></tr>
+      <tr><td><strong>Warm / retargeting</strong> (TOM / MOF)</td><td class="tnum2">26,480</td><td class="tnum2">26%</td><td class="tnum2">$48,126</td><td class="tnum2 good2">3.63</td><td class="tnum2 good2">2.39%</td></tr>
+      <tr><td>Creative testing (ABO broad)</td><td class="tnum2">25,732</td><td class="tnum2">25%</td><td class="tnum2">$46,328</td><td class="tnum2">1.53</td><td class="tnum2">1.53%</td></tr>
+    </tbody>
+  </table></div>
+  <p class="sub">Warm audiences convert <strong>4.5× better</strong> than broad prospecting (2.39% vs 0.53%) at <strong>4.3× the ROAS</strong>. The July surge was disproportionately the low-converting broad layer.</p>
+
+  <h3>Top click-drivers (July)</h3>
+  <div class="tblwrap2"><table class="tbl">
+    <thead><tr><th>Ad set</th><th>Clicks</th><th>Spend</th><th>Purch</th><th>ROAS</th></tr></thead>
+    <tbody>
+      <tr><td>☂️ LPV – Flagship – ASC – Broad <em style="color:var(--crit)">(traffic objective)</em></td><td class="tnum2">16,335</td><td class="tnum2">$1,300</td><td class="tnum2">1</td><td class="tnum2 bad2">0.07</td></tr>
+      <tr><td>☂️ Covers – ASC – Broad</td><td class="tnum2">14,685</td><td class="tnum2">$12,486</td><td class="tnum2">37</td><td class="tnum2 bad2">0.85</td></tr>
+      <tr><td>AU – ASC – TOM – PRO Mat <em style="color:var(--good)">(warm)</em></td><td class="tnum2">8,239</td><td class="tnum2">$16,506</td><td class="tnum2">181</td><td class="tnum2 good2">2.92</td></tr>
+      <tr><td>💧 Grease – ASC – Broad</td><td class="tnum2">7,200</td><td class="tnum2">$13,876</td><td class="tnum2">41</td><td class="tnum2 bad2">0.91</td></tr>
+      <tr><td>🦘 ADV+ Covers <em style="color:var(--good)">(warm)</em></td><td class="tnum2">6,872</td><td class="tnum2">$9,892</td><td class="tnum2">128</td><td class="tnum2 good2">3.95</td></tr>
+      <tr><td>🦘 ADV+ Grease <em style="color:var(--good)">(warm)</em></td><td class="tnum2">6,853</td><td class="tnum2">$12,640</td><td class="tnum2">168</td><td class="tnum2 good2">3.68</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note"><div class="h">Smoking gun + the refined fix</div>
+    The <strong>LPV "Flagship" ad set bought 16,335 clicks — 16% of all July traffic — for just $1,300</strong>, because it's optimized for <strong>landing-page views, not purchases</strong> (1 purchase, ROAS 0.07). Near-free vanity traffic that converts ~zero. Combined with broad Covers/Grease/PRO-Mat prospecting (ROAS 0.84–0.91), <strong>the broad top-funnel layer is the whole traffic-surge-without-conversion problem</strong>. The fix sharpens: <strong>cut broad prospecting + LPV across products, protect the warm TOM layer</strong> — which converts at ROAS 2.9–4.3, including PRO Mat's own warm ad set (2.92). It's a funnel-stage problem as much as a product one.
+  </div>
+
+  <div style="border:1.5px dashed var(--hair-strong);border-radius:12px;padding:14px 16px;margin:14px 0;color:var(--muted)">
+    <strong style="color:var(--ink);font-family:var(--cond);text-transform:uppercase;letter-spacing:.04em;font-size:12.5px">Still to answer</strong><br>
+    <strong>Placement / platform</strong> (Facebook vs Instagram, Feed vs Reels/Stories) and <strong>demographics</strong> (age/gender) need Meta's <code>breakdowns</code> field, which the feed doesn't expose yet. One 30-second redeploy of a breakdown endpoint unlocks them, then these drop in here too.
   </div>
 
   <footer>
