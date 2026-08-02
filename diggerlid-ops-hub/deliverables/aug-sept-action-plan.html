@@ -1,0 +1,236 @@
+<style>
+  :root{
+    --black:#231f20; --black-90:#3a3637; --yellow:#f5eb19; --yellow-40:#fbf7a3;
+    --paper:#faf9f6; --card:#ffffff; --ink:#231f20; --muted:#6f6a64; --faint:#94908a;
+    --hair:#e6e2da; --hair-strong:#d8d3c9; --good:#2f7d4f; --crit:#b23b2e;
+    --band:#f3f0e8; --shadow:0 1px 2px rgba(35,31,32,.05),0 8px 24px rgba(35,31,32,.05);
+    --sans:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    --cond:"Bahnschrift","DIN Alternate","Arial Narrow","Roboto Condensed",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#1a1718; --card:#231f20; --ink:#f3f0e8; --muted:#a9a39a; --faint:#7d7871;
+      --hair:#3a3536; --hair-strong:#4a4546; --band:#201c1d; --black-90:#e9e5dd;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1a1718; --card:#231f20; --ink:#f3f0e8; --muted:#a9a39a; --faint:#7d7871;
+    --hair:#3a3536; --hair-strong:#4a4546; --band:#201c1d; --black-90:#e9e5dd;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  }
+  :root[data-theme="light"]{
+    --paper:#faf9f6; --card:#ffffff; --ink:#231f20; --muted:#6f6a64; --faint:#94908a;
+    --hair:#e6e2da; --hair-strong:#d8d3c9; --band:#f3f0e8; --black-90:#3a3637;
+    --shadow:0 1px 2px rgba(35,31,32,.05),0 8px 24px rgba(35,31,32,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px 80px}
+  .prose{max-width:70ch}
+  h1,h2,h3{font-family:var(--cond);font-weight:700;line-height:1.08;text-wrap:balance;letter-spacing:.01em}
+  h1{font-size:clamp(30px,5vw,46px);margin:.2em 0 .1em}
+  h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 4px;padding-bottom:8px;border-bottom:3px solid var(--yellow);display:inline-block}
+  h3{font-size:19px;margin:24px 0 6px;text-transform:uppercase;letter-spacing:.04em}
+  p{margin:10px 0}
+  .eyebrow{font-family:var(--cond);text-transform:uppercase;letter-spacing:.22em;font-size:13px;font-weight:700;color:var(--muted)}
+  .tnum{font-variant-numeric:tabular-nums}
+  header.mast{border-top:8px solid var(--black);padding-top:22px}
+  .mast-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .brand{font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:.18em;text-transform:uppercase}
+  .brand .bar{background:var(--yellow);color:var(--black);padding:2px 8px;margin-right:2px}
+  .stamp{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:12px;color:var(--muted);border:1.5px solid var(--hair-strong);border-radius:2px;padding:4px 10px}
+  .meta{color:var(--muted);font-size:14px;margin-top:4px}
+  section{margin-top:40px}
+  .lead{font-size:19px;line-height:1.55}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px;margin:22px 0}
+  .tile{background:var(--card);border:1px solid var(--hair);border-radius:10px;padding:16px;box-shadow:var(--shadow)}
+  .tile .k{font-family:var(--cond);font-weight:700;font-size:32px;line-height:1}
+  .tile .l{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:8px}
+  .tile .s{font-size:13px;color:var(--faint);margin-top:3px}
+  .tile.accent{background:var(--yellow);border-color:var(--yellow);color:#231f20}
+  .tile.accent .l,.tile.accent .s{color:var(--black-90)}
+  :root[data-theme="dark"] .tile.accent,:root:not([data-theme]) .tile.accent{color:#231f20}
+  .tile.dark{background:var(--black);border-color:var(--black);color:#f3f0e8}
+  .tile.dark .l,.tile.dark .s{color:#b8b2a8}
+  .tile.crit .k{color:var(--crit)}
+  .tblwrap{overflow-x:auto;margin:16px 0;border:1px solid var(--hair);border-radius:10px;box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;background:var(--card);font-size:14.5px}
+  th,td{padding:11px 13px;text-align:right;white-space:nowrap}
+  th:first-child,td:first-child{text-align:left;white-space:normal}
+  thead th{background:var(--black);color:#f3f0e8;font-family:var(--cond);text-transform:uppercase;letter-spacing:.04em;font-size:12.5px;font-weight:700}
+  tbody tr+tr td{border-top:1px solid var(--hair)}
+  tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--band) 55%,transparent)}
+  td.tnum,th.tnum{font-variant-numeric:tabular-nums}
+  tr.hi td{background:var(--yellow-40)!important}
+  :root[data-theme="dark"] tr.hi td,:root:not([data-theme]) tr.hi td{background:#3a361f!important}
+  .neg{color:var(--crit);font-weight:700}
+  .pos{color:var(--good);font-weight:700}
+  .pill{display:inline-block;font-family:var(--cond);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.04em;padding:2px 8px;border-radius:999px}
+  .pill.rec{background:var(--yellow);color:#231f20}
+  .pill.no{background:color-mix(in srgb,var(--crit) 14%,transparent);color:var(--crit);border:1px solid color-mix(in srgb,var(--crit) 40%,transparent)}
+  .pill.fb{background:color-mix(in srgb,var(--muted) 14%,transparent);color:var(--muted);border:1px solid var(--hair-strong)}
+  .note{background:var(--yellow-40);border-left:6px solid var(--yellow);padding:14px 18px;border-radius:0 8px 8px 0;margin:18px 0}
+  :root[data-theme="dark"] .note,:root:not([data-theme]) .note{background:#2b2718}
+  .note .h{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:13px;margin-bottom:4px}
+  .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0}
+  .plan{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:16px;box-shadow:var(--shadow);position:relative}
+  .plan.win{border:2px solid var(--yellow)}
+  .plan .code{font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .plan .nm{font-family:var(--cond);font-weight:700;font-size:20px;margin:2px 0 8px}
+  .plan .big{font-family:var(--cond);font-weight:700;font-size:26px}
+  .plan .row{display:flex;justify-content:space-between;font-size:13.5px;padding:3px 0;border-top:1px dotted var(--hair)}
+  .plan .row span:last-child{font-variant-numeric:tabular-nums;font-weight:600}
+  .plan p{font-size:13.5px;color:var(--muted);margin:10px 0 0}
+  ul.clean{margin:10px 0;padding-left:20px}
+  ul.clean li{margin:6px 0}
+  .lever{display:grid;grid-template-columns:76px 1fr;gap:14px;align-items:baseline;padding:10px 0;border-top:1px solid var(--hair)}
+  .lever .t{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+  .gates td:first-child{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+  footer.foot{margin-top:56px;border-top:1px solid var(--hair);padding-top:20px;color:var(--muted);font-size:13px}
+  .foot .tag{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink)}
+  .foot .tag b{background:var(--yellow);color:#231f20;padding:1px 6px}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div class="mast-top">
+      <div class="brand"><span class="bar">DIGGER</span>LID · GROWTH</div>
+      <div class="stamp">Internal · For commitment</div>
+    </div>
+    <h1>August &amp; September Profitability Plan</h1>
+    <div class="meta">Targets: <strong>+$20,000 net in August · +$40,000 net in September</strong> — while still growing the audience for Black Friday. Prepared 1–2 Aug 2026 · All figures ex-GST · Sources: Shopify (live), Meta Graph API (live), EE models 2025 + 2026.</div>
+  </header>
+
+  <section>
+    <p class="lead">July was a locked loss. The trading engine actually improved year-on-year — but fixed costs grew faster. Below: where we stand, the four ways to hit the target, and the one we recommend.</p>
+    <div class="tiles">
+      <div class="tile crit"><div class="k tnum">−$35k</div><div class="l">July net (locked)</div><div class="s">GPAM 11% · MER 41%</div></div>
+      <div class="tile accent"><div class="k tnum">+$20k</div><div class="l">August target</div><div class="s">GPAM ≈ 20%</div></div>
+      <div class="tile accent"><div class="k tnum">+$40k</div><div class="l">September target</div><div class="s">and grow the list</div></div>
+      <div class="tile dark"><div class="k">Plan C</div><div class="l">Recommended</div><div class="s">Attach + efficiency</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where we actually are</h2>
+    <p class="prose">July 2026 against the same month last year (PCP) and against May. Costs improved; <strong>basket size collapsed</strong>.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Metric</th><th class="tnum">Jul 2025 (PCP)</th><th class="tnum">May 2026</th><th class="tnum">Jul 2026</th><th class="tnum">vs PCP</th></tr></thead>
+        <tbody>
+          <tr><td>Net sales</td><td class="tnum">$251,726</td><td class="tnum">$400,329</td><td class="tnum">$366,852</td><td class="tnum pos">+45.7%</td></tr>
+          <tr><td>Orders</td><td class="tnum">699</td><td class="tnum">1,551</td><td class="tnum">1,654</td><td class="tnum pos">+136.6%</td></tr>
+          <tr class="hi"><td><strong>AOV</strong> (model basis)</td><td class="tnum">$395.67</td><td class="tnum">$291.67</td><td class="tnum">$251.54</td><td class="tnum neg">−36.4%</td></tr>
+          <tr><td>CVR (orders ÷ sessions)</td><td class="tnum">2.73%</td><td class="tnum">2.03%</td><td class="tnum">1.42%</td><td class="tnum neg">−48%</td></tr>
+          <tr><td>MER (ads ÷ revenue)</td><td class="tnum">35.5%</td><td class="tnum">29.5%</td><td class="tnum">41.4%</td><td class="tnum neg">worst in 13mo</td></tr>
+          <tr><td>GPAM%</td><td class="tnum">9.2%</td><td class="tnum">19.8%</td><td class="tnum">11.0%</td><td class="tnum">—</td></tr>
+          <tr><td><strong>Net profit</strong></td><td class="tnum neg">−$25,300</td><td class="tnum pos">+$7,532</td><td class="tnum neg">−$34,927</td><td class="tnum neg">worse</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note"><div class="h">The 80/20 — what actually moved profit</div>
+      Costs improved: <strong>VCR fell 7.5pt</strong> and <strong>CPA fell 27%</strong> vs PCP. But <strong>MER got worse</strong> because AOV fell faster than CPA, and <strong>fixed costs rose 51.7%</strong> (salaries are 76% of the base and drove 83% of the increase). That alone lifted break-even GPAM from 19.0% to 19.5%. The AOV fall is <em>mix dilution</em> — PRO Mat and couplers — not a cover-unit decline.
+    </div>
+  </section>
+
+  <section>
+    <h2>The four ways to hit the target</h2>
+    <p class="prose">All four clear +$20k August and +$40k September and keep the audience from shrinking. They differ on <em>how</em>, on spend efficiency, and on how much they grow the Black-Friday list.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Plan</th><th class="tnum">Aug net</th><th class="tnum">GPAM</th><th class="tnum">MER</th><th class="tnum">Aug spend</th><th class="tnum">Sep net</th><th class="tnum">Aug+Sep</th><th class="tnum">New custs</th></tr></thead>
+        <tbody>
+          <tr><td><strong>A</strong> · Mix-only</td><td class="tnum">+$20,881</td><td class="tnum">20.2%</td><td class="tnum">34.2%</td><td class="tnum">$162,650</td><td class="tnum">+$51,094</td><td class="tnum">+$71,975</td><td class="tnum">flat</td></tr>
+          <tr><td><strong>B</strong> · Mix + efficiency</td><td class="tnum">+$20,129</td><td class="tnum">21.2%</td><td class="tnum">32.6%</td><td class="tnum">$145,777</td><td class="tnum">+$58,511</td><td class="tnum">+$78,639</td><td class="tnum">flat</td></tr>
+          <tr class="hi"><td><strong>C</strong> · Attach + efficiency <span class="pill rec">Rec</span></td><td class="tnum">+$20,426</td><td class="tnum">20.0%</td><td class="tnum">33.6%</td><td class="tnum">$160,038</td><td class="tnum">+$69,167</td><td class="tnum"><strong>+$89,592</strong></td><td class="tnum pos">+11%</td></tr>
+          <tr><td><strong>D</strong> · Balanced</td><td class="tnum">+$20,307</td><td class="tnum">20.5%</td><td class="tnum">33.2%</td><td class="tnum">$153,990</td><td class="tnum">+$65,222</td><td class="tnum">+$85,528</td><td class="tnum pos">+8%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="plans">
+      <div class="plan"><div class="code">Plan A</div><div class="nm">Mix-only</div>
+        <div class="row"><span>Aug AOV</span><span>$308</span></div><div class="row"><span>CVR</span><span>1.42%</span></div><div class="row"><span>CPA</span><span>$97.07</span></div>
+        <p>Simplest, one owner. But AOV +22% in a month is the biggest single ask, and adds nothing to the BFCM list. <span class="pill no">Don't run</span></p></div>
+      <div class="plan"><div class="code">Plan B</div><div class="nm">Mix + efficiency</div>
+        <div class="row"><span>Aug AOV</span><span>$290</span></div><div class="row"><span>CVR</span><span>1.42%</span></div><div class="row"><span>CPA</span><span>$87</span></div>
+        <p>Lowest spend ($146k), best margin, best cash profile. But audience stays flat into BFCM. <span class="pill fb">Fallback</span></p></div>
+      <div class="plan win"><div class="code">Plan C</div><div class="nm">Attach + efficiency</div>
+        <div class="row"><span>Aug AOV</span><span>$283</span></div><div class="row"><span>CVR</span><span>1.55%</span></div><div class="row"><span>CPA</span><span>$87.50</span></div>
+        <p>Biggest two-month profit and grows the list +11% — best BFCM position. Smallest AOV ask because bundles lift AOV and CVR together. <span class="pill rec">Recommended</span></p></div>
+      <div class="plan"><div class="code">Plan D</div><div class="nm">Balanced</div>
+        <div class="row"><span>Aug AOV</span><span>$285</span></div><div class="row"><span>CVR</span><span>1.50%</span></div><div class="row"><span>CPA</span><span>$87</span></div>
+        <p>No lever moves &gt;13%; lowest per-lever risk; grows list +8%. Needs four workstreams coordinated.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The levers, in plain terms</h2>
+    <div class="lever"><div class="t">AOV</div><div>How big each order is. Raise it by selling more covers/enclosures and <strong>bundling</strong> a second item. <em>Moves margin %.</em></div></div>
+    <div class="lever"><div class="t">CPA</div><div>What we pay to get one customer. Lower it by cutting wasteful campaigns. <em>Moves margin %.</em></div></div>
+    <div class="lever"><div class="t">CVR</div><div>Share of visitors who buy. Raises the <em>dollars</em>, not the margin % — more orders at the same AOV and CPA.</div></div>
+    <div class="lever"><div class="t">Mix</div><div>Which products sell. Covers are ~$250/item; grease tubes ~$14. Mix is the root cause of the AOV fall.</div></div>
+    <div class="note" style="margin-top:18px"><div class="h">The one equation</div>
+      <strong>GPAM% = (1 − VCR) − CPA ÷ AOV.</strong> Only <strong>AOV</strong> and <strong>CPA</strong> move the margin percentage. That's why every plan leans on basket size and media efficiency, not conversion rate.
+    </div>
+  </section>
+
+  <section>
+    <h2>The engine: bundles up, grease spend down</h2>
+    <div class="prose">
+      <ul class="clean">
+        <li><strong>Sell slightly more bundles.</strong> 69% of orders contain only one product; attaching a second is worth <strong>+$129 (+51%)</strong>. PRO Mat sells alone 91% of the time — the #2 revenue line has no cross-sell offer.</li>
+        <li><strong>Reallocate grease's paid spend.</strong> Grease is ~48% of revenue but ~71% of the inferred paid mix. Pull grease <em>prospecting</em> toward ~36% of spend and stop paying premium CPA to acquire low-value grease — grease revenue share drifts ~48% → ~38% and AOV lifts.</li>
+        <li><strong>Stop paying to draw AOV down.</strong> Coupler-only orders are 16.3% of orders but 2.4% of revenue — removing them from <em>paid acquisition</em> alone lifts AOV ~16%.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>What retention says about all this</h2>
+    <p class="prose">From the cohort study (companion report), measured and significance-tested:</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th>First purchase</th><th class="tnum">Repurchase</th><th class="tnum">High-value repurchase</th></tr></thead>
+      <tbody>
+        <tr class="hi"><td>Grease</td><td class="tnum">27.1%</td><td class="tnum">22.3%</td></tr>
+        <tr><td>Covers</td><td class="tnum">14.2%</td><td class="tnum">11.5%</td></tr>
+        <tr><td>Mats (Portable)</td><td class="tnum">2.6%</td><td class="tnum">2.6%</td></tr>
+      </tbody>
+    </table></div>
+    <ul class="clean prose">
+      <li><strong>Grease is a retention engine, not a gateway.</strong> It repeats ~2× covers — but grease → &gt;$100 cover is only 5.2% (±2pt), no better than a cover buyer's own repeat. So keep grease as a cheap, high-repeat list engine; don't pay premium CPA betting on migration. This is exactly why we pull grease <em>prospecting</em> spend down.</li>
+      <li><strong>Mats must pay back on order one</strong> (2.6% repurchase, p=0.014 vs covers). Fund PRO Mat as volume/list-building, not on an LTV that isn't there.</li>
+      <li><strong>Covers are single-sale-plus-a-small-tail</strong> — the bundle attach in Plan C is how we add value to that first (and often only) order.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Recommendation &amp; decision gates</h2>
+    <p class="prose"><strong>Run Plan C (Attach + Efficiency)</strong>, with <strong>B as the fallback</strong> if bundle execution slips. <strong>Don't run A</strong> — biggest AOV ask, needs a flat line to grow, adds nothing to the BFCM list. C wins on the two things that matter beyond August: <strong>+$89.6k over two months</strong> and <strong>+11% more customers</strong> going into Black Friday.</p>
+    <div class="tblwrap"><table class="gates">
+      <thead><tr><th>Date</th><th>Check</th><th>Action if missed</th></tr></thead>
+      <tbody>
+        <tr><td>4 Aug</td><td>Bundles live? Coupler-only paused in ads?</td><td>Plan hasn't started — escalate</td></tr>
+        <tr><td>10 Aug</td><td>AOV ≥ $270</td><td>Switch to Plan B; cut spend to $146k</td></tr>
+        <tr><td>10 Aug</td><td>CPA ≤ $92</td><td>Don't spend the full cap</td></tr>
+        <tr><td>20 Aug</td><td>GPAM ≥ 18%</td><td>Reset September to the +$40k floor</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>Still on the watch-list</h2>
+    <ul class="clean prose">
+      <li><strong>Fixed costs</strong> up 51.7% vs PCP — salaries drove 83% of it. Bigger than any marketing lever here; belongs on the agenda even though it's out of scope for August.</li>
+      <li><strong>Meta spend by campaign</strong> — current grease/cover spend split is <em>inferred from order share</em>, not measured. Deploying the campaign feed makes the reallocation decision-grade (~2 min).</li>
+      <li><strong>Product cost by category</strong> — all GPAM maths uses the blended 34.21%; if covers and mats differ materially, the plans shift.</li>
+      <li><strong>Cash flow</strong> — August spend $146–163k lands before month-end revenue; BFCM needs ~$225k inside a 10-day window.</li>
+    </ul>
+  </section>
+
+  <footer class="foot">
+    <p class="tag"><b>WE'VE</b> GOT YOU COVERED</p>
+    <p>All figures ex-GST. Both EE models display MER/VCR on GST-inclusive revenue (flattering both ~9%); every number here is restated ex-GST. Plan economics tie to the July baseline via the EE 7.1 model, verified to the cent. Retention figures from the companion Repurchase &amp; Cross-Sell report (Shopify live, 2 Aug 2026).</p>
+  </footer>
+</div>

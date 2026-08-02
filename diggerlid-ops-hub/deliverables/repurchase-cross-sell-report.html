@@ -1,0 +1,250 @@
+<style>
+  :root{
+    --black:#231f20; --black-90:#3a3637; --yellow:#f5eb19; --yellow-40:#fbf7a3;
+    --paper:#faf9f6; --card:#ffffff; --ink:#231f20; --muted:#6f6a64; --faint:#94908a;
+    --hair:#e6e2da; --hair-strong:#d8d3c9; --good:#2f7d4f; --crit:#b23b2e;
+    --band:#f3f0e8; --shadow:0 1px 2px rgba(35,31,32,.05),0 8px 24px rgba(35,31,32,.05);
+    --sans:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    --cond:"Bahnschrift","DIN Alternate","Arial Narrow","Roboto Condensed",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#1a1718; --card:#231f20; --ink:#f3f0e8; --muted:#a9a39a; --faint:#7d7871;
+      --hair:#39343320; --hair:#3a3536; --hair-strong:#4a4546; --band:#201c1d;
+      --black-90:#e9e5dd; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1a1718; --card:#231f20; --ink:#f3f0e8; --muted:#a9a39a; --faint:#7d7871;
+    --hair:#3a3536; --hair-strong:#4a4546; --band:#201c1d; --black-90:#e9e5dd;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  }
+  :root[data-theme="light"]{
+    --paper:#faf9f6; --card:#ffffff; --ink:#231f20; --muted:#6f6a64; --faint:#94908a;
+    --hair:#e6e2da; --hair-strong:#d8d3c9; --band:#f3f0e8; --black-90:#3a3637;
+    --shadow:0 1px 2px rgba(35,31,32,.05),0 8px 24px rgba(35,31,32,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:940px;margin:0 auto;padding:0 24px 80px}
+  .prose{max-width:70ch}
+  h1,h2,h3{font-family:var(--cond);font-weight:700;line-height:1.08;text-wrap:balance;letter-spacing:.01em}
+  h1{font-size:clamp(30px,5vw,46px);margin:.2em 0 .1em}
+  h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 4px;padding-bottom:8px;border-bottom:3px solid var(--yellow);display:inline-block}
+  h3{font-size:19px;margin:26px 0 6px;text-transform:uppercase;letter-spacing:.04em;font-family:var(--cond)}
+  p{margin:10px 0}
+  a{color:inherit}
+  .eyebrow{font-family:var(--cond);text-transform:uppercase;letter-spacing:.22em;
+    font-size:13px;font-weight:700;color:var(--muted)}
+  strong{font-weight:700}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* masthead */
+  header.mast{border-top:8px solid var(--black);padding-top:22px;margin-top:0}
+  .mast-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .brand{font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:.18em;text-transform:uppercase}
+  .brand .bar{background:var(--yellow);color:var(--black);padding:2px 8px;margin-right:2px}
+  .stamp{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+    font-size:12px;color:var(--muted);border:1.5px solid var(--hair-strong);border-radius:2px;padding:4px 10px}
+  .meta{color:var(--muted);font-size:14px;margin-top:4px}
+  .rule{height:1px;background:var(--hair);border:0;margin:22px 0}
+
+  section{margin-top:40px}
+  .lead{font-size:19px;line-height:1.55}
+
+  /* KPI tiles */
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:22px 0}
+  .tile{background:var(--card);border:1px solid var(--hair);border-radius:10px;padding:16px 16px 14px;box-shadow:var(--shadow)}
+  .tile .k{font-family:var(--cond);font-weight:700;font-size:34px;line-height:1;letter-spacing:.01em}
+  .tile .l{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:8px}
+  .tile .s{font-size:13px;color:var(--faint);margin-top:3px}
+  .tile.accent{background:var(--yellow);border-color:var(--yellow);color:var(--black)}
+  .tile.accent .l,.tile.accent .s{color:var(--black-90)}
+  :root[data-theme="dark"] .tile.accent,:root:not([data-theme]) .tile.accent{color:#231f20}
+  .tile.dark{background:var(--black);border-color:var(--black);color:#f3f0e8}
+  .tile.dark .l,.tile.dark .s{color:#b8b2a8}
+
+  /* tables */
+  .tblwrap{overflow-x:auto;margin:16px 0;border:1px solid var(--hair);border-radius:10px;box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;background:var(--card);font-size:14.5px}
+  th,td{padding:11px 14px;text-align:right;white-space:nowrap}
+  th:first-child,td:first-child{text-align:left;white-space:normal}
+  thead th{background:var(--black);color:#f3f0e8;font-family:var(--cond);text-transform:uppercase;
+    letter-spacing:.04em;font-size:12.5px;font-weight:700;position:sticky;top:0}
+  tbody tr+tr td{border-top:1px solid var(--hair)}
+  tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--band) 55%,transparent)}
+  td.tnum,th.tnum{font-variant-numeric:tabular-nums}
+  .ci{color:var(--muted);font-size:12.5px}
+  tr.hi td{background:var(--yellow-40)!important}
+  :root[data-theme="dark"] tr.hi td,:root:not([data-theme]) tr.hi td{background:#3a361f!important}
+
+  .pill{display:inline-block;font-family:var(--cond);font-weight:700;font-size:11.5px;text-transform:uppercase;
+    letter-spacing:.04em;padding:2px 8px;border-radius:999px;line-height:1.5}
+  .pill.sig{background:color-mix(in srgb,var(--good) 16%,transparent);color:var(--good);border:1px solid color-mix(in srgb,var(--good) 40%,transparent)}
+  .pill.ns{background:color-mix(in srgb,var(--muted) 14%,transparent);color:var(--muted);border:1px solid var(--hair-strong)}
+
+  /* ladder */
+  .ladder{display:flex;flex-direction:column;gap:12px;margin:18px 0}
+  .lad{display:grid;grid-template-columns:120px 1fr auto;align-items:center;gap:14px}
+  .lad .name{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:15px}
+  .bar{height:26px;border-radius:5px;background:var(--yellow);min-width:3px}
+  .bar.mid{background:var(--black-90)}
+  .bar.low{background:var(--hair-strong)}
+  .lad .val{font-family:var(--cond);font-weight:700;font-size:17px;font-variant-numeric:tabular-nums}
+
+  /* callouts */
+  .note{background:var(--yellow-40);border-left:6px solid var(--yellow);padding:14px 18px;border-radius:0 8px 8px 0;margin:18px 0}
+  :root[data-theme="dark"] .note,:root:not([data-theme]) .note{background:#2b2718}
+  .note.dark{background:var(--black);color:#f3f0e8;border-left-color:var(--yellow)}
+  .note .h{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:13px;margin-bottom:4px}
+  .takeaways{display:grid;gap:12px;margin:18px 0;grid-template-columns:1fr}
+  .take{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;background:var(--card);
+    border:1px solid var(--hair);border-radius:10px;padding:14px 16px;box-shadow:var(--shadow)}
+  .take .n{font-family:var(--cond);font-weight:700;font-size:20px;color:var(--black);background:var(--yellow);
+    width:34px;height:34px;border-radius:8px;display:grid;place-items:center}
+  ul.clean{margin:10px 0;padding-left:20px}
+  ul.clean li{margin:6px 0}
+  footer.foot{margin-top:56px;border-top:1px solid var(--hair);padding-top:20px;color:var(--muted);font-size:13px}
+  .foot .tag{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink)}
+  .foot .tag b{background:var(--yellow);color:#231f20;padding:1px 6px}
+  .ki{color:var(--muted);font-size:13.5px}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div class="mast-top">
+      <div class="brand"><span class="bar">DIGGER</span>LID · GROWTH ANALYTICS</div>
+      <div class="stamp">Internal · Evidence grade</div>
+    </div>
+    <h1>Repurchase &amp; Cross-Sell: who comes back, and for what</h1>
+    <div class="meta">Cohort retention study · Prepared 2 Aug 2026 · Source: Shopify Admin API (live), full order histories · Deterministic title-based classification · Wilson 95% CIs, two-proportion z-tests</div>
+  </header>
+
+  <section>
+    <p class="lead">We pulled every order for two groups of new customers and followed them for the better part of a year. The question: after someone's <em>first</em> purchase, do they come back — and do they ever move up to the big-ticket gear? The short answer: <strong>grease keeps them coming back, covers sell once with a small tail, and mats are one-and-done.</strong></p>
+
+    <div class="tiles">
+      <div class="tile accent">
+        <div class="k">27%</div>
+        <div class="l">Grease repurchase</div>
+        <div class="s">vs 12–14% covers · 2.6% mats</div>
+      </div>
+      <div class="tile">
+        <div class="k tnum">~8%</div>
+        <div class="l">Cross-sell, any entry</div>
+        <div class="s">Flat across categories</div>
+      </div>
+      <div class="tile">
+        <div class="k tnum">5.2%</div>
+        <div class="l">Grease → &gt;$100 cover</div>
+        <div class="s">±2pt · not a gateway</div>
+      </div>
+      <div class="tile dark">
+        <div class="k tnum">970</div>
+        <div class="l">Customers analysed</div>
+        <div class="s">n=893 + 77 mats</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How to read this</h2>
+    <div class="prose">
+      <p>Three plain-English measures, applied identically to every group:</p>
+      <ul class="clean">
+        <li><strong>Repurchase</strong> — did they ever place a second order (of anything)?</li>
+        <li><strong>Cross-sell</strong> — did a later order include a <em>different category</em> than they started in?</li>
+        <li><strong>High-value repurchase</strong> — did a later order include any item <strong>over $100</strong>?</li>
+      </ul>
+      <p class="ki">Cohort A: first order Aug–Oct 2025 (n=893, 9–12 months observed). Cohort B: the BFCM PRO Mat launch, first order Nov 30 2025–Feb 2026 (mats n=77, ~8 months). Categories assigned by product title; a customer's "first purchase" is the highest-value line in their first order.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Retention by first purchase</h2>
+    <p class="prose">Cohort A, n=893. The entry product predicts whether someone comes back — but <strong>not</strong> whether they branch into other categories.</p>
+    <div class="tblwrap">
+      <table>
+        <thead>
+          <tr><th>First purchase</th><th class="tnum">n</th><th class="tnum">Repurchase</th><th class="tnum">Cross-sell</th><th class="tnum">High-value repurchase</th></tr>
+        </thead>
+        <tbody>
+          <tr class="hi"><td><strong>Grease</strong></td><td class="tnum">462</td><td class="tnum"><strong>27.1%</strong> <span class="ci">[23–31]</span></td><td class="tnum">7.6% <span class="ci">[5–10]</span></td><td class="tnum"><strong>22.3%</strong> <span class="ci">[19–26]</span></td></tr>
+          <tr><td><strong>Covers</strong></td><td class="tnum">374</td><td class="tnum"><strong>14.2%</strong> <span class="ci">[11–18]</span></td><td class="tnum">8.0% <span class="ci">[6–11]</span></td><td class="tnum">11.5% <span class="ci">[9–15]</span></td></tr>
+          <tr><td>Accessories</td><td class="tnum">52</td><td class="tnum">19.2% <span class="ci">[11–32]</span></td><td class="tnum">9.6% <span class="ci">[4–21]</span></td><td class="tnum">9.6% <span class="ci">[4–21]</span></td></tr>
+          <tr><td>Portable (mats)</td><td class="tnum">1</td><td colspan="3" class="ci" style="text-align:left">Not measurable here — mats launched later (see next section)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="prose">Grease repurchase (27.1%) versus covers (14.2%) is highly significant — <span class="pill sig">p&lt;0.0001</span> — grease brings people back roughly twice as often. But those returns are mostly <em>more grease</em>: cross-sell into other categories is low and flat (grease 7.6% vs covers 8.0%, <span class="pill ns">p=0.81</span>).</p>
+  </section>
+
+  <section>
+    <h2>Covers vs Mats, head-to-head</h2>
+    <p class="prose">Measured over the <strong>same ~8-month window</strong> (covers' clock capped to match the mats cohort, so covers don't get unfair extra time to repeat).</p>
+    <div class="tblwrap">
+      <table>
+        <thead>
+          <tr><th>First purchase</th><th class="tnum">n</th><th class="tnum">Repurchase</th><th class="tnum">Cross-sell</th><th class="tnum">High-value repurchase</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Covers</strong> <span class="ci">(8mo-matched)</span></td><td class="tnum">374</td><td class="tnum"><strong>12.0%</strong> <span class="ci">[9–16]</span></td><td class="tnum">5.9% <span class="ci">[4–9]</span></td><td class="tnum"><strong>10.4%</strong> <span class="ci">[8–14]</span></td></tr>
+          <tr class="hi"><td><strong>Mats / Portable</strong></td><td class="tnum">77</td><td class="tnum"><strong>2.6%</strong> <span class="ci">[1–9]</span></td><td class="tnum">1.3% <span class="ci">[0–7]</span></td><td class="tnum"><strong>2.6%</strong> <span class="ci">[1–9]</span></td></tr>
+          <tr><td>Significance (mats vs covers)</td><td></td><td class="tnum"><span class="pill sig">p=0.014</span></td><td class="tnum"><span class="pill ns">p=0.10</span></td><td class="tnum"><span class="pill sig">p=0.030</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="prose"><strong>Mats are the most one-and-done product in the range — significantly more so than covers.</strong> 97 of every 100 PRO Mat buyers never place a second order, and when they do it is almost never another &gt;$100 item.</p>
+  </section>
+
+  <section>
+    <h2>The retention ladder</h2>
+    <p class="prose">Same measure (any repurchase), three entry products, plotted to scale.</p>
+    <div class="ladder">
+      <div class="lad"><span class="name">Grease</span><span class="bar" style="width:96%"></span><span class="val">27.1%</span></div>
+      <div class="lad"><span class="name">Covers</span><span class="bar mid" style="width:50%"></span><span class="val">14.2%</span></div>
+      <div class="lad"><span class="name">Mats</span><span class="bar low" style="width:9%"></span><span class="val">2.6%</span></div>
+    </div>
+    <div class="note">
+      <div class="h">Read it this way</div>
+      Grease is the <strong>retention engine</strong> (high frequency, mostly of more grease). Covers are a <strong>single sale with a small high-value tail</strong> (~10–12%). Mats are a <strong>pure single transaction</strong> — no LTV tail at all.
+    </div>
+  </section>
+
+  <section>
+    <h2>Is grease a gateway to covers? No.</h2>
+    <div class="prose">
+      <p>The theory: pay more to acquire a grease customer because they'll graduate to a cover. We tested it at scale — <strong>n=462 grease-first, ±2pt precision.</strong></p>
+      <ul class="clean">
+        <li>Grease-first buyers reach a <strong>&gt;$100 non-grease</strong> order at just <strong>5.2%</strong> [3.5–7.6] — and that's <em>no higher</em> than a cover buyer's own repeat rate (7.9%, <span class="pill ns">p=0.10</span>).</li>
+        <li>Sub-types are indistinguishable: coupler-only <strong>6.4%</strong> (n=78) vs bundles 5.6% (n=340), <span class="pill ns">p=0.78</span>. The earlier "coupler-only never converts" was small-sample noise (n=4).</li>
+      </ul>
+      <p><strong>Verdict:</strong> don't pay a premium CPA betting on grease → cover migration. It mostly doesn't happen.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>What it means for spend</h2>
+    <div class="takeaways">
+      <div class="take"><div class="n">1</div><div><strong>Mat CPA must pay back on order one.</strong> At ~2.6% repurchase there's no second order to recover acquisition cost. Funding mat prospecting is a <em>list-building</em> decision, not an LTV one — size it that way.</div></div>
+      <div class="take"><div class="n">2</div><div><strong>Treat covers as single-sale-plus-a-small-tail.</strong> ~12–14% come back, ~10–12% for another big-ticket item. Bid cover CPA to a single-sale payback and treat the tail as upside, not the plan.</div></div>
+      <div class="take"><div class="n">3</div><div><strong>Bid grease on frequency, never migration.</strong> Grease's edge is high-repeat consumable reorders. The grease→cover jump (5.2% ±2) doesn't justify a premium CPA.</div></div>
+      <div class="take"><div class="n">4</div><div><strong>This is the flip side of the AOV story.</strong> PRO Mat drove volume but replaced repeat-capable enclosure buyers with one-and-done mat buyers at a third of the price — hurting on both first-order value <em>and</em> repeat.</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Honest caveats</h2>
+    <ul class="clean prose">
+      <li><strong>Mats n=77</strong> (±7pt) vs covers n=374 — wider interval, but the gap is large enough that repurchase and high-value repurchase both clear significance.</li>
+      <li>The mat sample is the <strong>BFCM launch cohort</strong> — chosen because it's the longest-observed and highest-volume mat group. Newer mat buyers have had <em>less</em> time to repeat, so pulling them would bias the number <em>down</em>, not tighten it fairly. The clean fix is to re-observe this same cohort in a few months.</li>
+      <li>Cross-sell is measured at the <strong>category</strong> level; a cheaper same-category repeat won't count as cross-sell (by design).</li>
+    </ul>
+  </section>
+
+  <footer class="foot">
+    <p class="tag"><b>DIGGIN'</b> INTO THE DATA</p>
+    <p>Method: Shopify Admin GraphQL, live 2 Aug 2026. Classified deterministically by product-title keyword (grease / covers / portable / accessory), ignoring $0 gifts, package protection, returns and test lines. Grease-first arm reconciles at 462 across two independent classification passes. Confidence intervals are Wilson 95%; group differences use two-proportion z-tests. Raw customer pages held outside the repo; classifier scripts archived under <code>analysis/cohort-scripts/</code>.</p>
+  </footer>
+</div>
