@@ -7,46 +7,41 @@
 > **July 2026 is the worst MER in the window (41.4% / 2.42x).** PCP: AOV −36.4%, CVR −47.0%, but
 > VCR −13.7% and CPA −27.5% — costs improved, basket size regressed.
 
-> **Latest: `data/forecast/2026-W31-rev2-accelerate5.md` — REBASED to ex-GST (Accelerate_5, 29 Jul).**
-> Model-vs-live spend gap is **resolved**: it was staleness, not account coverage (model now $138.0k
-> through 27 Jul vs live Meta $141.2k same date — a ~2% timing difference).
+> **Latest: `data/forecast/2026-W32.md` — July LOCKED to actuals; August in progress.**
+> **July final:** $366,852 net_sales → **$382,884 ex-GST**, realized MER **42.4%** (live Meta $162,325),
+> GPAM 10.7%, **net ≈ −$25k** — moved into ACTUALS.
 >
-> **Two corrections that move the whole forecast:**
-> 1. **MER denominator.** The model *displays* MER ÷ GST-inclusive revenue (July: 37.9%), but its own P&L
->    uses ex-GST (Profit = Revenue Ex GST − Total Expenses). On the P&L basis **July MER = 41.1%**. The
->    displayed ratio flatters MER *and* VCR by ~9%. All figures here are now ex-GST.
-> 2. **VCR was optimistic.** 2026 actuals ex-GST: BAU 44.8–47.6% (~46.8%), sale months 50.0–50.7% (~50.3%).
->    Prior assumption 46%/48% understated variable cost — corrected to **0.468 / 0.503**.
+> **August (in progress):** off **2 completed days (Aug 1–2, a weekend — noisy)**, run-rate completes
+> ~**$284k ex-GST** at MER **36%** → GPAM 14.2%, **net ≈ −$34.6k**. Low-confidence early read — the
+> Father's Day sale + Zip Mat launch land later in the month and should lift it.
 >
-> July completes ~$383.6k ex-GST, MER 42%, GPAM 11.3%, **net ≈ −$31.6k**.
-> **H2 now −$56.6k on the current trajectory** vs **+$136.4k under target discipline** — a **$193k swing**
-> that rests entirely on MER. FY26 revenue ~$5.0M (ex-GST basis, higher than prior $4.8M net_sales basis).
+> **H2 (Aug–Dec)** blended GPAM **16.6% on the current trajectory (net −$36k)** vs **23.9% under target
+> discipline (net +$113k)** — a **$149k swing** that still rests entirely on MER. FY26 net revenue **~$4.85M**.
 >
-> ⚠️ **No month clears 26% GPAM on the current trajectory.** Sep/Oct clear it only under discipline.
+> ⚠️ **On the current trajectory only Nov clears break-even; Aug/Sep/Oct/Dec all show losses.**
+> Under discipline Sep/Oct clear 26% GPAM; Nov/Dec sit ~24% (sale-month VCR).
 
-**Revenue basis:** Shopify `net_sales` (after discounts/returns, before GST), AUD. Jan–Jun actual;
-**July completed from run-rate** (W30: $221k net through 19 days → ~$360.6k full month);
-Aug–Dec = **calendar-driven scenario** (Aug: Zip Mat launch + Father's Day; Nov: BFCM; Dec: Christmas).
-**These Aug–Dec revenue figures are scenario assumptions, not predictions.**
+**Revenue basis:** **ex-GST** (Shopify net_sales × 1.0437), AUD. Jan–Jul actual; **August in progress**
+from 2 completed days (weekend — noisy); Sep–Dec = **calendar-driven scenario** (Sep BAU, Nov BFCM,
+Dec Christmas). **Sep–Dec revenue figures are scenario assumptions, not predictions.**
 
-**Margin model (EE baseline):** GPAM% = (1 − VCR) − MER. VCR 0.46 BAU / 0.48 sale months.
+**Margin model (EE baseline):** GPAM% = (1 − VCR) − MER. VCR **0.468 BAU / 0.503 sale months** (2026 actuals).
 Fixed costs $74,831/mo. Net profit = GPAM$ − fixed. **GPAM target = 26%.**
 
-## Two scenarios — the whole story is MER discipline
+## Two scenarios — the whole story is MER discipline (2026-W32, ex-GST)
 
-| Mon | Rev (net) | **Current trajectory** (spend creeps ~30% MER) | | **Target discipline** (MER ~25%) | |
+| Mon | Rev (ex-GST) | **Current trajectory** | | **Target discipline** | |
 |---|--:|--:|--:|--:|--:|
 | | | GPAM% | Net profit | GPAM% | Net profit |
-| Jul | $365k | 11% ⚠ | −$35k **loss** | 11% ⚠ | −$35k **loss** |
-| Aug | $420k | 20% ⚠ | $9k | 25% ⚠ | $30k |
-| Sep | $340k | 24% ⚠ | $7k | **29%** ✓ | $24k |
-| Oct | $330k | 24% ⚠ | $4k | **29%** ✓ | $21k |
-| Nov | $580k | 24% ⚠ | $64k | **26%** ✓ | $76k |
-| Dec | $430k | 22% ⚠ | $20k | **26%** ✓ | $37k |
-| **H2** | **$2.46M** | **21% blended** | **$70k** | **24.4% blended** | **$153k** |
+| Aug *(in prog)* | $284k | 14.2% ⚠ | −$34.6k **loss** | 14.2% ⚠ | −$34.6k **loss** |
+| Sep | $355k | 17.2% ⚠ | −$13.8k | **28.2%** ✓ | $25.2k |
+| Oct | $344k | 17.2% ⚠ | −$15.6k | **28.2%** ✓ | $22.3k |
+| Nov | $605k | 17.7% ⚠ | $32.3k | 23.7% ⚠ | $68.6k |
+| Dec | $449k | 15.7% ⚠ | −$4.4k | 23.7% ⚠ | $31.5k |
+| **H2 (Aug–Dec)** | **$2.04M** | **16.6% blended** | **−$36.0k** | **23.9% blended** | **+$113.1k** |
 
-Full-year 2026 net revenue ≈ **$4.8M** either way (revenue is volume-driven; the scenarios differ on
-**margin**, not top line).
+July locked to ACTUALS (−$25k). Full-year 2026 net revenue ≈ **$4.85M** either way — the scenarios differ
+on **margin**, not top line.
 
 ## Verdict
 - **26% GPAM is achievable — but not on the current trajectory.** The single lever is **MER**. Hold it

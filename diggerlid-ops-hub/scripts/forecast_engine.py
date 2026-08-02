@@ -35,24 +35,27 @@ EXGST_PER_NETSALES = 1.0437   # ex-GST revenue / Shopify net_sales (Jul: 335,475
 ACTUALS = {
     'Jan': (241767, 0.1992), 'Feb': (306489, 0.2758), 'Mar': (311480, 0.3216),
     'Apr': (341520, 0.3168), 'May': (416322, 0.2952), 'Jun': (807148, 0.2447),
+    # Jul locked: Shopify net_sales $366,852 x 1.0437 = $382,884 ex-GST;
+    # realized MER = live Meta $162,325 / 382,884 = 0.424.
+    'Jul': (382884, 0.4240),
 }
 
 # --- month in progress: refresh weekly ---------------------------------------
 # Revenue: Shopify net_sales MTD x EXGST_PER_NETSALES -> ex-GST basis.
 # Spend:   live Meta Graph API via /api/mer.
 CURRENT = {
-    'month': 'Jul', 'sale': False,
-    'mtd_net': round(343809 * EXGST_PER_NETSALES), 'days_elapsed': 29, 'days_in_month': 31,
-    'ad_spend_mtd': 150478,    # LIVE from Meta Graph API via /api/mer (29 Jul)
-    'assumed_mer': 0.37,       # fallback only — not used while spend is live
-    'mer_note': 'ACTUAL — Meta API MTD, ex-GST basis',
+    'month': 'Aug', 'sale': True,   # promo month (Zip Mat launch + Father's Day 26 Aug)
+    # Shopify net_sales, 2 completed days (Aug 1-2 = $17,554.56); Aug 3 partial excluded.
+    'mtd_net': round(17554.56 * EXGST_PER_NETSALES), 'days_elapsed': 2, 'days_in_month': 31,
+    'ad_spend_mtd': 6509,      # LIVE Meta Graph API via /api/campaigns (Aug 1-2)
+    'assumed_mer': 0.34,       # fallback only — not used while spend is live
+    'mer_note': 'ACTUAL — Meta API MTD (Aug 1-2), ex-GST basis · NOTE: 2 weekend days, noisy',
 }
 
 # --- forward scenario: revenue (ex-GST) + MER per scenario --------------------
 # Revenue = calendar-driven scenario, converted to the ex-GST basis. NOT a prediction.
 # 'mer_current' now reflects the July-actual trajectory (~41% ex-GST), not the old 30% guess.
 FORWARD = {
-    'Aug': {'rev': 438354, 'sale': True,  'mer_current': 0.38, 'mer_target': 0.28},
     'Sep': {'rev': 354858, 'sale': False, 'mer_current': 0.36, 'mer_target': 0.25},
     'Oct': {'rev': 344421, 'sale': False, 'mer_current': 0.36, 'mer_target': 0.25},
     'Nov': {'rev': 605346, 'sale': True,  'mer_current': 0.32, 'mer_target': 0.26},
