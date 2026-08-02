@@ -2,23 +2,23 @@
   :root{
     --black:#231f20;--yellow:#f5eb19;--yellow-40:#fbf7a3;
     --paper:#faf9f6;--card:#ffffff;--ink:#231f20;--muted:#6f6a64;--faint:#94908a;
-    --hair:#e6e2da;--hair-strong:#d8d3c9;--band:#f3f0e8;--crit:#b23b2e;--good:#2f7d4f;
+    --hair:#e6e2da;--hair-strong:#d8d3c9;--band:#f3f0e8;--crit:#b23b2e;--good:#2f7d4f;--warn:#9a7d12;
     --track:#ece8e0;
-    --c-port:#f5eb19;--c-grease:#231f20;--c-cov:#a49a8d;--c-oth:#d8d3c9;
+    --s-port:#f5eb19;--s-grease:#231f20;--s-cov:#a49a8d;--s-oth:#d8d3c9;
     --shadow:0 1px 2px rgba(35,31,32,.05),0 8px 24px rgba(35,31,32,.05);
     --sans:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
     --cond:"Bahnschrift","DIN Alternate","Arial Narrow","Roboto Condensed",sans-serif;
   }
   @media (prefers-color-scheme:dark){:root{
     --paper:#1a1718;--card:#231f20;--ink:#f3f0e8;--muted:#a9a39a;--faint:#7d7871;--hair:#3a3536;--hair-strong:#4a4546;--band:#201c1d;--track:#312c2d;
-    --c-grease:#efe9df;--c-cov:#8c8378;--c-oth:#4a4546;--good:#5fce8f;--crit:#e0776a;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);}}
-  :root[data-theme="dark"]{--paper:#1a1718;--card:#231f20;--ink:#f3f0e8;--muted:#a9a39a;--faint:#7d7871;--hair:#3a3536;--hair-strong:#4a4546;--band:#201c1d;--track:#312c2d;--c-grease:#efe9df;--c-cov:#8c8378;--c-oth:#4a4546;--good:#5fce8f;--crit:#e0776a;}
-  :root[data-theme="light"]{--paper:#faf9f6;--card:#ffffff;--ink:#231f20;--muted:#6f6a64;--faint:#94908a;--hair:#e6e2da;--hair-strong:#d8d3c9;--band:#f3f0e8;--track:#ece8e0;--c-grease:#231f20;--c-cov:#a49a8d;--c-oth:#d8d3c9;--good:#2f7d4f;--crit:#b23b2e;}
+    --s-grease:#efe9df;--s-cov:#8c8378;--s-oth:#4a4546;--good:#5fce8f;--crit:#e0776a;--warn:#e2b84a;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);}}
+  :root[data-theme="dark"]{--paper:#1a1718;--card:#231f20;--ink:#f3f0e8;--muted:#a9a39a;--faint:#7d7871;--hair:#3a3536;--hair-strong:#4a4546;--band:#201c1d;--track:#312c2d;--s-grease:#efe9df;--s-cov:#8c8378;--s-oth:#4a4546;--good:#5fce8f;--crit:#e0776a;--warn:#e2b84a;}
+  :root[data-theme="light"]{--paper:#faf9f6;--card:#ffffff;--ink:#231f20;--muted:#6f6a64;--faint:#94908a;--hair:#e6e2da;--hair-strong:#d8d3c9;--band:#f3f0e8;--track:#ece8e0;--s-grease:#231f20;--s-cov:#a49a8d;--s-oth:#d8d3c9;--good:#2f7d4f;--crit:#b23b2e;--warn:#9a7d12;}
   *{box-sizing:border-box}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:760px;margin:0 auto;padding:0 24px 64px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px 64px}
   h1{font-family:var(--cond);font-weight:700;font-size:clamp(26px,4.5vw,38px);line-height:1.08;margin:.3em 0 .1em;text-wrap:balance}
-  h2{font-family:var(--cond);font-weight:700;font-size:19px;text-transform:uppercase;letter-spacing:.04em;margin:34px 0 4px}
+  h2{font-family:var(--cond);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:.04em;margin:38px 0 2px}
   .tnum{font-variant-numeric:tabular-nums}
   header.mast{border-top:8px solid var(--black);padding-top:20px}
   .mast-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
@@ -26,39 +26,34 @@
   .brand .bar{background:var(--yellow);color:var(--black);padding:2px 8px;margin-right:2px}
   .stamp{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:12px;color:var(--muted);border:1.5px solid var(--hair-strong);border-radius:2px;padding:4px 10px}
   .meta{color:var(--muted);font-size:13.5px;margin-top:4px}
-
-  /* 100% stacked bar */
-  .stack{display:flex;height:62px;border-radius:10px;overflow:hidden;margin:20px 0 10px;box-shadow:var(--shadow);border:1px solid var(--hair)}
-  .seg{display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:700;font-size:15px;color:#231f20;overflow:hidden;white-space:nowrap}
-  .seg.port{background:var(--c-port)}
-  .seg.grease{background:var(--c-grease);color:#faf9f6}
-  :root[data-theme="dark"] .seg.grease,:root:not([data-theme]) .seg.grease{color:#231f20}
-  .seg.cov{background:var(--c-cov);color:#231f20}
-  .seg.oth{background:var(--c-oth);color:#231f20}
-  .keys{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+  .sub{color:var(--muted);font-size:13.5px;margin:2px 0 0}
+  .card{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:14px 12px 8px;box-shadow:var(--shadow);margin:14px 0}
+  svg{display:block;width:100%;height:auto}
+  .keys{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);padding:6px 6px 2px}
   .key{display:flex;align-items:center;gap:7px}
   .sw{width:13px;height:13px;border-radius:3px;display:inline-block}
-  .sw.port{background:var(--c-port)}.sw.grease{background:var(--c-grease)}.sw.cov{background:var(--c-cov)}.sw.oth{background:var(--c-oth)}
-
-  /* labelled bars */
-  .rows{display:flex;flex-direction:column;gap:14px;margin:18px 0}
-  .row{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center}
-  .row .lab{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:14.5px}
-  .row .lab small{display:block;font-family:var(--sans);font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted);font-size:12px}
-  .track{position:relative;background:var(--track);border-radius:6px;height:34px;overflow:visible}
-  .fill{height:100%;border-radius:6px;display:flex;align-items:center;padding:0 10px;font-family:var(--cond);font-weight:700;font-size:14px;color:#231f20;min-width:44px}
-  .fill.port{background:var(--c-port)}
-  .fill.grease{background:var(--c-grease);color:#faf9f6}
+  .sw.port{background:var(--s-port)}.sw.grease{background:var(--s-grease)}.sw.cov{background:var(--s-cov)}.sw.oth{background:var(--s-oth)}
+  /* july snapshot bars */
+  .stack{display:flex;height:54px;border-radius:10px;overflow:hidden;margin:16px 0 8px;box-shadow:var(--shadow);border:1px solid var(--hair)}
+  .seg{display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:700;font-size:14px;color:#231f20;white-space:nowrap;overflow:hidden}
+  .seg.port{background:var(--s-port)}.seg.grease{background:var(--s-grease);color:#faf9f6}
+  :root[data-theme="dark"] .seg.grease,:root:not([data-theme]) .seg.grease{color:#231f20}
+  .seg.cov{background:var(--s-cov);color:#231f20}.seg.oth{background:var(--s-oth);color:#231f20}
+  .rows{display:flex;flex-direction:column;gap:11px;margin:14px 0}
+  .row{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center}
+  .row .lab{font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:14px}
+  .trk{position:relative;background:var(--track);border-radius:6px;height:30px}
+  .fill{height:100%;border-radius:6px;display:flex;align-items:center;padding:0 9px;font-family:var(--cond);font-weight:700;font-size:13px;color:#231f20;min-width:40px}
+  .fill.port{background:var(--s-port)}.fill.grease{background:var(--s-grease);color:#faf9f6}
   :root[data-theme="dark"] .fill.grease,:root:not([data-theme]) .fill.grease{color:#231f20}
-  .fill.cov{background:var(--c-cov);color:#231f20}
-  .val{position:absolute;top:50%;transform:translateY(-50%);font-family:var(--cond);font-weight:700;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
-  .breakeven{position:absolute;top:-6px;bottom:-6px;border-left:2px dashed var(--crit)}
-  .be-lab{position:absolute;top:-22px;font-family:var(--cond);font-weight:700;font-size:11px;color:var(--crit);text-transform:uppercase;letter-spacing:.03em;transform:translateX(-50%)}
-
-  .note{background:var(--yellow-40);border-left:6px solid var(--yellow);padding:13px 16px;border-radius:0 8px 8px 0;margin:22px 0 0}
+  .fill.cov{background:var(--s-cov);color:#231f20}
+  .be{position:absolute;top:-5px;bottom:-5px;border-left:2px dashed var(--crit)}
+  .note{background:var(--yellow-40);border-left:6px solid var(--yellow);padding:13px 16px;border-radius:0 8px 8px 0;margin:20px 0 0}
   :root[data-theme="dark"] .note,:root:not([data-theme]) .note{background:#2b2718}
   .note .h{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:12.5px;margin-bottom:3px}
-  .sub{color:var(--muted);font-size:13.5px;margin:2px 0 0}
+  .pending{border:1.5px dashed var(--hair-strong);border-radius:12px;padding:16px 18px;margin:14px 0;color:var(--muted)}
+  .pending .h{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:13px;color:var(--ink);margin-bottom:4px}
+  code{background:var(--band);padding:1px 5px;border-radius:4px;font-size:12.5px}
   footer{margin-top:40px;border-top:1px solid var(--hair);padding-top:16px;color:var(--muted);font-size:12.5px}
 </style>
 
@@ -66,60 +61,123 @@
   <header class="mast">
     <div class="mast-top">
       <div class="brand"><span class="bar">DIGGER</span>LID · MEDIA MIX</div>
-      <div class="stamp">Measured · July 2026</div>
+      <div class="stamp">Measured · Jan–Jul 2026</div>
     </div>
-    <h1>Where the ad money goes — by product category</h1>
-    <div class="meta">Meta spend <strong>$162,325</strong>, July 2026 · measured live from <code>/api/campaigns</code> · 98% attributed by ad-set name.
+    <h1>Ad spend by product category — the trend</h1>
+    <div class="meta">Meta spend, Jan–Jul 2026 · measured live from <code>/api/campaigns</code>, product parsed from ad-set names (~98% attributed).
       Portable = Pro Mat + Hauler · Grease = grease + accessories + KAJO · Covers = all covers &amp; enclosures.</div>
   </header>
 
-  <h2>Share of spend</h2>
-  <div class="stack" role="img" aria-label="Portable 46.2%, Grease 26.2%, Covers 25.3%, Other 2.3%">
+  <div class="keys">
+    <span class="key"><span class="sw port"></span> Portable</span>
+    <span class="key"><span class="sw grease"></span> Grease</span>
+    <span class="key"><span class="sw cov"></span> Covers</span>
+    <span class="key"><span class="sw oth"></span> Other / untagged</span>
+  </div>
+
+  <h2>Spend over time</h2>
+  <p class="sub">Stacked area — total height is monthly ad spend; bands are the category split. Note the <strong>Portable surge in July</strong> ($35k → $75k) and June's untagged EOFY spike.</p>
+  <div class="card"><svg id="spendChart" viewBox="0 0 760 320" role="img" aria-label="Monthly ad spend by category, stacked area, Jan to Jul 2026"></svg></div>
+
+  <h2>ROAS over time</h2>
+  <p class="sub">Meta-attributed return on ad spend by category. Dashed line = ~1.9 break-even at your ~48% VCR. <strong>Every line decays as spend scales — and July's Portable dives below break-even.</strong></p>
+  <div class="card"><svg id="roasChart" viewBox="0 0 760 320" role="img" aria-label="Monthly ROAS by category line chart Jan to Jul 2026"></svg></div>
+
+  <h2>July snapshot — share vs efficiency</h2>
+  <div class="stack" role="img" aria-label="July share Portable 46, Grease 26, Covers 25, Other 2">
     <div class="seg port" style="width:46.2%">46.2%</div>
     <div class="seg grease" style="width:26.2%">26.2%</div>
     <div class="seg cov" style="width:25.3%">25.3%</div>
     <div class="seg oth" style="width:2.3%"></div>
   </div>
-  <div class="keys">
-    <span class="key"><span class="sw port"></span> Portable Protection — $74,972</span>
-    <span class="key"><span class="sw grease"></span> Grease — $42,524</span>
-    <span class="key"><span class="sw cov"></span> Covers — $41,122</span>
-    <span class="key"><span class="sw oth"></span> Other — $3,706</span>
+  <div class="rows" style="margin-top:16px">
+    <div class="row"><div class="lab">Portable</div><div class="trk"><div class="be" style="left:55.4%"></div><div class="fill port" style="width:55.4%">1.44</div></div></div>
+    <div class="row"><div class="lab">Grease</div><div class="trk"><div class="be" style="left:55.4%"></div><div class="fill grease" style="width:92.7%">2.41</div></div></div>
+    <div class="row"><div class="lab">Covers</div><div class="trk"><div class="be" style="left:55.4%"></div><div class="fill cov" style="width:73.1%">1.90</div></div></div>
+  </div>
+  <p class="sub">Bars = July ROAS (scaled to 2.6×); dashed = 1.9 break-even. Most spend on the lowest ROAS.</p>
+
+  <div class="note"><div class="h">The read</div>
+    Spend chased volume, not efficiency: <strong>Grease</strong> ran the best ROAS all year (5.4 → 2.4) on a shrinking budget share, while <strong>Portable</strong> got the July cash injection at its worst-ever ROAS (1.44). The budget is mapped upside-down to both efficiency and retention.
   </div>
 
-  <h2>Spend share, ranked</h2>
-  <div class="rows">
-    <div class="row"><div class="lab">Portable<small>Pro Mat + Hauler</small></div>
-      <div class="track"><div class="fill port" style="width:46.2%">46.2%</div></div></div>
-    <div class="row"><div class="lab">Grease<small>grease + accessories + KAJO</small></div>
-      <div class="track"><div class="fill grease" style="width:26.2%">26.2%</div></div></div>
-    <div class="row"><div class="lab">Covers<small>all covers + enclosures</small></div>
-      <div class="track"><div class="fill cov" style="width:25.3%">25.3%</div></div></div>
-  </div>
+  <h2>Cart → purchase rate <span style="font-size:13px;color:var(--muted);font-weight:400">(needs feed extension)</span></h2>
+  <div class="pending"><div class="h">Unlocks after a 30-second redeploy</div>
+    The live feed exposes spend, clicks, purchases and value — <strong>not</strong> <code>add_to_cart</code>. To chart cart→purchase by category, redeploy <code>api/campaigns.js</code> with the extra fields (add-to-cart, initiate-checkout, outbound clicks). I've got the one-paste ready — once it's live I'll pull Jan–Jul and drop the chart in here.</div>
 
-  <h2>…but efficiency runs the other way</h2>
-  <p class="sub">Return on ad spend (Meta-attributed). Break-even at your ~48% VCR is <strong>ROAS ≈ 1.9</strong>. Bars scaled to 2.6×.</p>
-  <div class="rows">
-    <div class="row"><div class="lab">Portable</div>
-      <div class="track">
-        <div class="be-lab" style="left:73%">break-even 1.9</div>
-        <div class="breakeven" style="left:73%"></div>
-        <div class="fill port" style="width:55.4%">1.44</div>
-        <span class="val" style="left:calc(55.4% + 10px)">below break-even</span>
-      </div></div>
-    <div class="row"><div class="lab">Grease</div>
-      <div class="track"><div class="breakeven" style="left:73%"></div>
-        <div class="fill grease" style="width:92.7%">2.41</div></div></div>
-    <div class="row"><div class="lab">Covers</div>
-      <div class="track"><div class="breakeven" style="left:73%"></div>
-        <div class="fill cov" style="width:73.1%">1.90</div></div></div>
-  </div>
-
-  <div class="note"><div class="h">The one-sentence read</div>
-    We spend <strong>the most (46%) on Portable Protection</strong> — the product with the <strong>worst ROAS (1.44, below break-even)</strong> and 2.6% repurchase — and the <strong>least room to cut is Grease</strong>, which is the most efficient (2.41) and repeats. <strong>The budget is mapped upside-down to both efficiency and retention.</strong>
-  </div>
+  <h2>Outbound clicks <span style="font-size:13px;color:var(--muted);font-weight:400">(needs feed extension)</span></h2>
+  <div class="pending"><div class="h">Same redeploy unlocks this</div>
+    Current feed returns <em>total</em> clicks, not Meta's <code>outbound_clicks</code>. The field-add above surfaces outbound clicks per ad set, so I can chart clicks-by-category month-by-month here.</div>
 
   <footer>
-    Source: DiggerLid Meta feed (<code>diggerlid-mer.vercel.app/api/campaigns?level=adset</code>), July 2026, ex-GST context. ROAS is Meta last-click (undercounts true contribution) — the ranking, not the absolute, is the point. Companion: August &amp; September Metric Benchmarks.
+    Source: DiggerLid Meta feed (<code>/api/campaigns?level=adset</code>), Jan–Jul 2026, ex-GST context. ROAS is Meta last-click and undercounts true contribution — the trend and ranking are the point, not the absolute. June "Other" ($80k) is untagged EOFY spend, shown as its own band for honesty. Companion: August &amp; September Metric Benchmarks.
   </footer>
 </div>
+
+<script>
+(function(){
+  var L=["Jan","Feb","Mar","Apr","May","Jun","Jul"];
+  var SP={Portable:[13196,33594,30876,26659,26379,35441,74972],
+          Grease:[11120,15455,24032,45653,56766,57654,42524],
+          Covers:[21734,32658,43659,33618,31695,24157,41122],
+          Other:[2134,3023,1635,2388,8091,80404,3706]};
+  var RO={Portable:[3.26,2.35,1.90,2.35,2.21,2.59,1.44],
+          Grease:[5.37,4.65,3.22,2.99,3.16,2.94,2.41],
+          Covers:[3.90,2.84,2.71,2.35,2.95,2.83,1.90]};
+  var COL={Portable:"var(--s-port)",Grease:"var(--s-grease)",Covers:"var(--s-cov)",Other:"var(--s-oth)"};
+  var W=760,H=320,PL=52,PR=16,PT=16,PB=34;
+  var iw=W-PL-PR, ih=H-PT-PB, n=L.length;
+  function X(i){return PL + i*iw/(n-1);}
+  function esc(){}
+  function xlabels(){var s="";for(var i=0;i<n;i++){s+='<text x="'+X(i).toFixed(1)+'" y="'+(H-12)+'" fill="var(--muted)" font-size="12" font-family="var(--sans)" text-anchor="middle">'+L[i]+'</text>';}return s;}
+
+  // ---- stacked area: spend ----
+  (function(){
+    var yMax=210000;
+    function Y(v){return PT+ih - v/yMax*ih;}
+    var s='';
+    // gridlines + y labels
+    for(var g=0; g<=200000; g+=50000){
+      var y=Y(g).toFixed(1);
+      s+='<line x1="'+PL+'" y1="'+y+'" x2="'+(W-PR)+'" y2="'+y+'" stroke="var(--hair)" stroke-width="1"/>';
+      s+='<text x="'+(PL-8)+'" y="'+(+y+4)+'" fill="var(--muted)" font-size="11" font-family="var(--sans)" text-anchor="end">$'+(g/1000)+'k</text>';
+    }
+    var order=["Portable","Grease","Covers","Other"]; // bottom to top
+    var lower=[]; for(var i=0;i<n;i++) lower.push(0);
+    order.forEach(function(c){
+      var upper=lower.map(function(v,i){return v+SP[c][i];});
+      var pts=[];
+      for(var i=0;i<n;i++) pts.push(X(i).toFixed(1)+','+Y(upper[i]).toFixed(1));
+      for(var i=n-1;i>=0;i--) pts.push(X(i).toFixed(1)+','+Y(lower[i]).toFixed(1));
+      s+='<polygon points="'+pts.join(' ')+'" fill="'+COL[c]+'" fill-opacity="0.92" stroke="var(--card)" stroke-width="1"/>';
+      lower=upper;
+    });
+    s+=xlabels();
+    document.getElementById('spendChart').innerHTML=s;
+  })();
+
+  // ---- line chart: ROAS ----
+  (function(){
+    var yMax=6;
+    function Y(v){return PT+ih - v/yMax*ih;}
+    var s='';
+    for(var g=0; g<=6; g+=1){
+      var y=Y(g).toFixed(1);
+      s+='<line x1="'+PL+'" y1="'+y+'" x2="'+(W-PR)+'" y2="'+y+'" stroke="var(--hair)" stroke-width="1"/>';
+      s+='<text x="'+(PL-8)+'" y="'+(+y+4)+'" fill="var(--muted)" font-size="11" font-family="var(--sans)" text-anchor="end">'+g+'</text>';
+    }
+    // break-even 1.9
+    var yb=Y(1.9).toFixed(1);
+    s+='<line x1="'+PL+'" y1="'+yb+'" x2="'+(W-PR)+'" y2="'+yb+'" stroke="var(--crit)" stroke-width="1.5" stroke-dasharray="5 4"/>';
+    s+='<text x="'+(W-PR)+'" y="'+(+yb-6)+'" fill="var(--crit)" font-size="11" font-family="var(--cond)" font-weight="700" text-anchor="end">BREAK-EVEN 1.9</text>';
+    ["Grease","Covers","Portable"].forEach(function(c){
+      var pl=[];
+      for(var i=0;i<n;i++) pl.push(X(i).toFixed(1)+','+Y(RO[c][i]).toFixed(1));
+      s+='<polyline points="'+pl.join(' ')+'" fill="none" stroke="'+COL[c]+'" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>';
+      for(var i=0;i<n;i++) s+='<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(RO[c][i]).toFixed(1)+'" r="3.2" fill="'+COL[c]+'" stroke="var(--card)" stroke-width="1.4"/>';
+    });
+    s+=xlabels();
+    document.getElementById('roasChart').innerHTML=s;
+  })();
+})();
+</script>
