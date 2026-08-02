@@ -433,7 +433,58 @@ The evidence from 233 July orders:
 
 ---
 
-## 4.5 Side by side
+## 4.5 The engine behind Plan C — reallocating grease's marketing spend
+
+Plans C and D lift AOV and cut grease's share of the business. This is *how* — and it's a **spend decision, not a discount or a price change.** It reallocates the paid‑advertising budget away from low‑value grease acquisition.
+
+### What the money is doing now (ELI5)
+
+Think of your $160,554 monthly Meta budget as buying customers. Right now, **most of it is buying the cheapest possible customer.**
+
+| Where paid budget goes (inferred) | Share | Avg order it buys |
+|---|--:|--:|
+| **Grease — low value** (couplers, adapters ~$44 basket) | **~$94,600 (58%)** | $44 |
+| Grease — tubes ($247 basket) | ~$19,700 (12%) | $247 |
+| Portable (mats) | ~$24,000 (15%) | $229 |
+| Covers | ~$11,100 (7%) | $260 |
+| Accessories | ~$12,000 (7%) | $38 |
+
+> **~71% of the orders your ads generate are grease‑led, and ~58% of the budget (~$94,600) chases $44 grease orders.** A $44 order cannot cover a $90 acquisition cost — it loses money the moment you pay for it. **You are spending the majority of your ad budget buying customers at a structural loss.**
+>
+> *Source: Meta last‑click attribution + order data — directionally reliable, exact split confirmed once the `/api/campaigns` endpoint is deployed (Part 5).*
+
+### The move
+
+**Cut low‑value grease prospecting by ~60%. Keep grease tubes and all retention/email grease (those are profitable). Redeploy the freed budget.**
+
+| Bucket | Now | Target | Shift |
+|---|--:|--:|--:|
+| Grease — low value | 58% | ~23% | **−$56,800** |
+| Grease — tubes | 12% | 12% | keep |
+| **Portable (mats)** | 15% | ~34% | **+$31,200** |
+| **Attach / bundle promos** | 0% | ~9% | **+$14,200** |
+| Covers | 7% | ~11% | +$11,400 (capped — see note) |
+
+**Grease's share of paid spend falls from ~71% to ~36%.**
+
+### The impact for the period
+
+| | Now | After |
+|---|--:|--:|
+| Grease‑led order share | ~71% of paid | **sharply lower** (coupler‑only was 16% of all orders) |
+| **Grease % of revenue** | **48.3%** | **~38%** (−10pt) |
+| AOV (model basis) | $251 | **$267–275** |
+| Total ad spend | $160,554 | **unchanged** |
+
+**This is the mechanism that delivers Plan C's AOV target — at no extra spend.** You are not spending more; you are spending the same money on customers worth 5× as much.
+
+### Two honesty checks
+1. **Covers are flat** (Part 2.2). So do **not** pour the freed budget into cover prospecting — it hits diminishing returns and rising CPA fast. Most of it should go to **PRO Mat / Portable (proven headroom)** and to **bundle promotions** that lift AOV on orders you already win.
+2. **Grease is not being abandoned.** Tubes ($247 basket, 47% repeat rate) stay funded, and grease stays fully available as an *attach* and *email/retention* product where acquisition cost is ~$0 and it is genuinely profitable. **You are cutting the loss‑making *acquisition* of $44 grease orders — not the grease business.**
+
+---
+
+## 4.6 Side by side
 
 | Plan | Aug net | Sep net | **Aug+Sep** | Aug GPAM | Aug spend | New custs | Biggest ask |
 |---|--:|--:|--:|--:|--:|--:|---|
@@ -442,7 +493,7 @@ The evidence from 233 July orders:
 | **C** ATTACH + EFF ★ | +$20,426 | **+$69,167** | **+$89,592** | 20.0% | $160,038 | **+11%** | attach execution |
 | **D** BALANCED | +$20,307 | +$65,222 | +$85,528 | 20.5% | $153,990 | +8% | coordination |
 
-## 4.6 Recommendation
+## 4.7 Recommendation
 
 **Run Plan C. Hold Plan B as the fallback.**
 
@@ -450,16 +501,18 @@ C wins on the two things that matter past August: **$89,592 over two months** an
 
 **B is the fallback** if bundle execution slips by mid-August — it delivers $78,639 on **$17k less spend** and the best margin of the four, at the cost of a flat audience.
 
-**Do not run A.** Largest AOV ask, depends on reversing a 12-month unit decline, and contributes nothing to BFCM.
+**Do not run A.** Largest AOV ask, and — corrected — covers are flat, so there is no rebound to ride; it contributes nothing to BFCM.
 
 ### Decision gates
 
 | Date | Check | If missed |
 |---|---|---|
-| **4 Aug** | Bundles live? Coupler-only paused in paid? | Plan hasn't started — escalate same day |
-| **10 Aug** | AOV ≥ $270 | Switch to Plan B, cut spend cap to $146k |
-| **10 Aug** | CPA ≤ $92 | Don't deploy the full spend cap |
-| **20 Aug** | GPAM ≥ 18% | Reset September to a +$40k floor, not a target |
+| **4 Aug** | Bundles live? **Low‑value grease prospecting cut ~60% in Meta?** | Plan hasn't started — escalate same day |
+| **10 Aug** | AOV ≥ $270 · **grease ≤ 44% of revenue** | Switch to Plan B, cut spend cap to $146k |
+| **10 Aug** | CPA ≤ $92 · **grease ≤ 50% of paid spend** | Don't deploy the full spend cap |
+| **20 Aug** | GPAM ≥ 18% · **grease ≤ 42% of revenue** | Reset September to a +$40k floor, not a target |
+
+**New tracked metrics for the period:** grease as % of revenue (target 48% → ~38%) and grease as % of paid spend (target ~71% → ~36%). Both go on the daily brief once `/api/campaigns` is deployed.
 
 ---
 
