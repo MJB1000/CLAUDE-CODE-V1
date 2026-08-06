@@ -1,0 +1,147 @@
+<style>
+  :root{
+    --black:#231f20;--yellow:#f5eb19;--yellow-40:#fbf7a3;
+    --paper:#faf9f6;--card:#ffffff;--ink:#231f20;--muted:#6f6a64;--faint:#94908a;
+    --hair:#e6e2da;--hair-strong:#d8d3c9;--band:#f3f0e8;--crit:#b23b2e;--good:#2f7d4f;
+    --s-line:#231f20;--s-bar:#f5eb19;--s-spend:#a49a8d;
+    --shadow:0 1px 2px rgba(35,31,32,.05),0 8px 24px rgba(35,31,32,.05);
+    --sans:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    --cond:"Bahnschrift","DIN Alternate","Arial Narrow","Roboto Condensed",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root{--paper:#1a1718;--card:#231f20;--ink:#f3f0e8;--muted:#a9a39a;--faint:#7d7871;--hair:#3a3536;--hair-strong:#4a4546;--band:#201c1d;--s-line:#efe9df;--s-spend:#8c8378;--good:#5fce8f;--crit:#e0776a;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);}}
+  :root[data-theme="dark"]{--paper:#1a1718;--card:#231f20;--ink:#f3f0e8;--muted:#a9a39a;--faint:#7d7871;--hair:#3a3536;--hair-strong:#4a4546;--band:#201c1d;--s-line:#efe9df;--s-spend:#8c8378;--good:#5fce8f;--crit:#e0776a;}
+  :root[data-theme="light"]{--paper:#faf9f6;--card:#ffffff;--ink:#231f20;--muted:#6f6a64;--faint:#94908a;--hair:#e6e2da;--hair-strong:#d8d3c9;--band:#f3f0e8;--s-line:#231f20;--s-spend:#a49a8d;--good:#2f7d4f;--crit:#b23b2e;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px 64px}
+  h1{font-family:var(--cond);font-weight:700;font-size:clamp(26px,4.5vw,38px);line-height:1.08;margin:.3em 0 .1em;text-wrap:balance}
+  h2{font-family:var(--cond);font-weight:700;font-size:19px;text-transform:uppercase;letter-spacing:.04em;margin:34px 0 2px}
+  .tnum{font-variant-numeric:tabular-nums}
+  header.mast{border-top:8px solid var(--black);padding-top:20px}
+  .mast-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .brand{font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.18em;text-transform:uppercase}
+  .brand .bar{background:var(--yellow);color:var(--black);padding:2px 8px;margin-right:2px}
+  .stamp{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:12px;color:var(--muted);border:1.5px solid var(--hair-strong);border-radius:2px;padding:4px 10px}
+  .meta{color:var(--muted);font-size:13.5px;margin-top:4px}
+  .sub{color:var(--muted);font-size:13.5px;margin:2px 0 0}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+  .tile{background:var(--card);border:1px solid var(--hair);border-radius:10px;padding:14px;box-shadow:var(--shadow)}
+  .tile .k{font-family:var(--cond);font-weight:700;font-size:28px;line-height:1}
+  .tile .l{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:6px}
+  .tile.bad .k{color:var(--crit)} .tile.good .k{color:var(--good)}
+  .card{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:14px 12px 8px;box-shadow:var(--shadow);margin:14px 0}
+  svg{display:block;width:100%;height:auto}
+  .keys{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);padding:6px 6px 2px}
+  .key{display:flex;align-items:center;gap:7px}.sw{width:13px;height:13px;border-radius:3px;display:inline-block}
+  .sw.line{background:var(--s-line)}.sw.bar{background:var(--s-bar)}.sw.spend{background:var(--s-spend)}
+  .tblwrap{overflow-x:auto;border:1px solid var(--hair);border-radius:10px;box-shadow:var(--shadow);margin:14px 0}
+  table{border-collapse:collapse;width:100%;background:var(--card);font-size:14px}
+  th,td{padding:9px 11px;text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}
+  thead th{background:var(--black);color:#f3f0e8;font-family:var(--cond);text-transform:uppercase;letter-spacing:.03em;font-size:11.5px;font-weight:700}
+  tbody tr+tr td{border-top:1px solid var(--hair)}
+  td.tnum{font-variant-numeric:tabular-nums}
+  .note{background:var(--yellow-40);border-left:6px solid var(--yellow);padding:13px 16px;border-radius:0 8px 8px 0;margin:20px 0}
+  :root[data-theme="dark"] .note,:root:not([data-theme]) .note{background:#2b2718}
+  .note .h{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:12.5px;margin-bottom:3px}
+  code{background:var(--band);padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:40px;border-top:1px solid var(--hair);padding-top:16px;color:var(--muted);font-size:12.5px}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div class="mast-top">
+      <div class="brand"><span class="bar">DIGGER</span>LID · LIST GROWTH</div>
+      <div class="stamp">Jan–Jul 2026</div>
+    </div>
+    <h1>Cost per newsletter signup</h1>
+    <div class="meta">Total Meta spend ÷ new ALIA signups (Shopify <code>Alia</code> tag), by month. Spend live from the Meta feed; signups from Shopify. A "marketing dollars per new subscriber" gauge — lower is better.</div>
+  </header>
+
+  <div class="tiles">
+    <div class="tile"><div class="k tnum">$37.97</div><div class="l">Jan cost / signup</div></div>
+    <div class="tile bad"><div class="k tnum">$68.66</div><div class="l">Jul cost / signup</div></div>
+    <div class="tile bad"><div class="k tnum">+81%</div><div class="l">Jan → Jul</div></div>
+    <div class="tile"><div class="k tnum">$55.5</div><div class="l">7-mo average</div></div>
+  </div>
+
+  <h2>Cost per signup — the trend</h2>
+  <p class="sub">Nearly doubled as spend scaled faster than signups — the same efficiency decay as MER/ROAS.</p>
+  <div class="card"><svg id="cpsChart" viewBox="0 0 760 300" role="img" aria-label="Cost per signup line chart Jan to Jul 2026"></svg></div>
+
+  <h2>Why — signups vs spend</h2>
+  <p class="sub">Signups (bars) grew, but spend (line) grew faster. Peak signups in June (3,262) still cost $60.59 each; July is the worst at $68.66.</p>
+  <div class="card"><svg id="drvChart" viewBox="0 0 760 300" role="img" aria-label="Signups bars and spend line Jan to Jul 2026"></svg></div>
+  <div class="keys">
+    <span class="key"><span class="sw bar"></span> New signups (bars)</span>
+    <span class="key"><span class="sw spend"></span> Meta spend (line)</span>
+  </div>
+
+  <div class="tblwrap"><table>
+    <thead><tr><th>Month</th><th>Signups</th><th>Meta spend</th><th>$ / signup</th></tr></thead>
+    <tbody>
+      <tr><td>Jan</td><td class="tnum">1,269</td><td class="tnum">$48,184</td><td class="tnum">$37.97</td></tr>
+      <tr><td>Feb</td><td class="tnum">1,658</td><td class="tnum">$84,730</td><td class="tnum">$51.10</td></tr>
+      <tr><td>Mar</td><td class="tnum">1,678</td><td class="tnum">$100,202</td><td class="tnum">$59.72</td></tr>
+      <tr><td>Apr</td><td class="tnum">1,737</td><td class="tnum">$108,317</td><td class="tnum">$62.36</td></tr>
+      <tr><td>May</td><td class="tnum">2,334</td><td class="tnum">$122,931</td><td class="tnum">$52.67</td></tr>
+      <tr><td>Jun</td><td class="tnum">3,262</td><td class="tnum">$197,656</td><td class="tnum">$60.59</td></tr>
+      <tr><td>Jul</td><td class="tnum">2,364</td><td class="tnum">$162,325</td><td class="tnum">$68.66</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note"><div class="h">Read it this way</div>
+    This is <em>blended</em> — total marketing spend ÷ all new subscribers — so it rises when spend grows faster than capture. It doubled ($38 → $69) in step with the wider efficiency decline. <strong>Because every ALIA profile carries the Meta <code>ad_id</code>, the real prize is cost-per-signup <em>by campaign</em></strong> — which broad/grease ads fill the list cheaply even when they sell poorly. That's the next cut.
+  </div>
+
+  <footer>
+    Signups = new Shopify customers tagged <code>Alia</code> per month (how ALIA tags every popup capture); Klaviyo's own count may differ slightly. Spend = total Meta (≈ all paid), live from <code>/api/campaigns</code>. Blended metric — not a pure per-capture CPL. Companion: Ad Spend by Product Category.
+  </footer>
+</div>
+
+<script>
+(function(){
+  var L=["Jan","Feb","Mar","Apr","May","Jun","Jul"];
+  var CPS=[37.97,51.10,59.72,62.36,52.67,60.59,68.66];
+  var SUP=[1269,1658,1678,1737,2334,3262,2364];
+  var SP=[48184,84730,100202,108317,122931,197656,162325];
+  var W=760,H=300,PL=52,PR=54,PT=16,PB=32,iw=W-PL-PR,ih=H-PT-PB,n=L.length;
+  function X(i){return PL+i*iw/(n-1);}
+  function xlab(){var s="";for(var i=0;i<n;i++)s+='<text x="'+X(i).toFixed(1)+'" y="'+(H-11)+'" fill="var(--muted)" font-size="12" font-family="var(--sans)" text-anchor="middle">'+L[i]+'</text>';return s;}
+
+  // cost per signup line
+  (function(){
+    var yMax=80;function Y(v){return PT+ih-v/yMax*ih;}
+    var s='';
+    for(var g=0;g<=80;g+=20){var y=Y(g).toFixed(1);
+      s+='<line x1="'+PL+'" y1="'+y+'" x2="'+(W-PR)+'" y2="'+y+'" stroke="var(--hair)" stroke-width="1"/>';
+      s+='<text x="'+(PL-8)+'" y="'+(+y+4)+'" fill="var(--muted)" font-size="11" font-family="var(--sans)" text-anchor="end">$'+g+'</text>';}
+    var pl=[];for(var i=0;i<n;i++)pl.push(X(i).toFixed(1)+','+Y(CPS[i]).toFixed(1));
+    s+='<polyline points="'+pl.join(' ')+'" fill="none" stroke="var(--s-line)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>';
+    for(var i=0;i<n;i++){s+='<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(CPS[i]).toFixed(1)+'" r="4" fill="var(--yellow)" stroke="var(--s-line)" stroke-width="1.6"/>';
+      s+='<text x="'+X(i).toFixed(1)+'" y="'+(Y(CPS[i])-10).toFixed(1)+'" fill="var(--ink)" font-size="11.5" font-family="var(--cond)" font-weight="700" text-anchor="middle">$'+CPS[i].toFixed(0)+'</text>';}
+    s+=xlab();
+    document.getElementById('cpsChart').innerHTML=s;
+  })();
+
+  // signups bars + spend line (dual)
+  (function(){
+    var sMax=3500,pMax=210000;
+    function Ys(v){return PT+ih-v/sMax*ih;} function Yp(v){return PT+ih-v/pMax*ih;}
+    var s='';
+    for(var g=0;g<=3500;g+=1000){var y=Ys(g).toFixed(1);
+      s+='<line x1="'+PL+'" y1="'+y+'" x2="'+(W-PR)+'" y2="'+y+'" stroke="var(--hair)" stroke-width="1"/>';
+      s+='<text x="'+(PL-8)+'" y="'+(+y+4)+'" fill="var(--muted)" font-size="11" font-family="var(--sans)" text-anchor="end">'+(g/1000)+'k</text>';}
+    var bw=iw/n*0.5;
+    for(var i=0;i<n;i++){var x=X(i)-bw/2,y=Ys(SUP[i]);
+      s+='<rect x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+(PT+ih-y).toFixed(1)+'" fill="var(--s-bar)" rx="2"/>';}
+    // spend line (right axis)
+    var pl=[];for(var i=0;i<n;i++)pl.push(X(i).toFixed(1)+','+Yp(SP[i]).toFixed(1));
+    s+='<polyline points="'+pl.join(' ')+'" fill="none" stroke="var(--s-spend)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>';
+    for(var i=0;i<n;i++)s+='<circle cx="'+X(i).toFixed(1)+'" cy="'+Yp(SP[i]).toFixed(1)+'" r="3" fill="var(--s-spend)" stroke="var(--card)" stroke-width="1.3"/>';
+    for(var g=0;g<=200000;g+=50000){var y=Yp(g).toFixed(1);
+      s+='<text x="'+(W-PR+8)+'" y="'+(+y+4)+'" fill="var(--muted)" font-size="11" font-family="var(--sans)" text-anchor="start">$'+(g/1000)+'k</text>';}
+    s+=xlab();
+    document.getElementById('drvChart').innerHTML=s;
+  })();
+})();
+</script>
