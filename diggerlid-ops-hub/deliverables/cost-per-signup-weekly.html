@@ -1,0 +1,214 @@
+<title>Cost per Signup vs Conversion — Weekly</title>
+<style>
+  :root{
+    --bg:#ffffff; --ink:#231f20; --muted:#6b6b6b; --grid:#e6e6e6;
+    --yellow:#f5eb19; --bar:#f5eb19; --barstroke:#c9c00f;
+    --line:#1e6fe0; --card:#faf9f0; --border:#e4e2d0;
+  }
+  :root[data-theme="dark"], .darkfallback{ }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#161514; --ink:#f4f2e9; --muted:#a6a29a; --grid:#33302b;
+      --bar:#f5eb19; --barstroke:#8f8a10; --line:#5aa2ff; --card:#201f1c; --border:#34322c;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#161514; --ink:#f4f2e9; --muted:#a6a29a; --grid:#33302b;
+    --bar:#f5eb19; --barstroke:#8f8a10; --line:#5aa2ff; --card:#201f1c; --border:#34322c;
+  }
+  :root[data-theme="light"]{
+    --bg:#ffffff; --ink:#231f20; --muted:#6b6b6b; --grid:#e6e6e6;
+    --bar:#f5eb19; --barstroke:#c9c00f; --line:#1e6fe0; --card:#faf9f0; --border:#e4e2d0;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Bahnschrift","Segoe UI",system-ui,-apple-system,sans-serif;
+    line-height:1.5;padding:28px 20px 60px}
+  .wrap{max-width:1080px;margin:0 auto}
+  .kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  h1{font-size:30px;margin:.15em 0 .1em;font-weight:800;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:15px;margin-bottom:22px}
+  .legend{display:flex;gap:22px;flex-wrap:wrap;align-items:center;margin:6px 0 14px;font-size:14px;font-weight:600}
+  .lg{display:inline-flex;align-items:center;gap:8px}
+  .sw{width:22px;height:12px;border-radius:2px;display:inline-block}
+  .sw.bar{background:var(--bar);border:1px solid var(--barstroke)}
+  .sw.line{height:0;border-top:3px solid var(--line);width:24px}
+  .chartcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 10px 6px;overflow-x:auto}
+  svg{display:block;width:100%;height:auto;min-width:720px}
+  .tick{fill:var(--muted);font-size:12px}
+  .axlab{fill:var(--muted);font-size:12.5px;font-weight:700}
+  .barlab{fill:var(--ink);font-size:11px;font-weight:700}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:22px 0 8px}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+  .stat .n{font-size:26px;font-weight:800;letter-spacing:-.01em}
+  .stat .l{font-size:12.5px;color:var(--muted);font-weight:600;margin-top:2px}
+  .take{margin-top:26px;border-left:4px solid var(--yellow);padding:4px 0 4px 18px}
+  .take h2{font-size:15px;text-transform:uppercase;letter-spacing:.08em;margin:0 0 8px}
+  .take li{margin:6px 0;font-size:14.5px}
+  .foot{color:var(--muted);font-size:12px;margin-top:24px;border-top:1px solid var(--border);padding-top:12px}
+  b.hi{color:var(--ink);background:var(--yellow);padding:0 4px;border-radius:3px}
+  @media (prefers-color-scheme:dark){b.hi{color:#161514}}
+  :root[data-theme="dark"] b.hi{color:#161514}
+</style>
+
+<div class="wrap">
+  <div class="kicker">DiggerLid · Growth Analytics</div>
+  <h1>Cost per Signup vs Signup&rarr;Conversion</h1>
+  <div class="sub">Weekly, 4 May – 7 Aug 2026 · Meta spend &divide; Klaviyo Alia signups (bars) vs share of those signups who purchased (line)</div>
+
+  <div class="legend">
+    <span class="lg"><span class="sw bar"></span> Cost / signup (left axis, $)</span>
+    <span class="lg"><span class="sw line"></span> Signup&rarr;conversion rate (right axis, %)</span>
+    <span class="lg" style="color:var(--muted);font-weight:500">▨ hatched / hollow = partial &amp; immature week</span>
+  </div>
+
+  <div class="chartcard">
+    <svg id="chart" viewBox="0 0 1040 470" role="img" aria-label="Weekly cost per signup and conversion rate"></svg>
+  </div>
+
+  <div class="cards" id="cards"></div>
+
+  <div class="take">
+    <h2>What it says</h2>
+    <ul>
+      <li><b class="hi">Conversion is flat (~29%), cost/signup is not.</b> Signup quality barely moves week to week — nearly <b>1 in 3</b> email signups eventually buys — while cost/signup swings from <b>$69 to $278</b>.</li>
+      <li><b class="hi">Sale periods wreck signup efficiency.</b> The EOFY weeks (15–28 Jun) hit <b>~$275/signup</b> — spend rose 55% while signups halved — yet those signups converted <em>highest</em> (33–35%). Fewer, pricier, higher-intent.</li>
+      <li><b class="hi">Cheapest list growth = BAU prospecting weeks (~$70–90).</b> Late May / early June bought signups at a third of the EOFY cost and still converted ~29%.</li>
+      <li><b>The lever is cost/signup, not conversion.</b> To lower blended cost-per-converting-signup, protect top-of-funnel signup capture during sales — don't starve the popup when budget shifts to retargeting.</li>
+    </ul>
+  </div>
+
+  <div class="foot">
+    Bars: Meta ad spend (live Graph API, all campaigns) &divide; Klaviyo profiles with <code>$source = "Alia sign-up"</code>, by week created.
+    Line: Shopify customers tagged <code>Alia</code> with &ge;1 lifetime order &divide; all Alia customers created that week (n=4,655 customers swept).
+    Conversion is lifetime-to-date, so recent weeks under-count (signups haven't had time to buy); <b>Aug 03 is partial &amp; immature — read dashed</b>.
+    Signup denominators differ slightly (Klaviyo source vs Shopify tag) but track together. Weeks are 7-day; spend &amp; signup windows aligned.
+  </div>
+</div>
+
+<script>
+const DATA=[
+ {w:'May 04',sp:28532,su:310,ct:344,by:119},
+ {w:'May 11',sp:28275,su:335,ct:359,by:102},
+ {w:'May 18',sp:27281,su:310,ct:347,by:104},
+ {w:'May 25',sp:27059,su:394,ct:432,by:127},
+ {w:'Jun 01',sp:32520,su:444,ct:490,by:127},
+ {w:'Jun 08',sp:33122,su:447,ct:474,by:144},
+ {w:'Jun 15',sp:51230,su:189,ct:200,by:66},
+ {w:'Jun 22',sp:52030,su:187,ct:196,by:68},
+ {w:'Jun 29',sp:63505,su:431,ct:451,by:120},
+ {w:'Jul 06',sp:31411,su:258,ct:284,by:69},
+ {w:'Jul 13',sp:34937,su:362,ct:379,by:114},
+ {w:'Jul 20',sp:36974,su:272,ct:295,by:86},
+ {w:'Jul 27',sp:32830,su:223,ct:252,by:66},
+ {w:'Aug 03',sp:15996,su:144,ct:152,by:20,partial:true},
+];
+DATA.forEach(d=>{d.cps=d.sp/d.su; d.conv=d.by/d.ct;});
+
+const NS='http://www.w3.org/2000/svg';
+const W=1040,H=470, m={t:28,r:64,b:64,l:64};
+const iw=W-m.l-m.r, ih=H-m.t-m.b;
+const svg=document.getElementById('chart');
+function el(n,a){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;}
+function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
+
+const cpsMax=300, convMax=0.40;
+const n=DATA.length, band=iw/n, bw=Math.min(46,band*0.56);
+const xC=i=>m.l+band*i+band/2;
+const yL=v=>m.t+ih-(v/cpsMax)*ih;
+const yR=v=>m.t+ih-(v/convMax)*ih;
+
+function draw(){
+  while(svg.firstChild)svg.removeChild(svg.firstChild);
+  const cGrid=css('--grid'),cMut=css('--muted'),cBar=css('--bar'),cBS=css('--barstroke'),cLine=css('--line'),cInk=css('--ink');
+
+  // hatch pattern for partial bar
+  const defs=el('defs',{});
+  const pat=el('pattern',{id:'hatch',width:6,height:6,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'});
+  pat.appendChild(el('rect',{width:6,height:6,fill:cBar,opacity:0.35}));
+  pat.appendChild(el('line',{x1:0,y1:0,x2:0,y2:6,stroke:cBS,'stroke-width':2}));
+  defs.appendChild(pat); svg.appendChild(defs);
+
+  // left gridlines + labels ($)
+  for(let v=0;v<=cpsMax;v+=50){
+    const y=yL(v);
+    svg.appendChild(el('line',{x1:m.l,y1:y,x2:m.l+iw,y2:y,stroke:cGrid,'stroke-width':1}));
+    const t=el('text',{x:m.l-9,y:y+4,'text-anchor':'end',class:'tick'});t.textContent='$'+v;svg.appendChild(t);
+  }
+  // right axis labels (%)
+  for(let v=0;v<=convMax+0.001;v+=0.10){
+    const y=yR(v);
+    const t=el('text',{x:m.l+iw+9,y:y+4,'text-anchor':'start',class:'tick'});t.textContent=Math.round(v*100)+'%';svg.appendChild(t);
+  }
+
+  // EOFY band (Jun15-Jun29 => indices 6,7,8)
+  const bx=m.l+band*6, bx2=m.l+band*9;
+  svg.appendChild(el('rect',{x:bx,y:m.t,width:bx2-bx,height:ih,fill:cLine,opacity:0.06}));
+  const eo=el('text',{x:(bx+bx2)/2,y:m.t+14,'text-anchor':'middle',class:'axlab',fill:cMut});eo.textContent='EOFY sale';svg.appendChild(eo);
+
+  // bars
+  DATA.forEach((d,i)=>{
+    const x=xC(i)-bw/2, y=yL(d.cps), h=m.t+ih-y;
+    svg.appendChild(el('rect',{x:x,y:y,width:bw,height:h,rx:3,
+      fill:d.partial?'url(#hatch)':cBar,stroke:cBS,'stroke-width':1}));
+    const lb=el('text',{x:xC(i),y:y-6,'text-anchor':'middle',class:'barlab'});
+    lb.textContent='$'+Math.round(d.cps);svg.appendChild(lb);
+  });
+
+  // conversion line (solid for mature, dashed into partial)
+  let dPath='',dDash='';
+  DATA.forEach((d,i)=>{
+    const x=xC(i),y=yR(d.conv);
+    if(i<DATA.length-1||!d.partial){ dPath+=(dPath?' L':'M')+x+' '+y; }
+  });
+  // mature segment
+  const matPts=DATA.filter(d=>!d.partial).map((d,i)=>({x:xC(DATA.indexOf(d)),y:yR(d.conv)}));
+  let mp='';matPts.forEach((p,i)=>mp+=(i?' L':'M')+p.x+' '+p.y);
+  svg.appendChild(el('path',{d:mp,fill:'none',stroke:cLine,'stroke-width':3,'stroke-linejoin':'round'}));
+  // dashed to partial last point
+  const last=matPts[matPts.length-1], pIdx=DATA.length-1, pp={x:xC(pIdx),y:yR(DATA[pIdx].conv)};
+  svg.appendChild(el('path',{d:'M'+last.x+' '+last.y+' L'+pp.x+' '+pp.y,fill:'none',stroke:cLine,'stroke-width':3,'stroke-dasharray':'5 4',opacity:0.7}));
+
+  // dots + conv labels
+  DATA.forEach((d,i)=>{
+    const x=xC(i),y=yR(d.conv);
+    svg.appendChild(el('circle',{cx:x,cy:y,r:d.partial?4.5:4,
+      fill:d.partial?css('--card'):cLine,stroke:cLine,'stroke-width':2}));
+    const cl=el('text',{x:x,y:y-9,'text-anchor':'middle',class:'barlab',fill:cLine});
+    cl.textContent=Math.round(d.conv*100)+'%';svg.appendChild(cl);
+  });
+
+  // x labels
+  DATA.forEach((d,i)=>{
+    const t=el('text',{x:xC(i),y:m.t+ih+18,'text-anchor':'middle',class:'tick'});
+    t.textContent=d.w;svg.appendChild(t);
+    if(d.partial){const p=el('text',{x:xC(i),y:m.t+ih+32,'text-anchor':'middle',class:'tick',fill:cMut});p.textContent='(part)';p.setAttribute('font-size','10');svg.appendChild(p);}
+  });
+
+  // axis titles
+  const al=el('text',{transform:'translate(16,'+(m.t+ih/2)+') rotate(-90)','text-anchor':'middle',class:'axlab'});
+  al.textContent='Cost per signup ($)';svg.appendChild(al);
+  const ar=el('text',{transform:'translate('+(m.l+iw+50)+','+(m.t+ih/2)+') rotate(90)','text-anchor':'middle',class:'axlab'});
+  ar.textContent='Conversion rate (%)';svg.appendChild(ar);
+}
+
+function cards(){
+  const mature=DATA.filter(d=>!d.partial);
+  const pooledBy=mature.reduce((s,d)=>s+d.by,0), pooledCt=mature.reduce((s,d)=>s+d.ct,0);
+  const conv=pooledBy/pooledCt;
+  const best=mature.reduce((a,b)=>b.cps<a.cps?b:a);
+  const worst=mature.reduce((a,b)=>b.cps>a.cps?b:a);
+  const tot=DATA.reduce((s,d)=>s+d.su,0);
+  const C=[
+    {n:'$'+Math.round(best.cps),l:'Best cost/signup ('+best.w+')'},
+    {n:'$'+Math.round(worst.cps),l:'Worst cost/signup ('+worst.w+', EOFY)'},
+    {n:Math.round(conv*100)+'%',l:'Pooled signup→conversion (mature wks)'},
+    {n:tot.toLocaleString(),l:'Alia signups, 14 wks (Klaviyo)'},
+  ];
+  const wrap=document.getElementById('cards');
+  C.forEach(c=>{const d=document.createElement('div');d.className='stat';
+    d.innerHTML='<div class="n">'+c.n+'</div><div class="l">'+c.l+'</div>';wrap.appendChild(d);});
+}
+draw();cards();
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+</script>
