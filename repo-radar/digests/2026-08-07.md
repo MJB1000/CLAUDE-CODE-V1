@@ -2,23 +2,23 @@
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_18 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_10 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[Jakubantalik/thinking-orbs](https://github.com/Jakubantalik/thinking-orbs)** — ⭐ 1,969 · 117.4/day · TypeScript · since 2026-07-21
-   > Dotted thought-orb loading indicators for AI & agent UIs, 9 tuned types, two sizes, auto dark/light
-2. **[javaht/claude-desktop-zh-cn](https://github.com/javaht/claude-desktop-zh-cn)** — ⭐ 5,827 · 55.6/day · Python · since 2026-04-24
-   > Claude Desktop Chinese Patch (macOS & Windows)
-3. **[wbh604/UZI-Skill](https://github.com/wbh604/UZI-Skill)** — ⭐ 6,032 · 53.5/day · Python · since 2026-04-16
-   > 冰冷的钱就这样流进我温暖的口袋-游资（UZI）Skills — 让我们欢迎，股海贼王！66位投资大佬帮你看盘 · 22维数据 × 180条量化规则 × 17种机构分析方法 · A股/港股/美股
+1. **[kirodotdev/KiroCrew](https://github.com/kirodotdev/KiroCrew)** — ⭐ 2,272 · 103.1/day · Python · since 2026-07-16
+   > A persistent workspace for development work that self-improves and continues beyond one session.
+2. **[Pan-Chera/Multi-Agent-CAD](https://github.com/Pan-Chera/Multi-Agent-CAD)** — ⭐ 411 · 50.1/day · Python · since 2026-07-30
+   > MAC (Multi-Agent CAD): A decoupled multi-agent framework for text-to-CAD generation via constrained test-time compute
+3. **[ai4s-research/open-science](https://github.com/ai4s-research/open-science)** — ⭐ 1,251 · 35.2/day · TypeScript · since 2026-07-03
+   > Open Science Desktop — local-first, model-agnostic AI research workbench for macOS, Windows & Linux. Open-source Claude Science desktop…
 
 🌱 **Rising fast** — small repos gaining stars (7d)
 
-4. **[uber/ADR](https://github.com/uber/ADR)** — ⭐ 1,241 · 📈 +1379⭐/7d · Python · since 2026-04-19
-   > ADR secures enterprise AI agents through observability, security benchmarking, and threat detection. Deployed at Uber.
-5. **[vixues/LeAgent](https://github.com/vixues/LeAgent)** — ⭐ 200 · 📈 +10⭐/7d · Python · since 2026-05-19
-   > Open-source desktop AI agent that gets work done — plans & self-corrects, agentic visual workflows, generative UI, and 100+ offline tools…
+4. **[caura-ai/caura-memclaw](https://github.com/caura-ai/caura-memclaw)** — ⭐ 418 · 📈 +19⭐/7d · Python · since 2026-04-27
+   > Governed shared memory for AI agent fleets — multi-agent, multi-tenant, MCP-native. Trust tiers, keystone policies, audit trails, knowledge…
+5. **[syncable-dev/memtrace-public](https://github.com/syncable-dev/memtrace-public)** — ⭐ 445 · 📈 +6⭐/7d · Python · since 2026-04-11
+   > Structural memory for AI coding agents. Bi-temporal graph, MCP-native, zero LLM calls. Cursor · Claude Code · Codex · Hermes · VS Code ·…
 
 ## Multimodal AI
 
@@ -30,33 +30,20 @@ _Nothing new this run._
 
 ## Web/app dev stack
 
-1. **[panel-ui/PanelUI](https://github.com/panel-ui/PanelUI)** — ⭐ 151 · 8.7/day · TypeScript · since 2026-07-20
-   > High-performance React Native components for Expo.
-2. **[swamimalode07/rare-ui](https://github.com/swamimalode07/rare-ui)** — ⭐ 152 · 2.6/day · TypeScript · since 2026-06-10
-   > A collection of rare, ready-to-use UI components and animations you can actually drop into your next project. Free and open source.
+_Nothing new this run._
 
 ## Self-development & productivity
 
-1. **[zzliu93-debug/FocuSD](https://github.com/zzliu93-debug/FocuSD)** — ⭐ 184 · 5.5/day · TypeScript · since 2026-07-04
-   > 这是一款PC灵动岛，包含剪贴板历史、Codex状态灯、媒体控制、媒体控制、笔记等功能，支持液态玻璃效果.Windows floating island for Codex Status Indicator Light,todos, notes, clipboard…
-2. **[nylxar/curium](https://github.com/nylxar/curium)** — ⭐ 192 · 1.7/day · TypeScript · since 2026-04-17
-   > A modern, feature-rich, and ad-free QR customizer, generator, and scanner
+_Nothing new this run._
 
 ## Claude & agent design craft
 
-1. **[trycompai/crm](https://github.com/trycompai/crm)** — ⭐ 7,207 · 1170.3/day · TypeScript · since 2026-07-31
-   > Comp AI CRM is an open source, CRM designed for AI agents. Agentic-first CRM.
-2. **[Paritok-official/paritok-4b-v1](https://github.com/Paritok-official/paritok-4b-v1)** — ⭐ 576 · 25.5/day · Python · since 2026-07-15
-   > Non-destructive compression gateway that cuts AI coding-agent token bills 25% on a single turn, climbing past 60% across long multi-turn…
-3. **[renee-jia/scholar-loop](https://github.com/renee-jia/scholar-loop)** — ⭐ 466 · 8.8/day · Python · since 2026-06-15
-   > An autonomous AI scientist: a multi-agent loop over literature, experiments, self-critique and write-up, with deterministic guards against…
-
-🌱 **Rising fast** — small repos gaining stars (7d)
-
-4. **[qiqihezh/deepresearch-agent](https://github.com/qiqihezh/deepresearch-agent)** — ⭐ 88 · 📈 +14⭐/7d · Python · since 2026-05-10
-   > 一个生产级的深度研究 Agent 系统，从零构建多智能体编排、Red-Blue 对抗降噪、 语义级上下文压缩、跨 Agent 共享记忆四大核心能力，配套 165 次独立实验 + Bootstrap 统计显著性检验的完整评测体系。
-5. **[Towow-ai/Flowness](https://github.com/Towow-ai/Flowness)** — ⭐ 97 · 📈 +3⭐/7d · Python · since 2026-04-09
-   > Evidence-driven multi-agent engineering harness: parallel agents, sealed evidence, independent juries, targeted rework, and traceable…
+1. **[agiwhitelist/auteur](https://github.com/agiwhitelist/auteur)** — ⭐ 925 · 34.0/day · JavaScript · since 2026-07-11
+   > The Claude Code skill that directs a website like a film. Commit-sheet, generated assets, build, and an executable anti-slop linter that…
+2. **[Jwuthri/Tracely](https://github.com/Jwuthri/Tracely)** — ⭐ 372 · 5.7/day · Python · since 2026-06-03
+   > Trace-native CI/CD for AI agents — production failures become regression tests that block the PR. Auto-detect, cluster, freeze into…
+3. **[adongwanai/learn-workbuddy](https://github.com/adongwanai/learn-workbuddy)** — ⭐ 109 · 3.6/day · Python · since 2026-07-08
+   > 从 0 复刻 WorkBuddy-style 桌面 AI 助手 Harness：24 章 Python 教程，覆盖 Agent Loop、工具调用、记忆系统、Sidecar、沙盒审计、DeepSeek/OpenAI 评测轨迹
 
 ## Community & social media management
 
@@ -72,10 +59,8 @@ _Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-1. **[VoltiusApp/voltius](https://github.com/VoltiusApp/voltius)** — ⭐ 470 · 4.2/day · TypeScript · since 2026-04-17
-   > A lightning-fast, modern, local-first SSH/SFTP/Serial client. Real-time E2EE sync, Team vaults, live sharing, plugins and more. Open-source…
-2. **[WiseriaAI/pie-ai-agent](https://github.com/WiseriaAI/pie-ai-agent)** — ⭐ 175 · 1.6/day · TypeScript · since 2026-04-17
-   > Browser-automation agent for Chrome — natural-language tasks executed through native tool calling, scoped Skills, CDP keyboard control, and…
+1. **[mrpulor-gh/nuphus-mcp](https://github.com/mrpulor-gh/nuphus-mcp)** — ⭐ 163 · 24.7/day · Rust · since 2026-08-01
+   > Desktop automation MCP server — computer use for any AI agent: control screen, windows, mouse/keyboard, and Chrome via Model Context…
 
 ## Ads & paid growth
 
@@ -83,17 +68,16 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[veedstudio/open-edit](https://github.com/veedstudio/open-edit)** — ⭐ 167 · 10.7/day · TypeScript · since 2026-07-22
-   > The video editor you own, not rent — edit clips from your coding agent (Claude Code, Codex, Gemini); e.g. burn in stylized subtitles.
+_Nothing new this run._
 
 ## E-commerce & Shopify
 
-1. **[mobazha/mobazha-unified](https://github.com/mobazha/mobazha-unified)** — ⭐ 156 · 4.3/day · TypeScript · since 2026-07-01
-   > Open-source commerce frontend for storefronts, marketplaces, checkout, and seller management.
+_Nothing new this run._
 
 ## Brand systems & creative ops
 
-_Nothing new this run._
+1. **[arielsalminen/elena](https://github.com/arielsalminen/elena)** — ⭐ 153 · 1.3/day · JavaScript · since 2026-04-13
+   > Elena is a simple, tiny library for building Progressive Web Components.
 
 ---
 
