@@ -7,16 +7,16 @@
 > **July 2026 is the worst MER in the window (41.4% / 2.42x).** PCP: AOV −36.4%, CVR −47.0%, but
 > VCR −13.7% and CPA −27.5% — costs improved, basket size regressed.
 
-> **Latest: `data/forecast/2026-W32.md` — July LOCKED to actuals; August in progress.**
+> **Latest: `data/forecast/2026-W33.md` — July LOCKED to actuals; August in progress (9 days).**
 > **July final:** $366,852 net_sales → **$382,884 ex-GST**, realized MER **42.4%** (live Meta $162,325),
 > GPAM 10.7%, **net ≈ −$25k** — moved into ACTUALS.
 >
-> **August (in progress):** off **2 completed days (Aug 1–2, a weekend — noisy)**, run-rate completes
-> ~**$284k ex-GST** at MER **36%** → GPAM 14.2%, **net ≈ −$34.6k**. Low-confidence early read — the
-> Father's Day sale + Zip Mat launch land later in the month and should lift it.
+> **August (in progress):** off **9 completed days (Aug 1–9)**, run-rate completes ~**$348k ex-GST** at
+> realized MER **37.7%** (live Meta $38,123) → GPAM **12.0%**, **net ≈ −$33.1k**. Zip Mat launched 5 Aug;
+> the Father's Day sale (26 Aug–4 Sep) is still ahead and should lift the back half.
 >
-> **H2 (Aug–Dec)** blended GPAM **16.6% on the current trajectory (net −$36k)** vs **23.9% under target
-> discipline (net +$113k)** — a **$149k swing** that still rests entirely on MER. FY26 net revenue **~$4.85M**.
+> **H2 (Aug–Dec)** blended GPAM **16.2% on the current trajectory (net −$34.6k)** vs **23.3% under target
+> discipline (net +$114.6k)** — a **$149k swing** that still rests entirely on MER. FY26 net revenue **~$4.91M**.
 >
 > ⚠️ **On the current trajectory only Nov clears break-even; Aug/Sep/Oct/Dec all show losses.**
 > Under discipline Sep/Oct clear 26% GPAM; Nov/Dec sit ~24% (sale-month VCR).
@@ -33,12 +33,12 @@ Fixed costs $74,831/mo. Net profit = GPAM$ − fixed. **GPAM target = 26%.**
 | Mon | Rev (ex-GST) | **Current trajectory** | | **Target discipline** | |
 |---|--:|--:|--:|--:|--:|
 | | | GPAM% | Net profit | GPAM% | Net profit |
-| Aug *(in prog)* | $284k | 14.2% ⚠ | −$34.6k **loss** | 14.2% ⚠ | −$34.6k **loss** |
+| Aug *(in prog, 9d)* | $348k | 12.0% ⚠ | −$33.1k **loss** | 12.0% ⚠ | −$33.1k **loss** |
 | Sep | $355k | 17.2% ⚠ | −$13.8k | **28.2%** ✓ | $25.2k |
 | Oct | $344k | 17.2% ⚠ | −$15.6k | **28.2%** ✓ | $22.3k |
 | Nov | $605k | 17.7% ⚠ | $32.3k | 23.7% ⚠ | $68.6k |
 | Dec | $449k | 15.7% ⚠ | −$4.4k | 23.7% ⚠ | $31.5k |
-| **H2 (Aug–Dec)** | **$2.04M** | **16.6% blended** | **−$36.0k** | **23.9% blended** | **+$113.1k** |
+| **H2 (Aug–Dec)** | **$2.10M** | **16.2% blended** | **−$34.6k** | **23.3% blended** | **+$114.6k** |
 
 July locked to ACTUALS (−$25k). Full-year 2026 net revenue ≈ **$4.85M** either way — the scenarios differ
 on **margin**, not top line.
