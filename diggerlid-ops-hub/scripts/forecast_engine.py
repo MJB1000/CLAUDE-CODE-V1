@@ -35,9 +35,9 @@ EXGST_PER_NETSALES = 1.0437   # ex-GST revenue / Shopify net_sales (Jul: 335,475
 ACTUALS = {
     'Jan': (241767, 0.1992), 'Feb': (306489, 0.2758), 'Mar': (311480, 0.3216),
     'Apr': (341520, 0.3168), 'May': (416322, 0.2952), 'Jun': (807148, 0.2447),
-    # Jul locked: Shopify net_sales $366,852 x 1.0437 = $382,884 ex-GST;
-    # realized MER = live Meta $162,325 / 382,884 = 0.424.
-    'Jul': (382884, 0.4240),
+    # Jul FINAL (EE 7.1 model, 2026 Monthly Totals): rev ex-GST $383,948, Meta $162,275
+    # -> realized MER ex-GST = 162,275 / 383,948 = 0.4226; model net profit -$35,540.
+    'Jul': (383948, 0.4226),
 }
 
 # --- month in progress: refresh weekly ---------------------------------------
