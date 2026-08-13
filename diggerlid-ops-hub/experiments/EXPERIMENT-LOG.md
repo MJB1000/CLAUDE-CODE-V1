@@ -19,6 +19,7 @@ Durable across sessions — this is the source of truth, not chat.
 | ID | Experiment | Status | Start | End | Primary metric | Result |
 |---|---|---|---|---|---|---|
 | EXP-001 | Email FLOW holdout | Running (go-live 17 Aug) | 2026-08-17 | 2026-10-26 | Revenue per profile (flow incrementality) | pending |
+| EXP-002 | Alia popup reward test (Mystery vs $35 vs 10% vs none) | Done | 2026-07-28 | 2026-08-05 | Email submit rate + 14d attributed rev | Mystery wins capture (**High**); 10%-off "revenue win" unproven (**Low**) |
 
 ---
 
@@ -41,6 +42,31 @@ Durable across sessions — this is the source of truth, not chat.
 
 **Updates**
 - **2026-08-13** — Designed (sequential holdouts, flows first). Committed `holdout_assign.py` (tested: 3,246/29,333 on 32,579) + Klaviyo runbook. Scheduled wk4/8/10 analyses. Awaiting go-live Mon 17 Aug: build segments, gate every flow, log launch sizes.
+
+---
+
+## EXP-002 — Alia popup reward A/B/C/D test
+**Status:** Done · **Owner:** Matt · **Window:** 28 Jul – 5 Aug 2026 (9 days)
+**Full report:** `experiments/EXP-002-alia-reward-test-report.md`
+
+**Hypothesis:** The popup reward offer (Mystery Discount vs $35 off vs 10% off vs none) changes email capture and downstream revenue.
+
+**Design:** 4-way Alia split, ~6,200 visitors/variant. Note Alia's labels mislead — "Control" = Mystery Discount (incumbent); "Control 10%" = the 10%-off test variant.
+
+**Primary metrics:** email submit rate (capture) + 14-day attributed revenue.
+
+**Result / Verdict:**
+- **Capture winner: Mystery Discount** — 4.98% email submit rate vs 3.67% (10%-off); ~39% more emails. **Certainty: High** (p≈0.02; Alia prob-to-win 87%).
+- **Alia's "10%-off won on revenue" (+48% sales, 42.6% CVR): NOT trustworthy. Certainty: Low** — rests on 40 orders and vanishes in the well-powered sitewide 7-day CVR (Mystery/$35/10% all tied ~1.0%; only "no reward" worse at 0.78%).
+- **Any reward >> no reward** (submit 3.7–5% vs 1.65%). **Certainty: High.**
+- **Flat $35-off dragged AOV −16%** ($210 vs $251) — prefer % over $ discounts. **Certainty: Medium.**
+
+**Certainty (overall):** the *capture* read is solid; the *revenue* read is under-powered noise.
+
+**Recommendation for next test:** Decide the objective first — if list growth (BFCM feed), keep Mystery Discount and don't re-test. If chasing revenue-quality, re-run **Mystery vs 10%-off head-to-head only**, pre-declare 14-day attributed revenue/visitor as the primary metric, and power to **~150–200 orders/variant (~4–6 wks)** — not 9 days/40 orders. Segment new-vs-returning and track margin/AOV as guardrails.
+
+**Updates**
+- **2026-08-13** — Decoded and logged. Report attached. Verdict: Mystery wins capture (High); 10%-off revenue win unproven (Low); avoid flat-$ discounts (AOV drag). Cross-links to Father's Day offer decision (% + GWP protects AOV).
 
 ---
 
