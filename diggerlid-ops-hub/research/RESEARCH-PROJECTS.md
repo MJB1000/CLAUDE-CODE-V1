@@ -15,7 +15,7 @@ its own section and **stays until you update it**. Durable across sessions — t
 ## Register
 | ID | Project | Status | Last updated | Headline |
 |---|---|---|---|---|
-| RP-001 | Signup volume, cost & signup→conversion economics | Open | 2026-08-16 | ~1 in 3 email signups buys (~29%, stable); cost/signup is the volatile lever ($52–$278) |
+| RP-001 | Signup volume, cost & signup→conversion economics | Open | 2026-08-16 | Popup CAPTURE is stable (~5–6% of viewers); the *view rate* collapsed 61%→~20% — a visibility, not traffic-quality, problem. Conversion ~29% stable. |
 
 ---
 
@@ -73,6 +73,24 @@ its own section and **stays until you update it**. Durable across sessions — t
 4. **Submission rate is inversely related to paid-traffic volume.** ~2–3.8% in leaner months (Jan–Apr), collapses to ~0.5–1% when paid social floods the site (EOFY, July). The popup does **not** capture the paid surge — the marginal paid visitor barely engages it.
 5. **Mechanism:** cost/signup = spend ÷ (sessions × submit rate). The submit-rate collapse during sales is what drives the cost/signup spikes.
 6. Absolute signups grew as the popup matured (Oct 1,248 → peak), but *submit rate* degraded as paid scaled.
+
+### ⭐ UPDATE 2026-08-16 — TRUE view→submit rate (Alia API) corrects finding #4
+Pulled Alia's `emailSignupRate` (submit ÷ popup **views**) via `/events/stats`. It reframes the whole story:
+
+| Month | Proxy (signups ÷ sessions) | **TRUE (submit ÷ views)** | Implied **view rate** |
+|---|--:|--:|--:|
+| Apr | 3.81% | **6.27%** | ~61% |
+| May | 1.94% | **6.01%** | ~32% |
+| Jun | 1.12% | **2.93%** | ~38% |
+| Jul | 1.16% | **5.17%** | ~22% |
+| Aug* | 0.96% | **6.00%** | ~16% |
+*partial. Alia aggregate (Apr–Aug) true rate ≈ **4.74%**.
+
+- **The popup's capture rate is stable ~5–6% of viewers — it never collapsed.** Proxy = true_rate × view_rate.
+- **What collapsed is the VIEW RATE: ~61% (Apr) → ~16–22% (Jul–Aug).** The popup stopped being *shown* to the paid surge.
+- **Correction to finding #4:** paid visitors who see the popup submit normally (~5–6%). The problem is **popup visibility/targeting on paid traffic**, NOT traffic quality — a far more fixable lever (trigger timing, page/source targeting, frequency caps, bounces before the popup fires).
+- **June exception:** decent view rate (~38%) but true submit dropped to 2.9% — EOFY sale shoppers saw it but didn't opt in.
+- **Open question this answers:** the earlier "is it a popup problem or a traffic-intent problem?" → **popup visibility problem.** Next: pull Alia popup *view rate* by source/page to find where views are being lost.
 
 ### Attribution / profile facts
 - Klaviyo profile props: `user_id` (= Shopify customer id, the join key), `alia_popup`, `alia_campaign`, `alia_flow_name`, `"What do you need for your machine?"` (poll intent), `alia_offer`, `$source`, `$sms_consent_method`, `$phone_number_region`, `Shopify Tags`.
