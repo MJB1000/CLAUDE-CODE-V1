@@ -1,0 +1,151 @@
+<title>Signup Charts</title>
+<style>
+  :root{ --bg:#fff; --ink:#231f20; --muted:#6f6b66; --grid:#e9e7df; --card:#faf9f0; --border:#e6e3d2;
+    --yellow:#f5eb19; --bar:#f5eb19; --barstroke:#c9c00f; --traffic:#9aa7b4; --trafficfill:#9aa7b433;
+    --rate:#1e6fe0; --conv:#e0561e; }
+  @media (prefers-color-scheme:dark){ :root{ --bg:#161514; --ink:#f4f2e9; --muted:#a8a49b; --grid:#302d28;
+    --card:#201f1c; --border:#34322c; --bar:#f5eb19; --barstroke:#8f8a10; --traffic:#7f8b98; --trafficfill:#7f8b9833;
+    --rate:#5aa2ff; --conv:#ff8a52; } }
+  :root[data-theme="dark"]{ --bg:#161514; --ink:#f4f2e9; --muted:#a8a49b; --grid:#302d28; --card:#201f1c;
+    --border:#34322c; --bar:#f5eb19; --barstroke:#8f8a10; --traffic:#7f8b98; --trafficfill:#7f8b9833; --rate:#5aa2ff; --conv:#ff8a52; }
+  :root[data-theme="light"]{ --bg:#fff; --ink:#231f20; --muted:#6f6b66; --grid:#e9e7df; --card:#faf9f0;
+    --border:#e6e3d2; --bar:#f5eb19; --barstroke:#c9c00f; --traffic:#9aa7b4; --trafficfill:#9aa7b433; --rate:#1e6fe0; --conv:#e0561e; }
+  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Bahnschrift","Segoe UI",system-ui,sans-serif;padding:26px 18px 60px;line-height:1.5}
+  .wrap{max-width:1040px;margin:0 auto}
+  .kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  h1{font-size:26px;margin:.2em 0 .1em;font-weight:800}
+  h2{font-size:18px;margin:30px 0 2px;font-weight:800}
+  .sub{color:var(--muted);font-size:14px;margin-bottom:10px}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;font-weight:600;margin:6px 0 10px}
+  .lg{display:inline-flex;align-items:center;gap:7px}
+  .sw{width:20px;height:11px;border-radius:2px;display:inline-block}
+  .sw.bar{background:var(--bar);border:1px solid var(--barstroke)}
+  .sw.area{background:var(--traffic);opacity:.5}
+  .sw.line{height:0;border-top:3px solid var(--rate);width:22px}
+  .sw.conv{height:0;border-top:3px solid var(--conv);width:22px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 8px 6px;overflow-x:auto}
+  svg{display:block;width:100%;height:auto;min-width:680px}
+  .tick{fill:var(--muted);font-size:11px}
+  .lab{fill:var(--muted);font-size:12px;font-weight:700}
+  .val{font-size:9.5px;font-weight:700}
+  .take{margin:12px 2px 0;font-size:14px;color:var(--ink)}
+  .take b.hi{background:var(--yellow);color:#231f20;padding:0 3px;border-radius:3px}
+  @media (prefers-color-scheme:dark){.take b.hi{color:#161514}}
+  :root[data-theme="dark"] .take b.hi{color:#161514}
+  .foot{color:var(--muted);font-size:11.5px;margin-top:16px;border-top:1px solid var(--border);padding-top:10px}
+</style>
+<div class="wrap">
+  <div class="kicker">DiggerLid · RP-001</div>
+  <h1>Signups, capture rate &amp; conversion</h1>
+
+  <h2>1 · Signups vs signup rate vs traffic</h2>
+  <div class="sub">Monthly, Aug 2025 – Aug 2026. Popup launched Oct 2025.</div>
+  <div class="legend">
+    <span class="lg"><span class="sw area"></span> Traffic / sessions (left)</span>
+    <span class="lg"><span class="sw bar"></span> Signups (right)</span>
+    <span class="lg"><span class="sw line"></span> Signup rate % (far right)</span>
+  </div>
+  <div class="card"><svg id="c1" viewBox="0 0 1040 460"></svg></div>
+  <p class="take"><b class="hi">Traffic ~3&times;'d while signups stayed flat and the rate halved</b> — from ~3.8% (Apr) to ~1% (Jun–Aug). The popup doesn't scale with paid traffic.</p>
+
+  <h2>2 · Signups vs signup→conversion rate</h2>
+  <div class="sub">Weekly, May–Aug 2026. Conversion = Shopify Alia customers with ≥1 lifetime order.</div>
+  <div class="legend">
+    <span class="lg"><span class="sw bar"></span> Signups (left)</span>
+    <span class="lg"><span class="sw conv"></span> Signup→conversion % (right)</span>
+  </div>
+  <div class="card"><svg id="c2" viewBox="0 0 1040 430"></svg></div>
+  <p class="take"><b class="hi">Conversion holds ~29% no matter the signup volume</b> — even the low-volume EOFY weeks (Jun 15–22) converted highest (33–35%). ~1 in 3 signups buys.</p>
+
+  <div class="foot">
+    Signups = Klaviyo profiles <code>$source="Alia sign-up"</code>. Signup rate = signups ÷ Shopify sessions (visitor→signup proxy, not true popup view→submit).
+    Conversion = Shopify <code>tag:Alia</code> customers with ≥1 lifetime order ÷ all Alia customers created that week (denominator differs ~10% from Klaviyo; lifetime-to-date, so the last week is immature). Aug 2026 partial.
+  </div>
+</div>
+<script>
+const M=[
+ {m:"Aug'25",sess:19559,sig:72,rate:0.37,pre:1},{m:"Sep'25",sess:17405,sig:53,rate:0.30,pre:1},
+ {m:'Oct',sess:43955,sig:1248,rate:2.84},{m:'Nov',sess:78359,sig:2073,rate:2.65},
+ {m:'Dec',sess:50255,sig:1269,rate:2.53},{m:"Jan'26",sess:29663,sig:923,rate:3.11},
+ {m:'Feb',sess:39299,sig:1165,rate:2.96},{m:'Mar',sess:36747,sig:1158,rate:3.15},
+ {m:'Apr',sess:31845,sig:1213,rate:3.81},{m:'May',sess:76386,sig:1481,rate:1.94},
+ {m:'Jun',sess:125171,sig:1406,rate:1.12},{m:'Jul',sess:116420,sig:1354,rate:1.16},
+ {m:'Aug',sess:31404,sig:303,rate:0.96,part:1},
+];
+const W=[
+ {w:'May 04',sig:310,conv:34.6},{w:'May 11',sig:335,conv:28.4},{w:'May 18',sig:310,conv:30.0},
+ {w:'May 25',sig:394,conv:29.4},{w:'Jun 01',sig:444,conv:25.9},{w:'Jun 08',sig:447,conv:30.4},
+ {w:'Jun 15',sig:189,conv:33.0},{w:'Jun 22',sig:187,conv:34.7},{w:'Jun 29',sig:431,conv:26.6},
+ {w:'Jul 06',sig:258,conv:24.3},{w:'Jul 13',sig:362,conv:30.1},{w:'Jul 20',sig:272,conv:29.2},
+ {w:'Jul 27',sig:223,conv:26.2},{w:'Aug 03',sig:144,conv:13.2,part:1},
+];
+const NS='http://www.w3.org/2000/svg';
+const el=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const cv=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+function chart1(){
+  const svg=document.getElementById('c1'); while(svg.firstChild)svg.removeChild(svg.firstChild);
+  const Wd=1040,H=460,m={t:20,r:104,b:58,l:52}, iw=Wd-m.l-m.r, ih=H-m.t-m.b;
+  const n=M.length, band=iw/n, xC=i=>m.l+band*i+band/2;
+  const sMax=130000, gMax=2200, rMax=4;
+  const yS=v=>m.t+ih-(v/sMax)*ih, yG=v=>m.t+ih-(v/gMax)*ih, yR=v=>m.t+ih-(v/rMax)*ih;
+  const grid=cv('--grid'),traf=cv('--traffic'),bar=cv('--bar'),bs=cv('--barstroke'),rate=cv('--rate'),ink=cv('--ink'),mut=cv('--muted');
+  // gridlines + left axis (sessions k)
+  for(let k=0;k<=5;k++){const v=sMax*k/5,y=yS(v);
+    svg.appendChild(el('line',{x1:m.l,y1:y,x2:m.l+iw,y2:y,stroke:grid,'stroke-width':1}));
+    const t=el('text',{x:m.l-6,y:y+3,'text-anchor':'end',class:'tick'});t.textContent=Math.round(v/1000)+'k';svg.appendChild(t);}
+  // right axis A: signups
+  for(let k=0;k<=4;k++){const v=gMax*k/4,y=yG(v);
+    const t=el('text',{x:m.l+iw+8,y:y+3,'text-anchor':'start',class:'tick',fill:bs});t.textContent=Math.round(v);svg.appendChild(t);}
+  // right axis B: rate %
+  for(let k=0;k<=4;k++){const v=rMax*k/4,y=yR(v);
+    const t=el('text',{x:m.l+iw+56,y:y+3,'text-anchor':'start',class:'tick',fill:rate});t.textContent=v+'%';svg.appendChild(t);}
+  // sessions area
+  let ar='M'+xC(0)+' '+(m.t+ih); M.forEach((d,i)=>ar+=' L'+xC(i)+' '+yS(d.sess)); ar+=' L'+xC(n-1)+' '+(m.t+ih)+' Z';
+  svg.appendChild(el('path',{d:ar,fill:traf,opacity:.28}));
+  svg.appendChild(el('path',{d:'M'+M.map((d,i)=>xC(i)+' '+yS(d.sess)).join(' L').replace(/^/,''),fill:'none',stroke:traf,'stroke-width':1.5,opacity:.7}));
+  // signups bars
+  const bw=Math.min(30,band*.5);
+  M.forEach((d,i)=>{const y=yG(d.sig),h=m.t+ih-y;
+    svg.appendChild(el('rect',{x:xC(i)-bw/2,y:y,width:bw,height:h,rx:2,fill:bar,stroke:bs,'stroke-width':1,opacity:d.part?.55:1}));});
+  // rate line
+  svg.appendChild(el('path',{d:'M'+M.map((d,i)=>xC(i)+' '+yR(d.rate)).join(' L'),fill:'none',stroke:rate,'stroke-width':2.6,'stroke-linejoin':'round'}));
+  M.forEach((d,i)=>{svg.appendChild(el('circle',{cx:xC(i),cy:yR(d.rate),r:3,fill:d.part?cv('--card'):rate,stroke:rate,'stroke-width':1.6}));
+    const t=el('text',{x:xC(i),y:yR(d.rate)-7,'text-anchor':'middle',class:'val',fill:rate});t.textContent=d.rate+'%';svg.appendChild(t);});
+  // popup-launch marker (between Sep'25 idx1 and Oct idx2)
+  const lx=m.l+band*2; svg.appendChild(el('line',{x1:lx,y1:m.t,x2:lx,y2:m.t+ih,stroke:mut,'stroke-width':1,'stroke-dasharray':'3 3'}));
+  const pl=el('text',{x:lx+3,y:m.t+10,class:'tick',fill:mut});pl.textContent='popup live';svg.appendChild(pl);
+  // x labels
+  M.forEach((d,i)=>{const t=el('text',{x:xC(i),y:m.t+ih+16,'text-anchor':'middle',class:'tick'});t.textContent=d.m;svg.appendChild(t);});
+}
+
+function chart2(){
+  const svg=document.getElementById('c2'); while(svg.firstChild)svg.removeChild(svg.firstChild);
+  const Wd=1040,H=430,m={t:18,r:54,b:52,l:48}, iw=Wd-m.l-m.r, ih=H-m.t-m.b;
+  const n=W.length, band=iw/n, xC=i=>m.l+band*i+band/2;
+  const gMax=500, cMax=40;
+  const yG=v=>m.t+ih-(v/gMax)*ih, yC=v=>m.t+ih-(v/cMax)*ih;
+  const grid=cv('--grid'),bar=cv('--bar'),bs=cv('--barstroke'),conv=cv('--conv');
+  for(let k=0;k<=5;k++){const v=gMax*k/5,y=yG(v);
+    svg.appendChild(el('line',{x1:m.l,y1:y,x2:m.l+iw,y2:y,stroke:grid,'stroke-width':1}));
+    const t=el('text',{x:m.l-6,y:y+3,'text-anchor':'end',class:'tick'});t.textContent=Math.round(v);svg.appendChild(t);}
+  for(let k=0;k<=4;k++){const v=cMax*k/4,y=yC(v);
+    const t=el('text',{x:m.l+iw+8,y:y+3,'text-anchor':'start',class:'tick',fill:conv});t.textContent=v+'%';svg.appendChild(t);}
+  const bw=Math.min(34,band*.55);
+  W.forEach((d,i)=>{const y=yG(d.sig),h=m.t+ih-y;
+    svg.appendChild(el('rect',{x:xC(i)-bw/2,y:y,width:bw,height:h,rx:2.5,fill:bar,stroke:bs,'stroke-width':1,opacity:d.part?.55:1}));
+    const t=el('text',{x:xC(i),y:y-5,'text-anchor':'middle',class:'val',fill:cv('--ink')});t.textContent=d.sig;svg.appendChild(t);});
+  // conversion line (dashed into partial last pt)
+  const mature=W.filter(d=>!d.part);
+  svg.appendChild(el('path',{d:'M'+mature.map((d,i)=>xC(W.indexOf(d))+' '+yC(d.conv)).join(' L'),fill:'none',stroke:conv,'stroke-width':2.6,'stroke-linejoin':'round'}));
+  const last=mature[mature.length-1], li=W.indexOf(last), pi=n-1;
+  svg.appendChild(el('path',{d:'M'+xC(li)+' '+yC(last.conv)+' L'+xC(pi)+' '+yC(W[pi].conv),fill:'none',stroke:conv,'stroke-width':2.6,'stroke-dasharray':'5 4',opacity:.7}));
+  W.forEach((d,i)=>{svg.appendChild(el('circle',{cx:xC(i),cy:yC(d.conv),r:3,fill:d.part?cv('--card'):conv,stroke:conv,'stroke-width':1.6}));
+    const t=el('text',{x:xC(i),y:yC(d.conv)-7,'text-anchor':'middle',class:'val',fill:conv});t.textContent=d.conv+'%';svg.appendChild(t);});
+  W.forEach((d,i)=>{const t=el('text',{x:xC(i),y:m.t+ih+16,'text-anchor':'middle',class:'tick'});t.textContent=d.w;svg.appendChild(t);});
+}
+function draw(){chart1();chart2();}
+draw();
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+</script>
