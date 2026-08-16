@@ -45,11 +45,11 @@ ACTUALS = {
 # Spend:   live Meta Graph API via /api/mer.
 CURRENT = {
     'month': 'Aug', 'sale': True,   # promo month (Zip Mat launched 5 Aug + Father's Day 26 Aug)
-    # Shopify net_sales, 9 completed days (Aug 1-9 = $96,824.16); Aug 10 partial excluded.
-    'mtd_net': round(96824.16 * EXGST_PER_NETSALES), 'days_elapsed': 9, 'days_in_month': 31,
-    'ad_spend_mtd': 38123,     # LIVE Meta Graph API via /api/campaigns (Aug 1-9)
+    # Shopify net_sales, 16 completed days (Aug 1-16 = $196,579.90); Aug 17 partial excluded.
+    'mtd_net': round(196579.90 * EXGST_PER_NETSALES), 'days_elapsed': 16, 'days_in_month': 31,
+    'ad_spend_mtd': 75674,     # LIVE Meta Graph API via /api/campaigns (Aug 1-16)
     'assumed_mer': 0.34,       # fallback only — not used while spend is live
-    'mer_note': 'ACTUAL — Meta API MTD (Aug 1-9), ex-GST basis',
+    'mer_note': 'ACTUAL — Meta API MTD (Aug 1-16), ex-GST basis',
 }
 
 # --- forward scenario: revenue (ex-GST) + MER per scenario --------------------
