@@ -15,7 +15,7 @@ its own section and **stays until you update it**. Durable across sessions — t
 ## Register
 | ID | Project | Status | Last updated | Headline |
 |---|---|---|---|---|
-| RP-001 | Signup volume, cost & signup→conversion economics | Open | 2026-08-16 | Popup CAPTURE is stable (~5–6% of viewers); the *view rate* collapsed 61%→~20% — a visibility, not traffic-quality, problem. Conversion ~29% stable. |
+| RP-001 | Signup volume, cost & signup→conversion economics | Open | 2026-08-16 | Popup CAPTURE stable ~5–6% (Alia, empirical) → slowdown is a REACH problem, not conversion. Cause (device/page) + view-rate trend PENDING segmented pull. Conversion ~29% stable. |
 
 ---
 
@@ -74,23 +74,33 @@ its own section and **stays until you update it**. Durable across sessions — t
 5. **Mechanism:** cost/signup = spend ÷ (sessions × submit rate). The submit-rate collapse during sales is what drives the cost/signup spikes.
 6. Absolute signups grew as the popup matured (Oct 1,248 → peak), but *submit rate* degraded as paid scaled.
 
-### ⭐ UPDATE 2026-08-16 — TRUE view→submit rate (Alia API) corrects finding #4
-Pulled Alia's `emailSignupRate` (submit ÷ popup **views**) via `/events/stats`. It reframes the whole story:
+### UPDATE 2026-08-16 — Alia API data (empirical) + open diagnosis
+Distinguishing what the data proves from what it doesn't. Sources labelled.
 
-| Month | Proxy (signups ÷ sessions) | **TRUE (submit ÷ views)** | Implied **view rate** |
-|---|--:|--:|--:|
-| Apr | 3.81% | **6.27%** | ~61% |
-| May | 1.94% | **6.01%** | ~32% |
-| Jun | 1.12% | **2.93%** | ~38% |
-| Jul | 1.16% | **5.17%** | ~22% |
-| Aug* | 0.96% | **6.00%** | ~16% |
-*partial. Alia aggregate (Apr–Aug) true rate ≈ **4.74%**.
+**A. Confirmed — direct from Alia `/events/stats`:**
+- **Submit-among-viewers** (`emailSignupRate` = email submits ÷ popup **views**), monthly:
+  Apr **6.27%** · May **6.01%** · Jun **2.93%** · Jul **5.17%** · Aug **6.00%** (partial). Apr–Aug aggregate **4.74%**.
+- **View rate** (`popupViewRate` = views ÷ Alia users): **April only** (429 rate-limited before more) = **40.4%** on `usersCount` 64,824.
 
-- **The popup's capture rate is stable ~5–6% of viewers — it never collapsed.** Proxy = true_rate × view_rate.
-- **What collapsed is the VIEW RATE: ~61% (Apr) → ~16–22% (Jul–Aug).** The popup stopped being *shown* to the paid surge.
-- **Correction to finding #4:** paid visitors who see the popup submit normally (~5–6%). The problem is **popup visibility/targeting on paid traffic**, NOT traffic quality — a far more fixable lever (trigger timing, page/source targeting, frequency caps, bounces before the popup fires).
-- **June exception:** decent view rate (~38%) but true submit dropped to 2.9% — EOFY sale shoppers saw it but didn't opt in.
-- **Open question this answers:** the earlier "is it a popup problem or a traffic-intent problem?" → **popup visibility problem.** Next: pull Alia popup *view rate* by source/page to find where views are being lost.
+**B. Our proxy** (Klaviyo signups ÷ Shopify sessions), monthly: Apr 3.81% · May 1.94% · Jun 1.12% · Jul 1.16% · Aug 0.96%.
+
+**C. What the data establishes (empirical):**
+1. **Submit-among-viewers is stable ~5–6%** (June the lone exception, 2.93%). The popup converts people who see it at a steady, healthy rate — it did **not** degrade.
+2. The proxy fell ~4× while (1) held. By identity `proxy = submit_rate × view_rate`, the fall is therefore in **reach** (popup views per site visit). → **The list-growth slowdown is a REACH problem, not a popup-conversion problem.**
+
+**D. What is NOT established (do not treat as fact):**
+- **The monthly view-rate trend from Alia's own metric.** Only April (40.4%) was pulled before the 429. A derived "views ÷ Shopify sessions" gives Apr ~61%, but that **disagrees** with Alia's 40.4% (different denominators — Alia `usersCount` 64,824 ≈ 2× Shopify sessions 31,845), so treat any derived view-rate level as **indicative only**, not measured.
+- **The cause** of the reach drop (device / landing page / source / trigger timing). The device-split call **failed** (filter ignored → identical mobile/desktop results), then rate-limited. **No segment-level view-rate data exists yet.**
+
+**E. Context consistent with — but NOT proof of — a paid-traffic reach hypothesis:**
+- Traffic mix shifted hard to paid social over the same window: Shopify `social` sessions **7,912 (Aug'25) → 95,742 (Jun'26) / 90,238 (Jul'26)**; organic search held ~5–6k/mo.
+- EXP-002 (Alia BAU campaign, 28 Jul–5 Aug) measured **bounce 54–56%**.
+These are *consistent with* "high-bounce paid traffic leaves before the popup fires," but do not prove it. Segmented `popupViewRate` is required to confirm.
+
+**F. Decision pending diagnosis — embed vs activate (data does not yet resolve this):**
+- **Targeting gap** (popup not set on the paid landing pages) → **activate/extend popup targeting**; no embed needed.
+- **Bounce-before-trigger** (fast mobile exits) → activate **+ fast/scroll trigger**, plus an **embedded inline form** on dedicated paid LPs (visible on load; catches fast-bouncers a popup can't).
+- **Blocked on:** `popupViewRate` split by `device` / `utmMedium` / `currentPath` via the cached `/api/popup` endpoint (needs rotated key in Vercel; Alia rate-limits ~2 live calls). Until that pull, F is a framework, not a recommendation.
 
 ### Attribution / profile facts
 - Klaviyo profile props: `user_id` (= Shopify customer id, the join key), `alia_popup`, `alia_campaign`, `alia_flow_name`, `"What do you need for your machine?"` (poll intent), `alia_offer`, `$source`, `$sms_consent_method`, `$phone_number_region`, `Shopify Tags`.
