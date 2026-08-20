@@ -21,8 +21,8 @@ Durable across sessions — this is the source of truth, not chat.
 | EXP-001 | Email FLOW holdout | Running (go-live 17 Aug) | 2026-08-17 | 2026-10-26 | Revenue per profile (flow incrementality) | pending |
 | EXP-002 | Alia popup reward test (Mystery vs $35 vs 10% vs none) | Done | 2026-07-28 | 2026-08-05 | Email submit rate + 14d attributed rev | Mystery wins capture (**High**); 10%-off "revenue win" unproven (**Low**) |
 | EXP-003 | PRO Mat colour-selector change | Running (before/after, live 19 Aug) | 2026-08-19 | TBD | Within-PLUS colour mix + PDP conversion | pending |
-| EXP-004 | Landing-page test #1 (PostHog) | Running (details pending) | TBD | TBD | TBD | pending |
-| EXP-005 | Landing-page test #2 (PostHog) | Running (details pending) | TBD | TBD | TBD | pending |
+| EXP-004 | LP: Pro Mat hero — video vs image (PostHog) | Running | 2026-08-13 | TBD | PDP CTR → purchase | test/video +5–11% dir., **n.s.** (underpowered) |
+| EXP-005 | LP: Father's Day gift page A/B (PostHog) | Running | 2026-08-17 | TBD | PDP CTR → purchase | mixed (+7% purchase, flat ATC), **n.s.** |
 
 ---
 
@@ -123,29 +123,50 @@ real mix shift toward PLUS is an AOV tailwind).
 
 ---
 
-## EXP-004 / EXP-005 — Landing-page tests (PostHog)
-**Status:** Running (details pending) · **Owner:** Matt · **Tool:** PostHog experiments
+## EXP-004 — LP: Pro Mat hero, video vs image (PostHog)
+**Status:** Running · **Owner:** Matt · **Tool:** PostHog (project 475333, US) · flag `landing-hero-test` · exp 418163
+**Hypothesis:** A **video** hero on the Pro Mat landing beats the **image** hero on click-through → purchase.
+**Design:** 50/50 control(image)/test(video), start **2026-08-13**. Primary = CTR to `/products/pro-mat`;
+secondary = add-to-cart / purchase (person-stitched, see gotcha).
+**First read (2026-08-20, since 13 Aug):**
+| Variant | Exposed | PDP CTR | Add-to-cart | Purchase |
+|---|--:|--:|--:|--:|
+| control (image) | 4,330 | 9.3% | 8.9% | 4.16% |
+| test (video) | 4,345 | 9.8% | 9.3% | **4.60%** |
+- **test/video is directionally ahead on every step (+5% CTR, +5% ATC, +11% purchase) — but none significant** (p 0.31–0.51). Randomisation clean (~50/50).
+**Verdict:** promising lean toward video, **underpowered**. To confirm the ~+11% purchase lift at 80% power needs ~**35k/arm** (now ~4.3k) → **several more weeks**. Don't call it yet.
 
-Two landing-page A/B tests running in PostHog. Stubbed here so they're tracked in the same register;
-I'll fill each in once I have the details below.
+## EXP-005 — LP: Father's Day gift page A/B (PostHog)
+**Status:** Running · **Owner:** Matt · **Tool:** PostHog · flag `fathers-day-test` · exp 425510
+**Hypothesis:** Redesigned FD gift page (Design B/test) lifts click-through → purchase vs A/control.
+**Design:** 50/50, start **2026-08-17**. Primary = CTR to `/products/pro-mat`; secondary = ATC / purchase.
+**First read (2026-08-20, since 17 Aug):**
+| Variant | Exposed | PDP CTR | Add-to-cart | Purchase |
+|---|--:|--:|--:|--:|
+| control | 2,306 | 8.0% | 9.0% | 4.47% |
+| test | 2,354 | 8.8% | 8.9% | 4.76% |
+- **Mixed:** test +11% on PDP CTR and +7% purchase, but **flat/−1% on add-to-cart**; nothing significant (p 0.29–0.94). Very early (3 days).
+**Verdict:** inconclusive, underpowered — keep running through/after the FD sale, but note sale traffic will change the page's audience.
 
-**Need to lock each test:**
-- **What's being tested** — which landing page/URL, control vs variant(s), the change.
-- **Primary metric** — the PostHog goal (e.g. conversion to purchase, add-to-cart, signup, click-through).
-- **Start date** + intended run length / sample-size target.
-- **PostHog identifiers** — project + experiment/feature-flag key for each.
+### ⚠️ Measurement gotcha (applies to both — important)
+Commerce events (`Product Added`, `Order Completed`) come from the **Shopify pipe and do NOT carry the
+`$feature/<flag>` enrolment property** — only client events ($pageview/autocapture) do. So **PostHog's
+built-in experiment results will show ~0 for the add-to-cart / purchase secondary metrics** (it filters by
+that property). Reads above are computed by **person-stitching** in HogQL (enrol persons via client events,
+then join their Shopify purchase events by `person_id`). **Fix to make PostHog's own UI correct:** forward
+the active feature-flag values onto the Shopify→PostHog events (or add `$feature/*` in the Shopify pixel).
 
-**How I monitor PostHog** (no PostHog MCP tool wired):
-- **(a) API pull** — with a PostHog **personal API key + project id**, I can read experiment results/insights
-  via the PostHog API (used transiently, **never committed**, same handling as the Alia key). Best for
-  recurring auto-reads in the daily brief.
-- **(b) Paste** — you paste the PostHog experiment results panel and I decode significance/lift, like EXP-002.
-- Either way I apply the same rigor: check power/sample size, watch for peeking, separate real lift from noise.
+### ℹ️ Also present
+- **exp 379241 `product-addtocart-webview-fix`** — "webview-safe add-to-cart", **not started** (no start date). Draft.
+- **Overlap:** EXP-004 (hero) and **EXP-003 (colour selector)** both change the **same Pro Mat PDP** in the
+  same window (hero 13 Aug, selector 19 Aug) — they can interact; read each with the other in mind.
 
-**Guardrail:** PostHog "experiment significant" flags on small N are unreliable — I'll re-check power before calling a winner.
+### Monitoring
+Point-in-time read via personal API key (used transiently, **not stored** — user is rotating it). For recurring
+auto-reads in the daily brief, set a durable PostHog key server-side (e.g. Vercel env) and I'll wire a cached pull.
 
 **Updates**
-- **2026-08-20** — Registered as stubs. Awaiting page/metric/date/key details + preferred monitoring route (API key vs paste).
+- **2026-08-20** — First read pulled + logged for both. Found the Shopify-events flag-property gap (person-stitched around it). Both underpowered/n.s.; video hero the most promising. Flagged EXP-003↔EXP-004 PDP overlap.
 
 ---
 
