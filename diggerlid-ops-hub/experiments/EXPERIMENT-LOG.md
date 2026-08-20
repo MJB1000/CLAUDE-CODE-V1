@@ -20,7 +20,9 @@ Durable across sessions — this is the source of truth, not chat.
 |---|---|---|---|---|---|---|
 | EXP-001 | Email FLOW holdout | Running (go-live 17 Aug) | 2026-08-17 | 2026-10-26 | Revenue per profile (flow incrementality) | pending |
 | EXP-002 | Alia popup reward test (Mystery vs $35 vs 10% vs none) | Done | 2026-07-28 | 2026-08-05 | Email submit rate + 14d attributed rev | Mystery wins capture (**High**); 10%-off "revenue win" unproven (**Low**) |
-| EXP-003 | PRO Mat colour-selector change | Proposed (design pending) | TBD | TBD | PRO Mat PDP conversion + colour/PLUS mix | pending |
+| EXP-003 | PRO Mat colour-selector change | Running (before/after, live 19 Aug) | 2026-08-19 | TBD | Within-PLUS colour mix + PDP conversion | pending |
+| EXP-004 | Landing-page test #1 (PostHog) | Running (details pending) | TBD | TBD | TBD | pending |
+| EXP-005 | Landing-page test #2 (PostHog) | Running (details pending) | TBD | TBD | TBD | pending |
 
 ---
 
@@ -78,35 +80,72 @@ Durable across sessions — this is the source of truth, not chat.
 changes how buyers choose — moving **PDP conversion** and/or the **colour / PLUS-vs-OG mix**.
 Because PLUS colours carry a higher AOV than OG/Grey, a mix shift toward PLUS is an AOV tailwind.
 
-**Design:** *pending confirmation* — A/B split vs before/after (100% switch), start date, and exact
-change (swatch style/order, default colour, whether OG gains colours). Measurement method depends on this.
+**Design (confirmed):** **Before/after, 100% switch. Went live Wed 2026-08-19.** Primary goal = colour/PLUS
+mix. Exact change = colour-selector UI (STYLE PLUS/OG + four swatches, default Signature Grey).
 
-**Baseline snapshot (last 90 days, to 2026-08-19)** — PRO Mat = $270,349 net / 1,187 orders (product #2):
-| Variant | Orders | Net | Share (orders) | AOV (gross/ord) |
-|---|--:|--:|--:|--:|
-| OG / Signature Grey | 1,000 | $211,487 | 83% | ~$223 |
-| PLUS / Safety Orange | 72 | $21,177 | 6% | ~$335 |
-| PLUS / Signature Grey | 65 | $19,019 | 5% | ~$330 |
-| PLUS / High Country Camo | 46 | $11,983 | 4% | ~$312 |
-| PLUS / Safety Pink | 26 | $6,683 | 2% | ~$304 |
-- **PLUS share = 17% of orders** (colour choice is essentially a PLUS behaviour; OG sells only in Grey).
-- **Within PLUS:** Orange 34% · Grey 31% · Camo 22% · Pink 12%.
+**⚠️ Confound — PLUS is a 2-week-old launch, not a stable baseline.** Weekly PRO Mat orders show PLUS
+variants **did not exist until the week of Aug 3** (= Zipper Pro Mat V2 launch, Aug 5); before that,
+PRO Mat was 100% OG/Signature Grey. PLUS is on a steep adoption ramp:
 
-**Primary metric:** PRO Mat PDP conversion (orders ÷ PRO Mat sessions, if PDP sessions are readable)
-— else PRO Mat orders ÷ total sessions as a proxy.
-**Secondary:** colour mix (share by colour, within PLUS) · PLUS-vs-OG split · AOV.
-**Guardrail:** total PRO Mat units + net revenue must not drop (don't win mix while losing volume).
+| Week | OG/Grey | PLUS total | **PLUS share** | Within-PLUS: Org / Gry / Camo / Pink |
+|---|--:|--:|--:|---|
+| ≤ Jul 27 | all | 0 | **0%** | — (PLUS not launched) |
+| Aug 3 | 32 | 49 | **60%** | 49% / 18% / 16% / 16% |
+| Aug 10 | 28 | 91 | **76%** | 27% / 34% / 25% / 13% |
+| Aug 17 | 15 | 69 | **82%** | 33% / 36% / 22% / 9% |
 
-**Decision rule:** *pending* — set once we confirm the test is a true A/B (compare arms) vs a
-before/after switch (compare dated pre/post windows, adjusting for the Father's Day sale overlap).
+The selector change (Aug 19) sits **on top of this ramp**, so a naïve before/after on **total PLUS share
+is confounded** by launch adoption — it would rise regardless. Attribute only what deviates from the ramp.
+
+**Primary metric (revised):**
+1. **Within-PLUS colour distribution** (Orange/Grey/Camo/Pink share among PLUS buyers) — least
+   confounded by the launch ramp; most directly moved by a colour selector (default/prominence).
+2. **PRO Mat PDP conversion** — best measured in **PostHog** (Shopify has no PDP-level session cut),
+   incl. selector-interaction events. This is the cleanest selector-attributable read.
+**Tracked but de-weighted:** total PLUS share (launch-driven) · AOV (PLUS ~$310–335 vs OG ~$223, so a
+real mix shift toward PLUS is an AOV tailwind).
+**Guardrail:** total PRO Mat units + net revenue must not drop.
+
+**Decision rule:**
+- Within-PLUS colour split shifts materially post-Aug-19 **beyond** the pre-ramp trajectory, and/or
+  PostHog PDP conversion rises with no volume loss → keep the new selector; document the winning layout.
+- No deviation above trend / conversion flat or down → revert or iterate the selector.
+- ⚠️ **Father's Day sale (26 Aug–4 Sep)** overlaps the post window — fence those dates (or read them
+  separately), since promo traffic can shift both volume and mix.
 
 **Updates**
-- **2026-08-20** — Logged with 90-day baseline. Awaiting design answers (A/B vs before/after, start
-  date, primary goal) to lock the measurement plan + decision rule. ⚠️ Note: a **Father's Day sale
-  (26 Aug–4 Sep)** overlaps the likely window — a promo confounds before/after reads, so if this is
-  before/after we must fence the sale period or lean on A/B.
+- **2026-08-20** — Design confirmed (before/after, live Wed 19 Aug, mix goal). Pulled weekly trajectory
+  → discovered PLUS is a 2-week-old launch on a steep ramp (0→60→76→82%); re-scoped primary to
+  within-PLUS colour split + PostHog PDP conversion (total PLUS share confounded by launch). FD-sale
+  overlap flagged. Next: confirm PostHog is capturing the PDP + selector events so conversion is readable.
 
 **Result / Verdict:** *pending*
+
+---
+
+## EXP-004 / EXP-005 — Landing-page tests (PostHog)
+**Status:** Running (details pending) · **Owner:** Matt · **Tool:** PostHog experiments
+
+Two landing-page A/B tests running in PostHog. Stubbed here so they're tracked in the same register;
+I'll fill each in once I have the details below.
+
+**Need to lock each test:**
+- **What's being tested** — which landing page/URL, control vs variant(s), the change.
+- **Primary metric** — the PostHog goal (e.g. conversion to purchase, add-to-cart, signup, click-through).
+- **Start date** + intended run length / sample-size target.
+- **PostHog identifiers** — project + experiment/feature-flag key for each.
+
+**How I monitor PostHog** (no PostHog MCP tool wired):
+- **(a) API pull** — with a PostHog **personal API key + project id**, I can read experiment results/insights
+  via the PostHog API (used transiently, **never committed**, same handling as the Alia key). Best for
+  recurring auto-reads in the daily brief.
+- **(b) Paste** — you paste the PostHog experiment results panel and I decode significance/lift, like EXP-002.
+- Either way I apply the same rigor: check power/sample size, watch for peeking, separate real lift from noise.
+
+**Guardrail:** PostHog "experiment significant" flags on small N are unreliable — I'll re-check power before calling a winner.
+
+**Updates**
+- **2026-08-20** — Registered as stubs. Awaiting page/metric/date/key details + preferred monitoring route (API key vs paste).
 
 ---
 
