@@ -20,6 +20,7 @@ Durable across sessions — this is the source of truth, not chat.
 |---|---|---|---|---|---|---|
 | EXP-001 | Email FLOW holdout | Running (go-live 17 Aug) | 2026-08-17 | 2026-10-26 | Revenue per profile (flow incrementality) | pending |
 | EXP-002 | Alia popup reward test (Mystery vs $35 vs 10% vs none) | Done | 2026-07-28 | 2026-08-05 | Email submit rate + 14d attributed rev | Mystery wins capture (**High**); 10%-off "revenue win" unproven (**Low**) |
+| EXP-003 | PRO Mat colour-selector change | Proposed (design pending) | TBD | TBD | PRO Mat PDP conversion + colour/PLUS mix | pending |
 
 ---
 
@@ -67,6 +68,45 @@ Durable across sessions — this is the source of truth, not chat.
 
 **Updates**
 - **2026-08-13** — Decoded and logged. Report attached. Verdict: Mystery wins capture (High); 10%-off revenue win unproven (Low); avoid flat-$ discounts (AOV drag). Cross-links to Father's Day offer decision (% + GWP protects AOV).
+
+---
+
+## EXP-003 — PRO Mat colour-selector change
+**Status:** Proposed (design pending) · **Owner:** Matt
+
+**Hypothesis:** Changing the PRO Mat colour selector (STYLE PLUS/OG + the four colour swatches)
+changes how buyers choose — moving **PDP conversion** and/or the **colour / PLUS-vs-OG mix**.
+Because PLUS colours carry a higher AOV than OG/Grey, a mix shift toward PLUS is an AOV tailwind.
+
+**Design:** *pending confirmation* — A/B split vs before/after (100% switch), start date, and exact
+change (swatch style/order, default colour, whether OG gains colours). Measurement method depends on this.
+
+**Baseline snapshot (last 90 days, to 2026-08-19)** — PRO Mat = $270,349 net / 1,187 orders (product #2):
+| Variant | Orders | Net | Share (orders) | AOV (gross/ord) |
+|---|--:|--:|--:|--:|
+| OG / Signature Grey | 1,000 | $211,487 | 83% | ~$223 |
+| PLUS / Safety Orange | 72 | $21,177 | 6% | ~$335 |
+| PLUS / Signature Grey | 65 | $19,019 | 5% | ~$330 |
+| PLUS / High Country Camo | 46 | $11,983 | 4% | ~$312 |
+| PLUS / Safety Pink | 26 | $6,683 | 2% | ~$304 |
+- **PLUS share = 17% of orders** (colour choice is essentially a PLUS behaviour; OG sells only in Grey).
+- **Within PLUS:** Orange 34% · Grey 31% · Camo 22% · Pink 12%.
+
+**Primary metric:** PRO Mat PDP conversion (orders ÷ PRO Mat sessions, if PDP sessions are readable)
+— else PRO Mat orders ÷ total sessions as a proxy.
+**Secondary:** colour mix (share by colour, within PLUS) · PLUS-vs-OG split · AOV.
+**Guardrail:** total PRO Mat units + net revenue must not drop (don't win mix while losing volume).
+
+**Decision rule:** *pending* — set once we confirm the test is a true A/B (compare arms) vs a
+before/after switch (compare dated pre/post windows, adjusting for the Father's Day sale overlap).
+
+**Updates**
+- **2026-08-20** — Logged with 90-day baseline. Awaiting design answers (A/B vs before/after, start
+  date, primary goal) to lock the measurement plan + decision rule. ⚠️ Note: a **Father's Day sale
+  (26 Aug–4 Sep)** overlaps the likely window — a promo confounds before/after reads, so if this is
+  before/after we must fence the sale period or lean on A/B.
+
+**Result / Verdict:** *pending*
 
 ---
 
