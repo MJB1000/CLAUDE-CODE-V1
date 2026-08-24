@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DiggerLid — Growth Scorecard</title>
+<style>
+  :root{
+    --bg:#0d0e0f; --panel:#16181b; --panel2:#1d2024; --line:#2a2e33;
+    --ink:#f4f5f2; --muted:#8b9096; --yellow:#f2e400; --ok:#37d67a; --miss:#ff5a5a; --warn:#ffb020;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Bahnschrift","DIN Alternate","League Spartan",system-ui,Segoe UI,Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:22px 18px 60px}
+  header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    border-bottom:3px solid var(--yellow);padding-bottom:14px;margin-bottom:20px}
+  .brand{display:flex;align-items:baseline;gap:10px}
+  .brand h1{font-size:26px;margin:0;letter-spacing:.5px;text-transform:uppercase;font-weight:800}
+  .brand .tag{color:var(--yellow);font-weight:800;font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
+  .meta{font-size:12px;color:var(--muted);text-align:right;line-height:1.5}
+  .badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;
+    letter-spacing:.4px;text-transform:uppercase}
+  .badge.live{background:rgba(55,214,122,.15);color:var(--ok)}
+  .badge.assumed{background:rgba(255,176,32,.15);color:var(--warn)}
+  h2{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);
+    margin:26px 0 12px;font-weight:700}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 15px}
+  .card .k{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
+  .card .v{font-size:26px;font-weight:800;margin-top:6px;letter-spacing:.3px}
+  .card .sub{font-size:12px;color:var(--muted);margin-top:4px}
+  .card.hero{background:linear-gradient(160deg,#1d2024,#141619);border-color:#33383e}
+  .pill{font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;letter-spacing:.4px}
+  .pill.ok{background:rgba(55,214,122,.16);color:var(--ok)}
+  .pill.miss{background:rgba(255,90,90,.16);color:var(--miss)}
+  .pill.warn{background:rgba(255,176,32,.16);color:var(--warn)}
+  .calc{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .calc .row{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end}
+  .fld{display:flex;flex-direction:column;gap:5px}
+  .fld label{font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted)}
+  .fld input{background:#0c0d0e;border:1px solid var(--line);color:var(--ink);border-radius:8px;
+    padding:9px 11px;font-size:15px;width:150px;font-family:inherit}
+  .fld input:focus{outline:none;border-color:var(--yellow)}
+  .out{display:flex;gap:26px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
+  .out .b{font-size:11px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted)}
+  .out .big{font-size:30px;font-weight:800;margin-top:2px}
+  .cal{display:flex;gap:12px;flex-wrap:wrap}
+  .cal .item{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--yellow);
+    border-radius:8px;padding:10px 14px;font-size:13px}
+  .cal .t{font-weight:800;color:var(--yellow);font-size:12px;letter-spacing:.5px}
+  footer{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);
+    font-size:11.5px;color:var(--muted);line-height:1.6}
+  a{color:var(--yellow)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <h1>DiggerLid <span style="color:var(--yellow)">Growth</span></h1>
+      <span class="tag">We're Diggin' It!</span>
+    </div>
+    <div class="meta">
+      <div id="asof">as of —</div>
+      <div>MER source: <span id="src" class="badge assumed">assumed</span></div>
+    </div>
+  </header>
+
+  <h2>This month — month to date</h2>
+  <div class="grid" id="mtd"></div>
+
+  <h2>MER &amp; GPAM — enter ad spend to compute live</h2>
+  <div class="calc">
+    <div class="row">
+      <div class="fld"><label>Meta ad spend (MTD $)</label><input id="spend" type="number" placeholder="e.g. 98000" inputmode="decimal"></div>
+      <div class="fld"><label>Revenue (net, MTD $)</label><input id="rev" type="number"></div>
+      <div class="fld"><label>VCR</label><input id="vcr" type="number" step="0.001"></div>
+    </div>
+    <div class="out">
+      <div><div class="b">MER = spend ÷ revenue</div><div class="big" id="merOut">—</div><div id="merFlag"></div></div>
+      <div><div class="b">GPAM % = (1−VCR) − MER</div><div class="big" id="gpamOut">—</div><div id="gpamFlag"></div></div>
+      <div><div class="b">Net profit (GPAM$ − fixed)</div><div class="big" id="npOut">—</div><div class="sub">fixed $<span id="fixedTxt">74,831</span>/mo</div></div>
+    </div>
+  </div>
+
+  <h2>Launch radar</h2>
+  <div class="cal" id="cal"></div>
+
+  <footer>
+    <b>Data:</b> revenue/orders/AOV/CVR = Shopify (live). MER = Meta ad spend ÷ revenue.
+    Model constants (VCR, fixed) from the EE model, read-only via IMPORTRANGE.
+    <br><b>Secrets &amp; sheets:</b> the Meta/Shopify tokens live server-side in the
+    <code>/api/mer</code> feed — never in this page, never in a spreadsheet. This dashboard
+    reads computed numbers only and writes nothing back.
+    <br><b>Live feed:</b> set <code>FEED_URL</code> at the top of this file to your deployed
+    <code>/api/mer</code> and MER/GPAM auto-populate; until then, type the spend above.
+  </footer>
+</div>
+
+<script>
+// ── CONFIG ───────────────────────────────────────────────────────────────
+// Paste your deployed feed here to auto-populate (e.g. "https://diggerlid-calendar-henna.vercel.app/api/mer").
+// Leave "" to run in manual mode (type the spend). Note: a claude.ai Artifact sandbox blocks
+// external fetches — the live feed works when this page is hosted (e.g. on the same Vercel app).
+var FEED_URL = "https://diggerlid-mer.vercel.app/api/mer";
+
+// Baked current actuals (Shopify live pull, 2026-07-22) — used until the feed overrides them.
+var STATE = {
+  asOf: "26 Jul 2026",
+  mtd_net: 296409, mtd_orders: 1310, mtd_aov: 226.35, cvr: 0.0120,
+  today_net: 4928, today_orders: 25,
+  mtd_spend: 132324,                 // LIVE from Meta via /api/mer
+  model_mer: 0.3733, vcr: 0.4529, gpam_target: 0.26, mer_target: 0.28, cvr_target: 0.022,
+  fixed: 74831, mer_source: "live (Meta)"
+};
+
+var $=function(id){return document.getElementById(id)};
+var money=function(n){return n==null?"—":"$"+Math.round(n).toLocaleString()};
+var pct=function(n,d){return n==null?"—":(n*100).toFixed(d==null?1:d)+"%"};
+function pill(txt,cls){return '<span class="pill '+cls+'">'+txt+'</span>'}
+
+function renderMTD(){
+  var s=STATE;
+  var cvrPill = s.cvr>=s.cvr_target?pill('OK','ok'):pill('MISS','miss');
+  $("mtd").innerHTML =
+    card("Net sales (MTD)", money(s.mtd_net), s.mtd_orders.toLocaleString()+" orders") +
+    card("AOV", money(s.mtd_aov), "today "+money(s.today_net/Math.max(s.today_orders,1))) +
+    card("CVR", pct(s.cvr,2)+" "+cvrPill, "target ≥"+pct(s.cvr_target,1)) +
+    card("Today", money(s.today_net), s.today_orders+" orders");
+  $("asof").textContent = "as of "+s.asOf;
+  $("fixedTxt").textContent = s.fixed.toLocaleString();
+  var badge=$("src");
+  badge.textContent=s.mer_source;
+  badge.className="badge "+(/live/.test(s.mer_source)?"live":"assumed");
+}
+function card(k,v,sub){return '<div class="card"><div class="k">'+k+'</div><div class="v">'+v+'</div>'+(sub?'<div class="sub">'+sub+'</div>':'')+'</div>'}
+
+function compute(){
+  var s=STATE;
+  var spend=parseFloat($("spend").value);
+  var rev=parseFloat($("rev").value)||s.mtd_net;
+  var vcr=parseFloat($("vcr").value); if(isNaN(vcr))vcr=s.vcr;
+  if(isNaN(spend)||!rev){ $("merOut").textContent="—"; $("gpamOut").textContent="—"; $("npOut").textContent="—";
+    $("merFlag").innerHTML=""; $("gpamFlag").innerHTML=""; return; }
+  var mer=spend/rev, gpam=(1-vcr)-mer, np=rev*gpam - s.fixed;
+  $("merOut").textContent=pct(mer);
+  $("gpamOut").textContent=pct(gpam);
+  $("npOut").textContent=money(np);
+  $("merFlag").innerHTML = mer<=s.mer_target?pill('≤'+pct(s.mer_target,0)+' OK','ok'):pill('over '+pct(s.mer_target,0),'miss');
+  $("gpamFlag").innerHTML = gpam>=s.gpam_target?pill('≥26% OK','ok'):pill('under 26%','miss');
+}
+
+function renderCal(){
+  var items=[
+    {t:"T-14d", d:"5 Aug", n:"Zipper Pro Mat V2 — major launch (In Progress)"},
+    {t:"T-35d", d:"26 Aug", n:"Father's Day Sale starts (major)"}
+  ];
+  $("cal").innerHTML = items.map(function(i){
+    return '<div class="item"><span class="t">'+i.t+'</span> · '+i.d+'<br>'+i.n+'</div>';
+  }).join("");
+}
+
+function tryFeed(){
+  if(!FEED_URL) return;
+  // pass our live Shopify revenue so the feed can compute MER/GPAM without Shopify creds
+  var u = FEED_URL + (FEED_URL.indexOf('?')>-1?'&':'?') + 'rev=' + encodeURIComponent(STATE.mtd_net);
+  fetch(u).then(function(r){return r.json()}).then(function(d){
+    if(!d||d.source==="error") return;
+    if(d.mtd_net) STATE.mtd_net=d.mtd_net;
+    if(d.orders) STATE.mtd_orders=d.orders;
+    if(d.aov) STATE.mtd_aov=d.aov;
+    if(d.vcr) STATE.vcr=d.vcr;
+    if(d.gpam_target) STATE.gpam_target=d.gpam_target;
+    if(/live/.test(d.source||"")) STATE.mer_source=d.source;
+    if(d.updated) STATE.asOf=new Date(d.updated).toLocaleString();
+    renderMTD();
+    if(d.mtd_spend!=null){ $("spend").value=Math.round(d.mtd_spend); }
+    if(d.mtd_net){ $("rev").value=Math.round(d.mtd_net); }
+    $("vcr").value=STATE.vcr;
+    compute();
+  }).catch(function(){/* stay in manual mode */});
+}
+
+// init
+renderMTD(); renderCal();
+$("rev").value=STATE.mtd_net; $("vcr").value=STATE.vcr;
+if(STATE.mtd_spend) $("spend").value=STATE.mtd_spend;   // live Meta spend — MER shows immediately
+compute();
+["spend","rev","vcr"].forEach(function(id){$(id).addEventListener("input",compute)});
+tryFeed();
+</script>
+</body>
+</html>

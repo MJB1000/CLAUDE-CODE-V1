@@ -1,0 +1,65 @@
+# BlitzOS member repos — pinned by reference (gitlinks), source never vendored.
+# Initialized by bootstrap.sh with a fine-grained token, or selected via
+# Anthropic's native GitHub rail at launch. All entries share owner MJB1000
+# so a single fine-grained token covers the fleet.
+
+[submodule "CLAUDE-CODE-V1"]
+	path = repos/CLAUDE-CODE-V1
+	url = https://github.com/MJB1000/CLAUDE-CODE-V1.git
+	branch = main
+[submodule "marketing-team"]
+	path = repos/marketing-team
+	url = https://github.com/MJB1000/marketing-team.git
+	branch = main
+[submodule "repo-radar"]
+	path = repos/repo-radar
+	url = https://github.com/MJB1000/repo-radar.git
+	branch = main
+[submodule "ACTUAL_BUDGET_V1"]
+	path = repos/ACTUAL_BUDGET_V1
+	url = https://github.com/MJB1000/ACTUAL_BUDGET_V1.git
+	branch = main
+[submodule "family-finance"]
+	path = repos/family-finance
+	url = https://github.com/MJB1000/family-finance.git
+	branch = main
+[submodule "family-dashboard-app"]
+	path = repos/family-dashboard-app
+	url = https://github.com/MJB1000/family-dashboard-app.git
+	branch = main
+[submodule "knowledge-vault"]
+	path = repos/knowledge-vault
+	url = https://github.com/MJB1000/knowledge-vault.git
+	branch = main
+[submodule "knowledge-vault-mcp-server"]
+	path = repos/knowledge-vault-mcp-server
+	url = https://github.com/MJB1000/knowledge-vault-mcp-server.git
+	branch = main
+[submodule "BOOK_INGEST"]
+	path = repos/BOOK_INGEST
+	url = https://github.com/MJB1000/BOOK_INGEST.git
+	branch = main
+[submodule "framedrop"]
+	path = repos/framedrop
+	url = https://github.com/MJB1000/framedrop.git
+	branch = main
+[submodule "video-vision"]
+	path = repos/video-vision
+	url = https://github.com/MJB1000/video-vision.git
+	branch = main
+[submodule "supereyesee"]
+	path = repos/supereyesee
+	url = https://github.com/MJB1000/supereyesee.git
+	branch = main
+[submodule "CLAUDE_MEMORY"]
+	path = repos/CLAUDE_MEMORY
+	url = https://github.com/MJB1000/CLAUDE_MEMORY.git
+	branch = main
+[submodule "session-signal"]
+	path = repos/session-signal
+	url = https://github.com/MJB1000/session-signal.git
+	branch = main
+[submodule "claude-mcp-setup"]
+	path = repos/claude-mcp-setup
+	url = https://github.com/MJB1000/claude-mcp-setup.git
+	branch = main

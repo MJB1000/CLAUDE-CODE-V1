@@ -1,0 +1,166 @@
+<style>
+  :root{
+    --black:#231f20; --black-90:#3a3637; --yellow:#f5eb19; --yellow-40:#fbf7a3;
+    --paper:#faf9f6; --card:#ffffff; --ink:#231f20; --muted:#6f6a64; --faint:#94908a;
+    --hair:#e6e2da; --hair-strong:#d8d3c9; --good:#2f7d4f; --crit:#b23b2e; --warn:#b8860b;
+    --band:#f3f0e8; --shadow:0 1px 2px rgba(35,31,32,.05),0 8px 24px rgba(35,31,32,.05);
+    --sans:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    --cond:"Bahnschrift","DIN Alternate","Arial Narrow","Roboto Condensed",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --paper:#1a1718;--card:#231f20;--ink:#f3f0e8;--muted:#a9a39a;--faint:#7d7871;--hair:#3a3536;--hair-strong:#4a4546;--band:#201c1d;--black-90:#e9e5dd;--good:#5fce8f;--crit:#e0776a;--warn:#e2b84a;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);}}
+  :root[data-theme="dark"]{--paper:#1a1718;--card:#231f20;--ink:#f3f0e8;--muted:#a9a39a;--faint:#7d7871;--hair:#3a3536;--hair-strong:#4a4546;--band:#201c1d;--black-90:#e9e5dd;--good:#5fce8f;--crit:#e0776a;--warn:#e2b84a;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);}
+  :root[data-theme="light"]{--paper:#faf9f6;--card:#ffffff;--ink:#231f20;--muted:#6f6a64;--faint:#94908a;--hair:#e6e2da;--hair-strong:#d8d3c9;--band:#f3f0e8;--black-90:#3a3637;--good:#2f7d4f;--crit:#b23b2e;--warn:#b8860b;--shadow:0 1px 2px rgba(35,31,32,.05),0 8px 24px rgba(35,31,32,.05);}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+  .prose{max-width:70ch}
+  h1,h2,h3{font-family:var(--cond);font-weight:700;line-height:1.08;text-wrap:balance;letter-spacing:.01em}
+  h1{font-size:clamp(30px,5vw,46px);margin:.2em 0 .1em}
+  h2{font-size:clamp(21px,3.2vw,28px);margin:0 0 4px;padding-bottom:8px;border-bottom:3px solid var(--yellow);display:inline-block}
+  p{margin:10px 0}
+  .tnum{font-variant-numeric:tabular-nums}
+  header.mast{border-top:8px solid var(--black);padding-top:22px}
+  .mast-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .brand{font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:.18em;text-transform:uppercase}
+  .brand .bar{background:var(--yellow);color:var(--black);padding:2px 8px;margin-right:2px}
+  .stamp{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:12px;color:var(--muted);border:1.5px solid var(--hair-strong);border-radius:2px;padding:4px 10px}
+  .meta{color:var(--muted);font-size:14px;margin-top:4px}
+  section{margin-top:40px}
+  .lead{font-size:19px;line-height:1.55}
+  .tblwrap{overflow-x:auto;margin:16px 0;border:1px solid var(--hair);border-radius:10px;box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;background:var(--card);font-size:14.5px}
+  th,td{padding:11px 13px;text-align:right;white-space:nowrap}
+  th:first-child,td:first-child{text-align:left;white-space:normal}
+  thead th{background:var(--black);color:#f3f0e8;font-family:var(--cond);text-transform:uppercase;letter-spacing:.04em;font-size:12px;font-weight:700}
+  tbody tr+tr td{border-top:1px solid var(--hair)}
+  tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--band) 55%,transparent)}
+  td.tnum,th.tnum{font-variant-numeric:tabular-nums}
+  .aug{background:var(--yellow-40)!important;font-weight:700}
+  :root[data-theme="dark"] .aug,:root:not([data-theme]) .aug{background:#3a361f!important}
+  .goal{color:var(--good);font-weight:700}
+  .bad{color:var(--crit);font-weight:700}
+  .dir{font-family:var(--cond);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+  .sect-note{color:var(--muted);font-size:14px;margin:4px 0 0}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:10px}
+  .legend b{color:var(--ink)}
+  .chip{display:inline-block;font-family:var(--cond);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.03em;padding:2px 8px;border-radius:999px}
+  .chip.up{background:color-mix(in srgb,var(--good) 15%,transparent);color:var(--good)}
+  .chip.hold{background:color-mix(in srgb,var(--muted) 14%,transparent);color:var(--muted);border:1px solid var(--hair-strong)}
+  .chip.down{background:color-mix(in srgb,var(--crit) 14%,transparent);color:var(--crit)}
+  .note{background:var(--yellow-40);border-left:6px solid var(--yellow);padding:14px 18px;border-radius:0 8px 8px 0;margin:18px 0}
+  :root[data-theme="dark"] .note,:root:not([data-theme]) .note{background:#2b2718}
+  .note .h{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:13px;margin-bottom:4px}
+  .gates td:first-child{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+  ul.clean{margin:10px 0;padding-left:20px}ul.clean li{margin:6px 0}
+  footer.foot{margin-top:56px;border-top:1px solid var(--hair);padding-top:20px;color:var(--muted);font-size:13px}
+  .foot .tag{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink)}
+  .foot .tag b{background:var(--yellow);color:#231f20;padding:1px 6px}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div class="mast-top">
+      <div class="brand"><span class="bar">DIGGER</span>LID · GROWTH SCORECARD</div>
+      <div class="stamp">Benchmark · Aug–Sep 2026</div>
+    </div>
+    <h1>August &amp; September — Metric Benchmarks</h1>
+    <div class="meta">The numbers to <strong>hold or beat</strong> each month to land +$20k (Aug) and +$40k (Sep). Baseline = July 2026 measured. Prepared 2 Aug 2026 · ex-GST · Live sources: Shopify + Meta <code>/api/campaigns</code>. Run this weekly against live data.</div>
+  </header>
+
+  <section>
+    <p class="lead">Every target here sits <strong>at or below your own 13-month trailing average</strong> — these are recoveries, not stretch goals. Two numbers carry the month: <strong>AOV</strong> (via bundles) and <strong>MER</strong> (via cutting PRO Mat and making cover spend efficient).</p>
+    <div class="legend">
+      <span><span class="chip up">▲ improve</span> beat July</span>
+      <span><span class="chip hold">◆ hold</span> maintain</span>
+      <span><span class="chip down">▼ lower is better</span></span>
+      <span><b>Aug column highlighted</b> — the first gate</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>1 · Core P&amp;L metrics</h2>
+    <p class="sect-note">Model basis, ex-GST. Break-even is GPAM 19.5% — so August at 20% is a <em>thin</em> win; September is where it compounds.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Metric</th><th class="tnum">July (actual)</th><th class="tnum">Aug target</th><th class="tnum">Sep target</th><th class="tnum">13-mo avg</th><th>Dir.</th></tr></thead>
+        <tbody>
+          <tr><td><strong>AOV</strong> (model)</td><td class="tnum">$251.54</td><td class="tnum aug">$283</td><td class="tnum">$290</td><td class="tnum">$312.86</td><td><span class="dir">▲</span></td></tr>
+          <tr><td><strong>CVR</strong> (orders ÷ sessions)</td><td class="tnum">1.42%</td><td class="tnum aug">1.55%</td><td class="tnum">1.60%</td><td class="tnum">2.39%</td><td><span class="dir">▲</span></td></tr>
+          <tr><td><strong>CPA</strong></td><td class="tnum">$95.80</td><td class="tnum aug">$87.50</td><td class="tnum">$83</td><td class="tnum">$85.88</td><td><span class="dir">▼</span></td></tr>
+          <tr><td><strong>MER</strong> (ads ÷ rev) · ratio</td><td class="tnum">41.4% · 2.42×</td><td class="tnum aug">33.6% · 3.0×</td><td class="tnum">~32% · 3.1×</td><td class="tnum">29.6% · 3.38×</td><td><span class="dir">▼</span></td></tr>
+          <tr><td><strong>GPAM%</strong></td><td class="tnum">11.0%</td><td class="tnum aug">20.0%</td><td class="tnum">~22–24%</td><td class="tnum">20.2%</td><td><span class="dir">▲</span></td></tr>
+          <tr><td><strong>VCR</strong> (make + ship)</td><td class="tnum">47.7%</td><td class="tnum aug">≤ 48.5%</td><td class="tnum">≤ 48.5%</td><td class="tnum">50.3%</td><td><span class="dir">◆ watch discounts</span></td></tr>
+          <tr><td><strong>Net profit</strong></td><td class="tnum bad">−$34,927</td><td class="tnum aug goal">+$20,400</td><td class="tnum goal">+$69,200</td><td class="tnum">+$11,423</td><td><span class="dir">▲</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note"><div class="h">The margin equation</div><strong>GPAM% = (1 − VCR) − CPA ÷ AOV.</strong> Only AOV and CPA move the percentage — CVR grows the dollars. That's why the plan leans on basket size and media efficiency.</div>
+  </section>
+
+  <section>
+    <h2>2 · Spend discipline by product <span style="font-size:14px;font-weight:400;color:var(--muted)">(measured — the corrected reallocation)</span></h2>
+    <p class="sect-note">July is <strong>measured</strong> from the live Meta feed. The move is to cut PRO Mat (over-funded, below break-even, one-and-done) and feed covers — <em>not</em> to cut grease, which is efficient and repeats.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Line</th><th class="tnum">July spend · share</th><th class="tnum">Aug target share</th><th class="tnum">Sep target share</th><th class="tnum">July ROAS</th><th class="tnum">ROAS target</th><th>Move</th></tr></thead>
+        <tbody>
+          <tr><td><strong>PRO Mat</strong></td><td class="tnum">$74.7k · 46%</td><td class="tnum aug">≤ 32%</td><td class="tnum">≤ 28%</td><td class="tnum bad">1.45</td><td class="tnum">≥ 1.9</td><td><span class="chip down">Cut</span></td></tr>
+          <tr><td><strong>Grease</strong></td><td class="tnum">$42.5k · 26%</td><td class="tnum aug">~26%</td><td class="tnum">~26%</td><td class="tnum goal">2.41</td><td class="tnum">≥ 2.3</td><td><span class="chip hold">Protect</span></td></tr>
+          <tr><td><strong>Covers</strong></td><td class="tnum">$41.1k · 25%</td><td class="tnum aug">≥ 34%</td><td class="tnum">≥ 38%</td><td class="tnum">1.90</td><td class="tnum">≥ 2.2</td><td><span class="chip up">Fund + fix</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sect-note">Break-even ROAS at your VCR is ~1.9. PRO Mat is below it <em>and</em> takes the most budget on the 2.6%-repurchase product. 98% of spend is attributable to a named product, so this tracks weekly from the feed.</p>
+  </section>
+
+  <section>
+    <h2>3 · Operating KPIs to start tracking</h2>
+    <p class="sect-note">These aren't in the dashboards yet — the plan lives or dies on them, so instrument them now.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>KPI</th><th class="tnum">July</th><th class="tnum">Aug target</th><th class="tnum">Sep target</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Multi-item order rate</strong> (≥2 items)</td><td class="tnum">~31%</td><td class="tnum aug">≥ 40%</td><td class="tnum">≥ 45%</td><td>The bundle lever, made visible (69% single-item today)</td></tr>
+          <tr><td><strong>Cost per email (CPL)</strong></td><td class="tnum">instrument</td><td class="tnum aug">≤ July</td><td class="tnum">≤ July</td><td>Proves cheap list-building survived the grease-paid trim</td></tr>
+          <tr><td><strong>New emails / month</strong></td><td class="tnum">instrument</td><td class="tnum aug">≥ July</td><td class="tnum">≥ July +10%</td><td>BFCM list must not shrink</td></tr>
+          <tr><td><strong>Returning-customer rate</strong></td><td class="tnum">22.2%</td><td class="tnum aug">≥ 22%</td><td class="tnum">≥ 22%</td><td>Confirms email/organic carries grease reorders</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note"><div class="h">Why the ~20–30% store-wide returning rate looks higher than cohort repeat</div>
+      Shopify's monthly returning rate pools <strong>every customer across ~4–5 years</strong>; a cohort's 12-month repeat is one batch in one window. Rule of thumb: <strong>returning rate ≈ 1 − (1 ÷ lifetime orders per customer)</strong> — ~1.3 orders/customer lands you at ~26%. It's carried by grease reorders, so don't use it to justify cover/mat CPA.
+    </div>
+  </section>
+
+  <section>
+    <h2>4 · Guardrails &amp; decision gates</h2>
+    <div class="tblwrap">
+      <table class="gates">
+        <thead><tr><th>When</th><th>Check</th><th>If missed</th></tr></thead>
+        <tbody>
+          <tr><td>4 Aug</td><td>Bundles live · email pop-up + lead magnet live · PRO Mat broad prospecting recapped</td><td>Plan hasn't started — escalate</td></tr>
+          <tr><td>10 Aug</td><td><strong>AOV ≥ $270</strong></td><td>Switch to Plan B; cut spend to $146k</td></tr>
+          <tr><td>10 Aug</td><td><strong>CPA ≤ $92</strong></td><td>Don't spend the full cap</td></tr>
+          <tr><td>20 Aug</td><td><strong>GPAM ≥ 18%</strong></td><td>Reset September to the +$40k floor</td></tr>
+          <tr><td>Weekly</td><td><strong>PRO Mat ROAS ≥ 1.9</strong> · new emails ≥ run-rate</td><td>Keep cutting mat prospecting / re-open the capped list line</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>5 · How each number is sourced</h2>
+    <ul class="clean prose">
+      <li><strong>Core P&amp;L</strong> — Shopify live (net sales, orders, sessions, AOV, CVR, returning rate) + EE 7.1 model (VCR, GPAM, fixed costs). All restated ex-GST.</li>
+      <li><strong>Spend by product</strong> — live Meta <code>/api/campaigns?level=adset</code>, product parsed from ad-set names (98% attributable). <span style="color:var(--warn)">To wire:</span> revenue into <code>/api/mer</code> so MER/GPAM compute live for the daily watch.</li>
+      <li><strong>Operating KPIs</strong> — multi-item rate + returning rate from Shopify; CPL + new emails from the ESP/ad platform (needs instrumenting).</li>
+      <li><strong>13-mo avg</strong> — trailing benchmarks (Jul 25 → Jul 26), EE 2025 + 2026 models, ex-GST.</li>
+    </ul>
+  </section>
+
+  <footer class="foot">
+    <p class="tag"><b>HOLD</b> THE LINE</p>
+    <p>Companion reports: <em>Repurchase &amp; Cross-Sell</em> (retention evidence) and <em>August &amp; September Profitability Plan</em> (the four lever combinations and the PRO-Mat reallocation). All targets ex-GST; break-even GPAM 19.5%. Run this scorecard weekly against live Shopify + Meta.</p>
+  </footer>
+</div>

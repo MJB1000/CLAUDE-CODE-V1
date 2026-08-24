@@ -1,0 +1,358 @@
+<style>
+  :root{
+    --black:#231f20;--yellow:#f5eb19;--yellow-40:#fbf7a3;
+    --paper:#faf9f6;--card:#ffffff;--ink:#231f20;--muted:#6f6a64;--faint:#94908a;
+    --hair:#e6e2da;--hair-strong:#d8d3c9;--band:#f3f0e8;--crit:#b23b2e;--good:#2f7d4f;--warn:#9a7d12;
+    --track:#ece8e0;
+    --s-port:#f5eb19;--s-grease:#231f20;--s-cov:#a49a8d;--s-oth:#d8d3c9;
+    --shadow:0 1px 2px rgba(35,31,32,.05),0 8px 24px rgba(35,31,32,.05);
+    --sans:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    --cond:"Bahnschrift","DIN Alternate","Arial Narrow","Roboto Condensed",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --paper:#1a1718;--card:#231f20;--ink:#f3f0e8;--muted:#a9a39a;--faint:#7d7871;--hair:#3a3536;--hair-strong:#4a4546;--band:#201c1d;--track:#312c2d;
+    --s-grease:#efe9df;--s-cov:#8c8378;--s-oth:#4a4546;--good:#5fce8f;--crit:#e0776a;--warn:#e2b84a;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);}}
+  :root[data-theme="dark"]{--paper:#1a1718;--card:#231f20;--ink:#f3f0e8;--muted:#a9a39a;--faint:#7d7871;--hair:#3a3536;--hair-strong:#4a4546;--band:#201c1d;--track:#312c2d;--s-grease:#efe9df;--s-cov:#8c8378;--s-oth:#4a4546;--good:#5fce8f;--crit:#e0776a;--warn:#e2b84a;}
+  :root[data-theme="light"]{--paper:#faf9f6;--card:#ffffff;--ink:#231f20;--muted:#6f6a64;--faint:#94908a;--hair:#e6e2da;--hair-strong:#d8d3c9;--band:#f3f0e8;--track:#ece8e0;--s-grease:#231f20;--s-cov:#a49a8d;--s-oth:#d8d3c9;--good:#2f7d4f;--crit:#b23b2e;--warn:#9a7d12;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px 64px}
+  h1{font-family:var(--cond);font-weight:700;font-size:clamp(26px,4.5vw,38px);line-height:1.08;margin:.3em 0 .1em;text-wrap:balance}
+  h2{font-family:var(--cond);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:.04em;margin:38px 0 2px}
+  .tnum{font-variant-numeric:tabular-nums}
+  header.mast{border-top:8px solid var(--black);padding-top:20px}
+  .mast-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .brand{font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.18em;text-transform:uppercase}
+  .brand .bar{background:var(--yellow);color:var(--black);padding:2px 8px;margin-right:2px}
+  .stamp{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:12px;color:var(--muted);border:1.5px solid var(--hair-strong);border-radius:2px;padding:4px 10px}
+  .meta{color:var(--muted);font-size:13.5px;margin-top:4px}
+  .sub{color:var(--muted);font-size:13.5px;margin:2px 0 0}
+  .card{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:14px 12px 8px;box-shadow:var(--shadow);margin:14px 0}
+  svg{display:block;width:100%;height:auto}
+  .keys{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);padding:6px 6px 2px}
+  .key{display:flex;align-items:center;gap:7px}
+  .sw{width:13px;height:13px;border-radius:3px;display:inline-block}
+  .sw.port{background:var(--s-port)}.sw.grease{background:var(--s-grease)}.sw.cov{background:var(--s-cov)}.sw.oth{background:var(--s-oth)}
+  /* july snapshot bars */
+  .stack{display:flex;height:54px;border-radius:10px;overflow:hidden;margin:16px 0 8px;box-shadow:var(--shadow);border:1px solid var(--hair)}
+  .seg{display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:700;font-size:14px;color:#231f20;white-space:nowrap;overflow:hidden}
+  .seg.port{background:var(--s-port)}.seg.grease{background:var(--s-grease);color:#faf9f6}
+  :root[data-theme="dark"] .seg.grease,:root:not([data-theme]) .seg.grease{color:#231f20}
+  .seg.cov{background:var(--s-cov);color:#231f20}.seg.oth{background:var(--s-oth);color:#231f20}
+  .rows{display:flex;flex-direction:column;gap:11px;margin:14px 0}
+  .row{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center}
+  .row .lab{font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:14px}
+  .trk{position:relative;background:var(--track);border-radius:6px;height:30px}
+  .fill{height:100%;border-radius:6px;display:flex;align-items:center;padding:0 9px;font-family:var(--cond);font-weight:700;font-size:13px;color:#231f20;min-width:40px}
+  .fill.port{background:var(--s-port)}.fill.grease{background:var(--s-grease);color:#faf9f6}
+  :root[data-theme="dark"] .fill.grease,:root:not([data-theme]) .fill.grease{color:#231f20}
+  .fill.cov{background:var(--s-cov);color:#231f20}
+  .be{position:absolute;top:-5px;bottom:-5px;border-left:2px dashed var(--crit)}
+  .note{background:var(--yellow-40);border-left:6px solid var(--yellow);padding:13px 16px;border-radius:0 8px 8px 0;margin:20px 0 0}
+  :root[data-theme="dark"] .note,:root:not([data-theme]) .note{background:#2b2718}
+  .note .h{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:12.5px;margin-bottom:3px}
+  .pending{border:1.5px dashed var(--hair-strong);border-radius:12px;padding:16px 18px;margin:14px 0;color:var(--muted)}
+  .pending .h{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:13px;color:var(--ink);margin-bottom:4px}
+  code{background:var(--band);padding:1px 5px;border-radius:4px;font-size:12.5px}
+  .tblwrap2{overflow-x:auto;border:1px solid var(--hair);border-radius:10px;box-shadow:var(--shadow);margin:14px 0}
+  table.tbl{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card)}
+  .tbl th,.tbl td{padding:9px 11px;text-align:right;white-space:nowrap}
+  .tbl th:first-child,.tbl td:first-child{text-align:left;white-space:normal}
+  .tbl thead th{background:var(--black);color:#f3f0e8;font-family:var(--cond);text-transform:uppercase;letter-spacing:.03em;font-size:11.5px;font-weight:700}
+  .tbl tbody tr+tr td{border-top:1px solid var(--hair)}
+  .tbl td.tnum2{font-variant-numeric:tabular-nums}
+  .bad2{color:var(--crit);font-weight:700}.good2{color:var(--good);font-weight:700}
+  h3{font-family:var(--cond);font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.03em;margin:26px 0 2px}
+  footer{margin-top:40px;border-top:1px solid var(--hair);padding-top:16px;color:var(--muted);font-size:12.5px}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div class="mast-top">
+      <div class="brand"><span class="bar">DIGGER</span>LID · MEDIA MIX</div>
+      <div class="stamp">Measured · Jan–Jul 2026</div>
+    </div>
+    <h1>Ad spend by product category — the trend</h1>
+    <div class="meta">Meta spend, Jan–Jul 2026 · measured live from <code>/api/campaigns</code>, product parsed from ad-set names (~98% attributed).
+      Portable = Pro Mat + Hauler · Grease = grease + accessories + KAJO · Covers = all covers &amp; enclosures.</div>
+  </header>
+
+  <div class="keys">
+    <span class="key"><span class="sw port"></span> Portable</span>
+    <span class="key"><span class="sw grease"></span> Grease</span>
+    <span class="key"><span class="sw cov"></span> Covers</span>
+    <span class="key"><span class="sw oth"></span> Other / untagged</span>
+  </div>
+
+  <h2>Spend over time</h2>
+  <p class="sub">Stacked area — total height is monthly ad spend; bands are the category split. Note the <strong>Portable surge in July</strong> ($35k → $75k) and June's untagged EOFY spike.</p>
+  <div class="card"><svg id="spendChart" viewBox="0 0 760 320" role="img" aria-label="Monthly ad spend by category, stacked area, Jan to Jul 2026"></svg></div>
+
+  <h2>ROAS over time</h2>
+  <p class="sub">Meta-attributed return on ad spend by category. Dashed line = ~1.9 break-even at your ~48% VCR. <strong>Every line decays as spend scales — and July's Portable dives below break-even.</strong></p>
+  <div class="card"><svg id="roasChart" viewBox="0 0 760 320" role="img" aria-label="Monthly ROAS by category line chart Jan to Jul 2026"></svg></div>
+
+  <h2>July snapshot — share vs efficiency</h2>
+  <div class="stack" role="img" aria-label="July share Portable 46, Grease 26, Covers 25, Other 2">
+    <div class="seg port" style="width:46.2%">46.2%</div>
+    <div class="seg grease" style="width:26.2%">26.2%</div>
+    <div class="seg cov" style="width:25.3%">25.3%</div>
+    <div class="seg oth" style="width:2.3%"></div>
+  </div>
+  <div class="rows" style="margin-top:16px">
+    <div class="row"><div class="lab">Portable</div><div class="trk"><div class="be" style="left:55.4%"></div><div class="fill port" style="width:55.4%">1.44</div></div></div>
+    <div class="row"><div class="lab">Grease</div><div class="trk"><div class="be" style="left:55.4%"></div><div class="fill grease" style="width:92.7%">2.41</div></div></div>
+    <div class="row"><div class="lab">Covers</div><div class="trk"><div class="be" style="left:55.4%"></div><div class="fill cov" style="width:73.1%">1.90</div></div></div>
+  </div>
+  <p class="sub">Bars = July ROAS (scaled to 2.6×); dashed = 1.9 break-even. Most spend on the lowest ROAS.</p>
+
+  <div class="note"><div class="h">The read</div>
+    Spend chased volume, not efficiency: <strong>Grease</strong> ran the best ROAS all year (5.4 → 2.4) on a shrinking budget share, while <strong>Portable</strong> got the July cash injection at its worst-ever ROAS (1.44). The budget is mapped upside-down to both efficiency and retention.
+  </div>
+
+  <h2>Cart → purchase rate</h2>
+  <p class="sub">Purchases ÷ add-to-carts, by category. <strong style="color:var(--crit)">Read with care:</strong> Meta's add-to-cart pixel under-fired through H1, so ratios above the 100% funnel ceiling are a tracking gap, not reality. Trust the H2 trend.</p>
+  <div class="card"><svg id="c2pChart" viewBox="0 0 760 320" role="img" aria-label="Cart to purchase rate by category, Jan to Jul 2026"></svg></div>
+  <div class="note"><div class="h">The read (H2, reliable window)</div>
+    Once tracking stabilised, cart→purchase <strong>converged to ~26–29% across all three categories</strong> (Jul: Portable 27% · Grease 26% · Covers 29%). So cart-close is <em>not</em> where the categories differ — the efficiency gap is upstream, in click quality, CPA and AOV, not in how well each product closes from cart.</div>
+
+  <h2>Outbound clicks</h2>
+  <p class="sub">Clicks that leave Meta for the site, by category — a proxy for demand/interest the ads generate.</p>
+  <div class="card"><svg id="obcChart" viewBox="0 0 760 320" role="img" aria-label="Outbound clicks by category, Jan to Jul 2026"></svg></div>
+  <div class="note"><div class="h">The read</div>
+    <strong>Covers pull the most click interest all year</strong> (and a big July spike to ~51k) — yet convert at only mid ROAS (1.90). That's a merchandising/AOV opportunity, not a demand problem. <strong>Portable's July click surge (~27k)</strong> landed right as its ROAS collapsed — we paid for clicks that didn't convert.</div>
+
+  <h2>Accounting for July's traffic surge</h2>
+  <p class="sub">July's efficiency collapse wasn't the site breaking — it was a deliberate <strong>volume push into Covers + Portable prospecting</strong> that bought a wave of lower-intent clicks. Traffic jumped; return per click fell.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:12px;margin:16px 0">
+    <div style="background:var(--card);border:1px solid var(--hair);border-radius:10px;padding:14px;box-shadow:var(--shadow)"><div style="font-family:var(--cond);font-weight:700;font-size:27px;line-height:1">~100k</div><div style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:6px">Paid outbound clicks, Jul · <strong style="color:var(--crit)">+50% MoM</strong></div></div>
+    <div style="background:var(--card);border:1px solid var(--hair);border-radius:10px;padding:14px;box-shadow:var(--shadow)"><div style="font-family:var(--cond);font-weight:700;font-size:27px;line-height:1">+118%</div><div style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:6px">Covers clicks MoM → 50.7k</div></div>
+    <div style="background:var(--card);border:1px solid var(--hair);border-radius:10px;padding:14px;box-shadow:var(--shadow)"><div style="font-family:var(--cond);font-weight:700;font-size:27px;line-height:1">+89%</div><div style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:6px">Portable clicks MoM → 26.9k</div></div>
+    <div style="background:var(--black);border:1px solid var(--black);border-radius:10px;padding:14px;box-shadow:var(--shadow)"><div style="font-family:var(--cond);font-weight:700;font-size:27px;line-height:1;color:var(--yellow)">116,420</div><div style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#b8b2a8;margin-top:6px">Shopify sessions · +52% vs May</div></div>
+  </div>
+  <div class="note"><div class="h">What actually happened</div>
+    Paid outbound clicks rose ~50% MoM to ~100k, led by <strong>Covers (+118%)</strong> and <strong>Portable (+89%)</strong>; Grease clicks fell 23%. Yet ROAS fell in both scaled lines (Covers 2.83→1.90, Portable 2.59→1.44) while <strong>cart→purchase held ~27–29%</strong> — the checkout closed fine. So the extra traffic was <strong>cheaper but lower-intent and lower-AOV</strong>, poured mostly into Portable (the one-and-done, AOV-diluting line). Same story on the Shopify side: <strong>116,420 sessions</strong> (+52% vs May) at just <strong>~$3.15 revenue/session</strong> and <strong>1.42% CVR</strong>. <strong>July = far more traffic at worse quality — that's the MER blowout, not a conversion or site fault.</strong>
+  </div>
+
+  <h2>Where the July traffic came from — and did it convert?</h2>
+  <p class="sub"><strong>Answer: mostly not.</strong> Nearly half of July's clicks came from broad prospecting that converted at 0.5% and returned $0.84 per $1. The converting traffic is the smaller warm/retargeting layer. Audience/funnel inferred from campaign names.</p>
+  <div class="tblwrap2"><table class="tbl">
+    <thead><tr><th>Audience / funnel</th><th>Clicks</th><th>Share</th><th>Spend</th><th>ROAS</th><th>Click→purch</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Broad prospecting</strong> (ASC / TOF / Broad)</td><td class="tnum2">50,240</td><td class="tnum2">49%</td><td class="tnum2">$67,872</td><td class="tnum2 bad2">0.84</td><td class="tnum2 bad2">0.53%</td></tr>
+      <tr><td><strong>Warm / retargeting</strong> (TOM / MOF)</td><td class="tnum2">26,480</td><td class="tnum2">26%</td><td class="tnum2">$48,126</td><td class="tnum2 good2">3.63</td><td class="tnum2 good2">2.39%</td></tr>
+      <tr><td>Creative testing (ABO broad)</td><td class="tnum2">25,732</td><td class="tnum2">25%</td><td class="tnum2">$46,328</td><td class="tnum2">1.53</td><td class="tnum2">1.53%</td></tr>
+    </tbody>
+  </table></div>
+  <p class="sub">Warm audiences convert <strong>4.5× better</strong> than broad prospecting (2.39% vs 0.53%) at <strong>4.3× the ROAS</strong>. The July surge was disproportionately the low-converting broad layer.</p>
+
+  <h3>Top click-drivers (July)</h3>
+  <div class="tblwrap2"><table class="tbl">
+    <thead><tr><th>Ad set</th><th>Clicks</th><th>Spend</th><th>Purch</th><th>ROAS</th></tr></thead>
+    <tbody>
+      <tr><td>☂️ LPV – Flagship – ASC – Broad <em style="color:var(--crit)">(traffic objective)</em></td><td class="tnum2">16,335</td><td class="tnum2">$1,300</td><td class="tnum2">1</td><td class="tnum2 bad2">0.07</td></tr>
+      <tr><td>☂️ Covers – ASC – Broad</td><td class="tnum2">14,685</td><td class="tnum2">$12,486</td><td class="tnum2">37</td><td class="tnum2 bad2">0.85</td></tr>
+      <tr><td>AU – ASC – TOM – PRO Mat <em style="color:var(--good)">(warm)</em></td><td class="tnum2">8,239</td><td class="tnum2">$16,506</td><td class="tnum2">181</td><td class="tnum2 good2">2.92</td></tr>
+      <tr><td>💧 Grease – ASC – Broad</td><td class="tnum2">7,200</td><td class="tnum2">$13,876</td><td class="tnum2">41</td><td class="tnum2 bad2">0.91</td></tr>
+      <tr><td>🦘 ADV+ Covers <em style="color:var(--good)">(warm)</em></td><td class="tnum2">6,872</td><td class="tnum2">$9,892</td><td class="tnum2">128</td><td class="tnum2 good2">3.95</td></tr>
+      <tr><td>🦘 ADV+ Grease <em style="color:var(--good)">(warm)</em></td><td class="tnum2">6,853</td><td class="tnum2">$12,640</td><td class="tnum2">168</td><td class="tnum2 good2">3.68</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note"><div class="h">Smoking gun + the refined fix</div>
+    The <strong>LPV "Flagship" ad set bought 16,335 clicks — 16% of all July traffic — for just $1,300</strong>, because it's optimized for <strong>landing-page views, not purchases</strong> (1 purchase, ROAS 0.07). Near-free vanity traffic that converts ~zero. Combined with broad Covers/Grease/PRO-Mat prospecting (ROAS 0.84–0.91), <strong>the broad top-funnel layer is the whole traffic-surge-without-conversion problem</strong>. The fix sharpens: <strong>cut broad prospecting + LPV across products, protect the warm TOM layer</strong> — which converts at ROAS 2.9–4.3, including PRO Mat's own warm ad set (2.92). It's a funnel-stage problem as much as a product one.
+  </div>
+
+  <h2>Platform &amp; audience — where the clicks came from</h2>
+
+  <h3>Platform: the surge was largely Instagram</h3>
+  <p class="sub">Instagram delivered <strong>42% of July's clicks on 25% of budget</strong> — but converted at 0.65%, a third of Facebook's rate. IG is the cheap-click, low-intent engine behind the traffic surge; Facebook converts 2.6× better.</p>
+  <div class="tblwrap2"><table class="tbl">
+    <thead><tr><th>Platform</th><th>Spend</th><th>Share</th><th>Clicks</th><th>Purch</th><th>ROAS</th><th>Click→purch</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Facebook</strong></td><td class="tnum2">$121,883</td><td class="tnum2">75%</td><td class="tnum2">59,113</td><td class="tnum2">1,007</td><td class="tnum2 good2">2.04</td><td class="tnum2 good2">1.70%</td></tr>
+      <tr><td><strong>Instagram</strong></td><td class="tnum2">$40,394</td><td class="tnum2">25%</td><td class="tnum2">43,289</td><td class="tnum2">283</td><td class="tnum2 bad2">1.33</td><td class="tnum2 bad2">0.65%</td></tr>
+    </tbody>
+  </table></div>
+  <p class="sub">Product mix by platform is similar (~70–78% Facebook across all three); Covers is the most Instagram-weighted (31% IG).</p>
+
+  <h3>Age: 35–54 is the money; under-35 just clicks</h3>
+  <div class="tblwrap2"><table class="tbl">
+    <thead><tr><th>Age</th><th>Spend share</th><th>Clicks</th><th>ROAS</th><th>Click→purch</th></tr></thead>
+    <tbody>
+      <tr><td>35–44</td><td class="tnum2">26%</td><td class="tnum2">23,247</td><td class="tnum2 good2">2.10</td><td class="tnum2">1.57%</td></tr>
+      <tr><td>25–34</td><td class="tnum2">21%</td><td class="tnum2">34,391</td><td class="tnum2 good2">2.20</td><td class="tnum2 bad2">0.91%</td></tr>
+      <tr><td>45–54</td><td class="tnum2">21%</td><td class="tnum2">14,378</td><td class="tnum2">1.85</td><td class="tnum2 good2">1.85%</td></tr>
+      <tr><td>55–64</td><td class="tnum2">19%</td><td class="tnum2">12,339</td><td class="tnum2">1.49</td><td class="tnum2">1.61%</td></tr>
+      <tr><td>65+</td><td class="tnum2">8%</td><td class="tnum2">6,390</td><td class="tnum2 bad2">1.12</td><td class="tnum2">1.06%</td></tr>
+      <tr><td>18–24</td><td class="tnum2">4%</td><td class="tnum2">11,707</td><td class="tnum2">1.89</td><td class="tnum2 bad2">0.65%</td></tr>
+    </tbody>
+  </table></div>
+  <p class="sub"><strong>35–54 converts best (1.57–1.85%).</strong> Under-35 generates ~46k clicks combined at roughly half the conversion — a big part of the low-intent surge. <strong>Gender:</strong> Male 82% of spend at ROAS 1.94; Female 17% at 1.49 — male-dominant fits the Charlie/Ron trade audience.</p>
+
+  <div class="note"><div class="h">Decomposition of the surge</div>
+    <strong>Instagram + under-35 audiences drove the low-converting July click volume; the profitable traffic is Facebook + 35–54 + male.</strong> Combined with the funnel read above (broad prospecting + LPV), the recovery is clear: shift budget toward <strong>Facebook, 35–54, warm/TOM audiences</strong>, and cut broad IG/young/LPV prospecting.
+  </div>
+
+  <h2>The surge, pinpointed — the cut list</h2>
+  <p class="sub">It's concentrated and nameable: <strong>top 10 ad sets = 75% of all July traffic</strong>, and just <strong>5 ad sets = 46% of ALL traffic ($63,464) returning under $1 per $1</strong>. All five sit in the <code>ASC – TOF – Broad</code> prospecting campaign.</p>
+  <div class="tblwrap2"><table class="tbl">
+    <thead><tr><th>Ad set</th><th style="text-align:left">Campaign</th><th>Clicks</th><th>Spend</th><th>ROAS</th><th style="text-align:left">Action</th></tr></thead>
+    <tbody>
+      <tr><td>☂️ LPV Flagship – Broad</td><td style="text-align:left;color:var(--muted)">AU · ASC · TOF · Broad</td><td class="tnum2">16,335</td><td class="tnum2">$1,300</td><td class="tnum2 bad2">0.07</td><td style="text-align:left"><strong>Pause today</strong></td></tr>
+      <tr><td>☂️ Covers – ASC – Broad</td><td style="text-align:left;color:var(--muted)">AU · ASC · TOF · Broad</td><td class="tnum2">14,685</td><td class="tnum2">$12,486</td><td class="tnum2 bad2">0.85</td><td style="text-align:left">Pause / rebuild</td></tr>
+      <tr><td>💧 Grease – ASC – Broad</td><td style="text-align:left;color:var(--muted)">AU · ASC · TOF · Broad</td><td class="tnum2">7,200</td><td class="tnum2">$13,876</td><td class="tnum2 bad2">0.91</td><td style="text-align:left">Pause / rebuild</td></tr>
+      <tr><td>🛌 PRO Mat 4WD – ASC – Broad</td><td style="text-align:left;color:var(--muted)">AU · ASC · TOF · Broad</td><td class="tnum2">5,187</td><td class="tnum2 bad2">$23,087</td><td class="tnum2 bad2">0.74</td><td style="text-align:left">Pause — biggest $</td></tr>
+      <tr><td>🛌 PRO Mat – ASC – Broad</td><td style="text-align:left;color:var(--muted)">AU · ASC · TOF · Broad</td><td class="tnum2">4,129</td><td class="tnum2">$12,715</td><td class="tnum2 bad2">0.77</td><td style="text-align:left">Pause</td></tr>
+      <tr style="border-top:2px solid var(--hair-strong)"><td><strong>Total</strong></td><td style="text-align:left"><strong>1 campaign</strong></td><td class="tnum2"><strong>47,536 (46%)</strong></td><td class="tnum2"><strong>$63,464</strong></td><td class="tnum2 bad2"><strong>&lt;1.0</strong></td><td></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sub">All five sit in <strong>one campaign</strong> — <code>AU – ASC – RS – TOF – Broad – Excl.</code> — and are <strong>93% of its $67,872 spend</strong>. In practice this is a single action: pause/rebuild the TOF-Broad prospecting campaign.</p>
+
+  <h3>What you'll save — July run-rate</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0">
+    <div style="background:var(--card);border:1px solid var(--hair);border-radius:10px;padding:14px;box-shadow:var(--shadow)"><div style="font-family:var(--cond);font-weight:700;font-size:26px;line-height:1">$63,464</div><div style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:6px">Ad spend freed / month</div></div>
+    <div style="background:var(--card);border:1px solid var(--hair);border-radius:10px;padding:14px;box-shadow:var(--shadow)"><div style="font-family:var(--cond);font-weight:700;font-size:26px;line-height:1;color:var(--good)">~$37,000</div><div style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:6px">Margin bleed stopped / month</div></div>
+    <div style="background:var(--black);border:1px solid var(--black);border-radius:10px;padding:14px;box-shadow:var(--shadow)"><div style="font-family:var(--cond);font-weight:700;font-size:26px;line-height:1;color:var(--yellow)">$1,300</div><div style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#b8b2a8;margin-top:6px">Pure waste (LPV → ~$91 back)</div></div>
+  </div>
+  <p class="sub">Margin math: the five generate ~$50k attributed revenue → ~$26k product margin (×52% after variable cost) − $63k ad spend = <strong>−$37k</strong>. Turning them off recovers that. Reallocating the $63k to warm ad sets (ROAS 2.9–4.0) turns the same budget from a loss into a gain — ramp it, don't dump it all at once.</p>
+
+  <h3>Action plan</h3>
+  <div class="tblwrap2"><table class="tbl">
+    <thead><tr><th>When</th><th style="text-align:left">Action</th><th style="text-align:left">Impact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Today</strong></td><td style="text-align:left">Pause the <strong>LPV Flagship</strong> ad set</td><td style="text-align:left">Traffic drops ~16% immediately · saves $1,300 for ~$0 lost revenue</td></tr>
+      <tr><td><strong>This week</strong></td><td style="text-align:left">Pause the 4 broad prospecting ad sets — i.e. gut the <strong>TOF-Broad campaign</strong></td><td style="text-align:left">Frees ~$62k/mo · stops ~$36k/mo margin loss</td></tr>
+      <tr><td><strong>This week</strong></td><td style="text-align:left">Reallocate freed budget to warm <strong>TOM / ADV+</strong> ad sets + FB 35–54</td><td style="text-align:left">Same $ earns at ROAS 2.9–4.0 instead of losing</td></tr>
+      <tr><td>Ongoing</td><td style="text-align:left">Do <strong>not</strong> placement-exclude on ASC ad sets</td><td style="text-align:left">Exclusions degrade Advantage+ delivery — off/reallocate is the reliable move</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note"><div class="h">Keep + scale these (same products, warm audiences)</div>
+    <strong>TOM PRO Mat ROAS 2.92 · ADV+ Covers 3.95 · ADV+ Grease 3.68.</strong> The problem was never the products — it's the broad-prospecting layer. Move the freed budget here and into Facebook / 35–54, where it converts.
+  </div>
+
+  <div style="border:1.5px dashed var(--hair-strong);border-radius:12px;padding:14px 16px;margin:14px 0;color:var(--muted)">
+    <strong style="color:var(--ink);font-family:var(--cond);text-transform:uppercase;letter-spacing:.04em;font-size:12.5px">One still pending</strong><br>
+    <strong>Placement</strong> (Feed vs Reels vs Stories) — Meta blocks combining <code>platform_position</code> with conversion actions in one call, so it needs a spend/clicks-only placement query. Quick fix to the breakdown endpoint; platform, age and gender above are live.
+  </div>
+
+  <footer>
+    Source: DiggerLid Meta feed (<code>/api/campaigns?level=adset</code>), Jan–Jul 2026, ex-GST context. ROAS is Meta last-click and undercounts true contribution — the trend and ranking are the point, not the absolute. June "Other" ($80k) is untagged EOFY spend, shown as its own band for honesty. Companion: August &amp; September Metric Benchmarks.
+  </footer>
+</div>
+
+<script>
+(function(){
+  var L=["Jan","Feb","Mar","Apr","May","Jun","Jul"];
+  var SP={Portable:[13196,33594,30876,26659,26379,35441,74972],
+          Grease:[11120,15455,24032,45653,56766,57654,42524],
+          Covers:[21734,32658,43659,33618,31695,24157,41122],
+          Other:[2134,3023,1635,2388,8091,80404,3706]};
+  var RO={Portable:[3.26,2.35,1.90,2.35,2.21,2.59,1.44],
+          Grease:[5.37,4.65,3.22,2.99,3.16,2.94,2.41],
+          Covers:[3.90,2.84,2.71,2.35,2.95,2.83,1.90]};
+  var COL={Portable:"var(--s-port)",Grease:"var(--s-grease)",Covers:"var(--s-cov)",Other:"var(--s-oth)"};
+  var W=760,H=320,PL=52,PR=16,PT=16,PB=34;
+  var iw=W-PL-PR, ih=H-PT-PB, n=L.length;
+  function X(i){return PL + i*iw/(n-1);}
+  function esc(){}
+  function xlabels(){var s="";for(var i=0;i<n;i++){s+='<text x="'+X(i).toFixed(1)+'" y="'+(H-12)+'" fill="var(--muted)" font-size="12" font-family="var(--sans)" text-anchor="middle">'+L[i]+'</text>';}return s;}
+
+  // ---- stacked area: spend ----
+  (function(){
+    var yMax=210000;
+    function Y(v){return PT+ih - v/yMax*ih;}
+    var s='';
+    // gridlines + y labels
+    for(var g=0; g<=200000; g+=50000){
+      var y=Y(g).toFixed(1);
+      s+='<line x1="'+PL+'" y1="'+y+'" x2="'+(W-PR)+'" y2="'+y+'" stroke="var(--hair)" stroke-width="1"/>';
+      s+='<text x="'+(PL-8)+'" y="'+(+y+4)+'" fill="var(--muted)" font-size="11" font-family="var(--sans)" text-anchor="end">$'+(g/1000)+'k</text>';
+    }
+    var order=["Portable","Grease","Covers","Other"]; // bottom to top
+    var lower=[]; for(var i=0;i<n;i++) lower.push(0);
+    order.forEach(function(c){
+      var upper=lower.map(function(v,i){return v+SP[c][i];});
+      var pts=[];
+      for(var i=0;i<n;i++) pts.push(X(i).toFixed(1)+','+Y(upper[i]).toFixed(1));
+      for(var i=n-1;i>=0;i--) pts.push(X(i).toFixed(1)+','+Y(lower[i]).toFixed(1));
+      s+='<polygon points="'+pts.join(' ')+'" fill="'+COL[c]+'" fill-opacity="0.92" stroke="var(--card)" stroke-width="1"/>';
+      lower=upper;
+    });
+    s+=xlabels();
+    document.getElementById('spendChart').innerHTML=s;
+  })();
+
+  // ---- line chart: ROAS ----
+  (function(){
+    var yMax=6;
+    function Y(v){return PT+ih - v/yMax*ih;}
+    var s='';
+    for(var g=0; g<=6; g+=1){
+      var y=Y(g).toFixed(1);
+      s+='<line x1="'+PL+'" y1="'+y+'" x2="'+(W-PR)+'" y2="'+y+'" stroke="var(--hair)" stroke-width="1"/>';
+      s+='<text x="'+(PL-8)+'" y="'+(+y+4)+'" fill="var(--muted)" font-size="11" font-family="var(--sans)" text-anchor="end">'+g+'</text>';
+    }
+    // break-even 1.9
+    var yb=Y(1.9).toFixed(1);
+    s+='<line x1="'+PL+'" y1="'+yb+'" x2="'+(W-PR)+'" y2="'+yb+'" stroke="var(--crit)" stroke-width="1.5" stroke-dasharray="5 4"/>';
+    s+='<text x="'+(W-PR)+'" y="'+(+yb-6)+'" fill="var(--crit)" font-size="11" font-family="var(--cond)" font-weight="700" text-anchor="end">BREAK-EVEN 1.9</text>';
+    ["Grease","Covers","Portable"].forEach(function(c){
+      var pl=[];
+      for(var i=0;i<n;i++) pl.push(X(i).toFixed(1)+','+Y(RO[c][i]).toFixed(1));
+      s+='<polyline points="'+pl.join(' ')+'" fill="none" stroke="'+COL[c]+'" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>';
+      for(var i=0;i<n;i++) s+='<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(RO[c][i]).toFixed(1)+'" r="3.2" fill="'+COL[c]+'" stroke="var(--card)" stroke-width="1.4"/>';
+    });
+    s+=xlabels();
+    document.getElementById('roasChart').innerHTML=s;
+  })();
+
+  var C2P={Portable:[264.3,214.1,99.0,112.7,46.7,30.2,27.2],
+           Grease:[212.8,149.3,81.6,109.6,37.3,30.4,26.0],
+           Covers:[196.0,118.2,102.4,120.2,43.9,30.0,28.8]};
+  var OBC={Portable:[8304,16421,11368,20557,14437,14251,26890],
+           Grease:[6884,7413,9435,19203,30233,29186,22578],
+           Covers:[23158,30669,30658,29393,24442,23280,50739]};
+
+  // ---- cart to purchase ----
+  (function(){
+    var yMax=280;
+    function Y(v){return PT+ih - Math.min(v,yMax)/yMax*ih;}
+    var s='';
+    var xA=X(0), xB=X(3);
+    s+='<rect x="'+xA.toFixed(1)+'" y="'+PT+'" width="'+(xB-xA).toFixed(1)+'" height="'+ih+'" fill="var(--crit)" fill-opacity="0.06"/>';
+    s+='<text x="'+((xA+xB)/2).toFixed(1)+'" y="'+(PT+13)+'" fill="var(--crit)" font-size="10.5" font-family="var(--cond)" font-weight="700" text-anchor="middle">H1 — ADD-TO-CART UNDER-TRACKED</text>';
+    for(var g=0; g<=250; g+=50){ var y=Y(g).toFixed(1);
+      s+='<line x1="'+PL+'" y1="'+y+'" x2="'+(W-PR)+'" y2="'+y+'" stroke="var(--hair)" stroke-width="1"/>';
+      s+='<text x="'+(PL-8)+'" y="'+(+y+4)+'" fill="var(--muted)" font-size="11" font-family="var(--sans)" text-anchor="end">'+g+'%</text>'; }
+    var yc=Y(100).toFixed(1);
+    s+='<line x1="'+PL+'" y1="'+yc+'" x2="'+(W-PR)+'" y2="'+yc+'" stroke="var(--crit)" stroke-width="1.5" stroke-dasharray="5 4"/>';
+    s+='<text x="'+(W-PR)+'" y="'+(+yc-6)+'" fill="var(--crit)" font-size="11" font-family="var(--cond)" font-weight="700" text-anchor="end">100% FUNNEL CEILING</text>';
+    ["Grease","Covers","Portable"].forEach(function(c){
+      var pl=[]; for(var i=0;i<n;i++) pl.push(X(i).toFixed(1)+','+Y(C2P[c][i]).toFixed(1));
+      s+='<polyline points="'+pl.join(' ')+'" fill="none" stroke="'+COL[c]+'" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>';
+      for(var i=0;i<n;i++) s+='<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(C2P[c][i]).toFixed(1)+'" r="3.2" fill="'+COL[c]+'" stroke="var(--card)" stroke-width="1.4"/>';
+    });
+    s+=xlabels();
+    document.getElementById('c2pChart').innerHTML=s;
+  })();
+
+  // ---- outbound clicks ----
+  (function(){
+    var yMax=55000;
+    function Y(v){return PT+ih - v/yMax*ih;}
+    var s='';
+    for(var g=0; g<=50000; g+=10000){ var y=Y(g).toFixed(1);
+      s+='<line x1="'+PL+'" y1="'+y+'" x2="'+(W-PR)+'" y2="'+y+'" stroke="var(--hair)" stroke-width="1"/>';
+      s+='<text x="'+(PL-8)+'" y="'+(+y+4)+'" fill="var(--muted)" font-size="11" font-family="var(--sans)" text-anchor="end">'+(g/1000)+'k</text>'; }
+    ["Covers","Grease","Portable"].forEach(function(c){
+      var pl=[]; for(var i=0;i<n;i++) pl.push(X(i).toFixed(1)+','+Y(OBC[c][i]).toFixed(1));
+      s+='<polyline points="'+pl.join(' ')+'" fill="none" stroke="'+COL[c]+'" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>';
+      for(var i=0;i<n;i++) s+='<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(OBC[c][i]).toFixed(1)+'" r="3.2" fill="'+COL[c]+'" stroke="var(--card)" stroke-width="1.4"/>';
+    });
+    s+=xlabels();
+    document.getElementById('obcChart').innerHTML=s;
+  })();
+})();
+</script>
