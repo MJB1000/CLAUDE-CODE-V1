@@ -16,6 +16,7 @@ its own section and **stays until you update it**. Durable across sessions — t
 | ID | Project | Status | Last updated | Headline |
 |---|---|---|---|---|
 | RP-001 | Signup volume, cost & signup→conversion economics | Open | 2026-08-16 | Popup CAPTURE stable ~5–6% (Alia, empirical) → slowdown is a REACH problem, not conversion. Cause (device/page) + view-rate trend PENDING segmented pull. Conversion ~29% stable. |
+| RP-002 | 2K Giveaway 2026 — acquisition P&L | Open (re-run post-BFCM) | 2026-08-25 | **Ad-driven cut: −$1,770 net to date** (11 new buyers, $1,595 contribution vs $3,365 cost). Whole-list "+$6.4k" = owned-audience activation, not acquisition. ~380 new emails not yet bought = the tail. |
 
 ---
 
@@ -121,6 +122,61 @@ These are *consistent with* "high-bounce paid traffic leaves before the popup fi
 - **True view→submit rate + email-vs-SMS split** → wire Alia API `/api/popup` (task #7).
 - **Per-Meta-campaign cost-per-signup** → add `campaign_id` to `/api/campaigns` + UTM join (tasks #4–5).
 - **Non-purchaser attribution** → `/api/events` (task #6).
+
+---
+
+## RP-002 — 2K Giveaway 2026: acquisition P&L
+**Status:** Open (re-run after BFCM) · **Owner:** Matt · **Last updated:** 2026-08-25
+**Question:** Did the 2K Giveaway make money from customers it *newly attracted* to the brand?
+
+### Setup
+- Giveaway list: 1,017 entrants, joins 27 May → 24 Jun 2026 (Klaviyo export 2026-08-25).
+- **Cost: $3,365** ($2,000 prize + $1,365 Meta ads). Ads ran to ~Jun 10; after that the entry
+  push went to the existing email list.
+- **Attribution frame (chosen):** the **ad-driven segment** — entrants who joined before
+  **Jun 10 2026, 7:00 AM AEST** (= 2026-06-09 21:00 UTC on Klaviyo's "Date Added"). 399 profiles.
+  Validated: 85% of this segment were brand-new Klaviyo profiles (median profile age at entry
+  0 days) vs the after-cutoff group being 73% pre-existing subscribers (median 137 days) —
+  i.e. before-cutoff ≈ newly attracted by ads; after-cutoff ≈ own audience.
+- Purchases: Shopify order export (full history → **17 Aug 2026**), matched by email.
+  New-to-brand = no orders before their join date. Contribution = line ex-GST × category margins
+  (Diggershield 80 / Hauler 68 / Pro Enclosure 63 / Exc Covers 62 / Pro Mats 59 / Access 50 / Grease 25).
+
+### Headline P&L (ad-driven cut, to 17 Aug 2026)
+| | |
+|---|--:|
+| Segment | 399 entrants (85% brand-new profiles) |
+| New-to-brand buyers | **11** (12 orders) |
+| Revenue (incl GST) | $2,751 |
+| Contribution | $1,361 (Pro Enclosure $900 led) |
+| + Direct ad purchases ($570.76 rev @45% blended) | +$233 |
+| **Net vs $3,365 cost** | **−$1,770** |
+| Cost per new customer (~13) | ~$260 (vs ~$86 blended CPA benchmark) |
+
+### Sensitivity — the three attribution cuts
+| Cut | Net | Reading |
+|---|--:|---|
+| Whole list (1,017) | +$6,375 | Inflated — 73% of late joiners were existing audience; counts activation as acquisition |
+| **Ad-driven segment (399)** ✅ chosen | **−$1,770** | Ads-as-acquisition; conservative (misses 169 late organic new profiles) |
+| All new profiles (510) | −$539 | Broadest honest cut; near break-even |
+
+### Findings
+1. **As an acquisition channel the giveaway has not paid back** (−$1,770 on the chosen cut,
+   −$539 on the most generous honest cut). The apparent whole-list profit was own-audience buying.
+2. **Giveaway entrants convert ~3–4% in 10 weeks** vs popup signups' ~29% lifetime — classic
+   prize-hunter quality gap. Median 16 days to first purchase → the *sale* (EOFY), not the
+   giveaway, triggered buying.
+3. What it did buy: ~380–495 genuinely new emails at ~$7–8.40 each (cheap list growth), and the
+   buyers it produced skewed **high-margin (Pro Enclosure-led, not Grease)**.
+
+### Open / next
+- **Re-run after BFCM 2026** (tail could close the gap — ~$1.8k more contribution needed on the
+  chosen cut). Note in `AUTOMATIONS.md` §6 monthly-retro scope or set a one-shot reminder.
+- Order data ends 17 Aug — refresh the export before the re-run.
+- If repeating the play: build in a 10% entrant holdout so incrementality answers itself, and
+  target buyers (offer/creative), not entry volume.
+- Raw segment files live in session scratchpad only — **PII, never committed**. Method here is
+  sufficient to reproduce from a fresh Klaviyo list export + Shopify orders export.
 
 ---
 
