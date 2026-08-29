@@ -2,20 +2,21 @@
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_14 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_7 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[XiaoDuoYa/codex-with-chatgpt](https://github.com/XiaoDuoYa/codex-with-chatgpt)** — ⭐ 386 · 386.0/day · TypeScript · since 2026-08-28
-   > ChatGPT thinks. Codex works. Use ChatGPT as the planning brain while keeping the Codex harness.
-2. **[Augani/dory](https://github.com/Augani/dory)** — ⭐ 1,534 · 21.6/day · Swift · since 2026-06-19
-   > Dory is the complete local development system for Apple Silicon: Docker, Compose, Kubernetes, virtual machines, and policy-bound agent…
-3. **[jiabaobei/skills-constitution](https://github.com/jiabaobei/skills-constitution)** — ⭐ 174 · 7.9/day · Python · since 2026-08-07
-   > Skills Constitution — meta-rule governing all skill invocations across agent platforms
+1. **[umacloud/umadev](https://github.com/umacloud/umadev)** — ⭐ 254 · 3.6/day · Rust · since 2026-06-19
+   > UmaDev: A coding agent that works like a real dev team, commanding the Claude Code / Codex / OpenCode you already use.
+2. **[Arch1eSUN/Arcgentic](https://github.com/Arch1eSUN/Arcgentic)** — ⭐ 302 · 2.8/day · Python · since 2026-05-12
+   > Mechanical plan/dev/self-audit/external-audit gates for AI coding agents, with a configurable role-routing topology engine, an MCP-UI live…
+3. **[fkiene/llmtrim](https://github.com/fkiene/llmtrim)** — ⭐ 222 · 2.7/day · Rust · since 2026-06-07
+   > Local proxy that compresses your LLM API requests so you pay less, with no change to the answers. Trims wasted tokens from prompts…
 
 ## Multimodal AI
 
-_Nothing new this run._
+1. **[Code-Amadeus/Amadeus](https://github.com/Code-Amadeus/Amadeus)** — ⭐ 158 · 4.5/day · Python · since 2026-07-26
+   > Real-time multimodal desktop agent evolving toward a persistent AI OS interface (0.1 α).
 
 ## Marketing & analytics tech
 
@@ -23,25 +24,18 @@ _Nothing new this run._
 
 ## Web/app dev stack
 
-_Nothing new this run._
+1. **[O0000-code/paper-search-pro](https://github.com/O0000-code/paper-search-pro)** — ⭐ 150 · 1.5/day · HTML · since 2026-05-24
+   > Academic literature discovery as a Skill — Claude Code · Codex · any agent that loads SKILL.md. Five sources · four tiers · single-file…
 
 ## Self-development & productivity
 
-_Nothing new this run._
+1. **[brahmkshatriya/material-osc](https://github.com/brahmkshatriya/material-osc)** — ⭐ 151 · 3.1/day · Lua · since 2026-07-12
+   > Quality of life OSC for MPV
 
 ## Claude & agent design craft
 
-1. **[Nanako0129/sepia](https://github.com/Nanako0129/sepia)** — ⭐ 431 · 431.0/day · Shell · since 2026-08-28
-   > De-AI writing skill for Claude Code, Codex, Grok Build, and Antigravity — narrative-architecture repair for fiction, venue-matched rules…
-2. **[totec448-spec/chat-on-steroids](https://github.com/totec448-spec/chat-on-steroids)** — ⭐ 507 · 77.4/day · TypeScript · since 2026-08-22
-   > Cross-platform local MCP capabilities for ChatGPT with Chrome integration, Goal, Compact & Resume, and durable multi-agent workflows.
-3. **[agentconnect-md/agentconnect](https://github.com/agentconnect-md/agentconnect)** — ⭐ 583 · 16.2/day · TypeScript · since 2026-07-24
-   > The open-source, multi-agent alternative to Claude Tag. @ any agent, wherever work happens, they work alongside your team, learning as they…
-
-🌱 **Rising fast** — small repos gaining stars (7d)
-
-4. **[ktwu01/benchmark-radar](https://github.com/ktwu01/benchmark-radar)** — ⭐ 118 · 📈 +56⭐/7d · Python · since 2026-07-27
-   > Daily evidence-first radar for AI benchmarks, evaluations, datasets, and data quality.
+1. **[PatilShreyas/debroid](https://github.com/PatilShreyas/debroid)** — ⭐ 247 · 9.0/day · Kotlin · since 2026-08-02
+   > Autonomous, headless Android debugger designed for AI coding agents. Inspect runtime memory, set breakpoints, and debug live apps.
 
 ## Community & social media management
 
@@ -53,17 +47,11 @@ _Nothing new this run._
 
 ## Meta inbox & omnichannel AI agents
 
-1. **[ryanlaiyanip-ctrl/chatmany](https://github.com/ryanlaiyanip-ctrl/chatmany)** — ⭐ 40 · 1.9/day · TypeScript · since 2026-08-07
-   > Self-hosted Instagram comment-to-DM automation on the official Meta API. Deploy your own on Cloudflare's free tier — no scraping, no…
+_Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-1. **[xzf-thu/VoiceMem](https://github.com/xzf-thu/VoiceMem)** — ⭐ 150 · 12.8/day · Python · since 2026-08-17
-   > a real-time and empathetic memory system for voice assistants
-2. **[ThinkOffApp/CarWatch](https://github.com/ThinkOffApp/CarWatch)** — ⭐ 248 · 12.6/day · Python · since 2026-08-09
-   > Your car as a chat-room agent: Raspberry Pi 5 + dashcam + local AI. CodeWatch's sibling for the garage.
-3. **[dondai44423/bladebro](https://github.com/dondai44423/bladebro)** — ⭐ 153 · 4.9/day · Rust · since 2026-07-28
-   > A Fully free agentic browser driver for AI , few tools, full control, real stealth, top-tier token efficiency.
+_Nothing new this run._
 
 ## Ads & paid growth
 
@@ -71,12 +59,7 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[jub0t/WolfCut](https://github.com/jub0t/WolfCut)** — ⭐ 153 · 45.4/day · TypeScript · since 2026-08-25
-   > Free & Open-Source CapCut replacement.
-2. **[erduo1998-cell/erduo-broll-loop-engineering](https://github.com/erduo1998-cell/erduo-broll-loop-engineering)** — ⭐ 152 · 3.9/day · TypeScript · since 2026-07-20
-   > SRT 驱动的双后端 B-roll Agent Skill：自动路由 HyperFrames / Remotion，集成 152 张 Shotcraft 镜头卡
-3. **[22kk12/mengwei-local-leads-workbench](https://github.com/22kk12/mengwei-local-leads-workbench)** — ⭐ 153 · 2.4/day · Python · since 2026-06-26
-   > Half-developed local leads workbench prototype for AI content, video automation, keyword research, account warming, and publishing workflow…
+_Nothing new this run._
 
 ## E-commerce & Shopify
 
