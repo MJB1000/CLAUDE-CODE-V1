@@ -2,24 +2,24 @@
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_11 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_8 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[JordyZomer/lemmalog](https://github.com/JordyZomer/lemmalog)** — ⭐ 236 · 49.8/day · Rust · since 2026-08-27
-   > A Datalog engine for LLM agent memory: stratified rules, provenance-tracked facts, incremental derivation, and an MCP server that lets your…
-2. **[spinabot/brigade](https://github.com/spinabot/brigade)** — ⭐ 3,267 · 44.5/day · TypeScript · since 2026-06-19
-   > Brigade — Your personal intelligence, built enterprise-grade
-3. **[zorost/AI-Engineering-Lab](https://github.com/zorost/AI-Engineering-Lab)** — ⭐ 245 · 17.1/day · Jupyter Notebook · since 2026-08-17
-   > A free, self-paced 24-week AI engineering course: Python, machine learning, LLMs, RAG, fine-tuning, agents and MCP, Azure and Vertex and…
+1. **[DevnorsAI/devnors-data-mcp](https://github.com/DevnorsAI/devnors-data-mcp)** — ⭐ 232 · 5.8/day · Python · since 2026-07-24
+   > Devnors Data - MCP Server: MCP,Model Context Protocol,Claude,Cursor,WorkBuddy,接口,数据API,裁判文书,Legal Case,法律法规,法条,Law Article,企业工商,Company…
+2. **[Socialpranker/deepdive](https://github.com/Socialpranker/deepdive)** — ⭐ 377 · 3.6/day · Python · since 2026-05-21
+   > Deepdive skill for Claude Code — 12-phase research pipeline: plan-review gate, parallel sub-agent search, claims-ledger triangulation with…
 
 ## Multimodal AI
 
-_Nothing new this run._
+1. **[gammahazard/locate-anything](https://github.com/gammahazard/locate-anything)** — ⭐ 150 · 1.5/day · TypeScript · since 2026-05-27
+   > Sleek, mobile-friendly web UI for NVIDIA LocateAnything-3B — open-vocabulary object detection & grounding on your own GPU, via one docker…
 
 ## Marketing & analytics tech
 
-_Nothing new this run._
+1. **[Git-Agni/prod-FARM-IOS-Core](https://github.com/Git-Agni/prod-FARM-IOS-Core)** — ⭐ 563 · 97.4/day · TypeScript · since 2026-08-27
+   > A farm of real iPhones, run from your Mac. Open-source iOS device automation with live control, a Postgres-backed scheduler, and TikTok…
 
 ## Web/app dev stack
 
@@ -27,17 +27,16 @@ _Nothing new this run._
 
 ## Self-development & productivity
 
-1. **[KitionAI/kition](https://github.com/KitionAI/kition)** — ⭐ 205 · 5.4/day · TypeScript · since 2026-07-25
-   > Kition brings Markdown, DataTable, WhiteBoard, a tool-using AI agent, browser research, and visual workflows into one desktop workspace.
+_Nothing new this run._
 
 ## Claude & agent design craft
 
-1. **[yanliudesign/mono-color-skill](https://github.com/yanliudesign/mono-color-skill)** — ⭐ 1,920 · 150.2/day · Python · since 2026-08-19
-   > One-ink editorial print image skill — warm paper, halftone photography, active negative space, and restrained typography.
-2. **[hkqr/my-free-code](https://github.com/hkqr/my-free-code)** — ⭐ 594 · 138.6/day · Python · since 2026-08-27
-   > Open-source multi-provider AI gateway for Claude Code and other coding agents, with model routing, streaming, tools, reasoning, fallbacks…
-3. **[Vincentwei1021/video-talkcraft](https://github.com/Vincentwei1021/video-talkcraft)** — ⭐ 386 · 41.4/day · HTML · since 2026-08-22
-   > Agent skill that turns Claude Code / Codex into a motion-design studio for voiceover-driven explainer videos — word-level voiceover sync…
+1. **[nickname21kmr/gameops-investigator](https://github.com/nickname21kmr/gameops-investigator)** — ⭐ 100 · 44.3/day · Python · since 2026-08-30
+   > Evidence-first game operations incident investigation agent with read-only MCP tools and reproducible evaluations.
+2. **[jsdhwfmax/EvalForge](https://github.com/jsdhwfmax/EvalForge)** — ⭐ 87 · 10.1/day · Python · since 2026-08-24
+   > Evaluator-neutral AI evaluation evidence, baseline regression gates, and JSON, JUnit, and SARIF reports for CI.
+3. **[aaron-for-value/VeriRun](https://github.com/aaron-for-value/VeriRun)** — ⭐ 98 · 2.4/day · Python · since 2026-07-22
+   > Evidence-first infrastructure for reproducible, isolated executable evaluation and online rewards.
 
 ## Community & social media management
 
@@ -53,8 +52,8 @@ _Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-1. **[halcyon-video/halcyon-video](https://github.com/halcyon-video/halcyon-video)** — ⭐ 616 · 21.9/day · TypeScript · since 2026-08-03
-   > Your Jellyfin or Plex library as a walkable 1990s video rental store, self-hosted
+1. **[activeing123/mcptoon](https://github.com/activeing123/mcptoon)** — ⭐ 192 · 5.2/day · HTML · since 2026-07-27
+   > A magical tool that changes how you use Agents. Install once — every Agent automatically discovers and uses all your MCP tools, and saves…
 
 ## Ads & paid growth
 
@@ -62,12 +61,7 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[jub0t/Concat](https://github.com/jub0t/Concat)** — ⭐ 905 · 144.6/day · TypeScript · since 2026-08-25
-   > Free & Open-Source CapCut replacement. (formerly WolfCut)
-2. **[n1tr00-10/tiktok-signature](https://github.com/n1tr00-10/tiktok-signature)** — ⭐ 454 · 22.2/day · Python · since 2026-08-11
-   > TikTok X-Gnarly, X-Bogus, and X-Dynosaur signature generator for Web API requests. Supports SDK version 5.1.2 (build 1.0.0.316). Python…
-3. **[sosoj92/reels-vault](https://github.com/sosoj92/reels-vault)** — ⭐ 154 · 4.8/day · Python · since 2026-07-30
-   > Transformez vos Reels Instagram sauvegardés en base de données interrogeable. Transcription locale gratuite, sans clé API.
+_Nothing new this run._
 
 ## E-commerce & Shopify
 
