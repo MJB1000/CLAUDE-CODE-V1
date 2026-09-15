@@ -2,16 +2,16 @@
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_8 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_6 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[anthropics/commerce-agents](https://github.com/anthropics/commerce-agents)** — ⭐ 2,849 · 211.3/day · Python · since 2026-09-01
-   > Reference blueprint for building shopping and merchant agents with Claude. Examples in retail, commerce, telecom, and entertainment…
-2. **[tigerless-labs/agent-memory](https://github.com/tigerless-labs/agent-memory)** — ⭐ 1,444 · 110.3/day · Python · since 2026-09-01
-   > Long-term memory runtime for AI agents — plain Markdown as the source of truth, local ranked retrieval, and an independent sleep-time…
-3. **[20000419/fauxnix](https://github.com/20000419/fauxnix)** — ⭐ 255 · 8.5/day · TypeScript · since 2026-08-16
-   > Run Linux-style commands on Windows via deterministic bash→PowerShell translation. No VM, no WSL. MCP server + CLI built for AI agents…
+1. **[youngyangyang04/llm-master](https://github.com/youngyangyang04/llm-master)** — ⭐ 437 · 118.9/day · — · since 2026-09-12
+   > 大模型（LLM）全栈学习路线与中文教程🔥：覆盖 Prompt Engineering、RAG、AI Agent、MCP、微调、模型部署、Transformer、AI 编程与大厂面试，从入门到生产实践。
+2. **[atria-asi/Atria-Dawn-Preview](https://github.com/atria-asi/Atria-Dawn-Preview)** — ⭐ 310 · 87.3/day · — · since 2026-09-12
+   > _no description_
+3. **[superdesigndev/treg](https://github.com/superdesigndev/treg)** — ⭐ 1,423 · 22.8/day · Python · since 2026-07-15
+   > OpenRouter for agent tools. Join community here: https://discord.gg/6mQYYfFMAn
 
 ## Multimodal AI
 
@@ -23,17 +23,16 @@ _Nothing new this run._
 
 ## Web/app dev stack
 
-1. **[shadcn-ui/lint](https://github.com/shadcn-ui/lint)** — ⭐ 830 · 66.4/day · TypeScript · since 2026-09-02
-   > An agent-first linter for Tailwind design systems. Write design system rules that agents can verify.
+_Nothing new this run._
 
 ## Self-development & productivity
 
-_Nothing new this run._
+1. **[alfadur7/llm-wiki-newsroom](https://github.com/alfadur7/llm-wiki-newsroom)** — ⭐ 161 · 2.0/day · Python · since 2026-06-26
+   > Harness engineering applied to knowledge production: a self-evolving multi-agent newsroom that turns your documents into a cross-linked…
 
 ## Claude & agent design craft
 
-1. **[michael-denyer/pstack-claude](https://github.com/michael-denyer/pstack-claude)** — ⭐ 389 · 3.5/day · TypeScript · since 2026-05-26
-   > Claude Code, Codex, OpenCode, Gemini, and Prime Agent versions of Poteto's pstack. Rigorous agent workflows with Cursor primitives…
+_Nothing new this run._
 
 ## Community & social media management
 
@@ -41,8 +40,7 @@ _Nothing new this run._
 
 ## Customer-service AI agents
 
-1. **[mirza-rizvi/ResolveHQ](https://github.com/mirza-rizvi/ResolveHQ)** — ⭐ 161 · 13.3/day · TypeScript · since 2026-09-02
-   > Self-hosted helpdesk on Cloudflare Workers: D1, R2, Queues, Email Routing. Shared inbox, email threading, AI assist.
+_Nothing new this run._
 
 ## Meta inbox & omnichannel AI agents
 
@@ -50,7 +48,8 @@ _Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-_Nothing new this run._
+1. **[arnegiacomo/fugleramme](https://github.com/arnegiacomo/fugleramme)** — ⭐ 1,403 · 20.3/day · Python · since 2026-07-08
+   > E-ink bird frame for Raspberry Pi - real-time bird detection by audio, fully local AI, rendered as real, hand-cut 1800s bird illustrations.
 
 ## Ads & paid growth
 
@@ -58,14 +57,12 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[blixvip/MotionClone](https://github.com/blixvip/MotionClone)** — ⭐ 156 · 31.9/day · Python · since 2026-09-10
-   > Turn reference videos into editable motion graphics with Codex + ChatGPT. Compare, customize, and export MP4s or HyperFrames projects…
-2. **[shengshu-ai/Vidu-S](https://github.com/shengshu-ai/Vidu-S)** — ⭐ 252 · 3.4/day · — · since 2026-07-03
-   > Vidu S: Real-Time Interactive, Editable, and Spatial Video Generation
+_Nothing new this run._
 
 ## E-commerce & Shopify
 
-_Nothing new this run._
+1. **[filtalgo/Filtmall-Shopping-Skill](https://github.com/filtalgo/Filtmall-Shopping-Skill)** — ⭐ 204 · 1.8/day · JavaScript · since 2026-05-28
+   > Agent-native shopping for extreme value: verifiable same-product price evidence, checkout, orders, delivery, and after-sales.
 
 ## Brand systems & creative ops
 
