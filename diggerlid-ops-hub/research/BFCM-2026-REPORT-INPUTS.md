@@ -2,7 +2,7 @@
 
 > Living note. Everything the BFCM 2026 planning report must carry forward from the Sep 2026
 > research sprint (RP-003, RP-004, RP-005). Chief of Staff loads this before any BFCM work.
-> Last updated 2026-09-22.
+> Last updated 2026-09-22 (EE reconciliation added).
 
 ## Strategic direction (Matt, 2026-09-22)
 **From now until the sale, and during it, we go after TRAFFIC and EMAILS.** The sale is an
@@ -31,6 +31,52 @@ launch 48h ≈ 30% of sale · plateau ≥5%/day · Cyber Monday close 10–15% �
 | RP-006 | Popup signups convert ~30% (17k signups, flat across cohorts), fast: ~85% of it in month one via the welcome offer. Pre-sale signups who haven't bought convert only 4–7% during a sale. Signup ≈ $120 net / ~$65 contribution. Grease-intent 35% vs covers 28%. | High (counts) / Medium (value) | Emails pay NOW, not at BFCM: run capture continuously to mid-Nov, judge lead cost against ~$65, bias to grease intent, protect capture in-sale (pre-launch capture LP). |
 
 | RP-006 (Alia reach) | **Popup reach collapsed from 64–80% of sessions (Feb–Apr) to 23% (Sep)** while submit-among-viewers stayed ~5%. September ran at ~1/3 of the signups it should have. | High (measured, 8 months) | **First job before any traffic spend: restore popup reach on paid landing pages (trigger rules / page targeting). ~3× signups available at the same traffic.** Weekly reach check via one Alia call. |
+
+## EE calendar and BFCM tool reconciliation (2026-09-22, deck 3.0)
+Basis: the EE calendar workbooks (2025 6.0, 2026 7.1) record revenue **including GST**; repo
+figures are Shopify net (ex-GST). Convert before comparing.
+
+**Dates (decided):** hype Tue 17 and Wed 18 Nov; sale Thu 19 Nov 6:00 AM to Wed 2 Dec 11:59 PM
+AEDT, 14 days; Black Friday = day 9, Cyber Monday = day 12. Still carrying other dates and to be
+re-dated: the EE tool output (18 Nov to 1 Dec), `email-flow.csv` and `meta-campaigns.csv` (12 days
+from 19 Nov plus an extension day), the shared calendar (23 Nov start).
+
+| EE tool input | Tool value | Calendar / Shopify | Correction |
+|---|---|---|---|
+| Sept + Oct 2025 revenue | $566,000 | $566,323 | confirmed |
+| "2025 BFCM event" revenue | $700,000 | $710,170 is the whole of November; the 14-day sale was about $585k incl GST ($535k net) | decide basis: month (multiple 10.9x) or event (9.2x, projects $850k on July BAU) |
+| Weekly BAU revenue | $92,641 | July 2026 $417,198 / 4.5 wk (worst month of the year); Aug to Sep run rate about $118k/wk | decide base month: $1.0M vs $1.27M plan |
+| BAU MER | 25.94% | not found in either workbook; Jul 39%, Aug 30%, Sep 28%, 2026 YTD 27.5% | source unknown |
+| Sale MER target | 20% | Nov 2025 actual 24% ($167,677 on $710k) | plan 20 to 24%, ceiling 28% |
+| Product cost | 25% | calendar driver 32%; 2026 actual 33% of revenue | 32% |
+| GST | 8% | driver 9%; 2026 actual 8.6% | 9% |
+| Daily fixed costs | $2,414 | $83,905/mo from Aug 2026 (preloaded year) = $2,707/day | $2,707 |
+| Packaging | $2.00 | $1.50 | minor |
+| AOV | $279.83 | Jul $252, Aug $316, YTD $302, Nov 2025 $328 | use $300 to $320 |
+| Daily BAU Meta spend | $500 to $3K bracket | $4.6k to $5.2k/day Jul to Sep | $3K+ bracket |
+| Weekly items sold | 1,921 | about 2,650 | check |
+| Repeat classification | Hybrid | returning orders 24% (calendar), returning-customer rate 21.4% | on the line; consistent |
+
+**Profit per sale order** (tool section 7, 40%/20% gift uptake): tool $59.00 (21.1%) on $279.72;
+corrected for product 32%, GST 9%, fixed $2,707/day: about $35 (12.6%), about $24 at 24% MER.
+Total on 3,568 orders: tool $210k; corrected about $126k, about $85k at 24% MER. The tool's
+formula is not fully visible; the corrected column moves each line by the input difference only.
+
+**Targets (revenue incl GST, 2 hype + 14 sale days):** floor $585k (2025 repeated) · plan $1.0M
+(EE multiple method on July BAU; calendar preloaded Nov 2026 = $990,057, +40% on Nov 2025, profit
+$174.5k before corrections) · stretch $1.27M (same multiple on Aug to Sep BAU). Validation: EOFY
+2026 was 1.72x EOFY 2025 on 1.82x BAU growth, so the sale scales with BAU. Preloaded 2026 months
+around it: Oct $498,829, Dec $393,568.
+
+**Repo files to correct (not yet applied):**
+- `OBJECTIVES.md`: fixed costs $74,831 to $83,905/mo (Aug 2026 preloaded year); product cost 40% to 32%.
+- `data/FORECAST.md`: November plan $605k ex-GST vs EE calendar plan $990k incl GST (about $908k net). Pick one plan of record.
+- `LEARNINGS.md` §1 fixed-cost line as above.
+
+**Capacity flags from the plan:** stock on hand about $950k RRP against a $1.0M plan = 105%
+sell-through risk on hero lines; about 1,000 orders on day one at $1.0M (2025 peak hours ran 115 to
+120 orders an hour 6 to 9 PM); GWP units about 1,500 magnet mats, 1,000 free-ship, 525 drawbars
+(tool: 1,430 / 715).
 
 ## Open items feeding the report
 - ~~RP-006~~ done 2026-09-22 (above). Consider a one-month popup holdout pre-BFCM for incrementality.
