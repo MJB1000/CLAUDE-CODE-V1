@@ -580,6 +580,42 @@ ordered in-sale and again later.)
   the pre-launch LP capture page (RP-005) and a sale-specific popup are the fix.
 - Dec cohort is weak: don't over-spend on post-BFCM list growth.
 
+### Alia reach layer (added 2026-09-22, partial pull — API budget exhausted)
+Alia `usersCount` by month Oct 25–Mar 26 + Aug 26 `popupViewsCount` (35,059) were obtained before
+the API's cost budget ran out (monthly one-stat calls succeed; half-year calls 429). Combined with
+Shopify sessions, Shopify Alia signups (RP-006) and buyers:
+
+| Month | Shopify sessions | Alia users | Alia users ÷ sessions | Signups | Signups ÷ Alia users | Buyers | Buyers ÷ Alia users |
+|---|--:|--:|--:|--:|--:|--:|--:|
+| Oct 25 | 43,955 | 58,928 | 1.34 | 1,346 | 2.28% | 442 | 0.75% |
+| Nov 25 | 78,359 | 96,645 | 1.23 | 2,280 | 2.36% | 659 | 0.68% |
+| Dec 25 | 50,255 | 61,949 | 1.23 | 1,393 | 2.25% | 302 | 0.49% |
+| Jan 26 | 29,663 | 36,509 | 1.23 | 959 | 2.63% | 276 | 0.76% |
+| Feb 26 | 39,299 | 51,091 | 1.30 | 1,233 | 2.41% | 370 | 0.72% |
+| Mar 26 | 36,747 | 42,329 | 1.15 | 1,219 | 2.88% | 378 | 0.89% |
+| Apr 26 | 31,845 | 64,824 (RP-001) | 2.04 | 1,315 | 2.03% | 391 | 0.60% |
+| Aug 26 | 103,965 | n/a · **35,059 popup views** | | 1,711 | **4.9% of views** · 1.6% of sessions | 467 | |
+
+Inferences (labelled):
+- **Capture per Alia user is stable at ~2.0–2.9%** (fact, 7 months) — the same stability RP-001
+  saw in submit-among-viewers (5–6%). The popup is not the variable.
+- **Reach halved when paid traffic surged.** Aug 26: 35k popup views on 104k sessions = ~34% of
+  sessions saw the popup, vs an implied ~50–60% in Jan–Apr (signups ÷ sessions 2.6–3.8% at a
+  5–6% submit rate). *Inference* — Jan–Apr views are derived, not measured; Alia's Apr
+  popupViewRate (40% of Alia users) and the 2× users/sessions ratio that month show the
+  denominators differ, so treat the *level* as indicative and the *direction* as solid.
+- **End-to-end: ~0.5–0.9% of Alia users become signup-buyers**; Dec 25 lowest (0.49%).
+- Aug 26 full funnel: 104k sessions → 35k popup views (34%) → 1.7k signups (4.9% of views) →
+  ~470 buyers (27–29%) → ~0.45% of sessions; at $305 AOV ≈ **$1.4 net revenue per session via
+  the popup path**, ≈ 13% of that month's RPV (~$4.4).
+- Alia's `emailSignupRate` (6.0% Aug) runs above signups÷views (4.9%) — Alia counts submits,
+  Shopify/Klaviyo count deduplicated profiles.
+
+**Decision read (adds to above):** the cheapest email growth is *reach*, not conversion — every
+extra 10 points of popup view share on Aug traffic ≈ +500 signups/month ≈ +145 buyers ≈ +$44k
+revenue. Fix reach (trigger timing / paid landing pages that fire the popup) before paying for
+more traffic to feed a popup a third of visitors never see.
+
 ### Caveats
 - Shopify signup counts ≈ Klaviyo +8%; conversion on the Klaviyo denominator would read ~32%.
 - No popup holdout exists, so "30% convert" ≠ "30% incremental"; some would have bought anyway.
@@ -592,6 +628,8 @@ ordered in-sale and again later.)
 
 ### Open questions / next
 - Run a true popup holdout (Alia supports it) for one month pre-BFCM to measure incrementality.
+- Finish the Alia reach series (popupViewsCount Oct 25–Sep 26, usersCount Apr–Sep 26) with monthly
+  one-stat calls spaced across a day; then split views by device/path via `/events/distributions`.
 - Re-cut Dec 2025 cohort by source once RP-001's segmented pull exists.
 - Add "signup → buyer 30-day %" as a monthly scorecard row (segment count, 1 query).
 
