@@ -17,7 +17,7 @@ its own section and **stays until you update it**. Durable across sessions — t
 |---|---|---|---|---|
 | RP-001 | Signup volume, cost & signup→conversion economics | Open | 2026-08-16 | Popup CAPTURE stable ~5–6% (Alia, empirical) → slowdown is a REACH problem, not conversion. Cause (device/page) + view-rate trend PENDING segmented pull. Conversion ~29% stable. |
 | RP-002 | 2K Giveaway 2026 — acquisition P&L | Open (re-run post-BFCM) | 2026-08-25 | **Ad-driven cut: −$1,770 net to date** (11 new buyers, $1,595 contribution vs $3,365 cost). Whole-list "+$6.4k" = owned-audience activation, not acquisition. ~380 new emails not yet bought = the tail. |
-| RP-003 | Repeat rate (EE definition) & Style-of-Sale classification | Complete | 2026-09-22 | **LOW REPEAT, on the Hybrid boundary**: 17.7% of all customers ever bought twice; TTM Shopify returning-customer rate 21.4%. Grease is the only consumable (≈27% product repeat); every durable ≤11%. Reorderers switch variant (size up / second battery platform). |
+| RP-003 | Repeat rate (EE definition) & Style-of-Sale classification | Complete | 2026-09-22 | **LOW REPEAT, on the Hybrid boundary**: 17.7% of all customers ever bought twice; TTM Shopify returning-customer rate 21.4%. **Ex-grease: 13.9% / 16.4% = Low, unambiguous.** Grease is the only consumable (≈27% product repeat); every durable ≤11%. Reorderers switch variant (size up / second battery platform). |
 
 ---
 
@@ -207,6 +207,22 @@ protection business repeats at <10% — a pure low-repeat durable. Grease is wha
 to the line. Read: run the business on **first-order economics** (AOV, first-order GPAM, immediate
 CAC payback) — consistent with RP/cohort finding that 12-mo LTV ≈ first order — and treat grease
 reorder as the one lever that could move us into Hybrid proper.
+
+### Ex-grease: what are we without the consumable? (added 2026-09-22)
+Same EE definition, grease system + GWPs + Package Protection filtered out of every order.
+
+| Definition | Non-grease buyers | Returning | Repeat rate | EE band |
+|---|--:|--:|--:|---|
+| Lifetime | 17,926 | 2,485 | **13.9%** | Low repeat |
+| TTM (Sep 25-Aug 26) | 8,316 | 1,362 | **16.4%** | Low repeat |
+
+**Ex-grease verdict: LOW REPEAT, unambiguously** (vs 17.7% / 21.4% with grease). Grease adds
+~4-5 points of repeat rate and is the only thing that gets the blend to the Hybrid line. Within
+the TTM window alone, non-grease buyers generated just 6.7% extra orders per buyer (8,870 orders
+/ 8,316 buyers) - the 16.4% is mostly older customers coming back for a second machine/accessory.
+Returning non-grease customers = 12% of non-grease net sales lifetime ($764k of $6.26M).
+Caveat: "returning" is store-level, so a grease-first customer buying one cover later counts as
+returning here - true ex-grease 2+ rate is at or slightly below these figures.
 
 ### Category & product repeat (all-time, repeat orders per buyer)
 | Set | Buyers | Orders | Repeat |
