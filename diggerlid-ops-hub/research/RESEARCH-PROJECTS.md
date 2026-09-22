@@ -17,6 +17,7 @@ its own section and **stays until you update it**. Durable across sessions — t
 |---|---|---|---|---|
 | RP-001 | Signup volume, cost & signup→conversion economics | Open | 2026-08-16 | Popup CAPTURE stable ~5–6% (Alia, empirical) → slowdown is a REACH problem, not conversion. Cause (device/page) + view-rate trend PENDING segmented pull. Conversion ~29% stable. |
 | RP-002 | 2K Giveaway 2026 — acquisition P&L | Open (re-run post-BFCM) | 2026-08-25 | **Ad-driven cut: −$1,770 net to date** (11 new buyers, $1,595 contribution vs $3,365 cost). Whole-list "+$6.4k" = owned-audience activation, not acquisition. ~380 new emails not yet bought = the tail. |
+| RP-003 | Repeat rate (EE definition) & Style-of-Sale classification | Complete | 2026-09-22 | **LOW REPEAT, on the Hybrid boundary**: 17.7% of all customers ever bought twice; TTM Shopify returning-customer rate 21.4%. Grease is the only consumable (≈27% product repeat); every durable ≤11%. Reorderers switch variant (size up / second battery platform). |
 
 ---
 
@@ -177,6 +178,83 @@ These are *consistent with* "high-bounce paid traffic leaves before the popup fi
   target buyers (offer/creative), not entry volume.
 - Raw segment files live in session scratchpad only — **PII, never committed**. Method here is
   sufficient to reproduce from a fresh Klaviyo list export + Shopify orders export.
+
+---
+
+## RP-003 — Repeat rate (Ecommerce Equation definition) & Style-of-Sale classification
+**Status:** Complete · **Owner:** Matt · **Last updated:** 2026-09-22
+**Question:** On the Ecommerce Equation definition — *share of customers who have purchased more
+than once* — what is DiggerLid's repeat rate, and which Style of Sale band are we in?
+EE bands: **Low repeat 0–19% (25% of EE cohort) · Hybrid 20–39% (48%) · High repeat 40%+ (27%).**
+
+### Data sources
+- ShopifyQL `sales` dataset, `GROUP BY new_or_returning_customer` — distinct customers under
+  "Returning" = customers who placed a non-first order in the window (exact, no export needed).
+- Product/variant repeat = distinct orders containing the product ÷ distinct buyers of it, −1
+  ("repeat orders per buyer"; upper bound on % of buyers with 2+ orders of that product).
+- Window: all-time (2019 → 20 Sep 2026) and TTM (1 Sep 2025 → 31 Aug 2026). Completed sales;
+  GWPs and Package Protection excluded from product tables.
+
+### Headline — classification
+| Definition | Customers | Repeat customers | Repeat rate | EE band |
+|---|--:|--:|--:|---|
+| Lifetime: bought 2+ times, ever | 27,060 | 4,790 | **17.7%** | Low repeat |
+| TTM Shopify returning-customer rate (Sep 25–Aug 26) | 14,552 | 3,112 | **21.4%** | Hybrid (bottom edge) |
+
+**Verdict: LOW-REPEAT store sitting on the Hybrid boundary.** Returning customers supply 21% of
+lifetime orders / 20% of lifetime net sales (TTM: 24% / 24%). Strip grease out and the machine-
+protection business repeats at <10% — a pure low-repeat durable. Grease is what lifts the blend
+to the line. Read: run the business on **first-order economics** (AOV, first-order GPAM, immediate
+CAC payback) — consistent with RP/cohort finding that 12-mo LTV ≈ first order — and treat grease
+reorder as the one lever that could move us into Hybrid proper.
+
+### Category & product repeat (all-time, repeat orders per buyer)
+| Set | Buyers | Orders | Repeat |
+|---|--:|--:|--:|
+| Whole store | 27,061 | 34,301 | 26.8% |
+| Grease system (packs, gun, adapter, coupler, coupling caps) | 13,300 | 17,419 | **31.0%** |
+| Grease products only (packs, gun, adapter, coupler) | 12,539 | 16,408 | 30.9% |
+| Machine protection (7 covers + Enclosure + DiggerShield + PRO Mat) | 13,262 | 14,556 | 9.8% |
+| Covers only (7 cover products) | 7,035 | 7,813 | 11.1% |
+| Accessories (10 products) | 6,236 | 6,895 | 10.6% |
+| Portable protection (PRO Mat) | 3,168 | 3,249 | 2.6% |
+
+Product level: KAJO Grease Packs **26.8%** · Universal/Engine Covers 9.3% · Battery Gun Adapter
+8.4% · KAJO Gun 8.3% · Coupling Cap Set 8.2% · Quicky Cover 7.2% · Skid Steer Cover 6.4% ·
+Mini Loader Cover 6.1% · Phone Cradle 5.3% · Coupler 4.0% · DiggerShield 3.5% · Pro Enclosure 3.2%
+· PRO Mat 2.6% · 1.7T Cover 2.2% · Micro Cover 1.5% · Hauler 1.4%.
+
+### Outliers (variant drilldown)
+1. **Reorderers switch variant.** Grease Packs repeat 26.8% at product level but every variant
+   only 7–15% (LZR2 13.7%, LC002 10.3%, HD800 8.1%) → second orders change size or grade.
+   40-pc packs are the stickiest variants (LZR2/40 14.0%, LC002/40 15.2%, 2050/40 14.1%) —
+   bulk buyers = the loyal fleet/contractor segment. **Hammer Paste: 0% repeat on 93 buyers.**
+2. **Battery adapter 8.4% is a second-platform effect, not a consumable.** Milwaukee 7.1%,
+   Makita 3.1%, DeWALT 0.9%, AEG 0% → product-level repeat comes from buying a second adapter
+   for another battery system. Milwaukee users are the heaviest repeaters.
+3. **Cheap/universal covers repeat like multi-machine fleets.** Universal covers 9.3% at product
+   level vs 5.7–5.9% per size; Quicky default 6.5% vs colours ≤2% → buyers cover additional
+   machines / sizes, not replacements. The premium 1.7T cover (2.2%) and Micro (1.5%) are
+   one-and-done.
+4. Accessory outliers: Coupling Cap Set 8.2% (caps get lost — treat as grease-system consumable);
+   Trucker Cap 6.0% (merch repeat); Boom Bottle Opener 1.5% (gift, never reorders).
+
+### Caveats
+- "Repeat orders per buyer" (product tables) ≥ true % of buyers with 2+ orders of that product;
+  the gap only matters for grease (Aug-2026 cohort measured 24.8% exact vs 26.8% here).
+- ~3,000 buyers sit under a blank/legacy product title and are unattributed in product tables.
+- Lifetime rate is depressed by the 88% of TTM customers who are <12 months old and haven't had
+  time to repeat; TTM returning-customer rate (21.4%) is the fairer like-for-like with EE peers.
+- ShopifyQL analytics endpoint rate-limits to roughly one query per 2 minutes when chained.
+
+### Linked artifacts
+- `deliverables/cohort-cltv-cross-purchase-2026-08-17.md` (entry-cohort exact repeat %, margins).
+
+### Open questions / next
+- Re-run TTM returning-customer rate quarterly; crossing 25% = genuinely Hybrid.
+- Grease reorder programme (subscription / 40-pc nudge / restock email at ~90 days) is the only
+  repeat lever with mass; size the opportunity before BFCM planning.
+- Hammer Paste 0% repeat — confirm whether use-rate or product issue (VoC).
 
 ---
 
