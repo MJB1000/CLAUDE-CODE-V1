@@ -19,6 +19,7 @@ its own section and **stays until you update it**. Durable across sessions — t
 | RP-002 | 2K Giveaway 2026 — acquisition P&L | Open (re-run post-BFCM) | 2026-08-25 | **Ad-driven cut: −$1,770 net to date** (11 new buyers, $1,595 contribution vs $3,365 cost). Whole-list "+$6.4k" = owned-audience activation, not acquisition. ~380 new emails not yet bought = the tail. |
 | RP-003 | Repeat rate (EE definition) & Style-of-Sale classification | Complete | 2026-09-22 | **LOW REPEAT, on the Hybrid boundary**: 17.7% of all customers ever bought twice; TTM Shopify returning-customer rate 21.4%. **Ex-grease: 13.9% / 16.4% = Low, unambiguous. PRO Mat only: 2-8% = Low, deep; 93.5% of its buyers are new-to-brand.** Grease is the only consumable (≈27% product repeat); every durable ≤11%. Reorderers switch variant (size up / second battery platform). |
 | RP-004 | Sale curve shape: Hybrid or Low? (EOFY 26 vs BFCM 25) | Complete | 2026-09-22 | **Hybrid-SHAPED curve on a Low-repeat base.** Mid-sale plateau ~5%/day (Low curve = 8-9%); hype spike ≈30% of revenue - front-loaded at BFCM (31% first 48h), back-loaded at EOFY (32% last 48h, tax deadline). But returning-customer share during sales (22-29%) = BAU (24.5%): the spikes are NEW customers, so the shape comes from urgency on acquisition, not repeat. |
+| RP-005 | Sale landing pages: BFCM 25 vs EOFY 26 (+ FD 26) | Complete | 2026-09-22 | **EOFY page converted 62% better (3.38% vs 2.09%) on 37% fewer sessions and delivered more orders (382 vs 373).** Driver = traffic mix + a day-2 cold-social flood at BFCM (4,628 sessions @ 0.99%). Homepage landers out-convert both LPs 3-4x (warm traffic). Pre-launch hype traffic to the LP converts ~0.6% - capture it. |
 
 ---
 
@@ -376,6 +377,94 @@ Totals: EOFY $543k net / 2,107 orders · BFCM $535k / 1,759 orders. Pre-sale bas
 ### Open questions / next
 - Rebuild after BFCM 2026 with three sales; test whether the Knock-Off drops lift the plateau.
 - Pull FD 2026 (Father's Day, Aug 17-Sep 6) curve for a third data point on a gift-driven sale.
+
+## RP-005 — Sale landing pages: BFCM 2025 vs EOFY 2026 (and Father's Day 2026)
+**Status:** Complete · **Owner:** Matt · **Last updated:** 2026-09-22
+**Question:** How did the sale landing pages perform - `/pages/blackfriday` (BFCM 2025) vs
+`/pages/eofy-2026` (EOFY 2026) - and what does it mean for the BFCM 2026 page? Father's Day
+2026 (`/pages/fathers-day-2026`) included as a third, smaller data point.
+
+### Data sources
+- ShopifyQL `sessions` dataset, `landing_page_path` dimension (sessions, conversion, cart adds,
+  checkout reached/completed), by day and by `referrer_source`. Windows: BFCM 15 Nov-1 Dec 2025;
+  EOFY 15-30 Jun 2026; FD 18 Aug-7 Sep 2026.
+- PostHog HogQL (project 475333) for EOFY and FD only - history starts 18 Jun 2026, so it misses
+  EOFY launch day and has nothing for BFCM 2025. Person-stitched funnel (LP viewers → PDP view →
+  Product Added → Order Completed within window), next-page products, referring domain, UTM, device.
+
+### Headline
+| | BFCM 2025 `/pages/blackfriday` | EOFY 2026 `/pages/eofy-2026` | FD 2026 `/pages/fathers-day-2026` |
+|---|--:|--:|--:|
+| Landing sessions | 17,870 | 11,304 | 4,464 |
+| Conversion (session → order) | **2.09%** | **3.38%** | 2.33% |
+| Orders from LP-landing sessions | 373 | 382 | 104 |
+| Share of all sale-window sessions landing on LP | 37% | 15% | n/a |
+| Share of sale orders | ~21% | ~18% | n/a |
+| Add-to-cart rate | n/a (tracking gap: 315 ATC < 373 orders) | 9.9% | 7.5% |
+| Reached checkout | 2.8% | 4.7% | n/a |
+| Peak day | 19 Nov: 4,628 sessions @ 0.99% | 30 Jun: 1,387 @ 5.84% (launch 17 Jun: 1,379 @ 5.37%) | 25 Aug: 620 @ 2.4% |
+
+**EOFY's page converted 62% better on 37% fewer sessions and produced more orders.**
+
+### By traffic source (Shopify referrer_source)
+| Source | BFCM sessions | BFCM CVR | EOFY sessions | EOFY CVR |
+|---|--:|--:|--:|--:|
+| Social (paid + organic) | 14,882 (83%) | 1.37% | 7,980 (71%) | 2.04% |
+| Direct | 2,775 (16%) | 5.48% | 3,133 (28%) | 6.58% |
+| Email (Shopify-classified; PostHog UTM shows ~725 EOFY email sessions) | 71 | 0% | 156 | 6.4% |
+
+Both sources converted better on the EOFY page (social +49%, direct +20%) AND the mix was
+warmer (28% direct vs 16%). So it is both a better page/offer and a better audience.
+
+### Findings
+1. **The BFCM page was flooded with cold social on day 2.** 19 Nov: 4,628 sessions (26% of all
+   LP traffic) at 0.99% - half the page's average. Launch day itself was 3,190 @ 2.6%. That one
+   day of broad prospecting dragged the page from ~2.6% to 2.09%.
+2. **Homepage landers out-convert both sale pages 3-4x** (BFCM `/` 5,404 @ 8.4%, 456 orders;
+   EOFY `/` 4,880 @ 10.2%, 499 orders). The homepage catches returning/brand/email traffic; the
+   LP catches cold social. Judge the LP on source-matched conversion, not against the homepage.
+3. **Hype-phase traffic to the LP is wasted.** Pre-launch days sent 2,328 (BFCM) and 2,019
+   (EOFY) sessions to a page with nothing to buy: ~0.6% conversion, 13 and 12 orders. That is
+   ~4,300 warm sessions with no email/SMS capture in front of them.
+4. **PostHog, EOFY (18-30 Jun):** 5,282 viewers, 5.7 pages per session (engaged, not a bounce
+   page); 36% went on to a PDP, 21% added to cart, 10% ordered within the window (person-level,
+   any session). 87% mobile. The page pushed grease first (LZR2 449 sessions), then Pro Enclosure
+   381, DiggerShield 354, PRO Mat 278, coupler 276 - a broad-range page. Sources: Meta ~3,500
+   sessions, direct 1,668, on-site navigation 1,196, email ~725, Google 202.
+5. **PostHog, FD (21 Aug-7 Sep):** 3,892 viewers, 5.4 pages/session; 45% to PDP, 21% ATC, 10.5%
+   ordered - the same person-level funnel as EOFY despite lower Shopify session CVR. 12% of
+   viewers were existing customers. PRO Mat dominated the next click (817 sessions, 3x the next
+   product) - a single-hero page. By contrast the FD **gift** page (`/pages/gift`, EXP-005)
+   was a dud: 999 viewers, 7% to PDP, 1.3% ATC, 0.5% ordered, 2.3 pages/session.
+6. **FD page went live 4 days after the sale started** (first traffic 21 Aug; sale 17 Aug).
+7. **Data gaps:** BFCM 2025 cart-add tracking is broken (fewer cart adds than orders), so ATC
+   rates can't be compared; PostHog new/existing for EOFY is unusable (history starts inside the
+   window, everyone looks new).
+
+### Implications for the BFCM 2026 page
+- Keep the LP as the paid-social destination, but **split cold prospecting from warm**: broad
+  prospecting → category/PDP destinations (grease, PRO Mat) that convert social at 2-5%; LP for
+  retargeting, email, direct. Day-2 floods at 1% are the single biggest drag.
+- **Lead with grease and PRO Mat**, the two categories social traffic actually buys; big-ticket
+  enclosure/DiggerShield lower on the page (EOFY ordering worked).
+- **Pre-launch LP = capture page** (email/SMS "first access" form + countdown), not a preview of
+  a sale that isn't live. ~2,000-2,300 hype sessions each sale are currently thrown away.
+- **Build and QA the page before the hype sends**, not after launch (FD lesson).
+- Verify cart-add tracking on the LP before 15 Nov; without it the funnel can't be read.
+- Benchmarks to beat: 3.4% session conversion, 10% ATC, 5+ pages/session, social ≥2%, direct ≥6%.
+
+### Caveats
+- Shopify landing-page conversion attributes the order to the session that landed on the page;
+  later sessions that convert are not credited (PostHog person-level funnel shows ~3x higher).
+- Windows include hype days for LP totals; sale-order shares use the sale windows from RP-004.
+- Referrer classification differs between Shopify (email 156) and PostHog UTM (~725).
+
+### Linked artifacts
+- RP-004 (sale curves), `experiments/EXPERIMENT-LOG.md` EXP-005 (gift page), `deliverables/bfcm-2026-concept-board.md`.
+
+### Open questions / next
+- Rebuild after BFCM 2026 with source-split LP vs PDP destinations as a designed test.
+- Add `/pages/<sale>` pre-launch capture-rate as a scorecard row during hype phases.
 
 ---
 
