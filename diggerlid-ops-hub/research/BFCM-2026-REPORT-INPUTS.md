@@ -68,6 +68,31 @@ $174.5k before corrections) · stretch $1.27M (same multiple on Aug to Sep BAU).
 2026 was 1.72x EOFY 2025 on 1.82x BAU growth, so the sale scales with BAU. Preloaded 2026 months
 around it: Oct $498,829, Dec $393,568.
 
+### Tool revision 2 check (2026-09-22, later the same day)
+Matt re-ran the EE tool: weekly BAU $100,000 (typed; July is $92.7k, Aug to Sep $118k), BAU MER 27%,
+sale MER 22%, 2025 event $710,000 (= November month), multiple 10.9x, projected $1,091,974, budget
+$240,234 (22%), 2H + 14D from 18 Nov, product cost 30%, fixed $2,707/day, spend bracket $3K+.
+Arithmetic checks: projection, budget, order count (4,101 at $266.28) and the 14-day curve all sum.
+
+Corrections to my earlier note, from the 2025 workbook: **GST for the sale should stay at 8%**
+(Nov 2025 GST was 6% of revenue because 27% of sale revenue was international and GST-free; BAU
+months run 8 to 9%). **Weekly items 2,942 is consistent** (items per order 7.4 to 9.7 in Aug to
+Nov 2025); my ~2,650 estimate was wrong.
+
+Still to fix in the tool:
+- Dates: D1 is Wed 18 Nov; decision is Thu 19 Nov to Wed 2 Dec (hype 17 to 18). Shift one day; keep Black Friday on Fri 27 Nov and Cyber Monday on Mon 30 Nov.
+- Curve: 40% of revenue in the first 48h (2025: 31%), plateau falling to 3%/day ($33k, equal to 2025's plateau at $31k) and 11% in the last 48h (2025: 15%). All growth is loaded into day one ($306k, 1,150 orders, 1.7x the whole of 2025's first two days). Use a custom curve near the 2025 shape: D1 19%, D2 12%, D3 to D12 5% with Black Friday 7%, D13 (Cyber Monday) 8%, D14 8%. The 5% bump currently sits on Sat 28 Nov, not Black Friday.
+- Stock: the tool's 114.9% sell-through divides revenue by RRP. At 15% off, $950k RRP yields $807.5k, so the plan needs 135% of current stock (about $1.28M RRP, roughly $335k more) or hero lines run out around day 7 on the tool's own curve.
+- GWP uptake 18% / 6% at $299 / $599 minimums. In 2025, 43% / 15% of sale orders cleared those thresholds (GST incl). If the gift is automatic, plan on 1,763 magnet mats and 615 drawbars (tool: 738 / 246) and GWP cost rises from $3.54 to $8.57 per order (about $20.6k of profit).
+- Product cost 30%: calendar driver 32%, 2026 actual 33%. Use 32%.
+- Profit: tool $199,161 (18.2%, after $39k of hype-day losses). At 32% product cost: about $177k. Plus GWP uptake at the 2025 spread: about $157k (14.4%). At 24% MER (Nov 2025 actual): about $135k (12.4%).
+- Mid-sale offers: Offer 3 on D10 (27 Nov) has no outcome set and Offer 4 (drive repeat) sits on the same day as the Black Friday Mystery Box. Move drive-repeat to Sat 28 Nov (D11, currently an empty row) and delete Offer 4.
+- Email flow: no Cyber Monday send (Mon 30 Nov is "Sale Updates"); 2025's segmented Cyber Monday send had the highest returning share of the sale (43%). Add it. D11 Sat 28 Nov has no campaign.
+- Channel split: Meta $206,601 (86%), TikTok $24,023 (10%), Google $9,609 (4%). `meta-campaigns.csv` ($171,645, $12,879 hype / $12,157 sale days) was built on the earlier $998k / 20% run and needs regenerating ($14,468 / $12,690). TikTok has no history in our data: run it as a test with the day-4 kill rule.
+- AOV $279 comes from $100k / 358 orders; the 2025 sale ran $328 and Aug 2026 $316. At $310 the same revenue is about 3,500 orders, not 4,101 (matters for fulfilment planning only).
+- Creative volume now 57 to 69 assets at the 85% setting (video 26 to 32, static 31 to 37); deck 3.0 quotes the earlier 40 to 53.
+Deck 3.0 still carries the earlier tool run on the paid, unit-economics and deliverables slides; refresh to 3.1 once the tool is re-dated.
+
 **Repo files to correct (not yet applied):**
 - `OBJECTIVES.md`: fixed costs $74,831 to $83,905/mo (Aug 2026 preloaded year); product cost 40% to 32%.
 - `data/FORECAST.md`: November plan $605k ex-GST vs EE calendar plan $990k incl GST (about $908k net). Pick one plan of record.
