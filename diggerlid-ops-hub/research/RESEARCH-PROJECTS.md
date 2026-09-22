@@ -596,9 +596,10 @@ Shopify sessions, Shopify Alia signups (RP-006) and buyers:
 | Apr 26 | 31,845 | 64,824 (RP-001) | 2.04 | 1,315 | 2.03% | 391 | 0.60% |
 | Aug 26 | 103,965 | n/a · **35,059 popup views** | | 1,711 | **4.9% of views** · 1.6% of sessions | 467 | |
 
-**Measured popup views (Alia `popupViewsCount`, pulled 22 Sep 2026 — Feb–Sep 26 in; Oct 25–Jan 26 still pulling):**
+**Measured popup views (Alia `popupViewsCount`, pulled 22 Sep 2026 — Jan–Sep 26 in; Oct–Dec 25 still pulling):**
 | Month | Sessions | Popup views | **Views ÷ sessions (reach)** | Signups (Shopify) | Signups ÷ views (submit) | Signups ÷ sessions |
 |---|--:|--:|--:|--:|--:|--:|
+| Jan 26 | 29,663 | 19,923 | **67%** | 959 | 4.8% | 3.23% |
 | Feb 26 | 39,299 | 27,526 | **70%** | 1,233 | 4.5% | 3.14% |
 | Mar 26 | 36,747 | 23,426 | **64%** | 1,219 | 5.2% | 3.32% |
 | Apr 26 | 31,845 | 25,330 | **80%** | 1,315 | 5.2% | 4.13% |
@@ -609,7 +610,7 @@ Shopify sessions, Shopify Alia signups (RP-006) and buyers:
 | Sep 26 (to 21st) | 82,013 | 18,636 | **23%** | 921 | 4.9% | 1.12% |
 
 **This settles RP-001's open question: the signup slowdown is reach, and the collapse is large.**
-- Reach ran **64–80% of sessions in Feb–Apr**, fell to 44–53% through the May–June sale period,
+- Reach ran **64–80% of sessions in Jan–Apr**, fell to 44–53% through the May–June sale period,
   **33–34% in Jul–Aug, and 23% in September** — a two-thirds drop while paid traffic tripled.
 - Submit-among-viewers is flat at **4.5–5.2%** every month except June (2.3%, sale mode). The
   popup converts the people who see it exactly as well as it always did.
