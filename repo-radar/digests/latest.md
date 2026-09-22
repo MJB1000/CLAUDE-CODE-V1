@@ -2,31 +2,28 @@
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_11 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_7 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[mrmps/classifier-dev](https://github.com/mrmps/classifier-dev)** — ⭐ 404 · 10.1/day · TypeScript · since 2026-08-13
-   > Zero-shot text classification over plain HTTP — no API key, no account. One Cloudflare Worker, a CLI, and an MCP server…
-2. **[Sidiora-Labs/Paxeer-X-Network](https://github.com/Sidiora-Labs/Paxeer-X-Network)** — ⭐ 371 · 9.7/day · Go · since 2026-08-14
-   > Paxeer X is a Distributed HyperState Machine for payments, code execution and intent routing. Designed for Machines and the Users operating…
-3. **[Playa-Cyrene/Cyrene-Agent](https://github.com/Playa-Cyrene/Cyrene-Agent)** — ⭐ 615 · 8.0/day · TypeScript · since 2026-07-06
-   > An open-source desktop AI agent built around Cyrene’s persona and powered by the self-developed Cyrene_Harness framework. It combines…
-
-🌱 **Rising fast** — small repos gaining stars (7d)
-
-4. **[AgentSwarms-fyi/agentswarms](https://github.com/AgentSwarms-fyi/agentswarms)** — ⭐ 255 · 📈 +14⭐/7d · TypeScript · since 2026-07-21
-   > Unified Agentic AI and Data Platform
+1. **[FuRongJun-1999/dsh-memory](https://github.com/FuRongJun-1999/dsh-memory)** — ⭐ 236 · 6.0/day · Python · since 2026-08-14
+   > 白箱AGI架构探索：元认知（自我认知循环）、持续学习（知识飞轮）、世界模型（条件空间+语义时空图）、自我改进（自举纪律）、零LLM白箱管线与可审计信任护栏。
+2. **[XiyaoWang0519/agent-call](https://github.com/XiyaoWang0519/agent-call)** — ⭐ 279 · 3.9/day · Python · since 2026-07-13
+   > Open-source MCP server for safe, stateful AI-agent phone calls with OpenAI Realtime and Twilio.
+3. **[brekkylab/backlot](https://github.com/brekkylab/backlot)** — ⭐ 227 · 2.8/day · Python · since 2026-07-02
+   > A local emulator for enterprise SaaS APIs — Slack, Gmail, Google Drive, GitHub, Jira, Notion, S3 and more — with the real response shapes…
 
 ## Multimodal AI
 
-1. **[whitecircle/halo](https://github.com/whitecircle/halo)** — ⭐ 307 · 11.6/day · Python · since 2026-08-26
-   > Halo is an open-source framework built by White Circle for training large language and multimodal models
+1. **[gsamat/amanu](https://github.com/gsamat/amanu)** — ⭐ 152 · 4.3/day · Swift · since 2026-08-18
+   > Records and transcribes online meetings. Automatically
+2. **[ZSeven-W/dsh-crew](https://github.com/ZSeven-W/dsh-crew)** — ⭐ 151 · 4.0/day · JavaScript · since 2026-08-16
+   > DeepSeek Harness (DSH) plugin: dispatch work to DSH agents from Claude Code / Codex — native subagent progress, in-host worker sessions…
 
 ## Marketing & analytics tech
 
-1. **[brainstormity/Jev-X-Sentiment-Analysis](https://github.com/brainstormity/Jev-X-Sentiment-Analysis)** — ⭐ 150 · 72.8/day · Python · since 2026-09-19
-   > _no description_
+1. **[sergebulaev/instagram-skills](https://github.com/sergebulaev/instagram-skills)** — ⭐ 152 · 1.8/day · Python · since 2026-07-02
+   > Instagram marketing skills for Claude Code and Codex: captions, carousels, hooks, hashtag strategy, and a weekly plan. Draft, humanize, and…
 
 ## Web/app dev stack
 
@@ -34,17 +31,11 @@ _Nothing new this run._
 
 ## Self-development & productivity
 
-1. **[discoverhubgroup/product-weekly-rank](https://github.com/discoverhubgroup/product-weekly-rank)** — ⭐ 218 · 5.6/day · — · since 2026-08-14
-   > discover weekly product :每周top20产品,提供GitHub趋势,每周一 8点更新
+_Nothing new this run._
 
 ## Claude & agent design craft
 
-1. **[dltsum/research-guard](https://github.com/dltsum/research-guard)** — ⭐ 226 · 6.0/day · Python · since 2026-08-15
-   > Fail-closed cross-disciplinary research design, novelty, evidence, writing, and audit plugin for Codex-compatible agents.
-2. **[Leonxlnx/tastecode](https://github.com/Leonxlnx/tastecode)** — ⭐ 287 · 5.2/day · TypeScript · since 2026-07-28
-   > Personal Harness - a beautiful, adaptive control panel for AI coding agents. Windows-first, design-agent powered.
-3. **[oce-ai/oce](https://github.com/oce-ai/oce)** — ⭐ 104 · 4.0/day · Python · since 2026-08-27
-   > OpenContextEngine is a self-hosted, ACE-compatible code retrieval service. It indexes source files with cAST-aware chunking, stores…
+_Nothing new this run._
 
 ## Community & social media management
 
@@ -60,7 +51,8 @@ _Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-_Nothing new this run._
+1. **[himovo/movo](https://github.com/himovo/movo)** — ⭐ 154 · 7.1/day · Python · since 2026-09-01
+   > Turn DeepSeek Harness into a self-hosted enterprise Agent platform with knowledge, deep research, content generation, vibe coding, browser…
 
 ## Ads & paid growth
 
@@ -68,8 +60,7 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[estebanstifli/LocalText2Voice](https://github.com/estebanstifli/LocalText2Voice)** — ⭐ 357 · 3.5/day · Python · since 2026-06-11
-   > Free open-source AI desktop app for audiobooks, podcasts, documentaries, films and animated videos with local models, cloud APIs and…
+_Nothing new this run._
 
 ## E-commerce & Shopify
 
