@@ -596,6 +596,21 @@ Shopify sessions, Shopify Alia signups (RP-006) and buyers:
 | Apr 26 | 31,845 | 64,824 (RP-001) | 2.04 | 1,315 | 2.03% | 391 | 0.60% |
 | Aug 26 | 103,965 | n/a · **35,059 popup views** | | 1,711 | **4.9% of views** · 1.6% of sessions | 467 | |
 
+**Measured popup views (Alia `popupViewsCount`, pulled 22 Sep 2026 — series in progress):**
+| Month | Sessions | Popup views | **Views ÷ sessions** | Signups (Shopify) | Signups ÷ views |
+|---|--:|--:|--:|--:|--:|
+| Jun 26 (EOFY) | 125,171 | 66,430 | **53%** | 1,541 | 2.3% |
+| Jul 26 | 116,420 | 38,704 | 33% | 1,469 | 3.8% |
+| Aug 26 | 103,965 | 35,059 | 34% | 1,711 | 4.9% |
+| Sep 26 (to 21st) | 82,013 | 18,636 | **23%** | 921 | 4.9% |
+
+Read: the June (EOFY) dip was a *submit* problem — the popup was seen by half of sessions but
+only 2.3% submitted (sale mode / bounce). July onward the problem flipped to *reach*: view share
+33–34%, and **23% in September so far** — the lowest measured — while submit-among-viewers
+recovered to ~5%. Both are consistent with RP-001's Alia rates (Jun 2.9%, Jul 5.2%, Aug 6.0%).
+Remaining months (Oct 25–May 26) are still being pulled; the Jan–Apr 50–60% figure below stays
+an inference until then.
+
 Inferences (labelled):
 - **Capture per Alia user is stable at ~2.0–2.9%** (fact, 7 months) — the same stability RP-001
   saw in submit-among-viewers (5–6%). The popup is not the variable.
