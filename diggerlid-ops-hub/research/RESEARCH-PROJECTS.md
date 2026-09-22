@@ -20,7 +20,7 @@ its own section and **stays until you update it**. Durable across sessions — t
 | RP-003 | Repeat rate (EE definition) & Style-of-Sale classification | Complete | 2026-09-22 | **LOW REPEAT, on the Hybrid boundary**: 17.7% of all customers ever bought twice; TTM Shopify returning-customer rate 21.4%. **Ex-grease: 13.9% / 16.4% = Low, unambiguous. PRO Mat only: 2-8% = Low, deep; 93.5% of its buyers are new-to-brand.** Grease is the only consumable (≈27% product repeat); every durable ≤11%. Reorderers switch variant (size up / second battery platform). |
 | RP-004 | Sale curve shape: Hybrid or Low? (EOFY 26 vs BFCM 25) | Complete | 2026-09-22 | **Hybrid-SHAPED curve on a Low-repeat base.** Mid-sale plateau ~5%/day (Low curve = 8-9%); hype spike ≈30% of revenue - front-loaded at BFCM (31% first 48h), back-loaded at EOFY (32% last 48h, tax deadline). But returning-customer share during sales (22-29%) = BAU (24.5%): the spikes are NEW customers, so the shape comes from urgency on acquisition, not repeat. |
 | RP-005 | Sale landing pages: BFCM 25 vs EOFY 26 (+ FD 26) | Complete | 2026-09-22 | **EOFY page converted 62% better (3.38% vs 2.09%) on 37% fewer sessions and delivered more orders (382 vs 373).** Driver = traffic mix + a day-2 cold-social flood at BFCM (4,628 sessions @ 0.99%). Homepage landers out-convert both LPs 3-4x (warm traffic). Pre-launch hype traffic to the LP converts ~0.6% - capture it. |
-| RP-006 | Popup signup → purchase conversion, long run (Oct 25–Sep 26) | Complete | 2026-09-22 | **29.4% of popup signups buy (4,998 of 17,011); it is fast (27% in month one, ~33% by month 11) and flat across cohorts.** A signup ≈ $120 net revenue / ~$65 contribution. But pre-sale signups who haven't bought convert only 4–7% during a sale: emails pay NOW via the welcome offer, not by waiting for BFCM. Signups made during a sale convert 28–39%. Grease-intent signups convert best (35%). |
+| RP-006 | Popup signup → purchase conversion, long run (Oct 25–Sep 26) | Complete | 2026-09-22 | **Conversion is constant (submit ~5% of viewers, signup→buyer 29.4%, ~85% in month one); REACH is the broken link: popup seen by 67–80% of sessions Jan–Apr → 23% in Sep as paid scaled. ~3× signups available at today's traffic. Signup ≈ $120 net / $65 contribution. Pre-sale signups don't bank for the sale (4–7%); in-sale submit collapses (2.3%). Fix reach first.** |
 
 ---
 
@@ -644,6 +644,59 @@ Inferences (labelled):
 extra 10 points of popup view share on Aug traffic ≈ +500 signups/month ≈ +145 buyers ≈ +$44k
 revenue. Fix reach (trigger timing / paid landing pages that fire the popup) before paying for
 more traffic to feed a popup a third of visitors never see.
+
+### FINAL — analysis & insights (2026-09-22)
+**The popup→purchase system has two constants and one broken variable.**
+
+| Funnel per 100 sessions | Jan–Apr 26 (healthy) | Sep 26 (now) |
+|---|--:|--:|
+| Popup reach (views ÷ sessions) | **67–80%** | **23%** |
+| Submit among viewers | 4.5–5.2% | 4.9% |
+| Signups per 100 sessions | 3.1–4.1 | 1.1 |
+| Signup → buyer (first month ≈ 27%, matures to ~33%) | ~30% | ~30% |
+| Buyers per 100 sessions via the popup path | ~1.0 | ~0.33 |
+| Revenue per session via the popup path (× $305 first-order AOV) | ~$3.1 | ~$1.0 |
+
+Popup-era totals (Oct 25–Sep 26): 17,011 signups → 4,998 buyers (29.4%) → ≈$1.5M first-order
+and ≈$2.1M total net revenue from Alia-tagged customers; ≈$120 net / ≈$65 contribution per signup.
+
+**Insights**
+1. **Conversion is not the problem and never was.** Submit-among-viewers (~5%) and signup→buyer
+   (~30%) have not moved in twelve months, across sale and non-sale months, cheap and expensive
+   traffic. *High.*
+2. **Reach is the broken link.** The share of sessions that see the popup fell from ~70% to 23%
+   as paid social scaled — the paid visitor bounces before the trigger fires. At today's traffic
+   that is ~1,900 signups, ~550 buyers and ~$170k first-order revenue a month left on the table.
+   *High (measured, 9 months).*
+3. **Emails monetise immediately, not at the sale.** ~85% of a cohort's lifetime conversion
+   happens in month one via the welcome flow; pre-sale signups who haven't bought convert only
+   4–7% during a sale. Capture is a now-revenue lever, and the reason to keep it running to BFCM
+   is compounding, not a launch-day payload. *High.*
+4. **In-sale capture is a different problem: the popup is seen but ignored.** June (EOFY) reach
+   was 53% but submit collapsed to 2.3% — a discount popup on top of a sale has no offer.
+   In-sale signups still convert 28–39% when they do submit. *High on numbers; Medium on cause.*
+5. **Email-captured customers are the better customers**: 35% conversion for grease-intent
+   signups (vs 28% covers), higher repeat than store average (Oct cohort 23.5% with 2+ orders),
+   and they are the base of the only repeat lever (grease, RP-003). *High.*
+6. **Value ceiling for an incremental email ≈ $65 contribution**, before any incrementality
+   haircut (no holdout has ever run). RP-001's $90–115 "cost per signup" is a blended ratio, not
+   a price. *Medium.*
+
+**Recommendations, in order**
+1. **Restore reach on paid traffic before spending on more traffic.** Audit Alia trigger rules
+   (delay, scroll depth, exit-intent, session-count caps) and page targeting on the paid
+   destinations (`/pages/*`, PRO Mat and grease PDPs); confirm the popup fires there. Target ≥50%
+   reach by mid-October; track weekly with one Alia call (`popupViewsCount` ÷ Shopify sessions).
+2. **Keep the welcome offer as the engine** and test its variants on *buyers*, not submits: the
+   free-shipping-over-$399 tag reads 36.8% vs 31.6% control — worth a clean Alia A/B.
+3. **Pre-BFCM capture plan:** continuous capture Oct–mid-Nov (cheapest emails, RP-001); the
+   pre-launch sale LP as a first-access capture page (RP-005); a sale-specific popup during the
+   sale (early-access / bonus-gift, not a discount) so submit doesn't collapse to 2%.
+4. **Segment the welcome flow by the popup's interest answer** (grease-intent → grease
+   offer + reorder cadence; covers → machine-fit guide). Highest-converting cohort, cheapest win.
+5. **Don't buy list growth via giveaways (RP-002) or in December** (weakest cohort, 21.7%).
+6. **Run a one-month popup holdout pre-BFCM** to price incrementality once.
+7. **Scorecard rows (monthly):** popup reach %, submit-among-viewers %, 30-day signup→buyer %.
 
 ### Caveats
 - Shopify signup counts ≈ Klaviyo +8%; conversion on the Klaviyo denominator would read ~32%.
