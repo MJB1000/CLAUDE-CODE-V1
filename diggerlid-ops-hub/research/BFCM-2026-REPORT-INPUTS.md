@@ -28,7 +28,9 @@ value of an email and therefore how hard to push capture.
 Sale LP session CVR 3.4% · ATC 10% · 5+ pages/session · social CVR ≥2% · direct ≥6% ·
 launch 48h ≈ 30% of sale · plateau ≥5%/day · Cyber Monday close 10–15% · MER ≤28% (sale).
 
+| RP-006 | Popup signups convert ~30% (17k signups, flat across cohorts), fast: ~85% of it in month one via the welcome offer. Pre-sale signups who haven't bought convert only 4–7% during a sale. Signup ≈ $120 net / ~$65 contribution. Grease-intent 35% vs covers 28%. | High (counts) / Medium (value) | Emails pay NOW, not at BFCM: run capture continuously to mid-Nov, judge lead cost against ~$65, bias to grease intent, protect capture in-sale (pre-launch capture LP). |
+
 ## Open items feeding the report
-- RP-006 (popup → purchase over the popup's life) → value of an email → capture budget.
+- ~~RP-006~~ done 2026-09-22 (above). Consider a one-month popup holdout pre-BFCM for incrementality.
 - Concept decision (board: `deliverables/bfcm-2026-concept-board.md`; rec #1 launch + #5 mechanic).
 - Weekly RPV-vs-spend at week level (`/api/campaigns` live) for the spend curve.
