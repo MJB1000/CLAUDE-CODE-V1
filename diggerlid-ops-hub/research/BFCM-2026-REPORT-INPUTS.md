@@ -93,6 +93,22 @@ Still to fix in the tool:
 - Creative volume now 57 to 69 assets at the 85% setting (video 26 to 32, static 31 to 37); deck 3.0 quotes the earlier 40 to 53.
 Deck 3.0 still carries the earlier tool run on the paid, unit-economics and deliverables slides; refresh to 3.1 once the tool is re-dated.
 
+### Tool revision 3 (export dated 23 Sep 2026) and deck 3.1
+Applied since revision 2: base week $95,000 (typed; between July $92.7k and August $119k), BAU MER 27%,
+sale MER 25% (24.1% effective with conservative hype spend), custom curve on in the 2025 shape
+(19 / 12 / 5 x 7 / BF 7 / 5 / 5 / CM 8 / 9), Offer 4 deleted, Last Chance set, creative 53 to 65.
+Results: projection $1,037,375 (10.9x), budget $249,489 (Meta $219,550 88%, TikTok $24,949 10%, Google
+$4,990 2%; hype days $7,391, sale days $16,765), 3,896 orders at $266.28, profit $165,771 (16.0%) after
+$20k of hype-day losses; no loss days on the plateau ($3,457 a day at 32% daily MER). PDF export shows
+budget $259,344 (25% flat) where the page shows $249,489 (effective 24.1%): same plan, different rounding
+of hype spend. Meta plan file regenerated: sale $121,619 (TOF $46,103, TOM $42,365, MOF $21,637, BOF
+$11,514), evergreen $97,931 (TOF $42,891, TOM $33,827, MOF $15,460, BOF $5,754).
+Still open in the tool: launch still 18 Nov (decision 19 Nov), product cost 30% (use 32%), gift uptake
+18 / 6 (2025 spread 43 / 15), Offer 3 outcome unset, no Cyber Monday send, Sat 28 Nov row empty, stock
+cover ($1.04M = 128% of discounted stock, about $270k RRP short). Corrected profit: about $145k at
+32% product cost, about $125k (12.1%) with gift uptake at the 2025 spread; 1,675 magnet mats and 585
+drawbars needed (tool 700 / 235). Deck 3.1 published on these numbers (`deliverables/bfcm-2026-deck/gen_deck_v3_1.py`).
+
 **Repo files to correct (not yet applied):**
 - `OBJECTIVES.md`: fixed costs $74,831 to $83,905/mo (Aug 2026 preloaded year); product cost 40% to 32%.
 - `data/FORECAST.md`: November plan $605k ex-GST vs EE calendar plan $990k incl GST (about $908k net). Pick one plan of record.

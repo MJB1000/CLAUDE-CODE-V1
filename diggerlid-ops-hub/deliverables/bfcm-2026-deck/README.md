@@ -2,7 +2,7 @@
 
 Live deck (Slides artifact, private until shared): https://claude.ai/artifact/PfB6UG6T4Aa6wxaXDGrgNZ
 
-`gen_deck_v3.py` (deck 3.0, current) regenerates; `gen_deck_v2.py` is deck 2.5 and `gen_deck.py` the v1 draft. It regenerates every slide file from the numbers in RP-003 to RP-006, the H2 forecast,
+`gen_deck_v3_1.py` (deck 3.1, current) regenerates; `gen_deck_v3.py` is 3.0, `gen_deck_v2.py` 2.5 and `gen_deck.py` the v1 draft. It regenerates every slide file from the numbers in RP-003 to RP-006, the H2 forecast,
 the concept board and Matt's handwritten planning notes (22 Sep 2026). Edit the data in the
 script, run it, and republish the changed `project/slides/*.html` files to the artifact URL.
 
@@ -36,3 +36,12 @@ $59 at 21% versus about $35 at 13% corrected). Target slide rebuilt on the calen
 incl. GST): floor $585k, plan $1.0M (EE multiple method, validated by EOFY 2026), stretch $1.27M.
 Paid, comms and timeline slides rebuilt from the EE files and re-dated to 14 days. 47 slides.
 Corrections still to make outside the deck are listed in `research/BFCM-2026-REPORT-INPUTS.md`.
+
+## Deck 3.1 (23 Sep 2026): EE tool third run
+Inputs: the EE tool export of 23 Sep (`scale-bfcm-sale_preview1.pdf`), `meta-campaigns_1.csv` ($219,550)
+and `email-flow_1.csv` (17 sends). Tool now: $95k base week, BAU MER 27%, sale MER 25% (24% effective),
+custom curve in the 2025 shape (19 / 12 / 5 a day / BF 7 / CM 8 / last day 9), projection $1,037,375,
+budget $249,489 (Meta 88%, TikTok 10%, Google 2%), 3,896 orders, profit $165,771. Slides updated:
+one page, target, EE inputs, unit economics, paid, offer, deliverables, timeline, comms, ops, measure,
+decisions, exec FAQ, definitions. Deck keeps the decided 19 Nov to 2 Dec dates; the tool export still
+runs 18 Nov to 1 Dec. Open inputs: product cost 32%, gift uptake 43 / 15, stock cover.
