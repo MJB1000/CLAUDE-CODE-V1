@@ -596,9 +596,12 @@ Shopify sessions, Shopify Alia signups (RP-006) and buyers:
 | Apr 26 | 31,845 | 64,824 (RP-001) | 2.04 | 1,315 | 2.03% | 391 | 0.60% |
 | Aug 26 | 103,965 | n/a · **35,059 popup views** | | 1,711 | **4.9% of views** · 1.6% of sessions | 467 | |
 
-**Measured popup views (Alia `popupViewsCount`, pulled 22 Sep 2026 — Jan–Sep 26 in; Oct–Dec 25 still pulling):**
+**Measured popup views (Alia `popupViewsCount`, pulled 22 Sep 2026 — full popup era Oct 25–Sep 26):**
 | Month | Sessions | Popup views | **Views ÷ sessions (reach)** | Signups (Shopify) | Signups ÷ views (submit) | Signups ÷ sessions |
 |---|--:|--:|--:|--:|--:|--:|
+| Oct 25 | 43,955 | 29,322 | **67%** | 1,346 | 4.6% | 3.06% |
+| Nov 25 (BFCM) | 78,359 | 59,762 | **76%** | 2,280 | 3.8% | 2.91% |
+| Dec 25 | 50,255 | 33,877 | **67%** | 1,393 | 4.1% | 2.77% |
 | Jan 26 | 29,663 | 19,923 | **67%** | 959 | 4.8% | 3.23% |
 | Feb 26 | 39,299 | 27,526 | **70%** | 1,233 | 4.5% | 3.14% |
 | Mar 26 | 36,747 | 23,426 | **64%** | 1,219 | 5.2% | 3.32% |
@@ -610,8 +613,11 @@ Shopify sessions, Shopify Alia signups (RP-006) and buyers:
 | Sep 26 (to 21st) | 82,013 | 18,636 | **23%** | 921 | 4.9% | 1.12% |
 
 **This settles RP-001's open question: the signup slowdown is reach, and the collapse is large.**
-- Reach ran **64–80% of sessions in Jan–Apr**, fell to 44–53% through the May–June sale period,
-  **33–34% in Jul–Aug, and 23% in September** — a two-thirds drop while paid traffic tripled.
+- Reach ran **64–80% of sessions for eight straight months (Oct 25–Apr 26), including 76% in the
+  BFCM 2025 sale month**, then fell to 44–53% through May–June, **33–34% in Jul–Aug, and 23% in
+  September** — a two-thirds drop while paid traffic tripled. The break dates from May 2026, so
+  it is not a property of sale months: something changed in traffic mix, pages or popup settings
+  around then.
 - Submit-among-viewers is flat at **4.5–5.2%** every month except June (2.3%, sale mode). The
   popup converts the people who see it exactly as well as it always did.
 - Capture per session therefore fell from 3.1% (Feb) to 1.1% (Sep). At February's reach on
