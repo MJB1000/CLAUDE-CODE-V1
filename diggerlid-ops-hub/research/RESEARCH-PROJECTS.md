@@ -453,6 +453,21 @@ warmer (28% direct vs 16%). So it is both a better page/offer and a better audie
 - Verify cart-add tracking on the LP before 15 Nov; without it the funnel can't be read.
 - Benchmarks to beat: 3.4% session conversion, 10% ATC, 5+ pages/session, social ≥2%, direct ≥6%.
 
+### Findings with confidence (added 2026-09-22)
+| # | Finding | Confidence | Why |
+|---|---|---|---|
+| 1 | EOFY page out-converted BFCM page (3.38% vs 2.09%; 382 vs 373 orders on 37% fewer sessions) | **High** | Direct Shopify measure, N = 11k / 18k sessions, difference far outside noise |
+| 2 | Both mix (28% vs 16% direct) and within-source conversion (social +49%, direct +20%) improved | **High** | Same source split on both pages; social N = 8k / 15k |
+| 3 | 19 Nov cold-social flood (4,628 @ 0.99%) was the biggest single drag; ex that day BFCM ran ~2.6% | **Medium-high** | Day-level data is exact; "broad prospecting" as the cause is inferred, not confirmed from Ads Manager |
+| 4 | Homepage landers out-convert both LPs 3-4x because they carry warm traffic | **High** on the numbers, **Medium** on the cause | Conversion exact; warm-traffic explanation consistent with direct/email CVR but not source-split for `/` |
+| 5 | Pre-launch hype traffic to the LP converts ~0.6% (2.3k + 2.0k sessions, 25 orders) | **High** | Exact day-level counts on both sales |
+| 6 | EOFY page is engaged, not a bounce page (5.7 pages/session; 36% to PDP, 21% ATC, 10% ordered person-level) | **Medium** | PostHog covers 18-30 Jun only (misses launch day); person-level funnel is any-session, not attributed |
+| 7 | EOFY page pushed grease first; FD page was a PRO Mat single-hero page | **High** | Next-click counts, large N |
+| 8 | FD gift page (`/pages/gift`) was a dud (0.5% ordered, 2.3 pages/session) | **Medium-high** | N = 999 viewers; consistent with EXP-005 read |
+| 9 | FD page launched 4 days after the sale started | **High** | First traffic 21 Aug in both Shopify and PostHog |
+| 10 | BFCM 2025 cart-add tracking was broken | **High** | Fewer cart-add sessions than completed checkouts is impossible under correct tracking |
+| 11 | Recommendation: split cold prospecting to PDP/category, LP for warm; pre-launch capture page | **Medium** | Sound inference from 1-5, but untested - needs a designed split at BFCM 2026 |
+
 ### Caveats
 - Shopify landing-page conversion attributes the order to the session that landed on the page;
   later sessions that convert are not credited (PostHog person-level funnel shows ~3x higher).
