@@ -631,7 +631,9 @@ Independent cross-check of the 29.4% signup→buyer rate measured from Shopify c
 counts submits, so its denominator runs above Shopify&#39;s deduplicated customer count (Aug: 2,371 vs
 1,711), yet the rates agree within a few points, and Alia&#39;s 30-day figure lands almost on the
 all-time cohort figure — direct confirmation that conversion happens inside the first month.
-Alia&#39;s August `popupViewRate` on its own `userFlows` denominator: 45.9% (36,143 views / 78,821 flows).
+Alia&#39;s August `popupViewRate` on its own `userFlows` denominator: 45.9% (36,143 views / 78,821 flows);
+Alia August `bounceRate` 48.1% (21,522 engaged of 41,479 sessions), consistent with the paid-traffic
+bounce behind the reach drop. Alia pull complete 22 Sep 2026; key used transiently and removed.
 
 **This settles RP-001's open question: the signup slowdown is reach, and the collapse is large.**
 - Reach ran **64–80% of sessions for eight straight months (Oct 25–Apr 26), including 76% in the
