@@ -18,6 +18,7 @@ its own section and **stays until you update it**. Durable across sessions — t
 | RP-001 | Signup volume, cost & signup→conversion economics | Open | 2026-08-16 | Popup CAPTURE stable ~5–6% (Alia, empirical) → slowdown is a REACH problem, not conversion. Cause (device/page) + view-rate trend PENDING segmented pull. Conversion ~29% stable. |
 | RP-002 | 2K Giveaway 2026 — acquisition P&L | Open (re-run post-BFCM) | 2026-08-25 | **Ad-driven cut: −$1,770 net to date** (11 new buyers, $1,595 contribution vs $3,365 cost). Whole-list "+$6.4k" = owned-audience activation, not acquisition. ~380 new emails not yet bought = the tail. |
 | RP-003 | Repeat rate (EE definition) & Style-of-Sale classification | Complete | 2026-09-22 | **LOW REPEAT, on the Hybrid boundary**: 17.7% of all customers ever bought twice; TTM Shopify returning-customer rate 21.4%. **Ex-grease: 13.9% / 16.4% = Low, unambiguous. PRO Mat only: 2-8% = Low, deep; 93.5% of its buyers are new-to-brand.** Grease is the only consumable (≈27% product repeat); every durable ≤11%. Reorderers switch variant (size up / second battery platform). |
+| RP-004 | Sale curve shape: Hybrid or Low? (EOFY 26 vs BFCM 25) | Complete | 2026-09-22 | **Hybrid-SHAPED curve on a Low-repeat base.** Mid-sale plateau ~5%/day (Low curve = 8-9%); hype spike ≈30% of revenue - front-loaded at BFCM (31% first 48h), back-loaded at EOFY (32% last 48h, tax deadline). But returning-customer share during sales (22-29%) = BAU (24.5%): the spikes are NEW customers, so the shape comes from urgency on acquisition, not repeat. |
 
 ---
 
@@ -290,6 +291,91 @@ Mini Loader Cover 6.1% · Phone Cradle 5.3% · Coupler 4.0% · DiggerShield 3.5%
 - Grease reorder programme (subscription / 40-pc nudge / restock email at ~90 days) is the only
   repeat lever with mass; size the opportunity before BFCM planning.
 - Hammer Paste 0% repeat — confirm whether use-rate or product issue (VoC).
+
+## RP-004 — Sale curve shape: do we sell like a Hybrid or a Low-repeat store?
+**Status:** Complete · **Owner:** Matt · **Last updated:** 2026-09-22
+**Question:** RP-003 says our repeat rate is Low/borderline-Hybrid. Our sales *feel* Hybrid. Which
+EE "Style of Sale" curve (% of total sale revenue by day on sale) do we actually follow, and why?
+EE reference curves (12-day sale): High repeat ≈40% day 1, ~2-3%/day mid, small end bump ·
+Hybrid ≈30% day 1, ~5%/day mid, ~6% end · Low ≈20% day 1, ~8-9%/day flat mid, ~5-6% end.
+
+### Data sources
+- ShopifyQL `sales` net_sales/orders TIMESERIES day, `GROUP BY new_or_returning_customer`.
+- Sale windows from Klaviyo send log: **EOFY 2026** hype 15 Jun → launch 17 Jun (1:55 PM) → close
+  30 Jun (14 days). **BFCM 2025** hype 15-16 Nov → launch 18 Nov (3:05 PM) → Cyber Monday 1 Dec
+  (14 days). BAU reference = Aug 2026.
+
+### Curves (% of total sale net revenue by day on sale)
+| Day | EOFY 26 | BFCM 25 | | Day | EOFY 26 | BFCM 25 |
+|--:|--:|--:|---|--:|--:|--:|
+| 1 | 12.6% | 17.9% | | 8 | 5.4% | 5.5% |
+| 2 | 6.8% | 13.5% | | 9 | 4.9% | 5.4% |
+| 3 | 5.7% | 7.6% | | 10 | 4.7% | 4.3% |
+| 4 | 4.1% | 6.4% | | 11 | 3.7% | 4.0% |
+| 5 | 5.2% | 5.4% | | 12 | 6.7% | 5.2% |
+| 6 | 4.7% | 5.4% | | 13 | 11.6% | 5.6% |
+| 7 | 4.0% | 4.1% | | 14 | **20.0%** | 9.7% |
+
+Totals: EOFY $543k net / 2,107 orders · BFCM $535k / 1,759 orders. Pre-sale baseline ~$11k/day
+(EOFY) and ~$7k/day (BFCM) ≈ 2%/day of sale total.
+
+| Phase | EOFY 26 | BFCM 25 | EE Low | EE Hybrid |
+|---|--:|--:|--:|--:|
+| Launch 48h | 19.4% | **31.4%** | ~25% | ~35% |
+| Mid-sale plateau (d3-12, per day) | **4.9%** | **5.3%** | 8-9% | ~5% |
+| Last 48h | **31.6%** | 15.2% | ~10% | ~10% |
+
+### Who buys at the spikes (returning-customer share of net revenue)
+| | EOFY 26 | BFCM 25 | BAU Aug 26 |
+|---|--:|--:|--:|
+| Whole sale | 28.7% | 22.0% | 24.5% |
+| Launch 48h | 30.9% | 24.4% | |
+| Mid-sale d3-12 | 30.1% | 17.7% | |
+| Last 48h | 25.1% | 32.4% | |
+| Peak day | 31.6% (launch) / 26.0% (close) | 29.6% (launch) / 42.9% (Cyber Mon) | |
+
+### Findings
+1. **The curve is Hybrid-shaped.** The diagnostic EE uses to separate Low from Hybrid is the
+   mid-sale plateau: Low-repeat stores sit at 8-9%/day because steady new-customer demand isn't
+   pulled forward by hype; ours sits at **~5%/day in both sales** - the Hybrid signature. The hype
+   spike is ≈30% of revenue in both sales (BFCM 31% front, EOFY 32% back).
+2. **But the mechanism is not the EE one.** Hybrid/High curves spike because the loyal base
+   buys on launch. Our returning share during sales (22-29%) is the same as BAU (24.5%), and the
+   peak days are **70-74% new customers**. The spike is *urgency acting on acquisition traffic*
+   (paid social + list reach), not the base returning. → **Hybrid-shaped sale on a Low-repeat
+   customer base.** Forecast with the Hybrid curve; pull the levers of a Low-repeat store.
+3. **EOFY and BFCM are mirror images because the urgency sits at opposite ends.** BFCM's
+   urgency is the launch (scarcity of the deal); EOFY's is the 30 June tax deadline (external, so
+   customers wait - last 48h = 32%, last day alone $109k / 356 orders, 74% new). Same total, same
+   plateau, opposite skew. Plan the two sales differently: BFCM front-loads spend + inventory;
+   EOFY back-loads them.
+4. **Email to the engaged base does move returning share** - Cyber Monday (43% returning, after
+   the 25 Nov Engaged-30D send drove 37%) and EOFY day 9 (42%). The full-database sends do not.
+   Segmented sends to engaged/grease buyers are the only tool that changes *who* buys.
+5. Anomaly: BFCM day 11 (Black Friday itself) shows 18 returning orders but only $411 net
+   returning revenue - refunds/heavy discounts netted; treat that cell as noise.
+
+### Implications for BFCM 2026 (feeds the concept board + forecast)
+- Expect ~30% of sale revenue in the first 48h, ~5%/day plateau, ~10-15% in the last 48h if
+  Cyber Monday closes it. Nov forecast $605k → ~$180k launch weekend, ~$30k/day plateau.
+- The plateau is the upside: the Knock-Off 3:30 daily-drop mechanic (concept #5) is a
+  plateau-lifter; measure it against the 5%/day baseline.
+- Launch-day buyers are 70% new → launch creative and paid budget are acquisition plays; don't
+  starve prospecting on day 1 to "protect" retargeting.
+- One Engaged-segment send mid-sale and one at close are worth more than another full-database
+  blast (finding 4).
+
+### Caveats
+- Two sales only; 14-day windows vs EE's 12-day reference (shares rescale but shape holds).
+- Launch-day % depends on launch hour (both launched early-mid afternoon → day 1 is ~10 hours).
+- Net sales include same-day refunds netting; day-level returning revenue is noisy at small N.
+
+### Linked artifacts
+- RP-003 (repeat rate); `deliverables/bfcm-2026-concept-board.md`; `data/FORECAST.md`.
+
+### Open questions / next
+- Rebuild after BFCM 2026 with three sales; test whether the Knock-Off drops lift the plateau.
+- Pull FD 2026 (Father's Day, Aug 17-Sep 6) curve for a third data point on a gift-driven sale.
 
 ---
 
