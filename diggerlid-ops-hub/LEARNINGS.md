@@ -124,7 +124,8 @@
   blocks non-browser User-Agents (error 1010) → send a Chrome UA; python urllib fails, curl -A works.
   Cost ≈ 20 × stats × days against a slow-refill budget: one-month/one-stat calls (~600) pass,
   half-year calls (~3,500) 429 after the first; space calls minutes apart, expect ~1 big call/day.
-  Device filter silently ignored with wrong rhs syntax.
+  Device filter silently ignored with wrong rhs syntax. `attributed*` stats require
+  `"maxMsSinceSignup": <ms>` inside the stat object (attribution window; 30 d = 2592000000).
 - Native Shopify Orders CSV export: line-item level, order fields blank on 2nd+ rows
   (forward-fill), variant folded into `Lineitem name`. Transactions export ≠ orders export.
 - SKU→category rulebook (final, patched): `analysis/cohort-scripts/categorize.py` — priority
