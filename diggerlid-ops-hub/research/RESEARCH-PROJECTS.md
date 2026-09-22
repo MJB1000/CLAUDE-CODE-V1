@@ -619,6 +619,12 @@ Alia users to Shopify sessions is unstable (1.2× through March, 2.0× in April,
 two denominators disagree on the level; both agree on the direction — Alia&#39;s view rate halved from
 ~55% to 27%.
 
+**Alia&#39;s own attribution (30-day window, `maxMsSinceSignup` = 2592000000), August 2026 sample:**
+2,371 email submits → 681 attributed orders within 30 days = **28.7%**. Independent cross-check of the
+29.4% signup→buyer rate measured from Shopify customer records (Alia counts submits, so its
+denominator runs ~40% above Shopify&#39;s deduplicated customer count: 2,371 vs 1,711). Two systems,
+same answer: about three in ten signups buy, and they buy inside the first month.
+
 **This settles RP-001's open question: the signup slowdown is reach, and the collapse is large.**
 - Reach ran **64–80% of sessions for eight straight months (Oct 25–Apr 26), including 76% in the
   BFCM 2025 sale month**, then fell to 44–53% through May–June, **33–34% in Jul–Aug, and 23% in
