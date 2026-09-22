@@ -17,7 +17,7 @@ its own section and **stays until you update it**. Durable across sessions — t
 |---|---|---|---|---|
 | RP-001 | Signup volume, cost & signup→conversion economics | Open | 2026-08-16 | Popup CAPTURE stable ~5–6% (Alia, empirical) → slowdown is a REACH problem, not conversion. Cause (device/page) + view-rate trend PENDING segmented pull. Conversion ~29% stable. |
 | RP-002 | 2K Giveaway 2026 — acquisition P&L | Open (re-run post-BFCM) | 2026-08-25 | **Ad-driven cut: −$1,770 net to date** (11 new buyers, $1,595 contribution vs $3,365 cost). Whole-list "+$6.4k" = owned-audience activation, not acquisition. ~380 new emails not yet bought = the tail. |
-| RP-003 | Repeat rate (EE definition) & Style-of-Sale classification | Complete | 2026-09-22 | **LOW REPEAT, on the Hybrid boundary**: 17.7% of all customers ever bought twice; TTM Shopify returning-customer rate 21.4%. **Ex-grease: 13.9% / 16.4% = Low, unambiguous.** Grease is the only consumable (≈27% product repeat); every durable ≤11%. Reorderers switch variant (size up / second battery platform). |
+| RP-003 | Repeat rate (EE definition) & Style-of-Sale classification | Complete | 2026-09-22 | **LOW REPEAT, on the Hybrid boundary**: 17.7% of all customers ever bought twice; TTM Shopify returning-customer rate 21.4%. **Ex-grease: 13.9% / 16.4% = Low, unambiguous. PRO Mat only: 2-8% = Low, deep; 93.5% of its buyers are new-to-brand.** Grease is the only consumable (≈27% product repeat); every durable ≤11%. Reorderers switch variant (size up / second battery platform). |
 
 ---
 
@@ -223,6 +223,25 @@ the TTM window alone, non-grease buyers generated just 6.7% extra orders per buy
 Returning non-grease customers = 12% of non-grease net sales lifetime ($764k of $6.26M).
 Caveat: "returning" is store-level, so a grease-first customer buying one cover later counts as
 returning here - true ex-grease 2+ rate is at or slightly below these figures.
+
+### PRO Mat customers only (added 2026-09-22)
+Source: ShopifyQL `customers` dataset (`products_purchased MATCHES (id = 8213717909674)`,
+`GROUP BY customer_number_of_orders`) + `sales` new/returning split. PRO Mat live since 25 Aug 2025.
+
+| Definition | Customers | Bought 2+ | Repeat rate | EE band |
+|---|--:|--:|--:|---|
+| PRO Mat as a standalone store (bought PRO Mat twice+) | 3,168 | ~64-80 | **~2.0-2.5%** | Low repeat |
+| PRO Mat-first customers who bought *anything* again | 2,962 | 141 | **4.8%** | Low repeat |
+| PRO Mat buyers acquired since launch, any 2nd order | 3,055 | 235 | **7.7%** | Low repeat |
+| Same-age benchmark: ALL customers acquired since 25 Aug 2025 | 13,650 | 1,440 | 10.5% | Low repeat |
+| PRO Mat buyers, lifetime store orders (incl. pre-PRO-Mat history) | 3,167 | 347 | 11.0% | Low repeat |
+
+**PRO Mat verdict: LOW REPEAT, deep in the band - and below the store's same-age average.**
+It is a pure acquisition product: **93.5% of PRO Mat buyers (2,962 of 3,168) were new to
+DiggerLid on that order**, only 206 were existing customers adding it. Once bought, ~2% buy
+another mat and ~5% buy anything else within the product's 13-month life. Run PRO Mat entirely
+on first-order economics (AOV via PLUS/colour mix, bundles, GPAM at first order); it has no
+retention layer to invest in. Cross-sell after PRO Mat is the only repeat path and it is small.
 
 ### Category & product repeat (all-time, repeat orders per buyer)
 | Set | Buyers | Orders | Repeat |
