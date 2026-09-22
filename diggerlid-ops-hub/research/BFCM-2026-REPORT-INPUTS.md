@@ -30,6 +30,8 @@ launch 48h ≈ 30% of sale · plateau ≥5%/day · Cyber Monday close 10–15% �
 
 | RP-006 | Popup signups convert ~30% (17k signups, flat across cohorts), fast: ~85% of it in month one via the welcome offer. Pre-sale signups who haven't bought convert only 4–7% during a sale. Signup ≈ $120 net / ~$65 contribution. Grease-intent 35% vs covers 28%. | High (counts) / Medium (value) | Emails pay NOW, not at BFCM: run capture continuously to mid-Nov, judge lead cost against ~$65, bias to grease intent, protect capture in-sale (pre-launch capture LP). |
 
+| RP-006 (Alia reach) | **Popup reach collapsed from 64–80% of sessions (Feb–Apr) to 23% (Sep)** while submit-among-viewers stayed ~5%. September ran at ~1/3 of the signups it should have. | High (measured, 8 months) | **First job before any traffic spend: restore popup reach on paid landing pages (trigger rules / page targeting). ~3× signups available at the same traffic.** Weekly reach check via one Alia call. |
+
 ## Open items feeding the report
 - ~~RP-006~~ done 2026-09-22 (above). Consider a one-month popup holdout pre-BFCM for incrementality.
 - Concept decision (board: `deliverables/bfcm-2026-concept-board.md`; rec #1 launch + #5 mechanic).

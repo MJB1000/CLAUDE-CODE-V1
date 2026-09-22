@@ -596,20 +596,33 @@ Shopify sessions, Shopify Alia signups (RP-006) and buyers:
 | Apr 26 | 31,845 | 64,824 (RP-001) | 2.04 | 1,315 | 2.03% | 391 | 0.60% |
 | Aug 26 | 103,965 | n/a · **35,059 popup views** | | 1,711 | **4.9% of views** · 1.6% of sessions | 467 | |
 
-**Measured popup views (Alia `popupViewsCount`, pulled 22 Sep 2026 — series in progress):**
-| Month | Sessions | Popup views | **Views ÷ sessions** | Signups (Shopify) | Signups ÷ views |
-|---|--:|--:|--:|--:|--:|
-| Jun 26 (EOFY) | 125,171 | 66,430 | **53%** | 1,541 | 2.3% |
-| Jul 26 | 116,420 | 38,704 | 33% | 1,469 | 3.8% |
-| Aug 26 | 103,965 | 35,059 | 34% | 1,711 | 4.9% |
-| Sep 26 (to 21st) | 82,013 | 18,636 | **23%** | 921 | 4.9% |
+**Measured popup views (Alia `popupViewsCount`, pulled 22 Sep 2026 — Feb–Sep 26 in; Oct 25–Jan 26 still pulling):**
+| Month | Sessions | Popup views | **Views ÷ sessions (reach)** | Signups (Shopify) | Signups ÷ views (submit) | Signups ÷ sessions |
+|---|--:|--:|--:|--:|--:|--:|
+| Feb 26 | 39,299 | 27,526 | **70%** | 1,233 | 4.5% | 3.14% |
+| Mar 26 | 36,747 | 23,426 | **64%** | 1,219 | 5.2% | 3.32% |
+| Apr 26 | 31,845 | 25,330 | **80%** | 1,315 | 5.2% | 4.13% |
+| May 26 | 76,386 | 33,302 | **44%** | 1,624 | 4.9% | 2.13% |
+| Jun 26 (EOFY) | 125,171 | 66,430 | **53%** | 1,541 | 2.3% | 1.23% |
+| Jul 26 | 116,420 | 38,704 | **33%** | 1,469 | 3.8% | 1.26% |
+| Aug 26 | 103,965 | 35,059 | **34%** | 1,711 | 4.9% | 1.65% |
+| Sep 26 (to 21st) | 82,013 | 18,636 | **23%** | 921 | 4.9% | 1.12% |
 
-Read: the June (EOFY) dip was a *submit* problem — the popup was seen by half of sessions but
-only 2.3% submitted (sale mode / bounce). July onward the problem flipped to *reach*: view share
-33–34%, and **23% in September so far** — the lowest measured — while submit-among-viewers
-recovered to ~5%. Both are consistent with RP-001's Alia rates (Jun 2.9%, Jul 5.2%, Aug 6.0%).
-Remaining months (Oct 25–May 26) are still being pulled; the Jan–Apr 50–60% figure below stays
-an inference until then.
+**This settles RP-001's open question: the signup slowdown is reach, and the collapse is large.**
+- Reach ran **64–80% of sessions in Feb–Apr**, fell to 44–53% through the May–June sale period,
+  **33–34% in Jul–Aug, and 23% in September** — a two-thirds drop while paid traffic tripled.
+- Submit-among-viewers is flat at **4.5–5.2%** every month except June (2.3%, sale mode). The
+  popup converts the people who see it exactly as well as it always did.
+- Capture per session therefore fell from 3.1% (Feb) to 1.1% (Sep). At February's reach on
+  September's traffic, September would have produced ~2,800 signups instead of 921 — roughly
+  **3× the emails, ~550 more buyers, ~$170k more first-order revenue in a single month**.
+- The paid surge is the mechanism: sessions that arrive from Meta bounce or leave before the
+  popup fires (RP-001's EXP-002 bounce 54–56%; RP-005's 0.99% cold-social LP conversion).
+
+**Immediate action (feeds the BFCM inputs note):** fix reach before buying traffic. Check the
+popup's trigger rules (delay / scroll / exit-intent / page targeting) against the paid landing
+pages (`/pages/*`, PRO Mat PDP, grease PDPs), and confirm the popup fires on them at all.
+Target: back above 50% reach on paid traffic by mid-October; measure weekly with one Alia call.
 
 Inferences (labelled):
 - **Capture per Alia user is stable at ~2.0–2.9%** (fact, 7 months) — the same stability RP-001
