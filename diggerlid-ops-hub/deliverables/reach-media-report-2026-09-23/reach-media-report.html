@@ -22,6 +22,7 @@ header p{color:var(--mute);font-size:15px;margin-top:8px}
 .lbl{display:inline-block;padding:3px 10px;font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.6px;font-size:12px}
 .lbl.now{background:var(--ink);color:var(--bg)}
 .lbl.prev{border:1px solid var(--line);color:var(--mute)}
+.period{display:inline-block;font-family:'League Spartan',Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;background:var(--tint);color:var(--ink);padding:3px 9px;border:1px solid var(--ink)}
 :root[data-theme="dark"] .lbl.now{color:#161514}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lbl.now{color:#161514}}
 .k{background:var(--panel);border:2px solid var(--ink);padding:16px 18px 14px;display:flex;flex-direction:column;gap:2px;position:relative}
@@ -75,7 +76,7 @@ td.up{font-weight:700}
   <p>Last 12 months (23 Sep 2025 to 22 Sep 2026) against the 12 months before. AUD. Meta, Shopify and Klaviyo.</p>
 </header>
 
-<div class="keyline"><span class="lbl now">Last 12 months</span><span class="lbl prev">prev = the 12 months before</span></div>
+<div class="keyline"><span class="lbl now">Last 12 months</span><span class="lbl prev">prev = the 12 months before</span><span>23 Sep 2025 to 22 Sep 2026 against 23 Sep 2024 to 22 Sep 2025. Email list size is all time to 22 Sep 2026.</span></div>
 <div class="big">
   <div class="k acc"><small>Media spend</small><b>$1.47M</b><span>prev $791k</span><em>+86%</em></div>
   <div class="k"><small>People reached</small><b>6.77M</b><span>prev 3.01M</span><em>2.25×</em></div>
@@ -86,7 +87,7 @@ td.up{font-weight:700}
 </div>
 
 <section>
-  <h2>Media spend, month by month <small>Meta, calendar months Oct 2024 to Sep 2026</small></h2>
+  <h2>Media spend, month by month <span class="period">24 months · Oct 2024 to Sep 2026</span><small>Meta, calendar months; tiles compare the last 12 with the previous 12</small></h2>
   <div class="grid32">
     <figure>
       <svg id="c0" viewBox="0 0 520 290" width="100%" role="img" aria-label="Monthly Meta spend October 2024 to September 2026, rising from about 47 thousand to a peak of 198 thousand in June 2026"></svg>
@@ -104,7 +105,7 @@ td.up{font-weight:700}
 </section>
 
 <section>
-  <h2>Growth against spend <small>reach, video, clicks and the email list all grew faster than spend</small></h2>
+  <h2>Growth against spend <span class="period">Last 12 months vs previous 12</span><small>reach, video, clicks and the email list all grew faster than spend</small></h2>
   <div class="grid32">
     <figure>
       <svg id="c1" viewBox="0 0 520 412" width="100%" role="img" aria-label="Year on year change by metric: spend 86%, impressions 97%, reach 125%, video plays 171%, ThruPlays 163%, full completions 259%, link clicks 176%, operator orders 77%, Australian orders 126%, email list size 141%, new email profiles 241%"></svg>
@@ -119,7 +120,7 @@ td.up{font-weight:700}
 </section>
 
 <section>
-  <h2>Video watch-through <small>of every 100 plays, how far people get</small></h2>
+  <h2>Video watch-through <span class="period">Last 12 months vs previous 12</span><small>of every 100 plays, how far people get</small></h2>
   <div class="grid32">
     <figure>
       <svg id="c4" viewBox="0 0 520 300" width="100%" role="img" aria-label="Of every 100 plays, how many reach each milestone: 25 percent watched 10.5 to 13.1, 50 percent 5.1 to 7.0, 75 percent 3.2 to 4.5, 100 percent 1.2 to 1.5"></svg>
@@ -137,7 +138,7 @@ td.up{font-weight:700}
 </section>
 
 <section>
-  <h2>Machine operators <small>customers buying grease or covers</small></h2>
+  <h2>Machine operators <span class="period">Last 12 months vs previous 12</span><small>customers buying grease or covers</small></h2>
   <div class="mid" style="margin-bottom:12px">
     <div class="m"><small>Operator orders</small><b>13,359</b><span>prev 7,559 · +77%</span></div>
     <div class="m"><small>Operator sales</small><b>$3.59M</b><span>prev $2.65M · +35%</span></div>
@@ -157,7 +158,7 @@ td.up{font-weight:700}
 </section>
 
 <section>
-  <h2>Australia by state <small>orders, last 12 months against the previous 12</small></h2>
+  <h2>Australia by state <span class="period">Last 12 months vs previous 12</span><small>orders by billing state; map labels show last-12-month orders</small></h2>
   <div class="grid23">
     <figure>
       <svg id="map" viewBox="0 0 470 400" width="100%" role="img" aria-label="Map of Australia shaded by growth in orders: NSW 4,990 orders up 114%, Queensland 4,315 up 131%, Victoria 3,367 up 113%, Western Australia 1,904 up 154%, South Australia 1,166 up 157%, Tasmania 444 up 114%, ACT 182 up 139%, Northern Territory 126 up 241%"></svg>
@@ -186,7 +187,7 @@ td.up{font-weight:700}
 </section>
 
 <section>
-  <h2>Email list <small>44,804 profiles, up 141% in 12 months</small></h2>
+  <h2>Email list <span class="period">List size: all time to 22 Sep 2026 · additions: last 12 vs previous 12</span><small>chart shows 24 calendar months</small></h2>
   <div class="grid32">
     <figure>
       <div class="legend"><span><i style="background:var(--bar)"></i>Popup signups</span><span><i style="background:var(--bar3)"></i>Other new profiles</span></div>
