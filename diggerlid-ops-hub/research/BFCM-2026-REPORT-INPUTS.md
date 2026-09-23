@@ -122,7 +122,7 @@ sell-through risk on hero lines; about 1,000 orders on day one at $1.0M (2025 pe
 
 ## Deck 3.3 decisions (24 Sep 2026)
 - Gift with purchase: $399 Digger Wipes + free shipping; $599 adds Magnet Tool Mat; $799 adds Drawbar Cover. 2025 sale orders clearing each level: 29% / 15% / 6% (98 of 1,759 cleared $799). Gift stock at the plan: about 1,100 wipes, 550 magnet mats, 210 drawbars.
-- Bundles (RRP / price): Hardcore Tradie $1,110 / $666; Ultimate Earthmover $1,459 / $1,021; Ludicrous $2,116 / $1,058.
+- Bundles (RRP / price, discount swapped 24 Sep): Hardcore Tradie $1,110 / $777 (30%); Ultimate Earthmover $1,459 / $875 (40%); Ludicrous $2,116 / $1,058 (50%). Alternative construction, same prices: hero items discounted, the rest free. Hardcore: 2x PRO Mat Plus $538, hoodie $125, drawbar $114, $244 free. Earthmover: enclosure $543, PRO Mat Plus $232, drawbar $100, $332 free. Ludicrous: Hauler $528, 2x PRO Mat Plus $530, $919 free.
 - Mid-sale push Mon 23 Nov = new content drop + PRO Mat gifting angle to one Christmas gifting page. No knock-off deal mechanic.
 - Father's Day 2026 (23 Aug to 7 Sep): $292k net, 1,022 orders, 11% first 48h, 6.7%/day mid-sale, 9% last 48h, 22% returning revenue, Meta $82.6k (28% of net) in the window.
 - EE tool latest run: $982,777, $90k base week, $242,893 spend, 3,691 orders, profit $148,231 (about $110k after product-cost and gift corrections), Low Repeat, stock $900k RRP.

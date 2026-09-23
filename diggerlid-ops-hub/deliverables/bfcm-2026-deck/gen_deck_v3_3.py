@@ -89,7 +89,7 @@ S["onepage"]=content("onepage","The plan on one page",
    for t,d,bg in [
    ("When","Hype Mon 16 and Tue 17 Nov. Sale Wed 18 Nov 6:00 AM to Tue 1 Dec 11:59 PM AEDT: 14 days, Black Friday on day 10, Cyber Monday on day 13. Christmas gifting push from mid-sale, Mon 23 Nov.",Y40),
    ("Target (to confirm)","Plan: $983k sale revenue incl. GST (about $905k net), the EE tool projection on a $90k week; the calendar plan of record for November is $990k. Floor: $585k (2025 repeated). Stretch: $1.27M on the Aug to Sep run rate. Spend $243k (25% of revenue), ceiling 28%.","#ffffff"),
-   ("Offer","Up to 25% off, grease excluded. DiggerShield $150 / $200 off. Gifts: $399 Digger Wipes and free shipping; $599 adds a Magnet Tool Mat; $799 adds a Drawbar Cover. Bundles: Ultimate Earthmover $1,021 (RRP $1,459, 30% off), Hardcore Tradie $666 (RRP $1,110, 40% off), Ludicrous $1,058 (RRP $2,116, 50% off, now with The Hauler and a Tool Caddy).",Y40),
+   ("Offer","Up to 25% off, grease excluded. DiggerShield $150 / $200 off. Gifts: $399 Digger Wipes and free shipping; $599 adds a Magnet Tool Mat; $799 adds a Drawbar Cover. Bundles: Hardcore Tradie $777 (RRP $1,110, 30% off), Ultimate Earthmover $875 (RRP $1,459, 40% off), Ludicrous $1,058 (RRP $2,116, 50% off). Shown as hero gear discounted, the rest free.",Y40),
    ("Theme","All Aussie Adventure: our own outback expert, four locations, one film and cut-downs. Christmas gifting page live from the mid-sale push.","#ffffff"),
    ("Channels","Meta paid social for acquisition (cold traffic to product pages), email and SMS for the base (segmented sends), organic and creator content for the theme, site pages built before hype.",Y40),
    ("What must be true first","Popup reach back above 50% on paid pages by 15 Oct. Pages live and tracked by 13 Nov. Bundle, DiggerShield and gift margins signed off by 30 Oct. Stock: $900k at RRP is 128% sell-through at $983k once the 15% discount is applied; incoming stock or a trimmed hero list by 30 Oct. Six decisions this week.","#ffffff")]) + '</div>',
@@ -323,8 +323,8 @@ def bcard(title, items, total, price, bg="#ffffff", accent=Y):
             f'<div style="display:flex; justify-content:space-between; font-size:26px; font-weight:700; background:{K}; color:{W}; padding:6px 10px"><span>Bundle price</span><span>{price}</span></div></div>')
 S["bundles"]=content("bundles","Three hero bundles: contents, RRP and price",
  f'<div style="display:flex; gap:20px; flex:1">'
- +bcard("Hardcore Tradie · 40% off",[("2× PRO Mat Plus","$598"),("1× Drawbar Cover","$129"),("1× Proper Thicc Hoodie","$139"),("10× Digger Wipes","$150"),("1× Boom Bottle Opener","$15"),("1× Magnet Tool Mat","$79")],"$1,110","$666",accent=Y)
- +bcard("Ultimate Earthmover · 30% off",[("1× Pro Excavator Enclosure","$699"),("1× Drawbar Cover","$129"),("1× PRO Mat Plus","$299"),("10× Digger Wipes","$150"),("1× Magnet Tool Mat","$79"),("1× Hydraulic Coupling Cap Set","$15"),("1× Excavator Phone Cradle","$39"),("1× Drink / Tool Caddy","$49"),("1× Keyring","not listed")],"$1,459","$1,021",accent=K)
+ +bcard("Hardcore Tradie · 30% off",[("2× PRO Mat Plus","$598"),("1× Drawbar Cover","$129"),("1× Proper Thicc Hoodie","$139"),("10× Digger Wipes","$150"),("1× Boom Bottle Opener","$15"),("1× Magnet Tool Mat","$79")],"$1,110","$777",accent=Y)
+ +bcard("Ultimate Earthmover · 40% off",[("1× Pro Excavator Enclosure","$699"),("1× Drawbar Cover","$129"),("1× PRO Mat Plus","$299"),("10× Digger Wipes","$150"),("1× Magnet Tool Mat","$79"),("1× Hydraulic Coupling Cap Set","$15"),("1× Excavator Phone Cradle","$39"),("1× Drink / Tool Caddy","$49"),("1× Keyring","not listed")],"$1,459","$875",accent=K)
  +bcard("Ludicrous · 50% off",[("1× The Hauler Luggage Bag","$599"),("2× PRO Mat Plus","$598"),("2× Magnet Tool Mat","$158"),("1× Drawbar Cover","$129"),("1× Quicky Cover","$129"),("1× Proper Thicc Hoodie","$139"),("1× Boom Bottle Opener","$15"),("20× Digger Wipes","$300"),("1× Drink / Tool Caddy","$49")],"$2,116","$1,058",accent=Y)+'</div>'
  +note("RRP from the store: The Hauler at its full $599 (currently selling at $399); Quicky Cover at $129 (tan is $119); phone cradle strap mount at $39 (suction cup $49). The keyring is not a store product, so it carries no RRP. Margin and component stock need a costing pass by 30 October.",size=22),
  src="Shopify product prices, 24 Sep 2026",notes="Bundle price = RRP total less the bundle discount, rounded to the dollar. The Ludicrous Bundle is now the headline: over $2,100 of gear for $1,058.")
@@ -335,6 +335,26 @@ S["drops"]=content("drops","Knock-off drop calendar (draft for the team)",
  f'<div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:10px 28px">'+"".join(f'<div style="display:flex; gap:16px; align-items:center; border-bottom:1px solid {K}; padding:0 0 8px 0"><p style="font-family:{DISP}; font-size:26px; width:120px; letter-spacing:1px">{d}</p><p style="font-size:25px; line-height:1.25; flex:1">{t}</p></div>' for d,t in drops)+'</div>'
  +note("One drop a day at 3:30 PM AEDT, 24 hours each; the mid-sale push on Mon 23 is a new content drop and a PRO Mat gifting angle with the Christmas gifting launch; Black Friday keeps the Mystery Box. Timing checks out: the 6 to 9 PM block was the biggest buying window in 2025 (115 to 120 orders an hour). Order is a draft; stock and margin per drop to confirm."),
  src="Planning notes, concept board",notes="Thirteen days, twelve drops. The team owns the final order; the mechanic is the point.")
+
+def acard(title, rows, pay, rrp, free, bg="#ffffff", accent=Y):
+    out=""
+    for item,r,price in rows:
+        is_free=(price=="FREE")
+        tag=(f'<span style="background:{Y}; color:{K}; font-weight:700; padding:0 8px">FREE</span>' if is_free else f'<span style="font-weight:700">{price}</span>')
+        out+=(f'<div style="display:flex; gap:10px; border-bottom:1px solid #d9d5cc; padding:3px 0; align-items:center"><span style="flex:1">{item}</span>'
+              f'<span style="text-decoration:line-through; color:{MUTE}; white-space:nowrap">{r}</span><span style="width:86px; text-align:right; white-space:nowrap">{tag}</span></div>')
+    return (f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{bg}; padding:22px 24px; border:2px solid {K}; border-top:12px solid {accent}">'
+            f'<h3 style="font-family:{HEAD}; font-size:28px; font-weight:700; line-height:1.1; text-transform:uppercase">{title}</h3>'
+            f'<div style="font-size:22px; line-height:1.3; color:{K90}; display:flex; flex-direction:column">{out}</div>'
+            f'<div style="display:flex; justify-content:space-between; font-size:23px; font-weight:700; border-top:2px solid {K}; padding-top:6px"><span>{free} of gear free</span><span style="color:{MUTE}; text-decoration:line-through">{rrp}</span></div>'
+            f'<div style="display:flex; justify-content:space-between; font-size:26px; font-weight:700; background:{K}; color:{W}; padding:6px 10px"><span>You pay</span><span>{pay}</span></div></div>')
+S["bundles-alt"]=content("bundles-alt","Same price, told better: pay for the hero gear, the rest is free",
+ f'<div style="display:flex; gap:20px; flex:1">'
+ +acard("Hardcore Tradie · 30% off",[("2× PRO Mat Plus","$598","$538"),("1× Proper Thicc Hoodie","$139","$125"),("1× Drawbar Cover","$129","$114"),("10× Digger Wipes","$150","FREE"),("1× Magnet Tool Mat","$79","FREE"),("1× Boom Bottle Opener","$15","FREE")],"$777","$1,110","$244",accent=Y)
+ +acard("Ultimate Earthmover · 40% off",[("1× Pro Excavator Enclosure","$699","$543"),("1× PRO Mat Plus","$299","$232"),("1× Drawbar Cover","$129","$100"),("10× Digger Wipes","$150","FREE"),("1× Magnet Tool Mat","$79","FREE"),("1× Drink / Tool Caddy","$49","FREE"),("1× Excavator Phone Cradle","$39","FREE"),("1× Hydraulic Coupling Cap Set","$15","FREE"),("1× Keyring","","FREE")],"$875","$1,459","$332",accent=K)
+ +acard("Ludicrous · 50% off",[("1× The Hauler Luggage Bag","$599","$528"),("2× PRO Mat Plus","$598","$530"),("20× Digger Wipes","$300","FREE"),("1× Proper Thicc Hoodie","$139","FREE"),("1× Drawbar Cover","$129","FREE"),("1× Quicky Cover","$129","FREE"),("2× Magnet Tool Mat","$158","FREE"),("1× Drink / Tool Caddy","$49","FREE"),("1× Boom Bottle Opener","$15","FREE")],"$1,058","$2,116","$919",accent=Y)+'</div>'
+ +note("Each bundle costs exactly the same as on the previous slide. The hero items take a modest cut (about 10% on the Hardcore Tradie, 22% on the Ultimate Earthmover, 12% on the Ludicrous) and everything else drops to $0, so the ad and the page can lead with the free gear.",size=22),
+ src="Shopify product prices, 24 Sep 2026",notes="Alternative construction for the room to choose. The saving is the same; the story is \"buy the mat, get the rest free\" instead of a percentage.")
 
 S["gifting"]=content("gifting","Christmas gifting: one page, every gift angle points to it",
  f'<div style="display:flex; gap:24px">{big("34%","of PRO Mat Plus buyers are women, in practice gift buyers. PRO Mat is the hero gift.")}{big("1 page","one Christmas gifting page. Every gift ad, email, SMS and banner lands there, not on the sale page.",bg="#ffffff")}{big("23 Nov","the page and the gift angle go live with the mid-sale content drop and run through Cyber Monday and into December.")}</div>'
@@ -467,7 +487,7 @@ S["decisions"]=content("decisions","Decisions needed this week",
  f'<div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; flex:1">'+"".join(f'<div style="display:flex; flex-direction:column; gap:8px; background:{"#ffffff" if i%2 else Y40}; padding:22px 24px; border:2px solid {K}"><h3 style="font-family:{HEAD}; font-size:28px; font-weight:700; text-transform:uppercase">{t}</h3><p style="font-size:24px; line-height:1.3; color:{K90}">{d}</p></div>' for i,(t,d) in enumerate([
   ("Target","Plan $983k incl. GST (EE tool latest run, $90k base week) or stretch $1.27M on the current run rate; spend $243k (25%), ceiling 28%."),
   ("EE tool corrections","Still open: product cost 32%, gift uptake 43% / 15%, stock cover. Dates are settled at 18 Nov to 1 Dec; the shared calendar needs re-dating."),
-  ("Offer","25% ex-grease, DiggerShield $150 / $200, gift tiers $399 / $599 / $799, bundles at 30 / 40 / 50% ($1,021 / $666 / $1,058), stacking and exclusions."),
+  ("Offer","25% ex-grease, DiggerShield $150 / $200, gift tiers $399 / $599 / $799, bundles at 30 / 40 / 50% (Hardcore Tradie $777, Ultimate Earthmover $875, Ludicrous $1,058), shown as hero gear discounted and the rest free, stacking and exclusions."),
   ("Theme and fallback","All Aussie Adventure; Take Cover as the fallback film."),
   ("Test markets and price test","Budgets and kill rules for USA, NZ, TikTok, YouTube; DiggerShield price test yes or no."),
   ("Owners","Names against the eight roles, and who owns the popup reach fix due 15 Oct.")]))+'</div>',
@@ -521,7 +541,7 @@ S["close"]=(f'<section id="close" data-transition="fade" style="background:{K}; 
 order=["cover","onepage","agenda",
        "scorecard","curve",
        "moves",
-       "offer","bundles","gifting","theme","deliverables",
+       "offer","bundles","bundles-alt","gifting","theme","deliverables",
        "decisions",
        "faq-exec","close"]
 S["scorecard"]=S["scorecard"].replace('text-transform:uppercase">The last three sales', 'text-transform:uppercase; background:#231f20; color:#fdfdfb; padding:14px 22px">The last three sales',1)
