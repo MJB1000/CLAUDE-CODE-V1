@@ -1,6 +1,4 @@
-<title>Reach and Media Report</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=League+Spartan:wght@400;600;700&display=swap">
-<style>
+<!doctype html><html><head><meta charset="utf-8"><title>Reach and Media Report</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=League+Spartan:wght@400;600;700&display=swap"><style>
 :root{--bg:#fbfaf6;--ink:#231f20;--ink2:#3a3637;--mute:#6b6663;--line:#d9d5cc;--panel:#ffffff;--tint:#fbf7a3;--acc:#f5eb19;--bar:#231f20;--bar2:#b5afa3;--bar3:#8f8a80;--m1:#fdf9c4;--m2:#f5eb19;--m3:#c9bf2a;--m4:#8a8330;--m5:#231f20}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#161514;--ink:#f3f1ea;--ink2:#d8d4cb;--mute:#a8a39c;--line:#3a3736;--panel:#211f1e;--tint:#3a3711;--acc:#f5eb19;--bar:#f5eb19;--bar2:#5a5654;--bar3:#8a857e;--m1:#3a3711;--m2:#6b651a;--m3:#a39b22;--m4:#d4c91f;--m5:#f5eb19;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#161514;--ink:#f3f1ea;--ink2:#d8d4cb;--mute:#a8a39c;--line:#3a3736;--panel:#211f1e;--tint:#3a3711;--acc:#f5eb19;--bar:#f5eb19;--bar2:#5a5654;--bar3:#8a857e;--m1:#3a3711;--m2:#6b651a;--m3:#a39b22;--m4:#d4c91f;--m5:#f5eb19;color-scheme:dark}
@@ -68,14 +66,52 @@ td.up{font-weight:700}
 .pt li{margin:4px 0}
 .pt li b{font-family:'Roboto Condensed',Arial,sans-serif;font-size:22px}
 .tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-size:13px;padding:5px 8px;border-radius:3px;display:none;z-index:5;white-space:nowrap}
-</style>
-<div class="wrap">
-<header>
-  <div class="banner"><span>DiggerLid · Reach and Media Report</span></div>
-  <h1>Reach and Media</h1>
-  <p>Last 12 months (23 Sep 2025 to 22 Sep 2026) against the 12 months before. AUD.</p>
-</header>
-
+</style><style>
+@page{size:A4 landscape;margin:12mm}
+html,body{background:#fbfaf6}
+body{padding:0!important;margin:0}
+.page{width:273mm;height:186mm;box-sizing:border-box;padding:0 0 34px;display:flex;flex-direction:column;gap:10px;break-after:page;position:relative;overflow:hidden}
+.page:last-child{break-after:auto}
+footer{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;font-size:11px;color:var(--mute);border-top:1px solid var(--line);padding-top:6px;text-transform:uppercase;letter-spacing:.5px;background:#fbfaf6}
+.cover .banner{margin-top:0}
+.cover h1{font-size:76px;margin:4px 0 2px}
+.cover .sub{font-size:16px;color:var(--mute);margin-bottom:6px}
+.cover .big{flex:1;grid-template-rows:1fr 1fr;min-height:0}
+.cover .k{justify-content:center}
+.cover .k b{font-size:58px}
+.cover .k small{font-size:13px}
+.cover .k span{font-size:15px}
+h2{font-size:24px;margin:0}
+.row2{display:grid;grid-template-columns:3fr 2fr;gap:12px;align-items:stretch;min-height:0}
+.row2.even{grid-template-columns:1fr 1fr}
+.row2.map{grid-template-columns:1.05fr 1fr}
+.h290{height:320px}.h270{height:250px}.h520{height:520px}.h280{height:325px}.h580{height:585px}
+figure{display:flex;flex-direction:column;min-height:0;height:100%;box-sizing:border-box;overflow:hidden}
+figure svg{width:100%;height:auto;flex:0 0 auto}
+.h290 figure svg{height:245px}.h270 figure svg{height:178px}.h520 figure svg{height:400px}.h280 figure svg{height:225px}.h580 figure svg{height:470px}
+.big{grid-template-columns:repeat(3,1fr)!important}
+.pts{grid-template-columns:1fr 1fr!important}
+.mid.two{grid-template-columns:1fr 1fr!important}.mid.three{grid-template-columns:1fr 1fr 1fr!important}.mid.four{grid-template-columns:repeat(4,1fr)!important}.mid.six{grid-template-columns:repeat(6,1fr)!important}
+.row2{grid-template-columns:3fr 2fr!important}.row2.even{grid-template-columns:1fr 1fr!important}.row2.map{grid-template-columns:1.05fr 1fr!important}
+.mid.two{grid-template-columns:1fr 1fr;align-content:stretch}
+.mid.three{grid-template-columns:1fr 1fr 1fr}
+.mid.four{grid-template-columns:repeat(4,1fr)}
+.mid.six{grid-template-columns:repeat(6,1fr)}
+.mid{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+.m{display:flex;flex-direction:column;justify-content:center}
+.m b{font-size:30px}
+.pts{gap:12px}
+.pt ol{font-size:14px}
+.stack{display:flex;flex-direction:column;gap:10px;min-height:0}
+table{font-size:13px;min-width:0}
+td,th{padding:5px 8px}
+figcaption{font-size:11px}
+.legend{font-size:12px}
+.keyline{font-size:12px}
+</style></head><body><div class="page cover">
+<div class="banner"><span>DiggerLid · Reach and Media Report</span></div>
+<h1>Reach and Media</h1>
+<p class="sub">Last 12 months (23 Sep 2025 to 22 Sep 2026) against the 12 months before. AUD.</p>
 <div class="keyline"><span class="lbl now">Last 12 months</span><span class="lbl prev">prev = the 12 months before</span><span>Last 12 months = 23 Sep 2025 to 22 Sep 2026. Prev = 23 Sep 2024 to 22 Sep 2025. Every number states its period; the email list size is the only all-time figure.</span></div>
 <div class="big">
   <div class="k acc"><small>Media spend</small><b data-p="last 12 months">$1.5M</b><span>prev 12 months $790k</span><em>+86%</em></div>
@@ -85,71 +121,50 @@ td.up{font-weight:700}
   <div class="k acc"><small>Machine operator orders</small><b data-p="last 12 months">~13,400</b><span>grease and covers · prev 12 months about 7,600</span><em>+77%</em></div>
   <div class="k"><small>Email list size</small><b data-p="all time, at 22 Sep 2026">~44,800</b><span>about 18,600 a year ago · about 26,200 added in the last 12 months</span><em>+141%</em></div>
 </div>
-
-<section>
-  <h2>Media spend, month by month <span class="period">24 months · Oct 2024 to Sep 2026</span><small>calendar months; tiles compare the last 12 with the previous 12</small></h2>
-  <div class="grid32">
-    <figure>
-      <svg id="c0" viewBox="0 0 520 290" width="100%" role="img" aria-label="Monthly media spend October 2024 to September 2026, rising from about 47 thousand to a peak of 198 thousand in June 2026"></svg>
-      <figcaption>Monthly media spend, AUD thousands, by calendar month. September 2026 runs to the 22nd, so chart totals sit a little under the headline tiles, which use 23 Sep to 22 Sep windows.</figcaption>
-    </figure>
-    <div class="mid">
-      <div class="m"><small>Average month, last 12</small><b>$121k</b><span>prev 12 months $66k · +83%</span></div>
+<footer><span>DiggerLid · Reach and Media Report · last 12 months to 22 Sep 2026 against the 12 months before · AUD</span><span>1 / 5</span></footer></div>
+<div class="page">
+<h2>Media spend <span class="period">24 months · Oct 2024 to Sep 2026</span><small>calendar months; tiles compare the last 12 with the previous 12</small></h2>
+<div class="row2 h290">
+ <figure><svg preserveAspectRatio="xMidYMin meet" id="c0" viewBox="0 0 520 290" width="100%" role="img" aria-label="Monthly media spend"></svg><figcaption>Monthly media spend, AUD thousands, by calendar month. September 2026 runs to the 22nd, so chart totals sit a little under the headline tiles, which use 23 Sep to 22 Sep windows.</figcaption></figure>
+ <div class="mid three">      <div class="m"><small>Average month, last 12</small><b>$121k</b><span>prev 12 months $66k · +83%</span></div>
       <div class="m"><small>Biggest month, last 12</small><b>$198k</b><span>June 2026 · prev 12 months peak $92k</span></div>
       <div class="m"><small>Months over $100k, last 12</small><b>9 of 12</b><span>prev 12 months: none</span></div>
       <div class="m"><small>Australia share, last 12</small><b>92%</b><span>of spend · prev 12 months 80%</span></div>
       <div class="m"><small>BFCM month</small><b>$166k</b><span>Nov 2025 · Nov 2024 $67k</span></div>
       <div class="m"><small>Link clicks, last 12</small><b>1.7M</b><span>prev 12 months 600k · 2.8×</span></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Growth against spend <span class="period">Last 12 months vs previous 12</span><small>everything grew faster than the budget</small></h2>
-  <div class="grid32">
-    <figure>
-      <svg id="c1" viewBox="0 0 520 250" width="100%" role="img" aria-label="Year on year change: spend 86%, people reached 125%, video plays 171%, full completions 259%, Australian orders 126%, new email profiles 241%"></svg>
-      <figcaption>Year-on-year change. Dotted line = spend, +86%.</figcaption>
-    </figure>
-    <div class="mid">
-      <div class="m"><small>Cost per person reached</small><b>21.7¢</b><span>prev 12 months 26.3¢ · −17%</span></div>
+</div>
+</div>
+<h2>Growth against spend <span class="period">Last 12 months vs previous 12</span><small>everything grew faster than the budget</small></h2>
+<div class="row2 h270">
+ <figure><svg preserveAspectRatio="xMidYMin meet" id="c1" viewBox="0 0 520 250" width="100%" role="img" aria-label="Year on year change"></svg><figcaption>Year-on-year change. Dotted line = spend, +86%.</figcaption></figure>
+ <div class="mid three">      <div class="m"><small>Cost per person reached</small><b>21.7¢</b><span>prev 12 months 26.3¢ · −17%</span></div>
       <div class="m"><small>Cost per click</small><b>$0.89</b><span>prev 12 months $1.32 · −32%</span></div>
       <div class="m"><small>CPM</small><b>$11.61</b><span>prev 12 months $12.26 · −5%</span></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Video <span class="period">Monthly chart: 24 months · rest: last 12 vs previous 12</span><small>reach by month on the left; watch depth on the right</small></h2>
-  <div class="grid32">
-    <figure>
-      <svg id="c5" viewBox="0 0 520 250" width="100%" role="img" aria-label="Monthly impressions, October 2024 to September 2026, from 3.9 million to a peak of 14.5 million in June 2026"></svg>
-      <figcaption>Impressions served by month, millions (Oct 2024 to Sep 2026). Previous 12 months grey, last 12 black. Video plays by month will replace this series when the monthly export is in.</figcaption>
-    </figure>
-    <figure>
-      <svg id="c4" viewBox="0 0 520 300" width="100%" role="img" aria-label="Of every 100 plays, how many reach each milestone: 25 percent watched 10.5 to 13.1, 50 percent 5.1 to 7.0, 75 percent 3.2 to 4.5, 100 percent 1.2 to 1.5"></svg>
-      <div class="legend"><span><i style="background:var(--bar2)"></i>Previous 12 months</span><span><i style="background:var(--bar)"></i>Last 12 months</span></div>
-      <figcaption>Watch depth: of every 100 plays, how many reach each point. Last 12 months against the previous 12.</figcaption>
-    </figure>
-    <div class="mid">
-    <div class="m"><small>Hook rate</small><b>57%</b><span>press play · prev 12 months 41%</span></div>
+</div>
+</div>
+<footer><span>DiggerLid · Reach and Media Report · last 12 months to 22 Sep 2026 against the 12 months before · AUD</span><span>2 / 5</span></footer></div>
+<div class="page">
+<h2>Video <span class="period">Monthly chart: 24 months · rest: last 12 vs previous 12</span><small>reach by month on the left; watch depth on the right</small></h2>
+<div class="row2 even h520">
+ <figure><svg preserveAspectRatio="xMidYMin meet" id="c5" viewBox="0 0 520 250" width="100%" role="img" aria-label="Monthly impressions"></svg><figcaption>Impressions served by month, millions (Oct 2024 to Sep 2026). Previous 12 months grey, last 12 black. Video plays by month will replace this series when the monthly export is in.</figcaption></figure>
+ <figure><div class="legend"><span><i style="background:var(--bar2)"></i>Previous 12 months</span><span><i style="background:var(--bar)"></i>Last 12 months</span></div><svg preserveAspectRatio="xMidYMin meet" id="c4" viewBox="0 0 520 300" width="100%" role="img" aria-label="Watch depth"></svg><figcaption>Watch depth: of every 100 plays, how many reach each point. Last 12 months against the previous 12.</figcaption></figure>
+</div>
+<div class="mid six">    <div class="m"><small>Hook rate</small><b>57%</b><span>press play · prev 12 months 41%</span></div>
     <div class="m"><small>Video plays</small><b>72M</b><span>prev 12 months 27M · 2.7×</span></div>
     <div class="m"><small>Watched half</small><b>5.0M</b><span>prev 12 months 1.4M · 3.7×</span></div>
     <div class="m"><small>Watched to the end</small><b>1.1M</b><span>prev 12 months 310k · 3.6×</span></div>
     <div class="m"><small>Finish rate per play</small><b>1.5%</b><span>prev 12 months 1.2% · +32%</span></div>
     <div class="m"><small>Cost per video view</small><b>2.05¢</b><span>prev 12 months 2.98¢ · −31%</span></div>
-  </div>
-</section>
-
-<section>
-  <h2>Machine operators <span class="period">Last 12 months vs previous 12</span><small>customers buying grease or covers</small></h2>
-  <div class="mid" style="margin-bottom:12px">
-    <div class="m"><small>Operator orders</small><b>~13,400</b><span>prev 12 months about 7,600 · +77%</span></div>
+</div>
+<footer><span>DiggerLid · Reach and Media Report · last 12 months to 22 Sep 2026 against the 12 months before · AUD</span><span>3 / 5</span></footer></div>
+<div class="page">
+<h2>Machine operators <span class="period">Last 12 months vs previous 12</span><small>customers buying grease or covers</small></h2>
+<div class="mid four">    <div class="m"><small>Operator orders</small><b>~13,400</b><span>prev 12 months about 7,600 · +77%</span></div>
     <div class="m"><small>Operator sales growth</small><b>+35%</b><span>revenue, last 12 vs prev</span></div>
     <div class="m"><small>Grease orders</small><b>+71%</b><span>about 9,000 to 15,400 product orders</span></div>
     <div class="m"><small>Covers orders</small><b>+43%</b><span>about 3,100 to 4,500 product orders</span></div>
-  </div>
-  <div class="pts">
+</div>
+<div class="pts">
     <div class="pt"><h3>Grease · sales +44%, orders +71%</h3><ol>
       <li><b>+71% orders.</b> The grease system went from about 9,000 to 15,400 product orders; KAJO grease packs +39% orders and +50% sales.</li>
       <li><b>3.4× coupler orders.</b> The coupler is now the entry point (about 1,500 to 5,100 orders) and the adapter follows it (+51%).</li>
@@ -159,17 +174,22 @@ td.up{font-weight:700}
       <li><b>Pro Enclosure still the anchor.</b> about 1,100 to 1,300 orders (+17%), sales +13%; the 1.7 Tonne cover +19% orders.</li>
     </ol></div>
   </div>
-</section>
 
-<section>
-  <h2>Australia by state <span class="period">Last 12 months vs previous 12</span><small>orders by billing state, rounded; map labels show last-12-month orders</small></h2>
-  <div class="grid23">
-    <figure>
-      <svg id="map" viewBox="0 0 470 400" width="100%" role="img" aria-label="Map of Australia shaded by growth in orders: NSW 4,990 orders up 114%, Queensland 4,315 up 131%, Victoria 3,367 up 113%, Western Australia 1,904 up 154%, South Australia 1,166 up 157%, Tasmania 444 up 114%, ACT 182 up 139%, Northern Territory 126 up 241%"></svg>
-      <figcaption>Shading = growth in orders (lighter +110%, darker +230%). Labels show rounded last-12-month orders. State boundaries simplified for display.</figcaption>
-    </figure>
-    <div>
-      <div class="tw"><table>
+<h2>Email list <span class="period">List size: all time to 22 Sep 2026 · additions: last 12 vs previous 12</span><small>chart shows 24 calendar months</small></h2>
+<div class="row2">
+ <figure><div class="legend"><span><i style="background:var(--bar)"></i>Popup signups</span><span><i style="background:var(--bar3)"></i>Other new profiles</span></div><svg preserveAspectRatio="xMidYMin meet" id="c3" viewBox="0 0 520 300" width="100%" role="img" aria-label="New email profiles by month"></svg><figcaption>New email profiles by month. Popup live from October 2025. September 2026 to the 22nd.</figcaption></figure>
+ <div class="mid two">      <div class="m"><small>List size, all time</small><b>~44,800</b><span>about 18,600 a year ago · +141% in 12 months</span></div>
+      <div class="m"><small>New profiles, last 12</small><b>~26,200</b><span>prev 12 months about 7,700 · +241%</span></div>
+      <div class="m"><small>Per month, last 12</small><b>~2,200</b><span>prev 12 months about 640</span></div>
+      <div class="m"><small>Popup signups, last 12</small><b>~15,300</b><span>58% of new profiles · prev 12 months 9%</span></div>
+</div>
+</div>
+<footer><span>DiggerLid · Reach and Media Report · last 12 months to 22 Sep 2026 against the 12 months before · AUD</span><span>4 / 5</span></footer></div>
+<div class="page">
+<h2>Australia by state <span class="period">Last 12 months vs previous 12</span><small>orders by billing state, rounded; map labels show last-12-month orders</small></h2>
+<div class="row2 map h580">
+ <figure><svg preserveAspectRatio="xMidYMin meet" id="map" viewBox="0 0 470 400" width="100%" role="img" aria-label="Map of Australia shaded by growth in orders"></svg><figcaption>Shading = growth in orders (lighter +110%, darker +230%). Labels show rounded last-12-month orders. State boundaries simplified for display.</figcaption></figure>
+ <div class="stack"><div class="tw"><table>
         <tr><th>State</th><th>Prev</th><th>Last</th><th>Change</th></tr>
         <tr><td>New South Wales</td><td class="n">≈2,300</td><td class="n">≈5,000</td><td class="n up">+114%</td></tr>
         <tr><td>Queensland</td><td class="n">≈1,900</td><td class="n">≈4,300</td><td class="n up">+131%</td></tr>
@@ -180,35 +200,12 @@ td.up{font-weight:700}
         <tr><td>ACT</td><td class="n">≈80</td><td class="n">≈180</td><td class="n up">+139%</td></tr>
         <tr><td>Northern Territory</td><td class="n">≈40</td><td class="n">≈130</td><td class="n up">+241%</td></tr>
         <tr><td><b>Australia</b></td><td class="n"><b>≈7,300</b></td><td class="n"><b>≈16,500</b></td><td class="n up">+126%</td></tr>
-      </table></div>
-      <div class="mid" style="margin-top:10px">
-        <div class="m"><small>Every state grew</small><b>8 of 8</b><span>slowest +113% (Victoria)</span></div>
+      </table></div><div class="mid three">        <div class="m"><small>Every state grew</small><b>8 of 8</b><span>slowest +113% (Victoria)</span></div>
         <div class="m"><small>Fastest</small><b>NT</b><span>+241% · then SA +157%, WA +154%</span></div>
         <div class="m"><small>East coast share</small><b>77%</b><span>NSW, QLD, VIC of Australian orders</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Email list <span class="period">List size: all time to 22 Sep 2026 · additions: last 12 vs previous 12</span><small>chart shows 24 calendar months</small></h2>
-  <div class="grid32">
-    <figure>
-      <div class="legend"><span><i style="background:var(--bar)"></i>Popup signups</span><span><i style="background:var(--bar3)"></i>Other new profiles</span></div>
-      <svg id="c3" viewBox="0 0 520 300" width="100%" role="img" aria-label="New email profiles by month, October 2024 to September 2026, with the popup share stacked"></svg>
-      <figcaption>New email profiles by month. Popup live from October 2025. September 2026 to the 22nd.</figcaption>
-    </figure>
-    <div class="mid">
-      <div class="m"><small>List size, all time</small><b>~44,800</b><span>about 18,600 a year ago · +141% in 12 months</span></div>
-      <div class="m"><small>New profiles, last 12</small><b>~26,200</b><span>prev 12 months about 7,700 · +241%</span></div>
-      <div class="m"><small>Per month, last 12</small><b>~2,200</b><span>prev 12 months about 640</span></div>
-      <div class="m"><small>Popup signups, last 12</small><b>~15,300</b><span>58% of new profiles · prev 12 months 9%</span></div>
-    </div>
-  </div>
-</section>
+</div></div>
 </div>
-<div class="tip" id="tip"></div>
-<script>
+<footer><span>DiggerLid · Reach and Media Report · last 12 months to 22 Sep 2026 against the 12 months before · AUD</span><span>5 / 5</span></footer></div><div class="tip" id="tip"></div><script>
 (function(){
 var tip=document.getElementById('tip');
 function show(e,t){tip.textContent=t;tip.style.display='block';tip.style.left=(e.clientX+12)+'px';tip.style.top=(e.clientY-28)+'px';}
@@ -285,7 +282,7 @@ lab.forEach(function(a){var k=a[0],st=a[1],g=a[2],c=px(st.c),dark=g>=200;
  if(k==='ACT'){var o=px(st.c);c=[o[0]+34,o[1]+36];mp.appendChild(el('line',{x1:o[0]+3,y1:o[1]+2,x2:c[0]-14,y2:c[1]-16,stroke:C.ink,'stroke-width':'1'}));}
  if(k==='VIC'){c=[c[0]-6,c[1]+2];}
  var t1=el('text',{x:c[0],y:c[1]-6,'font-size':'12','font-weight':'700','text-anchor':'middle',style:'fill:'+(dark?tok('--acc'):C.ink)});t1.textContent=k;mp.appendChild(t1);
- var t2=el('text',{x:c[0],y:c[1]+8,'font-size':'11','text-anchor':'middle',style:'fill:'+(dark?tok('--acc'):C.ink)});t2.textContent="≈"+(Math.round(st.last/(st.last>=1000?100:10))*(st.last>=1000?100:10)).toLocaleString()+' · +'+g+'%';mp.appendChild(t2);});
+ var t2=el('text',{x:c[0],y:c[1]+8,'font-size':'11','text-anchor':'middle',style:'fill:'+(dark?tok('--acc'):C.ink)});t2.textContent='≈'+(Math.round(st.last/(st.last>=1000?100:10))*(st.last>=1000?100:10)).toLocaleString()+' · +'+g+'%';mp.appendChild(t2);});
 // map legend
 [['+110%',0],['+140%',1],['+170%',2],['+200%',3],['+230%',4]].forEach(function(l,i){mp.appendChild(el('rect',{x:14+i*54,y:378,width:14,height:12,fill:ramp[i],stroke:C.ink,'stroke-width':'0.5'}));mp.appendChild(el('text',{x:31+i*54,y:388,'font-size':'10',class:'mute'})).textContent=l[0];});
 // Chart 3: monthly email profiles
@@ -300,4 +297,4 @@ m.forEach(function(r,i){var x=L3+i*bw+2,w=bw-4,hT=H3*r[1]/mx3,hA=H3*r[2]/mx3,yT=
 var xs=L3+12*bw;s3.appendChild(el('line',{x1:xs,y1:top3,x2:xs,y2:top3+H3,stroke:C.ink,'stroke-dasharray':'3 3','stroke-width':'1'}));
 s3.appendChild(el('text',{x:xs+4,y:top3+10,'font-size':'10',class:'mute'})).textContent='popup live';
 })();
-</script>
+</script></body></html>
