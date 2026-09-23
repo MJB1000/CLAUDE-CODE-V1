@@ -169,19 +169,23 @@ S["questions"]=content("questions","The five questions from the planning session
  src="Shopify, Alia, Klaviyo",notes="Question four is the only one that needs a test rather than a read.")
 
 bfcm=[17.9,13.5,7.6,6.4,5.4,5.4,4.1,5.5,5.4,4.3,4.0,5.2,5.6,9.7]; eofy=[12.6,6.8,5.7,4.1,5.2,4.7,4.0,5.4,4.9,4.7,3.7,6.7,11.6,20.0]
-def bars(vals,color):
+def bars(vals,color,hype=()):
     out=""
-    for i,v in enumerate(vals,1):
-        h=int(v/20.0*280)
+    for n,v in enumerate(list(hype)+list(vals)):
+        is_h=n<len(hype); lab=f"H{n+1}" if is_h else str(n-len(hype)+1)
+        h=int(v/20.0*270)
+        box=(f'background:#ffffff; border:2px dashed {K}' if is_h else f'background:{color}; border:2px solid {K}')
         out+=(f'<div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:end; gap:6px">'
-              f'<p style="font-size:24px; color:{K90}">{v:.0f}%</p><div style="width:40px; height:{max(h,4)}px; background:{color}; border:2px solid {K}"></div><p style="font-size:24px; color:{MUTE}">{i}</p></div>')
+              f'<p style="font-size:22px; color:{K90}">{v:.0f}%</p><div style="width:30px; height:{max(h,4)}px; {box}"></div><p style="font-size:22px; color:{MUTE if not is_h else K}; font-weight:{700 if is_h else 400}">{lab}</p></div>')
     return out
 S["curve"]=content("curve","The daily shape we are planning to",
  f'<div style="display:flex; gap:32px; flex:1">'
- f'<div style="flex:1; display:flex; flex-direction:column; gap:10px"><h3 style="font-family:{HEAD}; font-size:28px; font-weight:700">BFCM 2025: share of sale revenue by day</h3><div style="display:flex; gap:6px; align-items:end; height:360px; border-bottom:2px solid {K}">{bars(bfcm,Y)}</div></div>'
- f'<div style="flex:1; display:flex; flex-direction:column; gap:10px"><h3 style="font-family:{HEAD}; font-size:28px; font-weight:700">EOFY 2026: share of sale revenue by day</h3><div style="display:flex; gap:6px; align-items:end; height:360px; border-bottom:2px solid {K}">{bars(eofy,K80)}</div></div></div>'
- f'<div style="display:flex; gap:24px">{big("30%","of sale revenue in the first 48 hours at BFCM. On a $535k base target that is about $160k for the launch weekend.")}{big("5%","per day through the middle. The mid-sale content drop, the gifting push and segmented sends exist to lift this number.",bg="#ffffff")}{big("70%","of launch-day buyers were new customers. The launch is an acquisition play; keep prospecting on.")}</div>',
- src="Shopify analytics",notes="Plan spend and stock to the front for BFCM. The 30% and 5% figures are measured from 2025; the dollar figure follows from whichever target the room picks.")
+ f'<div style="flex:1; display:flex; flex-direction:column; gap:8px"><h3 style="font-family:{HEAD}; font-size:27px; font-weight:700">BFCM 2025: share of sale revenue by day</h3><div style="display:flex; gap:4px; align-items:end; height:330px; border-bottom:2px solid {K}">{bars(bfcm,Y,hype=[1.7,1.0])}</div>'
+ f'<p style="font-size:22px; line-height:1.3; color:{K90}"><b>Hype, 16 and 17 Nov:</b> $14k and 57 orders. Site sessions flat on the week before (5.5k); conversion 1.0% against 1.4%.</p></div>'
+ f'<div style="flex:1; display:flex; flex-direction:column; gap:8px"><h3 style="font-family:{HEAD}; font-size:27px; font-weight:700">EOFY 2026: share of sale revenue by day</h3><div style="display:flex; gap:4px; align-items:end; height:330px; border-bottom:2px solid {K}">{bars(eofy,K80,hype=[2.8,1.5])}</div>'
+ f'<p style="font-size:22px; line-height:1.3; color:{K90}"><b>Hype, 15 and 16 Jun:</b> $24k and 106 orders. Sessions up 50% on the week before (10.3k); conversion fell to 1.0% from 2.1%.</p></div></div>'
+ +f'<div style="display:flex; gap:24px">{big("30%","of sale revenue in the first 48 hours at BFCM. On a $535k base target that is about $160k for the launch weekend.")}{big("5%","per day through the middle. The mid-sale content drop, the gifting push and segmented sends exist to lift this number.",bg="#ffffff")}{big("70%","of launch-day buyers were new customers. The launch is an acquisition play; keep prospecting on.")}</div>',
+ src="Shopify analytics",notes="Dashed bars H1 and H2 are the two hype days before each launch, as a share of the sale revenue that followed. Both sales saw hype days sell less than an ordinary day while traffic held or rose: people browsed and waited. Plan spend and stock to the front for BFCM.")
 
 reach=[("Jan","67"),("Feb","70"),("Mar","64"),("Apr","80"),("May","44"),("Jun","53"),("Jul","33"),("Aug","34"),("Sep","23")]
 rb="".join(f'<div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:end; gap:6px"><p style="font-size:26px; font-weight:700">{v}%</p><div style="width:88px; height:{int(int(v)/80*280)}px; background:{Y if int(v)>=50 else K80}; border:2px solid {K}"></div><p style="font-size:25px; color:{MUTE}">{m}</p></div>' for m,v in reach)

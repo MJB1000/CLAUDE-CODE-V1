@@ -127,6 +127,8 @@ sell-through risk on hero lines; about 1,000 orders on day one at $1.0M (2025 pe
 - Father's Day 2026 (23 Aug to 7 Sep): $292k net, 1,022 orders, 11% first 48h, 6.7%/day mid-sale, 9% last 48h, 22% returning revenue, Meta $82.6k (28% of net) in the window.
 - EE tool latest run: $982,777, $90k base week, $242,893 spend, 3,691 orders, profit $148,231 (about $110k after product-cost and gift corrections), Low Repeat, stock $900k RRP.
 
+- Hype days before past launches: BFCM 2025 (16 and 17 Nov) $14.3k net, 57 orders, 5.5k sessions (flat on the week before, 2.7k/day), conversion 1.0% vs 1.4%. EOFY 2026 (15 and 16 Jun) $23.5k net, 106 orders, 10.3k sessions (+50% on the week before, 3.4k/day), conversion 1.0% vs 2.1%. Hype days sell less than an ordinary day while traffic holds or rises.
+
 ## Open items feeding the report
 - **To do (moved out of the BFCM deck, 24 Sep): restore popup reach on paid landing pages.** Reach fell from 64 to 80% of sessions (Oct 2025 to Apr 2026) to 23% in September while submit-among-viewers held at about 5%, so about three times the signups are available at the same traffic. Target: reach above 50% on paid pages by 15 Oct; weekly Alia reach check. Owner to assign.
 - ~~RP-006~~ done 2026-09-22 (above). Consider a one-month popup holdout pre-BFCM for incrementality.
