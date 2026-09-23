@@ -15,10 +15,19 @@ p{margin:0}
 .banner span{display:inline-block;transform:skewX(12deg);font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:14px}
 header{border-bottom:3px solid var(--ink);padding-bottom:16px;margin-bottom:22px}
 header p{color:var(--mute);font-size:15px;margin-top:8px}
-.big{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.big{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:860px){.big{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.big{grid-template-columns:1fr}}
+.keyline{display:flex;gap:10px;align-items:center;margin:0 0 10px;font-size:13px;color:var(--mute)}
+.lbl{display:inline-block;padding:3px 10px;font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.6px;font-size:12px}
+.lbl.now{background:var(--ink);color:var(--bg)}
+.lbl.prev{border:1px solid var(--line);color:var(--mute)}
+:root[data-theme="dark"] .lbl.now{color:#161514}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lbl.now{color:#161514}}
 .k{background:var(--panel);border:2px solid var(--ink);padding:16px 18px 14px;display:flex;flex-direction:column;gap:2px;position:relative}
 .k.acc{background:var(--tint)}
 .k small{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.7px;padding-right:64px}
+.k b::after{content:"last 12 months";display:block;font-family:'League Spartan',Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--mute);margin-top:4px}
 .k b{font-family:'Roboto Condensed',Arial,sans-serif;font-size:clamp(40px,4.6vw,54px);font-weight:700;line-height:1;margin:4px 0 6px}
 .k span{font-size:14px;color:var(--ink2)}
 .k em{position:absolute;top:12px;right:12px;font-style:normal;font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;font-size:18px;background:var(--ink);color:var(--bg);padding:3px 8px}
@@ -66,15 +75,14 @@ td.up{font-weight:700}
   <p>Last 12 months (23 Sep 2025 to 22 Sep 2026) against the 12 months before. AUD. Meta, Shopify and Klaviyo.</p>
 </header>
 
+<div class="keyline"><span class="lbl now">Last 12 months</span><span class="lbl prev">prev = the 12 months before</span></div>
 <div class="big">
-  <div class="k acc"><small>Media spend</small><b>$1.47M</b><span>from $791k</span><em>+86%</em></div>
-  <div class="k"><small>People reached</small><b>6.77M</b><span>from 3.01M</span><em>2.25×</em></div>
-  <div class="k acc"><small>Video plays</small><b>71.8M</b><span>from 26.5M</span><em>2.7×</em></div>
-  <div class="k"><small>Impressions</small><b>126.8M</b><span>from 64.5M</span><em>+97%</em></div>
-  <div class="k acc"><small>Grease sales growth</small><b>+44%</b><span>$1.52M to $2.18M · orders +71%</span><em>$2.18M</em></div>
-  <div class="k"><small>Australian orders</small><b>16,495</b><span>from 7,307</span><em>2.3×</em></div>
-  <div class="k acc"><small>Machine operator orders</small><b>13,359</b><span>grease and covers · from 7,559</span><em>+77%</em></div>
-  <div class="k"><small>Email list size</small><b>44,804</b><span>from 18,618 a year ago · 26,186 added</span><em>+141%</em></div>
+  <div class="k acc"><small>Media spend</small><b>$1.47M</b><span>prev $791k</span><em>+86%</em></div>
+  <div class="k"><small>People reached</small><b>6.77M</b><span>prev 3.01M</span><em>2.25×</em></div>
+  <div class="k acc"><small>Video plays</small><b>71.8M</b><span>prev 26.5M</span><em>2.7×</em></div>
+  <div class="k"><small>Grease sales growth</small><b>+44%</b><span>$2.18M, prev $1.52M · orders +71%</span><em>$2.18M</em></div>
+  <div class="k acc"><small>Machine operator orders</small><b>13,359</b><span>grease and covers · prev 7,559</span><em>+77%</em></div>
+  <div class="k"><small>Email list size</small><b>44,804</b><span>prev 18,618 · 26,186 added</span><em>+141%</em></div>
 </div>
 
 <section>
@@ -85,12 +93,12 @@ td.up{font-weight:700}
       <figcaption>Monthly Meta spend, AUD thousands. Dotted line marks the start of the last 12 months. September 2026 runs to the 22nd.</figcaption>
     </figure>
     <div class="mid">
-      <div class="m"><small>Average month</small><b>$121k</b><span>from $66k · +83%</span></div>
+      <div class="m"><small>Average month</small><b>$121k</b><span>prev $66k · +83%</span></div>
       <div class="m"><small>Biggest month</small><b>$198k</b><span>June 2026 · prior peak $92k</span></div>
       <div class="m"><small>Months over $100k</small><b>9 of 12</b><span>none in the previous year</span></div>
       <div class="m"><small>Australia share</small><b>92%</b><span>of spend, from 80%</span></div>
       <div class="m"><small>BFCM month</small><b>$166k</b><span>Nov 2025 · from $67k</span></div>
-      <div class="m"><small>Cost per attributed purchase</small><b>$106</b><span>from $122 · −13%</span></div>
+      <div class="m"><small>Cost per attributed purchase</small><b>$106</b><span>prev $122 · −13%</span></div>
     </div>
   </div>
 </section>
@@ -103,55 +111,47 @@ td.up{font-weight:700}
       <figcaption>Year-on-year change. Dotted line = spend, +86%.</figcaption>
     </figure>
     <div class="mid">
-      <div class="m"><small>Cost per person reached</small><b>21.7¢</b><span>from 26.3¢ · −17%</span></div>
-      <div class="m"><small>Cost per click</small><b>$0.89</b><span>from $1.32 · −32%</span></div>
-      <div class="m"><small>CPM</small><b>$11.61</b><span>from $12.26 · −5%</span></div>
+      <div class="m"><small>Cost per person reached</small><b>21.7¢</b><span>prev 26.3¢ · −17%</span></div>
+      <div class="m"><small>Cost per click</small><b>$0.89</b><span>prev $1.32 · −32%</span></div>
+      <div class="m"><small>CPM</small><b>$11.61</b><span>prev $12.26 · −5%</span></div>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>Video watch-through <small>of every 100 people served, how many press play, and how far they get</small></h2>
-  <div class="grid2">
-    <figure>
-      <div class="legend"><span><i style="background:var(--bar2)"></i>Previous 12 months</span><span><i style="background:var(--bar)"></i>Last 12 months</span></div>
-      <svg id="c2" viewBox="0 0 520 300" width="100%" role="img" aria-label="Share of impressions reaching each video milestone, previous versus last 12 months: play 41 to 57 percent, 25 percent watched 4.3 to 7.4, 50 percent 2.1 to 4.0, 75 percent 1.3 to 2.6, 100 percent 0.5 to 0.9"></svg>
-      <figcaption>Share of impressions reaching each milestone. The hook (play rate) moved most; every later step nearly doubled.</figcaption>
-    </figure>
+  <h2>Video watch-through <small>of every 100 plays, how far people get</small></h2>
+  <div class="grid32">
     <figure>
       <svg id="c4" viewBox="0 0 520 300" width="100%" role="img" aria-label="Of every 100 plays, how many reach each milestone: 25 percent watched 10.5 to 13.1, 50 percent 5.1 to 7.0, 75 percent 3.2 to 4.5, 100 percent 1.2 to 1.5"></svg>
+      <div class="legend"><span><i style="background:var(--bar2)"></i>Previous 12 months</span><span><i style="background:var(--bar)"></i>Last 12 months</span></div>
       <figcaption>Of every 100 plays. Once someone presses play they now stay longer at every step.</figcaption>
     </figure>
-  </div>
-  <div class="mid" style="margin-top:12px">
-    <div class="m"><small>Hook rate</small><b>57%</b><span>press play · from 41%</span></div>
-    <div class="m"><small>Video plays</small><b>71.8M</b><span>from 26.5M · 2.7×</span></div>
-    <div class="m"><small>Watched half</small><b>5.0M</b><span>from 1.4M · 3.7×</span></div>
-    <div class="m"><small>Watched to the end</small><b>1.10M</b><span>from 307k · 3.6×</span></div>
-    <div class="m"><small>Finish rate per play</small><b>1.5%</b><span>from 1.2% · +32%</span></div>
-    <div class="m"><small>Cost per video view</small><b>2.05¢</b><span>from 2.98¢ · −31%</span></div>
+    <div class="mid">
+    <div class="m"><small>Hook rate</small><b>57%</b><span>press play · prev 41%</span></div>
+    <div class="m"><small>Video plays</small><b>71.8M</b><span>prev 26.5M · 2.7×</span></div>
+    <div class="m"><small>Watched half</small><b>5.0M</b><span>prev 1.4M · 3.7×</span></div>
+    <div class="m"><small>Watched to the end</small><b>1.10M</b><span>prev 307k · 3.6×</span></div>
+    <div class="m"><small>Finish rate per play</small><b>1.5%</b><span>prev 1.2% · +32%</span></div>
+    <div class="m"><small>Cost per video view</small><b>2.05¢</b><span>prev 2.98¢ · −31%</span></div>
   </div>
 </section>
 
 <section>
   <h2>Machine operators <small>customers buying grease or covers</small></h2>
   <div class="mid" style="margin-bottom:12px">
-    <div class="m"><small>Operator orders</small><b>13,359</b><span>from 7,559 · +77%</span></div>
-    <div class="m"><small>Operator sales</small><b>$3.59M</b><span>from $2.65M · +35%</span></div>
+    <div class="m"><small>Operator orders</small><b>13,359</b><span>prev 7,559 · +77%</span></div>
+    <div class="m"><small>Operator sales</small><b>$3.59M</b><span>prev $2.65M · +35%</span></div>
     <div class="m"><small>Grease orders</small><b>+71%</b><span>8,988 to 15,396 product orders</span></div>
     <div class="m"><small>Covers orders</small><b>+43%</b><span>3,111 to 4,462 product orders</span></div>
-    <div class="m"><small>Share of net sales</small><b>75%</b><span>$3.59M of $4.77M is grease or covers</span></div>
   </div>
   <div class="pts">
     <div class="pt"><h3>Grease · $2.18M, +44%</h3><ol>
       <li><b>+71% orders.</b> The grease system went from 8,988 to 15,396 product orders; packs alone $1.06M to $1.59M.</li>
       <li><b>3.4× coupler orders.</b> The $48 coupler is now the entry point (1,466 to 5,055 orders) and the adapter follows it (+51%).</li>
-      <li><b>Smaller first orders.</b> Average grease order $169 to $142 as entry products lead; the grease gun itself fell 13%.</li>
     </ol></div>
     <div class="pt"><h3>Covers · $1.40M, +23%</h3><ol>
       <li><b>+43% orders.</b> 3,111 to 4,462, and every one of the eight cover lines grew.</li>
       <li><b>Pro Enclosure still the anchor.</b> $699k to $787k (+13%), 1,285 orders; the 1.7 Tonne cover +19% orders.</li>
-      <li><b>Draw Bar Cover 11×.</b> 79 to 865 paid orders plus 102 as gifts: the new small-ticket cover.</li>
     </ol></div>
   </div>
 </section>
@@ -194,11 +194,10 @@ td.up{font-weight:700}
       <figcaption>New Klaviyo profiles by month. Popup live from October 2025. September 2026 to the 22nd.</figcaption>
     </figure>
     <div class="mid">
-      <div class="m"><small>List size now</small><b>44,804</b><span>from 18,618 · +141%</span></div>
-      <div class="m"><small>New profiles, 12 months</small><b>26,186</b><span>from 7,670 · +241%</span></div>
-      <div class="m"><small>Per month</small><b>2,182</b><span>from 639</span></div>
+      <div class="m"><small>List size now</small><b>44,804</b><span>prev 18,618 · +141%</span></div>
+      <div class="m"><small>New profiles, 12 months</small><b>26,186</b><span>prev 7,670 · +241%</span></div>
+      <div class="m"><small>Per month</small><b>2,182</b><span>prev 639</span></div>
       <div class="m"><small>Popup signups</small><b>15,317</b><span>58% of new profiles, from 9%</span></div>
-      <div class="m"><small>Best month</small><b>3,657</b><span>June 2026 · prior best 986</span></div>
     </div>
   </div>
 </section>
@@ -238,14 +237,6 @@ d1.forEach(function(r,i){var y=top+i*rowH,w=(W-L-60)*r[1]/max;
  s.appendChild(el('text',{x:L+w+6,y:y+16,'font-size':'12','font-weight':'700'})).textContent='+'+r[1]+'%';});
 var sx=L+(W-L-60)*86/max;s.appendChild(el('line',{x1:sx,y1:top,x2:sx,y2:top+d1.length*rowH,stroke:C.ink,'stroke-dasharray':'3 3','stroke-width':'1'}));
 s.appendChild(el('text',{x:sx+4,y:top+d1.length*rowH+14,'font-size':'11',class:'mute'})).textContent='spend +86%';
-// Chart 2: share of impressions per milestone (log-free, two panels)
-var d2=[['Press play',41.2,56.6],['Watched 25%',4.3,7.4],['Watched 50%',2.11,3.95],['Watched 75%',1.31,2.56],['Watched 100%',0.48,0.87]];
-var s2=document.getElementById('c2'),L2=110,gw=W-L2-70,mx=60;
-[0,20,40,60].forEach(function(t){var x=L2+gw*t/mx;s2.appendChild(el('line',{x1:x,y1:8,x2:x,y2:8+d2.length*54,class:'grid','stroke-width':'1'}));s2.appendChild(el('text',{x:x,y:8+d2.length*54+14,'font-size':'11','text-anchor':'middle',class:'mute'})).textContent=t+'%';});
-d2.forEach(function(r,i){var y=10+i*54;s2.appendChild(el('text',{x:L2-8,y:y+26,'text-anchor':'end','font-size':'12'})).textContent=r[0];
- [[r[1],C.bar2,0,'Previous'],[r[2],C.bar,22,'Last']].forEach(function(b){var w=Math.max(gw*b[0]/mx,1.5);var rect=el('rect',{x:L2,y:y+b[2],width:w,height:18,fill:b[1]});
-  rect.addEventListener('mousemove',function(e){show(e,b[3]+' 12 months · '+r[0]+': '+b[0]+'% of impressions')});rect.addEventListener('mouseleave',hide);s2.appendChild(rect);
-  s2.appendChild(el('text',{x:L2+w+5,y:y+b[2]+13,'font-size':'11'})).textContent=b[0]+'%';});});
 // Chart 4: of every 100 plays
 var d4=[['Watched 25%',10.5,13.1],['Watched 50%',5.1,7.0],['Watched 75%',3.2,4.5],['Watched 100%',1.2,1.5]];
 var s4=document.getElementById('c4'),L4=110,gw4=W-L4-70,mx4=15;
