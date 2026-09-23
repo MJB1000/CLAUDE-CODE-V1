@@ -4,200 +4,163 @@
 :root{--bg:#fbfaf6;--ink:#231f20;--ink2:#3a3637;--mute:#6b6663;--line:#d9d5cc;--panel:#ffffff;--tint:#fbf7a3;--acc:#f5eb19;--bar:#231f20;--bar2:#b5afa3;--bar3:#8f8a80}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#161514;--ink:#f3f1ea;--ink2:#d8d4cb;--mute:#a8a39c;--line:#3a3736;--panel:#211f1e;--tint:#3a3711;--acc:#f5eb19;--bar:#f5eb19;--bar2:#5a5654;--bar3:#8a857e;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#161514;--ink:#f3f1ea;--ink2:#d8d4cb;--mute:#a8a39c;--line:#3a3736;--panel:#211f1e;--tint:#3a3711;--acc:#f5eb19;--bar:#f5eb19;--bar2:#5a5654;--bar3:#8a857e;color-scheme:dark}
-body{background:var(--bg);color:var(--ink);font-family:'League Spartan',Arial,sans-serif;font-size:16px;line-height:1.45;padding-block:0 48px;padding-inline:16px;font-variant-numeric:tabular-nums}
+body{background:var(--bg);color:var(--ink);font-family:'League Spartan',Arial,sans-serif;font-size:16px;line-height:1.4;padding-block:0 48px;padding-inline:16px;font-variant-numeric:tabular-nums}
 .wrap{max-width:1080px;margin:0 auto}
-h1,h2,h3{font-family:'Roboto Condensed','Arial Narrow',Arial,sans-serif;text-transform:uppercase;line-height:1.05;margin:0;text-wrap:balance}
-h1{font-size:clamp(34px,6vw,60px);font-weight:700}
-h2{font-size:clamp(22px,3.2vw,30px);font-weight:700;margin:0 0 14px}
-h3{font-size:18px;font-weight:700}
+h1,h2{font-family:'Roboto Condensed','Arial Narrow',Arial,sans-serif;text-transform:uppercase;line-height:1.05;margin:0;text-wrap:balance}
+h1{font-size:clamp(34px,6vw,64px);font-weight:700}
+h2{font-size:clamp(22px,3vw,28px);font-weight:700;margin:0 0 12px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+h2 small{font-family:'League Spartan',Arial,sans-serif;font-size:14px;text-transform:none;color:var(--mute);font-weight:400}
 p{margin:0}
 .banner{display:inline-block;background:var(--acc);color:#231f20;transform:skewX(-12deg);padding:6px 18px;margin:26px 0 10px}
 .banner span{display:inline-block;transform:skewX(12deg);font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:14px}
-header{border-bottom:3px solid var(--ink);padding-bottom:18px;margin-bottom:26px}
-header p{color:var(--mute);font-size:15px;margin-top:8px;max-width:64ch}
-.lede{font-size:18px;color:var(--ink2);max-width:66ch;margin:10px 0 0}
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:22px 0 8px}
-.tile{background:var(--panel);border:2px solid var(--ink);padding:14px 16px;display:flex;flex-direction:column;gap:4px}
-.tile.acc{background:var(--tint)}
-.tile b{font-family:'Roboto Condensed',Arial,sans-serif;font-size:36px;font-weight:700;line-height:1}
-.tile small{font-size:13px;color:var(--mute);text-transform:uppercase;letter-spacing:.6px}
-.tile span{font-size:14px;color:var(--ink2)}
-section{margin:34px 0 0}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
-@media (max-width:760px){.grid2{grid-template-columns:1fr}}
-.tw{overflow-x:auto;border:1px solid var(--line)}
-table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
-th{background:var(--ink);color:var(--bg);text-align:left;padding:8px 10px;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
-:root[data-theme="dark"] th{color:#161514}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) th{color:#161514}}
-td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-td.n{text-align:right;white-space:nowrap}
-tr.sub td{background:var(--tint);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
-.up{color:var(--ink);font-weight:700}
-.tag{display:inline-block;font-size:11px;padding:1px 6px;border:1px solid var(--line);color:var(--mute);border-radius:3px;text-transform:uppercase;letter-spacing:.4px;margin-left:6px;vertical-align:middle}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
-.fact{border-left:6px solid var(--acc);background:var(--panel);padding:12px 14px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-.fact b{font-family:'Roboto Condensed',Arial,sans-serif;font-size:26px;display:block;line-height:1.05;margin-bottom:4px}
-.fact span{font-size:14px;color:var(--ink2)}
-figure{margin:0;background:var(--panel);border:1px solid var(--line);padding:14px}
-figcaption{font-size:13px;color:var(--mute);margin-top:8px}
+header{border-bottom:3px solid var(--ink);padding-bottom:16px;margin-bottom:22px}
+header p{color:var(--mute);font-size:15px;margin-top:8px}
+.big{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.k{background:var(--panel);border:2px solid var(--ink);padding:16px 18px 14px;display:flex;flex-direction:column;gap:2px;position:relative}
+.k.acc{background:var(--tint)}
+.k small{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.7px}
+.k b{font-family:'Roboto Condensed',Arial,sans-serif;font-size:clamp(40px,4.6vw,54px);font-weight:700;line-height:1;margin:4px 0 6px}
+.k span{font-size:14px;color:var(--ink2)}
+.k em{position:absolute;top:12px;right:12px;font-style:normal;font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;font-size:18px;background:var(--ink);color:var(--bg);padding:3px 8px}
+:root[data-theme="dark"] .k em{color:#161514}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .k em{color:#161514}}
+.mid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.m{border-top:4px solid var(--acc);background:var(--panel);border-bottom:1px solid var(--line);padding:10px 12px}
+.m b{font-family:'Roboto Condensed',Arial,sans-serif;font-size:34px;font-weight:700;line-height:1;display:block}
+.m small{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.6px}
+.m span{display:block;font-size:13px;color:var(--ink2);margin-top:3px}
+section{margin:30px 0 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.grid32{display:grid;grid-template-columns:3fr 2fr;gap:16px;align-items:start}
+@media (max-width:760px){.grid2,.grid32{grid-template-columns:1fr}}
+figure{margin:0;background:var(--panel);border:1px solid var(--line);padding:12px}
+figcaption{font-size:13px;color:var(--mute);margin-top:6px}
 .legend{display:flex;gap:16px;font-size:13px;color:var(--mute);margin-bottom:6px;flex-wrap:wrap}
 .legend i{display:inline-block;width:12px;height:12px;vertical-align:-1px;margin-right:5px;border:1px solid var(--ink)}
 svg text{font-family:'League Spartan',Arial,sans-serif;fill:var(--ink)}
 svg .mute{fill:var(--mute)}
 svg .grid{stroke:var(--line)}
-.note{font-size:14px;color:var(--mute);max-width:72ch;margin-top:10px}
-.src{font-size:13px;color:var(--mute);border-top:1px solid var(--line);padding-top:10px;margin-top:30px}
-.src li{margin:4px 0}
+.tw{overflow-x:auto;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:380px}
+th{background:var(--ink);color:var(--bg);text-align:left;padding:7px 10px;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+:root[data-theme="dark"] th{color:#161514}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) th{color:#161514}}
+td{padding:6px 10px;border-bottom:1px solid var(--line)}
+td.n{text-align:right;white-space:nowrap}
+td.up{font-weight:700}
+.stack{display:flex;flex-direction:column;gap:10px}
+.src{font-size:12px;color:var(--mute);border-top:1px solid var(--line);padding-top:10px;margin-top:28px;line-height:1.5}
 .tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-size:13px;padding:5px 8px;border-radius:3px;display:none;z-index:5;white-space:nowrap}
 </style>
 <div class="wrap">
 <header>
   <div class="banner"><span>DiggerLid · Reach and Media Report</span></div>
   <h1>Twice the reach, cheaper per person</h1>
-  <p>Last 12 months (23 Sep 2025 to 22 Sep 2026) against the 12 months before. Meta media, video, grease sales and email list. All figures AUD. Verified rows were pulled on 23 Sep 2026 from Meta insights, Shopify and Klaviyo; reach and video rows come from a same-day Ads Manager pull that matches the verified spend to the dollar.</p>
-  <p class="lede">Media spend rose 86%. People reached rose 125%, video plays 171% and full video completions 259%. CPM fell 5%, cost per click fell 32% and the email list added 3.4 times as many profiles as the year before.</p>
+  <p>Last 12 months (23 Sep 2025 to 22 Sep 2026) against the 12 months before. AUD. Meta, Shopify and Klaviyo.</p>
 </header>
 
-<div class="tiles">
-  <div class="tile acc"><small>People reached</small><b>6.77M</b><span>from 3.01M · 2.25×</span></div>
-  <div class="tile"><small>Video plays</small><b>71.8M</b><span>from 26.5M · 2.7×</span></div>
-  <div class="tile acc"><small>Impressions</small><b>126.8M</b><span>from 64.5M · +97%</span></div>
-  <div class="tile"><small>Full video completions</small><b>1.10M</b><span>from 307k · 3.6×</span></div>
-  <div class="tile acc"><small>Media spend</small><b>$1.47M</b><span>from $791k · +86%</span></div>
-  <div class="tile"><small>New email profiles</small><b>26,186</b><span>from 7,670 · 3.4×</span></div>
+<div class="big">
+  <div class="k acc"><small>People reached</small><b>6.77M</b><span>from 3.01M</span><em>2.25×</em></div>
+  <div class="k"><small>Video plays</small><b>71.8M</b><span>from 26.5M</span><em>2.7×</em></div>
+  <div class="k acc"><small>Watched to the end</small><b>1.10M</b><span>from 307k</span><em>3.6×</em></div>
+  <div class="k"><small>Impressions</small><b>126.8M</b><span>from 64.5M</span><em>+97%</em></div>
+  <div class="k acc"><small>Link clicks</small><b>1.66M</b><span>from 602k</span><em>2.8×</em></div>
+  <div class="k"><small>Media spend</small><b>$1.47M</b><span>from $791k</span><em>+86%</em></div>
+  <div class="k acc"><small>Grease sales</small><b>$2.18M</b><span>from $1.52M</span><em>+44%</em></div>
+  <div class="k"><small>New email profiles</small><b>26,186</b><span>from 7,670</span><em>3.4×</em></div>
 </div>
 
 <section>
-  <h2>Growth against spend</h2>
-  <div class="grid2">
+  <h2>Growth against spend <small>every metric grew faster than the budget except impressions</small></h2>
+  <div class="grid32">
     <figure>
-      <svg id="c1" viewBox="0 0 520 330" width="100%" role="img" aria-label="Year on year change by metric: spend 86%, impressions 97%, reach 125%, link clicks 176%, video plays 171%, ThruPlays 163%, full completions 259%, grease sales 44%, grease orders 71%, new email profiles 241%"></svg>
-      <figcaption>Year-on-year change, last 12 months against the previous 12. Spend is the reference bar; everything above it grew faster than the budget.</figcaption>
+      <svg id="c1" viewBox="0 0 520 330" width="100%" role="img" aria-label="Year on year change by metric: spend 86%, impressions 97%, reach 125%, video plays 171%, ThruPlays 163%, full completions 259%, link clicks 176%, grease sales 44%, grease orders 71%, new email profiles 241%"></svg>
+      <figcaption>Year-on-year change. Dotted line = spend, +86%.</figcaption>
     </figure>
-    <div class="tw"><table>
-      <tr><th>Media (Meta)</th><th>Prev 12m</th><th>Last 12m</th><th>Change</th></tr>
-      <tr><td>Media spend</td><td class="n">$791,220</td><td class="n">$1,472,929</td><td class="n up">+86%</td></tr>
-      <tr><td>Impressions</td><td class="n">64.5M</td><td class="n">126.8M</td><td class="n up">+97%</td></tr>
-      <tr><td>People reached <span class="tag">Ads Manager</span></td><td class="n">3.01M</td><td class="n">6.77M</td><td class="n up">+125%</td></tr>
-      <tr><td>Link clicks</td><td class="n">601,561</td><td class="n">1,657,607</td><td class="n up">+176%</td></tr>
-      <tr><td>Outbound clicks</td><td class="n">339,217</td><td class="n">963,374</td><td class="n up">+184%</td></tr>
-      <tr><td>Adds to cart (attributed)</td><td class="n">11,379</td><td class="n">32,228</td><td class="n up">+183%</td></tr>
-      <tr><td>Purchases (attributed)</td><td class="n">6,464</td><td class="n">13,855</td><td class="n up">+114%</td></tr>
-      <tr><td>Campaigns with spend</td><td class="n">26</td><td class="n">45</td><td class="n up">+73%</td></tr>
-      <tr class="sub"><td colspan="4">Efficiency</td></tr>
-      <tr><td>CPM</td><td class="n">$12.26</td><td class="n">$11.61</td><td class="n up">−5%</td></tr>
-      <tr><td>Click-through rate</td><td class="n">0.93%</td><td class="n">1.31%</td><td class="n up">+40%</td></tr>
-      <tr><td>Cost per click</td><td class="n">$1.32</td><td class="n">$0.89</td><td class="n up">−32%</td></tr>
-      <tr><td>Frequency <span class="tag">Ads Manager</span></td><td class="n">21.4</td><td class="n">18.7</td><td class="n up">−13%</td></tr>
-      <tr><td>Cost per person reached</td><td class="n">26.3¢</td><td class="n">21.7¢</td><td class="n up">−17%</td></tr>
-      <tr><td>Cost per attributed purchase</td><td class="n">$122.40</td><td class="n">$106.31</td><td class="n up">−13%</td></tr>
-    </table></div>
-  </div>
-  <p class="note">Spend split: Australia $630k → $1.36M (+116%); international markets (USA, NZ, Canada, UK, Europe) $161k → $115k (−29%). The growth is an Australian story.</p>
-</section>
-
-<section>
-  <h2>Video: more people watching, and watching longer</h2>
-  <div class="grid2">
-    <figure>
-      <div class="legend"><span><i style="background:var(--bar2)"></i>Previous 12 months</span><span><i style="background:var(--bar)"></i>Last 12 months</span></div>
-      <svg id="c2" viewBox="0 0 520 300" width="100%" role="img" aria-label="Video view depth, previous versus last 12 months: plays 26.5M to 71.8M, ThruPlays 1.85M to 4.85M, watched 50% 1.36M to 5.01M, watched 75% 846k to 3.24M, watched 100% 307k to 1.10M"></svg>
-      <figcaption>Video view depth, millions of views. Every step of the funnel grew faster than plays did.</figcaption>
-    </figure>
-    <div class="tw"><table>
-      <tr><th>Video <span class="tag" style="border-color:var(--bg);color:var(--bg)">Ads Manager</span></th><th>Prev 12m</th><th>Last 12m</th><th>Change</th></tr>
-      <tr><td>Video plays</td><td class="n">26.5M</td><td class="n">71.8M</td><td class="n up">+171%</td></tr>
-      <tr><td>Hook rate (3s views ÷ impressions)</td><td class="n">41.2%</td><td class="n">56.6%</td><td class="n up">+15 pts</td></tr>
-      <tr><td>ThruPlays</td><td class="n">1.85M</td><td class="n">4.85M</td><td class="n up">+163%</td></tr>
-      <tr><td>30-second views</td><td class="n">1.15M</td><td class="n">2.71M</td><td class="n up">+136%</td></tr>
-      <tr><td>Watched 50%</td><td class="n">1.36M</td><td class="n">5.01M</td><td class="n up">+267%</td></tr>
-      <tr><td>Watched 75%</td><td class="n">846k</td><td class="n">3.24M</td><td class="n up">+283%</td></tr>
-      <tr><td>Watched 100%</td><td class="n">307k</td><td class="n">1.10M</td><td class="n up">+259%</td></tr>
-      <tr><td>Cost per video view</td><td class="n">2.98¢</td><td class="n">2.05¢</td><td class="n up">−31%</td></tr>
-      <tr><td>Cost per ThruPlay</td><td class="n">42.9¢</td><td class="n">30.4¢</td><td class="n up">−29%</td></tr>
-    </table></div>
-  </div>
-</section>
-
-<section>
-  <h2>Fun facts for a partner conversation</h2>
-  <div class="facts">
-    <div class="fact"><b>197,000 video plays a day</b><span>71.8M plays in 12 months is about 8,200 an hour, around the clock.</span></div>
-    <div class="fact"><b>Over a million watched to the end</b><span>1.10M full completions, 3.6 times the year before.</span></div>
-    <div class="fact"><b>Attention grew 3× faster than spend</b><span>Spend +86%; video plays +171%; full completions +259%.</span></div>
-    <div class="fact"><b>Broader and fresher, not louder</b><span>Reach +125% while frequency fell 13% and CPM fell 5%.</span></div>
-    <div class="fact"><b>4.6 people reached per dollar</b><span>Up from 3.8. Cost per person reached fell from 26.3¢ to 21.7¢.</span></div>
-    <div class="fact"><b>1.66M link clicks</b><span>Nearly triple the year before, on 86% more spend.</span></div>
-    <div class="fact"><b>Two-year totals</b><span>About 98M video plays, 191M impressions and $2.26M of media.</span></div>
-    <div class="fact"><b>3.4× the new email profiles</b><span>26,186 new profiles in 12 months, 15,317 of them through the popup that went live in October 2025.</span></div>
-  </div>
-</section>
-
-<section>
-  <h2>Grease: the partner brand we already grow</h2>
-  <div class="grid2">
-    <div class="tw"><table>
-      <tr><th>Product (net sales ex GST)</th><th>Prev 12m</th><th>Last 12m</th><th>Sales</th><th>Orders</th></tr>
-      <tr><td>KAJO Grease Packs</td><td class="n">$1,062,103</td><td class="n">$1,590,223</td><td class="n up">+50%</td><td class="n">3,956 → 5,517 (+39%)</td></tr>
-      <tr><td>Battery Grease Gun KAJO Adapter</td><td class="n">$256,714</td><td class="n">$297,352</td><td class="n up">+16%</td><td class="n">2,544 → 3,852 (+51%)</td></tr>
-      <tr><td>Quick Release Grease Coupler</td><td class="n">$47,780</td><td class="n">$167,428</td><td class="n up">+250%</td><td class="n">1,466 → 5,055 (+245%)</td></tr>
-      <tr><td>KAJO Grease Gun</td><td class="n">$148,685</td><td class="n">$129,882</td><td class="n">−13%</td><td class="n">1,022 → 972 (−5%)</td></tr>
-      <tr class="sub"><td>Grease system total</td><td class="n">$1,515,282</td><td class="n">$2,184,885</td><td class="n">+44%</td><td class="n">8,988 → 15,396 (+71%)</td></tr>
-    </table></div>
-    <div>
-      <div class="facts" style="grid-template-columns:1fr">
-        <div class="fact"><b>$2.18M of grease in 12 months</b><span>Up 44% on the year before, with 71% more orders. The average grease order fell from $169 to $142 as couplers and adapters brought in smaller first orders.</span></div>
-        <div class="fact"><b>The coupler is the door</b><span>Quick Release Grease Coupler orders rose 3.4 times. It is the cheapest way into the grease system and the adapter (+51% orders) follows it.</span></div>
-        <div class="fact"><b>One caveat on units</b><span>Grease pack items jumped from 13,959 to 112,837 because packs have been counted per tube since August 2025. Compare grease on sales and orders, not items.</span></div>
-      </div>
+    <div class="mid">
+      <div class="m"><small>CPM</small><b>$11.61</b><span>from $12.26 · −5%</span></div>
+      <div class="m"><small>Cost per click</small><b>$0.89</b><span>from $1.32 · −32%</span></div>
+      <div class="m"><small>Cost per person reached</small><b>21.7¢</b><span>from 26.3¢ · −17%</span></div>
+      <div class="m"><small>Cost per video view</small><b>2.05¢</b><span>from 2.98¢ · −31%</span></div>
+      <div class="m"><small>Frequency</small><b>18.7</b><span>from 21.4 · −13%</span></div>
+      <div class="m"><small>People reached per $1</small><b>4.6</b><span>from 3.8 · +21%</span></div>
+      <div class="m"><small>Click-through rate</small><b>1.31%</b><span>from 0.93% · +40%</span></div>
+      <div class="m"><small>Australia spend</small><b>$1.36M</b><span>from $630k · +116%</span></div>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>Email list: 3.4× the new profiles</h2>
-  <div class="grid2">
+  <h2>Video <small>more people watching, and watching longer</small></h2>
+  <div class="grid32">
     <figure>
-      <div class="legend"><span><i style="background:var(--bar)"></i>Popup (Alia) signups</span><span><i style="background:var(--bar3)"></i>All other new profiles</span></div>
-      <svg id="c3" viewBox="0 0 520 300" width="100%" role="img" aria-label="New Klaviyo profiles by month, October 2024 to September 2026, with the popup share stacked"></svg>
-      <figcaption>New Klaviyo profiles by month. The popup went live in October 2025; June 2026 (EOFY sale) is the peak at 3,657. September 2026 runs to the 22nd.</figcaption>
+      <div class="legend"><span><i style="background:var(--bar2)"></i>Previous 12 months</span><span><i style="background:var(--bar)"></i>Last 12 months</span></div>
+      <svg id="c2" viewBox="0 0 520 300" width="100%" role="img" aria-label="Video view depth, previous versus last 12 months: plays 26.5M to 71.8M, ThruPlays 1.85M to 4.85M, watched 50% 1.36M to 5.01M, watched 75% 846k to 3.24M, watched 100% 307k to 1.10M"></svg>
+      <figcaption>Video view depth, millions. Every step of the funnel grew faster than plays.</figcaption>
     </figure>
-    <div class="tw"><table>
-      <tr><th>Klaviyo</th><th>Oct 24 to Sep 25</th><th>Oct 25 to Sep 26</th><th>Change</th></tr>
-      <tr><td>New profiles added</td><td class="n">7,670</td><td class="n">26,186</td><td class="n up">+241%</td></tr>
-      <tr><td>Of which popup (Alia) signups</td><td class="n">680</td><td class="n">15,317</td><td class="n up">22×</td></tr>
-      <tr><td>Average per month</td><td class="n">639</td><td class="n">2,182</td><td class="n up">+241%</td></tr>
-      <tr><td>Best month</td><td class="n">986 (Jun 25)</td><td class="n">3,657 (Jun 26)</td><td class="n up">+271%</td></tr>
-      <tr><td>Quietest month</td><td class="n">494 (Apr 25)</td><td class="n">1,288 (Jan 26)</td><td class="n up">+161%</td></tr>
-      <tr><td>Popup share of new profiles</td><td class="n">9%</td><td class="n">58%</td><td class="n up">+49 pts</td></tr>
-    </table></div>
+    <div class="mid">
+      <div class="m"><small>Hook rate</small><b>57%</b><span>3s views ÷ impressions · from 41%</span></div>
+      <div class="m"><small>Plays per day</small><b>197k</b><span>about 8,200 an hour</span></div>
+      <div class="m"><small>ThruPlays</small><b>4.85M</b><span>from 1.85M · +163%</span></div>
+      <div class="m"><small>Watched 75%</small><b>3.24M</b><span>from 846k · +283%</span></div>
+      <div class="m"><small>Cost per ThruPlay</small><b>30.4¢</b><span>from 42.9¢ · −29%</span></div>
+      <div class="m"><small>Two-year totals</small><b>98M</b><span>plays · 191M impressions · $2.26M media</span></div>
+    </div>
   </div>
-  <p class="note">About 29% of popup signups go on to buy, most within a month, so the list growth converts into orders quickly rather than sitting as a mailing list.</p>
 </section>
 
 <section>
-  <h2>Other facts from earlier pulls</h2>
-  <p class="note" style="margin:0 0 10px">From snapshots taken in August and September 2026 (not re-run for this report). Dates shown.</p>
-  <div class="facts">
-    <div class="fact"><b>PRO Mat: $1.2k to $273.7k</b><span>Same 72-day window, 1 Jul to 10 Sep, 2025 versus 2026. 1,318 units. A product taken from nothing to a quarter-million in one quarter.</span></div>
-    <div class="fact"><b>+75% net sales like for like</b><span>1 Jul to 10 Sep: $557.8k → $975.6k; orders 1,622 → 3,836 (+136%); units 11,220 → 29,615.</span></div>
-    <div class="fact"><b>92% of impressions are cold</b><span>39.2M impressions in the 90 days to 17 Aug 2026, 36.3M of them prospecting to new audiences, not retargeting.</span></div>
-    <div class="fact"><b>14 countries, all 8 states and territories</b><span>Australia $3.76M, USA $164k, NZ $136k, UK $67k, Canada $58k over the sample window (snapshot 11 Sep 2026).</span></div>
-    <div class="fact"><b>Cover buyers attach grease at 7.9%</b><span>12-month mature cohort of 2,182 customers: grease buyers attach accessories 3.8% and covers 3.4%.</span></div>
-    <div class="fact"><b>Also launched from zero this year</b><span>Package Protection $15.8k · The Hauler $12.5k · Magnetic Tool Mat $10.9k · Digger Wipes $7.7k.</span></div>
+  <h2>Grease <small>the partner brand we already grow</small></h2>
+  <div class="grid32">
+    <div class="tw"><table>
+      <tr><th>Product (net sales ex GST)</th><th>Prev</th><th>Last</th><th>Sales</th><th>Orders</th></tr>
+      <tr><td>KAJO Grease Packs</td><td class="n">$1.06M</td><td class="n">$1.59M</td><td class="n up">+50%</td><td class="n up">+39%</td></tr>
+      <tr><td>Battery Grease Gun KAJO Adapter</td><td class="n">$257k</td><td class="n">$297k</td><td class="n up">+16%</td><td class="n up">+51%</td></tr>
+      <tr><td>Quick Release Grease Coupler</td><td class="n">$48k</td><td class="n">$167k</td><td class="n up">+250%</td><td class="n up">+245%</td></tr>
+      <tr><td>KAJO Grease Gun</td><td class="n">$149k</td><td class="n">$130k</td><td class="n">−13%</td><td class="n">−5%</td></tr>
+      <tr><td><b>Grease system</b></td><td class="n"><b>$1.52M</b></td><td class="n"><b>$2.18M</b></td><td class="n up">+44%</td><td class="n up">+71%</td></tr>
+    </table></div>
+    <div class="mid">
+      <div class="m"><small>Grease orders</small><b>15,396</b><span>from 8,988 · +71%</span></div>
+      <div class="m"><small>Coupler orders</small><b>3.4×</b><span>1,466 to 5,055: the entry point</span></div>
+      <div class="m"><small>Grease packs</small><b>$1.59M</b><span>+50% · 5,517 orders</span></div>
+      <div class="m"><small>Avg grease order</small><b>$142</b><span>from $169: more small first orders</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Email list <small>3.4× the new profiles</small></h2>
+  <div class="grid32">
+    <figure>
+      <div class="legend"><span><i style="background:var(--bar)"></i>Popup signups</span><span><i style="background:var(--bar3)"></i>Other new profiles</span></div>
+      <svg id="c3" viewBox="0 0 520 300" width="100%" role="img" aria-label="New Klaviyo profiles by month, October 2024 to September 2026, with the popup share stacked"></svg>
+      <figcaption>New Klaviyo profiles by month. Popup live from October 2025. September 2026 to the 22nd.</figcaption>
+    </figure>
+    <div class="mid">
+      <div class="m"><small>New profiles, 12 months</small><b>26,186</b><span>from 7,670 · +241%</span></div>
+      <div class="m"><small>Per month</small><b>2,182</b><span>from 639</span></div>
+      <div class="m"><small>Popup signups</small><b>15,317</b><span>58% of new profiles, from 9%</span></div>
+      <div class="m"><small>Best month</small><b>3,657</b><span>June 2026 · prior best 986</span></div>
+      <div class="m"><small>Signups who buy</small><b>29%</b><span>most within a month</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Earlier pulls <small>snapshots from Aug and Sep 2026, not re-run</small></h2>
+  <div class="mid">
+    <div class="m"><small>PRO Mat, 1 Jul to 10 Sep</small><b>$274k</b><span>from $1.2k · 1,318 units</span></div>
+    <div class="m"><small>Net sales, same 72 days</small><b>+75%</b><span>$558k to $976k · orders +136%</span></div>
+    <div class="m"><small>Cold prospecting</small><b>92%</b><span>of 39.2M impressions, 90 days to 17 Aug</span></div>
+    <div class="m"><small>Countries</small><b>14</b><span>all 8 AU states and territories</span></div>
+    <div class="m"><small>Cover buyers adding grease</small><b>7.9%</b><span>12-month cohort of 2,182</span></div>
+    <div class="m"><small>Launched from zero</small><b>4</b><span>Package Protection, Hauler, Tool Mat, Wipes</span></div>
   </div>
 </section>
 
 <div class="src">
-  <b>Sources and caveats</b>
-  <ul>
-    <li>Windows: Meta and Shopify 23 Sep 2024 to 22 Sep 2025 versus 23 Sep 2025 to 22 Sep 2026. Email: calendar months October to September, with September 2026 to the 22nd.</li>
-    <li>Verified in this workspace on 23 Sep 2026: spend, impressions, clicks, attributed carts and purchases (Meta insights via the diggerlid-mer endpoint); grease sales and orders (ShopifyQL); new profiles and popup signups (Klaviyo).</li>
-    <li>Marked "Ads Manager": reach, frequency and video rows from a direct Ads Manager pull the same day (DiggerLid AU account, which also delivers NZ). Its spend and impressions match the verified rows exactly. The live endpoint does not request reach or video fields; a reach endpoint is written and ready to deploy so these refresh automatically next time.</li>
-    <li>Meta-attributed purchases and value overlap with email, organic and direct. Read them as efficiency trends, not revenue. Shopify net sales are ex GST.</li>
-    <li>Spend and ROAS figures are for internal use. For an external partner deck, lead with reach, plays, completions, growth rates, countries and the email list.</li>
-  </ul>
+  <b>Sources.</b> Verified 23 Sep 2026: spend, impressions, clicks, attributed carts and purchases (Meta insights); grease sales and orders (Shopify, net ex GST); new profiles (Klaviyo, calendar months Oct to Sep). Reach, frequency and video rows: same-day Ads Manager pull, DiggerLid AU account, whose spend and impressions match to the dollar. Grease unit counts are excluded: packs have been counted per tube since Aug 2025. Spend and ROAS are internal; remove before sharing externally.
 </div>
 </div>
 <div class="tip" id="tip"></div>
@@ -209,19 +172,16 @@ function hide(){tip.style.display='none';}
 function el(n,a){var e=document.createElementNS('http://www.w3.org/2000/svg',n);for(var k in a)e.setAttribute(k,a[k]);return e;}
 function fmt(v){return v>=1e6?(v/1e6).toFixed(2).replace(/\.?0+$/,'')+'M':v>=1e3?(v/1e3).toFixed(0)+'k':String(v);}
 var cs=getComputedStyle(document.documentElement);
-var C={bar:cs.getPropertyValue('--bar').trim(),bar2:cs.getPropertyValue('--bar2').trim(),bar3:cs.getPropertyValue('--bar3').trim(),acc:cs.getPropertyValue('--acc').trim(),ink:cs.getPropertyValue('--ink').trim()};
-// Chart 1: YoY change bars
+var C={bar:cs.getPropertyValue('--bar').trim(),bar2:cs.getPropertyValue('--bar2').trim(),bar3:cs.getPropertyValue('--bar3').trim(),ink:cs.getPropertyValue('--ink').trim()};
 var d1=[['Media spend',86],['Impressions',97],['People reached',125],['Video plays',171],['ThruPlays',163],['Full completions',259],['Link clicks',176],['Grease sales',44],['Grease orders',71],['New email profiles',241]];
 var s=document.getElementById('c1'),L=150,W=520,rowH=27,top=14,max=280;
 d1.forEach(function(r,i){var y=top+i*rowH,w=(W-L-60)*r[1]/max;
- var g=el('g',{});g.appendChild(el('text',{x:L-8,y:y+16,'text-anchor':'end','font-size':'12'})).textContent=r[0];
- var rect=el('rect',{x:L,y:y+4,width:w,height:17,fill:r[0]==='Media spend'?C.bar2:C.bar,rx:0});
- rect.addEventListener('mousemove',function(e){show(e,r[0]+': +'+r[1]+'%')});rect.addEventListener('mouseleave',hide);g.appendChild(rect);
- g.appendChild(el('text',{x:L+w+6,y:y+16,'font-size':'12','font-weight':'700'})).textContent='+'+r[1]+'%';
- s.appendChild(g);});
+ s.appendChild(el('text',{x:L-8,y:y+16,'text-anchor':'end','font-size':'12'})).textContent=r[0];
+ var rect=el('rect',{x:L,y:y+4,width:w,height:17,fill:r[0]==='Media spend'?C.bar2:C.bar});
+ rect.addEventListener('mousemove',function(e){show(e,r[0]+': +'+r[1]+'%')});rect.addEventListener('mouseleave',hide);s.appendChild(rect);
+ s.appendChild(el('text',{x:L+w+6,y:y+16,'font-size':'12','font-weight':'700'})).textContent='+'+r[1]+'%';});
 var sx=L+(W-L-60)*86/max;s.appendChild(el('line',{x1:sx,y1:top,x2:sx,y2:top+d1.length*rowH,stroke:C.ink,'stroke-dasharray':'3 3','stroke-width':'1'}));
 s.appendChild(el('text',{x:sx+4,y:top+d1.length*rowH+14,'font-size':'11',class:'mute'})).textContent='spend +86%';
-// Chart 2: video depth grouped bars (millions)
 var d2=[['Video plays',26.5,71.8],['ThruPlays',1.85,4.85],['Watched 50%',1.36,5.01],['Watched 75%',0.846,3.24],['Watched 100%',0.307,1.10]];
 var s2=document.getElementById('c2'),L2=110,gw=W-L2-70,mx=72;
 [0,20,40,60].forEach(function(t){var x=L2+gw*t/mx;s2.appendChild(el('line',{x1:x,y1:8,x2:x,y2:8+d2.length*54,class:'grid','stroke-width':'1'}));s2.appendChild(el('text',{x:x,y:8+d2.length*54+14,'font-size':'11','text-anchor':'middle',class:'mute'})).textContent=t+'M';});
@@ -229,7 +189,6 @@ d2.forEach(function(r,i){var y=10+i*54;s2.appendChild(el('text',{x:L2-8,y:y+26,'
  [[r[1],C.bar2,0,'Previous'],[r[2],C.bar,22,'Last']].forEach(function(b){var w=Math.max(gw*b[0]/mx,1.5);var rect=el('rect',{x:L2,y:y+b[2],width:w,height:18,fill:b[1]});
   rect.addEventListener('mousemove',function(e){show(e,b[3]+' 12 months · '+r[0]+': '+b[0]+'M')});rect.addEventListener('mouseleave',hide);s2.appendChild(rect);
   s2.appendChild(el('text',{x:L2+w+5,y:y+b[2]+13,'font-size':'11'})).textContent=b[0]+'M';});});
-// Chart 3: monthly email profiles stacked
 var m=[['Oct 24',585,44],['Nov',776,57],['Dec',722,64],['Jan 25',593,35],['Feb',546,65],['Mar',567,54],['Apr',494,34],['May',553,57],['Jun',986,88],['Jul',669,58],['Aug',604,66],['Sep',575,58],['Oct 25',1950,1207],['Nov',3331,2006],['Dec',1861,1246],['Jan 26',1288,893],['Feb',1679,1127],['Mar',1708,1121],['Apr',1747,1185],['May',2409,1413],['Jun',3657,1356],['Jul',2422,1327],['Aug',2576,1578],['Sep',1558,858]];
 var s3=document.getElementById('c3'),L3=44,H3=230,top3=12,gw3=W-L3-12,bw=gw3/m.length,mx3=4000;
 [0,1000,2000,3000,4000].forEach(function(t){var y=top3+H3-H3*t/mx3;s3.appendChild(el('line',{x1:L3,y1:y,x2:W-12,y2:y,class:'grid','stroke-width':'1'}));s3.appendChild(el('text',{x:L3-6,y:y+4,'font-size':'11','text-anchor':'end',class:'mute'})).textContent=t?fmt(t):'0';});
