@@ -2,7 +2,7 @@
 
 Live deck (Slides artifact, private until shared): https://claude.ai/artifact/PfB6UG6T4Aa6wxaXDGrgNZ
 
-`gen_deck_v3_1.py` (deck 3.1, current) regenerates; `gen_deck_v3.py` is 3.0, `gen_deck_v2.py` 2.5 and `gen_deck.py` the v1 draft. It regenerates every slide file from the numbers in RP-003 to RP-006, the H2 forecast,
+`gen_deck_v3_2.py` (deck 3.2, current) regenerates; earlier versions are kept as gen_deck_v3_1.py, gen_deck_v3.py, gen_deck_v2.py and gen_deck.py. It regenerates every slide file from the numbers in RP-003 to RP-006, the H2 forecast,
 the concept board and Matt's handwritten planning notes (22 Sep 2026). Edit the data in the
 script, run it, and republish the changed `project/slides/*.html` files to the artifact URL.
 
@@ -45,3 +45,11 @@ budget $249,489 (Meta 88%, TikTok 10%, Google 2%), 3,896 orders, profit $165,771
 one page, target, EE inputs, unit economics, paid, offer, deliverables, timeline, comms, ops, measure,
 decisions, exec FAQ, definitions. Deck keeps the decided 19 Nov to 2 Dec dates; the tool export still
 runs 18 Nov to 1 Dec. Open inputs: product cost 32%, gift uptake 43 / 15, stock cover.
+
+## Deck 3.2 (23 Sep 2026): final structure, 33 slides
+Matt chose the EE tool dates: hype Mon 16 and Tue 17 Nov, sale Wed 18 Nov 6:00 AM to Tue 1 Dec 11:59 PM
+AEDT (Black Friday day 10, Cyber Monday day 13, optional extension Wed 2 Dec). Every dated slide, the
+drops calendar, the send table and the timeline are re-based to that. Fourteen slides removed to cut
+volume: the five section dividers, went well / went poorly, repeat classification, EE inputs (open
+items folded into the profit slide), hangover, offer rules, character, owners, team FAQ and definitions.
+Placeholders for owners, test budgets and kit counts are kept for the room to fill.
