@@ -49,7 +49,7 @@ def big(num, label, bg=Y40, nsize=68):
             f'<p style="font-size:25px; line-height:1.3; color:{K90}">{label}</p></div>')
 
 def table(headers, rows, widths, size=25, hl=None, align_first_left=True):
-    th="".join(f'<th style="width:{w}%; text-align:{"left" if (i==0 or not align_first_left) else "left"}">{h}</th>' for i,(h,w) in enumerate(zip(headers,widths)))
+    th="".join(f'<th style="width:{w}%; text-align:left; color:{W}; background:{K}">{h}</th>' for i,(h,w) in enumerate(zip(headers,widths)))
     trs=""
     for ri,r in enumerate(rows):
         bg=f' style="background:{Y40}"' if hl is not None and ri in (hl if isinstance(hl,(list,tuple)) else [hl]) else ""
@@ -125,13 +125,13 @@ S["s-research"]=section("s-research","01","Research","What the last three sales 
 
 S["scorecard"]=content("scorecard","The last three sales, side by side",
  table(["Measure","BFCM 2025","EOFY 2026","Father&#39;s Day 2026"],[
-  ["Net revenue over the sale","$535k (14 days)","$543k (14 days)","$292k (16 days)"],["Orders","1,759","2,107","1,022"],
+  ["Sale dates","18 Nov to 1 Dec 2025","17 to 30 Jun 2026","23 Aug to 7 Sep 2026"],["Net revenue over the sale","$535k (14 days)","$543k (14 days)","$292k (16 days)"],["Orders","1,759","2,107","1,022"],
   ["Share of sale revenue in the first 48 hours","31%","19%","11%"],["Mid-sale revenue per day","5.3%","4.9%","6.7%"],
   ["Share of sale revenue in the last 48 hours","15%","32%","9%"],["Revenue from returning customers","22%","29%","22%"],
   ["Sale landing page conversion","2.09%","3.38%","2.33%"],["Orders from landing page sessions","373","382","104"],
-  ["Meta spend as % of revenue","25.5% (month)","25% (month)","28% (sale window)"]],[40,20,20,20],size=25,hl=6)+
+  ["Meta spend as % of revenue","25.5% (month)","25% (month)","28% (sale window)"]],[40,20,20,20],size=25,hl=7)+
  note("BFCM front-loads because the urgency is the launch; EOFY back-loads because the urgency is 30 June. Father&#39;s Day (23 Aug to 7 Sep) ran flat: no launch spike and no deadline spike, about 6.7% a day throughout, because the gift deadline sat after the sale ended."),
- src="Shopify analytics, Meta; Father&#39;s Day 23 Aug to 7 Sep 2026",notes="Father&#39;s Day ran 16 days. Meta spend is shown for the sale window; the other two sales show the whole month.")
+ src="Shopify analytics, Meta, Klaviyo send log",notes="Father&#39;s Day ran 16 days. Meta spend is shown for the sale window; the other two sales show the whole month.")
 
 S["mix"]=content("mix","What sold in the 2025 sale",
  f'<div style="display:flex; gap:28px; flex:1"><div style="flex:3">'+table(["Product","Net revenue","Share","Orders"],[
