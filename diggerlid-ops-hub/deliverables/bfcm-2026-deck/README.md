@@ -2,7 +2,7 @@
 
 Live deck (Slides artifact, private until shared): https://claude.ai/artifact/PfB6UG6T4Aa6wxaXDGrgNZ
 
-`gen_deck_v3_2.py` (deck 3.2, current) regenerates; earlier versions are kept as gen_deck_v3_1.py, gen_deck_v3.py, gen_deck_v2.py and gen_deck.py. It regenerates every slide file from the numbers in RP-003 to RP-006, the H2 forecast,
+`gen_deck_v3_3.py` (deck 3.3, current) regenerates; earlier versions are kept as gen_deck_v3_2.py, gen_deck_v3_1.py, gen_deck_v3.py, gen_deck_v2.py and gen_deck.py. It regenerates every slide file from the numbers in RP-003 to RP-006, the H2 forecast,
 the concept board and Matt's handwritten planning notes (22 Sep 2026). Edit the data in the
 script, run it, and republish the changed `project/slides/*.html` files to the artifact URL.
 
@@ -53,3 +53,15 @@ drops calendar, the send table and the timeline are re-based to that. Fourteen s
 volume: the five section dividers, went well / went poorly, repeat classification, EE inputs (open
 items folded into the profit slide), hangover, offer rules, character, owners, team FAQ and definitions.
 Placeholders for owners, test budgets and kit counts are kept for the room to fill.
+
+## Deck 3.3 (24 Sep 2026): exec cut, 14 slides
+Latest EE tool run on the one-page summary: $982,777 on a $90k base week, $242,893 spend (24.7%),
+Low Repeat. Gift with purchase revised to $399 (Digger Wipes + free shipping), $599 (+ Magnet Tool Mat)
+and $799 (+ Drawbar Cover). Bundles priced from store RRPs: Hardcore Tradie $666 (RRP $1,110, 40% off),
+Ultimate Earthmover $1,021 (RRP $1,459, 30% off; adds hydraulic cap set, phone cradle, tool caddy),
+Ludicrous $1,058 (RRP $2,116, 50% off; adds The Hauler at full $599 RRP and a tool caddy, two PRO Mat
+Plus in place of the OG). Father's Day 2026 (23 Aug to 7 Sep) added to the three-sale scorecard.
+Mid-sale push on Mon 23 Nov is a new content drop and a PRO Mat gifting angle, driving to one
+Christmas gifting page. The daily knock-off deal mechanic is removed: it does not exist. Deliverable
+due dates are TBC. Slides kept: cover, one page, agenda, three-sale scorecard, sale curve, eight
+moves, offer, bundles, Christmas gifting, theme, deliverables, decisions, exec FAQ, close.
