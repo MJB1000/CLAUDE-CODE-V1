@@ -1,9 +1,9 @@
 <title>Reach and Media Report</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=League+Spartan:wght@400;600;700&display=swap">
 <style>
-:root{--bg:#fbfaf6;--ink:#231f20;--ink2:#3a3637;--mute:#6b6663;--line:#d9d5cc;--panel:#ffffff;--tint:#fbf7a3;--acc:#f5eb19;--bar:#231f20;--bar2:#b5afa3;--bar3:#8f8a80}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#161514;--ink:#f3f1ea;--ink2:#d8d4cb;--mute:#a8a39c;--line:#3a3736;--panel:#211f1e;--tint:#3a3711;--acc:#f5eb19;--bar:#f5eb19;--bar2:#5a5654;--bar3:#8a857e;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#161514;--ink:#f3f1ea;--ink2:#d8d4cb;--mute:#a8a39c;--line:#3a3736;--panel:#211f1e;--tint:#3a3711;--acc:#f5eb19;--bar:#f5eb19;--bar2:#5a5654;--bar3:#8a857e;color-scheme:dark}
+:root{--bg:#fbfaf6;--ink:#231f20;--ink2:#3a3637;--mute:#6b6663;--line:#d9d5cc;--panel:#ffffff;--tint:#fbf7a3;--acc:#f5eb19;--bar:#231f20;--bar2:#b5afa3;--bar3:#8f8a80;--m1:#fdf9c4;--m2:#f5eb19;--m3:#c9bf2a;--m4:#8a8330;--m5:#231f20}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#161514;--ink:#f3f1ea;--ink2:#d8d4cb;--mute:#a8a39c;--line:#3a3736;--panel:#211f1e;--tint:#3a3711;--acc:#f5eb19;--bar:#f5eb19;--bar2:#5a5654;--bar3:#8a857e;--m1:#3a3711;--m2:#6b651a;--m3:#a39b22;--m4:#d4c91f;--m5:#f5eb19;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#161514;--ink:#f3f1ea;--ink2:#d8d4cb;--mute:#a8a39c;--line:#3a3736;--panel:#211f1e;--tint:#3a3711;--acc:#f5eb19;--bar:#f5eb19;--bar2:#5a5654;--bar3:#8a857e;--m1:#3a3711;--m2:#6b651a;--m3:#a39b22;--m4:#d4c91f;--m5:#f5eb19;color-scheme:dark}
 body{background:var(--bg);color:var(--ink);font-family:'League Spartan',Arial,sans-serif;font-size:16px;line-height:1.4;padding-block:0 48px;padding-inline:16px;font-variant-numeric:tabular-nums}
 .wrap{max-width:1080px;margin:0 auto}
 h1,h2{font-family:'Roboto Condensed','Arial Narrow',Arial,sans-serif;text-transform:uppercase;line-height:1.05;margin:0;text-wrap:balance}
@@ -18,7 +18,7 @@ header p{color:var(--mute);font-size:15px;margin-top:8px}
 .big{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
 .k{background:var(--panel);border:2px solid var(--ink);padding:16px 18px 14px;display:flex;flex-direction:column;gap:2px;position:relative}
 .k.acc{background:var(--tint)}
-.k small{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.7px}
+.k small{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.7px;padding-right:64px}
 .k b{font-family:'Roboto Condensed',Arial,sans-serif;font-size:clamp(40px,4.6vw,54px);font-weight:700;line-height:1;margin:4px 0 6px}
 .k span{font-size:14px;color:var(--ink2)}
 .k em{position:absolute;top:12px;right:12px;font-style:normal;font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;font-size:18px;background:var(--ink);color:var(--bg);padding:3px 8px}
@@ -30,9 +30,9 @@ header p{color:var(--mute);font-size:15px;margin-top:8px}
 .m small{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.6px}
 .m span{display:block;font-size:13px;color:var(--ink2);margin-top:3px}
 section{margin:30px 0 0}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
 .grid32{display:grid;grid-template-columns:3fr 2fr;gap:16px;align-items:start}
-@media (max-width:760px){.grid2,.grid32{grid-template-columns:1fr}}
+.grid23{display:grid;grid-template-columns:2fr 3fr;gap:16px;align-items:start}
+@media (max-width:760px){.grid32,.grid23{grid-template-columns:1fr}}
 figure{margin:0;background:var(--panel);border:1px solid var(--line);padding:12px}
 figcaption{font-size:13px;color:var(--mute);margin-top:6px}
 .legend{display:flex;gap:16px;font-size:13px;color:var(--mute);margin-bottom:6px;flex-wrap:wrap}
@@ -40,16 +40,22 @@ figcaption{font-size:13px;color:var(--mute);margin-top:6px}
 svg text{font-family:'League Spartan',Arial,sans-serif;fill:var(--ink)}
 svg .mute{fill:var(--mute)}
 svg .grid{stroke:var(--line)}
+svg .state{stroke:var(--bg);stroke-width:1.5}
 .tw{overflow-x:auto;border:1px solid var(--line)}
-table{border-collapse:collapse;width:100%;font-size:14px;min-width:380px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:340px}
 th{background:var(--ink);color:var(--bg);text-align:left;padding:7px 10px;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
 :root[data-theme="dark"] th{color:#161514}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) th{color:#161514}}
 td{padding:6px 10px;border-bottom:1px solid var(--line)}
 td.n{text-align:right;white-space:nowrap}
 td.up{font-weight:700}
-.stack{display:flex;flex-direction:column;gap:10px}
-.src{font-size:12px;color:var(--mute);border-top:1px solid var(--line);padding-top:10px;margin-top:28px;line-height:1.5}
+.pts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:760px){.pts{grid-template-columns:1fr}}
+.pt{background:var(--panel);border:2px solid var(--ink);padding:14px 16px}
+.pt h3{font-family:'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;font-size:20px;margin:0 0 8px;letter-spacing:.5px}
+.pt ol{margin:0;padding-left:20px;font-size:15px;line-height:1.45}
+.pt li{margin:4px 0}
+.pt li b{font-family:'Roboto Condensed',Arial,sans-serif;font-size:22px}
 .tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-size:13px;padding:5px 8px;border-radius:3px;display:none;z-index:5;white-space:nowrap}
 </style>
 <div class="wrap">
@@ -60,21 +66,39 @@ td.up{font-weight:700}
 </header>
 
 <div class="big">
-  <div class="k acc"><small>People reached</small><b>6.77M</b><span>from 3.01M</span><em>2.25×</em></div>
-  <div class="k"><small>Video plays</small><b>71.8M</b><span>from 26.5M</span><em>2.7×</em></div>
-  <div class="k acc"><small>Watched to the end</small><b>1.10M</b><span>from 307k</span><em>3.6×</em></div>
+  <div class="k acc"><small>Media spend</small><b>$1.47M</b><span>from $791k</span><em>+86%</em></div>
+  <div class="k"><small>People reached</small><b>6.77M</b><span>from 3.01M</span><em>2.25×</em></div>
+  <div class="k acc"><small>Video plays</small><b>71.8M</b><span>from 26.5M</span><em>2.7×</em></div>
   <div class="k"><small>Impressions</small><b>126.8M</b><span>from 64.5M</span><em>+97%</em></div>
+  <div class="k acc"><small>Machine operator orders</small><b>13,359</b><span>grease and covers · from 7,559</span><em>+77%</em></div>
+  <div class="k"><small>Australian orders</small><b>16,495</b><span>from 7,307</span><em>2.3×</em></div>
   <div class="k acc"><small>Link clicks</small><b>1.66M</b><span>from 602k</span><em>2.8×</em></div>
-  <div class="k"><small>Media spend</small><b>$1.47M</b><span>from $791k</span><em>+86%</em></div>
-  <div class="k acc"><small>Grease sales</small><b>$2.18M</b><span>from $1.52M</span><em>+44%</em></div>
   <div class="k"><small>New email profiles</small><b>26,186</b><span>from 7,670</span><em>3.4×</em></div>
 </div>
+
+<section>
+  <h2>Media spend, month by month <small>Meta, calendar months Oct 2024 to Sep 2026</small></h2>
+  <div class="grid32">
+    <figure>
+      <svg id="c0" viewBox="0 0 520 290" width="100%" role="img" aria-label="Monthly Meta spend October 2024 to September 2026, rising from about 47 thousand to a peak of 198 thousand in June 2026"></svg>
+      <figcaption>Monthly Meta spend, AUD thousands. Dotted line marks the start of the last 12 months. September 2026 runs to the 22nd.</figcaption>
+    </figure>
+    <div class="mid">
+      <div class="m"><small>Average month</small><b>$121k</b><span>from $66k · +83%</span></div>
+      <div class="m"><small>Biggest month</small><b>$198k</b><span>June 2026 · prior peak $92k</span></div>
+      <div class="m"><small>Months over $100k</small><b>9 of 12</b><span>none in the previous year</span></div>
+      <div class="m"><small>Australia share</small><b>92%</b><span>of spend, from 80%</span></div>
+      <div class="m"><small>BFCM month</small><b>$166k</b><span>Nov 2025 · from $67k</span></div>
+      <div class="m"><small>Cost per attributed purchase</small><b>$106</b><span>from $122 · −13%</span></div>
+    </div>
+  </div>
+</section>
 
 <section>
   <h2>Growth against spend <small>reach, video, clicks and the email list all grew faster than spend</small></h2>
   <div class="grid32">
     <figure>
-      <svg id="c1" viewBox="0 0 520 385" width="100%" role="img" aria-label="Year on year change by metric: spend 86%, impressions 97%, reach 125%, video plays 171%, ThruPlays 163%, full completions 259%, link clicks 176%, grease sales 44%, grease orders 71%, covers sales 23%, covers orders 43%, new email profiles 241%"></svg>
+      <svg id="c1" viewBox="0 0 520 385" width="100%" role="img" aria-label="Year on year change by metric: spend 86%, impressions 97%, reach 125%, video plays 171%, ThruPlays 163%, full completions 259%, link clicks 176%, operator orders 77%, Australian orders 126%, new email profiles 241%"></svg>
       <figcaption>Year-on-year change. Dotted line = spend, +86%.</figcaption>
     </figure>
     <div class="mid">
@@ -85,7 +109,7 @@ td.up{font-weight:700}
       <div class="m"><small>Frequency</small><b>18.7</b><span>from 21.4 · −13%</span></div>
       <div class="m"><small>People reached per $1</small><b>4.6</b><span>from 3.8 · +21%</span></div>
       <div class="m"><small>Click-through rate</small><b>1.31%</b><span>from 0.93% · +40%</span></div>
-      <div class="m"><small>Australia spend</small><b>$1.36M</b><span>from $630k · +116%</span></div>
+      <div class="m"><small>Watched to the end</small><b>1.10M</b><span>from 307k · 3.6×</span></div>
     </div>
   </div>
 </section>
@@ -108,47 +132,53 @@ td.up{font-weight:700}
 </section>
 
 <section>
-  <h2>Grease <small>the partner brand we already grow</small></h2>
-  <div class="grid32">
-    <div class="tw"><table>
-      <tr><th>Product (net sales ex GST)</th><th>Prev</th><th>Last</th><th>Sales</th><th>Orders</th></tr>
-      <tr><td>KAJO Grease Packs</td><td class="n">$1.06M</td><td class="n">$1.59M</td><td class="n up">+50%</td><td class="n up">+39%</td></tr>
-      <tr><td>Battery Grease Gun KAJO Adapter</td><td class="n">$257k</td><td class="n">$297k</td><td class="n up">+16%</td><td class="n up">+51%</td></tr>
-      <tr><td>Quick Release Grease Coupler</td><td class="n">$48k</td><td class="n">$167k</td><td class="n up">+250%</td><td class="n up">+245%</td></tr>
-      <tr><td>KAJO Grease Gun</td><td class="n">$149k</td><td class="n">$130k</td><td class="n">−13%</td><td class="n">−5%</td></tr>
-      <tr><td><b>Grease system</b></td><td class="n"><b>$1.52M</b></td><td class="n"><b>$2.18M</b></td><td class="n up">+44%</td><td class="n up">+71%</td></tr>
-    </table></div>
-    <div class="mid">
-      <div class="m"><small>Grease orders</small><b>15,396</b><span>from 8,988 · +71%</span></div>
-      <div class="m"><small>Coupler orders</small><b>3.4×</b><span>1,466 to 5,055: the entry point</span></div>
-      <div class="m"><small>Grease packs</small><b>$1.59M</b><span>+50% · 5,517 orders</span></div>
-      <div class="m"><small>Avg grease order</small><b>$142</b><span>from $169: more small first orders</span></div>
-    </div>
+  <h2>Machine operators <small>customers buying grease or covers</small></h2>
+  <div class="mid" style="margin-bottom:12px">
+    <div class="m"><small>Operator orders</small><b>13,359</b><span>from 7,559 · +77%</span></div>
+    <div class="m"><small>Operator sales</small><b>$3.59M</b><span>from $2.65M · +35%</span></div>
+    <div class="m"><small>Grease orders</small><b>+71%</b><span>8,988 to 15,396 product orders</span></div>
+    <div class="m"><small>Covers orders</small><b>+43%</b><span>3,111 to 4,462 product orders</span></div>
+    <div class="m"><small>Share of net sales</small><b>75%</b><span>$3.59M of $4.77M is grease or covers</span></div>
+  </div>
+  <div class="pts">
+    <div class="pt"><h3>Grease · $2.18M, +44%</h3><ol>
+      <li><b>+71% orders.</b> The grease system went from 8,988 to 15,396 product orders; packs alone $1.06M to $1.59M.</li>
+      <li><b>3.4× coupler orders.</b> The $48 coupler is now the entry point (1,466 to 5,055 orders) and the adapter follows it (+51%).</li>
+      <li><b>Smaller first orders.</b> Average grease order $169 to $142 as entry products lead; the grease gun itself fell 13%.</li>
+    </ol></div>
+    <div class="pt"><h3>Covers · $1.40M, +23%</h3><ol>
+      <li><b>+43% orders.</b> 3,111 to 4,462, and every one of the eight cover lines grew.</li>
+      <li><b>Pro Enclosure still the anchor.</b> $699k to $787k (+13%), 1,285 orders; the 1.7 Tonne cover +19% orders.</li>
+      <li><b>Draw Bar Cover 11×.</b> 79 to 865 paid orders plus 102 as gifts: the new small-ticket cover.</li>
+    </ol></div>
   </div>
 </section>
 
 <section>
-  <h2>Covers <small>orders up 43% on the previous 12 months</small></h2>
-  <div class="grid32">
-    <div class="tw"><table>
-      <tr><th>Product (net sales ex GST)</th><th>Prev</th><th>Last</th><th>Sales</th><th>Orders</th></tr>
-      <tr><td>Pro Excavator Enclosure</td><td class="n">$699k</td><td class="n">$787k</td><td class="n up">+13%</td><td class="n up">+17%</td></tr>
-      <tr><td>1.7 Tonne Excavator Cover</td><td class="n">$202k</td><td class="n">$225k</td><td class="n up">+11%</td><td class="n up">+19%</td></tr>
-      <tr><td>Draw Bar Cover</td><td class="n">$11k</td><td class="n">$108k</td><td class="n up">+878%</td><td class="n up">+995%</td></tr>
-      <tr><td>Quicky Cover</td><td class="n">$82k</td><td class="n">$105k</td><td class="n up">+28%</td><td class="n up">+21%</td></tr>
-      <tr><td>Mini Loader Cover</td><td class="n">$51k</td><td class="n">$65k</td><td class="n up">+27%</td><td class="n up">+33%</td></tr>
-      <tr><td>Universal / Engine Covers</td><td class="n">$41k</td><td class="n">$53k</td><td class="n up">+30%</td><td class="n up">+10%</td></tr>
-      <tr><td>Skid Steer Loader Cover</td><td class="n">$32k</td><td class="n">$35k</td><td class="n up">+11%</td><td class="n up">+19%</td></tr>
-      <tr><td>Micro Excavator Cover</td><td class="n">$18k</td><td class="n">$24k</td><td class="n up">+35%</td><td class="n up">+25%</td></tr>
-      <tr><td><b>All covers</b></td><td class="n"><b>$1.14M</b></td><td class="n"><b>$1.40M</b></td><td class="n up">+23%</td><td class="n up">+43%</td></tr>
-    </table></div>
-    <div class="mid">
-      <div class="m"><small>Covers orders</small><b>4,462</b><span>from 3,111 · +43%</span></div>
-      <div class="m"><small>Covers sales</small><b>$1.40M</b><span>from $1.14M · +23%</span></div>
-      <div class="m"><small>Pro Enclosure orders</small><b>1,285</b><span>from 1,102 · +17%</span></div>
-      <div class="m"><small>Draw Bar Cover orders</small><b>11×</b><span>79 to 865 (plus 102 as gifts)</span></div>
-      <div class="m"><small>Every cover line grew</small><b>8 of 8</b><span>orders up on all cover products</span></div>
-      <div class="m"><small>Avg cover order</small><b>$314</b><span>from $365: more small covers</span></div>
+  <h2>Australia by state <small>orders, last 12 months against the previous 12</small></h2>
+  <div class="grid23">
+    <figure>
+      <svg id="map" viewBox="0 0 470 400" width="100%" role="img" aria-label="Map of Australia shaded by growth in orders: NSW 4,990 orders up 114%, Queensland 4,315 up 131%, Victoria 3,367 up 113%, Western Australia 1,904 up 154%, South Australia 1,166 up 157%, Tasmania 444 up 114%, ACT 182 up 139%, Northern Territory 126 up 241%"></svg>
+      <figcaption>Shading = growth in orders (lighter +110%, darker +230%). Labels show last-12-month orders. Simplified state shapes.</figcaption>
+    </figure>
+    <div>
+      <div class="tw"><table>
+        <tr><th>State</th><th>Prev</th><th>Last</th><th>Change</th></tr>
+        <tr><td>New South Wales</td><td class="n">2,336</td><td class="n">4,990</td><td class="n up">+114%</td></tr>
+        <tr><td>Queensland</td><td class="n">1,866</td><td class="n">4,315</td><td class="n up">+131%</td></tr>
+        <tr><td>Victoria</td><td class="n">1,580</td><td class="n">3,367</td><td class="n up">+113%</td></tr>
+        <tr><td>Western Australia</td><td class="n">751</td><td class="n">1,904</td><td class="n up">+154%</td></tr>
+        <tr><td>South Australia</td><td class="n">454</td><td class="n">1,166</td><td class="n up">+157%</td></tr>
+        <tr><td>Tasmania</td><td class="n">207</td><td class="n">444</td><td class="n up">+114%</td></tr>
+        <tr><td>ACT</td><td class="n">76</td><td class="n">182</td><td class="n up">+139%</td></tr>
+        <tr><td>Northern Territory</td><td class="n">37</td><td class="n">126</td><td class="n up">+241%</td></tr>
+        <tr><td><b>Australia</b></td><td class="n"><b>7,307</b></td><td class="n"><b>16,495</b></td><td class="n up">+126%</td></tr>
+      </table></div>
+      <div class="mid" style="margin-top:10px">
+        <div class="m"><small>Every state grew</small><b>8 of 8</b><span>slowest +113% (Victoria)</span></div>
+        <div class="m"><small>Fastest</small><b>NT</b><span>+241% · then SA +157%, WA +154%</span></div>
+        <div class="m"><small>East coast share</small><b>77%</b><span>NSW, QLD, VIC of Australian orders</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -169,7 +199,6 @@ td.up{font-weight:700}
     </div>
   </div>
 </section>
-
 </div>
 <div class="tip" id="tip"></div>
 <script>
@@ -180,9 +209,25 @@ function hide(){tip.style.display='none';}
 function el(n,a){var e=document.createElementNS('http://www.w3.org/2000/svg',n);for(var k in a)e.setAttribute(k,a[k]);return e;}
 function fmt(v){return v>=1e6?(v/1e6).toFixed(2).replace(/\.?0+$/,'')+'M':v>=1e3?(v/1e3).toFixed(0)+'k':String(v);}
 var cs=getComputedStyle(document.documentElement);
-var C={bar:cs.getPropertyValue('--bar').trim(),bar2:cs.getPropertyValue('--bar2').trim(),bar3:cs.getPropertyValue('--bar3').trim(),ink:cs.getPropertyValue('--ink').trim()};
-var d1=[['Media spend',86],['Impressions',97],['People reached',125],['Video plays',171],['ThruPlays',163],['Full completions',259],['Link clicks',176],['Grease sales',44],['Grease orders',71],['Covers sales',23],['Covers orders',43],['New email profiles',241]];
-var s=document.getElementById('c1'),L=150,W=520,rowH=27,top=14,max=280;
+function tok(n){return cs.getPropertyValue(n).trim();}
+var C={bar:tok('--bar'),bar2:tok('--bar2'),bar3:tok('--bar3'),ink:tok('--ink'),bg:tok('--bg')};
+var W=520;
+// Chart 0: monthly spend
+var sp=[['Oct 24',46637],['Nov',67262],['Dec',72092],['Jan 25',57480],['Feb',58295],['Mar',64744],['Apr',61433],['May',54969],['Jun',91684],['Jul',91894],['Aug',69395],['Sep',58673],['Oct 25',108109],['Nov',166140],['Dec',94286],['Jan 26',48184],['Feb',84730],['Mar',100202],['Apr',108317],['May',122931],['Jun',197656],['Jul',162325],['Aug',156945],['Sep',107304]];
+var s0=document.getElementById('c0'),L0=44,H0=220,top0=14,gw0=W-L0-12,bw0=gw0/sp.length,mx0=200000;
+[0,50000,100000,150000,200000].forEach(function(t){var y=top0+H0-H0*t/mx0;s0.appendChild(el('line',{x1:L0,y1:y,x2:W-12,y2:y,class:'grid','stroke-width':'1'}));s0.appendChild(el('text',{x:L0-6,y:y+4,'font-size':'11','text-anchor':'end',class:'mute'})).textContent=t?'$'+(t/1000)+'k':'0';});
+sp.forEach(function(r,i){var x=L0+i*bw0+2,w=bw0-4,h=H0*r[1]/mx0,y=top0+H0-h;
+ var rect=el('rect',{x:x,y:y,width:w,height:h,fill:i<12?C.bar2:C.bar});
+ rect.addEventListener('mousemove',function(e){show(e,r[0]+': $'+r[1].toLocaleString())});rect.addEventListener('mouseleave',hide);s0.appendChild(rect);
+ if(i%3===0)s0.appendChild(el('text',{x:x+w/2,y:top0+H0+16,'font-size':'10','text-anchor':'middle',class:'mute'})).textContent=r[0];
+ if(r[1]>=150000||i===0||i===9)s0.appendChild(el('text',{x:x+w/2,y:y-4,'font-size':'10','text-anchor':'middle'})).textContent='$'+Math.round(r[1]/1000)+'k';});
+var x0=L0+12*bw0;s0.appendChild(el('line',{x1:x0,y1:top0,x2:x0,y2:top0+H0,stroke:C.ink,'stroke-dasharray':'3 3','stroke-width':'1'}));
+s0.appendChild(el('text',{x:x0+4,y:top0+10,'font-size':'10',class:'mute'})).textContent='last 12 months';
+s0.appendChild(el('text',{x:L0+2,y:top0+H0+34,'font-size':'11',class:'mute'})).textContent='Previous 12 months: $795k';
+s0.appendChild(el('text',{x:x0+2,y:top0+H0+34,'font-size':'11','font-weight':'700'})).textContent='Last 12 months: $1.46M';
+// Chart 1: YoY change
+var d1=[['Media spend',86],['Impressions',97],['People reached',125],['Video plays',171],['ThruPlays',163],['Full completions',259],['Link clicks',176],['Operator orders',77],['Australian orders',126],['New email profiles',241]];
+var s=document.getElementById('c1'),L=150,rowH=27,top=14,max=280;
 d1.forEach(function(r,i){var y=top+i*rowH,w=(W-L-60)*r[1]/max;
  s.appendChild(el('text',{x:L-8,y:y+16,'text-anchor':'end','font-size':'12'})).textContent=r[0];
  var rect=el('rect',{x:L,y:y+4,width:w,height:17,fill:r[0]==='Media spend'?C.bar2:C.bar});
@@ -190,6 +235,7 @@ d1.forEach(function(r,i){var y=top+i*rowH,w=(W-L-60)*r[1]/max;
  s.appendChild(el('text',{x:L+w+6,y:y+16,'font-size':'12','font-weight':'700'})).textContent='+'+r[1]+'%';});
 var sx=L+(W-L-60)*86/max;s.appendChild(el('line',{x1:sx,y1:top,x2:sx,y2:top+d1.length*rowH,stroke:C.ink,'stroke-dasharray':'3 3','stroke-width':'1'}));
 s.appendChild(el('text',{x:sx+4,y:top+d1.length*rowH+14,'font-size':'11',class:'mute'})).textContent='spend +86%';
+// Chart 2: video depth
 var d2=[['Video plays',26.5,71.8],['ThruPlays',1.85,4.85],['Watched 50%',1.36,5.01],['Watched 75%',0.846,3.24],['Watched 100%',0.307,1.10]];
 var s2=document.getElementById('c2'),L2=110,gw=W-L2-70,mx=72;
 [0,20,40,60].forEach(function(t){var x=L2+gw*t/mx;s2.appendChild(el('line',{x1:x,y1:8,x2:x,y2:8+d2.length*54,class:'grid','stroke-width':'1'}));s2.appendChild(el('text',{x:x,y:8+d2.length*54+14,'font-size':'11','text-anchor':'middle',class:'mute'})).textContent=t+'M';});
@@ -197,6 +243,33 @@ d2.forEach(function(r,i){var y=10+i*54;s2.appendChild(el('text',{x:L2-8,y:y+26,'
  [[r[1],C.bar2,0,'Previous'],[r[2],C.bar,22,'Last']].forEach(function(b){var w=Math.max(gw*b[0]/mx,1.5);var rect=el('rect',{x:L2,y:y+b[2],width:w,height:18,fill:b[1]});
   rect.addEventListener('mousemove',function(e){show(e,b[3]+' 12 months · '+r[0]+': '+b[0]+'M')});rect.addEventListener('mouseleave',hide);s2.appendChild(rect);
   s2.appendChild(el('text',{x:L2+w+5,y:y+b[2]+13,'font-size':'11'})).textContent=b[0]+'M';});});
+// Map
+var states={
+ WA:{pts:[[114,-22],[114.5,-26],[115,-30],[115,-34],[117.5,-35],[119,-34],[123.5,-33.8],[126,-32.3],[129,-31.6],[129,-14],[126.5,-14],[124,-16],[122,-17.5],[120,-19.5],[118,-20.5],[114.2,-21.8]],c:[121.5,-26],prev:751,last:1904,name:'Western Australia'},
+ NT:{pts:[[129,-14],[129,-26],[138,-26],[138,-16.5],[137,-12.5],[136,-12],[133,-11.5],[131.5,-12.3],[130,-13.5]],c:[133.5,-20],prev:37,last:126,name:'Northern Territory'},
+ SA:{pts:[[129,-26],[129,-31.6],[131,-31.5],[133,-32],[134.5,-33],[135.5,-34.8],[136.5,-35.6],[137.5,-35.4],[138,-35.6],[139,-36.5],[140.5,-38],[141,-38],[141,-26]],c:[135.3,-29.5],prev:454,last:1166,name:'South Australia'},
+ QLD:{pts:[[138,-26],[138,-16.5],[139,-17.5],[140.5,-17.5],[141.5,-15],[141.5,-12],[142.5,-10.7],[143.5,-14],[145.3,-15],[146,-18.5],[148,-20],[149.5,-22],[150.8,-23.5],[153,-25.5],[153.5,-28],[153.6,-29],[141,-29],[141,-26]],c:[145,-23],prev:1866,last:4315,name:'Queensland'},
+ NSW:{pts:[[141,-29],[153.6,-29],[153,-31],[152.5,-32.5],[151.5,-34],[150.2,-36],[149.98,-37.5],[148,-36.8],[146.5,-36.1],[145,-35.9],[143,-34.8],[141,-34]],c:[146.5,-32.2],prev:2336,last:4990,name:'New South Wales'},
+ VIC:{pts:[[141,-34],[143,-34.8],[145,-35.9],[146.5,-36.1],[148,-36.8],[149.98,-37.5],[148.5,-38.2],[146.5,-39.1],[144.9,-38.4],[143.5,-38.8],[141.5,-38.3],[141,-38]],c:[144.2,-36.9],prev:1580,last:3367,name:'Victoria'},
+ TAS:{pts:[[144.7,-40.7],[146,-41.1],[148.3,-40.9],[148.3,-42.5],[147.5,-43.5],[146,-43.6],[145.3,-42.2],[144.7,-41]],c:[146.6,-42.2],prev:207,last:444,name:'Tasmania'},
+ ACT:{pts:null,c:[149.1,-35.3],prev:76,last:182,name:'ACT'}};
+var mp=document.getElementById('map');
+function px(p){return [(p[0]-112)*11,(-10-p[1])*11+4];}
+var ramp=[tok('--m1'),tok('--m2'),tok('--m3'),tok('--m4'),tok('--m5')];
+function shade(g){var i=Math.min(4,Math.max(0,Math.floor((g-110)/30)));return ramp[i];}
+var lab=[];
+Object.keys(states).forEach(function(k){var st=states[k],g=Math.round((st.last/st.prev-1)*100);
+ if(st.pts){var d=st.pts.map(function(p,i){var q=px(p);return (i?'L':'M')+q[0].toFixed(1)+' '+q[1].toFixed(1);}).join(' ')+' Z';
+  var path=el('path',{d:d,fill:shade(g),class:'state'});
+  path.addEventListener('mousemove',function(e){show(e,st.name+': '+st.last.toLocaleString()+' orders, from '+st.prev.toLocaleString()+' (+'+g+'%)')});path.addEventListener('mouseleave',hide);mp.appendChild(path);}
+ lab.push([k,st,g]);});
+lab.forEach(function(a){var k=a[0],st=a[1],g=a[2],c=px(st.c),dark=g>=176;
+ if(k==='ACT'){mp.appendChild(el('circle',{cx:c[0],cy:c[1],r:4,fill:shade(g),stroke:C.ink,'stroke-width':'1'}));c=[c[0]+18,c[1]+22];}
+ var t1=el('text',{x:c[0],y:c[1]-6,'font-size':'12','font-weight':'700','text-anchor':'middle',fill:dark?C.bg:C.ink});t1.textContent=k;mp.appendChild(t1);
+ var t2=el('text',{x:c[0],y:c[1]+8,'font-size':'11','text-anchor':'middle',fill:dark?C.bg:C.ink});t2.textContent=st.last.toLocaleString()+' · +'+g+'%';mp.appendChild(t2);});
+// map legend
+[['+110%',0],['+140%',1],['+170%',2],['+200%',3],['+230%',4]].forEach(function(l,i){mp.appendChild(el('rect',{x:14+i*54,y:378,width:14,height:12,fill:ramp[i],stroke:C.ink,'stroke-width':'0.5'}));mp.appendChild(el('text',{x:31+i*54,y:388,'font-size':'10',class:'mute'})).textContent=l[0];});
+// Chart 3: monthly email profiles
 var m=[['Oct 24',585,44],['Nov',776,57],['Dec',722,64],['Jan 25',593,35],['Feb',546,65],['Mar',567,54],['Apr',494,34],['May',553,57],['Jun',986,88],['Jul',669,58],['Aug',604,66],['Sep',575,58],['Oct 25',1950,1207],['Nov',3331,2006],['Dec',1861,1246],['Jan 26',1288,893],['Feb',1679,1127],['Mar',1708,1121],['Apr',1747,1185],['May',2409,1413],['Jun',3657,1356],['Jul',2422,1327],['Aug',2576,1578],['Sep',1558,858]];
 var s3=document.getElementById('c3'),L3=44,H3=230,top3=12,gw3=W-L3-12,bw=gw3/m.length,mx3=4000;
 [0,1000,2000,3000,4000].forEach(function(t){var y=top3+H3-H3*t/mx3;s3.appendChild(el('line',{x1:L3,y1:y,x2:W-12,y2:y,class:'grid','stroke-width':'1'}));s3.appendChild(el('text',{x:L3-6,y:y+4,'font-size':'11','text-anchor':'end',class:'mute'})).textContent=t?fmt(t):'0';});
