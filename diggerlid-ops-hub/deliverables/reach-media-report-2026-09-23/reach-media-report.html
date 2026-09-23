@@ -105,10 +105,10 @@ td.up{font-weight:700}
 </section>
 
 <section>
-  <h2>Growth against spend <span class="period">Last 12 months vs previous 12</span><small>reach, video, clicks and the email list all grew faster than spend</small></h2>
+  <h2>Growth against spend <span class="period">Last 12 months vs previous 12</span><small>everything grew faster than the budget</small></h2>
   <div class="grid32">
     <figure>
-      <svg id="c1" viewBox="0 0 520 412" width="100%" role="img" aria-label="Year on year change by metric: spend 86%, impressions 97%, reach 125%, video plays 171%, ThruPlays 163%, full completions 259%, link clicks 176%, operator orders 77%, Australian orders 126%, email list size 141%, new email profiles 241%"></svg>
+      <svg id="c1" viewBox="0 0 520 250" width="100%" role="img" aria-label="Year on year change: spend 86%, people reached 125%, video plays 171%, full completions 259%, Australian orders 126%, new email profiles 241%"></svg>
       <figcaption>Year-on-year change. Dotted line = spend, +86%.</figcaption>
     </figure>
     <div class="mid">
@@ -123,9 +123,13 @@ td.up{font-weight:700}
   <h2>Video watch-through <span class="period">Last 12 months vs previous 12</span><small>of every 100 plays, how far people get</small></h2>
   <div class="grid32">
     <figure>
+      <svg id="c5" viewBox="0 0 520 250" width="100%" role="img" aria-label="Monthly Meta impressions, October 2024 to September 2026, from 3.9 million to a peak of 14.5 million in June 2026"></svg>
+      <figcaption>Video reach by month: impressions served, millions. Previous 12 months in grey, last 12 in black. Video plays by month are not in the current data feed; the monthly Ads Manager export (video plays, ThruPlays) will replace this series.</figcaption>
+    </figure>
+    <figure>
       <svg id="c4" viewBox="0 0 520 300" width="100%" role="img" aria-label="Of every 100 plays, how many reach each milestone: 25 percent watched 10.5 to 13.1, 50 percent 5.1 to 7.0, 75 percent 3.2 to 4.5, 100 percent 1.2 to 1.5"></svg>
       <div class="legend"><span><i style="background:var(--bar2)"></i>Previous 12 months</span><span><i style="background:var(--bar)"></i>Last 12 months</span></div>
-      <figcaption>Of every 100 plays. Once someone presses play they now stay longer at every step.</figcaption>
+      <figcaption>Watch depth, of every 100 plays. Once someone presses play they now stay longer at every step.</figcaption>
     </figure>
     <div class="mid">
     <div class="m"><small>Hook rate</small><b>57%</b><span>press play · prev 12 months 41%</span></div>
@@ -229,15 +233,27 @@ s0.appendChild(el('text',{x:x0+4,y:top0+10,'font-size':'10',class:'mute'})).text
 s0.appendChild(el('text',{x:L0+2,y:top0+H0+34,'font-size':'11',class:'mute'})).textContent='Previous 12 months: $795k';
 s0.appendChild(el('text',{x:x0+2,y:top0+H0+34,'font-size':'11','font-weight':'700'})).textContent='Last 12 months: $1.46M';
 // Chart 1: YoY change
-var d1=[['Media spend',86],['Impressions',97],['People reached',125],['Video plays',171],['ThruPlays',163],['Full completions',259],['Link clicks',176],['Operator orders',77],['Australian orders',126],['Email list size',141],['New email profiles',241]];
-var s=document.getElementById('c1'),L=150,rowH=27,top=14,max=280;
+var d1=[['Media spend',86],['People reached',125],['Video plays',171],['Full completions',259],['Australian orders',126],['New email profiles',241]];
+var s=document.getElementById('c1'),L=150,rowH=36,top=14,max=280;
 d1.forEach(function(r,i){var y=top+i*rowH,w=(W-L-60)*r[1]/max;
- s.appendChild(el('text',{x:L-8,y:y+16,'text-anchor':'end','font-size':'12'})).textContent=r[0];
- var rect=el('rect',{x:L,y:y+4,width:w,height:17,fill:r[0]==='Media spend'?C.bar2:C.bar});
+ s.appendChild(el('text',{x:L-8,y:y+19,'text-anchor':'end','font-size':'13'})).textContent=r[0];
+ var rect=el('rect',{x:L,y:y+4,width:w,height:24,fill:r[0]==='Media spend'?C.bar2:C.bar});
  rect.addEventListener('mousemove',function(e){show(e,r[0]+': +'+r[1]+'%')});rect.addEventListener('mouseleave',hide);s.appendChild(rect);
- s.appendChild(el('text',{x:L+w+6,y:y+16,'font-size':'12','font-weight':'700'})).textContent='+'+r[1]+'%';});
+ s.appendChild(el('text',{x:L+w+6,y:y+20,'font-size':'13','font-weight':'700'})).textContent='+'+r[1]+'%';});
 var sx=L+(W-L-60)*86/max;s.appendChild(el('line',{x1:sx,y1:top,x2:sx,y2:top+d1.length*rowH,stroke:C.ink,'stroke-dasharray':'3 3','stroke-width':'1'}));
 s.appendChild(el('text',{x:sx+4,y:top+d1.length*rowH+14,'font-size':'11',class:'mute'})).textContent='spend +86%';
+// Chart 5: monthly impressions
+var im=[['Oct 24',3932870],['Nov',4615068],['Dec',5450095],['Jan 25',5191739],['Feb',5128084],['Mar',5676536],['Apr',5354380],['May',4577642],['Jun',6891380],['Jul',7352781],['Aug',5629782],['Sep',4865178],['Oct 25',10845552],['Nov',13198004],['Dec',8235498],['Jan 26',5770216],['Feb',7960442],['Mar',8896064],['Apr',10620227],['May',11922744],['Jun',14452921],['Jul',13828430],['Aug',11575102],['Sep',8188698]];
+var s5=document.getElementById('c5'),L5=40,H5=190,top5=12,gw5=W-L5-12,bw5=gw5/im.length,mx5=15e6;
+[0,5e6,10e6,15e6].forEach(function(t){var y=top5+H5-H5*t/mx5;s5.appendChild(el('line',{x1:L5,y1:y,x2:W-12,y2:y,class:'grid','stroke-width':'1'}));s5.appendChild(el('text',{x:L5-6,y:y+4,'font-size':'11','text-anchor':'end',class:'mute'})).textContent=t?(t/1e6)+'M':'0';});
+im.forEach(function(r,i){var x=L5+i*bw5+2,w=bw5-4,h=H5*r[1]/mx5,y=top5+H5-h;
+ var rect=el('rect',{x:x,y:y,width:w,height:h,fill:i<12?C.bar2:C.bar});
+ rect.addEventListener('mousemove',function(e){show(e,r[0]+': '+(r[1]/1e6).toFixed(1)+'M impressions')});rect.addEventListener('mouseleave',hide);s5.appendChild(rect);
+ if(i%3===0)s5.appendChild(el('text',{x:x+w/2,y:top5+H5+16,'font-size':'10','text-anchor':'middle',class:'mute'})).textContent=r[0];
+ if(r[1]>=13e6||i===9||i===0)s5.appendChild(el('text',{x:x+w/2,y:y-4,'font-size':'10','text-anchor':'middle'})).textContent=(r[1]/1e6).toFixed(1)+'M';});
+var x5=L5+12*bw5;s5.appendChild(el('line',{x1:x5,y1:top5,x2:x5,y2:top5+H5,stroke:C.ink,'stroke-dasharray':'3 3','stroke-width':'1'}));
+s5.appendChild(el('text',{x:L5+2,y:top5+H5+34,'font-size':'11',class:'mute'})).textContent='Prev 12 months: 64.7M';
+s5.appendChild(el('text',{x:x5+2,y:top5+H5+34,'font-size':'11','font-weight':'700'})).textContent='Last 12 months: 125.5M';
 // Chart 4: of every 100 plays
 var d4=[['Watched 25%',10.5,13.1],['Watched 50%',5.1,7.0],['Watched 75%',3.2,4.5],['Watched 100%',1.2,1.5]];
 var s4=document.getElementById('c4'),L4=110,gw4=W-L4-70,mx4=15;
