@@ -28,7 +28,7 @@ header p{color:var(--mute);font-size:15px;margin-top:8px}
 .k{background:var(--panel);border:2px solid var(--ink);padding:16px 18px 14px;display:flex;flex-direction:column;gap:2px;position:relative}
 .k.acc{background:var(--tint)}
 .k small{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.7px;padding-right:64px}
-.k b::after{content:"last 12 months";display:block;font-family:'League Spartan',Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--mute);margin-top:4px}
+.k b::after{content:attr(data-p);display:block;font-family:'League Spartan',Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--mute);margin-top:4px}
 .k b{font-family:'Roboto Condensed',Arial,sans-serif;font-size:clamp(40px,4.6vw,54px);font-weight:700;line-height:1;margin:4px 0 6px}
 .k span{font-size:14px;color:var(--ink2)}
 .k em{position:absolute;top:12px;right:12px;font-style:normal;font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;font-size:18px;background:var(--ink);color:var(--bg);padding:3px 8px}
@@ -76,14 +76,14 @@ td.up{font-weight:700}
   <p>Last 12 months (23 Sep 2025 to 22 Sep 2026) against the 12 months before. AUD. Meta, Shopify and Klaviyo.</p>
 </header>
 
-<div class="keyline"><span class="lbl now">Last 12 months</span><span class="lbl prev">prev = the 12 months before</span><span>23 Sep 2025 to 22 Sep 2026 against 23 Sep 2024 to 22 Sep 2025. Email list size is all time to 22 Sep 2026.</span></div>
+<div class="keyline"><span class="lbl now">Last 12 months</span><span class="lbl prev">prev = the 12 months before</span><span>Last 12 months = 23 Sep 2025 to 22 Sep 2026. Prev = 23 Sep 2024 to 22 Sep 2025. Every number states its period; the email list size is the only all-time figure.</span></div>
 <div class="big">
-  <div class="k acc"><small>Media spend</small><b>$1.47M</b><span>prev $791k</span><em>+86%</em></div>
-  <div class="k"><small>People reached</small><b>6.77M</b><span>prev 3.01M</span><em>2.25×</em></div>
-  <div class="k acc"><small>Video plays</small><b>71.8M</b><span>prev 26.5M</span><em>2.7×</em></div>
-  <div class="k"><small>Grease sales growth</small><b>+44%</b><span>15,396 grease product orders, prev 8,988</span><em>orders +71%</em></div>
-  <div class="k acc"><small>Machine operator orders</small><b>13,359</b><span>grease and covers · prev 7,559</span><em>+77%</em></div>
-  <div class="k"><small>Email list size</small><b>44,804</b><span>prev 18,618 · 26,186 added</span><em>+141%</em></div>
+  <div class="k acc"><small>Media spend</small><b data-p="last 12 months">$1.47M</b><span>prev 12 months $791k</span><em>+86%</em></div>
+  <div class="k"><small>People reached</small><b data-p="last 12 months">6.77M</b><span>prev 12 months 3.01M</span><em>2.25×</em></div>
+  <div class="k acc"><small>Video plays</small><b data-p="last 12 months">71.8M</b><span>prev 12 months 26.5M</span><em>2.7×</em></div>
+  <div class="k"><small>Grease sales growth</small><b data-p="last 12 months vs prev 12">+44%</b><span>15,396 grease product orders, prev 12 months 8,988</span><em>orders +71%</em></div>
+  <div class="k acc"><small>Machine operator orders</small><b data-p="last 12 months">13,359</b><span>grease and covers · prev 12 months 7,559</span><em>+77%</em></div>
+  <div class="k"><small>Email list size</small><b data-p="all time, at 22 Sep 2026">44,804</b><span>18,618 a year ago · 26,186 added in the last 12 months</span><em>+141%</em></div>
 </div>
 
 <section>
@@ -94,12 +94,12 @@ td.up{font-weight:700}
       <figcaption>Monthly Meta spend, AUD thousands. Dotted line marks the start of the last 12 months. September 2026 runs to the 22nd.</figcaption>
     </figure>
     <div class="mid">
-      <div class="m"><small>Average month</small><b>$121k</b><span>prev $66k · +83%</span></div>
-      <div class="m"><small>Biggest month</small><b>$198k</b><span>June 2026 · prior peak $92k</span></div>
-      <div class="m"><small>Months over $100k</small><b>9 of 12</b><span>none in the previous year</span></div>
-      <div class="m"><small>Australia share</small><b>92%</b><span>of spend, from 80%</span></div>
-      <div class="m"><small>BFCM month</small><b>$166k</b><span>Nov 2025 · from $67k</span></div>
-      <div class="m"><small>Link clicks</small><b>1.66M</b><span>prev 602k · 2.8×</span></div>
+      <div class="m"><small>Average month, last 12</small><b>$121k</b><span>prev 12 months $66k · +83%</span></div>
+      <div class="m"><small>Biggest month, last 12</small><b>$198k</b><span>June 2026 · prev 12 months peak $92k</span></div>
+      <div class="m"><small>Months over $100k, last 12</small><b>9 of 12</b><span>prev 12 months: none</span></div>
+      <div class="m"><small>Australia share, last 12</small><b>92%</b><span>of spend · prev 12 months 80%</span></div>
+      <div class="m"><small>BFCM month</small><b>$166k</b><span>Nov 2025 · Nov 2024 $67k</span></div>
+      <div class="m"><small>Link clicks, last 12</small><b>1.66M</b><span>prev 12 months 602k · 2.8×</span></div>
     </div>
   </div>
 </section>
@@ -112,9 +112,9 @@ td.up{font-weight:700}
       <figcaption>Year-on-year change. Dotted line = spend, +86%.</figcaption>
     </figure>
     <div class="mid">
-      <div class="m"><small>Cost per person reached</small><b>21.7¢</b><span>prev 26.3¢ · −17%</span></div>
-      <div class="m"><small>Cost per click</small><b>$0.89</b><span>prev $1.32 · −32%</span></div>
-      <div class="m"><small>CPM</small><b>$11.61</b><span>prev $12.26 · −5%</span></div>
+      <div class="m"><small>Cost per person reached</small><b>21.7¢</b><span>prev 12 months 26.3¢ · −17%</span></div>
+      <div class="m"><small>Cost per click</small><b>$0.89</b><span>prev 12 months $1.32 · −32%</span></div>
+      <div class="m"><small>CPM</small><b>$11.61</b><span>prev 12 months $12.26 · −5%</span></div>
     </div>
   </div>
 </section>
@@ -128,19 +128,19 @@ td.up{font-weight:700}
       <figcaption>Of every 100 plays. Once someone presses play they now stay longer at every step.</figcaption>
     </figure>
     <div class="mid">
-    <div class="m"><small>Hook rate</small><b>57%</b><span>press play · prev 41%</span></div>
-    <div class="m"><small>Video plays</small><b>71.8M</b><span>prev 26.5M · 2.7×</span></div>
-    <div class="m"><small>Watched half</small><b>5.0M</b><span>prev 1.4M · 3.7×</span></div>
-    <div class="m"><small>Watched to the end</small><b>1.10M</b><span>prev 307k · 3.6×</span></div>
-    <div class="m"><small>Finish rate per play</small><b>1.5%</b><span>prev 1.2% · +32%</span></div>
-    <div class="m"><small>Cost per video view</small><b>2.05¢</b><span>prev 2.98¢ · −31%</span></div>
+    <div class="m"><small>Hook rate</small><b>57%</b><span>press play · prev 12 months 41%</span></div>
+    <div class="m"><small>Video plays</small><b>71.8M</b><span>prev 12 months 26.5M · 2.7×</span></div>
+    <div class="m"><small>Watched half</small><b>5.0M</b><span>prev 12 months 1.4M · 3.7×</span></div>
+    <div class="m"><small>Watched to the end</small><b>1.10M</b><span>prev 12 months 307k · 3.6×</span></div>
+    <div class="m"><small>Finish rate per play</small><b>1.5%</b><span>prev 12 months 1.2% · +32%</span></div>
+    <div class="m"><small>Cost per video view</small><b>2.05¢</b><span>prev 12 months 2.98¢ · −31%</span></div>
   </div>
 </section>
 
 <section>
   <h2>Machine operators <span class="period">Last 12 months vs previous 12</span><small>customers buying grease or covers</small></h2>
   <div class="mid" style="margin-bottom:12px">
-    <div class="m"><small>Operator orders</small><b>13,359</b><span>prev 7,559 · +77%</span></div>
+    <div class="m"><small>Operator orders</small><b>13,359</b><span>prev 12 months 7,559 · +77%</span></div>
     <div class="m"><small>Operator sales growth</small><b>+35%</b><span>revenue, last 12 vs prev</span></div>
     <div class="m"><small>Grease orders</small><b>+71%</b><span>8,988 to 15,396 product orders</span></div>
     <div class="m"><small>Covers orders</small><b>+43%</b><span>3,111 to 4,462 product orders</span></div>
@@ -195,10 +195,10 @@ td.up{font-weight:700}
       <figcaption>New Klaviyo profiles by month. Popup live from October 2025. September 2026 to the 22nd.</figcaption>
     </figure>
     <div class="mid">
-      <div class="m"><small>List size now</small><b>44,804</b><span>prev 18,618 · +141%</span></div>
-      <div class="m"><small>New profiles, 12 months</small><b>26,186</b><span>prev 7,670 · +241%</span></div>
-      <div class="m"><small>Per month</small><b>2,182</b><span>prev 639</span></div>
-      <div class="m"><small>Popup signups</small><b>15,317</b><span>58% of new profiles, from 9%</span></div>
+      <div class="m"><small>List size, all time</small><b>44,804</b><span>18,618 a year ago · +141% in 12 months</span></div>
+      <div class="m"><small>New profiles, last 12</small><b>26,186</b><span>prev 12 months 7,670 · +241%</span></div>
+      <div class="m"><small>Per month, last 12</small><b>2,182</b><span>prev 12 months 639</span></div>
+      <div class="m"><small>Popup signups, last 12</small><b>15,317</b><span>58% of new profiles · prev 12 months 9%</span></div>
     </div>
   </div>
 </section>
