@@ -398,6 +398,37 @@ S["gifting"]=content("gifting","Christmas gifting: one page, every gift angle po
  +card("What not to repeat",["The Father&#39;s Day gift page converted 0.5%: generic, with no product depth","Gift traffic sent to the sale page, which leads with grease","Leaving the shipping cut-off implicit"],accent=K80)+'</div>',
  src="PostHog, Shopify, campaign calendar",notes="One destination for every gift message. The page leads with product, not with a message about gifts.")
 
+JACK_IMG="/_blob/f1f1d5c5a725aa67f5afa3a8027a3f7e"
+jack_l=[("The old way","On the tools forty years, by his own count. From a long line of hard men, all &#39;retired at forty&#39;."),
+        ("Wrong wisdom","Hands out old-man country know-how with total authority, and it&#39;s wrong every time."),
+        ("Knows best","Rejects anything new on principle. His answer to every product: &#39;Never needed one.&#39;"),
+        ("The lament","Is there still a place for an outback bushman in this new world of AI?"),
+        ("Physical comedy","Clumsy, falls over constantly. Never notices, never reacts, never winks.")]
+jack_r=[("Talks down to the young","Speaks slowly to young tradies because he thinks they&#39;re simple. They&#39;re always right."),
+        ("Blind to the product","Never looks at the gear or names it, even lying on it or sheltering under it."),
+        ("Quietly coming around","Ends up using DiggerLid gear. Never admits it works; claims it was his idea all along."),
+        ("Never cruel","Condescending but kind. Never mocks the customer, never angry for more than a beat."),
+        ("Lovable at heart","Warm, engaging, always trying. All he wants is to share what he knows.")]
+def jtrait(t,d,side):
+    line=f'<div style="flex:0 0 44px; height:3px; background:{K}; align-self:center"></div>'
+    txt=(f'<div style="flex:1; display:flex; flex-direction:column; gap:2px; text-align:{"right" if side=="l" else "left"}">'
+         f'<p style="font-family:{HEAD}; font-size:24px; font-weight:700; text-transform:uppercase; line-height:1.1">{t}</p>'
+         f'<p style="font-size:22px; line-height:1.22; color:{K90}">{d}</p></div>')
+    return f'<div style="display:flex; gap:12px">{txt+line if side=="l" else line+txt}</div>'
+jack_q=[("G&#39;day, I&#39;m Jack Clacker, and this is my backyard.","Opens every cut."),
+        ("Never needed one.","Said about every product, just before it proves him wrong."),
+        ("Old trick.","The lead-in to bush wisdom that turns out to be wrong."),
+        ("Another good day&#39;s work. / That&#39;s not going anywhere.",""),
+        ("Been saying that for years.","")]
+S["jack"]=content("jack","Meet Jack Clacker: the hero of the sale",
+ f'<div style="display:flex; gap:0; flex:1; min-height:0; align-items:stretch">'
+ +f'<div style="flex:1; display:flex; flex-direction:column; justify-content:space-between">'+"".join(jtrait(t,d,"l") for t,d in jack_l)+'</div>'
+ +f'<div style="flex:0 0 420px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 0"><img src="{JACK_IMG}" alt="Jack Clacker, sketched: a smiling bushman in a wide-brim hat, squatting in a paddock with a DiggerLid mug, a mini excavator behind him" style="width:420px; height:560px; object-fit:cover; object-position:center 30%; border:4px solid {K}; box-shadow:12px 12px 0 {Y}"></div>'
+ +f'<div style="flex:1; display:flex; flex-direction:column; justify-content:space-between">'+"".join(jtrait(t,d,"r") for t,d in jack_r)+'</div></div>'
+ +f'<div style="display:flex; gap:14px; background:{K}; padding:14px 18px; align-items:stretch"><p style="font-family:{DISP}; font-size:26px; color:{Y}; letter-spacing:1px; text-transform:uppercase; align-self:center; flex:0 0 auto">Catch&#8203;phrases</p>'
+ +"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:2px; border-left:2px solid {Y}; padding-left:12px"><p style="font-size:22px; font-weight:700; color:{W}; line-height:1.18">&#39;{q}&#39;</p><p style="font-size:22px; color:{GREY}; line-height:1.18">{d}</p></div>' for q,d in jack_q)+'</div>',
+ gap=22,src="Creative brief: character notes",notes="Jack Clacker carries the hero narrative. He is the joke, never the customer: condescending but kind, wrong about everything, and quietly converted by the gear without ever admitting it.")
+
 S["theme"]=content("theme","Theme: All Aussie Adventure",
  f'<div style="display:flex; gap:24px; flex:1">'
  f'<div style="flex:1; display:flex; flex-direction:column; gap:16px; background:{K}; color:{W}; padding:34px; border:2px solid {K}">{banner("Theme · All Aussie Adventure", bg=Y, fg=K, size=27)}'
@@ -575,7 +606,7 @@ S["close"]=(f'<section id="close" data-transition="fade" style="background:{K}; 
 order=["cover","onepage","agenda",
        "scorecard","curve",
        "moves",
-       "offer","bundles-alt","gifting","theme","territories","journey","deliverables"]
+       "offer","bundles-alt","gifting","theme","jack","territories","journey","deliverables"]
 S["scorecard"]=S["scorecard"].replace('text-transform:uppercase">The last three sales', 'text-transform:uppercase; background:#231f20; color:#fdfdfb; padding:14px 22px">The last three sales',1)
 for n,k in enumerate(order,1):
     h=S[k].replace("{{N}}",str(n))
