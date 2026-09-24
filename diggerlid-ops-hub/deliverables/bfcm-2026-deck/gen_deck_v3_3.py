@@ -510,6 +510,46 @@ S["creative"]=content("creative",f"{ctot} performance ads across four phases",
  +f'<p style="font-size:22px; color:{K90}; line-height:1.25"><b>Hype and launch:</b> 60% tried and tested formats with a new theme, 40% new experiments. <b>Mid-sale:</b> all new content. <b>Ending soon:</b> 60% new, 40% proven. Ad styles by area on the next slide.</p>',
  gap=14,src="Creative plan, 24 Sep 2026",notes="Hype 10 (4 video, 4 image, 2 GIF): built to work together, the video and GIFs grab attention and the statics carry the sale information with strong visuals, to a new, cold audience. Launch 20 (6 video, 6 image, 4 GIF, 4 UGC). Mid-sale 13 with a gifting focus (5 video, 5 image, 3 UGC). Ending soon 6, running the final three days from Sun 29 Nov (2 video, 2 image, 1 GIF, 1 UGC). Hype and launch run 60% tried and tested formats with a new theme and 40% new experiments: 6 and 4 in hype, 12 and 8 at launch. Mid-sale is all new content (13). Ending soon is 60% new and 40% proven ads: 4 new and 2 proven of 6, rounded. Every ad follows the cold-audience rule: hook, product proof, offer and date.")
 
+hype_ads=[("Image","Sneak peek static","2","",
+           "&#39;Sneak peek: 25% off best sellers + free gift over $X · Sale opens Tue 17 Nov&#39;",
+           "Offer-led static. Creative TBD.",True),
+          ("GIF","Countdown GIF","2","",
+           "&#39;Black Friday · Launching Tue 17 Nov, 3PM&#39;",
+           "A countdown: video as image, or a GIF with a live countdown.",True),
+          ("Video","Airwalk intro","2","Top of funnel",
+           "&#39;If there&#39;s one thing I know about...&#39;",
+           "10 to 15s, cool, Jack Clacker. He falls in a hole in the ground, and the founder is down there announcing the BFCM deal.",False),
+          ("Video","Hey dighead","2","Middle of funnel",
+           "&#39;We don&#39;t normally do this, but we&#39;re doing 25% off + heaps of free gifts + awesome value bundles.&#39;",
+           "Handheld camera, calling out the audience.",False),
+          ("Image","AI visual statics","2","",
+           "Cool visuals, in theme.",
+           "AI-generated imagery in the All Aussie Adventure world.",False)]
+ROLE={"Sneak peek static":"Role: sale info","Countdown GIF":"Role: urgency","Airwalk intro":"Role: attention grab","Hey dighead":"Role: attention grab","AI visual statics":"Role: sale info, cool visuals"}
+def hcard(fmt,name,n,funnel,copy,direction,datefl):
+    chip=f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; background:{K}; color:{Y}; padding:2px 10px">{fmt}</p>'
+    fun=f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">{funnel}</p>' if funnel else ''
+    flag=f'<p style="font-size:22px; font-weight:700; background:{Y}; padding:2px 8px; align-self:flex-start">Date to confirm</p>' if datefl else ''
+    return (f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{W}; border:2px solid {K}; border-top:10px solid {Y if fmt!="Video" else K}; padding:16px 18px">'
+            f'<div style="display:flex; justify-content:space-between; align-items:center">{chip}<p style="font-family:{DISP}; font-size:44px; line-height:1">{n}×</p></div>'
+            f'<h3 style="font-family:{HEAD}; font-size:30px; font-weight:700; text-transform:uppercase; line-height:1.05">{name}</h3>{fun}'
+            f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; border-top:2px solid {K}; padding-top:8px">{ROLE[name]}</p>'
+            f'<p style="font-size:26px; font-weight:700; line-height:1.25">{copy}</p>'
+            f'<p style="font-size:24px; line-height:1.3; color:{K90}">{direction}</p>'
+            f'<div style="margin-top:auto">{flag}</div></div>')
+def tally(fmt,planned):
+    got=sum(int(a[2]) for a in hype_ads if a[0]==fmt)
+    ok=got==planned
+    return (f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; background:{K if ok else Y}; color:{Y if ok else K}; padding:10px 16px">'
+            f'<p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase">{fmt}</p>'
+            f'<p style="font-family:{DISP}; font-size:30px">{got} of {planned} {"✓" if ok else "!"}</p></div>')
+S["hype-ads"]=content("hype-ads","Hype ads: 10 across five concepts, 16 to 17 Nov",
+ f'<div style="display:flex; gap:14px; flex:1; min-height:0">'+"".join(hcard(*a) for a in hype_ads)+'</div>'
+ +f'<div style="display:flex; gap:12px; align-items:stretch"><div style="flex:0 0 auto; display:flex; align-items:center; padding-right:6px"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase">Check against the plan</p></div>'
+ +tally("Video",4)+tally("Image",4)+tally("GIF",2)
+ +f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; border:2px solid {K}; padding:10px 16px"><p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase">Total</p><p style="font-family:{DISP}; font-size:30px">10 of 10 ✓</p></div></div>',
+ gap=18,src="Creative plan, 24 Sep 2026",notes="The ten hype ads, by concept. They match the hype column of the creative plan: 4 video, 4 image, 2 GIF. Still to tag: which 6 are tried and tested formats and which 4 are new experiments. Dates in the static and GIF copy say the sale opens Tue 17 Nov (3 PM); the plan has hype on Mon 16 and Tue 17 Nov and launch on Wed 18 Nov at 6 AM, so one of them needs to change. The free gift threshold is $X in the copy; the gift tiers start at $399.")
+
 S["deliverables"]=content("deliverables","Creative deliverables (due dates TBC)",
  table(["Asset","Use","Count","Due (TBC)","Owner"],[
   ["Adventure hero film (4 episodes)","Launch, organic, sale page","1 film, 4 episodes","10 Nov edit locked","Creative [name]"],
@@ -661,7 +701,7 @@ S["close"]=(f'<section id="close" data-transition="fade" style="background:{K}; 
 order=["cover","onepage","agenda",
        "scorecard","curve",
        "moves",
-       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","deliverables"]
+       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","deliverables"]
 S["scorecard"]=S["scorecard"].replace('text-transform:uppercase">The last three sales', 'text-transform:uppercase; background:#231f20; color:#fdfdfb; padding:14px 22px">The last three sales',1)
 for n,k in enumerate(order,1):
     h=S[k].replace("{{N}}",str(n))
