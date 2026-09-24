@@ -372,7 +372,7 @@ stops=[("1","Red dirt + pub","A changing world","AI took the town&#39;s jobs; ro
        ("2","Warehouse","Getting the call","He drops in on the DiggerLid boys, sure they want his outback wisdom. His shopping pile starts.",("&#39;So what have you boys been working on?&#39;","Jack walks the warehouse and finds all the new gear the boys have built.","Sale live: up to 25% off, bundles to 50% off. Ends 1 Dec.","Launch · 18 Nov")),
        ("3","Paddock","Sharing his &#39;wisdom&#39;","The Pro Enclosure gets tested in real conditions. He questions every better way, then quietly adopts it.",("&#39;Now this thing is the real deal.&#39;","Pro Enclosure deep dive: rain comes down, machine stays dry.","Ultimate Earthmover, 40% off. Ends 1 Dec.","Launch week")),
        ("4","Worksite","The brand realisation","A backyard dig on a home build. The gear is so good he has to get some for his mates, the husband, the habibi.",("&#39;Too good to keep to yourself.&#39;","The gift for your mates, your husband, your habibi: PRO Mat and more.","Shop Christmas gifts: up to 25% off, ends 1 Dec.","Gifting · from 23 Nov")),
-       ("5","The country pub","Bringing the lessons home","Last drinks at the pub with a ute of bargains; he teaches his robot mates. &#39;Tell &#39;em I sent you.&#39;",("&#39;Last day. Last drinks.&#39;","Back at the pub, Jack calls last drinks and passes on what he learned.","Sale ends midnight tonight, Tue 1 Dec.","Ending soon · 1 Dec"))]
+       ("5","The country pub","Bringing the lessons home","Last drinks at the pub with a ute of bargains; he teaches his robot mates. &#39;Tell &#39;em I sent you.&#39;",("&#39;Last day. Last drinks.&#39;","Back at the pub, Jack calls last drinks and passes on what he learned.","Sale ends midnight tonight, Tue 1 Dec.","Ending soon · 29 Nov to 1 Dec"))]
 xs=[166,499,832,1165,1498]
 road=(f'<svg aria-label="Journey route: red dirt and the pub, warehouse, paddock, worksite, then home to the country pub" viewBox="0 0 1664 64" style="width:1664px; height:64px; flex-shrink:0">'
       f'<path d="M166 32 C 300 0, 380 0, 499 32 S 700 64, 832 32 S 1040 0, 1165 32 S 1380 64, 1498 32" fill="none" stroke="{K}" stroke-width="5" stroke-dasharray="16 10"/>'
@@ -481,7 +481,7 @@ S["character"]=content("character","The character: our own outback expert",
 cphases=[("Hype","16 to 17 Nov","Attention grab plus sale info in the statics, with cool visuals. New, cold audience.",{"Video":4,"Image":4,"GIF":2,"UGC":0}),
          ("Launch","From 18 Nov","The sale is live: the offer, the bundles and the end date.",{"Video":6,"Image":6,"GIF":4,"UGC":4}),
          ("Mid-sale","From 23 Nov","Gifting focus: PRO Mat as the gift, driving to the Christmas gifting page.",{"Video":5,"Image":5,"GIF":0,"UGC":3}),
-         ("Ending soon","1 Dec","Deadline and last chance: the sale ends midnight Tue 1 Dec.",{"Video":2,"Image":2,"GIF":1,"UGC":1})]
+         ("Ending soon","From 29 Nov","The final three days: deadline and last chance, ends midnight Tue 1 Dec.",{"Video":2,"Image":2,"GIF":1,"UGC":1})]
 cformats=["Video","Image","GIF","UGC"]
 ctot=sum(sum(v.values()) for _,_,_,v in cphases)
 def ccell(n):
@@ -508,7 +508,7 @@ rows="".join(crow(f,[ccell(v[f]) for _,_,_,v in cphases],f'<p style="font-family
 S["creative"]=content("creative",f"{ctot} performance ads across four phases",
  tline+jobs+mixrow+f'<div style="display:flex; flex-direction:column; gap:10px; flex:1; min-height:0">{rows}</div>'
  +f'<p style="font-size:22px; color:{K90}; line-height:1.25"><b>Hype and launch:</b> 60% tried and tested formats with a new theme, 40% new experiments. <b>Mid-sale:</b> all new content. <b>Ending soon:</b> 60% new, 40% proven. Ad styles by area on the next slide.</p>',
- gap=14,src="Creative plan, 24 Sep 2026",notes="Hype 10 (4 video, 4 image, 2 GIF): built to work together, the video and GIFs grab attention and the statics carry the sale information with strong visuals, to a new, cold audience. Launch 20 (6 video, 6 image, 4 GIF, 4 UGC). Mid-sale 13 with a gifting focus (5 video, 5 image, 3 UGC). Ending soon 6 (2 video, 2 image, 1 GIF, 1 UGC). Hype and launch run 60% tried and tested formats with a new theme and 40% new experiments: 6 and 4 in hype, 12 and 8 at launch. Mid-sale is all new content (13). Ending soon is 60% new and 40% proven ads: 4 new and 2 proven of 6, rounded. Every ad follows the cold-audience rule: hook, product proof, offer and date.")
+ gap=14,src="Creative plan, 24 Sep 2026",notes="Hype 10 (4 video, 4 image, 2 GIF): built to work together, the video and GIFs grab attention and the statics carry the sale information with strong visuals, to a new, cold audience. Launch 20 (6 video, 6 image, 4 GIF, 4 UGC). Mid-sale 13 with a gifting focus (5 video, 5 image, 3 UGC). Ending soon 6, running the final three days from Sun 29 Nov (2 video, 2 image, 1 GIF, 1 UGC). Hype and launch run 60% tried and tested formats with a new theme and 40% new experiments: 6 and 4 in hype, 12 and 8 at launch. Mid-sale is all new content (13). Ending soon is 60% new and 40% proven ads: 4 new and 2 proven of 6, rounded. Every ad follows the cold-audience rule: hook, product proof, offer and date.")
 
 S["deliverables"]=content("deliverables","Creative deliverables (due dates TBC)",
  table(["Asset","Use","Count","Due (TBC)","Owner"],[
