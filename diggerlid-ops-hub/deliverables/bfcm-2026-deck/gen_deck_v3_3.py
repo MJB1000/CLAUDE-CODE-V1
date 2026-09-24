@@ -405,7 +405,7 @@ jack_l=[("The old way","On the tools forty years, by his own count. From a long 
         ("The lament","Is there still a place for an outback bushman in this new world of AI?"),
         ("Physical comedy","Clumsy, falls over constantly. Never notices, never reacts, never winks.")]
 jack_r=[("Talks down to the young","Speaks slowly to young tradies because he thinks they&#39;re simple. They&#39;re always right."),
-        ("Blind to the product","Never looks at the gear or names it, even lying on it or sheltering under it."),
+        ("Bad knees, bad back","He&#39;s got bad knees and a bad back. But doesn&#39;t everyone?"),
         ("Quietly coming around","Ends up using DiggerLid gear. Never admits it works; claims it was his idea all along."),
         ("Never cruel","Condescending but kind. Never mocks the customer, never angry for more than a beat."),
         ("Lovable at heart","Warm, engaging, always trying. All he wants is to share what he knows.")]
