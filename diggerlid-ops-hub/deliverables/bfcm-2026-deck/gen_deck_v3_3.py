@@ -358,7 +358,7 @@ S["bundles-alt"]=content("bundles-alt","Same price, told better: pay for the her
 
 terr=[("Red dirt","Home turf","Dust trail, camping out, night, campfire, the country pub.","Acts 1, 2 and 5: where the world has changed, where the call comes, and where he brings the lessons home.","&#39;Show these city boys how it&#39;s done.&#39;","PRO Mat · small covers"),
       ("Worksite","The lesson","Building an A-frame in the backyard with the excavator, hard gravel, translating for tradies.","Act 3: his messy methods against the boys&#39; better ways to grease, protect and work.","&#39;How you might have done it: a history lesson.&#39;","PRO Mat · small covers · grease"),
-      ("Paddock","The realisation","The excavator at work, DiggerShield, the big dog. Practical and authentic; possible Ivan cameo.","Act 4: tough people deserve gear that makes hard work easier.","&#39;Talk slow for earthmovers.&#39;","Pro Enclosure · DiggerShield"),
+      ("Paddock","The realisation","The excavator at work and the big dog. Practical and authentic; possible Ivan cameo.","Act 4: tough people deserve gear that makes hard work easier.","&#39;Talk slow for earthmovers.&#39;","Pro Enclosure"),
       ("Warehouse","The haul","Bundles, offers, the forklift loading the ute.","Acts 4 to 5: the Black Friday shopping pile, straight product proof.","Straight product proof.","Grease · accessories · bundles")]
 S["territories"]=content("territories","Four creative territories, one character",
  f'<div style="display:flex; gap:18px; flex:1">'+"".join(
@@ -373,25 +373,27 @@ S["territories"]=content("territories","Four creative territories, one character
  +note("4 locations · 2.5 shoot days plus 1 safety day · theme: All Aussie Adventure. Each location owns a product, and every hype teaser, cut-down and still comes from the same footage.",size=24),
  src="Planning notes, creative production page",notes="Ordered as the journey runs: red dirt, worksite, paddock, warehouse, then back to red dirt. The next slide draws the route.")
 
-stops=[("1","Red dirt","A changing world · Getting the call","Robots pull the beers at the country pub; nobody needs his wisdom. The DiggerLid boys call. He loads the excavator and follows the dust trail to the big smoke.","PRO Mat · small covers"),
-       ("2","Worksite","Sharing his &#39;wisdom&#39;","Backyard A-frame on hard gravel. His messy methods meet the boys&#39; better ways to grease and protect. He questions every fix, then quietly adopts it.","PRO Mat · grease"),
-       ("3","Paddock","The brand realisation","Excavator, DiggerShield and the big dog. Tough people deserve gear that makes hard work easier. Now is the time to upgrade.","Pro Enclosure · DiggerShield"),
-       ("4","Warehouse","The shopping pile","The Black Friday haul goes on the forklift: bundles and offers loaded onto the ute, while he insists he taught the boys a thing or two.","Bundles · grease · accessories"),
-       ("5","Red dirt, home","Bringing the lessons home","Back at the pub he teaches the robots: look after your machine, look after your body, know when to grab a good deal. &#39;Tell &#39;em I sent you.&#39;","BFCM offer · deadline · shop now")]
+stops=[("1","Red dirt","A changing world · Getting the call","Robots pull the beers at the country pub; nobody needs his wisdom. The DiggerLid boys call, and he follows the dust trail to the big smoke.","Hype teasers: robots at the pub, the call, &#39;sale starts Wednesday&#39;"),
+       ("2","Worksite","Sharing his &#39;wisdom&#39;","Backyard A-frame on hard gravel. His messy methods meet the boys&#39; better ways to grease and protect. He questions every fix, then quietly adopts it.","PRO Mat and grease demo cut-downs; PRO Mat gifting angle"),
+       ("3","Paddock","The brand realisation","The excavator and the big dog. Tough people deserve gear that makes hard work easier. Now is the time to upgrade.","Pro Enclosure: protect the machine; Ultimate Earthmover bundle"),
+       ("4","Warehouse","The shopping pile","The Black Friday haul goes on the forklift and onto the ute, while he insists he taught the boys a thing or two.","Bundle and offer stills: &#39;$919 of gear free&#39;"),
+       ("5","Red dirt, home","Bringing the lessons home","Back at the pub he teaches the robots: look after your machine, your body, and grab a good deal. &#39;Tell &#39;em I sent you.&#39;","Last-chance cut-down: offer, deadline, shop now")]
 xs=[166,499,832,1165,1498]
 road=(f'<svg aria-label="Journey route: red dirt, worksite, paddock, warehouse, then home to red dirt" viewBox="0 0 1664 150" style="width:1664px; height:150px">'
       f'<path d="M166 95 C 300 20, 380 20, 499 95 S 700 170, 832 95 S 1040 20, 1165 95 S 1380 170, 1498 95" fill="none" stroke="{K}" stroke-width="6" stroke-dasharray="18 12"/>'
       +"".join(f'<circle cx="{x}" cy="95" r="42" fill="{Y if n in (0,4) else (K if n%2 else W)}" stroke="{K}" stroke-width="5"/><text x="{x}" y="112" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="48" fill="{W if n%2 else K}">{n+1}</text>' for n,x in enumerate(xs))
       +f'<text x="832" y="26" text-anchor="middle" font-family="League Spartan, Arial, sans-serif" font-size="24" fill="{K}">country town to the big smoke and home again</text></svg>')
-S["journey"]=content("journey","The hero journey: five stops, four locations",
- road+f'<div style="display:flex; gap:18px; flex:1">'+"".join(
- f'<div style="flex:1; display:flex; flex-direction:column; gap:8px; border-top:4px solid {K}; padding-top:10px">'
- f'<h3 style="font-family:{HEAD}; font-size:30px; font-weight:700; text-transform:uppercase; line-height:1">{loc}</h3>'
+S["journey"]=content("journey","The hero narrative: organic social, laddering down to paid",
+ road+f'<div style="display:flex; gap:18px">'+"".join(
+ f'<div style="flex:1; display:flex; flex-direction:column; gap:6px; border-top:4px solid {K}; padding-top:8px">'
+ f'<h3 style="font-family:{HEAD}; font-size:28px; font-weight:700; text-transform:uppercase; line-height:1">{loc}</h3>'
  f'<p style="font-size:22px; font-weight:700; color:{MUTE}; text-transform:uppercase; letter-spacing:.5px; line-height:1.2">{act}</p>'
- f'<p style="font-size:22px; line-height:1.3; color:{K90}">{beat}</p>'
- f'<div style="margin-top:auto; background:{Y}; color:{K}; padding:6px 10px; font-size:22px; font-weight:700">{prod}</div></div>'
- for num,loc,act,beat,prod in stops)+'</div>',
- gap=18,src="Creative brief: hero narrative in five acts",notes="Each stop is an episode and each episode sells one part of the range. The launch film runs the whole route; cut-downs run one stop each, and the gift cut-downs come from stops 2 and 5.")
+ f'<p style="font-size:22px; line-height:1.28; color:{K90}">{beat}</p></div>'
+ for num,loc,act,beat,paid in stops)+'</div>'
+ +f'<div style="display:flex; align-items:center; gap:16px; background:{K}; color:{W}; padding:10px 18px"><p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase; color:{Y}">Organic social</p><p style="font-size:23px">The meta narrative: five episodes, one per stop, across our organic channels through the sale.</p></div>'
+ +f'<p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase; text-align:center">▼ ladders down to performance ads for the sale ▼</p>'
+ +f'<div style="display:flex; gap:18px">'+"".join(f'<div style="flex:1; background:{Y}; color:{K}; padding:8px 12px; font-size:22px; font-weight:700; line-height:1.25; border:2px solid {K}">{paid}</div>' for num,loc,act,beat,paid in stops)+'</div>',
+ gap=14,src="Creative brief: hero narrative in five acts",notes="The narrative lives on organic social as the story of the sale. Paid media takes one stop at a time: short cut-downs, each with one product and an offer end-card, so every ad works without the rest of the story.")
 
 S["gifting"]=content("gifting","Christmas gifting: one page, every gift angle points to it",
  f'<div style="display:flex; gap:24px">{big("34%","of PRO Mat Plus buyers are women, in practice gift buyers. PRO Mat is the hero gift.")}{big("1 page","one Christmas gifting page. Every gift ad, email, SMS and banner lands there, not on the sale page.",bg="#ffffff")}{big("23 Nov","the page and the gift angle go live with the mid-sale content drop and run through Cyber Monday and into December.")}</div>'
