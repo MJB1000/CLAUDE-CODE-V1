@@ -481,29 +481,35 @@ S["character"]=content("character","The character: our own outback expert",
 cphases=[("Hype","16 to 17 Nov","Attention grab plus sale info in the statics, with cool visuals. New, cold audience.",{"Video":4,"Image":4,"GIF":2,"UGC":0}),
          ("Launch","From 18 Nov","The sale is live: the offer, the bundles and the end date.",{"Video":6,"Image":6,"GIF":4,"UGC":4}),
          ("Mid-sale","From 23 Nov","Gifting focus: PRO Mat as the gift, driving to the Christmas gifting page.",{"Video":5,"Image":5,"GIF":0,"UGC":3}),
-         ("Ending soon","To 1 Dec","Deadline and last chance: the sale ends midnight Tue 1 Dec.",{"Video":2,"Image":2,"GIF":1,"UGC":1})]
+         ("Ending soon","1 Dec","Deadline and last chance: the sale ends midnight Tue 1 Dec.",{"Video":2,"Image":2,"GIF":1,"UGC":1})]
 cformats=["Video","Image","GIF","UGC"]
 ctot=sum(sum(v.values()) for _,_,_,v in cphases)
 def ccell(n):
-    if not n: return f'<div style="flex:1; display:flex; align-items:center; justify-content:center; border:2px dashed #c9c6c7; color:{GREY}; font-size:24px">none</div>'
+    if not n: return f'<div style="flex:1; display:flex; align-items:center; justify-content:center; border:2px dashed #c9c6c7; color:{GREY}; font-size:22px">none</div>'
     bg = K if n>=5 else (Y if n>=3 else Y40)
     fg = Y if n>=5 else K
-    return f'<div style="flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:{bg}; color:{fg}; border:2px solid {K}"><p style="font-family:{DISP}; font-size:48px; line-height:1">{n}</p></div>'
-hdr=(f'<div style="display:flex; gap:10px"><div style="flex:0 0 150px"></div>'
-     +"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:4px; border-top:8px solid {Y if i%2==0 else K}; padding-top:8px; padding-right:16px">'
-              f'<div style="display:flex; justify-content:space-between; align-items:baseline"><p style="font-family:{HEAD}; font-size:32px; font-weight:700; text-transform:uppercase; line-height:1">{ph}</p><p style="font-family:{DISP}; font-size:40px; line-height:1">{sum(v.values())}</p></div>'
-              f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">{dt}</p>'
-              f'<p style="font-size:22px; line-height:1.22; color:{K90}">{why}</p></div>' for i,(ph,dt,why,v) in enumerate(cphases))
-     +f'<div style="flex:0 0 120px; display:flex; flex-direction:column; justify-content:flex-end; align-items:flex-end"><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">Total</p><p style="font-family:{DISP}; font-size:48px; line-height:1">{ctot}</p></div></div>')
-rows="".join(f'<div style="display:flex; gap:10px; flex:1; min-height:0"><div style="flex:0 0 150px; display:flex; align-items:center"><p style="font-family:{HEAD}; font-size:30px; font-weight:700; text-transform:uppercase">{f}</p></div>'
-             +"".join(ccell(v[f]) for _,_,_,v in cphases)
-             +f'<div style="flex:0 0 120px; display:flex; align-items:center; justify-content:flex-end"><p style="font-family:{DISP}; font-size:36px">{sum(v[f] for _,_,_,v in cphases)}</p></div></div>' for f in cformats)
-bar=(f'<div style="display:flex; gap:0; height:44px; border:2px solid {K}">'
-     +"".join(f'<div style="flex:{sum(v.values())}; display:flex; align-items:center; padding-left:12px; background:{[Y,K,Y40,W][i]}; color:{W if i==1 else K}; border-right:2px solid {K}"><p style="font-size:22px; font-weight:700">{ph} {sum(v.values())}</p></div>' for i,(ph,dt,why,v) in enumerate(cphases))
-     +'</div>')
+    return f'<div style="flex:1; display:flex; align-items:center; justify-content:center; background:{bg}; color:{fg}; border:2px solid {K}"><p style="font-family:{DISP}; font-size:44px; line-height:1">{n}</p></div>'
+def crow(label, cells, total, flex="1"):
+    return (f'<div style="display:flex; gap:12px; flex:{flex}; min-height:0"><div style="flex:0 0 150px; display:flex; align-items:center"><p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase; line-height:1.05">{label}</p></div>'
+            +"".join(cells)+f'<div style="flex:0 0 90px; display:flex; align-items:center; justify-content:flex-end">{total}</div></div>')
+# timeline: chevrons aligned to the columns
+TLC=[Y,K,Y40,"#e4e1e2"]
+tline=crow("Timeline",[f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; gap:10px; background:{TLC[i]}; color:{W if i==1 else K}; padding:10px 14px; white-space:nowrap; clip-path:polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%{", 18px 50%" if i else ""})"><p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase; padding-left:{16 if i else 0}px">{ph}</p><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; padding-right:18px">{dt}</p></div>' for i,(ph,dt,why,v) in enumerate(cphases)],
+           f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; color:{MUTE}">TOTAL</p>',flex="0 0 auto")
+jobs=crow("The job",[f'<div style="flex:1; display:flex; gap:10px; align-items:flex-start"><p style="font-family:{DISP}; font-size:40px; line-height:1">{sum(v.values())}</p><p style="font-size:22px; line-height:1.2; color:{K90}">{why}</p></div>' for ph,dt,why,v in cphases],
+          f'<p style="font-family:{DISP}; font-size:44px; line-height:1">{ctot}</p>',flex="0 0 auto")
+def mix(n):
+    t=round(n*0.6); e=n-t
+    return (f'<div style="flex:1; display:flex; border:2px solid {K}; height:56px">'
+            f'<div style="flex:{t}; background:{K}; color:{Y}; display:flex; align-items:center; padding-left:10px"><p style="font-size:22px; font-weight:700">{t} tested + twist</p></div>'
+            f'<div style="flex:{e}; background:{W}; display:flex; align-items:center; padding-left:10px; background-image:repeating-linear-gradient(45deg, {Y40} 0 10px, {W} 10px 20px)"><p style="font-size:22px; font-weight:700">{e} new</p></div></div>')
+nomix=f'<div style="flex:1; display:flex; align-items:center; justify-content:center; border:2px dashed #c9c6c7; height:56px"><p style="font-size:22px; color:{GREY}">Mix to set</p></div>'
+mixrow=crow("60 / 40 mix",[mix(10),mix(20),nomix,nomix],f'<p style="font-size:22px; font-weight:700; text-align:right">18 + 12</p>',flex="0 0 auto")
+rows="".join(crow(f,[ccell(v[f]) for _,_,_,v in cphases],f'<p style="font-family:{DISP}; font-size:36px">{sum(v[f] for _,_,_,v in cphases)}</p>') for f in cformats)
 S["creative"]=content("creative",f"{ctot} performance ads across four phases",
- bar+hdr+f'<div style="display:flex; flex-direction:column; gap:10px; flex:1; min-height:0">{rows}</div>',
- gap=18,src="Creative plan, 24 Sep 2026",notes="Hype 10 (4 video, 4 image, 2 GIF): built to work together, the video and GIFs grab attention and the statics carry the sale information with strong visuals. Launch 20 (6 video, 6 image, 4 GIF, 4 UGC). Mid-sale 13 with a gifting focus (5 video, 5 image, 3 UGC). Ending soon 6 (2 video, 2 image, 1 GIF, 1 UGC). Every ad follows the cold-audience rule from the hero narrative: hook, product proof, offer and date.")
+ tline+jobs+mixrow+f'<div style="display:flex; flex-direction:column; gap:10px; flex:1; min-height:0">{rows}</div>'
+ +f'<p style="font-size:22px; color:{K90}; line-height:1.25"><b>60 / 40 in hype and launch:</b> 60% tried and tested formats with a theme twist, 40% new experiments. The ad styles in each area are on the next slide.</p>',
+ gap=14,src="Creative plan, 24 Sep 2026",notes="Hype 10 (4 video, 4 image, 2 GIF): built to work together, the video and GIFs grab attention and the statics carry the sale information with strong visuals, to a new, cold audience. Launch 20 (6 video, 6 image, 4 GIF, 4 UGC). Mid-sale 13 with a gifting focus (5 video, 5 image, 3 UGC). Ending soon 6 (2 video, 2 image, 1 GIF, 1 UGC). Hype and launch run 60% tried and tested formats with a theme twist and 40% new experiments: 6 and 4 in hype, 12 and 8 at launch. Every ad follows the cold-audience rule: hook, product proof, offer and date.")
 
 S["deliverables"]=content("deliverables","Creative deliverables (due dates TBC)",
  table(["Asset","Use","Count","Due (TBC)","Owner"],[
