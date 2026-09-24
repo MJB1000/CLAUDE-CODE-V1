@@ -346,13 +346,13 @@ def acard(title, rows, pay, rrp, free, bg="#ffffff", accent=Y):
             f'<div style="font-size:22px; line-height:1.3; color:{K90}; display:flex; flex-direction:column">{out}</div>'
             f'<div style="display:flex; justify-content:space-between; font-size:23px; font-weight:700; border-top:2px solid {K}; padding-top:6px"><span>{free} of gear free</span><span style="color:{MUTE}; text-decoration:line-through">{rrp}</span></div>'
             f'<div style="display:flex; justify-content:space-between; font-size:26px; font-weight:700; background:{K}; color:{W}; padding:6px 10px"><span>You pay</span><span>{pay}</span></div></div>')
-S["bundles-alt"]=content("bundles-alt","Same price, told better: pay for the hero gear, the rest is free",
+S["bundles-alt"]=content("bundles-alt","Three hero bundles: pay for the hero gear, the rest is free",
  f'<div style="display:flex; gap:20px; flex:1">'
  +acard("Hardcore Tradie · 30% off",[("2× PRO Mat Plus","$598","$538"),("1× Proper Thicc Hoodie","$139","$125"),("1× Drawbar Cover","$129","$114"),("10× Digger Wipes","$150","FREE"),("1× Magnet Tool Mat","$79","FREE"),("1× Boom Bottle Opener","$15","FREE")],"$777","$1,110","$244",accent=Y)
  +acard("Ultimate Earthmover · 40% off",[("1× Pro Excavator Enclosure","$699","$548"),("1× PRO Mat Plus","$299","$235"),("1× Drawbar Cover","$129","$101"),("10× Digger Wipes","$150","FREE"),("1× Magnet Tool Mat","$79","FREE"),("1× Drink / Tool Caddy","$49","FREE"),("1× Excavator Phone Cradle","$39","FREE"),("1× Hydraulic Coupling Cap Set","$15","FREE"),("1× Boom Bottle Opener","$15","FREE")],"$884","$1,474","$347",accent=K)
  +acard("Ludicrous · 50% off",[("1× The Hauler Luggage Bag","$599","$528"),("2× PRO Mat Plus","$598","$530"),("20× Digger Wipes","$300","FREE"),("1× Proper Thicc Hoodie","$139","FREE"),("1× Drawbar Cover","$129","FREE"),("1× Quicky Cover","$129","FREE"),("2× Magnet Tool Mat","$158","FREE"),("1× Drink / Tool Caddy","$49","FREE"),("1× Boom Bottle Opener","$15","FREE")],"$1,058","$2,116","$919",accent=Y)+'</div>'
- +note("Each bundle costs exactly the same as on the previous slide. The hero items take a modest cut (about 10% on the Hardcore Tradie, 22% on the Ultimate Earthmover, 12% on the Ludicrous) and everything else drops to $0, so the ad and the page can lead with the free gear.",size=22),
- src="Shopify product prices, 24 Sep 2026",notes="Alternative construction for the room to choose. The saving is the same; the story is \"buy the mat, get the rest free\" instead of a percentage.")
+ +note("Prices are store RRPs summed (The Hauler at its full $599), less 30, 40 or 50%. The hero items take a modest cut (about 10% on the Hardcore Tradie, 22% on the Ultimate Earthmover, 12% on the Ludicrous) and everything else drops to $0, so the ad and the page can lead with the free gear.",size=22),
+ src="Shopify product prices, 24 Sep 2026",notes="The saving is the full 30, 40 or 50%; the story is \"buy the mat, get the rest free\" instead of a percentage.")
 
 terr=[("Red dirt","Home turf","Dust trail, camping out, night, campfire, the country pub.","Acts 1, 2 and 5: where the world has changed, where the call comes, and where he brings the lessons home.","&#39;Show these city boys how it&#39;s done.&#39;","PRO Mat · small covers"),
       ("Worksite","The lesson","Building an A-frame in the backyard with the excavator, hard gravel, translating for tradies.","Act 3: his messy methods against the boys&#39; better ways to grease, protect and work.","&#39;How you might have done it: a history lesson.&#39;","PRO Mat · small covers · grease"),
@@ -578,7 +578,7 @@ S["close"]=(f'<section id="close" data-transition="fade" style="background:{K}; 
 order=["cover","onepage","agenda",
        "scorecard","curve",
        "moves",
-       "offer","bundles","bundles-alt","gifting","theme","territories","journey","deliverables"]
+       "offer","bundles-alt","gifting","theme","territories","journey","deliverables"]
 S["scorecard"]=S["scorecard"].replace('text-transform:uppercase">The last three sales', 'text-transform:uppercase; background:#231f20; color:#fdfdfb; padding:14px 22px">The last three sales',1)
 for n,k in enumerate(order,1):
     h=S[k].replace("{{N}}",str(n))
