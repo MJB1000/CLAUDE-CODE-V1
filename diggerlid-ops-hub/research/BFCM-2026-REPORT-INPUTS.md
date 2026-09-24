@@ -134,3 +134,4 @@ sell-through risk on hero lines; about 1,000 orders on day one at $1.0M (2025 pe
 - ~~RP-006~~ done 2026-09-22 (above). Consider a one-month popup holdout pre-BFCM for incrementality.
 - Concept decision (board: `deliverables/bfcm-2026-concept-board.md`; rec #1 launch + #5 mechanic).
 - Weekly RPV-vs-spend at week level (`/api/campaigns` live) for the spend curve.
+- Bundles revised 24 Sep (supersedes the line above): Hardcore Tradie $777 (RRP $1,110, 30% off the whole RRP; 2x PRO Mat Plus $538, hoodie $125, drawbar $114, $244 free). Ultimate Earthmover $732 (RRP $1,474; 35% off the hero gear: enclosure $454, PRO Mat Plus $194, drawbar $84; $347 free; 50% off RRP overall). Owner Operator replaces Ludicrous, Quicky Cover removed: $778 (RRP $1,987; 35% off the hero gear: Hauler $389, 2x PRO Mat Plus $389; $790 free; 61% off RRP overall). Margin sign-off on the two deeper bundles by 30 Oct.
