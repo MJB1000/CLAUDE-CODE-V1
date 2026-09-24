@@ -371,18 +371,18 @@ S["territories"]=content("territories","Four creative territories, one character
  f'<div style="margin-top:auto; background:{K}; color:{W}; padding:8px 12px; font-size:23px; font-weight:700">{prod}</div></div>'
  for i,(loc,role,shoot,story,line,prod) in enumerate(terr))+'</div>'
  +note("4 locations · 2.5 shoot days plus 1 safety day · theme: All Aussie Adventure. Each location owns a product, and every hype teaser, cut-down and still comes from the same footage.",size=24),
- src="Planning notes, creative production page",notes="Ordered as the journey runs: red dirt, worksite, paddock, warehouse, then back to red dirt. The next slide draws the route.")
+ src="Planning notes, creative production page",notes="Ordered as the journey runs: red dirt, worksite, paddock, warehouse, then home to the country pub. The next slide draws the route.")
 
-stops=[("1","Red dirt","A changing world · Getting the call","Robots run the country pub; nobody needs his wisdom. The DiggerLid boys call, and he heads for the big smoke.",("&#39;Robots run the pub now. Who still knows excavators?&#39;","A bush operator loads his digger and heads for the city.","Our biggest sale starts Wed 18 Nov: get early access.")),
+stops=[("1","Red dirt + pub","A changing world · Getting the call","Robots run the country pub; nobody needs his wisdom. The DiggerLid boys call, and he heads for the big smoke.",("&#39;Robots run the pub now. Who still knows excavators?&#39;","A bush operator loads his digger and heads for the city.","Our biggest sale starts Wed 18 Nov: get early access.")),
        ("2","Worksite","Sharing his &#39;wisdom&#39;","His messy methods meet the boys&#39; better ways to grease and protect. He questions every fix, then quietly adopts it.",("&#39;Still greasing like it&#39;s 1985?&#39;","His old way against the PRO Mat and KAJO grease, side by side.","Up to 25% off, ends 1 Dec. The gift he&#39;ll use.")),
        ("3","Paddock","The brand realisation","The excavator and the big dog. Tough people deserve gear that makes hard work easier. Now is the time to upgrade.",("&#39;Your machine sleeps in the weather.&#39;","The Pro Enclosure goes on, rain comes down, machine stays dry.","Ultimate Earthmover bundle, 40% off, ends 1 Dec.")),
        ("4","Warehouse","The shopping pile","The Black Friday haul goes on the forklift and onto the ute, while he insists he taught the boys a thing or two.",("&#39;One ute. $2,116 of gear. Half price.&#39;","The haul goes on the forklift, item by item.","Ludicrous bundle $1,058: $919 of it free.")),
-       ("5","Red dirt, home","Bringing the lessons home","He teaches the robots: look after your machine, your body, and grab a good deal. &#39;Tell &#39;em I sent you.&#39;",("&#39;Look after your machine. And your back.&#39;","He teaches the robots what the city taught him.","Last day: sale ends midnight Tue 1 Dec."))]
+       ("5","The country pub","Bringing the lessons home","Back at the country pub, he teaches the robots: look after your machine, your body, and grab a good deal. &#39;Tell &#39;em I sent you.&#39;",("&#39;Look after your machine. And your back.&#39;","He teaches the robots what the city taught him.","Last day: sale ends midnight Tue 1 Dec."))]
 xs=[166,499,832,1165,1498]
-road=(f'<svg aria-label="Journey route: red dirt, worksite, paddock, warehouse, then home to red dirt" viewBox="0 0 1664 150" style="width:1664px; height:150px">'
-      f'<path d="M166 95 C 300 20, 380 20, 499 95 S 700 170, 832 95 S 1040 20, 1165 95 S 1380 170, 1498 95" fill="none" stroke="{K}" stroke-width="6" stroke-dasharray="18 12"/>'
-      +"".join(f'<circle cx="{x}" cy="95" r="42" fill="{Y if n in (0,4) else (K if n%2 else W)}" stroke="{K}" stroke-width="5"/><text x="{x}" y="112" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="48" fill="{W if n%2 else K}">{n+1}</text>' for n,x in enumerate(xs))
-      +f'<text x="832" y="26" text-anchor="middle" font-family="League Spartan, Arial, sans-serif" font-size="24" fill="{K}">country town to the big smoke and home again</text></svg>')
+road=(f'<svg aria-label="Journey route: red dirt and the pub, worksite, paddock, warehouse, then home to the country pub" viewBox="0 0 1664 64" style="width:1664px; height:64px; flex-shrink:0">'
+      f'<path d="M166 32 C 300 0, 380 0, 499 32 S 700 64, 832 32 S 1040 0, 1165 32 S 1380 64, 1498 32" fill="none" stroke="{K}" stroke-width="5" stroke-dasharray="16 10"/>'
+      +"".join(f'<circle cx="{x}" cy="32" r="28" fill="{Y if n in (0,4) else (K if n%2 else W)}" stroke="{K}" stroke-width="4"/><text x="{x}" y="44" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="34" fill="{W if n%2 else K}">{n+1}</text>' for n,x in enumerate(xs))
+      +'</svg>')
 S["journey"]=content("journey","The hero narrative: organic social, laddering down to paid",
  road+f'<div style="display:flex; gap:18px">'+"".join(
  f'<div style="flex:1; display:flex; flex-direction:column; gap:6px; border-top:4px solid {K}; padding-top:8px">'
