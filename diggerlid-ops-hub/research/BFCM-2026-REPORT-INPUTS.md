@@ -37,7 +37,7 @@ Basis: the EE calendar workbooks (2025 6.0, 2026 7.1) record revenue **including
 figures are Shopify net (ex-GST). Convert before comparing.
 
 **Dates (decided 23 Sep, superseding the 19 Nov plan):** hype Mon 16 and Tue 17 Nov; sale Wed 18 Nov
-6:00 AM to Tue 1 Dec 11:59 PM AEDT, 14 days; Black Friday = day 10, Cyber Monday = day 13; optional
+12:00 PM (midday; changed from 6:00 AM on 24 Sep) to Tue 1 Dec 11:59 PM AEDT, 14 days; Black Friday = day 10, Cyber Monday = day 13; optional
 extension Wed 2 Dec. Matches the EE tool export, email flow and Meta plan. Still carrying other dates and to be
 re-dated: the EE tool output (18 Nov to 1 Dec), `email-flow.csv` and `meta-campaigns.csv` (12 days
 from 19 Nov plus an extension day), the shared calendar (23 Nov start).

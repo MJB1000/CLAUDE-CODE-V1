@@ -65,3 +65,5 @@ Mid-sale push on Mon 23 Nov is a new content drop and a PRO Mat gifting angle, d
 Christmas gifting page. The daily knock-off deal mechanic is removed: it does not exist. Deliverable
 due dates are TBC. Slides kept: cover, one page, agenda, three-sale scorecard, sale curve, eight
 moves, offer, bundles, Christmas gifting, theme, deliverables, decisions, exec FAQ, close.
+
+Launch time decision (24 Sep): sale opens Wed 18 Nov at 12:00 PM (midday) AEDT, not 6:00 AM. Hype Mon 16 and Tue 17 Nov unchanged. Ending-soon ads run the final three days from Sun 29 Nov.

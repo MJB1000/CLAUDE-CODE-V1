@@ -84,7 +84,7 @@ S["onepage"]=content("onepage","The plan on one page",
  +"".join(f'<div style="display:flex; flex-direction:column; gap:8px; background:{bg}; padding:22px 24px; border:2px solid {K}">'
    f'<h3 style="font-family:{HEAD}; font-size:28px; font-weight:700; text-transform:uppercase">{t}</h3><p style="font-size:24px; line-height:1.3; color:{K90}">{d}</p></div>'
    for t,d,bg in [
-   ("When","Hype Mon 16 and Tue 17 Nov. Sale Wed 18 Nov 6:00 AM to Tue 1 Dec 11:59 PM AEDT: 14 days, Black Friday on day 10, Cyber Monday on day 13. Christmas gifting push from mid-sale, Mon 23 Nov.",Y40),
+   ("When","Hype Mon 16 and Tue 17 Nov. Sale Wed 18 Nov 12:00 PM (midday) to Tue 1 Dec 11:59 PM AEDT: 14 days, Black Friday on day 10, Cyber Monday on day 13. Christmas gifting push from mid-sale, Mon 23 Nov.",Y40),
    ("Target (to confirm)","Plan: $983k sale revenue incl. GST (about $905k net), the EE tool projection on a $90k week; the calendar plan of record for November is $990k. Floor: $585k (2025 repeated). Stretch: $1.27M on the Aug to Sep run rate. Spend $243k (25% of revenue), ceiling 28%.","#ffffff"),
    ("Offer","Up to 25% off, grease excluded. DiggerShield $150 / $200 off. Gifts: $399 Digger Wipes and free shipping; $599 adds a Magnet Tool Mat; $799 adds a Drawbar Cover. Bundles: Hardcore Tradie $777 (RRP $1,110, 30% off), Ultimate Earthmover $884 (RRP $1,474, 40% off), Ludicrous $1,058 (RRP $2,116, 50% off). Shown as hero gear discounted, the rest free.",Y40),
    ("Theme","All Aussie Adventure: our own outback expert, four locations, one film and cut-downs. Christmas gifting page live from the mid-sale push.","#ffffff"),
@@ -94,7 +94,7 @@ S["onepage"]=content("onepage","The plan on one page",
 
 S["changes"]=content("changes","What changes from 2025",
  table(["","2025","2026"],[
-  ["Launch","Tue 18 Nov, 3:05 PM: day one was nine hours long","Wed 18 Nov, 6:00 AM AEDT: a full first day, launch send 7:00 AM, 14 days to Tue 1 Dec"],
+  ["Launch","Tue 18 Nov, 3:05 PM: day one was nine hours long","Wed 18 Nov, 12:00 PM (midday) AEDT, launch send at midday, 14 days to Tue 1 Dec"],
   ["Hype traffic","Sent to the sale page before it was live: 2,328 sessions, 13 orders","Sent to a first-access capture page with a countdown"],
   ["Cold prospecting","Sent to the sale page: 19 Nov, 4,628 sessions at 0.99%","Sent to grease and PRO Mat product pages; sale page for warm traffic"],
   ["Mid-sale","One engaged send (25 Nov) and a Black Friday blast","Daily 3:30 PM knock-off drop plus a mid-sale engaged send with a bonus gift"],
@@ -451,7 +451,7 @@ S["theme"]=content("theme","Theme: All Aussie Adventure",
  f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{K}; color:{W}; padding:22px 28px">{banner("Theme · All Aussie Adventure", bg=Y, fg=K, size=24)}'
  f'<p style="font-size:24px; line-height:1.3; color:{W}">A parody of the outback-bumbler format with our own character, Jack Clacker: wrong wisdom, four locations, and gear he never looks at until he quietly uses it.</p></div>'
  f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{Y40}; padding:22px 28px; border:2px solid {K}">{banner("How it carries the sale", size=24)}'
- f'<p style="font-size:24px; line-height:1.3">Hype (16 and 17 Nov) teases Jack to a new, cold audience with no prices and drives sign-ups. Launch (18 Nov, 6 AM) opens with the offer. A new episode lands at the mid-sale drop on 23 Nov.</p></div></div>'
+ f'<p style="font-size:24px; line-height:1.3">Hype (16 and 17 Nov) teases Jack to a new, cold audience with no prices and drives sign-ups. Launch (Wed 18 Nov, midday) opens with the offer. A new episode lands at the mid-sale drop on 23 Nov.</p></div></div>'
  +f'<p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase">Adapting the format: from the joke to our hero film to our ad</p>'
  +f'<div style="display:flex; gap:14px; flex:1; min-height:0">'
  +beatcol("The original","The format we parody",["Intro","Physical comedy","Overstate / wrong knowledge","Criticise","Stuffs it up","Resolution, or lack of one"],"",W,accent=GREY)
@@ -511,11 +511,11 @@ S["creative"]=content("creative",f"{ctot} performance ads across four phases",
  gap=14,src="Creative plan, 24 Sep 2026",notes="Hype 10 (4 video, 4 image, 2 GIF): built to work together, the video and GIFs grab attention and the statics carry the sale information with strong visuals, to a new, cold audience. Launch 20 (6 video, 6 image, 4 GIF, 4 UGC). Mid-sale 13 with a gifting focus (5 video, 5 image, 3 UGC). Ending soon 6, running the final three days from Sun 29 Nov (2 video, 2 image, 1 GIF, 1 UGC). Hype and launch run 60% tried and tested formats with a new theme and 40% new experiments: 6 and 4 in hype, 12 and 8 at launch. Mid-sale is all new content (13). Ending soon is 60% new and 40% proven ads: 4 new and 2 proven of 6, rounded. Every ad follows the cold-audience rule: hook, product proof, offer and date.")
 
 hype_ads=[("Image","Sneak peek static","2","",
-           "&#39;Sneak peek: 25% off best sellers + free gift over $X · Sale opens Tue 17 Nov&#39;",
-           "Offer-led static. Creative TBD.",True),
+           "&#39;Sneak peek: 25% off best sellers + free gift over $X · Sale opens Wed 18 Nov&#39;",
+           "Offer-led static. Creative TBD.",False),
           ("GIF","Countdown GIF","2","",
-           "&#39;Black Friday · Launching Tue 17 Nov, 3PM&#39;",
-           "A countdown: video as image, or a GIF with a live countdown.",True),
+           "&#39;Black Friday · Launching Wed 18 Nov, 12PM&#39;",
+           "A countdown: video as image, or a GIF with a live countdown.",False),
           ("Video","Airwalk intro","2","Top of funnel",
            "&#39;If there&#39;s one thing I know about...&#39;",
            "10 to 15s, cool, Jack Clacker. He falls in a hole in the ground, and the founder is down there announcing the BFCM deal.",False),
@@ -548,7 +548,7 @@ S["hype-ads"]=content("hype-ads","Hype ads: 10 across five concepts, 16 to 17 No
  +f'<div style="display:flex; gap:12px; align-items:stretch"><div style="flex:0 0 auto; display:flex; align-items:center; padding-right:6px"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase">Check against the plan</p></div>'
  +tally("Video",4)+tally("Image",4)+tally("GIF",2)
  +f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; border:2px solid {K}; padding:10px 16px"><p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase">Total</p><p style="font-family:{DISP}; font-size:30px">10 of 10 ✓</p></div></div>',
- gap=18,src="Creative plan, 24 Sep 2026",notes="The ten hype ads, by concept. They match the hype column of the creative plan: 4 video, 4 image, 2 GIF. Still to tag: which 6 are tried and tested formats and which 4 are new experiments. Dates in the static and GIF copy say the sale opens Tue 17 Nov (3 PM); the plan has hype on Mon 16 and Tue 17 Nov and launch on Wed 18 Nov at 6 AM, so one of them needs to change. The free gift threshold is $X in the copy; the gift tiers start at $399.")
+ gap=18,src="Creative plan, 24 Sep 2026",notes="The ten hype ads, by concept. They match the hype column of the creative plan: 4 video, 4 image, 2 GIF. Still to tag: which 6 are tried and tested formats and which 4 are new experiments. The sale opens Wed 18 Nov at midday; hype runs Mon 16 and Tue 17 Nov. The free gift threshold is $X in the copy; the gift tiers start at $399.")
 
 S["deliverables"]=content("deliverables","Creative deliverables (due dates TBC)",
  table(["Asset","Use","Count","Due (TBC)","Owner"],[
@@ -566,7 +566,7 @@ S["deliverables"]=content("deliverables","Creative deliverables (due dates TBC)"
 S["s-lockup"]=section("s-lockup","04","Lock-up","Timeline with hours, day-by-day sends, pages to build, stock and fulfilment, owners, risks and the decisions needed.")
 
 tl=[("Mon 16 and Tue 17 Nov","Hype","Two hype sends to engaged segments; hype ads to a new, cold audience. All hype traffic to the first-access capture page. Pages live and tracked by close of day 17."),
-    ("Wed 18 Nov, 6:00 AM AEDT","Launch (day 1)","Sale live at 6:00 AM so day one is a full day (2025 launched at 3:05 PM). Launch email and SMS 7:00 AM. 19% of sale revenue expected on day one, 31% by the end of day two."),
+    ("Wed 18 Nov, 12:00 PM AEDT","Launch (day 1)","Sale live at midday (2025 launched at 3:05 PM). Launch email and SMS at midday. 19% of sale revenue expected on day one, 31% by the end of day two."),
     ("Thu 19 to Sun 22 Nov","Days 2 to 5","Knock-off drop at 3:30 PM daily. Daily 8 AM scorecard and cut rules."),
     ("Mon 23 Nov","Mid-sale push (day 6)","New content drop and a PRO Mat gifting angle. Christmas gifting launches: gift collection, gift-buyer ads, gift guide email and SMS. About a third of the creative lands here."),
     ("Tue 24 to Thu 26 Nov","Days 7 to 9","Gift-led drops and social proof; ads rotate to gifting angles."),
@@ -579,7 +579,7 @@ S["timeline"]=content("timeline","Timeline: 2 hype days plus 14 sale days, 18 No
  src="Planning decision, EE tool, campaign calendar",notes="Black Friday lands on day 10 and Cyber Monday on day 13; the last-chance push is Tuesday 1 December, the day after Cyber Monday.")
 
 comms=[("H1 Mon 16 Nov","Email","Engaged 250 days + window shoppers 14 days","Sale is coming: our biggest sale of the season starts soon"),
-       ("H2 Tue 17 Nov","Email","Engaged 90 days + window shoppers","Hype 2, plain text: biggest sale of the year, first access tomorrow 6 AM"),
+       ("H2 Tue 17 Nov","Email","Engaged 90 days + window shoppers","Hype 2, plain text: biggest sale of the year, first access tomorrow at midday"),
        ("D1 Wed 18 Nov 7:00 AM","Email + SMS","Full database; SMS list","Sale live: the whole offer, bundles, gift tiers"),
        ("D2 Thu 19 Nov","Email","Engaged 90 days","Top sale picks; first knock-off drop 3:30 PM"),
        ("D3 Fri 20 Nov","Email","Engaged 250 days","Founder favourites, plain text"),
@@ -658,7 +658,7 @@ S["s-appendix"]=section("s-appendix","05","Appendix","The questions people ask a
 
 S["faq-exec"]=content("faq-exec","Questions the exec will ask",
  f'<div style="display:flex; gap:32px; flex:1"><div style="flex:1">'+qa([
-  ("When does it run, and what are we targeting?","Wednesday 18 November 6:00 AM to Tuesday 1 December 11:59 PM AEDT, hype sends on 16 and 17 November. Plan $983k sale revenue incl. GST, the EE tool projection on a $90k week, at $243k of spend (25%). Floor $585k if we only repeat 2025; stretch $1.27M on the current run rate. Profit at the plan is $148k in the tool and about $110k after the product-cost and gift-uptake corrections."),
+  ("When does it run, and what are we targeting?","Wednesday 18 November 12:00 PM (midday) to Tuesday 1 December 11:59 PM AEDT, hype sends on 16 and 17 November. Plan $983k sale revenue incl. GST, the EE tool projection on a $90k week, at $243k of spend (25%). Floor $585k if we only repeat 2025; stretch $1.27M on the current run rate. Profit at the plan is $148k in the tool and about $110k after the product-cost and gift-uptake corrections."),
   ("Why 25% and not 30%?","Every point of discount lifts variable cost; 2025 delivered $535k at a sitewide discount with spend at 25.5%. Bundles and gift tiers do the work a deeper discount would, without cutting margin on everything."),
   ("Why exclude grease, and what does it cost?","Grease is the one product that repeats and the base for December reorders. But it was 33% of the 2025 sale and grease packs carried a 14% discount, so exclusion is a decision: either accept a smaller grease share or feature grease packs as a hero offer instead of a sitewide cut."),
   ("What stops us overspending?","A 28% ceiling on a 24% plan, spend shaped to the revenue curve rather than smoothed (with the 2025-shaped curve the tool no longer shows loss days, but plateau days clear only $3.5k), written cut rules, and one person reading the scorecard at 8 AM. Cold traffic no longer goes to the sale page.")],qsize=26,asize=23)+'</div><div style="flex:1">'+qa([
@@ -695,7 +695,7 @@ S["defs"]=content("defs","Terms used in this deck",
 S["close"]=(f'<section id="close" data-transition="fade" style="background:{K}; color:{W}; font-family:{BODY}; padding:128px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:40px">'
  f'{banner("BFCM 2026", bg=Y, fg=K, size=40)}'
  f'<h1 style="font-family:{DISP}; font-size:150px; line-height:1; text-align:center; color:{Y}; letter-spacing:2px">KEEP WORKING &amp;<br>KEEP EARNING!</h1>'
- f'<p style="font-size:30px; color:{GREY}; text-align:center">Six decisions this week. Pages live 13 November. Sale live Wednesday 18 November, 6:00 AM.</p>'
+ f'<p style="font-size:30px; color:{GREY}; text-align:center">Six decisions this week. Pages live 13 November. Sale live Wednesday 18 November, midday.</p>'
  f'<aside>End on the decisions and the two dates.</aside></section>')
 
 order=["cover","onepage","agenda",
