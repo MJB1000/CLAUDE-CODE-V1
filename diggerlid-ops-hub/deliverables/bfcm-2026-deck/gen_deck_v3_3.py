@@ -478,6 +478,33 @@ S["character"]=content("character","The character: our own outback expert",
  +note("The character carries on after the sale: grease how-not-tos, cover fit guides, tutorial content with Ivan from Earthworks Hub. The BFCM edit is season one."),
  src="Planning notes p.11, concept board")
 
+cphases=[("Hype","16 to 17 Nov","Attention grab plus sale info in the statics, with cool visuals. Wide audience.",{"Video":4,"Image":4,"GIF":2,"UGC":0}),
+         ("Launch","From 18 Nov","The sale is live: the offer, the bundles and the end date.",{"Video":6,"Image":6,"GIF":4,"UGC":4}),
+         ("Mid-sale","From 23 Nov","Gifting focus: PRO Mat as the gift, driving to the Christmas gifting page.",{"Video":5,"Image":5,"GIF":0,"UGC":3}),
+         ("Ending soon","To 1 Dec","Deadline and last chance: the sale ends midnight Tue 1 Dec.",{"Video":2,"Image":2,"GIF":1,"UGC":1})]
+cformats=["Video","Image","GIF","UGC"]
+ctot=sum(sum(v.values()) for _,_,_,v in cphases)
+def ccell(n):
+    if not n: return f'<div style="flex:1; display:flex; align-items:center; justify-content:center; border:2px dashed #c9c6c7; color:{GREY}; font-size:24px">none</div>'
+    bg = K if n>=5 else (Y if n>=3 else Y40)
+    fg = Y if n>=5 else K
+    return f'<div style="flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:{bg}; color:{fg}; border:2px solid {K}"><p style="font-family:{DISP}; font-size:48px; line-height:1">{n}</p></div>'
+hdr=(f'<div style="display:flex; gap:10px"><div style="flex:0 0 150px"></div>'
+     +"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:4px; border-top:8px solid {Y if i%2==0 else K}; padding-top:8px; padding-right:16px">'
+              f'<div style="display:flex; justify-content:space-between; align-items:baseline"><p style="font-family:{HEAD}; font-size:32px; font-weight:700; text-transform:uppercase; line-height:1">{ph}</p><p style="font-family:{DISP}; font-size:40px; line-height:1">{sum(v.values())}</p></div>'
+              f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">{dt}</p>'
+              f'<p style="font-size:22px; line-height:1.22; color:{K90}">{why}</p></div>' for i,(ph,dt,why,v) in enumerate(cphases))
+     +f'<div style="flex:0 0 120px; display:flex; flex-direction:column; justify-content:flex-end; align-items:flex-end"><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">Total</p><p style="font-family:{DISP}; font-size:48px; line-height:1">{ctot}</p></div></div>')
+rows="".join(f'<div style="display:flex; gap:10px; flex:1; min-height:0"><div style="flex:0 0 150px; display:flex; align-items:center"><p style="font-family:{HEAD}; font-size:30px; font-weight:700; text-transform:uppercase">{f}</p></div>'
+             +"".join(ccell(v[f]) for _,_,_,v in cphases)
+             +f'<div style="flex:0 0 120px; display:flex; align-items:center; justify-content:flex-end"><p style="font-family:{DISP}; font-size:36px">{sum(v[f] for _,_,_,v in cphases)}</p></div></div>' for f in cformats)
+bar=(f'<div style="display:flex; gap:0; height:44px; border:2px solid {K}">'
+     +"".join(f'<div style="flex:{sum(v.values())}; display:flex; align-items:center; padding-left:12px; background:{[Y,K,Y40,W][i]}; color:{W if i==1 else K}; border-right:2px solid {K}"><p style="font-size:22px; font-weight:700">{ph} {sum(v.values())}</p></div>' for i,(ph,dt,why,v) in enumerate(cphases))
+     +'</div>')
+S["creative"]=content("creative",f"{ctot} performance ads across four phases",
+ bar+hdr+f'<div style="display:flex; flex-direction:column; gap:10px; flex:1; min-height:0">{rows}</div>',
+ gap=18,src="Creative plan, 24 Sep 2026",notes="Hype 10 (4 video, 4 image, 2 GIF): built to work together, the video and GIFs grab attention and the statics carry the sale information with strong visuals. Launch 20 (6 video, 6 image, 4 GIF, 4 UGC). Mid-sale 13 with a gifting focus (5 video, 5 image, 3 UGC). Ending soon 6 (2 video, 2 image, 1 GIF, 1 UGC). Every ad follows the cold-audience rule from the hero narrative: hook, product proof, offer and date.")
+
 S["deliverables"]=content("deliverables","Creative deliverables (due dates TBC)",
  table(["Asset","Use","Count","Due (TBC)","Owner"],[
   ["Adventure hero film (4 episodes)","Launch, organic, sale page","1 film, 4 episodes","10 Nov edit locked","Creative [name]"],
@@ -629,14 +656,14 @@ S["close"]=(f'<section id="close" data-transition="fade" style="background:{K}; 
 order=["cover","onepage","agenda",
        "scorecard","curve",
        "moves",
-       "offer","bundles-alt","gifting","theme","jack","territories","journey","deliverables"]
+       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","deliverables"]
 S["scorecard"]=S["scorecard"].replace('text-transform:uppercase">The last three sales', 'text-transform:uppercase; background:#231f20; color:#fdfdfb; padding:14px 22px">The last three sales',1)
 for n,k in enumerate(order,1):
     h=S[k].replace("{{N}}",str(n))
     assert h.count("<section")==1, k
     for m in re.findall(r'font-size:(\d+)px',h): assert int(m)>=22, (k,m)
     open(os.path.join(SL,f"{k}.html"),"w").write(h)
-deck={"v":4,"createdOnFiles":{"v":1,"at":"2026-09-22T13:20:00Z"},"title":"DiggerLid BFCM 2026 Campaign Plan","order":order,
+deck={"v":4,"attachments":{},"cover":"jack","createdOnFiles":{"v":1,"at":"2026-09-22T13:20:00Z"},"title":"DiggerLid BFCM 2026 Campaign Plan","order":order,
  "sections":{"intro":{"description":"The plan on one page and the agenda","start":"cover"},
   "research":{"description":"The last three sales side by side and the shape of a sale","start":"scorecard"},
   "strategy":{"description":"Eight moves for 2026","start":"moves"},
