@@ -217,7 +217,7 @@ S["eeinputs"]=content("eeinputs","EE tool inputs (23 Sep run), checked",
  src="EE calendar 2025 and 2026, Shopify, EE BFCM tool export 23 Sep",notes="Two rounds of corrections are now in the tool: fixed costs, spend bracket, sale MER, the curve and the base week. Three inputs are still open and each moves profit: product cost, gift uptake and stock. Also confirmed: Sept and Oct 2025 revenue $566,323; Hybrid, $3K+ a day, Experienced; packaging $2, shipping $24 and merchant fees 2% (2.1% in Nov 2025).")
 
 moves=[("1 · Start wider","Test USA, NZ, TikTok and YouTube on a fixed budget with a kill rule. 70% of launch buyers are new."),
-       ("2 · 14 days, 2-day hype","Wed 18 Nov to Tue 1 Dec. Hype Mon 16 and Tue 17 Nov to a capture page."),
+       ("2 · 14 days, 2-day hype","Wed 18 Nov to Tue 1 Dec. Hype Mon 16 and Tue 17 Nov to a new, cold audience, landing on a capture page."),
        ("3 · Stronger theme","All Aussie Adventure: one character, four locations, one shoot, cut down for paid social."),
        ("4 · Cut and run","Written stop rules: landing page under 1.5% by midday, or two days over 30% spend-to-revenue."),
        ("5 · Mid-sale drop","Mon 23 Nov: a new content drop and a PRO Mat gifting angle to the engaged segment. Segmented sends lifted returning share to 43%."),
@@ -451,7 +451,7 @@ S["theme"]=content("theme","Theme: All Aussie Adventure",
  f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{K}; color:{W}; padding:22px 28px">{banner("Theme · All Aussie Adventure", bg=Y, fg=K, size=24)}'
  f'<p style="font-size:24px; line-height:1.3; color:{W}">A parody of the outback-bumbler format with our own character, Jack Clacker: wrong wisdom, four locations, and gear he never looks at until he quietly uses it.</p></div>'
  f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{Y40}; padding:22px 28px; border:2px solid {K}">{banner("How it carries the sale", size=24)}'
- f'<p style="font-size:24px; line-height:1.3">Hype (16 and 17 Nov) teases Jack with no prices and drives sign-ups. Launch (18 Nov, 6 AM) opens with the offer. A new episode lands at the mid-sale drop on 23 Nov.</p></div></div>'
+ f'<p style="font-size:24px; line-height:1.3">Hype (16 and 17 Nov) teases Jack to a new, cold audience with no prices and drives sign-ups. Launch (18 Nov, 6 AM) opens with the offer. A new episode lands at the mid-sale drop on 23 Nov.</p></div></div>'
  +f'<p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase">Adapting the format: from the joke to our hero film to our ad</p>'
  +f'<div style="display:flex; gap:14px; flex:1; min-height:0">'
  +beatcol("The original","The format we parody",["Intro","Physical comedy","Overstate / wrong knowledge","Criticise","Stuffs it up","Resolution, or lack of one"],"",W,accent=GREY)
@@ -478,7 +478,7 @@ S["character"]=content("character","The character: our own outback expert",
  +note("The character carries on after the sale: grease how-not-tos, cover fit guides, tutorial content with Ivan from Earthworks Hub. The BFCM edit is season one."),
  src="Planning notes p.11, concept board")
 
-cphases=[("Hype","16 to 17 Nov","Attention grab plus sale info in the statics, with cool visuals. Wide audience.",{"Video":4,"Image":4,"GIF":2,"UGC":0}),
+cphases=[("Hype","16 to 17 Nov","Attention grab plus sale info in the statics, with cool visuals. New, cold audience.",{"Video":4,"Image":4,"GIF":2,"UGC":0}),
          ("Launch","From 18 Nov","The sale is live: the offer, the bundles and the end date.",{"Video":6,"Image":6,"GIF":4,"UGC":4}),
          ("Mid-sale","From 23 Nov","Gifting focus: PRO Mat as the gift, driving to the Christmas gifting page.",{"Video":5,"Image":5,"GIF":0,"UGC":3}),
          ("Ending soon","To 1 Dec","Deadline and last chance: the sale ends midnight Tue 1 Dec.",{"Video":2,"Image":2,"GIF":1,"UGC":1})]
@@ -520,7 +520,7 @@ S["deliverables"]=content("deliverables","Creative deliverables (due dates TBC)"
 # ------------------------------------------------------------------ 04 LOCK-UP
 S["s-lockup"]=section("s-lockup","04","Lock-up","Timeline with hours, day-by-day sends, pages to build, stock and fulfilment, owners, risks and the decisions needed.")
 
-tl=[("Mon 16 and Tue 17 Nov","Hype","Two hype sends to engaged segments; warm-audience ads only at about $2k a day. All hype traffic to the first-access capture page. Pages live and tracked by close of day 17."),
+tl=[("Mon 16 and Tue 17 Nov","Hype","Two hype sends to engaged segments; hype ads to a new, cold audience. All hype traffic to the first-access capture page. Pages live and tracked by close of day 17."),
     ("Wed 18 Nov, 6:00 AM AEDT","Launch (day 1)","Sale live at 6:00 AM so day one is a full day (2025 launched at 3:05 PM). Launch email and SMS 7:00 AM. 19% of sale revenue expected on day one, 31% by the end of day two."),
     ("Thu 19 to Sun 22 Nov","Days 2 to 5","Knock-off drop at 3:30 PM daily. Daily 8 AM scorecard and cut rules."),
     ("Mon 23 Nov","Mid-sale push (day 6)","New content drop and a PRO Mat gifting angle. Christmas gifting launches: gift collection, gift-buyer ads, gift guide email and SMS. About a third of the creative lands here."),
