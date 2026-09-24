@@ -491,25 +491,24 @@ def ccell(n):
     return f'<div style="flex:1; display:flex; align-items:center; justify-content:center; background:{bg}; color:{fg}; border:2px solid {K}"><p style="font-family:{DISP}; font-size:44px; line-height:1">{n}</p></div>'
 def crow(label, cells, total, flex="1"):
     return (f'<div style="display:flex; gap:12px; flex:{flex}; min-height:0"><div style="flex:0 0 150px; display:flex; align-items:center"><p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase; line-height:1.05">{label}</p></div>'
-            +"".join(cells)+f'<div style="flex:0 0 90px; display:flex; align-items:center; justify-content:flex-end">{total}</div></div>')
+            +"".join(cells)+f'<div style="flex:0 0 124px; display:flex; align-items:center; justify-content:flex-end">{total}</div></div>')
 # timeline: chevrons aligned to the columns
 TLC=[Y,K,Y40,"#e4e1e2"]
 tline=crow("Timeline",[f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; gap:10px; background:{TLC[i]}; color:{W if i==1 else K}; padding:10px 14px; white-space:nowrap; clip-path:polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%{", 18px 50%" if i else ""})"><p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase; padding-left:{16 if i else 0}px">{ph}</p><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; padding-right:18px">{dt}</p></div>' for i,(ph,dt,why,v) in enumerate(cphases)],
            f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; color:{MUTE}">TOTAL</p>',flex="0 0 auto")
 jobs=crow("The job",[f'<div style="flex:1; display:flex; gap:10px; align-items:flex-start"><p style="font-family:{DISP}; font-size:40px; line-height:1">{sum(v.values())}</p><p style="font-size:22px; line-height:1.2; color:{K90}">{why}</p></div>' for ph,dt,why,v in cphases],
           f'<p style="font-family:{DISP}; font-size:44px; line-height:1">{ctot}</p>',flex="0 0 auto")
-def mix(n):
-    t=round(n*0.6); e=n-t
-    return (f'<div style="flex:1; display:flex; border:2px solid {K}; height:56px">'
-            f'<div style="flex:{t}; background:{K}; color:{Y}; display:flex; align-items:center; padding-left:10px"><p style="font-size:22px; font-weight:700">{t} tested + twist</p></div>'
-            f'<div style="flex:{e}; background:{W}; display:flex; align-items:center; padding-left:10px; background-image:repeating-linear-gradient(45deg, {Y40} 0 10px, {W} 10px 20px)"><p style="font-size:22px; font-weight:700">{e} new</p></div></div>')
-nomix=f'<div style="flex:1; display:flex; align-items:center; justify-content:center; border:2px dashed #c9c6c7; height:56px"><p style="font-size:22px; color:{GREY}">Mix to set</p></div>'
-mixrow=crow("60 / 40 mix",[mix(10),mix(20),nomix,nomix],f'<p style="font-size:22px; font-weight:700; text-align:right">18 + 12</p>',flex="0 0 auto")
+def mix(t, e, tl="tested + twist"):
+    seg_t = (f'<div style="flex:{t}; background:{K}; color:{Y}; display:flex; align-items:center; padding-left:10px; white-space:nowrap"><p style="font-size:22px; font-weight:700">{t} {tl}</p></div>' if t else '')
+    seg_e = f'<div style="flex:{e}; display:flex; align-items:center; padding-left:10px; white-space:nowrap; background-image:repeating-linear-gradient(45deg, {Y40} 0 10px, {W} 10px 20px)"><p style="font-size:22px; font-weight:700">{e}{" all" if not t else ""} new</p></div>'
+    return f'<div style="flex:1; display:flex; border:2px solid {K}; height:56px">{seg_t}{seg_e}</div>'
+cmix=[(6,4,"tested + twist"),(12,8,"tested + twist"),(0,13,""),(2,4,"tested")]
+mixrow=crow("Tested vs new",[mix(t,e,tl) for t,e,tl in cmix],f'<p style="font-size:22px; font-weight:700; text-align:right; line-height:1.15">{sum(t for t,_,_ in cmix)} tested<br>{sum(e for _,e,_ in cmix)} new</p>',flex="0 0 auto")
 rows="".join(crow(f,[ccell(v[f]) for _,_,_,v in cphases],f'<p style="font-family:{DISP}; font-size:36px">{sum(v[f] for _,_,_,v in cphases)}</p>') for f in cformats)
 S["creative"]=content("creative",f"{ctot} performance ads across four phases",
  tline+jobs+mixrow+f'<div style="display:flex; flex-direction:column; gap:10px; flex:1; min-height:0">{rows}</div>'
- +f'<p style="font-size:22px; color:{K90}; line-height:1.25"><b>60 / 40 in hype and launch:</b> 60% tried and tested formats with a theme twist, 40% new experiments. The ad styles in each area are on the next slide.</p>',
- gap=14,src="Creative plan, 24 Sep 2026",notes="Hype 10 (4 video, 4 image, 2 GIF): built to work together, the video and GIFs grab attention and the statics carry the sale information with strong visuals, to a new, cold audience. Launch 20 (6 video, 6 image, 4 GIF, 4 UGC). Mid-sale 13 with a gifting focus (5 video, 5 image, 3 UGC). Ending soon 6 (2 video, 2 image, 1 GIF, 1 UGC). Hype and launch run 60% tried and tested formats with a theme twist and 40% new experiments: 6 and 4 in hype, 12 and 8 at launch. Every ad follows the cold-audience rule: hook, product proof, offer and date.")
+ +f'<p style="font-size:22px; color:{K90}; line-height:1.25"><b>Hype and launch:</b> 60% tried and tested formats with a theme twist, 40% new experiments. <b>Mid-sale:</b> all new content. <b>Ending soon:</b> 60% new, 40% proven. Ad styles by area on the next slide.</p>',
+ gap=14,src="Creative plan, 24 Sep 2026",notes="Hype 10 (4 video, 4 image, 2 GIF): built to work together, the video and GIFs grab attention and the statics carry the sale information with strong visuals, to a new, cold audience. Launch 20 (6 video, 6 image, 4 GIF, 4 UGC). Mid-sale 13 with a gifting focus (5 video, 5 image, 3 UGC). Ending soon 6 (2 video, 2 image, 1 GIF, 1 UGC). Hype and launch run 60% tried and tested formats with a theme twist and 40% new experiments: 6 and 4 in hype, 12 and 8 at launch. Mid-sale is all new content (13). Ending soon is 60% new and 40% proven ads: 4 new and 2 proven of 6, rounded. Every ad follows the cold-audience rule: hook, product proof, offer and date.")
 
 S["deliverables"]=content("deliverables","Creative deliverables (due dates TBC)",
  table(["Asset","Use","Count","Due (TBC)","Owner"],[
