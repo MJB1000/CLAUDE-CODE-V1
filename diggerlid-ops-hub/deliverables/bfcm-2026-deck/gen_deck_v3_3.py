@@ -420,14 +420,22 @@ jack_q=[("G&#39;day, I&#39;m Jack Clacker, and this is my backyard.","Opens ever
         ("Old trick.","The lead-in to bush wisdom that turns out to be wrong."),
         ("Another good day&#39;s work. / That&#39;s not going anywhere.",""),
         ("Been saying that for years.","")]
+jack_b=[("1 · A changing world","AI took the town&#39;s jobs. Robots pull the beers at the pub."),
+        ("2 · Getting the call","The DiggerLid boys call. Secretly keen, he loads the digger for the big smoke."),
+        ("3 · Sharing his &#39;wisdom&#39;","Messy methods meet better ways. He questions each, then adopts it."),
+        ("4 · The brand realisation","Tough people deserve better gear. He embraces it, claims he taught them."),
+        ("5 · Bringing it home","A ute full of bargains for his robot mates. &#39;Tell &#39;em I sent you.&#39;")]
+def jband(label, items, qmark=False):
+    return (f'<div style="display:flex; gap:14px; background:{K}; padding:12px 18px; align-items:stretch; flex-shrink:0"><p style="font-family:{DISP}; font-size:26px; color:{Y}; letter-spacing:1px; text-transform:uppercase; align-self:center; flex:0 0 150px">{label}</p>'
+            +"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:2px; border-left:2px solid {Y}; padding-left:12px"><p style="font-size:22px; font-weight:700; color:{Y if not qmark else W}; line-height:1.15">{("&#39;"+q+"&#39;") if qmark else q}</p><p style="font-size:22px; color:{"#d6d3d4" if not qmark else GREY}; line-height:1.15">{d}</p></div>' for q,d in items)+'</div>')
 S["jack"]=content("jack","Meet Jack Clacker: the hero of the sale",
- f'<div style="display:flex; gap:0; flex:1; min-height:0; align-items:stretch">'
+ jband("Back&#8203;story",jack_b)
+ +f'<div style="display:flex; gap:0; flex:1; min-height:0; align-items:stretch">'
  +f'<div style="flex:1; display:flex; flex-direction:column; justify-content:space-between">'+"".join(jtrait(t,d,"l") for t,d in jack_l)+'</div>'
- +f'<div style="flex:0 0 420px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 0"><img src="{JACK_IMG}" alt="Jack Clacker, sketched: a smiling bushman in a wide-brim hat, squatting in a paddock with a DiggerLid mug, a mini excavator behind him" style="width:420px; height:560px; object-fit:cover; object-position:center 30%; border:4px solid {K}; box-shadow:12px 12px 0 {Y}"></div>'
+ +f'<div style="flex:0 0 360px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 0"><img src="{JACK_IMG}" alt="Jack Clacker, sketched: a smiling bushman in a wide-brim hat, squatting in a paddock with a DiggerLid mug, a mini excavator behind him" style="width:330px; height:100%; max-height:440px; object-fit:cover; object-position:center 25%; border:4px solid {K}; box-shadow:12px 12px 0 {Y}"></div>'
  +f'<div style="flex:1; display:flex; flex-direction:column; justify-content:space-between">'+"".join(jtrait(t,d,"r") for t,d in jack_r)+'</div></div>'
- +f'<div style="display:flex; gap:14px; background:{K}; padding:14px 18px; align-items:stretch"><p style="font-family:{DISP}; font-size:26px; color:{Y}; letter-spacing:1px; text-transform:uppercase; align-self:center; flex:0 0 auto">Catch&#8203;phrases</p>'
- +"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:2px; border-left:2px solid {Y}; padding-left:12px"><p style="font-size:22px; font-weight:700; color:{W}; line-height:1.18">&#39;{q}&#39;</p><p style="font-size:22px; color:{GREY}; line-height:1.18">{d}</p></div>' for q,d in jack_q)+'</div>',
- gap=22,src="Creative brief: character notes",notes="Jack Clacker carries the hero narrative. He is the joke, never the customer: condescending but kind, wrong about everything, and quietly converted by the gear without ever admitting it.")
+ +jband("Catch&#8203;phrases",jack_q,qmark=True),
+ gap=16,src="Creative brief: character notes",notes="Backstory in full. 1 A changing world: AI has stolen all the jobs in his country town; at the pub, Tesla robots pull beers, occupy the bar and feed the pokies. &#39;Not much call for country wisdom around here anymore.&#39; 2 Getting the call: the DiggerLid boys call for help with their Black Friday sale; secretly keen to learn and eyeing the deals, he loads his excavator and heads for the big smoke. 3 Sharing his wisdom: messy, uncomfortable methods against better ways to grease, protect his excavator and look after his body; his shopping pile grows. 4 The brand realisation: protecting your machine, equipment and body is part of doing the job properly, and the BFCM deals make now the time to upgrade. 5 Bringing the lessons home: a ute full of bargains; &#39;Look after your machine, look after your body, and know when to grab a good deal.&#39; A robot films it. Close on the offer, deadline and shop CTA. Jack Clacker carries the hero narrative. He is the joke, never the customer: condescending but kind, wrong about everything, and quietly converted by the gear without ever admitting it.")
 
 def beatcol(title, sub, beats, foot_, bg, fg=None, accent=Y):
     fg = fg or K
