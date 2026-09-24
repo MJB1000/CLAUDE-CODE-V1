@@ -429,15 +429,30 @@ S["jack"]=content("jack","Meet Jack Clacker: the hero of the sale",
  +"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:2px; border-left:2px solid {Y}; padding-left:12px"><p style="font-size:22px; font-weight:700; color:{W}; line-height:1.18">&#39;{q}&#39;</p><p style="font-size:22px; color:{GREY}; line-height:1.18">{d}</p></div>' for q,d in jack_q)+'</div>',
  gap=22,src="Creative brief: character notes",notes="Jack Clacker carries the hero narrative. He is the joke, never the customer: condescending but kind, wrong about everything, and quietly converted by the gear without ever admitting it.")
 
+def beatcol(title, sub, beats, foot_, bg, fg=None, accent=Y):
+    fg = fg or K
+    return (f'<div style="flex:1; display:flex; flex-direction:column; gap:8px; background:{bg}; color:{fg}; padding:20px 24px; border:2px solid {K}; border-top:8px solid {accent}">'
+            f'<p style="font-family:{HEAD}; font-size:28px; font-weight:700; text-transform:uppercase; line-height:1.05">{title}</p>'
+            f'<p style="font-size:22px; color:{GREY if bg==K else MUTE}; line-height:1.2">{sub}</p>'
+            + "".join(f'<div style="display:flex; gap:12px; align-items:baseline"><p style="font-family:{DISP}; font-size:26px; color:{Y if bg==K else K}; flex:0 0 22px">{n}</p><p style="font-size:23px; line-height:1.22">{b}</p></div>' for n,b in enumerate(beats,1))
+            + (f'<p style="margin-top:auto; font-size:22px; line-height:1.22; font-weight:700; border-top:2px solid {Y if bg==K else K}; padding-top:8px">{foot_}</p>' if foot_ else '')
+            + '</div>')
+arrow=f'<p style="font-family:{DISP}; font-size:40px; align-self:center; color:{K}">&#9654;</p>'
 S["theme"]=content("theme","Theme: All Aussie Adventure",
- f'<div style="display:flex; gap:24px; flex:1">'
- f'<div style="flex:1; display:flex; flex-direction:column; gap:16px; background:{K}; color:{W}; padding:34px; border:2px solid {K}">{banner("Theme · All Aussie Adventure", bg=Y, fg=K, size=27)}'
- f'<p style="font-size:26px; line-height:1.35; color:{W}">A parody of the outback-bumbler format with our own character, Jack Clacker. He travels from the country pub to the big smoke and back across four locations, handing out wrong wisdom and never looking at the gear, until he quietly starts using it.</p>'
- f'<p style="font-size:25px; line-height:1.35; color:{Y70}">Hype and launch do different jobs. Hype (Mon 16 and Tue 17 Nov) teases Jack and the story with no prices, to warm audiences only, and sends everyone to the first-access page to sign up. Launch (Wed 18 Nov, 6 AM) opens episode one with the offer on screen: the discount, the bundles and the end date, 1 Dec.</p></div>'
- f'<div style="flex:1; display:flex; flex-direction:column; gap:16px; background:{Y40}; padding:34px; border:2px solid {K}">{banner("How it carries the sale", size=27)}'
- f'<p style="font-size:26px; line-height:1.35">Launch episode on day one, a new episode as the mid-sale content drop on Mon 23 Nov, and gift-angle cut-downs driving to the Christmas gifting page.</p>'
- f'<p style="font-size:25px; line-height:1.35; color:{K90}">The middle ten days ran at about 5% of sale revenue per day in both big sales; fresh content mid-sale gives people a reason to come back. Fallback launch film if the Adventure edit slips: Take Cover, already shot in July.</p></div></div>',
- src="Planning notes pp.10 and 11, concept board",notes="The notes pair the Adventure theme with the four-location shoot. The concept board rated it strongest for brand love and weakest for urgency. The hype and launch split covers that: hype builds the story and the list with no offer, and launch carries the offer. Hype traffic converted at about 1% in both past sales, so hype is for capture, not sales.")
+ f'<div style="display:flex; gap:24px">'
+ f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{K}; color:{W}; padding:22px 28px">{banner("Theme · All Aussie Adventure", bg=Y, fg=K, size=24)}'
+ f'<p style="font-size:24px; line-height:1.3; color:{W}">A parody of the outback-bumbler format with our own character, Jack Clacker: wrong wisdom, four locations, and gear he never looks at until he quietly uses it.</p></div>'
+ f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{Y40}; padding:22px 28px; border:2px solid {K}">{banner("How it carries the sale", size=24)}'
+ f'<p style="font-size:24px; line-height:1.3">Hype (16 and 17 Nov) teases Jack with no prices and drives sign-ups. Launch (18 Nov, 6 AM) opens with the offer. A new episode lands at the mid-sale drop on 23 Nov.</p></div></div>'
+ +f'<p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase">Adapting the format: from the joke to our hero film to our ad</p>'
+ +f'<div style="display:flex; gap:14px; flex:1; min-height:0">'
+ +beatcol("The original","The format we parody",["Intro","Physical comedy","Overstate / wrong knowledge","Criticise","Stuffs it up","Resolution, or lack of one"],"",W,accent=GREY)
+ +arrow
+ +beatcol("Our hero film · 90 sec","Organic social, one episode per location",["Intro + physical comedy","Overstate + criticise","Have it done the right way: the gear","Double down: &#39;that&#39;s how I would have done it&#39;","Sale details and CTA"],"Leaves tension and open loops, so people come back for the next episode.",K,fg=W)
+ +arrow
+ +beatcol("Our ad · 45 sec","Paid, works cold",["Overstate knowledge + criticise, as the intro","Have it done the right way","Sale CTA"],"Hook, product proof, offer. No episode knowledge needed.",Y40)
+ +'</div>',
+ gap=18,src="Planning notes pp.10 and 11, concept board, format sketch",notes="The original format is intro, physical comedy, wrong knowledge, criticism, stuffing it up and an open resolution. Our 90-second hero keeps the comedy but lets the gear do it the right way while Jack claims he would have done it that way all along, then closes on the sale. The 45-second ad drops to three beats so it works for a cold viewer. Hype builds the story and the sign-up list with no offer; launch carries the offer. Hype traffic converted at about 1% in both past sales. Fallback launch film if the Adventure edit slips: Take Cover, already shot in July.")
 
 locs=[("Paddock","Excavator; DiggerShield and the big dog; practical, authentic; possible Ivan cameo","Talk slow for earthmovers","Pro Enclosure · DiggerShield"),
       ("Worksite","Building an A-frame; backyard with the excavator; translating for tradies","How you might have done it: a history lesson","PRO Mat · small covers"),
