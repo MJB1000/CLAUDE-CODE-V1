@@ -77,9 +77,6 @@ S["cover"]=(f'<section id="cover" data-transition="push" style="background:{K}; 
  f'{banner("Black Friday · Cyber Monday", bg=Y, fg=K, size=36)}'
  f'<h1 style="font-family:{HEAD}; font-size:168px; font-weight:700; line-height:0.95; text-transform:uppercase; color:{W}">BFCM 2026<br>Sale Plan</h1>'
  f'<p style="font-size:38px; color:{Y70}; line-height:1.3">What we learned last time, what we are running, what we are selling, and what has to be locked before the hype starts.</p></div>'
- f'<div style="display:flex; justify-content:space-between; align-items:end">'
- f'<p style="font-size:26px; color:{GREY}">Prepared by Matt Bedwell, Head of Growth · Data to 22 September 2026 · Basis: revenue incl. GST (EE calendar) unless marked net</p>'
- f'<p style="font-family:{DISP}; font-size:32px; color:{Y}; letter-spacing:1px">KEEP WORKING &amp; KEEP EARNING!</p></div>'
  f'<aside>Three parts: research, strategy, offer and creative. Research slides are measured numbers; strategy and offer slides are the proposal for this room to decide.</aside></section>')
 
 S["onepage"]=content("onepage","The plan on one page",
