@@ -80,7 +80,7 @@ S["cover"]=(f'<section id="cover" data-transition="push" style="background:{K}; 
  f'<div style="display:flex; justify-content:space-between; align-items:end">'
  f'<p style="font-size:26px; color:{GREY}">Prepared by Matt Bedwell, Head of Growth · Data to 22 September 2026 · Basis: revenue incl. GST (EE calendar) unless marked net</p>'
  f'<p style="font-family:{DISP}; font-size:32px; color:{Y}; letter-spacing:1px">KEEP WORKING &amp; KEEP EARNING!</p></div>'
- f'<aside>Four parts: research, strategy, offer and creative, lock-up. Two appendix sections answer the questions people usually ask afterwards. Research slides are measured numbers; strategy, offer and lock-up slides are the proposal for this room to decide.</aside></section>')
+ f'<aside>Four parts: research, strategy, offer and creative, lock-up. Research slides are measured numbers; strategy, offer and lock-up slides are the proposal for this room to decide.</aside></section>')
 
 S["onepage"]=content("onepage","The plan on one page",
  f'<div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; flex:1">'
@@ -117,8 +117,7 @@ S["agenda"]=content("agenda",'Agenda',
   ("Research","The last three sales side by side, and the shape a DiggerLid sale takes day by day.",Y40),
   ("Strategy","Eight moves for 2026: what changes from last year and why.","#ffffff"),
   ("Offer and creative","Discount, gift tiers, bundles with prices, the Christmas gifting page, theme, creative deliverables.",Y40),
-  ("Decisions","The decisions this room needs to make this week.","#ffffff"),
-  ("Appendix","The questions the exec will ask, answered.",Y40)],1))+'</div>')
+  ("Decisions","The decisions this room needs to make this week.","#ffffff")],1))+'</div>')
 
 # ------------------------------------------------------------------ 01 RESEARCH
 S["s-research"]=section("s-research","01","Research","What the last three sales measured, and the five questions the team asked for 2026.")
@@ -581,8 +580,7 @@ order=["cover","onepage","agenda",
        "scorecard","curve",
        "moves",
        "offer","bundles","bundles-alt","gifting","theme","territories","journey","deliverables",
-       "decisions",
-       "faq-exec","close"]
+       "decisions"]
 S["scorecard"]=S["scorecard"].replace('text-transform:uppercase">The last three sales', 'text-transform:uppercase; background:#231f20; color:#fdfdfb; padding:14px 22px">The last three sales',1)
 for n,k in enumerate(order,1):
     h=S[k].replace("{{N}}",str(n))
@@ -594,8 +592,7 @@ deck={"v":4,"createdOnFiles":{"v":1,"at":"2026-09-22T13:20:00Z"},"title":"Digger
   "research":{"description":"The last three sales side by side and the shape of a sale","start":"scorecard"},
   "strategy":{"description":"Eight moves for 2026","start":"moves"},
   "offer":{"description":"Offer, bundles, Christmas gifting, theme, creative deliverables","start":"offer"},
-  "lockup":{"description":"Decisions needed this week","start":"decisions"},
-  "appendix":{"description":"Questions the exec will ask, answered","start":"faq-exec"}},
+  "lockup":{"description":"Decisions needed this week","start":"decisions"}},
  "faces":{"roboto-condensed":{"family":"Roboto Condensed","href":"https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap"},
           "league-spartan":{"family":"League Spartan","href":"https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap"},
           "anton":{"family":"Anton","href":"https://fonts.googleapis.com/css2?family=Anton&display=swap"}},"designSystems":[]}
