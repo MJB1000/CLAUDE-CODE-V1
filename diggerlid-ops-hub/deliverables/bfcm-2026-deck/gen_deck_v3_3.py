@@ -529,6 +529,7 @@ hype_ads=[("Image","Sneak peek static","2","",
            "Cool visuals, in theme.",
            "AI-generated imagery in the All Aussie Earthmoving Adventures world.",False)]
 ROLE={"Sneak peek static":"Role: sale info","Countdown GIF":"Role: urgency","Airwalk intro":"Role: attention grab","Hey dighead":"Role: attention grab","AI visual statics":"Role: sale info, cool visuals"}
+HSTAT={"Sneak peek static":0,"Countdown GIF":0,"Hey dighead":0,"AI visual statics":0,"Airwalk intro":1}
 def hcard(fmt,name,n,funnel,copy,direction,datefl):
     chip=f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; background:{K}; color:{Y}; padding:2px 10px">{fmt}</p>'
     fun=f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">{funnel}</p>' if funnel else ''
@@ -539,7 +540,8 @@ def hcard(fmt,name,n,funnel,copy,direction,datefl):
             f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; border-top:2px solid {K}; padding-top:8px">{ROLE[name]}</p>'
             f'<p style="font-size:26px; font-weight:700; line-height:1.25">{copy}</p>'
             f'<p style="font-size:24px; line-height:1.3; color:{K90}">{direction}</p>'
-            f'<div style="margin-top:auto">{flag}</div></div>')
+            +(f'<div style="margin-top:auto; background:{K}; color:{Y}; padding:6px 10px"><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase">Re-creation</p><p style="font-size:22px; color:{W}; line-height:1.2">Tested format, new theme</p></div>' if HSTAT[name]==0 else f'<div style="margin-top:auto; border:2px solid {K}; padding:6px 10px; background-image:repeating-linear-gradient(45deg, {Y40} 0 10px, {W} 10px 20px)"><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase">New concept</p><p style="font-size:22px; line-height:1.2">Built fresh for this sale</p></div>')
+            +f'<div>{flag}</div></div>')
 def tally(fmt,planned):
     got=sum(int(a[2]) for a in hype_ads if a[0]==fmt)
     ok=got==planned
@@ -548,10 +550,11 @@ def tally(fmt,planned):
             f'<p style="font-family:{DISP}; font-size:30px">{got} of {planned} {"✓" if ok else "!"}</p></div>')
 S["hype-ads"]=content("hype-ads","Hype ads: 10 across five concepts, 17 to 18 Nov",
  f'<div style="display:flex; gap:14px; flex:1; min-height:0">'+"".join(hcard(*a) for a in hype_ads)+'</div>'
- +f'<div style="display:flex; gap:12px; align-items:stretch"><div style="flex:0 0 auto; display:flex; align-items:center; padding-right:6px"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase">Check against the plan</p></div>'
+ +f'<div style="display:flex; gap:12px; align-items:stretch"><div style="flex:0 0 auto; display:flex; align-items:center; padding-right:6px"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase">Plan check</p></div>'
  +tally("Video",4)+tally("Image",4)+tally("GIF",2)
- +f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; border:2px solid {K}; padding:10px 16px"><p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase">Total</p><p style="font-family:{DISP}; font-size:30px">10 of 10 ✓</p></div></div>',
- gap=18,src="Creative plan, 24 Sep 2026",notes="The ten hype ads, by concept. They match the hype column of the creative plan: 4 video, 4 image, 2 GIF. Still to tag: which 6 are tried and tested formats and which 4 are new experiments. The sale opens Thu 19 Nov at midday; hype runs Tue 17 and Wed 18 Nov. The offer line everywhere: up to 25% off + free gifts + huge bundles; free gifts from $399 as on the offer slide.")
+ +f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; border:2px solid {K}; padding:10px 16px"><p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase">Total</p><p style="font-family:{DISP}; font-size:30px">10 of 10 ✓</p></div>'
+ +f'<div style="flex:1.6; display:flex; align-items:center; gap:12px; justify-content:space-between; background:{Y}; padding:10px 16px"><p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase">Re-made / new</p><p style="font-family:{DISP}; font-size:26px; white-space:nowrap">8 / 2 · plan 6 / 4 !</p></div></div>',
+ gap=18,src="Creative plan, 24 Sep 2026",notes="The ten hype ads, by concept. They match the hype column of the creative plan: 4 video, 4 image, 2 GIF. Re-creations of tested formats with the new theme: sneak peek static, countdown GIF, Hey dighead and AI visual statics (8 ads). New concept: the Airwalk intro (2 ads). That is 8 and 2 against the 6 and 4 on the creative volume slide. The sale opens Thu 19 Nov at midday; hype runs Tue 17 and Wed 18 Nov. The offer line everywhere: up to 25% off + free gifts + huge bundles; free gifts from $399 as on the offer slide.")
 
 def dstrip(items):
     return (f'<div style="display:flex; gap:0; border:2px solid {K}">'
