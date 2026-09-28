@@ -84,13 +84,13 @@ S["onepage"]=content("onepage","The plan on one page",
  +"".join(f'<div style="display:flex; flex-direction:column; gap:8px; background:{bg}; padding:22px 24px; border:2px solid {K}">'
    f'<h3 style="font-family:{HEAD}; font-size:28px; font-weight:700; text-transform:uppercase">{t}</h3><p style="font-size:24px; line-height:1.3; color:{K90}">{d}</p></div>'
    for t,d,bg in [
-   ("When","Hype Mon 16 and Tue 17 Nov. Sale Wed 18 Nov 12:00 PM (midday) to Tue 1 Dec 11:59 PM AEDT: 14 days, Black Friday on day 10, Cyber Monday on day 13. Christmas gifting push from mid-sale, Mon 23 Nov.",Y40),
-   ("Target (to confirm)","Plan: $983k sale revenue incl. GST (about $905k net), the EE tool projection on a $90k week; the calendar plan of record for November is $990k. Floor: $585k (2025 repeated). Stretch: $1.27M on the Aug to Sep run rate. Spend $243k (25% of revenue), ceiling 28%.","#ffffff"),
-   ("Offer","Up to 25% off, grease excluded. DiggerShield $150 / $200 off. Gifts: $399 Digger Wipes and free shipping; $599 adds a Magnet Tool Mat; $799 adds a Drawbar Cover. Bundles: Hardcore Tradie $777 (RRP $1,110, 30% off), Ultimate Earthmover $732 (RRP $1,474) and Owner Operator $778 (RRP $1,987), both 35% off the hero gear. Shown as hero gear discounted, the rest free.",Y40),
-   ("Theme","All Aussie Adventure: our own outback expert, four locations, one episode per location, cut down for paid. Christmas gifting page live from the mid-sale push.","#ffffff"),
+   ("When","Hype Tue 17 and Wed 18 Nov. Sale Thu 19 Nov 12:00 PM (midday) to Tue 1 Dec 11:59 PM AEDT: 13 days, Black Friday on day 9, Cyber Monday on day 12. Christmas gifting push from mid-sale, Mon 23 Nov.",Y40),
+   ("Target","$990k sale revenue incl. GST (about $900k net). Floor: $585k (2025 repeated). Stretch: $1.27M on the Aug to Sep run rate. Spend $230k, about 23% of revenue; ceiling 28%.","#ffffff"),
+   ("Offer","Up to 25% off + free gifts + huge bundles. Sitewide up to 25% off, grease excluded; DiggerShield $150 / $200 off. Gifts: $399 Digger Wipes + free shipping; $599 adds a Magnet Tool Mat; $799 adds a Drawbar Cover. Bundles: Hardcore Tradie $777 (30% off), Ultimate Earthmover $732 and Owner Operator $778 (35% off the hero gear, the rest free).",Y40),
+   ("Theme","All Aussie Earthmoving Adventures: The Great Black Friday Haul. Jack Clacker, four locations, one episode per location, cut down for paid. Christmas gifting page live from the mid-sale push.","#ffffff"),
    ("Channels","Meta paid social for acquisition (cold traffic to product pages), email and SMS for the base (segmented sends), organic and creator content for the theme, site pages built before hype.",Y40),
-   ("What must be true first","Popup reach back above 50% on paid pages by 15 Oct. Pages live and tracked by 13 Nov. Bundle, DiggerShield and gift margins signed off by 30 Oct.","#ffffff")]) + '</div>',
- notes="If someone reads only one slide, this is it. Target is a proposal with two options; the forecast on file currently assumes a lower November, so the number needs a decision, not an assumption.")
+   ("Pre-sale to-dos","Popup reach above 50% on paid pages by 15 Oct · bundle, DiggerShield and gift margins signed off by 30 Oct · collab bundle confirmed · block 2 shoot 27 and 28 Oct · pages live and tracked by 13 Nov · ads and sends scheduled before hype on 17 Nov.","#ffffff")]) + '</div>',
+ notes="If someone reads only one slide, this is it. Target $990k incl. GST, spend $230k (about 23%). Dates moved on 28 Sep: hype Tue 17 and Wed 18 Nov, sale Thu 19 Nov to Tue 1 Dec.")
 
 S["changes"]=content("changes","What changes from 2025",
  table(["","2025","2026"],[
@@ -179,7 +179,7 @@ S["curve"]=content("curve","The daily shape we are planning to",
  f'<p style="font-size:22px; line-height:1.3; color:{K90}"><b>Hype, 16 and 17 Nov:</b> $14k and 57 orders. Site sessions flat on the week before (5.5k); conversion 1.0% against 1.4%.</p></div>'
  f'<div style="flex:1; display:flex; flex-direction:column; gap:8px"><h3 style="font-family:{HEAD}; font-size:27px; font-weight:700">EOFY 2026: share of sale revenue by day</h3><div style="display:flex; gap:4px; align-items:end; height:330px; border-bottom:2px solid {K}">{bars(eofy,K80,hype=[2.8,1.5])}</div>'
  f'<p style="font-size:22px; line-height:1.3; color:{K90}"><b>Hype, 15 and 16 Jun:</b> $24k and 106 orders. Sessions up 50% on the week before (10.3k); conversion fell to 1.0% from 2.1%.</p></div></div>'
- +f'<div style="display:flex; gap:24px">{big("30%","of sale revenue in the first 48 hours at BFCM. On the $983k plan that is about $295k for the launch weekend.")}{big("5%","per day through the middle. The mid-sale content drop, the gifting push and segmented sends exist to lift this number.",bg="#ffffff")}{big("70%","of launch-day buyers were new customers. The launch is an acquisition play; keep prospecting on.")}</div>',
+ +f'<div style="display:flex; gap:24px">{big("30%","of sale revenue in the first 48 hours at BFCM. On the $990k plan that is about $297k for the launch weekend.")}{big("5%","per day through the middle. The mid-sale content drop, the gifting push and segmented sends exist to lift this number.",bg="#ffffff")}{big("70%","of launch-day buyers were new customers. The launch is an acquisition play; keep prospecting on.")}</div>',
  src="Shopify analytics",notes="Dashed bars H1 and H2 are the two hype days before each launch, as a share of the sale revenue that followed. Both sales saw hype days sell less than an ordinary day while traffic held or rose: people browsed and waited. Plan spend and stock to the front for BFCM.")
 
 reach=[("Jan","67"),("Feb","70"),("Mar","64"),("Apr","80"),("May","44"),("Jun","53"),("Jul","33"),("Aug","34"),("Sep","23")]
@@ -217,11 +217,11 @@ S["eeinputs"]=content("eeinputs","EE tool inputs (23 Sep run), checked",
  src="EE calendar 2025 and 2026, Shopify, EE BFCM tool export 23 Sep",notes="Two rounds of corrections are now in the tool: fixed costs, spend bracket, sale MER, the curve and the base week. Three inputs are still open and each moves profit: product cost, gift uptake and stock. Also confirmed: Sept and Oct 2025 revenue $566,323; Hybrid, $3K+ a day, Experienced; packaging $2, shipping $24 and merchant fees 2% (2.1% in Nov 2025).")
 
 moves=[("1 · Start wider","Test USA, NZ, TikTok and YouTube on a fixed budget with a kill rule. 70% of launch buyers are new."),
-       ("2 · 14 days, 2-day hype","Wed 18 Nov to Tue 1 Dec. Hype Mon 16 and Tue 17 Nov to a new, cold audience, landing on a capture page."),
-       ("3 · Stronger theme","All Aussie Adventure: one character, four locations, four shoot days, cut down for paid social."),
+       ("2 · 13 days, 2-day hype","Thu 19 Nov to Tue 1 Dec. Hype Tue 17 and Wed 18 Nov to a new, cold audience, landing on a capture page."),
+       ("3 · Stronger theme","All Aussie Earthmoving Adventures: one character, Jack Clacker, across four locations, four shoot days, cut down for paid social."),
        ("4 · Cut and run","Written stop rules: landing page under 1.5% by midday, or two days over 30% spend-to-revenue."),
        ("5 · Mid-sale drop","Mon 23 Nov: a new content drop and the gifting angle, to cold audiences in the gifting segment."),
-       ("6 · Pre-game check","Pages built and tracked by 13 Nov, popup reach above 50% on paid pages, ad sets and sends scheduled before hype on 16 Nov."),
+       ("6 · Pre-game check","Pages built and tracked by 13 Nov, popup reach above 50% on paid pages, ad sets and sends scheduled before hype on 17 Nov."),
        ("7 · Better reactivation","Email and SMS to the 12,745 first-time buyers of the last year; grease reorder nudges."),
        ("8 · Beat the hangover","December without another discount: gift guide, new product, shipping cut-offs. July after EOFY lost money.")]
 pregame=[("Popup reach above 50% on paid pages","15 Oct"),("Bundle, DiggerShield and gift-tier margins signed off","30 Oct"),("Stock cover confirmed or hero list trimmed","30 Oct"),("EE tool and shared calendar re-dated","30 Oct"),
@@ -356,7 +356,7 @@ terr=[("Red dirt + country pub","A changing world","The local country pub, where
       ("Warehouse","Getting the call","Bundles, offers, the forklift loading the ute. The boys show Jack what they&#39;ve been up to.","Act 2 and the launch: he meets the DiggerLid boys and his Black Friday shopping pile starts.","Straight product proof.","Grease · accessories · bundles"),
       ("Paddock","Sharing his &#39;wisdom&#39;","The excavator at work in real conditions and the big dog. Practical and authentic.","Act 3: the gear gets tested; his messy methods against better ways.","&#39;Talk slow for earthmovers.&#39;","Pro Enclosure"),
       ("Worksite","The brand realisation","A home build site with a backyard that needs digging. Real operators, including Ivan from Earthworks Hub, rate the gear.","Act 4 and the mid-sale gifting angle: the gear is so good he has to get some for his mates.","&#39;How you might have done it: a history lesson.&#39;","PRO Mat · small covers · grease")]
-S["territories"]=content("territories","Four creative territories, one character",
+S["territories"]=content("territories","Four backdrops",
  f'<div style="display:flex; gap:18px; flex:1">'+"".join(
  f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{"#ffffff" if i%2 else Y40}; padding:22px 22px; border:2px solid {K}; border-top:12px solid {K if i%2 else Y}">'
  f'<p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">{i+1} · {role}</p>'
@@ -366,11 +366,12 @@ S["territories"]=content("territories","Four creative territories, one character
  f'<p style="font-size:23px; line-height:1.3; font-style:italic; color:{K90}">{line}</p>'
  f'<div style="margin-top:auto; background:{K}; color:{W}; padding:8px 12px; font-size:23px; font-weight:700">{prod}</div></div>'
  for i,(loc,role,shoot,story,line,prod) in enumerate(terr))+'</div>'
- +note("4 locations · 4 shoot days: 1, 2, 27 and 28 Oct · theme: All Aussie Adventure. Each location owns a product, and every hype teaser, cut-down and still comes from the same footage.",size=24),
+ +note("4 locations · 4 shoot days: 1, 2, 27 and 28 Oct · theme: All Aussie Earthmoving Adventures. Each location owns a product, and every hype teaser, cut-down and still comes from the same footage.",size=24),
  src="Planning notes, creative production page",notes="Ordered as the journey runs: the country pub and the truck run to the city, the warehouse, the paddock, the home build site, then home to the pub. The next slide draws the route.")
+S["territories"]=S["territories"].replace(f"; border-top:12px solid {Y}\">","\">")
 
-stops=[("1","Red dirt + pub","A changing world","AI took the town&#39;s jobs; robots pull the beers. The DiggerLid boys call, and he hitches a truck to the big smoke.",("&#39;Kids and their AI. What&#39;s the world coming to?&#39;","Jack&#39;s complaints as quick-fire hooks: old world against new.","Coming soon from DiggerLid, 18 Nov. Get first access.","Hype · 16 to 17 Nov")),
-       ("2","Warehouse","Getting the call","He drops in on the DiggerLid boys, sure they want his outback wisdom. His shopping pile starts.",("&#39;So what have you boys been working on?&#39;","Jack walks the warehouse and finds all the new gear the boys have built.","Sale live: up to 25% off, bundles with free gear. Ends 1 Dec.","Launch · 18 Nov")),
+stops=[("1","Red dirt + pub","A changing world","AI took the town&#39;s jobs; robots pull the beers. The DiggerLid boys call, and he hitches a truck to the big smoke.",("&#39;Kids and their AI. What&#39;s the world coming to?&#39;","Jack&#39;s complaints as quick-fire hooks: old world against new.","Coming soon from DiggerLid, 19 Nov. Get first access.","Hype · 17 to 18 Nov")),
+       ("2","Warehouse","Getting the call","He drops in on the DiggerLid boys, sure they want his outback wisdom. His shopping pile starts.",("&#39;So what have you boys been working on?&#39;","Jack walks the warehouse and finds all the new gear the boys have built.","Sale live: up to 25% off, bundles with free gear. Ends 1 Dec.","Launch · 19 Nov")),
        ("3","Paddock","Sharing his &#39;wisdom&#39;","The Pro Enclosure gets tested in real conditions. He questions every better way, then quietly adopts it.",("&#39;Now this thing is the real deal.&#39;","Pro Enclosure deep dive: rain comes down, machine stays dry.","Ultimate Earthmover $732: $347 of gear free. Ends 1 Dec.","Launch week")),
        ("4","Worksite","The brand realisation","A backyard dig on a home build. The gear is so good he has to get some for his mates, the husband, the habibi.",("&#39;Too good to keep to yourself.&#39;","The gift for your mates, your husband, your habibi: PRO Mat and more.","Shop Christmas gifts: up to 25% off, ends 1 Dec.","Gifting · from 23 Nov")),
        ("5","The country pub","Bringing the lessons home","Last drinks at the pub with a ute of bargains; he teaches his robot mates. &#39;Tell &#39;em I sent you.&#39;",("&#39;Last day. Last drinks.&#39;","Back at the pub, Jack calls last drinks and passes on what he learned.","Sale ends midnight tonight, Tue 1 Dec.","Ending soon · 29 Nov to 1 Dec"))]
@@ -379,14 +380,14 @@ road=(f'<svg aria-label="Journey route: red dirt and the pub, warehouse, paddock
       f'<path d="M166 32 C 300 0, 380 0, 499 32 S 700 64, 832 32 S 1040 0, 1165 32 S 1380 64, 1498 32" fill="none" stroke="{K}" stroke-width="5" stroke-dasharray="16 10"/>'
       +"".join(f'<circle cx="{x}" cy="32" r="28" fill="{Y if n in (0,4) else (K if n%2 else W)}" stroke="{K}" stroke-width="4"/><text x="{x}" y="44" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="34" fill="{W if n%2 else K}">{n+1}</text>' for n,x in enumerate(xs))
       +'</svg>')
-S["journey"]=content("journey","The hero narrative: organic social, laddering down to paid",
+S["journey"]=content("journey","The hero narrative: organic social &gt; paid",
  road+f'<div style="display:flex; gap:18px">'+"".join(
  f'<div style="flex:1; display:flex; flex-direction:column; gap:6px; border-top:4px solid {K}; padding-top:8px">'
  f'<h3 style="font-family:{HEAD}; font-size:28px; font-weight:700; text-transform:uppercase; line-height:1">{loc}</h3>'
  f'<p style="font-size:22px; font-weight:700; color:{MUTE}; text-transform:uppercase; letter-spacing:.5px; line-height:1.2">{act}</p>'
  f'<p style="font-size:22px; line-height:1.28; color:{K90}">{beat}</p></div>'
  for num,loc,act,beat,paid in stops)+'</div>'
- +f'<div style="display:flex; align-items:center; gap:16px; background:{K}; color:{W}; padding:10px 18px"><p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase; color:{Y}">Organic social</p><p style="font-size:23px">The meta narrative: one episode per location across our organic channels; the pub finale closes the red dirt episode.</p></div>'
+ +f'<div style="display:flex; align-items:center; gap:16px; background:{K}; color:{W}; padding:10px 18px"><p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase; color:{Y}">Organic social</p><p style="font-size:23px">The meta narrative: one episode per location across our organic channels.</p></div>'
  +f'<p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase; text-align:center">▼ ladders down to performance ads: each one works cold, on its own ▼</p>'
  +f'<div style="display:flex; gap:18px">'+"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:3px; background:{Y}; color:{K}; padding:8px 12px; font-size:22px; line-height:1.22; border:2px solid {K}"><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">{paid[3]}</p><p style="font-weight:700">{paid[0]}</p><p>{paid[1]}</p><p style="font-weight:700; border-top:1px solid {K}; padding-top:3px">{paid[2]}</p></div>' for num,loc,act,beat,paid in stops)+'</div>',
  gap=14,src="Creative brief: hero narrative in five acts",notes="Ads line up with the creative plan on the next slide: hype hooks to a new, cold audience with the offer teased: up to 25% off + free gifts + huge bundles; launch shows the new range; the Pro Enclosure deep dive carries launch week; mid-sale runs the gifting angle to the Christmas gifting page; ending soon is last day, last drinks. The narrative lives on organic social as the story of the sale. Every paid ad is written for a cold viewer who has never seen the story and does not know a sale is on: a hook in the first line, one product proving itself, and the offer with its date at the end.")
@@ -448,12 +449,12 @@ def beatcol(title, sub, beats, foot_, bg, fg=None, accent=Y):
             + (f'<p style="margin-top:auto; font-size:22px; line-height:1.22; font-weight:700; border-top:2px solid {Y if bg==K else K}; padding-top:8px">{foot_}</p>' if foot_ else '')
             + '</div>')
 arrow=f'<p style="font-family:{DISP}; font-size:40px; align-self:center; color:{K}">&#9654;</p>'
-S["theme"]=content("theme","Theme: All Aussie Adventure",
+S["theme"]=content("theme","Theme: All Aussie Earthmoving Adventures",
  f'<div style="display:flex; gap:24px">'
- f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{K}; color:{W}; padding:22px 28px">{banner("Theme · All Aussie Adventure", bg=Y, fg=K, size=24)}'
+ f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{K}; color:{W}; padding:22px 28px">{banner("The Great Black Friday Haul", bg=Y, fg=K, size=24)}'
  f'<p style="font-size:24px; line-height:1.3; color:{W}">A parody of the outback-bumbler format with our own character, Jack Clacker: wrong wisdom, four locations, and gear he rejects until he quietly uses it.</p></div>'
  f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{Y40}; padding:22px 28px; border:2px solid {K}">{banner("How it carries the sale", size=24)}'
- f'<p style="font-size:24px; line-height:1.3">Hype (16 and 17 Nov) teases Jack and the offer to a new, cold audience and drives sign-ups. Launch (Wed 18 Nov, midday) opens with the offer. A new episode lands at the mid-sale drop on 23 Nov.</p></div></div>'
+ f'<p style="font-size:24px; line-height:1.3">Hype (17 and 18 Nov) teases Jack and the offer to a new, cold audience and drives sign-ups. Launch (Thu 19 Nov, midday) opens with the offer. A new episode lands at the mid-sale drop on 23 Nov.</p></div></div>'
  +f'<p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase">Adapting the format: from the joke to our hero film to our ad</p>'
  +f'<div style="display:flex; gap:14px; flex:1; min-height:0">'
  +beatcol("The original","The format we parody",["Intro","Physical comedy","Overstate / wrong knowledge","Criticise","Stuffs it up","Resolution, or lack of one"],"",W,accent=GREY)
@@ -480,8 +481,8 @@ S["character"]=content("character","The character: our own outback expert",
  +note("The character carries on after the sale: grease how-not-tos, cover fit guides, tutorial content with Ivan from Earthworks Hub. The BFCM edit is season one."),
  src="Planning notes p.11, concept board")
 
-cphases=[("Hype","16 to 17 Nov","Attention grab plus sale info in the statics, with cool visuals. New, cold audience.",{"Video":4,"Image":4,"GIF":2,"UGC":0}),
-         ("Launch","From 18 Nov","The sale is live: the offer, the bundles and the end date.",{"Video":6,"Image":6,"GIF":4,"UGC":4}),
+cphases=[("Hype","17 to 18 Nov","Attention grab plus sale info in the statics, with cool visuals. New, cold audience.",{"Video":4,"Image":4,"GIF":2,"UGC":0}),
+         ("Launch","From 19 Nov","The sale is live: the offer, the bundles and the end date.",{"Video":6,"Image":6,"GIF":4,"UGC":4}),
          ("Mid-sale","From 23 Nov","Gifting focus: PRO Mat as the gift, driving to the Christmas gifting page.",{"Video":5,"Image":5,"GIF":0,"UGC":3}),
          ("Ending soon","From 29 Nov","The final three days: deadline and last chance, ends midnight Tue 1 Dec.",{"Video":2,"Image":2,"GIF":1,"UGC":1})]
 cformats=["Video","Image","GIF","UGC"]
@@ -513,10 +514,10 @@ S["creative"]=content("creative",f"{ctot} performance ads across four phases",
  gap=14,src="Creative plan, 24 Sep 2026",notes="Hype 10 (4 video, 4 image, 2 GIF): built to work together, the video and GIFs grab attention and the statics carry the sale information with strong visuals, to a new, cold audience. Launch 20 (6 video, 6 image, 4 GIF, 4 UGC). Mid-sale 13 with a gifting focus (5 video, 5 image, 3 UGC). Ending soon 6, running the final three days from Sun 29 Nov (2 video, 2 image, 1 GIF, 1 UGC). Hype and launch run 60% tried and tested formats with a new theme and 40% new experiments: 6 and 4 in hype, 12 and 8 at launch. Mid-sale is all new content (13). Ending soon is 60% new and 40% proven ads: 4 new and 2 proven of 6, rounded. Every ad follows the cold-audience rule: hook, product proof, offer and date.")
 
 hype_ads=[("Image","Sneak peek static","2","",
-           "&#39;Sneak peek: up to 25% off + free gifts from $399 + huge bundles · Sale opens Wed 18 Nov&#39;",
+           "&#39;Sneak peek: up to 25% off + free gifts from $399 + huge bundles · Sale opens Thu 19 Nov&#39;",
            "Offer-led static. Creative TBD.",False),
           ("GIF","Countdown GIF","2","",
-           "&#39;Black Friday · Launching Wed 18 Nov, 12PM&#39;",
+           "&#39;Black Friday · Launching Thu 19 Nov, 12PM&#39;",
            "A countdown: video as image, or a GIF with a live countdown.",False),
           ("Video","Airwalk intro","2","Top of funnel",
            "&#39;If there&#39;s one thing I know about...&#39;",
@@ -526,7 +527,7 @@ hype_ads=[("Image","Sneak peek static","2","",
            "Handheld camera, calling out the audience.",False),
           ("Image","AI visual statics","2","",
            "Cool visuals, in theme.",
-           "AI-generated imagery in the All Aussie Adventure world.",False)]
+           "AI-generated imagery in the All Aussie Earthmoving Adventures world.",False)]
 ROLE={"Sneak peek static":"Role: sale info","Countdown GIF":"Role: urgency","Airwalk intro":"Role: attention grab","Hey dighead":"Role: attention grab","AI visual statics":"Role: sale info, cool visuals"}
 def hcard(fmt,name,n,funnel,copy,direction,datefl):
     chip=f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; background:{K}; color:{Y}; padding:2px 10px">{fmt}</p>'
@@ -545,12 +546,12 @@ def tally(fmt,planned):
     return (f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; background:{K if ok else Y}; color:{Y if ok else K}; padding:10px 16px">'
             f'<p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase">{fmt}</p>'
             f'<p style="font-family:{DISP}; font-size:30px">{got} of {planned} {"✓" if ok else "!"}</p></div>')
-S["hype-ads"]=content("hype-ads","Hype ads: 10 across five concepts, 16 to 17 Nov",
+S["hype-ads"]=content("hype-ads","Hype ads: 10 across five concepts, 17 to 18 Nov",
  f'<div style="display:flex; gap:14px; flex:1; min-height:0">'+"".join(hcard(*a) for a in hype_ads)+'</div>'
  +f'<div style="display:flex; gap:12px; align-items:stretch"><div style="flex:0 0 auto; display:flex; align-items:center; padding-right:6px"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase">Check against the plan</p></div>'
  +tally("Video",4)+tally("Image",4)+tally("GIF",2)
  +f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; border:2px solid {K}; padding:10px 16px"><p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase">Total</p><p style="font-family:{DISP}; font-size:30px">10 of 10 ✓</p></div></div>',
- gap=18,src="Creative plan, 24 Sep 2026",notes="The ten hype ads, by concept. They match the hype column of the creative plan: 4 video, 4 image, 2 GIF. Still to tag: which 6 are tried and tested formats and which 4 are new experiments. The sale opens Wed 18 Nov at midday; hype runs Mon 16 and Tue 17 Nov. The offer line everywhere: up to 25% off + free gifts + huge bundles; free gifts from $399 as on the offer slide.")
+ gap=18,src="Creative plan, 24 Sep 2026",notes="The ten hype ads, by concept. They match the hype column of the creative plan: 4 video, 4 image, 2 GIF. Still to tag: which 6 are tried and tested formats and which 4 are new experiments. The sale opens Thu 19 Nov at midday; hype runs Tue 17 and Wed 18 Nov. The offer line everywhere: up to 25% off + free gifts + huge bundles; free gifts from $399 as on the offer slide.")
 
 def dstrip(items):
     return (f'<div style="display:flex; gap:0; border:2px solid {K}">'
@@ -573,8 +574,8 @@ S["shoot"]=content("shoot","The shoot: four days, two blocks",
  +sday(2,"Fri 2 Oct","Paddock","Act 3, sharing his wisdom.","the Pro Enclosure deep dive, the excavator at work, the big dog.","Pro Enclosure · Ultimate Earthmover",W,K)
  +sday(3,"Tue 27 Oct","Red dirt + warehouse pickups","Act 1 and the finale; the hype ads start here.","the hype hooks, the last-day ad, and pickups from day 1.","PRO Mat · small covers",Y40,Y)
  +sday(4,"Wed 28 Oct","Worksite, with Ivan","Act 4, the brand realisation and the gifting angle.","the gifting ads from 23 Nov, with Ivan from Earthworks Hub on site.","PRO Mat Plus · grease · gifts",W,K)+'</div>'
- +note("Each shoot day has its own page next. Block 2 lands three weeks before hype on 16 Nov, so the edit has to turn around fast. Location concepts to be added.",size=24),
- src="Shoot schedule, 28 Sep 2026",notes="Four shoot days in two blocks. Block 1: warehouse Thu 1 Oct, paddock Fri 2 Oct. Block 2: red dirt plus warehouse pickups Tue 27 Oct, worksite with Ivan Wed 28 Oct. Hype starts Mon 16 Nov, so the red dirt footage for the hype hooks has about three weeks from shoot to live.")
+ +note("Each shoot day has its own page next. Block 2 lands three weeks before hype on 17 Nov, so the edit has to turn around fast. Location concepts to be added.",size=24),
+ src="Shoot schedule, 28 Sep 2026",notes="Four shoot days in two blocks. Block 1: warehouse Thu 1 Oct, paddock Fri 2 Oct. Block 2: red dirt plus warehouse pickups Tue 27 Oct, worksite with Ivan Wed 28 Oct. Hype starts Tue 17 Nov, so the red dirt footage for the hype hooks has about three weeks from shoot to live.")
 
 S["shoot-warehouse"]=content("shoot-warehouse","Shoot day 1: warehouse, Thursday 1 October",
  dstrip([("Date","Thu 1 Oct",Y,K,1),("Location","DiggerLid warehouse",W,K,1.3),("Story","Act 2 · Getting the call",W,K,1.4),("Product focus","Grease · accessories · bundles",K,W,1.6)])
@@ -598,7 +599,7 @@ S["shoot-reddirt"]=content("shoot-reddirt","Shoot day 3: red dirt and warehouse 
  +beats("Hero episode 1 · 90 sec","Organic social · draft beats",[("Intro + physical comedy","&#39;G&#39;day, I&#39;m Jack Clacker, and this is my backyard.&#39; Robots at the bar; he falls off his stool."),("Overstate + criticise","Kids and their AI: &#39;Not much call for country wisdom around here anymore.&#39;"),("Right way","The DiggerLid boys call for help with their Black Friday sale."),("Double down","&#39;I imagine they called me in for some real outback wisdom.&#39;"),("CTA","He loads the digger and hitches a truck to the big smoke. Coming soon.")])
  +card("Paid ads to capture",["Hype hooks: &#39;Kids and their AI. What&#39;s the world coming to?&#39;","Airwalk intro: the hole in the ground and the founder","Finale at the pub: last drinks, &#39;Tell &#39;em I sent you&#39;, for the last-day ad","Warehouse pickups from day 1, list after the day 1 review"],accent=Y,tsize=28,lsize=23)
  +card("Props and product",["The long-haul truck and the digger on the back","Robot extras for the pub; the ute full of bargains for the finale","PRO Mat and small covers","Dust trail, campfire, night"],accent=K,tsize=28,lsize=23)+'</div>',
- gap=18,src="Shoot schedule, creative plan",notes="Day 3. Red dirt carries Act 1 and the finale, so it feeds the hype ads from 16 Nov and the last-day ad on 1 Dec. The pub scenes are listed here as part of the red dirt territory; confirm the pub is shot on this day. Warehouse pickups are whatever the day 1 review finds missing. Location concept to be added.")
+ gap=18,src="Shoot schedule, creative plan",notes="Day 3. Red dirt carries Act 1 and the finale, so it feeds the hype ads from 17 Nov and the last-day ad on 1 Dec. The pub scenes are listed here as part of the red dirt territory; confirm the pub is shot on this day. Warehouse pickups are whatever the day 1 review finds missing. Location concept to be added.")
 
 S["shoot-worksite"]=content("shoot-worksite","Shoot day 4: worksite with Ivan, Wednesday 28 October",
  dstrip([("Date","Wed 28 Oct",Y,K,1),("Location","Home build site, backyard dig",W,K,1.4),("Story","Act 4 · The brand realisation",W,K,1.4),("Product focus","PRO Mat Plus · grease · gifts",K,W,1.5)])
@@ -641,7 +642,7 @@ S["concept-bucket"]=content("concept-bucket","Concept: &#39;Bucket Head&#39;",
 
 S["deliverables"]=content("deliverables","Other deliverables (due dates TBC)",
  table(["Asset","Use","Count","Timing","Owner"],[
-  ["Performance ads","Paid social, by phase","49: the list is slide 14","Hype from 16 Nov","Creative [name]"],
+  ["Performance ads","Paid social, by phase","49: the list is slide 14","Hype from 17 Nov","Creative [name]"],
   ["Hero episodes, organic","One episode per location","4","Shot 1, 2, 27 and 28 Oct","Creative [name]"],
   ["Bundle and gift-tier stills","Bundle page, ads, emails","12","Shot Thu 1 Oct (warehouse)","Creative [name]"],
   ["Email and SMS templates","Launch, mid-sale, Black Friday, close","6","TBC","Email [name]"],
