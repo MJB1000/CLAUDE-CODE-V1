@@ -551,6 +551,47 @@ S["hype-ads"]=content("hype-ads","Hype ads: 10 across five concepts, 16 to 17 No
  +f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; border:2px solid {K}; padding:10px 16px"><p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase">Total</p><p style="font-family:{DISP}; font-size:30px">10 of 10 ✓</p></div></div>',
  gap=18,src="Creative plan, 24 Sep 2026",notes="The ten hype ads, by concept. They match the hype column of the creative plan: 4 video, 4 image, 2 GIF. Still to tag: which 6 are tried and tested formats and which 4 are new experiments. The sale opens Wed 18 Nov at midday; hype runs Mon 16 and Tue 17 Nov. The free gift threshold is $X in the copy; the gift tiers start at $399.")
 
+def dstrip(items):
+    return (f'<div style="display:flex; gap:0; border:2px solid {K}">'
+            +"".join(f'<div style="flex:{fx}; display:flex; flex-direction:column; gap:2px; padding:10px 16px; background:{bg}; color:{fg}; border-right:2px solid {K}"><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; color:{Y if bg==K else MUTE}">{lab}</p><p style="font-size:24px; font-weight:700; line-height:1.2">{val}</p></div>' for lab,val,bg,fg,fx in items)+'</div>')
+def beats(title, sub, bl, accent=K):
+    return (f'<div style="flex:1.15; display:flex; flex-direction:column; gap:8px; background:{K}; color:{W}; padding:20px 22px; border-top:10px solid {Y}">'
+            f'<h3 style="font-family:{HEAD}; font-size:28px; font-weight:700; text-transform:uppercase; line-height:1.05">{title}</h3><p style="font-size:22px; color:{GREY}">{sub}</p>'
+            +"".join(f'<div style="display:flex; gap:12px; align-items:baseline"><p style="font-family:{DISP}; font-size:26px; color:{Y}; flex:0 0 20px">{n}</p><p style="font-size:22px; line-height:1.25"><b>{a}:</b> {b}</p></div>' for n,(a,b) in enumerate(bl,1))+'</div>')
+# overview
+S["shoot"]=content("shoot","The shoot: two days this week, warehouse then paddock",
+ f'<div style="display:flex; gap:24px; flex:1; min-height:0">'
+ +f'<div style="flex:1; display:flex; flex-direction:column; gap:12px; background:{Y40}; border:2px solid {K}; border-top:12px solid {Y}; padding:24px 26px"><p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">Day 1 · Thu 1 Oct</p><h3 style="font-family:{HEAD}; font-size:44px; font-weight:700; text-transform:uppercase; line-height:1">Warehouse</h3>'
+ +f'<p style="font-size:24px; line-height:1.3"><b>Story:</b> Act 2, getting the call. Jack drops in on the DiggerLid boys and his shopping pile starts.</p>'
+ +f'<p style="font-size:24px; line-height:1.3"><b>Feeds:</b> the launch ad, the bundle builds and stills, product proof for grease and accessories.</p>'
+ +f'<p style="margin-top:auto; font-size:24px; font-weight:700; background:{K}; color:{W}; padding:8px 12px">Grease · accessories · all three bundles</p></div>'
+ +f'<div style="flex:1; display:flex; flex-direction:column; gap:12px; background:{W}; border:2px solid {K}; border-top:12px solid {K}; padding:24px 26px"><p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">Day 2 · Fri 2 Oct</p><h3 style="font-family:{HEAD}; font-size:44px; font-weight:700; text-transform:uppercase; line-height:1">Paddock</h3>'
+ +f'<p style="font-size:24px; line-height:1.3"><b>Story:</b> Act 3, sharing his wisdom. The Pro Enclosure gets tested in real conditions.</p>'
+ +f'<p style="font-size:24px; line-height:1.3"><b>Feeds:</b> the Pro Enclosure deep dive for launch week, the excavator at work, the big dog.</p>'
+ +f'<p style="margin-top:auto; font-size:24px; font-weight:700; background:{K}; color:{W}; padding:8px 12px">Pro Enclosure · Ultimate Earthmover</p></div>'
+ +f'<div style="flex:1; display:flex; flex-direction:column; gap:12px; background:{W}; border:2px dashed {GREY}; padding:24px 26px"><p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">Not yet scheduled</p><h3 style="font-family:{HEAD}; font-size:44px; font-weight:700; text-transform:uppercase; line-height:1">Pub · worksite</h3>'
+ +f'<p style="font-size:24px; line-height:1.3"><b>Country pub:</b> Act 1 and the finale; the hype ads start here, so it is needed before 16 Nov.</p>'
+ +f'<p style="font-size:24px; line-height:1.3"><b>Worksite:</b> Act 4 and the gifting ads from 23 Nov.</p>'
+ +f'<p style="margin-top:auto; font-size:24px; font-weight:700; background:{Y}; padding:8px 12px">Dates needed</p></div></div>'
+ +note("Each shoot day has its own page next: the hero episode beats, the paid ads to capture and the props list. Location concepts to be added.",size=24),
+ src="Shoot schedule, 28 Sep 2026",notes="Two confirmed shoot days: warehouse on Thursday 1 October and the paddock on Friday 2 October. The country pub and the worksite still need dates; the pub carries the hype ads, so it has to be in the can before hype on 16 November. The earlier plan was 2.5 shoot days plus a safety day across four locations.")
+
+S["shoot-warehouse"]=content("shoot-warehouse","Shoot day 1: warehouse, Thursday 1 October",
+ dstrip([("Date","Thu 1 Oct",Y,K,1),("Location","DiggerLid warehouse",W,K,1.3),("Story","Act 2 · Getting the call",W,K,1.4),("Product focus","Grease · accessories · bundles",K,W,1.6)])
+ +f'<div style="display:flex; gap:18px; flex:1; min-height:0">'
+ +beats("Hero episode 2 · 90 sec","Organic social · draft beats",[("Intro + physical comedy","Jack arrives from the big smoke and trips on the way in. Never reacts."),("Overstate + criticise","He sizes up the boys&#39; setup: &#39;Never needed one.&#39;"),("Right way","The boys walk him through the new range and the bundles."),("Double down","&#39;That&#39;s how I would have done it.&#39;"),("Sale details + CTA","His shopping pile starts; bundles and the offer.")])
+ +card("Paid ads to capture",["Launch ad: &#39;So what have you boys been working on?&#39; Jack walks the warehouse","Forklift loading the ute, item by item, for each bundle","Bundle and gift-tier stills","Product bases for the hype statics","Grease and accessories proof shots"],accent=Y,tsize=28,lsize=23)
+ +card("Props and product",["Forklift and ute","Hardcore Tradie: 2× PRO Mat Plus, hoodie, drawbar, 10× wipes, magnet mat, bottle opener","Ultimate Earthmover and Owner Operator full sets","Gift tiers: wipes, magnet mat, drawbar cover","PRO Mat Plus in all four colours"],accent=K,tsize=28,lsize=23)+'</div>',
+ gap=18,src="Shoot schedule, creative plan, bundle slide",notes="Warehouse day. Beats follow the 90-second hero format on the theme slide and are a draft for the director. The bundle contents come from the bundle slide. Location concept to be added.")
+
+S["shoot-paddock"]=content("shoot-paddock","Shoot day 2: paddock, Friday 2 October",
+ dstrip([("Date","Fri 2 Oct",Y,K,1),("Location","The paddock",W,K,1.3),("Story","Act 3 · Sharing his &#39;wisdom&#39;",W,K,1.4),("Product focus","Pro Enclosure · Ultimate Earthmover",K,W,1.6)])
+ +f'<div style="display:flex; gap:18px; flex:1; min-height:0">'
+ +beats("Hero episode 3 · 90 sec","Organic social · draft beats",[("Intro + physical comedy","&#39;G&#39;day, I&#39;m Jack Clacker, and this is my backyard.&#39; Then he falls over."),("Overstate + criticise","&#39;Old trick&#39;: his way of covering the machine, which fails."),("Right way","The Pro Enclosure goes on; rain comes down; the machine stays dry."),("Double down","&#39;Been saying that for years.&#39;"),("Sale details + CTA","Ultimate Earthmover $732, $347 of gear free.")])
+ +card("Paid ads to capture",["Launch week: &#39;Now this thing is the real deal.&#39; Pro Enclosure deep dive","The excavator at work, practical and authentic","The big dog","&#39;Talk slow for earthmovers&#39; line","Possible Ivan cameo (to confirm)"],accent=Y,tsize=28,lsize=23)
+ +card("Props and product",["Excavator and a Pro Excavator Enclosure","Water for the rain gag","Ultimate Earthmover set: PRO Mat Plus, drawbar, wipes, magnet mat, caddy, cradle, cap set, opener","The big dog and handler"],accent=K,tsize=28,lsize=23)+'</div>',
+ gap=18,src="Shoot schedule, creative plan, bundle slide",notes="Paddock day. Beats follow the 90-second hero format and are a draft for the director. The rain gag needs water on site. Ivan&#39;s cameo is still to confirm. Location concept to be added.")
+
 S["deliverables"]=content("deliverables","Creative deliverables (due dates TBC)",
  table(["Asset","Use","Count","Due (TBC)","Owner"],[
   ["Adventure hero film (4 episodes)","Launch, organic, sale page","1 film, 4 episodes","10 Nov edit locked","Creative [name]"],
@@ -702,7 +743,7 @@ S["close"]=(f'<section id="close" data-transition="fade" style="background:{K}; 
 order=["cover","onepage","agenda",
        "scorecard","curve",
        "moves",
-       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","deliverables"]
+       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","shoot","shoot-warehouse","shoot-paddock","deliverables"]
 S["scorecard"]=S["scorecard"].replace('text-transform:uppercase">The last three sales', 'text-transform:uppercase; background:#231f20; color:#fdfdfb; padding:14px 22px">The last three sales',1)
 for n,k in enumerate(order,1):
     h=S[k].replace("{{N}}",str(n))
