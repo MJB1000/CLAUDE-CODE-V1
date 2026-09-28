@@ -587,7 +587,7 @@ S["shoot-paddock"]=content("shoot-paddock","Shoot day 2: paddock, Friday 2 Octob
  dstrip([("Date","Fri 2 Oct",Y,K,1),("Location","The paddock",W,K,1.3),("Story","Act 3 · Sharing his &#39;wisdom&#39;",W,K,1.4),("Product focus","Pro Enclosure · Ultimate Earthmover",K,W,1.6)])
  +f'<div style="display:flex; gap:18px; flex:1; min-height:0">'
  +beats("Hero episode 3 · 90 sec","Organic social · draft beats",[("Intro + physical comedy","&#39;G&#39;day, I&#39;m Jack Clacker, and this is my backyard.&#39; Then he falls over."),("Overstate + criticise","&#39;Old trick&#39;: his way of covering the machine, which fails."),("Right way","The Pro Enclosure goes on; rain comes down; the machine stays dry."),("Double down","&#39;Been saying that for years.&#39;"),("Sale details + CTA","Ultimate Earthmover $732, $347 of gear free.")])
- +card("Paid ads to capture",["Launch week: &#39;Now this thing is the real deal.&#39; Pro Enclosure deep dive","The excavator at work, practical and authentic","The big dog","&#39;Talk slow for earthmovers&#39; line"],accent=Y,tsize=28,lsize=23)
+ +card("Paid ads to capture",["&#39;Frosty Cold Ones&#39;: the 60s launch film (next slide)","Launch week: &#39;Now this thing is the real deal.&#39; Pro Enclosure deep dive","The excavator at work, practical and authentic","The big dog","&#39;Talk slow for earthmovers&#39; line"],accent=Y,tsize=28,lsize=23)
  +card("Props and product",["Excavator and a Pro Excavator Enclosure","Water for the rain gag","Ultimate Earthmover set: PRO Mat Plus, drawbar, wipes, magnet mat, caddy, cradle, cap set, opener","The big dog and handler"],accent=K,tsize=28,lsize=23)+'</div>',
  gap=18,src="Shoot schedule, creative plan, bundle slide",notes="Paddock day. Beats follow the 90-second hero format and are a draft for the director. The rain gag needs water on site. Ivan appears on day 4 at the worksite, not here. Location concept to be added.")
 
@@ -608,6 +608,21 @@ S["shoot-worksite"]=content("shoot-worksite","Shoot day 4: worksite with Ivan, W
  +f'<div style="display:flex; flex-direction:column; gap:8px; background:{Y}; border:2px solid {K}; padding:18px 20px"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase">Note: Ivan on site</p><p style="font-size:23px; line-height:1.3">Ivan from Earthworks Hub joins the worksite day. Confirm his call time, a signed release and what he says on camera; brief him on Jack before rolling.</p></div>'
  +card("Props and product",["PRO Mat Plus, all four colours; grease","The collab gift bundle","Small covers; an excavator for the dig"],accent=K,tsize=28,lsize=23)+'</div></div>',
  gap=18,src="Shoot schedule, creative plan, gifting slide",notes="Day 4. The worksite carries Act 4 and the mid-sale gifting angle from 23 Nov, so this day feeds the gifting ads and UGC. Ivan from Earthworks Hub is on site. Location concept to be added.")
+
+FROSTY_IMG="/_blob/f52b735f658c32c7ad7d13c3e321dbba"
+frosty=[("01","Touchdown","0 to 7s","JACK: &#39;Time to check into the local for a few frosty cold ones.&#39;","Steps into a puddle; doesn&#39;t notice."),
+        ("02","The locals","7 to 15s","JACK (VO): &#39;But looks like AI&#39;s already taken everyone&#39;s jobs.&#39;","At the bar, glancing round at the robot regulars."),
+        ("03","The yarn","15 to 23s","ROBOT: &#39;Thiiis big.&#39;","A robot spins a yarn, arms wide; Jack sours."),
+        ("04","The call","23 to 30s","JACK, on the flip phone: &#39;Boys. It&#39;s Jack.&#39;","Through the ute windscreen, calling the DiggerLid boys."),
+        ("05","Keep it quiet","30 to 38s","BOYS: &#39;Keep it a secret. We&#39;re not talking about it yet.&#39;","Reverse shot; finger to lips at the speakerphone."),
+        ("06","Pretty good","38 to 55s","VO: the sale summary. JACK: &#39;Gee, that&#39;s pretty good.&#39;","Covers, KAJO, PRO Mats; offer and end date on screen."),
+        ("07","Card","55 to 60s","DiggerLid&#39;s Aussie Black Friday Adventure · [URL]","SUNG: &#39;...time to float her out.&#39;")]
+S["concept-frosty"]=content("concept-frosty","Concept: &#39;Frosty Cold Ones&#39;",
+ dstrip([("Shoot","Day 2 · paddock · Fri 2 Oct",Y,K,1.4),("Format","60 sec · 9:16",W,K,0.9),("Phase","Launch",W,K,0.8),("Storyboard","V2 · working title Red Dirt Robots",K,W,1.6)])
+ +f'<img src="{FROSTY_IMG}" alt="Storyboard, seven frames: Jack steps out of his ute into a puddle outside a country pub; drinks at a bar staffed by robots in hi-vis; a robot tells a big yarn; Jack calls the DiggerLid boys from his ute; the boys shush on speakerphone; the sale summary over Jack in the ute; the DiggerLid Aussie Black Friday Adventure end card" style="width:1664px; height:352px; object-fit:cover; background:#f3efe6; border:2px solid {K}; flex-shrink:0">'
+ +f'<div style="display:flex; gap:12px; flex:1; min-height:0">'
+ +"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:4px; border-top:4px solid {K}; padding-top:6px"><p style="font-family:{HEAD}; font-size:24px; font-weight:700; text-transform:uppercase; line-height:1.05">{t}</p><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; color:{MUTE}">{tm}</p><p style="font-size:22px; font-weight:700; line-height:1.18">{d}</p><p style="font-size:22px; line-height:1.18; color:{K90}">{sh}</p></div>' for n,t,tm,d,sh in frosty)+'</div>',
+ gap=14,src="Storyboard V2, 60s, 9:16",notes="Frame 1 full line: Been out bush a few weeks. Time to check into the local for a few frosty cold ones. Frame 5 full line: Yep... but keep it a secret. We are not talking about it yet. Concept name: Frosty Cold Ones (storyboard working title: Red Dirt Robots, launch). Frame 1 Touchdown: WS, low; Jack steps out of the ute straight into the puddle and does not notice; empty verandah. Frame 2 The locals: MS at the bar, beer halfway up. Frame 3 The yarn: a robot spins a big yarn to its mates, arms wide in time with the VO; Jack sours in the background. Frame 4 The call: MCU through the windscreen. Frame 5 Keep it quiet: the boys lean in to the speakerphone. Frame 6 Pretty good: dirty frame from beside the ute, past the muddy door and mirror, audio on; on-screen overlay Black Friday sale, up to [X]% off, ends [date]. To fill: up to 25% off, ends Tue 1 Dec. Frame 7 Card: DiggerLid's Aussie Black Friday Adventure, [URL]; sung line: time to float her out. Scheduled for the paddock shoot day.")
 
 S["deliverables"]=content("deliverables","Creative deliverables (due dates TBC)",
  table(["Asset","Use","Count","Due (TBC)","Owner"],[
@@ -760,7 +775,7 @@ S["close"]=(f'<section id="close" data-transition="fade" style="background:{K}; 
 order=["cover","onepage","agenda",
        "scorecard","curve",
        "moves",
-       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","shoot","shoot-warehouse","shoot-paddock","shoot-reddirt","shoot-worksite","deliverables"]
+       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","shoot","shoot-warehouse","shoot-paddock","concept-frosty","shoot-reddirt","shoot-worksite","deliverables"]
 S["scorecard"]=S["scorecard"].replace('text-transform:uppercase">The last three sales', 'text-transform:uppercase; background:#231f20; color:#fdfdfb; padding:14px 22px">The last three sales',1)
 for n,k in enumerate(order,1):
     h=S[k].replace("{{N}}",str(n))
