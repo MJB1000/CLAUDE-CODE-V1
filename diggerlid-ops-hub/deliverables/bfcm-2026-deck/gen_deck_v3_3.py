@@ -529,47 +529,36 @@ S["creative"]=content("creative",f"{ctot} performance ads across four phases",
  +f'<p style="font-size:22px; color:{K90}; line-height:1.25"><b>Hype and launch:</b> 60% tried and tested formats with a new theme, 40% new experiments. <b>Mid-sale:</b> all new content. <b>Ending soon:</b> 60% new, 40% proven.</p>',
  gap=14,src="Creative plan, 24 Sep 2026",notes="Hype 10 (4 video, 4 image, 2 GIF): built to work together, the video and GIFs grab attention and the statics carry the sale information with strong visuals, to a new, cold audience. Launch 20 (6 video, 6 image, 4 GIF, 4 UGC). Mid-sale 13 with a gifting focus (5 video, 5 image, 3 UGC). Ending soon 6, running the final three days from Sun 29 Nov (2 video, 2 image, 1 GIF, 1 UGC). Hype and launch run 60% tried and tested formats with a new theme and 40% new experiments: 6 and 4 in hype, 12 and 8 at launch. Mid-sale is all new content (13). Ending soon is 60% new and 40% proven ads: 4 new and 2 proven of 6, rounded. Every ad follows the cold-audience rule: hook, product proof, offer and date.")
 
-hype_ads=[("Image","Sneak peek static","2","",
-           "&#39;Sneak peek: up to 25% off + free gifts from $399 + huge bundles · Sale opens Thu 19 Nov&#39;",
-           "Offer-led static. Creative TBD.",False),
-          ("GIF","Countdown GIF","2","",
-           "&#39;Black Friday · Launching Thu 19 Nov, 12PM&#39;",
-           "A countdown: video as image, or a GIF with a live countdown.",False),
-          ("Video","Airwalk intro","2","Top of funnel",
-           "&#39;If there&#39;s one thing I know about...&#39;",
-           "15 to 20s, cool, Jack Clacker. He falls in a hole in the ground, and the founder is down there announcing the BFCM deal.",False),
-          ("Video","Hey dighead","2","Middle of funnel",
-           "&#39;We don&#39;t normally do this, but we&#39;re doing up to 25% off + heaps of free gifts + huge bundles.&#39;",
-           "Handheld camera, calling out the audience.",False),
-          ("Image","AI visual statics","2","",
-           "Cool visuals, in theme.",
-           "AI-generated imagery in the All Aussie Earthmoving Adventures world.",False)]
-ROLE={"Sneak peek static":"Role: sale info","Countdown GIF":"Role: urgency","Airwalk intro":"Role: attention grab","Hey dighead":"Role: attention grab","AI visual statics":"Role: sale info, cool visuals"}
-HSTAT={"Sneak peek static":0,"Countdown GIF":0,"Hey dighead":0,"AI visual statics":0,"Airwalk intro":1}
-def hcard(fmt,name,n,funnel,copy,direction,datefl):
-    chip=f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; background:{K}; color:{Y}; padding:2px 10px">{fmt}</p>'
-    fun=f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">{funnel}</p>' if funnel else ''
-    flag=f'<p style="font-size:22px; font-weight:700; background:{Y}; padding:2px 8px; align-self:flex-start">Date to confirm</p>' if datefl else ''
-    return (f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{W}; border:2px solid {K}; {"border-top:10px solid "+K+";" if fmt=="Video" else ""} padding:16px 18px">'
-            f'<div style="display:flex; justify-content:space-between; align-items:center">{chip}<p style="font-family:{DISP}; font-size:44px; line-height:1">{n}×</p></div>'
-            f'<h3 style="font-family:{HEAD}; font-size:30px; font-weight:700; text-transform:uppercase; line-height:1.05">{name}</h3>{fun}'
-            f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; border-top:2px solid {K}; padding-top:8px">{ROLE[name]}</p>'
-            f'<p style="font-size:26px; font-weight:700; line-height:1.25">{copy}</p>'
-            f'<p style="font-size:24px; line-height:1.3; color:{K90}">{direction}</p>'
-            +f'<div>{flag}</div></div>')
-def tally(fmt,planned):
-    got=sum(int(a[2]) for a in hype_ads if a[0]==fmt)
+def hcard2(fmt,name,n,where,copy,direction):
+    top=f"border-top:10px solid {K};" if fmt=="Video" else ""
+    return (f'<div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:8px; background:{W}; border:2px solid {K}; {top} padding:14px 16px">'
+            f'<div style="display:flex; justify-content:space-between; align-items:center"><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; background:{K}; color:{Y}; padding:2px 10px">{fmt}</p><p style="font-family:{DISP}; font-size:40px; line-height:1">{n}×</p></div>'
+            f'<h3 style="font-family:{HEAD}; font-size:28px; font-weight:700; text-transform:uppercase; line-height:1.05">{name}</h3>'
+            f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; border-top:2px solid {K}; padding-top:6px; color:{MUTE}">{where}</p>'
+            f'<p style="font-size:23px; font-weight:700; line-height:1.22">{copy}</p>'
+            f'<p style="font-size:22px; line-height:1.25; color:{K90}">{direction}</p></div>')
+def hgroup(label,sub,cards,dark):
+    return (f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; min-width:0">'
+            f'<div style="display:flex; align-items:baseline; gap:12px; background:{K if dark else Y}; color:{Y if dark else K}; padding:6px 14px"><p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase">{label}</p><p style="font-size:22px; font-weight:700; color:{W if dark else K}">{sub}</p></div>'
+            f'<div style="display:flex; gap:12px; flex:1; min-height:0">'+"".join(hcard2(*c) for c in cards)+'</div></div>')
+bfcm_cards=[("Video","Air Walk / Crush","2","Hook, then sale graphics","&#39;If there&#39;s one thing I know about...&#39;","Jack hook, then hard-cut to the sale graphics: up to 25% off + free gifts + huge bundles, from Thu 19 Nov."),
+            ("Image","Bundle images","2","1 paddock · 1 warehouse","Product in a paddock; product in the warehouse.","Bundle hero shots with the offer and the early-access line."),
+            ("Image","AI statics","2","Generic","Up to 25% off + free gifts + huge bundles.","Generic AI-generated statics carrying the sale info.")]
+theme_cards=[("Video","All Up Here","1","Warehouse","&#39;Yep mate, it&#39;s all up here.&#39;","Hype version of Bucket Head: the bucket, the clang, &#39;We&#39;re having a huge sale.&#39;"),
+             ("Video","Show You A Thing Or Two","1","Paddock","&#39;I&#39;ll show you a thing or two.&#39;","Hype version: Jack&#39;s wrong wisdom, cut short, then the sale tease."),
+             ("Video","Fake Phone Call","1","Car near the paddock","&#39;Boys. It&#39;s Jack.&#39;","Hype version: a call that &#39;wasn&#39;t meant to leak&#39; the sale.")]
+def htally(fmt,got,planned):
     ok=got==planned
-    return (f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; background:{K if ok else Y}; color:{Y if ok else K}; padding:10px 16px">'
-            f'<p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase">{fmt}</p>'
-            f'<p style="font-family:{DISP}; font-size:30px">{got} of {planned} {"✓" if ok else "!"}</p></div>')
+    return (f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; background:{K if ok else Y}; color:{Y if ok else K}; border:2px solid {K}; padding:8px 14px">'
+            f'<p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase">{fmt}</p><p style="font-family:{DISP}; font-size:28px">{got} of {planned} {"✓" if ok else "!"}</p></div>')
 S["hype-ads"]=content("hype-ads","Hype ads &gt;17 to 18 Nov",
- f'<div style="display:flex; gap:14px; flex:1; min-height:0">'+"".join(hcard(*a) for a in hype_ads)+'</div>'
- +f'<div style="display:flex; gap:12px; align-items:stretch"><div style="flex:0 0 auto; display:flex; align-items:center; padding-right:6px"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase">Plan check</p></div>'
- +tally("Video",4)+tally("Image",4)+tally("GIF",2)
- +f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; border:2px solid {K}; padding:10px 16px"><p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase">Total</p><p style="font-family:{DISP}; font-size:30px">10 of 10 ✓</p></div>'
- +'</div>',
- gap=18,src="Creative plan, 24 Sep 2026",notes="The ten hype ads, by concept. They match the hype column of the creative plan: 4 video, 4 image, 2 GIF. Tested versus new is still to be added. The sale opens Thu 19 Nov at midday; hype runs Tue 17 and Wed 18 Nov. The offer line everywhere: up to 25% off + free gifts + huge bundles; free gifts from $399 as on the offer slide.")
+ f'<div style="display:flex; gap:18px; flex:1; min-height:0">'
+ +hgroup("BFCM style","6 ads · offer-led",bfcm_cards,False)
+ +hgroup("Theme style","3 ads · Jack, 15 to 20 sec",theme_cards,True)+'</div>'
+ +f'<div style="display:flex; gap:12px"><div style="flex:0 0 auto; display:flex; align-items:center; padding-right:6px"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase">Plan check</p></div>'
+ +htally("Video",5,4)+htally("Image",4,4)+htally("GIF",0,2)+htally("Total",9,10)+'</div>',
+ gap=16,src="Creative plan, 28 Sep 2026",notes="Hype line-up. BFCM style (6): 2 Air Walk or Crush style videos, hook then sale graphics; 2 product bundle images, 1 in a paddock and 1 in the warehouse; 2 generic AI statics. Theme style (3): hype versions of three concepts, 15 to 20 sec: All Up Here (warehouse; the Bucket Head storyboard), Show You A Thing Or Two (paddock), Fake Phone Call (car near the paddock). That is 5 video, 4 image, no GIF: 9 ads against 10 on the creative volume slide (4 video, 4 image, 2 GIF). The sale opens Thu 19 Nov at midday; hype runs Tue 17 and Wed 18 Nov. Offer line: up to 25% off + free gifts + huge bundles.")
+
 
 def dstrip(items):
     return (f'<div style="display:flex; gap:0; border:2px solid {K}">'
