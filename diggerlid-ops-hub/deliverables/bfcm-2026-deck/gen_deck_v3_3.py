@@ -77,7 +77,7 @@ S["cover"]=(f'<section id="cover" data-transition="push" style="background:{K}; 
  f'{banner("Black Friday · Cyber Monday", bg=Y, fg=K, size=36)}'
  f'<h1 style="font-family:{HEAD}; font-size:168px; font-weight:700; line-height:0.95; text-transform:uppercase; color:{W}">BFCM 2026<br>Sale Plan</h1>'
  f'<p style="font-size:38px; color:{Y70}; line-height:1.3">What we learned last time, what we are running, what we are selling, and what has to be locked before the hype starts.</p></div>'
- f'<aside>Three parts: research, strategy, offer and creative. Research slides are measured numbers; strategy and offer slides are the proposal for this room to decide.</aside></section>')
+ f'<aside>Four parts: research, strategy, offer and creative, production. Research slides are measured numbers; the rest is the proposal for this room to decide.</aside></section>')
 
 S["onepage"]=content("onepage","The plan on one page",
  f'<div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; flex:1">'
@@ -87,9 +87,9 @@ S["onepage"]=content("onepage","The plan on one page",
    ("When","Hype Mon 16 and Tue 17 Nov. Sale Wed 18 Nov 12:00 PM (midday) to Tue 1 Dec 11:59 PM AEDT: 14 days, Black Friday on day 10, Cyber Monday on day 13. Christmas gifting push from mid-sale, Mon 23 Nov.",Y40),
    ("Target (to confirm)","Plan: $983k sale revenue incl. GST (about $905k net), the EE tool projection on a $90k week; the calendar plan of record for November is $990k. Floor: $585k (2025 repeated). Stretch: $1.27M on the Aug to Sep run rate. Spend $243k (25% of revenue), ceiling 28%.","#ffffff"),
    ("Offer","Up to 25% off, grease excluded. DiggerShield $150 / $200 off. Gifts: $399 Digger Wipes and free shipping; $599 adds a Magnet Tool Mat; $799 adds a Drawbar Cover. Bundles: Hardcore Tradie $777 (RRP $1,110, 30% off), Ultimate Earthmover $732 (RRP $1,474) and Owner Operator $778 (RRP $1,987), both 35% off the hero gear. Shown as hero gear discounted, the rest free.",Y40),
-   ("Theme","All Aussie Adventure: our own outback expert, four locations, one film and cut-downs. Christmas gifting page live from the mid-sale push.","#ffffff"),
+   ("Theme","All Aussie Adventure: our own outback expert, four locations, one episode per location, cut down for paid. Christmas gifting page live from the mid-sale push.","#ffffff"),
    ("Channels","Meta paid social for acquisition (cold traffic to product pages), email and SMS for the base (segmented sends), organic and creator content for the theme, site pages built before hype.",Y40),
-   ("What must be true first","Popup reach back above 50% on paid pages by 15 Oct. Pages live and tracked by 13 Nov. Bundle, DiggerShield and gift margins signed off by 30 Oct. Stock: $900k at RRP is 128% sell-through at $983k once the 15% discount is applied; incoming stock or a trimmed hero list by 30 Oct. Six decisions this week.","#ffffff")]) + '</div>',
+   ("What must be true first","Popup reach back above 50% on paid pages by 15 Oct. Pages live and tracked by 13 Nov. Bundle, DiggerShield and gift margins signed off by 30 Oct.","#ffffff")]) + '</div>',
  notes="If someone reads only one slide, this is it. Target is a proposal with two options; the forecast on file currently assumes a lower November, so the number needs a decision, not an assumption.")
 
 S["changes"]=content("changes","What changes from 2025",
@@ -113,7 +113,7 @@ S["agenda"]=content("agenda",'Agenda',
  for i,(t,d,bg) in enumerate([
   ("Research","The last three sales side by side, and the shape a DiggerLid sale takes day by day.",Y40),
   ("Strategy","Eight moves for 2026: what changes from last year and why.","#ffffff"),
-  ("Offer and creative","Discount, gift tiers, bundles with prices, the Christmas gifting page, theme, creative deliverables.",Y40)],1))+'</div>')
+  ("Offer and creative","Discount, gift tiers, bundles with prices, the Christmas gifting page, theme, creative volume.",Y40),("Production","The four shoot days, the concepts so far, and the deliverables.","#ffffff")],1))+'</div>')
 
 # ------------------------------------------------------------------ 01 RESEARCH
 S["s-research"]=section("s-research","01","Research","What the last three sales measured, and the five questions the team asked for 2026.")
@@ -179,7 +179,7 @@ S["curve"]=content("curve","The daily shape we are planning to",
  f'<p style="font-size:22px; line-height:1.3; color:{K90}"><b>Hype, 16 and 17 Nov:</b> $14k and 57 orders. Site sessions flat on the week before (5.5k); conversion 1.0% against 1.4%.</p></div>'
  f'<div style="flex:1; display:flex; flex-direction:column; gap:8px"><h3 style="font-family:{HEAD}; font-size:27px; font-weight:700">EOFY 2026: share of sale revenue by day</h3><div style="display:flex; gap:4px; align-items:end; height:330px; border-bottom:2px solid {K}">{bars(eofy,K80,hype=[2.8,1.5])}</div>'
  f'<p style="font-size:22px; line-height:1.3; color:{K90}"><b>Hype, 15 and 16 Jun:</b> $24k and 106 orders. Sessions up 50% on the week before (10.3k); conversion fell to 1.0% from 2.1%.</p></div></div>'
- +f'<div style="display:flex; gap:24px">{big("30%","of sale revenue in the first 48 hours at BFCM. On a $535k base target that is about $160k for the launch weekend.")}{big("5%","per day through the middle. The mid-sale content drop, the gifting push and segmented sends exist to lift this number.",bg="#ffffff")}{big("70%","of launch-day buyers were new customers. The launch is an acquisition play; keep prospecting on.")}</div>',
+ +f'<div style="display:flex; gap:24px">{big("30%","of sale revenue in the first 48 hours at BFCM. On the $983k plan that is about $295k for the launch weekend.")}{big("5%","per day through the middle. The mid-sale content drop, the gifting push and segmented sends exist to lift this number.",bg="#ffffff")}{big("70%","of launch-day buyers were new customers. The launch is an acquisition play; keep prospecting on.")}</div>',
  src="Shopify analytics",notes="Dashed bars H1 and H2 are the two hype days before each launch, as a share of the sale revenue that followed. Both sales saw hype days sell less than an ordinary day while traffic held or rose: people browsed and waited. Plan spend and stock to the front for BFCM.")
 
 reach=[("Jan","67"),("Feb","70"),("Mar","64"),("Apr","80"),("May","44"),("Jun","53"),("Jul","33"),("Aug","34"),("Sep","23")]
@@ -218,7 +218,7 @@ S["eeinputs"]=content("eeinputs","EE tool inputs (23 Sep run), checked",
 
 moves=[("1 · Start wider","Test USA, NZ, TikTok and YouTube on a fixed budget with a kill rule. 70% of launch buyers are new."),
        ("2 · 14 days, 2-day hype","Wed 18 Nov to Tue 1 Dec. Hype Mon 16 and Tue 17 Nov to a new, cold audience, landing on a capture page."),
-       ("3 · Stronger theme","All Aussie Adventure: one character, four locations, one shoot, cut down for paid social."),
+       ("3 · Stronger theme","All Aussie Adventure: one character, four locations, four shoot days, cut down for paid social."),
        ("4 · Cut and run","Written stop rules: landing page under 1.5% by midday, or two days over 30% spend-to-revenue."),
        ("5 · Mid-sale drop","Mon 23 Nov: a new content drop and a PRO Mat gifting angle to the engaged segment. Segmented sends lifted returning share to 43%."),
        ("6 · Pre-game check","Pages built and tracked by 13 Nov, popup reach above 50% on paid pages, ad sets and sends scheduled before hype on 16 Nov."),
@@ -386,10 +386,10 @@ S["journey"]=content("journey","The hero narrative: organic social, laddering do
  f'<p style="font-size:22px; font-weight:700; color:{MUTE}; text-transform:uppercase; letter-spacing:.5px; line-height:1.2">{act}</p>'
  f'<p style="font-size:22px; line-height:1.28; color:{K90}">{beat}</p></div>'
  for num,loc,act,beat,paid in stops)+'</div>'
- +f'<div style="display:flex; align-items:center; gap:16px; background:{K}; color:{W}; padding:10px 18px"><p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase; color:{Y}">Organic social</p><p style="font-size:23px">The meta narrative: five episodes, one per stop, across our organic channels through the sale.</p></div>'
+ +f'<div style="display:flex; align-items:center; gap:16px; background:{K}; color:{W}; padding:10px 18px"><p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase; color:{Y}">Organic social</p><p style="font-size:23px">The meta narrative: one episode per location across our organic channels; the pub finale closes the red dirt episode.</p></div>'
  +f'<p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase; text-align:center">▼ ladders down to performance ads: each one works cold, on its own ▼</p>'
  +f'<div style="display:flex; gap:18px">'+"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:3px; background:{Y}; color:{K}; padding:8px 12px; font-size:22px; line-height:1.22; border:2px solid {K}"><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">{paid[3]}</p><p style="font-weight:700">{paid[0]}</p><p>{paid[1]}</p><p style="font-weight:700; border-top:1px solid {K}; padding-top:3px">{paid[2]}</p></div>' for num,loc,act,beat,paid in stops)+'</div>',
- gap=14,src="Creative brief: hero narrative in five acts",notes="Ads line up with the creative plan on the next slide: hype hooks to a new, cold audience with no prices; launch shows the new range; the Pro Enclosure deep dive carries launch week; mid-sale runs the gifting angle to the Christmas gifting page; ending soon is last day, last drinks. The narrative lives on organic social as the story of the sale. Every paid ad is written for a cold viewer who has never seen the story and does not know a sale is on: a hook in the first line, one product proving itself, and the offer with its date at the end.")
+ gap=14,src="Creative brief: hero narrative in five acts",notes="Ads line up with the creative plan on the next slide: hype hooks to a new, cold audience with the offer teased: up to 25% off + free gifts + huge bundles; launch shows the new range; the Pro Enclosure deep dive carries launch week; mid-sale runs the gifting angle to the Christmas gifting page; ending soon is last day, last drinks. The narrative lives on organic social as the story of the sale. Every paid ad is written for a cold viewer who has never seen the story and does not know a sale is on: a hook in the first line, one product proving itself, and the offer with its date at the end.")
 
 S["gifting"]=content("gifting","Christmas gifting: spouse and family, on its own landing page",
  f'<div style="display:flex; gap:24px">{big("34%","of PRO Mat Plus buyers are women, in practice gift buyers. Gifting is themed for spouses and family.")}{big("1 page","its own Christmas gifting landing page. Every gift ad, email, SMS and banner lands there, not on the sale page.",bg="#ffffff")}{big("3 brands","a collab gift bundle: Titan Sox × DiggerLid × 3D Pro. Contents and price TBC.")}</div>'
@@ -450,18 +450,18 @@ arrow=f'<p style="font-family:{DISP}; font-size:40px; align-self:center; color:{
 S["theme"]=content("theme","Theme: All Aussie Adventure",
  f'<div style="display:flex; gap:24px">'
  f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{K}; color:{W}; padding:22px 28px">{banner("Theme · All Aussie Adventure", bg=Y, fg=K, size=24)}'
- f'<p style="font-size:24px; line-height:1.3; color:{W}">A parody of the outback-bumbler format with our own character, Jack Clacker: wrong wisdom, four locations, and gear he never looks at until he quietly uses it.</p></div>'
+ f'<p style="font-size:24px; line-height:1.3; color:{W}">A parody of the outback-bumbler format with our own character, Jack Clacker: wrong wisdom, four locations, and gear he rejects until he quietly uses it.</p></div>'
  f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{Y40}; padding:22px 28px; border:2px solid {K}">{banner("How it carries the sale", size=24)}'
- f'<p style="font-size:24px; line-height:1.3">Hype (16 and 17 Nov) teases Jack to a new, cold audience with no prices and drives sign-ups. Launch (Wed 18 Nov, midday) opens with the offer. A new episode lands at the mid-sale drop on 23 Nov.</p></div></div>'
+ f'<p style="font-size:24px; line-height:1.3">Hype (16 and 17 Nov) teases Jack and the offer to a new, cold audience and drives sign-ups. Launch (Wed 18 Nov, midday) opens with the offer. A new episode lands at the mid-sale drop on 23 Nov.</p></div></div>'
  +f'<p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase">Adapting the format: from the joke to our hero film to our ad</p>'
  +f'<div style="display:flex; gap:14px; flex:1; min-height:0">'
  +beatcol("The original","The format we parody",["Intro","Physical comedy","Overstate / wrong knowledge","Criticise","Stuffs it up","Resolution, or lack of one"],"",W,accent=GREY)
  +arrow
  +beatcol("Our hero film · 90 sec","Organic social, one episode per location",["Intro + physical comedy","Overstate + criticise","Have it done the right way: the gear","Double down: &#39;that&#39;s how I would have done it&#39;","Sale details and CTA"],"Leaves tension and open loops, so people come back for the next episode.",K,fg=W)
  +arrow
- +beatcol("Our ad · 45 sec","Paid, works cold",["Overstate knowledge + criticise, as the intro","Have it done the right way","Sale CTA"],"Hook, product proof, offer. No episode knowledge needed.",Y40)
+ +beatcol("Our ad · 30 to 90 sec","Paid, works cold · hype cuts 15 to 20 sec",["Overstate knowledge + criticise, as the intro","Have it done the right way","Sale CTA"],"Hook, product proof, offer. No episode knowledge needed.",Y40)
  +'</div>',
- gap=18,src="Planning notes pp.10 and 11, concept board, format sketch",notes="The original format is intro, physical comedy, wrong knowledge, criticism, stuffing it up and an open resolution. Our 90-second hero keeps the comedy but lets the gear do it the right way while Jack claims he would have done it that way all along, then closes on the sale. The 45-second ad drops to three beats so it works for a cold viewer. Hype builds the story and the sign-up list with no offer; launch carries the offer. Hype traffic converted at about 1% in both past sales. Fallback launch film if the Adventure edit slips: Take Cover, already shot in July.")
+ gap=18,src="Planning notes pp.10 and 11, concept board, format sketch",notes="The original format is intro, physical comedy, wrong knowledge, criticism, stuffing it up and an open resolution. Our 90-second hero keeps the comedy but lets the gear do it the right way while Jack claims he would have done it that way all along, then closes on the sale. The paid ad (30 to 90 sec; hype cuts 15 to 20 sec) drops to three beats so it works for a cold viewer. Hype builds the story and the sign-up list with no offer; launch carries the offer. Hype traffic converted at about 1% in both past sales. Fallback launch film if the Adventure edit slips: Take Cover, already shot in July.")
 
 locs=[("Paddock","Excavator; DiggerShield and the big dog; practical, authentic; possible Ivan cameo","Talk slow for earthmovers","Pro Enclosure · DiggerShield"),
       ("Worksite","Building an A-frame; backyard with the excavator; translating for tradies","How you might have done it: a history lesson","PRO Mat · small covers"),
@@ -508,20 +508,20 @@ mixrow=crow("Tested vs new",[mix(t,e,tl) for t,e,tl in cmix],f'<p style="font-si
 rows="".join(crow(f,[ccell(v[f]) for _,_,_,v in cphases],f'<p style="font-family:{DISP}; font-size:36px">{sum(v[f] for _,_,_,v in cphases)}</p>') for f in cformats)
 S["creative"]=content("creative",f"{ctot} performance ads across four phases",
  tline+jobs+mixrow+f'<div style="display:flex; flex-direction:column; gap:10px; flex:1; min-height:0">{rows}</div>'
- +f'<p style="font-size:22px; color:{K90}; line-height:1.25"><b>Hype and launch:</b> 60% tried and tested formats with a new theme, 40% new experiments. <b>Mid-sale:</b> all new content. <b>Ending soon:</b> 60% new, 40% proven. Ad styles by area on the next slide.</p>',
+ +f'<p style="font-size:22px; color:{K90}; line-height:1.25"><b>Hype and launch:</b> 60% tried and tested formats with a new theme, 40% new experiments. <b>Mid-sale:</b> all new content. <b>Ending soon:</b> 60% new, 40% proven.</p>',
  gap=14,src="Creative plan, 24 Sep 2026",notes="Hype 10 (4 video, 4 image, 2 GIF): built to work together, the video and GIFs grab attention and the statics carry the sale information with strong visuals, to a new, cold audience. Launch 20 (6 video, 6 image, 4 GIF, 4 UGC). Mid-sale 13 with a gifting focus (5 video, 5 image, 3 UGC). Ending soon 6, running the final three days from Sun 29 Nov (2 video, 2 image, 1 GIF, 1 UGC). Hype and launch run 60% tried and tested formats with a new theme and 40% new experiments: 6 and 4 in hype, 12 and 8 at launch. Mid-sale is all new content (13). Ending soon is 60% new and 40% proven ads: 4 new and 2 proven of 6, rounded. Every ad follows the cold-audience rule: hook, product proof, offer and date.")
 
 hype_ads=[("Image","Sneak peek static","2","",
-           "&#39;Sneak peek: 25% off best sellers + free gift over $X · Sale opens Wed 18 Nov&#39;",
+           "&#39;Sneak peek: up to 25% off + free gifts from $399 + huge bundles · Sale opens Wed 18 Nov&#39;",
            "Offer-led static. Creative TBD.",False),
           ("GIF","Countdown GIF","2","",
            "&#39;Black Friday · Launching Wed 18 Nov, 12PM&#39;",
            "A countdown: video as image, or a GIF with a live countdown.",False),
           ("Video","Airwalk intro","2","Top of funnel",
            "&#39;If there&#39;s one thing I know about...&#39;",
-           "10 to 15s, cool, Jack Clacker. He falls in a hole in the ground, and the founder is down there announcing the BFCM deal.",False),
+           "15 to 20s, cool, Jack Clacker. He falls in a hole in the ground, and the founder is down there announcing the BFCM deal.",False),
           ("Video","Hey dighead","2","Middle of funnel",
-           "&#39;We don&#39;t normally do this, but we&#39;re doing 25% off + heaps of free gifts + awesome value bundles.&#39;",
+           "&#39;We don&#39;t normally do this, but we&#39;re doing up to 25% off + heaps of free gifts + huge bundles.&#39;",
            "Handheld camera, calling out the audience.",False),
           ("Image","AI visual statics","2","",
            "Cool visuals, in theme.",
@@ -549,7 +549,7 @@ S["hype-ads"]=content("hype-ads","Hype ads: 10 across five concepts, 16 to 17 No
  +f'<div style="display:flex; gap:12px; align-items:stretch"><div style="flex:0 0 auto; display:flex; align-items:center; padding-right:6px"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase">Check against the plan</p></div>'
  +tally("Video",4)+tally("Image",4)+tally("GIF",2)
  +f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; border:2px solid {K}; padding:10px 16px"><p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase">Total</p><p style="font-family:{DISP}; font-size:30px">10 of 10 ✓</p></div></div>',
- gap=18,src="Creative plan, 24 Sep 2026",notes="The ten hype ads, by concept. They match the hype column of the creative plan: 4 video, 4 image, 2 GIF. Still to tag: which 6 are tried and tested formats and which 4 are new experiments. The sale opens Wed 18 Nov at midday; hype runs Mon 16 and Tue 17 Nov. The free gift threshold is $X in the copy; the gift tiers start at $399.")
+ gap=18,src="Creative plan, 24 Sep 2026",notes="The ten hype ads, by concept. They match the hype column of the creative plan: 4 video, 4 image, 2 GIF. Still to tag: which 6 are tried and tested formats and which 4 are new experiments. The sale opens Wed 18 Nov at midday; hype runs Mon 16 and Tue 17 Nov. The offer line everywhere: up to 25% off + free gifts + huge bundles; free gifts from $399 as on the offer slide.")
 
 def dstrip(items):
     return (f'<div style="display:flex; gap:0; border:2px solid {K}">'
@@ -618,7 +618,7 @@ frosty=[("01","Touchdown","0 to 7s","JACK: &#39;Time to check into the local for
         ("06","Pretty good","38 to 55s","VO: the sale summary. JACK: &#39;Gee, that&#39;s pretty good.&#39;","Covers, KAJO, PRO Mats; offer and end date on screen."),
         ("07","Card","55 to 60s","DiggerLid&#39;s Aussie Black Friday Adventure · [URL]","SUNG: &#39;...time to float her out.&#39;")]
 S["concept-frosty"]=content("concept-frosty","Concept: &#39;Frosty Cold Ones&#39;",
- dstrip([("Shoot","Day 2 · paddock · Fri 2 Oct",Y,K,1.4),("Format","60 sec · 9:16",W,K,0.9),("Phase","Launch",W,K,0.8),("Storyboard","V2 · working title Red Dirt Robots",K,W,1.6)])
+ dstrip([("Shoot","Day 2 · paddock · Fri 2 Oct",Y,K,1.4),("Format","60 sec · 9:16",W,K,0.9),("Version","Launch version",W,K,0.9),("Storyboard","V2 · working title Red Dirt Robots",K,W,1.6)])
  +f'<img src="{FROSTY_IMG}" alt="Storyboard, seven frames: Jack steps out of his ute into a puddle outside a country pub; drinks at a bar staffed by robots in hi-vis; a robot tells a big yarn; Jack calls the DiggerLid boys from his ute; the boys shush on speakerphone; the sale summary over Jack in the ute; the DiggerLid Aussie Black Friday Adventure end card" style="width:1664px; height:352px; object-fit:cover; background:#f3efe6; border:2px solid {K}; flex-shrink:0">'
  +f'<div style="display:flex; gap:12px; flex:1; min-height:0">'
  +"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:4px; border-top:4px solid {K}; padding-top:6px"><p style="font-family:{HEAD}; font-size:24px; font-weight:700; text-transform:uppercase; line-height:1.05">{t}</p><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; color:{MUTE}">{tm}</p><p style="font-size:22px; font-weight:700; line-height:1.18">{d}</p><p style="font-size:22px; line-height:1.18; color:{K90}">{sh}</p></div>' for n,t,tm,d,sh in frosty)+'</div>',
@@ -632,7 +632,7 @@ bucket=[("Walk and talk","0 to 4s","JOEL: &#39;Now Jack, you remember everything
         ("The line","10 to 13s","JOEL (flat): &#39;We&#39;re having a huge sale.&#39; SUPER: HUGE BLACK FRIDAY SALE","Medium on the brothers, Jack&#39;s boots in front."),
         ("Card","13 to 15s","Fade to black. Campaign card + early-access sign-up.","Audio over black: a snore, then &#39;...all up here...&#39;")]
 S["concept-bucket"]=content("concept-bucket","Concept: &#39;Bucket Head&#39;",
- dstrip([("Shoot","Day 1 · warehouse · Thu 1 Oct",Y,K,1.4),("Format","15 sec · 9:16",W,K,0.9),("Phase","Hype · early access",W,K,1),("Storyboard","V1 · working title All Up Here",K,W,1.5)])
+ dstrip([("Shoot","Day 1 · warehouse · Thu 1 Oct",Y,K,1.4),("Format","15 sec · 9:16",W,K,0.9),("Version","Hype version · early access",W,K,1.1),("Storyboard","V1 · working title All Up Here",K,W,1.5)])
  +f'<img src="{BUCKET_IMG}" alt="Storyboard, six frames: Joel, his brother and Jack walk past an excavator outside the warehouse; Jack taps his head; the yellow bucket clangs him out of frame; the brothers look down at Jack flat on his back; the brothers deliver the sale line; the Huge Black Friday Sale early-access card" style="width:1664px; height:350px; object-fit:cover; object-position:center 40%; background:#f3efe6; border:2px solid {K}; flex-shrink:0">'
  +f'<div style="display:flex; gap:14px; flex:1; min-height:0">'
  +"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:4px; border-top:4px solid {K}; padding-top:6px"><p style="font-family:{HEAD}; font-size:24px; font-weight:700; text-transform:uppercase; line-height:1.05">{t}</p><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; color:{MUTE}">{tm}</p><p style="font-size:22px; font-weight:700; line-height:1.18">{d}</p><p style="font-size:22px; line-height:1.18; color:{K90}">{sh}</p></div>' for t,tm,d,sh in bucket)+'</div>',
