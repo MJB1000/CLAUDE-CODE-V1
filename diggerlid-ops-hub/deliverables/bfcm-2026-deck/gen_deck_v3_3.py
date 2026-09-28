@@ -354,8 +354,8 @@ S["bundles-alt"]=content("bundles-alt","Three hero bundles: pay for the hero gea
 
 terr=[("Red dirt + country pub","A changing world","The local country pub, where robots now pull the beers. The long-haul truck run from the bush to the big smoke. Dust trail, campfire at night.","Act 1 and the finale: the world has changed and the call comes at the pub, and he brings the lessons home to it. Hype starts here.","&#39;Show these city boys how it&#39;s done.&#39;","PRO Mat · small covers"),
       ("Warehouse","Getting the call","Bundles, offers, the forklift loading the ute. The boys show Jack what they&#39;ve been up to.","Act 2 and the launch: he meets the DiggerLid boys and his Black Friday shopping pile starts.","Straight product proof.","Grease · accessories · bundles"),
-      ("Paddock","Sharing his &#39;wisdom&#39;","The excavator at work in real conditions and the big dog. Practical and authentic; possible Ivan cameo.","Act 3: the gear gets tested; his messy methods against better ways.","&#39;Talk slow for earthmovers.&#39;","Pro Enclosure"),
-      ("Worksite","The brand realisation","A home build site with a backyard that needs digging. Real operators rate the gear while Jack talks slowly to the young tradies.","Act 4 and the mid-sale gifting angle: the gear is so good he has to get some for his mates.","&#39;How you might have done it: a history lesson.&#39;","PRO Mat · small covers · grease")]
+      ("Paddock","Sharing his &#39;wisdom&#39;","The excavator at work in real conditions and the big dog. Practical and authentic.","Act 3: the gear gets tested; his messy methods against better ways.","&#39;Talk slow for earthmovers.&#39;","Pro Enclosure"),
+      ("Worksite","The brand realisation","A home build site with a backyard that needs digging. Real operators, including Ivan from Earthworks Hub, rate the gear.","Act 4 and the mid-sale gifting angle: the gear is so good he has to get some for his mates.","&#39;How you might have done it: a history lesson.&#39;","PRO Mat · small covers · grease")]
 S["territories"]=content("territories","Four creative territories, one character",
  f'<div style="display:flex; gap:18px; flex:1">'+"".join(
  f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{"#ffffff" if i%2 else Y40}; padding:22px 22px; border:2px solid {K}; border-top:12px solid {K if i%2 else Y}">'
@@ -366,7 +366,7 @@ S["territories"]=content("territories","Four creative territories, one character
  f'<p style="font-size:23px; line-height:1.3; font-style:italic; color:{K90}">{line}</p>'
  f'<div style="margin-top:auto; background:{K}; color:{W}; padding:8px 12px; font-size:23px; font-weight:700">{prod}</div></div>'
  for i,(loc,role,shoot,story,line,prod) in enumerate(terr))+'</div>'
- +note("4 locations · 2.5 shoot days plus 1 safety day · theme: All Aussie Adventure. Each location owns a product, and every hype teaser, cut-down and still comes from the same footage.",size=24),
+ +note("4 locations · 4 shoot days: 1, 2, 27 and 28 Oct · theme: All Aussie Adventure. Each location owns a product, and every hype teaser, cut-down and still comes from the same footage.",size=24),
  src="Planning notes, creative production page",notes="Ordered as the journey runs: the country pub and the truck run to the city, the warehouse, the paddock, the home build site, then home to the pub. The next slide draws the route.")
 
 stops=[("1","Red dirt + pub","A changing world","AI took the town&#39;s jobs; robots pull the beers. The DiggerLid boys call, and he hitches a truck to the big smoke.",("&#39;Kids and their AI. What&#39;s the world coming to?&#39;","Jack&#39;s complaints as quick-fire hooks: old world against new.","Coming soon from DiggerLid, 18 Nov. Get first access.","Hype · 16 to 17 Nov")),
@@ -559,22 +559,21 @@ def beats(title, sub, bl, accent=K):
             f'<h3 style="font-family:{HEAD}; font-size:28px; font-weight:700; text-transform:uppercase; line-height:1.05">{title}</h3><p style="font-size:22px; color:{GREY}">{sub}</p>'
             +"".join(f'<div style="display:flex; gap:12px; align-items:baseline"><p style="font-family:{DISP}; font-size:26px; color:{Y}; flex:0 0 20px">{n}</p><p style="font-size:22px; line-height:1.25"><b>{a}:</b> {b}</p></div>' for n,(a,b) in enumerate(bl,1))+'</div>')
 # overview
-S["shoot"]=content("shoot","The shoot: two days this week, warehouse then paddock",
- f'<div style="display:flex; gap:24px; flex:1; min-height:0">'
- +f'<div style="flex:1; display:flex; flex-direction:column; gap:12px; background:{Y40}; border:2px solid {K}; border-top:12px solid {Y}; padding:24px 26px"><p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">Day 1 · Thu 1 Oct</p><h3 style="font-family:{HEAD}; font-size:44px; font-weight:700; text-transform:uppercase; line-height:1">Warehouse</h3>'
- +f'<p style="font-size:24px; line-height:1.3"><b>Story:</b> Act 2, getting the call. Jack drops in on the DiggerLid boys and his shopping pile starts.</p>'
- +f'<p style="font-size:24px; line-height:1.3"><b>Feeds:</b> the launch ad, the bundle builds and stills, product proof for grease and accessories.</p>'
- +f'<p style="margin-top:auto; font-size:24px; font-weight:700; background:{K}; color:{W}; padding:8px 12px">Grease · accessories · all three bundles</p></div>'
- +f'<div style="flex:1; display:flex; flex-direction:column; gap:12px; background:{W}; border:2px solid {K}; border-top:12px solid {K}; padding:24px 26px"><p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">Day 2 · Fri 2 Oct</p><h3 style="font-family:{HEAD}; font-size:44px; font-weight:700; text-transform:uppercase; line-height:1">Paddock</h3>'
- +f'<p style="font-size:24px; line-height:1.3"><b>Story:</b> Act 3, sharing his wisdom. The Pro Enclosure gets tested in real conditions.</p>'
- +f'<p style="font-size:24px; line-height:1.3"><b>Feeds:</b> the Pro Enclosure deep dive for launch week, the excavator at work, the big dog.</p>'
- +f'<p style="margin-top:auto; font-size:24px; font-weight:700; background:{K}; color:{W}; padding:8px 12px">Pro Enclosure · Ultimate Earthmover</p></div>'
- +f'<div style="flex:1; display:flex; flex-direction:column; gap:12px; background:{W}; border:2px dashed {GREY}; padding:24px 26px"><p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">Not yet scheduled</p><h3 style="font-family:{HEAD}; font-size:44px; font-weight:700; text-transform:uppercase; line-height:1">Pub · worksite</h3>'
- +f'<p style="font-size:24px; line-height:1.3"><b>Country pub:</b> Act 1 and the finale; the hype ads start here, so it is needed before 16 Nov.</p>'
- +f'<p style="font-size:24px; line-height:1.3"><b>Worksite:</b> Act 4 and the gifting ads from 23 Nov.</p>'
- +f'<p style="margin-top:auto; font-size:24px; font-weight:700; background:{Y}; padding:8px 12px">Dates needed</p></div></div>'
- +note("Each shoot day has its own page next: the hero episode beats, the paid ads to capture and the props list. Location concepts to be added.",size=24),
- src="Shoot schedule, 28 Sep 2026",notes="Two confirmed shoot days: warehouse on Thursday 1 October and the paddock on Friday 2 October. The country pub and the worksite still need dates; the pub carries the hype ads, so it has to be in the can before hype on 16 November. The earlier plan was 2.5 shoot days plus a safety day across four locations.")
+def sday(n,date,loc,story,feeds,prod,bg,accent):
+    return (f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{bg}; border:2px solid {K}; border-top:12px solid {accent}; padding:20px 22px">'
+            f'<p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">Day {n} · {date}</p>'
+            f'<h3 style="font-family:{HEAD}; font-size:36px; font-weight:700; text-transform:uppercase; line-height:1">{loc}</h3>'
+            f'<p style="font-size:23px; line-height:1.28"><b>Story:</b> {story}</p><p style="font-size:23px; line-height:1.28"><b>Feeds:</b> {feeds}</p>'
+            f'<p style="margin-top:auto; font-size:22px; font-weight:700; background:{K}; color:{W}; padding:6px 10px">{prod}</p></div>')
+S["shoot"]=content("shoot","The shoot: four days, two blocks",
+ f'<div style="display:flex; gap:10px; align-items:center"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; background:{Y}; padding:4px 12px">BLOCK 1 · THU 1 AND FRI 2 OCT</p><div style="flex:1; height:3px; background:{K}"></div><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; background:{K}; color:{Y}; padding:4px 12px">BLOCK 2 · TUE 27 AND WED 28 OCT</p></div>'
+ +f'<div style="display:flex; gap:16px; flex:1; min-height:0">'
+ +sday(1,"Thu 1 Oct","Warehouse","Act 2, getting the call.","the launch ad, bundle builds and stills, grease and accessories proof.","Grease · accessories · bundles",Y40,Y)
+ +sday(2,"Fri 2 Oct","Paddock","Act 3, sharing his wisdom.","the Pro Enclosure deep dive, the excavator at work, the big dog.","Pro Enclosure · Ultimate Earthmover",W,K)
+ +sday(3,"Tue 27 Oct","Red dirt + warehouse pickups","Act 1 and the finale; the hype ads start here.","the hype hooks, the last-day ad, and pickups from day 1.","PRO Mat · small covers",Y40,Y)
+ +sday(4,"Wed 28 Oct","Worksite, with Ivan","Act 4, the brand realisation and the gifting angle.","the gifting ads from 23 Nov, with Ivan from Earthworks Hub on site.","PRO Mat Plus · grease · gifts",W,K)+'</div>'
+ +note("Each shoot day has its own page next. Block 2 lands three weeks before hype on 16 Nov, so the edit has to turn around fast. Location concepts to be added.",size=24),
+ src="Shoot schedule, 28 Sep 2026",notes="Four shoot days in two blocks. Block 1: warehouse Thu 1 Oct, paddock Fri 2 Oct. Block 2: red dirt plus warehouse pickups Tue 27 Oct, worksite with Ivan Wed 28 Oct. Hype starts Mon 16 Nov, so the red dirt footage for the hype hooks has about three weeks from shoot to live.")
 
 S["shoot-warehouse"]=content("shoot-warehouse","Shoot day 1: warehouse, Thursday 1 October",
  dstrip([("Date","Thu 1 Oct",Y,K,1),("Location","DiggerLid warehouse",W,K,1.3),("Story","Act 2 · Getting the call",W,K,1.4),("Product focus","Grease · accessories · bundles",K,W,1.6)])
@@ -588,9 +587,27 @@ S["shoot-paddock"]=content("shoot-paddock","Shoot day 2: paddock, Friday 2 Octob
  dstrip([("Date","Fri 2 Oct",Y,K,1),("Location","The paddock",W,K,1.3),("Story","Act 3 · Sharing his &#39;wisdom&#39;",W,K,1.4),("Product focus","Pro Enclosure · Ultimate Earthmover",K,W,1.6)])
  +f'<div style="display:flex; gap:18px; flex:1; min-height:0">'
  +beats("Hero episode 3 · 90 sec","Organic social · draft beats",[("Intro + physical comedy","&#39;G&#39;day, I&#39;m Jack Clacker, and this is my backyard.&#39; Then he falls over."),("Overstate + criticise","&#39;Old trick&#39;: his way of covering the machine, which fails."),("Right way","The Pro Enclosure goes on; rain comes down; the machine stays dry."),("Double down","&#39;Been saying that for years.&#39;"),("Sale details + CTA","Ultimate Earthmover $732, $347 of gear free.")])
- +card("Paid ads to capture",["Launch week: &#39;Now this thing is the real deal.&#39; Pro Enclosure deep dive","The excavator at work, practical and authentic","The big dog","&#39;Talk slow for earthmovers&#39; line","Possible Ivan cameo (to confirm)"],accent=Y,tsize=28,lsize=23)
+ +card("Paid ads to capture",["Launch week: &#39;Now this thing is the real deal.&#39; Pro Enclosure deep dive","The excavator at work, practical and authentic","The big dog","&#39;Talk slow for earthmovers&#39; line"],accent=Y,tsize=28,lsize=23)
  +card("Props and product",["Excavator and a Pro Excavator Enclosure","Water for the rain gag","Ultimate Earthmover set: PRO Mat Plus, drawbar, wipes, magnet mat, caddy, cradle, cap set, opener","The big dog and handler"],accent=K,tsize=28,lsize=23)+'</div>',
- gap=18,src="Shoot schedule, creative plan, bundle slide",notes="Paddock day. Beats follow the 90-second hero format and are a draft for the director. The rain gag needs water on site. Ivan&#39;s cameo is still to confirm. Location concept to be added.")
+ gap=18,src="Shoot schedule, creative plan, bundle slide",notes="Paddock day. Beats follow the 90-second hero format and are a draft for the director. The rain gag needs water on site. Ivan appears on day 4 at the worksite, not here. Location concept to be added.")
+
+S["shoot-reddirt"]=content("shoot-reddirt","Shoot day 3: red dirt and warehouse pickups, Tuesday 27 October",
+ dstrip([("Date","Tue 27 Oct",Y,K,1),("Location","Red dirt · warehouse",W,K,1.3),("Story","Act 1 and the finale",W,K,1.4),("Product focus","PRO Mat · small covers",K,W,1.6)])
+ +f'<div style="display:flex; gap:18px; flex:1; min-height:0">'
+ +beats("Hero episode 1 · 90 sec","Organic social · draft beats",[("Intro + physical comedy","&#39;G&#39;day, I&#39;m Jack Clacker, and this is my backyard.&#39; Robots at the bar; he falls off his stool."),("Overstate + criticise","Kids and their AI: &#39;Not much call for country wisdom around here anymore.&#39;"),("Right way","The DiggerLid boys call for help with their Black Friday sale."),("Double down","&#39;I imagine they called me in for some real outback wisdom.&#39;"),("CTA","He loads the digger and hitches a truck to the big smoke. Coming soon.")])
+ +card("Paid ads to capture",["Hype hooks: &#39;Kids and their AI. What&#39;s the world coming to?&#39;","Airwalk intro: the hole in the ground and the founder","Finale at the pub: last drinks, &#39;Tell &#39;em I sent you&#39;, for the last-day ad","Warehouse pickups from day 1, list after the day 1 review"],accent=Y,tsize=28,lsize=23)
+ +card("Props and product",["The long-haul truck and the digger on the back","Robot extras for the pub; the ute full of bargains for the finale","PRO Mat and small covers","Dust trail, campfire, night"],accent=K,tsize=28,lsize=23)+'</div>',
+ gap=18,src="Shoot schedule, creative plan",notes="Day 3. Red dirt carries Act 1 and the finale, so it feeds the hype ads from 16 Nov and the last-day ad on 1 Dec. The pub scenes are listed here as part of the red dirt territory; confirm the pub is shot on this day. Warehouse pickups are whatever the day 1 review finds missing. Location concept to be added.")
+
+S["shoot-worksite"]=content("shoot-worksite","Shoot day 4: worksite with Ivan, Wednesday 28 October",
+ dstrip([("Date","Wed 28 Oct",Y,K,1),("Location","Home build site, backyard dig",W,K,1.4),("Story","Act 4 · The brand realisation",W,K,1.4),("Product focus","PRO Mat Plus · grease · gifts",K,W,1.5)])
+ +f'<div style="display:flex; gap:18px; flex:1; min-height:0">'
+ +beats("Hero episode 4 · 90 sec","Organic social · draft beats",[("Intro + physical comedy","A backyard dig on a home build; Jack slips into the trench. Never reacts."),("Overstate + criticise","He talks slowly to the young tradies: &#39;Old trick.&#39;"),("Right way","Real operators, Ivan among them, show him the PRO Mat and the grease."),("Double down","He claims he taught them a thing or two."),("Gifting CTA","&#39;Too good to keep to yourself.&#39; Shop Christmas gifts, ends 1 Dec.")])
+ +card("Paid ads to capture",["Gifting ads from 23 Nov: 3 concepts, 3 UGC and a set of images","&#39;Too good to keep to yourself&#39;: for your mates, your husband, your habibi","Operator reactions to the gear","Collab bundle stills: Titan Sox × DiggerLid × 3D Pro"],accent=Y,tsize=28,lsize=23)
+ +f'<div style="flex:1; display:flex; flex-direction:column; gap:14px">'
+ +f'<div style="display:flex; flex-direction:column; gap:8px; background:{Y}; border:2px solid {K}; padding:18px 20px"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase">Note: Ivan on site</p><p style="font-size:23px; line-height:1.3">Ivan from Earthworks Hub joins the worksite day. Confirm his call time, a signed release and what he says on camera; brief him on Jack before rolling.</p></div>'
+ +card("Props and product",["PRO Mat Plus, all four colours; grease","The collab gift bundle","Small covers; an excavator for the dig"],accent=K,tsize=28,lsize=23)+'</div></div>',
+ gap=18,src="Shoot schedule, creative plan, gifting slide",notes="Day 4. The worksite carries Act 4 and the mid-sale gifting angle from 23 Nov, so this day feeds the gifting ads and UGC. Ivan from Earthworks Hub is on site. Location concept to be added.")
 
 S["deliverables"]=content("deliverables","Creative deliverables (due dates TBC)",
  table(["Asset","Use","Count","Due (TBC)","Owner"],[
@@ -743,7 +760,7 @@ S["close"]=(f'<section id="close" data-transition="fade" style="background:{K}; 
 order=["cover","onepage","agenda",
        "scorecard","curve",
        "moves",
-       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","shoot","shoot-warehouse","shoot-paddock","deliverables"]
+       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","shoot","shoot-warehouse","shoot-paddock","shoot-reddirt","shoot-worksite","deliverables"]
 S["scorecard"]=S["scorecard"].replace('text-transform:uppercase">The last three sales', 'text-transform:uppercase; background:#231f20; color:#fdfdfb; padding:14px 22px">The last three sales',1)
 for n,k in enumerate(order,1):
     h=S[k].replace("{{N}}",str(n))
