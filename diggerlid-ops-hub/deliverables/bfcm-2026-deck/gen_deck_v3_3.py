@@ -579,7 +579,7 @@ S["shoot-warehouse"]=content("shoot-warehouse","Shoot day 1: warehouse, Thursday
  dstrip([("Date","Thu 1 Oct",Y,K,1),("Location","DiggerLid warehouse",W,K,1.3),("Story","Act 2 · Getting the call",W,K,1.4),("Product focus","Grease · accessories · bundles",K,W,1.6)])
  +f'<div style="display:flex; gap:18px; flex:1; min-height:0">'
  +beats("Hero episode 2 · 90 sec","Organic social · draft beats",[("Intro + physical comedy","Jack arrives from the big smoke and trips on the way in. Never reacts."),("Overstate + criticise","He sizes up the boys&#39; setup: &#39;Never needed one.&#39;"),("Right way","The boys walk him through the new range and the bundles."),("Double down","&#39;That&#39;s how I would have done it.&#39;"),("Sale details + CTA","His shopping pile starts; bundles and the offer.")])
- +card("Paid ads to capture",["Launch ad: &#39;So what have you boys been working on?&#39; Jack walks the warehouse","Forklift loading the ute, item by item, for each bundle","Bundle and gift-tier stills","Product bases for the hype statics","Grease and accessories proof shots"],accent=Y,tsize=28,lsize=23)
+ +card("Paid ads to capture",["&#39;Bucket Head&#39;: the 15s hype ad (next slide)","Launch ad: &#39;So what have you boys been working on?&#39; Jack walks the warehouse","Forklift loading the ute, item by item, for each bundle","Bundle and gift-tier stills","Product bases for the hype statics","Grease and accessories proof shots"],accent=Y,tsize=28,lsize=23)
  +card("Props and product",["Forklift and ute","Hardcore Tradie: 2× PRO Mat Plus, hoodie, drawbar, 10× wipes, magnet mat, bottle opener","Ultimate Earthmover and Owner Operator full sets","Gift tiers: wipes, magnet mat, drawbar cover","PRO Mat Plus in all four colours"],accent=K,tsize=28,lsize=23)+'</div>',
  gap=18,src="Shoot schedule, creative plan, bundle slide",notes="Warehouse day. Beats follow the 90-second hero format on the theme slide and are a draft for the director. The bundle contents come from the bundle slide. Location concept to be added.")
 
@@ -623,6 +623,20 @@ S["concept-frosty"]=content("concept-frosty","Concept: &#39;Frosty Cold Ones&#39
  +f'<div style="display:flex; gap:12px; flex:1; min-height:0">'
  +"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:4px; border-top:4px solid {K}; padding-top:6px"><p style="font-family:{HEAD}; font-size:24px; font-weight:700; text-transform:uppercase; line-height:1.05">{t}</p><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; color:{MUTE}">{tm}</p><p style="font-size:22px; font-weight:700; line-height:1.18">{d}</p><p style="font-size:22px; line-height:1.18; color:{K90}">{sh}</p></div>' for n,t,tm,d,sh in frosty)+'</div>',
  gap=14,src="Storyboard V2, 60s, 9:16",notes="Frame 1 full line: Been out bush a few weeks. Time to check into the local for a few frosty cold ones. Frame 5 full line: Yep... but keep it a secret. We are not talking about it yet. Concept name: Frosty Cold Ones (storyboard working title: Red Dirt Robots, launch). Frame 1 Touchdown: WS, low; Jack steps out of the ute straight into the puddle and does not notice; empty verandah. Frame 2 The locals: MS at the bar, beer halfway up. Frame 3 The yarn: a robot spins a big yarn to its mates, arms wide in time with the VO; Jack sours in the background. Frame 4 The call: MCU through the windscreen. Frame 5 Keep it quiet: the boys lean in to the speakerphone. Frame 6 Pretty good: dirty frame from beside the ute, past the muddy door and mirror, audio on; on-screen overlay Black Friday sale, up to [X]% off, ends [date]. To fill: up to 25% off, ends Tue 1 Dec. Frame 7 Card: DiggerLid's Aussie Black Friday Adventure, [URL]; sung line: time to float her out. Scheduled for the paddock shoot day.")
+
+BUCKET_IMG="/_blob/b97d57b55fa0b6edb0b073c40eba6cc5"
+bucket=[("Walk and talk","0 to 4s","JOEL: &#39;Now Jack, you remember everything in our huge Black Friday sale?&#39;","Side-on tracking; the audience sees the bucket first."),
+        ("The claim","4 to 6s","JACK: &#39;Yep mate, it&#39;s all up here.&#39; (taps head)","Same shot, no cut. He points at the exact spot that&#39;s about to fail."),
+        ("The hit","6 to 7s","SFX: CLANG. He drops out of frame.","Keep tracking a half-beat; suddenly just the brothers and the bucket."),
+        ("The look","7 to 10s","The brothers stop, look down, then at each other. SFX: snoring.","Static wide from behind Jack&#39;s boots. Hold the silence."),
+        ("The line","10 to 13s","JOEL (flat): &#39;We&#39;re having a huge sale.&#39; SUPER: HUGE BLACK FRIDAY SALE","Medium on the brothers, Jack&#39;s boots in front."),
+        ("Card","13 to 15s","Fade to black. Campaign card + early-access sign-up.","Audio over black: a snore, then &#39;...all up here...&#39;")]
+S["concept-bucket"]=content("concept-bucket","Concept: &#39;Bucket Head&#39;",
+ dstrip([("Shoot","Day 1 · warehouse · Thu 1 Oct",Y,K,1.4),("Format","15 sec · 9:16",W,K,0.9),("Phase","Hype · early access",W,K,1),("Storyboard","V1 · working title All Up Here",K,W,1.5)])
+ +f'<img src="{BUCKET_IMG}" alt="Storyboard, six frames: Joel, his brother and Jack walk past an excavator outside the warehouse; Jack taps his head; the yellow bucket clangs him out of frame; the brothers look down at Jack flat on his back; the brothers deliver the sale line; the Huge Black Friday Sale early-access card" style="width:1664px; height:350px; object-fit:cover; object-position:center 40%; background:#f3efe6; border:2px solid {K}; flex-shrink:0">'
+ +f'<div style="display:flex; gap:14px; flex:1; min-height:0">'
+ +"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:4px; border-top:4px solid {K}; padding-top:6px"><p style="font-family:{HEAD}; font-size:24px; font-weight:700; text-transform:uppercase; line-height:1.05">{t}</p><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; color:{MUTE}">{tm}</p><p style="font-size:22px; font-weight:700; line-height:1.18">{d}</p><p style="font-size:22px; line-height:1.18; color:{K90}">{sh}</p></div>' for t,tm,d,sh in bucket)+'</div>',
+ gap=14,src="Storyboard V1, 15s, 9:16",notes="Frame 1 shot: side-on tracking; the bucket enters frame ahead of them, so the audience sees it first. Frame 5: medium on the brothers with Jack&#39;s boots in the foreground. Concept name: Bucket Head (storyboard working title: Jack, All Up Here). A 15-second hype ad shot on the warehouse day: Jack claims he remembers the whole sale, the excavator bucket knocks him out, and the brothers deliver the line flat. Ends on the early-access card: Huge Black Friday Sale, Get early access, sign up to shop the sale first. Needs a stunt plan for the bucket hit and the fall.")
 
 S["deliverables"]=content("deliverables","Creative deliverables (due dates TBC)",
  table(["Asset","Use","Count","Due (TBC)","Owner"],[
@@ -775,7 +789,7 @@ S["close"]=(f'<section id="close" data-transition="fade" style="background:{K}; 
 order=["cover","onepage","agenda",
        "scorecard","curve",
        "moves",
-       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","shoot","shoot-warehouse","shoot-paddock","concept-frosty","shoot-reddirt","shoot-worksite","deliverables"]
+       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","shoot","shoot-warehouse","concept-bucket","shoot-paddock","concept-frosty","shoot-reddirt","shoot-worksite","deliverables"]
 S["scorecard"]=S["scorecard"].replace('text-transform:uppercase">The last three sales', 'text-transform:uppercase; background:#231f20; color:#fdfdfb; padding:14px 22px">The last three sales',1)
 for n,k in enumerate(order,1):
     h=S[k].replace("{{N}}",str(n))
