@@ -550,7 +550,7 @@ def hcard(fmt,name,n,funnel,copy,direction,datefl):
     chip=f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; background:{K}; color:{Y}; padding:2px 10px">{fmt}</p>'
     fun=f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">{funnel}</p>' if funnel else ''
     flag=f'<p style="font-size:22px; font-weight:700; background:{Y}; padding:2px 8px; align-self:flex-start">Date to confirm</p>' if datefl else ''
-    return (f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{W}; border:2px solid {K}; border-top:10px solid {Y if fmt!="Video" else K}; padding:16px 18px">'
+    return (f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{W}; border:2px solid {K}; {"border-top:10px solid "+K+";" if fmt=="Video" else ""} padding:16px 18px">'
             f'<div style="display:flex; justify-content:space-between; align-items:center">{chip}<p style="font-family:{DISP}; font-size:44px; line-height:1">{n}×</p></div>'
             f'<h3 style="font-family:{HEAD}; font-size:30px; font-weight:700; text-transform:uppercase; line-height:1.05">{name}</h3>{fun}'
             f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; border-top:2px solid {K}; padding-top:8px">{ROLE[name]}</p>'
@@ -563,7 +563,7 @@ def tally(fmt,planned):
     return (f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; background:{K if ok else Y}; color:{Y if ok else K}; padding:10px 16px">'
             f'<p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase">{fmt}</p>'
             f'<p style="font-family:{DISP}; font-size:30px">{got} of {planned} {"✓" if ok else "!"}</p></div>')
-S["hype-ads"]=content("hype-ads","Hype ads: 10 across five concepts, 17 to 18 Nov",
+S["hype-ads"]=content("hype-ads","Hype ads &gt;17 to 18 Nov",
  f'<div style="display:flex; gap:14px; flex:1; min-height:0">'+"".join(hcard(*a) for a in hype_ads)+'</div>'
  +f'<div style="display:flex; gap:12px; align-items:stretch"><div style="flex:0 0 auto; display:flex; align-items:center; padding-right:6px"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase">Plan check</p></div>'
  +tally("Video",4)+tally("Image",4)+tally("GIF",2)
@@ -657,6 +657,31 @@ S["concept-bucket"]=content("concept-bucket","Concept: &#39;Bucket Head&#39;",
  +f'<div style="display:flex; gap:14px; flex:1; min-height:0">'
  +"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:4px; border-top:4px solid {K}; padding-top:6px"><p style="font-family:{HEAD}; font-size:24px; font-weight:700; text-transform:uppercase; line-height:1.05">{t}</p><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; color:{MUTE}">{tm}</p><p style="font-size:22px; font-weight:700; line-height:1.18">{d}</p><p style="font-size:22px; line-height:1.18; color:{K90}">{sh}</p></div>' for t,tm,d,sh in bucket)+'</div>',
  gap=14,src="Storyboard V1, 15s, 9:16",notes="Frame 1 shot: side-on tracking; the bucket enters frame ahead of them, so the audience sees it first. Frame 5: medium on the brothers with Jack&#39;s boots in the foreground. Concept name: Bucket Head (storyboard working title: Jack, All Up Here). A 15-second hype ad shot on the warehouse day: Jack claims he remembers the whole sale, the excavator bucket knocks him out, and the brothers deliver the line flat. Ends on the early-access card: Huge Black Friday Sale, Get early access, sign up to shop the sale first. Needs a stunt plan for the bucket hit and the fall.")
+
+def pcard(fmt,n,hint=""):
+    top=f"border-top:10px solid {K};" if fmt in ("Video","UGC") else ""
+    ph=lambda h,t: f'<div style="border:2px dashed #b5b1b2; padding:{8 if t else 6}px 10px; min-height:{h}px"><p style="font-size:22px; color:{GREY}; line-height:1.2">{t}</p></div>'
+    return (f'<div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:10px; background:{W}; border:2px solid {K}; {top} padding:16px 18px">'
+            f'<div style="display:flex; justify-content:space-between; align-items:center"><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; background:{K}; color:{Y}; padding:2px 10px">{fmt}</p><p style="font-family:{DISP}; font-size:44px; line-height:1">{n}×</p></div>'
+            f'<h3 style="font-family:{HEAD}; font-size:30px; font-weight:700; text-transform:uppercase; line-height:1.05; color:{GREY}">Concept TBC</h3>'
+            f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; border-top:2px solid {K}; padding-top:8px; color:{GREY}">Role: TBC</p>'
+            +ph(64,"Hook / copy")+ph(0,hint if hint else "Creative direction")+'</div>')
+def pcheck(items):
+    return (f'<div style="display:flex; gap:12px"><div style="flex:0 0 auto; display:flex; align-items:center; padding-right:6px"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase">Plan</p></div>'
+            +"".join(f'<div style="flex:1; display:flex; align-items:center; justify-content:space-between; background:{K if f!="Total" else W}; color:{Y if f!="Total" else K}; border:2px solid {K}; padding:10px 16px"><p style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase">{f}</p><p style="font-family:{DISP}; font-size:30px">{v}</p></div>' for f,v in items)+'</div>')
+S["launch-ads"]=content("launch-ads","Launch ads &gt;from 19 Nov",
+ f'<div style="display:flex; gap:14px; flex:1; min-height:0">'
+ +pcard("Video",6,"Known: Frosty Cold Ones (60s) and The Real Deal, Pro Enclosure deep dive")+pcard("Image",6,"Offer and bundle stills")+pcard("GIF",4)+pcard("UGC",4)+'</div>'
+ +pcheck([("Video",6),("Image",6),("GIF",4),("UGC",4),("Total",20)]),
+ gap=18,src="Creative plan, 24 Sep 2026",notes="Placeholder: launch concepts to be added. Twenty launch ads across launch day (Thu 19 Nov, midday) and launch week (20 to 22 Nov): 6 video, 6 image, 4 GIF, 4 UGC, 30 to 90 sec for video. Already in the plan: Frosty Cold Ones (launch version, 60s) and The Real Deal (Pro Enclosure deep dive). Offer line: up to 25% off + free gifts + huge bundles, ends 1 Dec.")
+S["midsale-eos-ads"]=content("midsale-eos-ads","Mid-sale + ending soon ads &gt;23 Nov to 1 Dec",
+ f'<div style="display:flex; gap:14px; align-items:center"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase; background:{Y}; padding:2px 12px">Mid-sale gifting · 23 to 28 Nov · 13 all new</p><div style="flex:1; height:3px; background:{K}"></div><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase; background:{K}; color:{Y}; padding:2px 12px">Ending soon · 29 Nov to 1 Dec · 6</p></div>'
+ +f'<div style="display:flex; gap:12px; flex:1; min-height:0">'
+ +pcard("Video",5,"Too Good To Keep")+pcard("Image",5,"Gifting page, collab bundle")+pcard("UGC",3)
+ +f'<div style="flex:0 0 4px; background:{K}"></div>'
+ +pcard("Video",2,"Last Drinks")+pcard("Image",2)+pcard("GIF",1)+pcard("UGC",1)+'</div>'
+ +pcheck([("Mid-sale",13),("Ending soon",6),("Total",19)]),
+ gap=16,src="Creative plan, 24 Sep 2026",notes="Placeholder: concepts to be added. Mid-sale gifting from Mon 23 Nov: 13 all-new ads (5 video, 5 image, 3 UGC) to cold audiences in the gifting segment, driving to the Christmas gifting page and the Titan Sox × DiggerLid × 3D Pro collab bundle; Black Friday Fri 27 Nov sits here. Ending soon from Sun 29 Nov: 6 ads (2 video, 2 image, 1 GIF, 1 UGC), countdown to Last Drinks; Cyber Monday Mon 30 Nov sits here. Sale ends midnight Tue 1 Dec.")
 
 S["deliverables"]=content("deliverables","Other deliverables (due dates TBC)",
  table(["Asset","Use","Count","Timing","Owner"],[
@@ -809,7 +834,7 @@ S["s-amend"]=section("s-amend","A","Amendment: concepts","Storyboards for the co
 order=["cover","onepage","agenda",
        "scorecard","curve",
        "moves",
-       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","shoot","shoot-warehouse","shoot-paddock","shoot-reddirt","shoot-worksite","deliverables","s-amend","concept-bucket","concept-frosty"]
+       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","launch-ads","midsale-eos-ads","shoot","shoot-warehouse","shoot-paddock","shoot-reddirt","shoot-worksite","deliverables","s-amend","concept-bucket","concept-frosty"]
 S["scorecard"]=S["scorecard"].replace('text-transform:uppercase">The last three sales', 'text-transform:uppercase; background:#231f20; color:#fdfdfb; padding:14px 22px">The last three sales',1)
 for n,k in enumerate(order,1):
     h=S[k].replace("{{N}}",str(n))
