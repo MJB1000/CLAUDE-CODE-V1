@@ -462,22 +462,24 @@ def beatcol(title, sub, beats, foot_, bg, fg=None, accent=Y):
             + "".join(f'<div style="display:flex; gap:12px; align-items:baseline"><p style="font-family:{DISP}; font-size:26px; color:{Y if bg==K else K}; flex:0 0 22px">{n}</p><p style="font-size:23px; line-height:1.22">{b}</p></div>' for n,b in enumerate(beats,1))
             + (f'<p style="margin-top:auto; font-size:22px; line-height:1.22; font-weight:700; border-top:2px solid {Y if bg==K else K}; padding-top:8px">{foot_}</p>' if foot_ else '')
             + '</div>')
-arrow=f'<p style="font-family:{DISP}; font-size:40px; align-self:center; color:{K}">&#9654;</p>'
+arrow=f'<p style="font-family:{DISP}; font-size:30px; align-self:center; color:{K}">&#9654;</p>'
 S["theme"]=content("theme","Theme: All Aussie Earthmoving Adventures",
  f'<div style="display:flex; gap:24px">'
  f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{K}; color:{W}; padding:22px 28px">{banner("The Great Black Friday Haul", bg=Y, fg=K, size=24)}'
  f'<p style="font-size:24px; line-height:1.3; color:{W}">A parody of the outback-bumbler format with our own character, Jack Clacker: wrong wisdom, four locations, and gear he rejects until he quietly uses it.</p></div>'
  f'<div style="flex:1; display:flex; flex-direction:column; gap:10px; background:{Y40}; padding:22px 28px; border:2px solid {K}">{banner("How it carries the sale", size=24)}'
  f'<p style="font-size:24px; line-height:1.3">Hype (17 and 18 Nov) teases Jack and the offer to a new, cold audience and drives sign-ups. Launch (Thu 19 Nov, midday) opens with the offer. A new episode lands at the mid-sale drop on 23 Nov.</p></div></div>'
- +f'<p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase">Adapting the format: from the joke to our hero film to our ad</p>'
+ +f'<p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase">Adapting the format: from the joke to our hero film, our ads and our hype ads</p>'
  +f'<div style="display:flex; gap:14px; flex:1; min-height:0">'
  +beatcol("The original","The format we parody",["Intro","Physical comedy","Overstate / wrong knowledge","Criticise","Stuffs it up","Resolution, or lack of one"],"",W,accent=GREY)
  +arrow
- +beatcol("Our hero film · 90 sec","Organic social, one episode per location",["Intro + physical comedy","Overstate + criticise","Have it done the right way: the gear","Double down: &#39;that&#39;s how I would have done it&#39;","Sale details and CTA"],"Leaves tension and open loops, so people come back for the next episode.",K,fg=W)
+ +beatcol("Hero film · 90 sec","Organic, one per location",["Intro + physical comedy","Overstate + criticise","Have it done the right way: the gear","Double down: &#39;how I&#39;d have done it&#39;","Sale details and CTA"],"Open loops bring people back.",K,fg=W)
  +arrow
- +beatcol("Our ad · 30 to 90 sec","Paid, works cold · hype cuts 15 to 20 sec",["Overstate knowledge + criticise, as the intro","Have it done the right way","Sale CTA"],"Hook, product proof, offer. No episode knowledge needed.",Y40)
+ +beatcol("Our ad · 30 to 90 sec","Launch to last day, works cold",["Overstate knowledge + criticise, as the intro","Have it done the right way","Sale CTA"],"Hook, product proof, offer. No episode knowledge needed.",Y40)
+ +arrow
+ +beatcol("Hype ad · 15 to 20 sec","Hype 17 and 18 Nov, new cold audience",["Hook: a Jack gag in the first 3 sec","Tease: up to 25% off + free gifts + huge bundles, from Thu 19 Nov","Early access CTA"],"Short, loud, one joke. Bucket Head is the model.",W,accent=K)
  +'</div>',
- gap=18,src="Planning notes pp.10 and 11, concept board, format sketch",notes="The original format is intro, physical comedy, wrong knowledge, criticism, stuffing it up and an open resolution. Our 90-second hero keeps the comedy but lets the gear do it the right way while Jack claims he would have done it that way all along, then closes on the sale. The paid ad (30 to 90 sec; hype cuts 15 to 20 sec) drops to three beats so it works for a cold viewer. Hype builds the story and the sign-up list with no offer; launch carries the offer. Hype traffic converted at about 1% in both past sales. Fallback launch film if the Adventure edit slips: Take Cover, already shot in July.")
+ gap=18,src="Planning notes pp.10 and 11, concept board, format sketch",notes="The original format is intro, physical comedy, wrong knowledge, criticism, stuffing it up and an open resolution. Our 90-second hero keeps the comedy but lets the gear do it the right way while Jack claims he would have done it that way all along, then closes on the sale. The paid ad (30 to 90 sec) drops to three beats so it works for a cold viewer. The hype ad (15 to 20 sec) is the shortest cut: a gag hook, the offer teased, and early access; Bucket Head is the model. Hype builds the story and the sign-up list with the offer teased; launch carries the full offer. Hype traffic converted at about 1% in both past sales. Fallback launch film if the Adventure edit slips: Take Cover, already shot in July.")
 
 locs=[("Paddock","Excavator; DiggerShield and the big dog; practical, authentic; possible Ivan cameo","Talk slow for earthmovers","Pro Enclosure · DiggerShield"),
       ("Worksite","Building an A-frame; backyard with the excavator; translating for tradies","How you might have done it: a history lesson","PRO Mat · small covers"),
