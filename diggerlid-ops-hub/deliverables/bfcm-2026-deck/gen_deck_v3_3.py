@@ -220,7 +220,7 @@ moves=[("1 · Start wider","Test USA, NZ, TikTok and YouTube on a fixed budget w
        ("2 · 14 days, 2-day hype","Wed 18 Nov to Tue 1 Dec. Hype Mon 16 and Tue 17 Nov to a new, cold audience, landing on a capture page."),
        ("3 · Stronger theme","All Aussie Adventure: one character, four locations, four shoot days, cut down for paid social."),
        ("4 · Cut and run","Written stop rules: landing page under 1.5% by midday, or two days over 30% spend-to-revenue."),
-       ("5 · Mid-sale drop","Mon 23 Nov: a new content drop and a PRO Mat gifting angle to the engaged segment. Segmented sends lifted returning share to 43%."),
+       ("5 · Mid-sale drop","Mon 23 Nov: a new content drop and the gifting angle, to cold audiences in the gifting segment."),
        ("6 · Pre-game check","Pages built and tracked by 13 Nov, popup reach above 50% on paid pages, ad sets and sends scheduled before hype on 16 Nov."),
        ("7 · Better reactivation","Email and SMS to the 12,745 first-time buyers of the last year; grease reorder nudges."),
        ("8 · Beat the hangover","December without another discount: gift guide, new product, shipping cut-offs. July after EOFY lost money.")]
@@ -395,9 +395,9 @@ S["gifting"]=content("gifting","Christmas gifting: spouse and family, on its own
  f'<div style="display:flex; gap:24px">{big("34%","of PRO Mat Plus buyers are women, in practice gift buyers. Gifting is themed for spouses and family.")}{big("1 page","its own Christmas gifting landing page. Every gift ad, email, SMS and banner lands there, not on the sale page.",bg="#ffffff")}{big("3 brands","a collab gift bundle: Titan Sox × DiggerLid × 3D Pro. Contents and price TBC.")}</div>'
  +f'<div style="display:flex; gap:24px; flex:1">'
  +card("On the page",["The Titan Sox × DiggerLid × 3D Pro collab bundle up top","PRO Mat Plus as the hero gift, all four colours","The three bundles from $732; gift with purchase at $399, $599, $799","Cut-off dates by state; gift note at checkout"],accent=Y)
- +card("Driving to it",["Its own gifting ads: 3 concepts, 3 UGC and a set of images, from 23 Nov","Jack&#39;s episode 4: &#39;Too good to keep to yourself&#39;, for your mates, your husband, your habibi","Gift guide email and SMS; gift banner and a Christmas link in the navigation"],accent=K)
+ +card("Driving to it",["Its own gifting ads: 13 all new from 23 Nov: 5 video, 5 image, 3 UGC","Jack&#39;s episode 4: &#39;Too good to keep to yourself&#39;, for your mates, your husband, your habibi","Gift guide email and SMS; gift banner and a Christmas link in the navigation"],accent=K)
  +card("What not to repeat",["The Father&#39;s Day gift page converted 0.5%: generic, with no product depth","Gift traffic sent to the sale page, which leads with grease","Leaving the shipping cut-off implicit"],accent=K80)+'</div>',
- src="PostHog, Shopify, campaign calendar",notes="Spouse and family themed gifting on its own landing page, live from the mid-sale push on 23 Nov through Cyber Monday and into December. The page features a three-way collab bundle from Titan Sox, DiggerLid and 3D Pro; contents, price and stock are still to confirm with both partners. Gifting has its own ad concepts: 3 concepts, 3 UGC ads and a set of image ads, drawn from the 13 all-new mid-sale ads on the creative slide. Ad offer: shop Christmas gifts, up to 25% off, ends 1 Dec.")
+ src="PostHog, Shopify, campaign calendar",notes="Spouse and family themed gifting on its own landing page, live from the mid-sale push on 23 Nov through Cyber Monday and into December. The page features a three-way collab bundle from Titan Sox, DiggerLid and 3D Pro; contents, price and stock are still to confirm with both partners. Gifting has its own ad concepts: the 13 all-new mid-sale ads on the creative slide. Ad offer: shop Christmas gifts, up to 25% off, ends 1 Dec.")
 
 JACK_IMG="/_blob/f1f1d5c5a725aa67f5afa3a8027a3f7e"
 jack_l=[("The old way","On the tools forty years, by his own count. From a long line of hard men, all &#39;retired at forty&#39;."),
@@ -603,7 +603,7 @@ S["shoot-worksite"]=content("shoot-worksite","Shoot day 4: worksite with Ivan, W
  dstrip([("Date","Wed 28 Oct",Y,K,1),("Location","Home build site, backyard dig",W,K,1.4),("Story","Act 4 · The brand realisation",W,K,1.4),("Product focus","PRO Mat Plus · grease · gifts",K,W,1.5)])
  +f'<div style="display:flex; gap:18px; flex:1; min-height:0">'
  +beats("Hero episode 4 · 90 sec","Organic social · draft beats",[("Intro + physical comedy","A backyard dig on a home build; Jack slips into the trench. Never reacts."),("Overstate + criticise","He talks slowly to the young tradies: &#39;Old trick.&#39;"),("Right way","Real operators, Ivan among them, show him the PRO Mat and the grease."),("Double down","He claims he taught them a thing or two."),("Gifting CTA","&#39;Too good to keep to yourself.&#39; Shop Christmas gifts, ends 1 Dec.")])
- +card("Paid ads to capture",["Gifting ads from 23 Nov: 3 concepts, 3 UGC and a set of images","&#39;Too good to keep to yourself&#39;: for your mates, your husband, your habibi","Operator reactions to the gear","Collab bundle stills: Titan Sox × DiggerLid × 3D Pro"],accent=Y,tsize=28,lsize=23)
+ +card("Paid ads to capture",["Gifting ads from 23 Nov: 13 all new (5 video, 5 image, 3 UGC)","&#39;Too good to keep to yourself&#39;: for your mates, your husband, your habibi","Operator reactions to the gear","Collab bundle stills: Titan Sox × DiggerLid × 3D Pro"],accent=Y,tsize=28,lsize=23)
  +f'<div style="flex:1; display:flex; flex-direction:column; gap:14px">'
  +f'<div style="display:flex; flex-direction:column; gap:8px; background:{Y}; border:2px solid {K}; padding:18px 20px"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase">Note: Ivan on site</p><p style="font-size:23px; line-height:1.3">Ivan from Earthworks Hub joins the worksite day. Confirm his call time, a signed release and what he says on camera; brief him on Jack before rolling.</p></div>'
  +card("Props and product",["PRO Mat Plus, all four colours; grease","The collab gift bundle","Small covers; an excavator for the dig"],accent=K,tsize=28,lsize=23)+'</div></div>',
@@ -638,17 +638,16 @@ S["concept-bucket"]=content("concept-bucket","Concept: &#39;Bucket Head&#39;",
  +"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:4px; border-top:4px solid {K}; padding-top:6px"><p style="font-family:{HEAD}; font-size:24px; font-weight:700; text-transform:uppercase; line-height:1.05">{t}</p><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; color:{MUTE}">{tm}</p><p style="font-size:22px; font-weight:700; line-height:1.18">{d}</p><p style="font-size:22px; line-height:1.18; color:{K90}">{sh}</p></div>' for t,tm,d,sh in bucket)+'</div>',
  gap=14,src="Storyboard V1, 15s, 9:16",notes="Frame 1 shot: side-on tracking; the bucket enters frame ahead of them, so the audience sees it first. Frame 5: medium on the brothers with Jack&#39;s boots in the foreground. Concept name: Bucket Head (storyboard working title: Jack, All Up Here). A 15-second hype ad shot on the warehouse day: Jack claims he remembers the whole sale, the excavator bucket knocks him out, and the brothers deliver the line flat. Ends on the early-access card: Huge Black Friday Sale, Get early access, sign up to shop the sale first. Needs a stunt plan for the bucket hit and the fall.")
 
-S["deliverables"]=content("deliverables","Creative deliverables (due dates TBC)",
- table(["Asset","Use","Count","Due (TBC)","Owner"],[
-  ["Adventure hero film (4 episodes)","Launch, organic, sale page","1 film, 4 episodes","10 Nov edit locked","Creative [name]"],
-  ["Cut-downs 15s and 30s with offer end-cards","Paid social by episode","8","12 Nov","Creative [name]"],
-  ["Hype teasers (video vibes, image offer)","Hype sends and ads 16 to 17 Nov","6","10 Nov","Creative [name]"],
-  ["Bundle and gift-tier stills","Bundle page, ads, emails","12","6 Nov (warehouse day)","Creative [name]"],
-  ["Email and SMS templates","Launch, mid-sale, Black Friday, close","6","12 Nov","Email [name]"],
-  ["Sale, bundle, collection, capture pages","Site","4 pages","13 Nov live and QA&#39;d","Web [name]"],
-  ["Mid-sale push: new content drop and PRO Mat gifting","Paid social, email and SMS from Mon 23 Nov","16","16 Nov","Creative [name]"],
-  ["Christmas gifting page, gift guide, cut-off banner","Site, 23 Nov onward","3","20 Nov","Web [name]"]],[30,24,14,18,14],size=23),
- src="Planning notes, EE tool section 6",notes="The EE tool (80% volume) sizes the creative at 48 to 60 assets (24 to 30 video, 24 to 30 static): 8 to 12 for hype, 12 to 16 live at launch, 16 for the mid-sale push, 6 to 8 each for Black Friday and last chance. About a third of the creative goes to the mid-sale push, which now carries the new content drop, the PRO Mat gifting angle and the Christmas gifting launch. Hard constraint: 13 November.")
+S["deliverables"]=content("deliverables","Other deliverables (due dates TBC)",
+ table(["Asset","Use","Count","Timing","Owner"],[
+  ["Performance ads","Paid social, by phase","49: the list is slide 14","Hype from 16 Nov","Creative [name]"],
+  ["Hero episodes, organic","One episode per location","4","Shot 1, 2, 27 and 28 Oct","Creative [name]"],
+  ["Bundle and gift-tier stills","Bundle page, ads, emails","12","Shot Thu 1 Oct (warehouse)","Creative [name]"],
+  ["Email and SMS templates","Launch, mid-sale, Black Friday, close","6","TBC","Email [name]"],
+  ["Sale, bundle, collection, capture pages","Site","4 pages","Live and QA&#39;d by 13 Nov","Web [name]"],
+  ["Christmas gifting landing page, gift guide, cut-off banner","Site, from 23 Nov","3","TBC","Web [name]"],
+  ["Collab bundle: Titan Sox × DiggerLid × 3D Pro","Gifting page, gifting ads","1 bundle","Contents and price TBC","Growth [name]"]],[30,24,16,18,12],size=23),
+ src="Creative plan, shoot schedule",notes="Slide 14 is the primary deliverables list for performance ads (49 across hype, launch, mid-sale and ending soon). This slide holds everything else. The EE tool (80% volume) sized creative at 48 to 60 assets, so 49 sits inside that range. Hard constraint: pages live and tracked by 13 November.")
 
 # ------------------------------------------------------------------ 04 LOCK-UP
 S["s-lockup"]=section("s-lockup","04","Lock-up","Timeline with hours, day-by-day sends, pages to build, stock and fulfilment, owners, risks and the decisions needed.")
