@@ -344,7 +344,7 @@ def acard(title, rows, pay, rrp, free, bg="#ffffff", accent=Y, save=""):
             f'<div style="display:flex; justify-content:space-between; font-size:23px; font-weight:700; border-top:2px solid {K}; padding-top:6px"><span>{free} of gear free</span><span style="color:{MUTE}; text-decoration:line-through">{rrp}</span></div>'
             f'<div style="display:flex; justify-content:space-between; font-size:26px; font-weight:700; background:{K}; color:{W}; padding:6px 10px"><span>You pay</span><span>{pay}</span></div>'
             +(f'<p style="font-size:22px; font-weight:700; text-align:right">{save}</p>' if save else '')+'</div>')
-S["bundles-alt"]=content("bundles-alt","Three hero bundles: pay for the hero gear, the rest is free",
+S["bundles-alt"]=content("bundles-alt","Three hero bundles",
  f'<div style="display:flex; gap:20px; flex:1">'
  +acard("Hardcore Tradie · save $333",[("2× PRO Mat Plus","$598","$538"),("1× Proper Thicc Hoodie","$139","$125"),("1× Drawbar Cover","$129","$114"),("10× Digger Wipes","$150","FREE"),("1× Magnet Tool Mat","$79","FREE"),("1× Boom Bottle Opener","$15","FREE")],"$777","$1,110","$244",accent=Y,save="You save $333 on $1,110 of gear")
  +acard("Ultimate Earthmover · save $742",[("1× Pro Excavator Enclosure","$699","$454"),("1× PRO Mat Plus","$299","$194"),("1× Drawbar Cover","$129","$84"),("10× Digger Wipes","$150","FREE"),("1× Magnet Tool Mat","$79","FREE"),("1× Drink / Tool Caddy","$49","FREE"),("1× Excavator Phone Cradle","$39","FREE"),("1× Hydraulic Coupling Cap Set","$15","FREE"),("1× Boom Bottle Opener","$15","FREE")],"$732","$1,474","$347",accent=K,save="You save $742 on $1,474 of gear")
