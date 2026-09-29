@@ -381,9 +381,9 @@ ads=[("Hype · 17 to 18 Nov","9 ads","All Up Here · Air Walk · Phone Call","&#
      ("Gifting · 23 to 28 Nov","13 ads, all new","Too Good To Keep","&#39;Too good to keep to yourself.&#39;","For your mates, your husband, your habibi, plus the Titan Sox × DiggerLid × 3D Pro bundle.","Shop the Christmas gifting page: up to 25% off.",("Black Friday","27 Nov")),
      ("Ending · 29 Nov to 1 Dec","6 ads","Last Drinks","&#39;3 days left&#39; &gt; &#39;Last day. Last drinks.&#39;","Countdown from Sunday; Jack calls last drinks.","Ends midnight Tue 1 Dec.",("Cyber Monday","30 Nov"))]
 xs=[166,499,832,1165,1498]
-road=(f'<svg aria-label="Journey route: red dirt and the pub, warehouse, paddock, worksite, then home to the country pub" viewBox="0 0 1664 64" style="width:1664px; height:64px; flex-shrink:0">'
-      f'<path d="M166 32 C 300 0, 380 0, 499 32 S 700 64, 832 32 S 1040 0, 1165 32 S 1380 64, 1498 32" fill="none" stroke="{K}" stroke-width="5" stroke-dasharray="16 10"/>'
-      +"".join(f'<circle cx="{x}" cy="32" r="28" fill="{Y if n in (0,4) else (K if n%2 else W)}" stroke="{K}" stroke-width="4"/><text x="{x}" y="44" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="34" fill="{W if n%2 else K}">{n+1}</text>' for n,x in enumerate(xs))
+road=(f'<svg aria-label="Journey route: red dirt and the pub, warehouse, paddock, worksite, then home to the country pub" viewBox="0 0 1664 52" style="width:1664px; height:52px; flex-shrink:0">'
+      f'<path d="M166 26 C 300 0, 380 0, 499 26 S 700 52, 832 26 S 1040 0, 1165 26 S 1380 52, 1498 26" fill="none" stroke="{K}" stroke-width="5" stroke-dasharray="16 10"/>'
+      +"".join(f'<circle cx="{x}" cy="26" r="23" fill="{Y if n in (0,4) else (K if n%2 else W)}" stroke="{K}" stroke-width="4"/><text x="{x}" y="36" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="28" fill="{W if n%2 else K}">{n+1}</text>' for n,x in enumerate(xs))
       +'</svg>')
 def adcard(phase,vol,concept,hook,shows,offer,peak):
     pk=(f'<div style="display:flex; justify-content:space-between; align-items:center; gap:8px; background:{K}; color:{Y}; padding:4px 10px; margin:-8px -12px 2px"><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; white-space:nowrap">★ {peak[0]}</p><p style="font-family:{DISP}; font-size:22px; color:{W}; white-space:nowrap">{peak[1]}</p></div>' if peak else '')
@@ -394,15 +394,14 @@ def adcard(phase,vol,concept,hook,shows,offer,peak):
             f'<p style="font-weight:700">{hook}</p><p>{shows}</p>'
             f'<p style="font-weight:700; border-top:1px solid {K}; padding-top:3px">{offer}</p></div>')
 S["journey"]=content("journey","The hero narrative: organic social &gt; paid",
- f'<div style="display:flex; gap:18px">'+"".join(
+ road+f'<div style="display:flex; gap:18px">'+"".join(
  f'<div style="flex:1; display:flex; flex-direction:column; gap:4px; border-top:4px solid {K}; padding-top:6px">'
- f'<div style="display:flex; justify-content:space-between; align-items:baseline; gap:6px"><h3 style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase; line-height:1"><span style="font-family:{DISP}; background:{K}; color:{Y}; padding:0 8px; margin-right:8px">{num}</span>{loc}</h3></div>'
+ f'<div style="display:flex; justify-content:space-between; align-items:baseline; gap:6px"><h3 style="font-family:{HEAD}; font-size:26px; font-weight:700; text-transform:uppercase; line-height:1">{loc}</h3></div>'
  f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; background:{Y}; padding:1px 8px; align-self:flex-start">{date}</p>'
  f'<p style="font-size:22px; font-weight:700; color:{MUTE}; text-transform:uppercase; letter-spacing:.5px; line-height:1.15">{act}</p>'
  f'<p style="font-size:22px; line-height:1.22; color:{K90}">{beat}</p></div>'
  for num,loc,act,date,beat in stops)+'</div>'
- +f'<div style="display:flex; align-items:center; gap:16px; background:{K}; color:{W}; padding:8px 18px"><p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase; color:{Y}; white-space:nowrap">Organic social</p><p style="font-size:22px; line-height:1.25">One episode per location. Episode viewers and early-access sign-ups feed launch and ending-soon retargeting; hype and gifting stay cold.</p></div>'
- +f'<p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase; text-align:center">▼ ladders down to performance ads: each one works cold, on its own ▼</p>'
+ +f'<div style="display:flex; align-items:center; gap:16px; background:{K}; color:{W}; padding:8px 18px"><p style="font-family:{DISP}; font-size:26px; letter-spacing:1px; text-transform:uppercase; color:{Y}; white-space:nowrap">Organic ▼ paid</p><p style="font-size:22px; line-height:1.25">One episode per location; each paid ad below works cold. Episode viewers and early-access sign-ups feed launch and ending-soon retargeting; hype and gifting stay cold.</p></div>'
  +f'<div style="display:flex; gap:18px; flex:1; min-height:0">'+"".join(adcard(*a) for a in ads)+'</div>',
  gap=12,src="Creative plan, shoot schedule, concept storyboards",notes="Organic: one episode per location. Ep 1 red dirt Tue 17 Nov with hype; Ep 2 warehouse Thu 19 Nov with launch; Ep 3 paddock Sat 21 Nov in launch week; Ep 4 worksite Mon 23 Nov with the gifting drop; the pub finale Sun 29 Nov as ending soon starts. Paid: 47 ads as on the creative volume slide (hype 9, launch 19 across launch day and launch week, gifting 13, ending soon 6). Black Friday (Fri 27 Nov, day 9) sits in the gifting phase and Cyber Monday (Mon 30 Nov, day 12) in ending soon: both get their own push. Hand-off: episode viewers and early-access sign-ups feed retargeting for launch and ending soon; hype and gifting run to cold audiences. Every paid ad still works cold: hook, product proof, offer and date. Concept storyboards are in the amendment at the back.")
 
