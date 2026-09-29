@@ -596,7 +596,7 @@ S["shoot-paddock"]=content("shoot-paddock","Shoot day 2: paddock, Friday 2 Octob
  dstrip([("Date","Fri 2 Oct",Y,K,1),("Location","The paddock",W,K,1.3),("Story","Act 3 · Sharing his &#39;wisdom&#39;",W,K,1.4),("Product focus","Pro Enclosure · Ultimate Earthmover",K,W,1.6)])
  +f'<div style="display:flex; gap:18px; flex:1; min-height:0">'
  +beats("Hero episode 3 · 90 sec","Organic social · draft beats",[("Intro + physical comedy","&#39;G&#39;day, I&#39;m Jack Clacker, and this is my backyard.&#39; Then he falls over."),("Overstate + criticise","&#39;Old trick&#39;: his way of covering the machine, which fails."),("Right way","The Pro Enclosure goes on; rain comes down; the machine stays dry."),("Double down","&#39;Been saying that for years.&#39;"),("Sale details + CTA","Ultimate Earthmover $732, $347 of gear free.")])
- +card("Paid ads to capture",["Hype: Show You A Thing Or Two; a bundle image in the paddock","Hype and launch: Fake Phone Call, from the car near the paddock","Launch: Look Earthmovers, walk and talk with usage","Launch: usage video, bundle + free gift, PRO Mat, Pro Enclosure","The big dog; the excavator at work"],accent=Y,tsize=28,lsize=23)
+ +card("Paid ads to capture",["Hype: Show You A Thing Or Two; a bundle image in the paddock","Hype and launch: Fake Phone Call, from the car near the paddock","Launch: Look Earthmovers, 45s (see amendment)","Launch: usage video, bundle + free gift, PRO Mat, Pro Enclosure","The big dog; the excavator at work"],accent=Y,tsize=28,lsize=23)
  +card("Props and product",["Excavator and a Pro Excavator Enclosure","Water for the rain gag","Ultimate Earthmover set: PRO Mat Plus, drawbar, wipes, magnet mat, caddy, cradle, cap set, opener","The big dog and handler"],accent=K,tsize=28,lsize=23)+'</div>',
  gap=18,src="Shoot schedule, creative plan, bundle slide",notes="Paddock day. Beats follow the 90-second hero format and are a draft for the director. The rain gag needs water on site. Ivan appears on day 4 at the worksite, not here. Location concept to be added.")
 
@@ -844,10 +844,24 @@ S["close"]=(f'<section id="close" data-transition="fade" style="background:{K}; 
  f'<aside>End on the decisions and the two dates.</aside></section>')
 
 S["s-amend"]=section("s-amend","A","Amendment: concepts","Storyboards for the concepts so far. Each one is named, placed on its shoot day and marked as the hype or launch version.")
+EARTH_IMG="/_blob/5a0a1bca91a6fcee423b68a2faaba7f1"
+earth=[("The sighting","0 to 8s","JACK (hushed): &#39;Earthmovers. Keep the language simple. Big words can frighten them.&#39;","Wildlife-doc low angle from the grass."),
+       ("First contact","8 to 15s","JACK: &#39;Primary objective of this excavation?&#39; OPERATOR: &#39;Digging a hole.&#39;","He joins the group; he nods knowingly."),
+       ("Inviting himself","15 to 22s","JACK: &#39;Let me show you a thing or two.&#39;","Climbs into the excavator without waiting."),
+       ("The demonstration","22 to 32s","VO: &#39;Within seconds, we&#39;d found water. Much of it wet.&#39;","First scoop hits a water main. Staged water."),
+       ("The recovery","32 to 45s","JACK: &#39;The Pro Enclosure keeps you out of the rain.&#39; JOEL: &#39;That&#39;s a water main!&#39;","Zips the enclosure shut, dry and smug."),
+       ("Card","End","DiggerLid Black Friday · [Offer] · diggerlid.com","End card.")]
+S["concept-earth"]=content("concept-earth","Concept: &#39;Look Earthmovers&#39;",
+ dstrip([("Shoot","Day 2 · paddock · Fri 2 Oct",Y,K,1.4),("Format","45 sec · 9:16",W,K,0.9),("Version","Launch version",W,K,0.9),("Storyboard","V1 · Jack · Earthmovers",K,W,1.5)])
+ +f'<img src="{EARTH_IMG}" alt="Storyboard, six frames: Jack crouched in the grass whispering about the earthmovers; Jack talks slowly to a bald operator; Jack climbs into the excavator; the bucket bursts a water main and everyone runs; Jack zips the Pro Enclosure shut as water sheets down the windows; the DiggerLid Black Friday end card" style="width:1664px; height:350px; object-fit:cover; object-position:center 40%; background:#f3efe6; border:2px solid {K}; flex-shrink:0">'
+ +f'<div style="display:flex; gap:14px; flex:1; min-height:0">'
+ +"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:4px; border-top:4px solid {K}; padding-top:6px"><p style="font-family:{HEAD}; font-size:24px; font-weight:700; text-transform:uppercase; line-height:1.05">{t}</p><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; color:{MUTE}">{tm}</p><p style="font-size:22px; font-weight:700; line-height:1.18">{d}</p><p style="font-size:22px; line-height:1.18; color:{K90}">{sh}</p></div>' for t,tm,d,sh in earth)+'</div>',
+ gap=14,src="Storyboard V1, 45s, 9:16",notes="Concept name: Look Earthmovers (storyboard: Jack · Earthmovers). A 1990s wildlife-documentary parody: Jack treats the earthmovers like wild animals, invites himself into the excavator, bursts a water main on the first scoop and stays dry inside the Pro Enclosure. Full lines. Frame 2: What's the primary objective of this excavation? / Digging a hole. / Thought so. Frame 3 VO: The boys were speechless. Clearly, my reputation had preceded me. Frame 5: Luckily, the DiggerLid Pro Enclosure keeps you out of the rain. / That's a water main, Jack! / Very localised weather. Cast: Jack, Joel (cap), Luke (curly hair), a big bald operator and a young operator with a mullet. The Show You A Thing Or Two hype version cuts from frame 3. Needs a staged water effect and a Pro Enclosure-fitted mini excavator on the paddock day. Card offer to fill: up to 25% off + free gifts + huge bundles, ends 1 Dec.")
+
 order=["cover","onepage","agenda",
        "scorecard","curve",
        "moves",
-       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","launch-ads","midsale-eos-ads","shoot","shoot-warehouse","shoot-paddock","shoot-reddirt","shoot-worksite","deliverables","s-amend","concept-bucket","concept-frosty"]
+       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","launch-ads","midsale-eos-ads","shoot","shoot-warehouse","shoot-paddock","shoot-reddirt","shoot-worksite","deliverables","s-amend","concept-bucket","concept-frosty","concept-earth"]
 S["scorecard"]=S["scorecard"].replace('text-transform:uppercase">The last three sales', 'text-transform:uppercase; background:#231f20; color:#fdfdfb; padding:14px 22px">The last three sales',1)
 for n,k in enumerate(order,1):
     h=S[k].replace("{{N}}",str(n))
