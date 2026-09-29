@@ -667,23 +667,26 @@ def lcard(fmt,name,n,where,direction):
             f'<p style="font-size:22px; line-height:1.22; color:{K90}">{direction}</p></div>')
 def lrow(label,sub,cards,dark):
     return (f'<div style="display:flex; gap:12px; flex:1; min-height:0">'
-            f'<div style="flex:0 0 170px; display:flex; flex-direction:column; justify-content:center; gap:6px; background:{K if dark else Y}; color:{Y if dark else K}; padding:12px 14px"><p style="font-family:{DISP}; font-size:28px; letter-spacing:1px; text-transform:uppercase; line-height:1.05">{label}</p><p style="font-size:22px; font-weight:700; color:{W if dark else K}; line-height:1.2">{sub}</p></div>'
+            f'<div style="flex:0 0 140px; display:flex; flex-direction:column; justify-content:center; gap:6px; background:{K if dark else Y}; color:{Y if dark else K}; padding:12px 14px"><p style="font-family:{DISP}; font-size:28px; letter-spacing:1px; text-transform:uppercase; line-height:1.05">{label}</p><p style="font-size:22px; font-weight:700; color:{W if dark else K}; line-height:1.2">{sub}</p></div>'
             +"".join(lcard(*c) for c in cards)+'</div>')
 launch_bfcm=[("Video","Infomercial #1","1","Warehouse","As per last year: whip cuts, quick script."),
              ("Video","Infomercial #2","1","Warehouse","Hook, then behind the demo table with B-roll."),
+             ("Video","Usage: bundle + gift","1","Paddock","Bundle and free gift, PRO Mat and Pro Enclosure in use."),
              ("Image","Bundle images","2","Warehouse","The bundles with the offer."),
-             ("Image","AI gen images","2","Generic","AI-generated statics with the sale info."),
+             ("Image","AI gen images","2","Generic","AI statics with the sale info."),
+             ("GIF","BFCM GIFs","2","Offer-led","Offer and countdown."),
              ("UGC","UGC creatives","4","Creators","Customer and creator content.")]
 launch_theme=[("Video","All Up Here infomercial","1","Warehouse","The All Up Here hook, then Jack out cold across the products."),
               ("Video","Look Earthmovers","1","Paddock","Infomercial #2: walk and talk, with the gear in use."),
-              ("Image","Products + unconscious Jack","1","Warehouse","Every product and bundle together, Jack out cold among them."),
+              ("Image","Products + Jack out cold","1","Warehouse","Every product and bundle, Jack out cold among them."),
+              ("GIF","Theme GIFs","2","Jack","Jack moments on loop."),
               ("Video","Fake Phone Call","1","Car near the paddock","Launch version with B-roll and offer overlays.")]
 S["launch-ads"]=content("launch-ads","Launch ads &gt;from 19 Nov",
- lrow("BFCM style","10 ads · offer-led",launch_bfcm,False)
- +lrow("Theme style","4 ads · Jack",launch_theme,True)
+ lrow("BFCM style","13 ads · offer-led",launch_bfcm,False)
+ +lrow("Theme style","6 ads · Jack",launch_theme,True)
  +f'<div style="display:flex; gap:12px"><div style="flex:0 0 auto; display:flex; align-items:center; padding-right:6px"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase">Plan check</p></div>'
- +htally("Video",5,6)+htally("Image",5,6)+htally("GIF",0,4)+htally("UGC",4,4)+htally("Total",14,20)+'</div>',
- gap=14,src="Creative plan, 29 Sep 2026",notes="Launch line-up from Thu 19 Nov. BFCM style (10): infomercial #1 as per last year (warehouse, whip cuts, quick script); infomercial #2 (hook, then behind the demo table with B-roll, warehouse); 2 bundle images (warehouse); 2 AI-generated images; 4 UGC creatives. Theme style (4): an infomercial from the All Up Here hook with Jack unconscious across different products (warehouse); a Look Earthmovers infomercial, walk and talk with usage (paddock); a photo of all products and bundles together with Jack unconscious; a Fake Phone Call launch version with B-roll and overlays. That is 5 video, 5 image, 4 UGC, no GIF: 14 against 20 on the creative volume slide (6 video, 6 image, 4 GIF, 4 UGC). Frosty Cold Ones and The Real Deal are not in this line-up yet. Offer line: up to 25% off + free gifts + huge bundles, ends 1 Dec.")
+ +htally("Video",6,6)+htally("Image",5,6)+htally("GIF",4,4)+htally("UGC",4,4)+htally("Total",19,20)+'</div>',
+ gap=14,src="Creative plan, 29 Sep 2026",notes="Launch line-up from Thu 19 Nov. BFCM style (13): infomercial #1 as per last year (warehouse, whip cuts, quick script); infomercial #2 (hook, then behind the demo table with B-roll, warehouse); a usage video with a bundle, the free gift, PRO Mat and Pro Enclosure (paddock); 2 bundle images (warehouse); 2 AI-generated images; 2 GIFs; 4 UGC creatives. Theme style (6): an infomercial from the All Up Here hook with Jack unconscious across different products (warehouse); a Look Earthmovers infomercial, walk and talk with usage (paddock); a photo of all products and bundles together with Jack unconscious; a Fake Phone Call launch version with B-roll and overlays; 2 GIFs. That is 6 video, 5 image, 4 GIF, 4 UGC: 19 against 20 on the creative volume slide (6 video, 6 image, 4 GIF, 4 UGC). Frosty Cold Ones and The Real Deal are not in this line-up yet. Offer line: up to 25% off + free gifts + huge bundles, ends 1 Dec.")
 S["midsale-eos-ads"]=content("midsale-eos-ads","Mid-sale + ending soon ads &gt;23 Nov to 1 Dec",
  f'<div style="display:flex; gap:14px; align-items:center"><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase; background:{Y}; padding:2px 12px">Mid-sale gifting · 23 to 28 Nov · 13 all new</p><div style="flex:1; height:3px; background:{K}"></div><p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase; background:{K}; color:{Y}; padding:2px 12px">Ending soon · 29 Nov to 1 Dec · 6</p></div>'
  +f'<div style="display:flex; gap:12px; flex:1; min-height:0">'
