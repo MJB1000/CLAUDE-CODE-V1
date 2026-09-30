@@ -857,10 +857,82 @@ S["concept-earth"]=content("concept-earth","Concept: &#39;Look Earthmovers&#39;"
  +"".join(f'<div style="flex:1; display:flex; flex-direction:column; gap:4px; border-top:4px solid {K}; padding-top:6px"><p style="font-family:{HEAD}; font-size:24px; font-weight:700; text-transform:uppercase; line-height:1.05">{t}</p><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; color:{MUTE}">{tm}</p><p style="font-size:22px; font-weight:700; line-height:1.18">{d}</p><p style="font-size:22px; line-height:1.18; color:{K90}">{sh}</p></div>' for t,tm,d,sh in earth)+'</div>',
  gap=14,src="Storyboard V1, 45s, 9:16",notes="Concept name: Look Earthmovers (storyboard: Jack · Earthmovers). A 1990s wildlife-documentary parody: Jack treats the earthmovers like wild animals, invites himself into the excavator, bursts a water main on the first scoop and stays dry inside the Pro Enclosure. Full lines. Frame 2: What's the primary objective of this excavation? / Digging a hole. / Thought so. Frame 3 VO: The boys were speechless. Clearly, my reputation had preceded me. Frame 5: Luckily, the DiggerLid Pro Enclosure keeps you out of the rain. / That's a water main, Jack! / Very localised weather. Cast: Jack, Joel (cap), Luke (curly hair), a big bald operator and a young operator with a mullet. The Show You A Thing Or Two hype version cuts from frame 3. Needs a staged water effect and a Pro Enclosure-fitted mini excavator on the paddock day. Card offer to fill: up to 25% off + free gifts + huge bundles, ends 1 Dec.")
 
+def dd_head(page):
+    return f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase; color:{MUTE}">Video brief · The Demo Desk · BFCM 2026 · the whole catalogue · {page}</p>'
+def dd_frame(label,w,h):
+    return (f'<div style="flex:1; display:flex; flex-direction:column; gap:6px; min-width:0">'
+            f'<img alt="Reference shot: {label}" style="width:100%; height:{h}px; object-fit:cover; background:#f3efe6; border:2px dashed #b5b1b2">'
+            f'<p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase">{label}</p></div>')
+S["dd-concept"]=content("dd-concept","Video brief: The Demo Desk",
+ dd_head("1 · concept")
+ +dstrip([("Format","9:16 vertical",Y,K,1),("Runtime","90s · 30s cut",W,K,1),("Talent","F1 + F2 · live PTC",W,K,1.1),("Setup","Warehouse demo desk",W,K,1.3),("Product","The whole BFCM range",W,K,1.3),("Channels","Meta · TT · YT",K,W,1)])
+ +f'<div style="display:flex; gap:20px; flex:1; min-height:0">'
+ +f'<div style="flex:1.1; display:flex; flex-direction:column; gap:10px">'
+ +f'<p style="font-size:23px; line-height:1.3"><b>The idea:</b> everything in the Black Friday sale on one demo desk. Built on the top-performing Pro Mat Plus explainer (same trestle desk, colour range hung off the forklift), scaled up to the whole catalogue.</p>'
+ +f'<p style="font-size:23px; line-height:1.3"><b>Who it&#39;s for:</b> cold Black Friday traffic: operators, tradies and gift buyers. 70% of launch buyers are new.</p>'
+ +f'<p style="font-size:23px; line-height:1.3"><b>The emotion:</b> a fun trade show. Two blokes working a busy stand, every product picked up, shown off and put down with a grin. If it feels like a pitch, we&#39;ve lost.</p></div>'
+ +f'<div style="flex:1; display:flex; flex-direction:column; gap:8px; background:{K}; color:{W}; padding:16px 20px">'
+ +f'<p style="font-family:{DISP}; font-size:24px; letter-spacing:1px; text-transform:uppercase; color:{Y}">Three key beats</p>'
+ +"".join(f'<div style="display:flex; gap:12px; align-items:baseline"><p style="font-family:{DISP}; font-size:28px; color:{Y}; flex:0 0 22px">{n}</p><p style="font-size:22px; line-height:1.25"><b>{t}:</b> {d}</p></div>' for n,(t,d) in enumerate([("The stand","up to 25% off, rattled off fast, then straight into the most loved: the mats."),("The run","solo beats for the heroes, one sweep for covers, one for accessories. Product, key feature, quick demo, move on."),("The deal","three bundles from $732, free gifts from $399. Ends 1 December.")],1))
+ +'</div></div>'
+ +f'<div style="display:flex; gap:16px">'+dd_frame("The whole range laid out on the desk",0,190)+dd_frame("Two-shot behind the desk",0,190)+dd_frame("Three bundles slammed down",0,190)+'</div>',
+ gap=14,src="Video brief: The Demo Desk, page 1",notes="The launch infomercial #2 on the launch ads slide (hook, then behind the demo desk with B-roll, warehouse). Reference shots to be added. Records on Day 1 at the warehouse; the Pro Enclosure B-roll comes from Day 2 at the paddock.")
+
+DD_HOOK_IMG={}
+def ddhook(key,name,line,shot):
+    img=DD_HOOK_IMG.get(key)
+    vis=(f'<img src="{img}" alt="Hook {key} visual" style="width:100%; height:100%; object-fit:cover; border:2px solid {K}">' if img else
+         f'<img alt="Hook {key} visual: image to come" style="width:100%; height:100%; object-fit:cover; background:#f3efe6; border:2px dashed #b5b1b2">')
+    return (f'<div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:8px; border-top:8px solid {K}; padding-top:8px">'
+            f'<p style="font-family:{HEAD}; font-size:28px; font-weight:700; text-transform:uppercase; line-height:1">{name}</p>'
+            f'<div style="height:420px; flex-shrink:0">{vis}</div>'
+            f'<p style="font-size:22px; font-weight:700; line-height:1.2">{line}</p>'
+            f'<p style="font-size:22px; line-height:1.2; color:{K90}">{shot}</p></div>')
+S["dd-hooks"]=content("dd-hooks","The Demo Desk: four hooks, one body",
+ dd_head("2 · hooks")
+ +f'<div style="display:flex; gap:18px; flex:1; min-height:0">'
+ +ddhook("A","A · 90 seconds","F1: &#39;OK. Everything about our huge Black Friday sale, in 90 seconds.&#39;","Both founders behind the loaded desk, straight to lens. F2 already picking up the first mat.")
+ +ddhook("B","B · The pan","Whip shot first, then F1 (arms wide): &#39;Let us talk you through our huge Black Friday deals.&#39;","Low slider pan along the desk at table height, every deal passing the lens, whip-pan up to F1.")
+ +ddhook("C","C · ASMR","No line. Snap, click, zip, sweetened with fake gun SFX.","Three 1s macros: Magnet Tool Mat on steel (shotgun pump), coupling cap on (hammer cock), Pro Mat Plus zip (slide rack).")
+ +ddhook("X","X · Straight in","No hook. Opens on Body beat 1.","First frame is the two-shot behind the desk.")+'</div>'
+ +note("Every hook runs straight into Body beat 1. Four 90s masters (A, B, C, X) and three 30s cuts (A, B, C).",size=22),
+ gap=14,src="Video brief: The Demo Desk, page 2",notes="Audio: A live PTC; B music plus live; C SFX with gun foley from the SFX library; X live PTC. Visuals to be added per hook.")
+
+dd_rows=[["1 · The stand<br>0:03-0:05","F1: &#39;Up to 25% off everything. Righto, most loved first.&#39;","Two-shot behind the loaded desk, colour range on the forklift."],
+ ["2 · Pro Mat + Pro Mat Plus<br>0:05-0:15","F2: waterproof ripstop, 10mm padding, magnets for your bolts; the Plus zips together, up to 420 of them.","DESK: water poured on the Pro Mat, a 10mm socket dropped on the magnets, two Plus mats zipped and yanked."],
+ ["3 · Pro Enclosure<br>0:15-0:24","F1: fits over 200 mini diggers. Wind, rain and dust stay out, you stay in the seat.","B-ROLL: the Enclosure in the rain (Day 2 paddock); cut out on &#39;wind, rain&#39;."],
+ ["4 · DiggerShield<br>0:24-0:32","F2: 6mm polycarbonate, 200 times stronger than glass, bolts on with no drilling. [$150 / $200] off.","DESK: F1 whacks an offcut with a hammer, deadpan. Nothing. B-ROLL: the kit on a mini digger."],
+ ["5 · Covers, grouped<br>0:32-0:40","F1: covers for just about every machine. Quicky Covers, mini loaders, skid steers, the lot.","F2 fans the folded range; B-ROLL quick cuts of each cover going on."],
+ ["6 · Drawbar Cover<br>0:40-0:45","F2: mud, sun and rain stay off your hitch, chains and plug.","B-ROLL: slid over a real drawbar, plug tucked in, trailer hooked up."]]
+dd_rows2=[["7 · Magnet Tool Mat<br>0:45-0:50","F1: twelve rare earth magnets. Slap it on, bolts stay put.","DESK: slapped on the forklift mast, a handful of bolts dropped on. They stick."],
+ ["8 · Digger Wipes<br>0:50-0:54","F2: scrubbing beads, grease off in one wipe.","B-ROLL: greasy hands, one wipe, clean. Desk alt: a smear on the mat."],
+ ["9 · Accessories, grouped<br>0:54-1:06","F1: caps, cradle, caddy, hoodie, bottle opener, The Hauler to carry the lot. F2: KAJO grease, 20-second reloads.","DESK: one sweep into The Hauler, zipped shut. Inserts: cradle in a cab, caps on couplings, KAJO into the gun."],
+ ["10 · Bundles<br>1:06-1:16","Hardcore Tradie $777 · Ultimate Earthmover $732 · Owner Operator $778, with $790 of gear free.","Three stacks slammed down one at a time, a price stamp on each."],
+ ["11 · Free gifts<br>1:16-1:24","F2: $399 free wipes and shipping; $599 add a Magnet Tool Mat; $799 add a Drawbar Cover.","Gift tiers stacked in steps."],
+ ["12 · CTA<br>1:24-1:30","F1: &#39;Black Friday sale. Ends 1 December. diggerlid.com.&#39;","Both square to lens behind the full desk, then the end card."]]
+S["dd-body1"]=content("dd-body1","The Demo Desk: the run, beats 1 to 6",
+ dd_head("3 · body, same after every hook")
+ +table(["Beat · time","Line: product + key feature","Quick demo: desk or B-roll"],dd_rows,[20,40,40],size=22),
+ gap=14,src="Video brief: The Demo Desk, page 3",notes="Full lines. 2: Pro Mat and Pro Mat Plus. Waterproof ripstop, ten mil of padding, magnets for your bolts. And the Plus zips together, up to four hundred and twenty of them. 3: For heavy duty machine protection, the Pro Excavator Enclosure. Fits over two hundred mini diggers. Wind, rain and dust stay out, you stay in the seat. 4: DiggerShield. Six mil polycarbonate, two hundred times stronger than glass, and it bolts on with no drilling. [$150 / $200] off. 5: And covers for just about every machine. Quicky Covers, mini loaders, skid steers, the lot. 6: Drawbar Cover. Mud, sun and rain stay off your hitch, chains and plug.")
+S["dd-body2"]=content("dd-body2","The Demo Desk: the deal, beats 7 to 12",
+ dd_head("3 · body, continued")
+ +table(["Beat · time","Line: product + key feature","Quick demo: desk or B-roll"],dd_rows2,[20,40,40],size=22)
+ +f'<div style="display:flex; gap:12px">'+"".join(f'<div style="flex:1; background:{bg}; color:{fg}; border:2px solid {K}; padding:8px 12px"><p style="font-family:{DISP}; font-size:22px; letter-spacing:1px; text-transform:uppercase">CTA swap · {t}</p><p style="font-size:22px; line-height:1.2">{l}</p></div>' for t,l,bg,fg in [("Launch","&#39;Black Friday sale. Ends 1 December. diggerlid.com.&#39;",Y,K),("Gifting","&#39;Sorted the Christmas list, didn&#39;t we? Shop the gift page at diggerlid.com.&#39;",W,K),("Last days","&#39;Last days. It all ends midnight Tuesday. diggerlid.com.&#39;",K,W)])+'</div>',
+ gap=14,src="Video brief: The Demo Desk, pages 3 and 4",notes="Record all three CTA swaps on the day. End card: diggerlid.com, the BFCM sale page. Full lines. 9: Plus all the gear. Coupling caps, phone cradle, caddy, the hoodie, a bottle opener, and The Hauler to carry the lot. And KAJO grease. Screw-top cartridge, twenty second reloads. 10: Or grab it in a bundle. Hardcore Tradie, seven seventy-seven. Ultimate Earthmover, seven thirty-two. Owner Operator, seven seventy-eight, with seven hundred and ninety bucks of gear free. 11: Spend three ninety-nine, free wipes and free shipping. Five ninety-nine, add a Magnet Tool Mat. Seven ninety-nine, add a Drawbar Cover.")
+
+S["dd-prep"]=content("dd-prep","The Demo Desk: prep and delivery",
+ dd_head("5 · prep and delivery")
+ +f'<div style="display:flex; gap:18px; flex:1; min-height:0">'
+ +card("Props and prep",["<b>Mats + covers:</b> PRO Mat Plus in all four colours off the forklift, two on the desk to zip, an original Pro Mat; Enclosure folded, window ready; DiggerShield offcut + hammer; covers range folded, labels up","<b>Accessories:</b> Drawbar Cover + hitch mock-up, Magnet Tool Mat, wipes + grease smear; the sweep kit; The Hauler open; KAJO + gun","<b>Bundles + gifts:</b> three stacks ready to slam; gift tiers in steps, dressed as the Day 1 stills","<b>Demo kit:</b> 10mm socket, water jug, bolts, hammer. Test the socket stick and hammer hit first"],accent=Y,tsize=26,lsize=22,flex="1.3")
+ +card("Camera, audio, talent",["Tripod two-shot master; handheld or slider inserts; macro and 100fps for drops and pours","Lav both founders; record clang, zip, slams, hammer hit and bottle crack clean","Gun foley for hook C from the SFX library","F1 and F2 alternate products, next one already in hand"],accent=K,tsize=26,lsize=22)
+ +'</div>'
+ +table(["Asset","Meaning"],[["DEMODESK_BODY1_HA / HB / HC / X","90s masters · full catalogue · hooks A, B, C, or straight in"],["DEMODESK_BODY2_HA / HB / HC","30s cut · beats 1, 2, 3, 4, 10, 12 · each hook"],["DEMODESK_BROLL · DEMODESK_STILL_01+","Demo inserts, slams and gift stack · frame grabs"]],[38,62],size=22),
+ gap=14,src="Video brief: The Demo Desk, page 5",notes="Deliverables: four 90s masters, three 30s cuts, one continuous B-roll and frame grabs of the full desk, each bundle stack, the gift tiers and the product demos.")
+
 order=["cover","onepage","agenda",
        "scorecard","curve",
        "moves",
-       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","launch-ads","midsale-eos-ads","shoot","shoot-warehouse","shoot-paddock","shoot-reddirt","shoot-worksite","deliverables","s-amend","concept-bucket","concept-frosty","concept-earth"]
+       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","launch-ads","midsale-eos-ads","shoot","shoot-warehouse","shoot-paddock","shoot-reddirt","shoot-worksite","deliverables","s-amend","concept-bucket","concept-frosty","concept-earth","dd-concept","dd-hooks","dd-body1","dd-body2","dd-prep"]
 S["scorecard"]=S["scorecard"].replace('text-transform:uppercase">The last three sales', 'text-transform:uppercase; background:#231f20; color:#fdfdfb; padding:14px 22px">The last three sales',1)
 for n,k in enumerate(order,1):
     h=S[k].replace("{{N}}",str(n))
