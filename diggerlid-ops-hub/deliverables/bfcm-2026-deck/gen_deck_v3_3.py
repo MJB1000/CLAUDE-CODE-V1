@@ -932,7 +932,7 @@ S["dd-prep"]=content("dd-prep","The Demo Desk: prep and delivery",
 order=["cover","onepage","agenda",
        "scorecard","curve",
        "moves",
-       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","launch-ads","midsale-eos-ads","shoot","shoot-warehouse","shoot-paddock","shoot-reddirt","shoot-worksite","deliverables","s-amend","concept-bucket","concept-frosty","concept-earth","dd-concept","dd-hooks","dd-body1","dd-body2","dd-prep"]
+       "offer","bundles-alt","gifting","theme","jack","territories","journey","creative","hype-ads","launch-ads","midsale-eos-ads","shoot","shoot-warehouse","shoot-paddock","shoot-reddirt","shoot-worksite","deliverables","s-amend","concept-bucket","concept-frosty","concept-earth"]
 S["scorecard"]=S["scorecard"].replace('text-transform:uppercase">The last three sales', 'text-transform:uppercase; background:#231f20; color:#fdfdfb; padding:14px 22px">The last three sales',1)
 for n,k in enumerate(order,1):
     h=S[k].replace("{{N}}",str(n))
