@@ -49,6 +49,8 @@ A blog targets **informational or commercial** intent.
 
 ### Step 4. SERP check the shortlist (top 10, Australia)
 
+WebSearch has no region setting and returns mostly US results. Add "australia" to the queries, use autocomplete with `gl=au` for the AU signal, and label the competitor check "approximate".
+
 **Page-type consensus.** If over 60% of results are product or category pages, the keyword is transactional. A blog is a **critical mismatch** there. Pick a different primary keyword, or note that the PDP should own it.
 
 **Competitor filter.**
@@ -89,9 +91,9 @@ DiggerLid's edge is almost always first-hand operator experience, plus real numb
 | Element | Rule |
 |---|---|
 | SEO title tag | **50 to 60 characters.** Primary keyword first, ending ` \| DiggerLid`. Unique. |
-| Meta description | **130 to 150 characters.** Primary keyword included. Active voice. Ends on a reason to click or a CTA. No quotation marks, no hashtags, no brand name, and don't repeat the title. |
+| Meta description | **130 to 150 characters.** Primary keyword included. Active voice. Ends on a reason to click or a CTA. No quotation marks, no hashtags, no brand name. Sharing the keyword with the title is fine, but don't copy the title wording. |
 | H1 (article Title field) | Exactly one, set by the theme. 45 to 65 characters, with the keyword near the front. It may differ from the SEO title. |
-| URL handle | 3 to 6 words, lowercase and hyphenated, primary keyword, no dates or stop words. Never change it after publishing. |
+| URL handle | 3 to 6 words, lowercase and hyphenated, primary keyword, no dates. Drop filler stop words (a, the, of, for, and), but keep a question word (how, what, why) when it is part of the keyword, e.g. `how-to-load-grease-gun`. Never change it after publishing. |
 | Headings | H2 then H3, never skipping a level. Primary keyword in the H1 plus 1 to 2 H2s. Phrase H2s as questions where natural. |
 | Keyword placement (required) | title tag, H1, slug, meta description, first 100 words, at least one image alt |
 | Density | Natural, roughly 1 to 3%. Never optimise to a number. Spread evenly. Use synonyms freely. |

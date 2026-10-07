@@ -16,7 +16,7 @@ These are starting seeds for live research, not validated volumes.
 | Covers | mini excavator cover, excavator seat cover, skid steer cover, mini loader cover |
 | DiggerShield | excavator polycarbonate windows, mini excavator side windows, [model] canopy panels |
 | PRO Mat | waterproof work mat, mechanics creeper mat, magnetic work mat, kneeling mat for mechanics, 4wd recovery mat, ground mat for working under car |
-| KAJO | see the planner data below |
+| KAJO | see the planner data below. Gaps to add to the next planner pull: how to load a grease gun, how to prime a grease gun, grease gun losing prime, grease gun air lock, grease cartridge sizes australia, ring pull vs screw top grease |
 | Draw Bar Cover | draw bar cover, tow hitch cover, trailer hitch cover, caravan hitch cover |
 | Hauler | fifo bag, fifo luggage, tough duffel bag |
 | Digger Wipes | heavy duty hand wipes, grease wipes, tradie wipes |

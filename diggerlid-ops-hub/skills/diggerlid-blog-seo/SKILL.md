@@ -15,7 +15,7 @@ The blog is `https://diggerlid.com/blogs/news`, and it had **0 articles** as of 
 
 Gather six things. Ask only for what is missing, in **one** message.
 
-1. **Source.** A transcript, post copy, product, review or brief. Video sources need the video URL (YouTube, Instagram or TikTok) for the embed.
+1. **Source.** A transcript, post copy, product, review or brief. If it's a video, ask for the video URL (YouTube, Instagram or TikTok) for the embed. If there's no URL yet, leave a marked `<!-- VIDEO EMBED NEEDED -->` comment and an empty `video_url`, and carry on.
 2. **Go-live date and time** of the matching post or ad. The article is scheduled to match.
 3. **Product or products** the content is about. Infer them if you can.
 4. **Images.** A Frame.io folder link, exported stills or attachments (see `references/image-sourcing.md`).
@@ -37,6 +37,7 @@ Follow the transcript steps in `references/article-blueprint.md`. Extract:
 - **WebFetch every product page you will mention or link** (`https://diggerlid.com/products/<handle>`) and confirm the specs, names, variants and warranty.
 - The site wins over the catalogue. Flag any mismatch.
 - If the source makes a claim the site doesn't support (e.g. a spec said on camera), either soften it to what's verified or mark it `[CHECK]` and list it for the user.
+- Facts the catalogue marks as **owner-supplied** count as verified. Examples: the 1966 spring-plunger patent, and the founders being landscaping tradies. Attribute them in the text, e.g. "the spring-plunger design dates back to 1966".
 - Use "Fast shipping Australia wide". Never use free-shipping claims or thresholds.
 - Before linking any internal URL, confirm it returns a page.
 
@@ -85,7 +86,9 @@ Send the shot list for anything missing. Build with `<!-- IMAGE NEEDED -->` plac
 
 - Follow `references/article-blueprint.md` for structure and voice.
 - Use `references/design-blocks.md` for the HTML.
-- Use 4 to 7 design blocks, one H1 only (the Title field), and start the body at `<h2>`.
+- Use 4 to 7 **styled boxes**: takeaways, product callout, table, pull quote, CTA band. Figures, the video embed, the FAQ and the author box don't count towards that.
+- One H1 only (the Title field). Start the body at `<h2>`.
+- **Hero while stills are pending.** Use the best real product image from Shopify as a temporary eager hero, and keep an `IMAGE NEEDED` comment beside it for the shoot still.
 
 ### 8. Package for Shopify
 
@@ -130,7 +133,7 @@ Deliver these files. Use the user's chosen folder, otherwise a `blog/<handle>/` 
   "excerpt": "",
   "tags": [],
   "author": "",
-  "publish_at": "YYYY-MM-DDTHH:MM+10:00",
+  "publish_at": "YYYY-MM-DDTHH:MM+11:00",
   "featured_image": {"file": "", "alt": ""},
   "primary_keyword": "",
   "secondary_keywords": [],
@@ -141,6 +144,8 @@ Deliver these files. Use the user's chosen folder, otherwise a `blog/<handle>/` 
   "information_gain": ""
 }
 ```
+
+`publish_at` offset: use `+11:00` during daylight saving (AEDT, first Sunday in October to first Sunday in April). Use `+10:00` otherwise (AEST, or Queensland all year).
 
 Then reply in chat with:
 
@@ -187,3 +192,4 @@ Keep the reply short. The files carry the detail.
 | `references/keyword-bank.md` | Keyword research (grep it) |
 | `references/product-catalogue.md` | Product facts (grep the product) |
 | `references/usp-bank.md` | Proof points and customer quotes (grep) |
+| `examples/how-to-load-grease-gun/` | Worked example from the Grease VS Clone brief (2,168 words, 0 FAIL). Read it once to calibrate quality and structure. |

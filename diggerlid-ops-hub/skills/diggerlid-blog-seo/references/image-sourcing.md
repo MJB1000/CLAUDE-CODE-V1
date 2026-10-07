@@ -20,7 +20,12 @@ Real photos from shoots beat stock every time, because they're an E-E-A-T "exper
      When asking, list the exact shots you need (see the shot list below).
 2. **Files the user attached in the chat.** Look at every one and describe what's in it before using it.
 3. **Google Drive.** Search for the shoot name, product or date.
-4. **Shopify.** Existing product and lifestyle images are already on the CDN with stable URLs. Query them via the Admin API:
+4. **Shopify.** Existing product and lifestyle images are already on the CDN with stable URLs.
+   - Existing CDN file names can't be changed. The renaming rule applies to new uploads only, so write good alt text for these.
+   - Skip any image that looks AI-generated. The Earthmovers Bundle's product image is one.
+   - This query is pre-validated, so run it directly:
+
+   
    `products(query:"handle:<handle>"){ nodes{ media(first:10){ nodes{ ... on MediaImage{ image{ url altText width height } } } } } }`
    Use these for product callout cards.
 5. **Never** use AI-generated images of real products presented as real photos. Don't hotlink images from other sites.

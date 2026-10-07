@@ -71,6 +71,7 @@ Every structural element maps to a rule in `seo-rules.md`.
 4. **Quote the talent.** Quote 1 to 3 lines verbatim. These are the experience signal.
 5. **Expand, don't transcribe.** A 60-second video gives you the spine. The article adds context, how-to detail, comparison, mistakes and FAQs, using the keyword research and People Also Ask.
 6. **Record timecodes.** Keep each section's timecode so the developer can add `hasPart` clips to VideoObject later.
+7. **Script or brief instead of a transcript?** Record beat numbers instead of timecodes. Only quote lines as "said on camera" once they're confirmed in the final cut. Until then, paraphrase.
 
 ## Other source types
 

@@ -104,7 +104,7 @@ Use a plain `<ol>` with `<h3>` step headings when the steps are substantial. Don
 A visible FAQ helps both humans and AI answers. Google only shows FAQ rich results for authoritative government and health sites, so the FAQ is there for content value, not stars.
 
 ```html
-<h2>[Primary keyword] FAQs</h2>
+<h2>[Topic] FAQs</h2>  <!-- e.g. "Grease Gun Loading FAQs" when the keyword is a question -->
 <h3>[Real question from People Also Ask, a review or support]</h3>
 <p>[Direct answer in 40 to 60 words, first sentence answers it outright.]</p>
 ```

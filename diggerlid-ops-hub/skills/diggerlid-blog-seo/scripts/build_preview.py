@@ -47,7 +47,8 @@ def main(a, b, out):
     f = json.load(open(b, encoding="utf-8"))
     pub = f.get("publish_at") or ""
     try:
-        date = datetime.fromisoformat(pub).strftime("%B %d, %Y")
+        d = datetime.fromisoformat(pub)
+        date = f"{d.day} {d:%B %Y}"
     except ValueError:
         date = "Unscheduled"
     fi = f.get("featured_image") or {}
@@ -55,7 +56,7 @@ def main(a, b, out):
         seo_title=h.escape(f.get("seo_title", "")), meta=h.escape(f.get("meta_description", "")),
         handle=h.escape(f.get("handle", "")), title=h.escape(f.get("title", "")),
         author=h.escape(f.get("author", "")), publish=h.escape(pub or "unscheduled"), date=date,
-        tags=" · ".join(h.escape(t) for t in f.get("tags", []) if not t.startswith("_")) + (" · " if f.get("tags") else ""),
+        tags="".join(h.escape(t) + " · " for t in f.get("tags", []) if not t.startswith("_")),
         body=body, fimg=h.escape(fi.get("file", "")), falt=h.escape(fi.get("alt", "")))
     open(out, "w", encoding="utf-8").write(page)
     print("Wrote", out)

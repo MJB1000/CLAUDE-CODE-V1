@@ -8,7 +8,7 @@ The live page always wins. Fetch `https://diggerlid.com/products/<handle>` befor
 
 | Fact | Value | Note |
 |---|---|---|
-| Shipping (copy line) | **"Fast shipping Australia wide"** | Owner rule, 7 Oct 2026. Don't use free-shipping claims or thresholds in ads. (Site fact for reference only: free over $399, grease packs at calculated rates.) |
+| Shipping (copy line) | **"Fast shipping Australia wide"** | Owner rule, 7 Oct 2026. Don't use free-shipping claims or thresholds in ads. (Site fact for reference only: free over $399, grease packs at calculated rates.) ⚠️ The KAJO FAQ still says "free delivery", which contradicts this. Flag it to the web team. |
 | Dispatch | Same day on orders before 12PM AEST | Business days |
 | Returns | 30 days on full-price items | Change of mind carries a 10% restocking fee. Use this sparingly. |
 | Warranty | 2 Year Warranty | Shown on covers and the PRO Mat. Not stated on grease, so don't put it on KAJO consumables. |
@@ -80,7 +80,7 @@ The live page always wins. Fetch `https://diggerlid.com/products/<handle>` befor
 - **Compliance:** reflective strips are a visibility improvement, never a safety guarantee. Never trash the OG when selling the PLUS.
 
 ### KAJO Screw-Top Grease Cartridges
-- **Handle:** `kajo-grease-cartridge-lzr2-ep2`
+- **Handle:** `kajo-grease-cartridge-lzr2-ep2`. The live product title is **"KAJO Grease Packs"**. Use that name when linking.
 - **Prices per 500g tube:**
 
   | Grade | Price | What it is |
@@ -101,7 +101,7 @@ The live page always wins. Fetch `https://diggerlid.com/products/<handle>` befor
   - "Change your grease cartridge in seconds" against more than a minute plus bleeding for ring-pull tubes.
   - The "20 second" changeover is on the KAJO Grease Gun PDP: "changeover in less than 20 seconds". OK to use.
 - **Compatibility:** manual KAJO guns, or battery guns via the KAJO Adapter.
-- **Old system:** the spring-plunger design dates from 1966. This is an owner-supplied fact used in ads.
+- **Old system:** the spring-plunger design dates from 1966. **Owner-supplied fact:** OK to use, but attribute it.
 - **Known objection:** one review says the cartridge loses prime. Don't claim "never loses prime".
 
 ### KAJO Battery Grease Gun Adapter
