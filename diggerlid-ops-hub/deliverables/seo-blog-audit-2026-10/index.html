@@ -1,0 +1,244 @@
+<title>DiggerLid Blog Readiness Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Archivo+Narrow:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one narrow reading column, a verdict strip, then severity-striped finding rows grouped by where the fix happens. */
+:root{
+  --bg:#fbfaf6; --panel:#ffffff; --fg:#231f20; --muted:#5f5a55; --line:#e4e0d6;
+  --yellow:#f5eb19; --ink-on-yellow:#231f20; --yellow-soft:#fbf7a3;
+  --crit:#c4361d; --high:#d9822b; --med:#8a7f12; --low:#6b7280; --good:#2f7d4f;
+  --display:"Archivo Narrow","Arial Narrow",Arial,sans-serif; --body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171515;--panel:#211e1e;--fg:#f1eee8;--muted:#b3ada4;--line:#38332f;--yellow-soft:#3d3a12;--crit:#ef6b52;--high:#f0a05a;--med:#d6c94a;--low:#9aa1ad;--good:#5fbf86;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#171515;--panel:#211e1e;--fg:#f1eee8;--muted:#b3ada4;--line:#38332f;--yellow-soft:#3d3a12;--crit:#ef6b52;--high:#f0a05a;--med:#d6c94a;--low:#9aa1ad;--good:#5fbf86;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);margin:0}
+.wrap{max-width:860px;margin:0 auto;padding-inline:18px;padding-block:28px 64px}
+header .tag{display:inline-block;background:var(--yellow);color:var(--ink-on-yellow);font:700 12px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;padding:6px 9px;border-radius:2px}
+h1{font:800 clamp(30px,6vw,46px)/1.05 var(--display);letter-spacing:-.01em;margin:14px 0 8px;text-wrap:balance}
+h2{font:700 26px/1.15 var(--display);margin:48px 0 6px;text-wrap:balance}
+h3{font:700 18px/1.3 var(--body);margin:0}
+p{margin:0 0 12px;max-width:68ch}
+.lede{font-size:18px;color:var(--muted)}
+.meta{font:13px/1.5 var(--mono);color:var(--muted)}
+a{color:inherit;text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underline-offset:2px}
+.verdict{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:22px 0 8px}
+.v{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.v b{display:block;font:800 30px/1 var(--display);font-variant-numeric:tabular-nums}
+.v span{font-size:13px;color:var(--muted)}
+.v.c b{color:var(--crit)} .v.h b{color:var(--high)} .v.m b{color:var(--med)} .v.g b{color:var(--good)}
+.callout{background:var(--yellow-soft);border-radius:6px;padding:14px 16px;margin:18px 0}
+.callout p{margin:0}
+.section-note{color:var(--muted);margin-bottom:14px}
+.find{display:grid;grid-template-columns:6px 1fr;gap:0 14px;padding:14px 0;border-top:1px solid var(--line)}
+.find:last-child{border-bottom:1px solid var(--line)}
+.stripe{border-radius:3px}
+.crit .stripe{background:var(--crit)} .high .stripe{background:var(--high)} .med .stripe{background:var(--med)} .low .stripe{background:var(--low)}
+.find .top{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;margin-bottom:6px}
+.sev{font:700 11px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;padding:4px 7px;border-radius:3px;border:1px solid currentColor}
+.crit .sev{color:var(--crit)} .high .sev{color:var(--high)} .med .sev{color:var(--med)} .low .sev{color:var(--low)}
+.owner{font:12px/1 var(--mono);color:var(--muted)}
+.find p{font-size:15px}
+.find .fix{font-size:15px}
+.find .fix b{font-weight:700}
+.find > div{min-width:0}
+code{font:13px var(--mono);background:var(--panel);border:1px solid var(--line);padding:1px 5px;border-radius:3px;word-break:break-word}
+.tbl{overflow-x:auto;margin:12px 0 4px}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 12px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.qa{display:grid;gap:12px;margin-top:12px}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.q h3{margin-bottom:6px}
+.q p{font-size:15px;margin-bottom:8px}
+.q p:last-child{margin-bottom:0}
+ol.steps{padding-left:22px;margin:8px 0} ol.steps li{margin:6px 0}
+.decide{border:2px solid var(--fg);border-radius:6px;padding:16px 18px;margin-top:14px}
+.decide li{margin:8px 0}
+footer{margin-top:48px;font-size:13px;color:var(--muted)}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="tag">SEO audit · diggerlid.com</span>
+  <h1>Blog readiness audit</h1>
+  <p class="lede">What stands between DiggerLid and an on-brand blog that ranks, gets cited by AI answers and sells. It covers fixes on the site, gaps in the blog skill, and the content you already own.</p>
+  <p class="meta">8 Oct 2026 · 88 live pages crawled from the sitemap · theme code, schema, robots.txt and llms.txt checked · claude-seo toolkit reviewed in full · blog skill tested end to end</p>
+</header>
+
+<div class="verdict">
+  <div class="v c"><b>3</b><span>critical: fix before the first article</span></div>
+  <div class="v h"><b>6</b><span>high: fix within 2 weeks</span></div>
+  <div class="v m"><b>5</b><span>medium: next month</span></div>
+  <div class="v g"><b>7</b><span>skill upgrades, ready to build</span></div>
+</div>
+
+<div class="callout"><p><b>Bottom line.</b> The blog skill works: the test article scored 0 fails. But the site itself is telling Google the wrong address for all 49 product and collection pages, and the file AI engines read describes DiggerLid as "lids for excavator buckets". Fix those two before any article goes live, or the article will link into pages Google is told to ignore.</p></div>
+
+<h2>1. Site blockers</h2>
+<p class="section-note">These are on the live site, not in the blog. Each one weakens every page, including new articles.</p>
+
+<div class="find crit"><div class="stripe"></div><div>
+  <div class="top"><span class="sev">Critical</span><h3>49 product and collection pages point their canonical at a 404</h3><span class="owner">dev · theme</span></div>
+  <p>Every product (23) and collection (26) page tells search engines its real address is <code>/a/shop/products/&lt;handle&gt;</code>. That URL returns 404 for browsers and Googlebot alike. The cause is a block in <code>layout/theme.liquid</code> tagged <code>dl-bc-v2</code>, which fires when the DeepLumen app's <code>ap_deployed</code> metafield is true. The same block exists for blog articles, so any article the app touches would inherit it.</p>
+  <p class="fix"><b>Fix:</b> remove the <code>dl-bc-v2</code> block, or set <code>ap_deployed</code> to false, so Shopify's own <code>{{ canonical_url }}</code> applies. Find out if the DeepLumen app is still meant to be live. Then request reindexing of the PRO Enclosure, PRO Mat and KAJO pages in Search Console.</p>
+</div></div>
+
+<div class="find crit"><div class="stripe"></div><div>
+  <div class="top"><span class="sev">Critical</span><h3>llms.txt describes the wrong business and links to dead pages</h3><span class="owner">dev · app</span></div>
+  <p><code>/llms.txt</code> says DiggerLid makes "precision-fit lids designed to safeguard excavator buckets". It links to <code>/a/shop/collections/...</code> URLs that 404. Google ignores llms.txt, but other AI engines and shopping agents read it, and right now it teaches them the wrong product.</p>
+  <p class="fix"><b>Fix:</b> turn off whichever app generates it (likely the same DeepLumen app), or replace it with a short accurate file: machinery covers, Pro Enclosure, PRO Mat, KAJO grease, with real <code>/collections/</code> links.</p>
+</div></div>
+
+<div class="find crit"><div class="stripe"></div><div>
+  <div class="top"><span class="sev">Critical</span><h3>The blog is empty and shows template placeholders</h3><span class="owner">you · theme editor</span></div>
+  <p><code>/blogs/news</code> has 0 articles. Its "You may also like" section renders "Example collection" placeholders, and the article template hides the author.</p>
+  <p class="fix"><b>Fix:</b> in the theme editor, turn on Show author for blog posts and hide "You may also like" until 3 or more articles exist. Rename the blog from "News" to something searchable, such as "Guides" or "The Dig". The handle can stay <code>news</code>.</p>
+</div></div>
+
+<div class="find high"><div class="stripe"></div><div>
+  <div class="top"><span class="sev">High</span><h3>Homepage has two H1s and a generic title</h3><span class="owner">dev · theme</span></div>
+  <p>The H1s are "PRO MAT" and "DIGGERSHIELD UP". The title is "Digger lid excavator covers – DiggerLid" (39 characters). The April audit flagged both, and both are still live.</p>
+  <p class="fix"><b>Fix:</b> one descriptive H1, for example "Mini Excavator Covers, Enclosures and Work Gear". Demote the banner labels to H2. Use a title like "Mini Excavator Covers &amp; Enclosures | DiggerLid".</p>
+</div></div>
+
+<div class="find high"><div class="stripe"></div><div>
+  <div class="top"><span class="sev">High</span><h3>Test and junk pages are in the sitemap</h3><span class="owner">you · admin</span></div>
+  <p>Google is being sent: <code>/collections/pro-enclosure-luke-pdp-au-copy</code> ("Luke PDP INT"), <code>/pages/faq-test</code>, <code>/pages/size-guideold</code>, <code>/pages/https-www-diggerlid-com-au</code>, <code>/pages/https-www-diggerlid-com-au-products-digger-lid-1-7</code>, and two empty search-results pages.</p>
+  <p class="fix"><b>Fix:</b> unpublish them, or hide them with a <code>seo.hidden</code> metafield, and 301 any that once had links.</p>
+</div></div>
+
+<div class="find high"><div class="stripe"></div><div>
+  <div class="top"><span class="sev">High</span><h3>44 pages have no meta description</h3><span class="owner">you · admin</span></div>
+  <p>That's 28 of 30 collections and 16 pages, including the size guide and the gift and PRO Mat Plus landing pages. Another 21 run over 160 characters and get cut off. All product pages do have one.</p>
+  <p class="fix"><b>Fix:</b> write 130 to 150 characters each, starting with the money collections: enclosures, covers, grease, PRO Mat.</p>
+</div></div>
+
+<div class="find high"><div class="stripe"></div><div>
+  <div class="top"><span class="sev">High</span><h3>The size guide has no H1, no meta, and no crawlable links pointing at it</h3><span class="owner">you · admin</span></div>
+  <p>"Will it fit my machine?" is the number one question. The page that answers it (541 words) gets no inbound links in the crawled HTML. It is probably linked by script only.</p>
+  <p class="fix"><b>Fix:</b> add an H1 and a meta description, and plain links to it from the Pro Enclosure page, the enclosures collection and every enclosure article. It is the best internal-link target on the site.</p>
+</div></div>
+
+<div class="find high"><div class="stripe"></div><div>
+  <div class="top"><span class="sev">High</span><h3>Product schema has no reviews, shipping or returns</h3><span class="owner">dev · theme or review app</span></div>
+  <p>The Product JSON-LD has name, offers and sku, but no <code>aggregateRating</code>. Yet the PDPs show 4.7 from 246 reviews and 4.9 from 139. Shipping and return policy details are also missing, and the homepage has no Organization or WebSite schema.</p>
+  <p class="fix"><b>Fix:</b> turn on the review app's schema output, and add <code>shippingDetails</code>, <code>hasMerchantReturnPolicy</code> and Organization with <code>sameAs</code> links to the socials.</p>
+</div></div>
+
+<div class="find high"><div class="stripe"></div><div>
+  <div class="top"><span class="sev">High</span><h3>About page is 147 words</h3><span class="owner">you · content</span></div>
+  <p>E-E-A-T stands for experience, expertise, authority and trust, and it starts with who is behind the brand. The founders' real story is the strongest asset: landscaping tradies, 2018, the wet seat and the mattress bag. The site barely tells it, and articles have no author page to link to.</p>
+  <p class="fix"><b>Fix:</b> rewrite About to 600 words or more, with photos of Joel and Luke, then link every article's author box to it.</p>
+</div></div>
+
+<div class="find med"><div class="stripe"></div><div>
+  <div class="top"><span class="sev">Medium</span><h3>209 of 1,338 images have no alt text</h3><span class="owner">you · admin</span></div>
+  <p>That's 16%, spread across collections and landing pages. The April audit flagged it, and it has improved but isn't fixed.</p>
+</div></div>
+
+<div class="find med"><div class="stripe"></div><div>
+  <div class="top"><span class="sev">Medium</span><h3>Landing pages with multiple or missing H1s</h3><span class="owner">dev · page templates</span></div>
+  <p>The gift page has 2 H1s, PRO Mat Plus 2026 has 2, and Terms has 15. Support, links, Black Friday, EOFY and grease QR have none.</p>
+</div></div>
+
+<div class="find med"><div class="stripe"></div><div>
+  <div class="top"><span class="sev">Medium</span><h3>Shipping message conflicts</h3><span class="owner">you · content</span></div>
+  <p>The KAJO FAQ says "free delivery", while the shipping block charges grease by weight. The new standard is "Fast shipping Australia wide", and the site copy should match it.</p>
+</div></div>
+
+<div class="find med"><div class="stripe"></div><div>
+  <div class="top"><span class="sev">Medium</span><h3>Heavy pages</h3><span class="owner">dev</span></div>
+  <p>The HTML alone is 593 to 675 KB on product pages, with about 100 script tags. Core Web Vitals couldn't be measured today because the PageSpeed API quota was exhausted, so run PageSpeed Insights on the Pro Enclosure page before deciding.</p>
+</div></div>
+
+<div class="find med"><div class="stripe"></div><div>
+  <div class="top"><span class="sev">Medium</span><h3>Old article-style pages live outside the blog</h3><span class="owner">you · content</span></div>
+  <p>See section 3. Three pages are really articles, which leaves the blog empty and the content unlinked.</p>
+</div></div>
+
+<h2>2. Blog skill upgrades</h2>
+<p class="section-note">These answer your questions directly. All seven are within reach this week.</p>
+
+<div class="qa">
+  <div class="q"><h3>Did we clone or extract everything we needed?</h3>
+    <p>No. The first pass distilled 9 of claude-seo's 25 sub-skills into rules. The second pass found four more things worth taking:</p>
+    <ul>
+      <li>three stdlib checkers that run here (content quality, claim verification, templated-meta detection)</li>
+      <li>a humanizer for plain text</li>
+      <li>the FLOW framework's dual-surface content scorecard</li>
+      <li>its pre-write audit checks</li>
+    </ul>
+    <p>The rest needs paid API keys (DataForSEO, Google Ads, GCP NLP) or doesn't apply. 38 of the 41 FLOW prompts turned out to be the same boilerplate, so nothing is lost there.</p>
+    <p><b>Upgrade 1:</b> vendor the four stdlib scripts, MIT, with the license kept, and run them as a post-draft gate.</p></div>
+
+  <div class="q"><h3>Should we run a mini audit each time?</h3>
+    <p>Yes. A new <code>site_inventory.py</code> is built and was used for this report. It crawls the sitemap in about 90 seconds and outputs every page's title, meta, H1s, H2s, word count, links in and out, and missing alt text.</p>
+    <p><b>Upgrade 2:</b> make it step 0 of the skill. Re-crawl if the inventory is over 7 days old. Before writing, check four things:</p>
+    <ol class="steps">
+      <li>Cannibalisation against every existing title and H2.</li>
+      <li>Link targets for the article.</li>
+      <li>Whether the product pages the article links to are healthy (canonical, meta, H1).</li>
+      <li>Template defects that would undercut the article.</li>
+    </ol></div>
+
+  <div class="q"><h3>How do we keep the blog in brand tone of voice? Should we read all pages?</h3>
+    <p>Read all pages once, not every time. All 88 pages (about 61,000 words) are now a corpus. A tone-of-voice guide is being built from the best on-brand pages, your proven ad rules and real customer language. It includes measured style stats, preferred words, inconsistencies across the site, and a 30-point scoring rubric.</p>
+    <p><b>Upgrade 3:</b> every draft self-scores against the rubric and must hit 24/30, with before/after rewrites as calibration. Refresh the guide every quarter by re-running the crawl.</p></div>
+
+  <div class="q"><h3>How do we handle interlinking?</h3>
+    <p>Both directions, every time. Most sites only link out from a new article. The bigger win is linking into it.</p>
+    <p><b>Upgrade 4:</b> the skill picks 5 to 10 outbound targets from the inventory, at most one link per target and no repeated anchors. Then it outputs an <b>inbound link list</b>: 3 to 5 existing pages (product pages, collections, the size guide, older articles) with the exact sentence and anchor to add. An article with fewer than 3 inbound links is treated as not launched.</p>
+    <p><b>Upgrade 5:</b> keep a <code>content-map.md</code> registry. Each article's primary keyword, cluster, pillar and links go there, so the hub-and-spoke structure stays intact and no two articles chase one keyword.</p></div>
+
+  <div class="q"><h3>How do we decide the keyword focus?</h3>
+    <p>Score the shortlist, don't guess. <b>Upgrade 6</b> replaces judgment with a 100-point score per candidate:</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Factor</th><th>Weight</th><th>How it's scored</th></tr></thead>
+      <tbody>
+        <tr><td>Source fit</td><td class="num">25</td><td>Does the video or post actually answer it? Below 15 means the keyword is disqualified, whatever its volume.</td></tr>
+        <tr><td>Intent fit</td><td class="num">20</td><td>Share of top-10 results that are articles. Under 40% is a critical mismatch, so the product page owns it.</td></tr>
+        <tr><td>Business value</td><td class="num">20</td><td>How directly it leads to a product: grease and enclosure terms score high, generic tips low.</td></tr>
+        <tr><td>Demand</td><td class="num">15</td><td>Planner volume where sourced. Autocomplete presence and People Also Ask depth otherwise.</td></tr>
+        <tr><td>Winnability</td><td class="num">15</td><td>Weak competitor pages, forums or thin content in the top 5 score high. Note the planner's "competition" measures ad bidders, not organic difficulty.</td></tr>
+        <tr><td>Cluster gap</td><td class="num">5</td><td>Fills an empty spoke in the content map.</td></tr>
+      </tbody>
+    </table></div>
+    <p>The test article's choice, "how to load a grease gun", would score about 80. It beat "screw in grease cartridge" because product pages own that search result.</p></div>
+
+  <div class="q"><h3>What else would lift results most?</h3>
+    <p><b>Upgrade 7:</b> connect Google Search Console. It's the one data source that would change keyword decisions most. claude-seo's quick-win rule is position 4 to 10 with more than 50 impressions: queries you already nearly rank for, which an article can push onto page one. Today the skill has real volume data only for grease.</p></div>
+</div>
+
+<h2>3. Content you already own</h2>
+<p class="section-note">These are article-style pages built as Shopify pages. Moving them into the blog gives it 3 articles on day one and links them into a cluster.</p>
+<div class="tbl"><table>
+  <thead><tr><th>Page</th><th>Words</th><th>Problem</th><th>Move</th></tr></thead>
+  <tbody>
+    <tr><td><code>/pages/6-reasons-why-its-time-to-ditch-cardboard</code></td><td class="num">697</td><td>The URL says 6 reasons, the title says 5. No meta, 0 inbound links.</td><td>Expand to a 1,500-word PRO Mat guide in the blog and 301 the old URL.</td></tr>
+    <tr><td><code>/pages/gift</code></td><td class="num">2,468</td><td>2 H1s, no meta, Father's Day framing</td><td>Make it an evergreen "gift for tradies" article. It also feeds the Christmas gifting push.</td></tr>
+    <tr><td><code>/pages/pro-mat-plus-2026</code></td><td class="num">684</td><td>Launch page, 2 H1s, no meta</td><td>Keep it as the landing page, and write a "PRO Mat vs PRO Mat Plus" comparison article that links to it.</td></tr>
+  </tbody>
+</table></div>
+<p>Your grease keyword plan already maps 10 comp-zero educational topics, such as "lithium vs calcium grease" and "how often to grease an excavator", to planned pages. Those are the first grease spokes. The size guide plus a "will it fit my machine" article is the first enclosure pillar.</p>
+
+<h2>4. What this audit couldn't see</h2>
+<ul>
+  <li><b>Rankings, clicks and impressions:</b> no Search Console access.</li>
+  <li><b>Core Web Vitals:</b> the PageSpeed API quota was used up today, so this is pending.</li>
+  <li><b>JavaScript-rendered content:</b> the crawl read server HTML only. Links added by scripts are not counted, which is why some inbound counts read 0.</li>
+  <li><b>Backlinks:</b> not checked.</li>
+</ul>
+
+<h2>Decisions for you</h2>
+<div class="decide"><ol>
+  <li><b>DeepLumen app:</b> is it meant to be live? If not, the dev removes the canonical block and llms.txt. That single change fixes both critical items.</li>
+  <li><b>Blog name:</b> keep "News", or rename it to "Guides" or "The Dig"?</li>
+  <li><b>Moving the three article pages:</b> approve moving them into the blog with 301 redirects.</li>
+  <li><b>Search Console:</b> can you add access, or export the last 3 months of queries?</li>
+  <li><b>Skill upgrades 1 to 6:</b> go ahead and build them into the skill now?</li>
+</ol></div>
+
+<footer>Sources: live crawl of diggerlid.com sitemap (88 URLs, 8 Oct 2026), Shopify theme <code>DiggerLid-Web/main</code>, Shopify Admin API, DiggerLid SEO Audit (Apr 2026), claude-seo toolkit (MIT, github.com/AgriciDaniel/claude-seo), Keyword Planner grease data (Mar and May 2026). Scores and weights are working heuristics, not Google ranking factors.</footer>
+</div>
