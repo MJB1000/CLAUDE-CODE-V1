@@ -116,8 +116,16 @@
 - ShopifyQL: `FROM sales/sessions SHOW … TIMESERIES … SINCE … UNTIL` — no PDP-level session
   cut (use PostHog for page-level). `customersCount` ignores tag filters, caps at 10k.
 - **Klaviyo filters:** `created` only accepts `greater-than`/`less-than` (NOT `greater-or-equal`).
-- **Alia API:** needs `groupByInterval`; hard 429s after ~2 quick calls; device filter silently
-  ignored with wrong rhs syntax. Token cost = 20 × stats × days.
+- **Alia API (`POST https://api.alia-prod.com/v1/events/stats`, Bearer):** body
+  `{"startDate","endDate","groupByInterval":"month|entire-range|day…","stats":{"<alias>":{"name":"popupViewsCount"}}}`
+  — `stats` is a RECORD keyed by alias (array → Zod error). Stat names: emailSignupCount/Rate,
+  phoneSignupCount/Rate, emailOptIn*, smsOptIn*, usersCount, popupViewsCount, popupViewRate,
+  bounceRate, attributedOrderCount/SalesSum/ConversionRate/AOV/LTV/RepurchaseRate. Cloudflare
+  blocks non-browser User-Agents (error 1010) → send a Chrome UA; python urllib fails, curl -A works.
+  Cost ≈ 20 × stats × days against a slow-refill budget: one-month/one-stat calls (~600) pass,
+  half-year calls (~3,500) 429 after the first; space calls minutes apart, expect ~1 big call/day.
+  Device filter silently ignored with wrong rhs syntax. `attributed*` stats require
+  `"maxMsSinceSignup": <ms>` inside the stat object (attribution window; 30 d = 2592000000).
 - Native Shopify Orders CSV export: line-item level, order fields blank on 2nd+ rows
   (forward-fill), variant folded into `Lineitem name`. Transactions export ≠ orders export.
 - SKU→category rulebook (final, patched): `analysis/cohort-scripts/categorize.py` — priority
