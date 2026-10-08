@@ -186,6 +186,7 @@ Keep the reply short. The files carry the detail.
 |---|---|
 | `references/seo-rules.md` | Always. Keyword method, on-page numbers, E-E-A-T, GEO, schema. |
 | `references/article-blueprint.md` | Always. Voice, structure, article types, transcript method. |
+| `references/tov-guide.md` | Always. Measured brand voice, vocabulary, site inconsistencies to avoid repeating, and the 30-point TOV rubric. Self-score every draft: pass is 24/30 with no dimension below 3. |
 | `references/design-blocks.md` | Writing the HTML |
 | `references/shopify-and-theme.md` | Packaging fields, theme behaviour, launch timing |
 | `references/image-sourcing.md` | Finding or requesting images |

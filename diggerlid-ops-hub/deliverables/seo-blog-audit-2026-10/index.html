@@ -69,7 +69,7 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
 
 <div class="verdict">
   <div class="v c"><b>3</b><span>critical: fix before the first article</span></div>
-  <div class="v h"><b>6</b><span>high: fix within 2 weeks</span></div>
+  <div class="v h"><b>7</b><span>high: fix within 2 weeks</span></div>
   <div class="v m"><b>5</b><span>medium: next month</span></div>
   <div class="v g"><b>7</b><span>skill upgrades, ready to build</span></div>
 </div>
@@ -95,6 +95,24 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
   <div class="top"><span class="sev">Critical</span><h3>The blog is empty and shows template placeholders</h3><span class="owner">you · theme editor</span></div>
   <p><code>/blogs/news</code> has 0 articles. Its "You may also like" section renders "Example collection" placeholders, and the article template hides the author.</p>
   <p class="fix"><b>Fix:</b> in the theme editor, turn on Show author for blog posts and hide "You may also like" until 3 or more articles exist. Rename the blog from "News" to something searchable, such as "Guides" or "The Dig". The handle can stay <code>news</code>.</p>
+</div></div>
+
+<div class="find high"><div class="stripe"></div><div>
+  <div class="top"><span class="sev">High</span><h3>Product facts contradict each other across pages</h3><span class="owner">you · content</span></div>
+  <p>Customers, Google and AI answers see different "facts" depending on the page. The tone-of-voice review of all 88 pages found 17 conflicts. These are the ones that cost trust:</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Claim</th><th>Says one thing</th><th>Says another</th></tr></thead>
+    <tbody>
+      <tr><td>Machines the enclosure fits</td><td>"over 60" on /pages/faqs</td><td>"over 200" on product pages</td></tr>
+      <tr><td>Enclosure fabric</td><td>650gsm on /pages/features-of-enclosures</td><td>490 GSM on the Pro Enclosure page</td></tr>
+      <tr><td>PRO Mat Plus colours</td><td>"3 brand new colours" on /products/pro-mat</td><td>"4 NEW colours" on /pages/pro-mat-plus-2026 and /pages/gift</td></tr>
+      <tr><td>Mats that zip together</td><td>"unlimited" on /products/pro-mat</td><td>"up to 420" and "two or more" on landing pages</td></tr>
+      <tr><td>Ratings and customers</td><td>"4.69 by 965 DigHeads" on /products/pro-mat</td><td>"4.71 by 1,290" elsewhere, "18k" in ads, "thousands" on About</td></tr>
+      <tr><td>Shipping</td><td>"FREE shipping over $399" on every product page</td><td>the owner rule is "Fast shipping Australia wide". Grease and DiggerShield shipping also conflict between pages.</td></tr>
+      <tr><td>Brand name</td><td>DiggerLid</td><td>Digger Lid, Diggerlid, DiggerLID, Digger-Lid, DIGGERLID, plus "Digger Shield®"</td></tr>
+    </tbody>
+  </table></div>
+  <p class="fix"><b>Fix:</b> pick one true value for each claim and update every page that differs. The full list of 17, with page paths, is in the blog skill's tone-of-voice guide. Also on /products/pro-mat: "Keeping you safe on the side of the road" overclaims what reflective strips do, and the text under the magnets heading is pasted from the cover page.</p>
 </div></div>
 
 <div class="find high"><div class="stripe"></div><div>
@@ -185,7 +203,14 @@ footer{margin-top:48px;font-size:13px;color:var(--muted)}
 
   <div class="q"><h3>How do we keep the blog in brand tone of voice? Should we read all pages?</h3>
     <p>Read all pages once, not every time. All 88 pages (about 61,000 words) are now a corpus. A tone-of-voice guide is being built from the best on-brand pages, your proven ad rules and real customer language. It includes measured style stats, preferred words, inconsistencies across the site, and a 30-point scoring rubric.</p>
-    <p><b>Upgrade 3:</b> every draft self-scores against the rubric and must hit 24/30, with before/after rewrites as calibration. Refresh the guide every quarter by re-running the crawl.</p></div>
+    <p><b>Done:</b> the guide is built. On the 11 strongest brand pages it measured:</p>
+    <ul>
+      <li>sentences average 14 words, and 39% are under 10 words</li>
+      <li>"you" appears about 3 times as often as "we"</li>
+      <li>"mini excavator" appears 67 times, "compact excavator" never</li>
+    </ul>
+    <p>It scores six things, each out of 5: plain-talk rhythm, on-the-tools credibility, Aussie mate warmth, villain not victim, vocabulary accuracy and proof discipline. A draft passes at 24/30 with no score below 3. A banned word, an em dash, an open [CHECK] or a free-shipping claim fails it outright.</p>
+    <p>The test article scored 24/30, a bare pass. It lost points on Aussie warmth and for one line that blames the reader. <b>Upgrade 3:</b> make the self-score a required step. Re-run the crawl every quarter to refresh the guide.</p></div>
 
   <div class="q"><h3>How do we handle interlinking?</h3>
     <p>Both directions, every time. Most sites only link out from a new article. The bigger win is linking into it.</p>
