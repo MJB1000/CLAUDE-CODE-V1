@@ -1,22 +1,20 @@
-# 🛰️ Repo Radar — 2026-10-10
+# 🛰️ Repo Radar — 2026-10-11
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_14 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_11 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[monid-ai/monid](https://github.com/monid-ai/monid)** — ⭐ 3,265 · 72.7/day · TypeScript · since 2026-08-26
-   > Monid - OpenRouter for agent tools. Join our community at https://discord.gg/rQzztcgJV8
-2. **[Soodok/Deepseek-Harness-Local-Android](https://github.com/Soodok/Deepseek-Harness-Local-Android)** — ⭐ 198 · 4.4/day · Kotlin · since 2026-08-26
-   > Run the DeepSeek Harness AI agent natively on Android — no root, no Termux, extension center included | 手机本地运行 DeepSeek Agent，免 Root 免…
-3. **[Luciole-Studio/Misaka-Agent](https://github.com/Luciole-Studio/Misaka-Agent)** — ⭐ 167 · 3.9/day · Python · since 2026-08-28
-   > A multi-agent research system for the humanities and social sciences.
+1. **[alchaincyf/huashu-art-motion](https://github.com/alchaincyf/huashu-art-motion)** — ⭐ 3,202 · 664.1/day · JavaScript · since 2026-10-06
+   > 艺术动画skill：35种艺术风格、9种解说语法，用代码让画动起来。
 
 ## Multimodal AI
 
-1. **[OmniJev/OneJev](https://github.com/OmniJev/OneJev)** — ⭐ 152 · 12.2/day · Python · since 2026-09-27
-   > 🚀🚀 A multimodal System One decision model that gives calibrated answers to typed questions about screens, photos, video and text in one…
+1. **[ARahim3/DigUp](https://github.com/ARahim3/DigUp)** — ⭐ 177 · 81.8/day · Swift · since 2026-10-08
+   > Search your Mac by what's in your files: photos, PDFs, recordings, videos and code. On-device, built on Google DeepMind's EmbeddingGemma 2.
+2. **[B0yko/tern](https://github.com/B0yko/tern)** — ⭐ 179 · 11.0/day · Python · since 2026-09-24
+   > Local AI search for podcast and video archives on Apple Silicon: Whisper speech, Apple Vision OCR and SigLIP-2 visual search fused into one…
 
 ## Marketing & analytics tech
 
@@ -28,21 +26,17 @@ _Nothing new this run._
 
 ## Self-development & productivity
 
-1. **[DayuanJiang/PecoFence](https://github.com/DayuanJiang/PecoFence)** — ⭐ 303 · 11.3/day · Rust · since 2026-09-13
-   > A free, open-source Stardock Fences alternative for Windows 11. Glass fences, live folders, tabs, Peek. Rust, ten languages, portable.
-2. **[jaisuriya-11/tsuzuri](https://github.com/jaisuriya-11/tsuzuri)** — ⭐ 235 · 7.7/day · Go · since 2026-09-09
-   > Block-based notebook for the terminal. Plain Markdown files, Vim editing, live preview, boards, calendars and 96 themes.
-3. **[jiuwanzi-hui/Screenshot](https://github.com/jiuwanzi-hui/Screenshot)** — ⭐ 224 · 2.8/day · C# · since 2026-07-23
-   > SnapCut（简截）——轻巧但不将就的 Windows 和 macOS 截图工作台：框选截图、长截图、区域录屏、钉图取色、标注、OCR 与翻译一体化。支持保留右键菜单和悬浮提示，数据尽量留在本机。
+1. **[Licoy/codex-runway](https://github.com/Licoy/codex-runway)** — ⭐ 265 · 2.5/day · Swift · since 2026-06-29
+   > Native macOS menu bar app for Codex and Grok: quota, reset-today status, reset credits, API-equivalent cost, local sessions, and…
 
 ## Claude & agent design craft
 
-1. **[Ryder-Sun/Meldwork](https://github.com/Ryder-Sun/Meldwork)** — ⭐ 523 · 7.2/day · JavaScript · since 2026-07-29
-   > Local-first AI agent workspace for multi-agent collaboration, agent orchestration, scoped permissions, evidence-aware runs, and…
-2. **[AskTheWay/dsh-auto-memory](https://github.com/AskTheWay/dsh-auto-memory)** — ⭐ 105 · 6.0/day · TypeScript · since 2026-09-22
-   > Claude Code-style auto-memory plugin for DeepSeek Harness (dsh): typed memory files + MEMORY.md index auto-injected into the system prompt…
-3. **[rookiestar28/ComfyUI-MiniMaxH3-Studio](https://github.com/rookiestar28/ComfyUI-MiniMaxH3-Studio)** — ⭐ 107 · 1.7/day · Python · since 2026-08-06
-   > Direct MiniMax H3 like a pro: Idea in, finished video out. A complete MiniMax H3 studio that lives in your ComfyUI.
+1. **[whaleyxbt/claude-motion](https://github.com/whaleyxbt/claude-motion)** — ⭐ 290 · 25.8/day · JavaScript · since 2026-09-29
+   > A motion design toolkit for coding agents.
+2. **[Harvil1/codeAgent](https://github.com/Harvil1/codeAgent)** — ⭐ 219 · 24.9/day · Python · since 2026-10-02
+   > CodeAgent is an open-source coding agent that lives in your terminal. It understands your repository, plans multi-step changes, writes and…
+3. **[lixiaoxiao9888-create/short-drama-factory](https://github.com/lixiaoxiao9888-create/short-drama-factory)** — ⭐ 334 · 5.4/day · Python · since 2026-08-09
+   > 🎬 Short-Drama Factory v4.3 · 抖音/红果爆款短剧工业化编剧超级系统 | 一句创意/一部网文 → 标准60-100集·长档30-50集·漫剧带付费墙剧本 | 40赛道全图+六母型钩子+五大断章+A~I反转轮换 |…
 
 ## Community & social media management
 
@@ -58,10 +52,7 @@ _Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-1. **[LosaLosSantos/aurelio-finance](https://github.com/LosaLosSantos/aurelio-finance)** — ⭐ 1,554 · 483.7/day · Python · since 2026-10-06
-   > Open-source personal finance app with an AI financial advisor: track your net worth, investments, ETFs, cash and debts on your own computer.
-2. **[beiyege-01/dsh-voice-ai-girlfriend](https://github.com/beiyege-01/dsh-voice-ai-girlfriend)** — ⭐ 153 · 2.8/day · TypeScript · since 2026-08-15
-   > 语音 AI 女友（Voice AI girlfriend for DeepSeek Harness）：Whisper 语音输入 + Qwen3-TTS 声音克隆 + 句子级流式朗读 + 数字人动画窗。插话/排队双模式，说话即打断。
+_Nothing new this run._
 
 ## Ads & paid growth
 
@@ -69,13 +60,21 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[aixisstudio/Snitch](https://github.com/aixisstudio/Snitch)** — ⭐ 180 · 21.4/day · Python · since 2026-10-01
-   > Real-time network traffic visualizer — see every connection your computer makes. Privacy-first, 100% local. / Visualiseur de trafic réseau…
+1. **[n1tr00-10/tiktok-web-signature](https://github.com/n1tr00-10/tiktok-web-signature)** — ⭐ 706 · 583.4/day · Python · since 2026-10-09
+   > tiktok web signature reverse engineer generates valid tiktok signatures for API requets
+2. **[v-modal/vmodal_sdk_flutter](https://github.com/v-modal/vmodal_sdk_flutter)** — ⭐ 2,206 · 25.5/day · Dart · since 2026-07-16
+   > V- Modal AI: Visual Video / Image Search - Flutter Video SDK
+3. **[Finderchangchang/brewreel](https://github.com/Finderchangchang/brewreel)** — ⭐ 162 · 10.8/day · JavaScript · since 2026-09-26
+   > 精酿 BrewReel：让 DeepSeek 这类便宜模型也能做出好看的竖版宣传片。写一份产品简报，AI 挑镜头、写文案，一条命令出片。3 种配方、6 个行业、广告法校验，开源可商用。
+
+🌱 **Rising fast** — small repos gaining stars (7d)
+
+4. **[tuzhechen2005/opus-video-skills](https://github.com/tuzhechen2005/opus-video-skills)** — ⭐ 152 · 📈 152⭐ in 14d · JavaScript · since 2026-09-26
+   > Video-making skills for Claude Opus 5.5 in Claude Code — every frame and note generated in code, one skill per style: hand-painted…
 
 ## E-commerce & Shopify
 
-1. **[AhmadHassan-BTed/Ledgerify](https://github.com/AhmadHassan-BTed/Ledgerify)** — ⭐ 152 · 1.7/day · TypeScript · since 2026-07-10
-   > Shopify Excel Ledger intelligence platform with dark aesthetic, multi-sheet workbook analysis, 7 departmental dashboards, and live…
+_Nothing new this run._
 
 ## Brand systems & creative ops
 
