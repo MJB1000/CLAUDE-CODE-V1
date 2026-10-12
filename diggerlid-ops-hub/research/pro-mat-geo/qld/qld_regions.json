@@ -1,0 +1,350 @@
+{
+ "qld_units": 803,
+ "unassigned_units": 8,
+ "regions": [
+  {
+   "region": "Darling Downs & South West",
+   "units": 82,
+   "orders": 58,
+   "pop": 108469,
+   "per_100k": 75.6,
+   "share_of_qld_units": 10.2,
+   "share_of_qld_pop": 1.9,
+   "index_vs_qld": 534,
+   "mix_since_aug_n": 37,
+   "mix_%": {
+    "O": 22,
+    "R": 38,
+    "G": 24,
+    "C": 5,
+    "P": 11
+   },
+   "top_postcodes": [
+    "4405 (15)",
+    "4455 (10)",
+    "4428 (7)",
+    "4413 (5)",
+    "4390 (5)"
+   ],
+   "towns": "Dalby 4405, Roma 4455, Wallumbilla 4428, Chinchilla 4413, Goondiwindi 4390, Warwick 4370, Charleville 4470"
+  },
+  {
+   "region": "SEQ fringe: Scenic Rim, Somerset & rural Logan/Ipswich",
+   "units": 55,
+   "orders": 45,
+   "pop": 73883,
+   "per_100k": 74.4,
+   "share_of_qld_units": 6.8,
+   "share_of_qld_pop": 1.3,
+   "index_vs_qld": 526,
+   "mix_since_aug_n": 25,
+   "mix_%": {
+    "O": 16,
+    "R": 28,
+    "G": 12,
+    "C": 40,
+    "P": 4
+   },
+   "top_postcodes": [
+    "4306 (17)",
+    "4280 (10)",
+    "4311 (5)",
+    "4309 (5)",
+    "4285 (5)"
+   ],
+   "towns": "Jimboomba 4280, Beaudesert 4285, Tamborine 4272, Fernvale/Lowood 4306-4312"
+  },
+  {
+   "region": "Central Highlands",
+   "units": 17,
+   "orders": 14,
+   "pop": 29481,
+   "per_100k": 57.7,
+   "share_of_qld_units": 2.1,
+   "share_of_qld_pop": 0.5,
+   "index_vs_qld": 407,
+   "mix_since_aug_n": 8,
+   "mix_%": {
+    "O": 38,
+    "R": 25,
+    "G": 25,
+    "C": 0,
+    "P": 12
+   },
+   "top_postcodes": [
+    "4720 (6)",
+    "4724 (4)",
+    "4723 (3)",
+    "4722 (3)",
+    "4717 (1)"
+   ],
+   "towns": "Emerald 4720, Springsure 4722, Capella 4723, Blackwater 4717"
+  },
+  {
+   "region": "Outback (Mt Isa, Longreach etc.)",
+   "units": 17,
+   "orders": 11,
+   "pop": 39251,
+   "per_100k": 43.3,
+   "share_of_qld_units": 2.1,
+   "share_of_qld_pop": 0.7,
+   "index_vs_qld": 306,
+   "mix_since_aug_n": 12,
+   "mix_%": {
+    "O": 17,
+    "R": 8,
+    "G": 33,
+    "C": 33,
+    "P": 8
+   },
+   "top_postcodes": [
+    "4825 (9)",
+    "4735 (2)",
+    "4730 (2)",
+    "4728 (2)",
+    "4828 (1)"
+   ],
+   "towns": "Mount Isa 4825, Longreach 4730, Winton 4735, Barcaldine 4725"
+  },
+  {
+   "region": "Mackay, Isaac & Whitsunday",
+   "units": 82,
+   "orders": 50,
+   "pop": 193813,
+   "per_100k": 42.3,
+   "share_of_qld_units": 10.2,
+   "share_of_qld_pop": 3.4,
+   "index_vs_qld": 299,
+   "mix_since_aug_n": 53,
+   "mix_%": {
+    "O": 21,
+    "R": 25,
+    "G": 34,
+    "C": 17,
+    "P": 4
+   },
+   "top_postcodes": [
+    "4740 (29)",
+    "4751 (15)",
+    "4721 (6)",
+    "4754 (4)",
+    "4742 (4)"
+   ],
+   "towns": "Mackay 4740, Walkerston 4751, Sarina 4737, Moranbah 4744, Clermont 4721, Airlie/Proserpine 4800-4802"
+  },
+  {
+   "region": "Gympie region",
+   "units": 23,
+   "orders": 19,
+   "pop": 58487,
+   "per_100k": 39.3,
+   "share_of_qld_units": 2.9,
+   "share_of_qld_pop": 1.0,
+   "index_vs_qld": 278,
+   "mix_since_aug_n": 9,
+   "mix_%": {
+    "O": 11,
+    "R": 44,
+    "G": 22,
+    "C": 22,
+    "P": 0
+   },
+   "top_postcodes": [
+    "4570 (21)",
+    "4580 (2)"
+   ],
+   "towns": "Gympie 4570, Tin Can Bay 4580"
+  },
+  {
+   "region": "Rockhampton, Livingstone, Gladstone & Banana",
+   "units": 70,
+   "orders": 58,
+   "pop": 213652,
+   "per_100k": 32.8,
+   "share_of_qld_units": 8.7,
+   "share_of_qld_pop": 3.8,
+   "index_vs_qld": 231,
+   "mix_since_aug_n": 24,
+   "mix_%": {
+    "O": 33,
+    "R": 33,
+    "G": 21,
+    "C": 4,
+    "P": 8
+   },
+   "top_postcodes": [
+    "4702 (19)",
+    "4680 (17)",
+    "4701 (12)",
+    "4703 (5)",
+    "4700 (3)"
+   ],
+   "towns": "Rockhampton 4700-4701, Gracemere 4702, Yeppoon 4703, Gladstone 4680, Biloela 4715"
+  },
+  {
+   "region": "Wide Bay & Burnett",
+   "units": 73,
+   "orders": 53,
+   "pop": 277183,
+   "per_100k": 26.3,
+   "share_of_qld_units": 9.1,
+   "share_of_qld_pop": 4.9,
+   "index_vs_qld": 186,
+   "mix_since_aug_n": 32,
+   "mix_%": {
+    "O": 19,
+    "R": 34,
+    "G": 9,
+    "C": 25,
+    "P": 12
+   },
+   "top_postcodes": [
+    "4670 (24)",
+    "4650 (9)",
+    "4610 (8)",
+    "4655 (7)",
+    "4626 (5)"
+   ],
+   "towns": "Bundaberg 4670, Maryborough 4650, Hervey Bay 4655, Kingaroy 4610, Mundubbera 4626"
+  },
+  {
+   "region": "Townsville, Burdekin & Charters Towers",
+   "units": 52,
+   "orders": 32,
+   "pop": 246762,
+   "per_100k": 21.1,
+   "share_of_qld_units": 6.5,
+   "share_of_qld_pop": 4.4,
+   "index_vs_qld": 149,
+   "mix_since_aug_n": 31,
+   "mix_%": {
+    "O": 10,
+    "R": 16,
+    "G": 13,
+    "C": 19,
+    "P": 42
+   },
+   "top_postcodes": [
+    "4818 (13)",
+    "4815 (6)",
+    "4814 (6)",
+    "4822 (5)",
+    "4820 (5)"
+   ],
+   "towns": "Townsville 4810-4818, Ayr 4807, Charters Towers 4820"
+  },
+  {
+   "region": "Toowoomba & Lockyer",
+   "units": 43,
+   "orders": 37,
+   "pop": 232334,
+   "per_100k": 18.5,
+   "share_of_qld_units": 5.4,
+   "share_of_qld_pop": 4.1,
+   "index_vs_qld": 131,
+   "mix_since_aug_n": 27,
+   "mix_%": {
+    "O": 15,
+    "R": 30,
+    "G": 15,
+    "C": 30,
+    "P": 11
+   },
+   "top_postcodes": [
+    "4352 (14)",
+    "4350 (9)",
+    "4341 (9)",
+    "4360 (2)",
+    "4357 (2)"
+   ],
+   "towns": "Toowoomba 4350, rural Toowoomba 4352, Laidley/Plainland 4341, Gatton 4343"
+  },
+  {
+   "region": "Cairns, Tablelands & Far North",
+   "units": 46,
+   "orders": 36,
+   "pop": 287118,
+   "per_100k": 16.0,
+   "share_of_qld_units": 5.7,
+   "share_of_qld_pop": 5.1,
+   "index_vs_qld": 113,
+   "mix_since_aug_n": 19,
+   "mix_%": {
+    "O": 32,
+    "R": 26,
+    "G": 26,
+    "C": 11,
+    "P": 5
+   },
+   "top_postcodes": [
+    "4870 (9)",
+    "4882 (6)",
+    "4873 (5)",
+    "4885 (3)",
+    "4872 (3)"
+   ],
+   "towns": "Cairns 4870, Atherton/Tolga 4882-4883, Mareeba 4880, Innisfail 4860"
+  },
+  {
+   "region": "Sunshine Coast & Noosa",
+   "units": 36,
+   "orders": 29,
+   "pop": 441508,
+   "per_100k": 8.2,
+   "share_of_qld_units": 4.5,
+   "share_of_qld_pop": 7.8,
+   "index_vs_qld": 58,
+   "mix_since_aug_n": 11,
+   "mix_%": {
+    "O": 0,
+    "R": 36,
+    "G": 27,
+    "C": 18,
+    "P": 18
+   },
+   "top_postcodes": [
+    "4563 (4)",
+    "4555 (4)",
+    "4553 (4)",
+    "4551 (4)",
+    "4561 (3)"
+   ],
+   "towns": "Caloundra 4551, Maleny 4552, Nambour 4560, Noosa 4566"
+  },
+  {
+   "region": "Greater Brisbane (metro postcodes)",
+   "units": 170,
+   "pop": 2752364,
+   "per_100k": 6.2,
+   "share_of_qld_units": 21.2,
+   "share_of_qld_pop": 48.5,
+   "index_vs_qld": 44
+  },
+  {
+   "region": "Gold Coast",
+   "units": 29,
+   "orders": 29,
+   "pop": 691230,
+   "per_100k": 4.2,
+   "share_of_qld_units": 3.6,
+   "share_of_qld_pop": 12.2,
+   "index_vs_qld": 30,
+   "mix_since_aug_n": 10,
+   "mix_%": {
+    "O": 30,
+    "R": 40,
+    "G": 20,
+    "C": 10,
+    "P": 0
+   },
+   "top_postcodes": [
+    "4210 (6)",
+    "4211 (4)",
+    "4212 (3)",
+    "4208 (3)",
+    "4220 (2)"
+   ],
+   "towns": "Gold Coast 4208-4230"
+  }
+ ]
+}
