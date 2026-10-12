@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Regional QLD PRO Mat breakdown: postcode clusters -> approx LGA populations (QGSO ERP 30 Jun 2025p).
 Clusters are postcode approximations of LGA groups, so per-capita figures are indicative."""
-import csv, json, sys
+import csv, json, sys, os
 POPCSV = sys.argv[1]
 pop = {}
 for r in list(csv.reader(open(POPCSV, encoding="latin-1")))[6:]:
@@ -34,10 +34,10 @@ CLUSTERS = [
 METRO = rng((4000,4207),(4300,4305),(4500,4519))
 
 units = {}; orders = {}
-for t in open("qld_units_since_mar.txt").read().split():
+for t in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "qld_units_since_mar.txt")).read().split():
     pc, o, u = t.split(":"); units[int(pc)] = int(u); orders[int(pc)] = int(o)
 mix = {}
-for t in open("qld_variant_since_aug.txt").read().split():
+for t in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "qld_variant_since_aug.txt")).read().split():
     pc, v, u = t.split(":"); mix.setdefault(int(pc), {}).setdefault(v, 0); mix[int(pc)][v] += int(u)
 
 QLD_POP = pop["Queensland"]; TOT = sum(units.values())
@@ -51,13 +51,13 @@ for name, pcs, lgas, eg in CLUSTERS:
                 "share_of_qld_units": round(100 * u / TOT, 1), "share_of_qld_pop": round(100 * pp / QLD_POP, 1),
                 "index_vs_qld": round((u / TOT) / (pp / QLD_POP) * 100),
                 "mix_since_aug_n": mt, "mix_%": {k: round(100 * v / mt) if mt else 0 for k, v in m.items()},
-                "top_postcodes": [f"{p} ({n})" for n, p in top], "towns": eg})
+                "top_postcodes": [f"{p} ({n})" for n, p in top], "towns": eg, "postcodes": sorted(pcs)})
     assigned |= pcs
 mu = sum(units.get(p, 0) for p in METRO)
 mpop = pop["Brisbane (C)"] + pop["Moreton Bay (C)"] + pop["Logan (C)"] + pop["Ipswich (C)"] + pop["Redland (C)"]
 out.append({"region": "Greater Brisbane (metro postcodes)", "units": mu, "pop": mpop, "per_100k": round(mu * 1e5 / mpop, 1),
             "share_of_qld_units": round(100 * mu / TOT, 1), "share_of_qld_pop": round(100 * mpop / QLD_POP, 1),
-            "index_vs_qld": round((mu / TOT) / (mpop / QLD_POP) * 100)})
+            "index_vs_qld": round((mu / TOT) / (mpop / QLD_POP) * 100), "postcodes": sorted(METRO), "towns": "Brisbane, Logan, Ipswich, Moreton Bay, Redland"})
 assigned |= METRO
 other = sum(u for p, u in units.items() if p not in assigned)
 print(json.dumps({"qld_units": TOT, "unassigned_units": other, "regions": sorted(out, key=lambda r: -r["per_100k"])}, indent=1))
