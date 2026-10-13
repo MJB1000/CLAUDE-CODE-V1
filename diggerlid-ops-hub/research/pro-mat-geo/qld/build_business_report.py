@@ -139,6 +139,68 @@ for i, (n, v) in enumerate(rows):
 t.append("</svg>")
 TRADES = "".join(t)
 
-page = open(TPL).read().replace("{{REGION}}", REGION).replace("{{MAP}}", MAP).replace("{{TRADES}}", TRADES)
+# ================= PAGE 2: Original vs Plus, colours (since Plus launch 6 Aug 2026) =================
+V = json.load(open(os.path.join(HERE, "variant_mix_qld.json")))
+CODES = ["O", "R", "G", "C", "P"]
+CN = {"O": "Original", "R": "Plus Orange", "G": "Plus Grey", "C": "Plus Camo", "P": "Plus Pink"}
+def stack(rows, w=640, lab=210, right=56):
+    rh, gp, top = 24, 9, 4; sp = w - lab - right
+    h = top + len(rows) * (rh + gp) + 2
+    o = [f'<svg viewBox="0 0 {w} {h}" role="img" aria-label="Variant and colour mix">']
+    for i, (name, mix, n, bold) in enumerate(rows):
+        y = top + i * (rh + gp); x = lab; tot = sum(mix.values())
+        o.append(f'<text x="{lab-10}" y="{y+rh/2+4.5}" text-anchor="end" class="lab{" city" if bold else ""}">{name}</text>')
+        for k in CODES:
+            ww = sp * mix.get(k, 0) / tot
+            if ww <= 0: continue
+            o.append(f'<rect x="{x:.1f}" y="{y}" width="{max(ww-1.5,0):.1f}" height="{rh}" class="s {k}"/>')
+            if ww > 26: o.append(f'<text x="{x+ww/2-0.75:.1f}" y="{y+rh/2+4.5}" text-anchor="middle" class="st {k}">{mix.get(k,0)/tot*100:.0f}%</text>')
+            x += ww
+        o.append(f'<text x="{lab+sp+8}" y="{y+rh/2+4.5}" class="nlab">n={n}</text>')
+    o.append("</svg>")
+    return "".join(o)
+MIXBUY = stack([("Australia", V["australia"], sum(V["australia"].values()), False),
+                ("Queensland", V["qld"], sum(V["qld"].values()), True),
+                ("QLD business buyers", V["qld_business"], sum(V["qld_business"].values()), False),
+                ("QLD personal buyers", V["qld_personal"], sum(V["qld_personal"].values()), False)])
+MIXAREA = stack([(a, V["areas"][a], sum(V["areas"][a].values()), False) for a in V["area_order"]])
+# colour map
+vpc = defaultdict(dict)
+for t_ in open(os.path.join(HERE, "qld_variant_by_pc_2026-10-13.txt")).read().split():
+    pc, k, u = t_.split(":"); vpc[pc][k] = vpc[pc].get(k, 0) + int(u)
+def cdots(xy_fn, clip=None):
+    out = []
+    for pc, c in vpc.items():
+        if pc not in pts: continue
+        x, y = xy_fn(*proj(*cen(pts[pc])))
+        if clip and not (clip[0] <= x <= clip[2] and clip[1] <= y <= clip[3]): continue
+        ks = [k for k in CODES if k in c]; nk = len(ks)
+        for j, k in enumerate(ks):
+            r = 2.3 + 1.7 * math.sqrt(c[k])
+            a = 2 * math.pi * j / nk - math.pi / 2; d = 0 if nk == 1 else r * 0.95
+            out.append(f'<circle cx="{x+d*math.cos(a):.1f}" cy="{y+d*math.sin(a):.1f}" r="{r:.1f}" class="cd {k}"/>')
+    return "".join(out)
+cm = [f'<svg viewBox="0 0 {MW} {MH:.0f}" role="img" aria-label="Map of Queensland showing PRO Mats sold since 6 August, coloured by the mat colour bought">',
+      f'<defs><clipPath id="ic2"><rect x="{IX}" y="{IY}" width="{IW}" height="{IH:.1f}"/></clipPath></defs>',
+      f'<path d="{LANDD}" class="land"/>',
+      f'<rect x="{sx0:.1f}" y="{sy0:.1f}" width="{sx1-sx0:.1f}" height="{sy1-sy0:.1f}" class="sbox"/>',
+      f'<line x1="{sx1:.1f}" y1="{sy0:.1f}" x2="{IX+IW/2:.1f}" y2="{IY+IH:.1f}" class="lead"/>',
+      cdots(lambda x, y: (x, y)),
+      f'<rect x="{IX}" y="{IY}" width="{IW}" height="{IH:.1f}" class="inset"/>',
+      f'<g clip-path="url(#ic2)"><path d="{LANDD}" class="land" transform="translate({IX-sx0*Z:.2f},{IY-sy0*Z:.2f}) scale({Z:.4f})"/>',
+      cdots(ip, clip=(IX - 20, IY - 20, IX + IW + 20, IY + IH + 20)), "</g>",
+      f'<text x="{IX+8}" y="{IY+IH-10:.1f}" class="itl">South East QLD, enlarged</text>']
+for n, lo, la, s_ in LBL:
+    x, y = proj(lo, la)
+    cm.append(f'<text x="{x+s_*9:.1f}" y="{y+4:.1f}" class="pl" text-anchor="{"start" if s_ > 0 else "end"}">{n}</text>')
+for n, lo, la, s_ in [("Brisbane", 153.03, -27.47, 1), ("Gold Coast", 153.40, -28.0, 1), ("Sunshine Coast", 153.07, -26.65, -1),
+                      ("Toowoomba", 151.95, -27.56, -1), ("Ipswich", 152.76, -27.61, -1), ("Gympie", 152.67, -26.19, -1)]:
+    x, y = ip(*proj(lo, la))
+    if IY < y < IY + IH: cm.append(f'<text x="{x+s_*10:.1f}" y="{y+4:.1f}" class="pl" text-anchor="{"start" if s_ > 0 else "end"}">{n}</text>')
+cm.append("</svg>")
+CMAP = "".join(cm)
+
+page = (open(TPL).read().replace("{{REGION}}", REGION).replace("{{MAP}}", MAP).replace("{{TRADES}}", TRADES)
+        .replace("{{MIXBUY}}", MIXBUY).replace("{{MIXAREA}}", MIXAREA).replace("{{CMAP}}", CMAP))
 open(OUT, "w", encoding="utf-8").write(page)
 print("ok", N, round(avg, 2))

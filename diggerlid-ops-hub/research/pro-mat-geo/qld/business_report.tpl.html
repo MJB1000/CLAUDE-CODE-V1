@@ -7,6 +7,7 @@
   --bg:#fbfaf6; --surface:#f1efe7; --ink:#1b1a17; --ink2:#5a564d; --rule:#dedad0;
   --land:#e9e5da; --landedge:#c9c3b4; --personal:#d6d0c1; --hi:#f2e600;
   --mec:#d9480f; --civ:#a87d00; --farm:#3b7a3b; --oth:#77736a;
+  --co:#3f4349; --cr:#f26b1f; --cg:#a7adb4; --cc:#5c7436; --cp:#ef6fae; --tl:#ffffff;
   --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
   --f-body:"Source Sans 3","Segoe UI",Arial,sans-serif;
   --f-data:"IBM Plex Mono",ui-monospace,Menlo,monospace;
@@ -14,11 +15,15 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#161614; --surface:#201f1c; --ink:#efece3; --ink2:#aaa698; --rule:#34322d;
   --land:#26251f; --landedge:#45423a; --personal:#45423b; --hi:#f2e600;
-  --mec:#ff7a3d; --civ:#e2b400; --farm:#6fb86f; --oth:#9a958a; color-scheme:dark}}
+  --mec:#ff7a3d; --civ:#e2b400; --farm:#6fb86f; --oth:#9a958a;
+  --co:#8a9099; --cr:#ff7d36; --cg:#c9ced4; --cc:#8fae62; --cp:#f58cc0; --tl:#111111;
+  color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#161614; --surface:#201f1c; --ink:#efece3; --ink2:#aaa698; --rule:#34322d;
   --land:#26251f; --landedge:#45423a; --personal:#45423b; --hi:#f2e600;
-  --mec:#ff7a3d; --civ:#e2b400; --farm:#6fb86f; --oth:#9a958a; color-scheme:dark}
+  --mec:#ff7a3d; --civ:#e2b400; --farm:#6fb86f; --oth:#9a958a;
+  --co:#8a9099; --cr:#ff7d36; --cg:#c9ced4; --cc:#8fae62; --cp:#f58cc0; --tl:#111111;
+  color-scheme:dark}
 body{background:var(--bg);color:var(--ink);font:16px/1.5 var(--f-body)}
 .wrap{max-width:780px;margin:0 auto;padding-inline:20px;padding-block:28px 44px;display:grid;gap:34px}
 .eyebrow{font:600 12px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
@@ -79,10 +84,27 @@ td.n{text-align:right;font:500 13px var(--f-data);font-variant-numeric:tabular-n
 tr.tot td{border-bottom:2px solid var(--ink);font-weight:700}
 .foot{font-size:12.5px;color:var(--ink2);border-top:1px solid var(--rule);padding-top:12px;line-height:1.55}
 code{font:500 12px var(--f-data)}
+
+.pnav{display:flex;gap:8px;flex-wrap:wrap;font:600 13px var(--f-body);letter-spacing:.06em;text-transform:uppercase}
+.pnav a{color:var(--ink);text-decoration:none;border:1.5px solid var(--ink);padding:6px 10px}
+.pnav a:hover,.pnav a:focus-visible{background:var(--hi);color:#1b1a17;outline:none}
+.pagebreak{border:0;border-top:6px solid var(--ink);margin:18px 0 0}
+.s.O{fill:var(--co)} .s.R{fill:var(--cr)} .s.G{fill:var(--cg)} .s.C{fill:var(--cc)} .s.P{fill:var(--cp)}
+.st{font:700 11.5px var(--f-data);fill:#1b1a17} .st.O,.st.C{fill:var(--tl)}
+.nlab{font:500 11.5px var(--f-data);fill:var(--ink2)}
+.cd{stroke:var(--bg);stroke-width:.8} .cd.O{fill:var(--co)} .cd.R{fill:var(--cr)} .cd.G{fill:var(--cg)} .cd.C{fill:var(--cc)} .cd.P{fill:var(--cp)}
+.vs{width:100%;border-collapse:collapse;font-size:14.5px}
+.vs th{font:600 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);text-align:right;padding:6px 0 6px 12px;border-bottom:2px solid var(--ink)}
+.vs th:first-child{text-align:left;padding-left:0}
+.vs td{padding:8px 0 8px 12px;border-bottom:1px solid var(--rule);text-align:right;font:500 14px var(--f-data);font-variant-numeric:tabular-nums}
+.vs td:first-child{text-align:left;padding-left:0;font:400 14.5px var(--f-body)}
+.vs td.w{font-weight:700}
+@media print{.pagebreak{break-before:page}}
 @media (max-width:640px){.cols{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(3){padding-left:0;border-left:0}.stat:nth-child(n+3){border-top:1px solid var(--rule)}}
 </style>
 <div class="wrap">
-  <header>
+  <nav class="pnav" aria-label="Pages"><a href="#who">Page 1 · Who buys</a><a href="#plus">Page 2 · Original vs Plus &amp; colours</a></nav>
+  <header id="who">
     <div class="eyebrow"><b>RP-007</b><span>DiggerLid · PRO Mat · Queensland · 1 Mar to 13 Oct 2026</span></div>
     <h1>Who buys PRO Mats in QLD</h1>
     <p class="lede"><strong>Regional Queenslanders buy far more mats per person than city people, and about 1 in 4 orders comes from a business.</strong> This report combines where mats sell, weighted by population, with who is buying.</p>
@@ -155,4 +177,80 @@ code{font:500 12px var(--f-data)}
   </section>
 
   <p class="foot">Source: Shopify (ShopifyQL), aggregate counts only. No emails, names or addresses were pulled or stored. Population: QGSO council estimates 2025, grouped into regions. Orders: 639 QLD PRO Mat orders, 1 Mar to 13 Oct 2026. 27% is a floor, because sole traders with plain name emails look like personal buyers. Trade-word matches are strong hints, not proof. 32 orders have a guessed trade, so allow about ±5 per trade. Method and data: <code>research/pro-mat-geo/qld/BUSINESS-TYPES.md</code>, <code>business_geo_qld.json</code>.</p>
+  <hr class="pagebreak">
+  <header id="plus">
+    <div class="eyebrow"><b>RP-007 · Page 2</b><span>Since Plus launched · 6 Aug to 13 Oct 2026 · 381 mats in QLD</span></div>
+    <h1>Original vs Plus, and which colours</h1>
+    <p class="lede"><strong>Plus has taken over in Queensland, and Orange leads the colours.</strong> The colour mix changes by area and by buyer type.</p>
+  </header>
+
+  <section class="eli5" aria-label="Plain-English summary, page 2">
+    <h2>The short version</h2>
+    <ol>
+      <li><strong>4 in 5 mats sold in QLD are now Plus.</strong> That's a bit more than the rest of Australia (78% vs 74%).</li>
+      <li><strong>Orange is the favourite.</strong> Almost 1 in 3 QLD mats is Orange.</li>
+      <li><strong>Plus brings in the money.</strong> Each Plus sells for about $60 more, so Plus is 83% of PRO Mat sales dollars in QLD.</li>
+      <li><strong>City buyers love Orange (43%).</strong> Country buyers spread out more across Original, Grey and Camo.</li>
+      <li><strong>Businesses lean Grey (1 in 4). Personal buyers lean Camo (1 in 5).</strong></li>
+    </ol>
+  </section>
+
+  <section class="stats" aria-label="Key numbers, page 2">
+    <div class="stat"><div class="n">78%</div><div class="l">of QLD mats are Plus (298 of 381). Australia: 74%</div></div>
+    <div class="stat"><div class="n">31%</div><div class="l">Orange, the top colour in QLD (119 mats)</div></div>
+    <div class="stat"><div class="n">$242 vs $180</div><div class="l">average net sale per mat, Plus vs Original</div></div>
+    <div class="stat"><div class="n">83%</div><div class="l">of QLD PRO Mat sales dollars come from Plus</div></div>
+  </section>
+
+  <section class="sec">
+    <div class="num">Finding 4 · Original vs Plus</div>
+    <h2>Plus sells more and earns more</h2>
+    <div style="overflow-x:auto"><table class="vs">
+      <tr><th>QLD, since 6 Aug</th><th>Original</th><th>Plus (all colours)</th></tr>
+      <tr><td>Mats sold</td><td>83</td><td class="w">298</td></tr>
+      <tr><td>Share of mats</td><td>22%</td><td class="w">78%</td></tr>
+      <tr><td>Share of mats, Australia</td><td>26%</td><td>74%</td></tr>
+      <tr><td>Average net sale per mat</td><td>$180</td><td class="w">$242</td></tr>
+      <tr><td>Net sales</td><td>$14,930</td><td class="w">$72,166</td></tr>
+      <tr><td>Share of mats bought by businesses</td><td>31%</td><td>35%</td></tr>
+    </table></div>
+    <p class="take"><strong>Original is now the entry option, not the main product.</strong> Queensland holds it less than the national average (22% vs 26%). Toowoomba and Rockhampton still take about a third Original, but those samples are small (37 and 24 mats).</p>
+  </section>
+
+  <section class="sec">
+    <div class="num">Finding 5 · Colour mix by buyer</div>
+    <h2>Queensland goes Orange and Camo</h2>
+    <p class="sub">Share of mats by variant and colour, 6 Aug to 13 Oct 2026. n = mats sold.</p>
+    <div class="chart">{{MIXBUY}}</div>
+    <div class="key"><span><i class="sq" style="background:var(--co)"></i>Original (Signature Grey)</span><span><i class="sq" style="background:var(--cr)"></i>Plus Orange</span><span><i class="sq" style="background:var(--cg)"></i>Plus Grey</span><span><i class="sq" style="background:var(--cc)"></i>Plus Camo</span><span><i class="sq" style="background:var(--cp)"></i>Plus Pink</span></div>
+    <p class="take"><strong>Against Australia, QLD buys more Orange (31% vs 28%) and Camo (18% vs 15%), and less Original.</strong> Businesses pick Grey far more than personal buyers (25% vs 17%). Personal buyers pick Camo (21% vs 11%).</p>
+  </section>
+
+  <section class="sec">
+    <div class="num">Finding 6 · Colour mix by area</div>
+    <h2>Orange in the city, a wider spread in the country</h2>
+    <p class="sub">Share of mats by colour, grouped into four QLD areas.</p>
+    <div class="chart">{{MIXAREA}}</div>
+    <p class="take"><strong>Brisbane and the coasts are 43% Orange.</strong> The southern inland and SEQ fringe hold Original (25%) and like Camo (20%). Central QLD and Mackay go Grey (24%, 34% in Mackay alone). Pink is 24% in the north, but 8 of those 15 Pink mats went to one Townsville postcode, so don't read it as a trend.</p>
+  </section>
+
+  <section class="sec">
+    <div class="num">Finding 7 · Colour on the map</div>
+    <h2>Every mat in the colour it was bought in</h2>
+    <p class="sub">Each dot is a postcode's mats of one colour, sized by count. Postcodes that bought several colours show a cluster.</p>
+    <div class="mapbox">{{CMAP}}</div>
+    <div class="key"><span><i style="background:var(--co)"></i>Original</span><span><i style="background:var(--cr)"></i>Orange</span><span><i style="background:var(--cg)"></i>Grey</span><span><i style="background:var(--cc)"></i>Camo</span><span><i style="background:var(--cp)"></i>Pink</span></div>
+  </section>
+
+  <section class="sec">
+    <h2>What to do with colour</h2>
+    <ul>
+      <li><strong>Lead city and coast ads with Orange.</strong> It's 43% of the city mix.</li>
+      <li><strong>Lead business and workshop ads with Grey</strong> (the fleet or bundle angle), especially around Mackay.</li>
+      <li><strong>Show Camo and Original in southern inland and acreage ads</strong> (Darling Downs, Toowoomba, the SEQ fringe).</li>
+      <li><strong>Treat Pink as a niche (10%).</strong> Test a gift angle, and don't stock to the Townsville spike.</li>
+    </ul>
+  </section>
+
+  <p class="foot">Page 2 source: Shopify (ShopifyQL) net items sold by variant SKU, 6 Aug to 13 Oct 2026. QLD = shipping region Queensland (381 mats). Australia = 1,294 mats. Average net sale per mat = net sales ÷ net items (after discounts). Business buyers here = business email domain or company name at checkout (131 mats). Buyers found only by a trade word in their email aren't split out. Areas group QGSO council regions. Small areas are directional only. Data: <code>variant_mix_qld.json</code>, <code>qld_variant_by_pc_2026-10-13.txt</code>.</p>
 </div>
