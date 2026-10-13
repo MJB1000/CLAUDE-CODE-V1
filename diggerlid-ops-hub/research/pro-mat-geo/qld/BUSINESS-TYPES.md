@@ -1,69 +1,77 @@
-# QLD PRO Mat buyers by likely business type (13 Oct 2026)
+# QLD PRO Mat buyers by business type (final, 13 Oct 2026)
+
+**Headline: about 28% of QLD PRO Mat orders are likely businesses (178 of 639).** Diesel and
+mechanical workshops, civil, earthmoving and plant hire, and farming make up just over half of them.
+Business orders average about 1.9 mats against 1.2 for everyone else.
 
 **Scope:** all 639 QLD PRO Mat orders, 1 Mar to 13 Oct 2026 (ShopifyQL, `product_title CONTAINS 'PRO Mat'`,
-shipping region Queensland). Full coverage, built from aggregates only: orders grouped by
-`customer_email_domain` and by `billing_company` / `shipping_company`. No individual emails were pulled.
-Business names stay in the scratchpad. This file holds counts only (`business_types_qld.json`).
+shipping region Queensland). Built entirely from aggregates. No individual emails or addresses were pulled,
+and no names are stored here. Business names stay in the session scratchpad. Data: `business_types_qld.json`.
 
-## Method
-1. **Email domain.** 547 orders (86%) use standard personal domains (gmail, hotmail, bigpond, outlook,
-   live, icloud, yahoo, ISPs). The other 92 orders use a business or organisation domain.
-2. **Shopify Company field.** 103 orders have one. 65 of those are on a personal email, so they add
-   businesses the domain pass misses.
-3. **Trade word in a generic email** (e.g. a plumbing@gmail-style address). Counted with ShopifyQL
-   `customer_email CONTAINS '<word>'` limited to the generic domains, so only counts come back. 33 trade words
-   tested (civil, earth, excav, bobcat, plant, hire, digger, diesel, mech, truck, auto, plumb, electric, build,
-   construct, farm, services and others). 28 generic-email orders matched: 13 already carry a company name and
-   15 are new. "hire" can false-match names, so those are flagged as likely, not certain.
-4. **Type inferred from the business name or domain only.** A web lookup of the names was blocked as
-   data leaving the store, so 37 orders with opaque names stay "unclear".
-Domain and company matches are deduplicated by name, so expect a small (±5) margin.
+## How businesses were found (each tier only adds orders not already counted)
 
-## Generic emails with a business attached
-Of the 547 orders on gmail, hotmail, bigpond, outlook and similar, about **80 (15%) are businesses**:
-65 have a company name at checkout and 15 more have a trade word in the email itself.
-
-## Result
-
-| | Orders | Share |
+| Tier | Signal | Orders added |
 |---|---|---|
-| Likely business buyers | **172** | **27%** |
-| Personal, no business signal | 467 | 73% |
+| 1 | Business or organisation email domain (not gmail, hotmail, bigpond etc.) | 92 |
+| 2 | Company name entered at checkout, on a generic email | 65 |
+| 3 | Trade word in a generic email address, 33 words (civil, diesel, plumb, farm, hire...) | 15 |
+| 4 | Expanded pass, 80+ more words: rural (cattle, station, downs), mechanical (motor, tyre, workshop), trades (paint, weld, solar), business inbox (info@, admin@, accounts@, pty, group) | 6 |
+| | **Total likely businesses** | **178 (28%)** |
 
-| Business type | Clear from name | + Estimated (37 unclear) | Total | Share |
+Tiers 3 and 4 use `customer_email CONTAINS '<word>'` limited to the 25 generic domains, so only counts come
+back. Tier 4 excludes every tier 3 word, so nothing is double counted. Words that commonly appear in
+surnames (hay, steel, glass, pool, ute) were left out on purpose.
+
+**Generic emails with a business attached:** 86 of the 547 orders on gmail, hotmail, bigpond, outlook and
+similar (16%) are businesses.
+
+**Searched but not available:** web lookups of business names (blocked as customer data leaving the
+store) and shipping address text such as "X Station" (not a field in ShopifyQL).
+
+## Business type
+
+| Business type | Clear from name | + Estimated | Total | Share |
 |---|---|---|---|---|
-| Mechanical, diesel & automotive | 31 | 3 | **34** | 20% |
-| Other services | 18 | 16 | **34** | 20% |
-| Civil, earthmoving & plant hire | 29 | 2 | **31** | 18% |
+| Mechanical, diesel & automotive | 33 | 3 | **36** | 20% |
+| Other services (landscaping, IT, consulting, hospitality, security, sole traders) | 20 | 16 | **36** | 20% |
+| Civil, earthmoving & plant hire | 31 | 2 | **33** | 19% |
 | Farming, grazing & agriculture | 15 | 8 | **23** | 13% |
 | Building, plumbing & electrical | 16 | 1 | **17** | 10% |
-| Engineering, fabrication & industrial | 11 | 4 | **15** | 9% |
-| Government, education & corporate | 7 | 1 | **8** | 5% |
+| Engineering, fabrication & industrial | 11 | 4 | **15** | 8% |
+| Government, education & corporate | 7 | 1 | **8** | 4% |
 | Transport & haulage | 5 | 1 | **6** | 3% |
 | Mining, resources & energy | 3 | 1 | **4** | 2% |
-| **All likely businesses** | 135 | 37 | **172** | 100% |
+| **Total** | 141 | 37 | **178** | 100% |
 
-**Estimates for the 37 unclear names are low-confidence guesses from the name pattern alone:**
-- Initials or couple-name partnerships ("A B & C Surname", "Name & Name Surname") and rural-sounding
-  holdings, creeks or gates were read as **farming** (8).
-- "Fits" or custom names were read as **mechanical** (3). Group or site names were read as **civil** (2).
-  Tech-style names were read as **engineering** (4).
-- Personal-name domains, generic "enterprises" and opaque words went to **other services** (16). Some of
-  these may be sole traders buying personally.
+**Estimated** = 37 names too opaque to classify confidently, guessed from the name pattern alone (low confidence):
+- Initials or couple-name partnerships, holdings, creeks and gates were read as farming (8).
+- "Fits" or custom names were read as mechanical (3), and group or site names as civil (2).
+- Tech-style names were read as engineering (4).
+- Personal-name domains and generic "enterprises" names went to other services (16).
 
-**Basket size:** orders with a company name average about **1.9 mats**, against **1.2** for orders without
-one. Several business orders bought 6 to 13 mats (fleet and workshop kit-outs).
+Tiers 3 and 4 carry the most uncertainty: a word match is a strong hint, not proof. Domain and company
+matches were deduplicated by name, so allow about ±5 on the type counts.
 
-## What it means (hypothesis, label as such)
-- More than one in four QLD PRO Mat orders is likely a business. That is still a floor: names-only
-  addresses (e.g. a surname plus initials at Gmail) can belong to sole traders and can't be detected.
-- **Diesel mechanics and workshops** plus **civil, earthmoving and plant hire** make up 44% of clearly identified (38% once the unclear names are estimated)
-  business buyers. Farming moves up to 13% with the estimates (cattle companies, stations, family partnerships).
-- Business buyers order bigger baskets. That supports a **multi-mat or fleet bundle** and a
-  "kit out the crew / every service ute" angle.
-- Meta: test interest audiences for diesel fitters, heavy-vehicle mechanics, plant hire and earthmoving
-  owners, and graziers in regional QLD. Pair them with the multi-mat offer.
+## What it means (hypotheses, small N per type)
+1. **28% is a floor.** Sole traders who use a plain name address on Gmail look identical to personal
+   buyers. The real business share is likely around 30% or more.
+2. **The core trades are diesel and mechanical workshops plus civil, earthmoving and plant hire**: 39% of
+   business buyers (45% of those classified clearly). Farming and grazing is third at 13%, and higher once the
+   estimates are included. This matches the regional QLD hot spots (Darling Downs, Central Highlands, Mackay).
+3. **Business buyers buy bigger baskets.** About 1.9 mats per order with a company name against 1.2 without.
+   Several workshop and fleet orders took 6 to 13 mats.
+4. **Most businesses buy like consumers.** 86 of the 178 (48%) checked out with a generic email, so B2B
+   accounts or trade portals aren't needed. Consumer checkout plus a multi-mat offer is the path.
 
-## Re-run
-- Any state or date range: rerun the two ShopifyQL groupings (domain, company) and re-classify.
-- Order-level classifier for a raw Shopify export (adds the trade-word-in-email tier): `business_types.py`.
+## Actions to test
+- **Multi-mat or fleet bundle** (e.g. 3 or 5 mats) with "kit out every service ute" framing.
+- **Meta audiences** in regional QLD: diesel fitters and heavy-vehicle mechanics, plant hire and earthmoving
+  owners, graziers and cattle stations. Use the bundle as the offer.
+- **Checkout:** a clearly labelled "Business name (for your tax invoice)" field. More businesses would identify
+  themselves, which sharpens this analysis and lookalike seeds.
+
+## Re-run (any state or period)
+1. `GROUP BY customer_email_domain` and `GROUP BY billing_company, shipping_company` (ShopifyQL, aggregates).
+2. Trade-word counts with `customer_email CONTAINS` limited to the generic domains, `GROUP BY` the company
+   fields to separate new finds.
+3. For a raw Shopify export on your own machine: `python3 business_types.py orders_export.csv QLD`.
