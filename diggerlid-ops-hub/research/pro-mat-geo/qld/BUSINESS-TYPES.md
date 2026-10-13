@@ -1,54 +1,52 @@
-# QLD PRO Mat buyers by likely business type (interim, 13 Oct 2026)
+# QLD PRO Mat buyers by likely business type (13 Oct 2026)
 
-**Status: early sample only.** The live Shopify pull was blocked by the session permission
-checker after 5 pages (250 orders nationally, 56 shipped to QLD, all from late March to early
-May 2026, so Original-era buyers only). Finish it with `business_types.py` on a Shopify export.
+**Scope:** all 639 QLD PRO Mat orders, 1 Mar to 13 Oct 2026 (ShopifyQL, `product_title CONTAINS 'PRO Mat'`,
+shipping region Queensland). Full coverage, built from aggregates only: orders grouped by
+`customer_email_domain` and by `billing_company` / `shipping_company`. No individual emails were pulled.
+Business names stay in the scratchpad. This file holds counts only (`business_types_qld.json`).
 
 ## Method
-Per order, first match wins:
-1. **Shopify Company field** (shipping or billing). Primary. Only fetched for pages 1 and 2.
-2. **Business email domain** (anything that is not gmail, bigpond, hotmail etc.).
-3. **Trade word in the email** on a personal domain (e.g. a "civil" or "farmer" address). Flagged as *likely*.
+1. **Email domain.** 547 orders (86%) use standard personal domains (gmail, hotmail, bigpond, outlook,
+   live, icloud, yahoo, ISPs). The other 92 orders use a business or organisation domain.
+2. **Shopify Company field.** 103 orders have one. 65 of those are on a personal email, so they add
+   businesses the domain pass misses.
+3. **Type inferred from the business name or domain only.** A web lookup of the names was blocked as
+   data leaving the store, so 37 orders with opaque names stay "unclear".
+Domain and company matches are deduplicated by name, so expect a small (±5) margin.
 
-No names, emails or company names are stored. Counts only.
-
-## Sample result (QLD, n = 56)
+## Result
 
 | | Orders | Share |
 |---|---|---|
-| Likely business buyers | 11 | 20% |
-| Personal or no signal | 45 | 80% |
+| Likely business buyers | **157** | **25%** |
+| Personal, no business signal | 482 | 75% |
 
-| Business type | Orders |
-|---|---|
-| Civil, earthmoving & contracting | 3 |
-| Farming, agriculture & turf | 3 |
-| Mechanical, engine & service | 2 |
-| Animal & equine | 1 |
-| Hospitality | 1 |
-| Unclear | 1 |
+| Business type | Orders | Share of classified |
+|---|---|---|
+| Mechanical, diesel & automotive | 28 | 23% |
+| Civil, earthmoving & plant hire | 24 | 20% |
+| Other services (landscaping, IT, consulting, hospitality, tree work) | 17 | 14% |
+| Farming, grazing & agriculture | 13 | 11% |
+| Building, plumbing & electrical | 12 | 10% |
+| Engineering, fabrication & industrial | 11 | 9% |
+| Government, education & corporate | 7 | 6% |
+| Transport & haulage | 5 | 4% |
+| Mining, resources & energy | 3 | 2% |
+| Unclear from name | 37 | n/a |
 
-Evidence: Company field 4, business domain 4, trade word in email 3.
+**Basket size:** orders with a company name average about **1.9 mats**, against **1.2** for orders without
+one. Several business orders bought 6 to 13 mats (fleet and workshop kit-outs).
 
-**Coverage matters.** Pages with the Company field found 25% business (6 of 24). Pages without
-it found 16% (5 of 32). So 20% is a floor, likely nearer a quarter.
+## What it means (hypothesis, label as such)
+- One in four QLD PRO Mat orders is likely a business. That is a floor: trade words in personal email
+  addresses (e.g. a "civil" Gmail address) can't be seen in aggregates and aren't counted.
+- **Diesel mechanics and workshops** plus **civil, earthmoving and plant hire** make up 43% of identified
+  business buyers. Farming and grazing (cattle companies, stations, cropping) is next.
+- Business buyers order bigger baskets. That supports a **multi-mat or fleet bundle** and a
+  "kit out the crew / every service ute" angle.
+- Meta: test interest audiences for diesel fitters, heavy-vehicle mechanics, plant hire and earthmoving
+  owners, and graziers in regional QLD. Pair them with the multi-mat offer.
 
-## National read from the same 250 orders (directional)
-Where the Company field was filled nationally, mechanical, heavy diesel, hydraulics and automotive
-workshops were the single biggest group, ahead of farming and civil. QLD shows the same three
-groups in a different order: civil and farming first, then mechanical.
-
-## What it suggests (hypothesis, small N)
-- PRO Mat is mainly bought on personal email, so most buyers are owner-operators or employees
-  buying for themselves, not businesses buying through accounts.
-- The business minority clusters in **civil/earthmoving, farming and mechanical workshops**.
-  These match the regional QLD hot spots (Darling Downs, Central Highlands, Mackay).
-- Worth testing: Meta interest and lookalike audiences around diesel fitters, mechanics and
-  farm operators, and a "tax-deductible tool for your ute" angle for the business minority.
-
-## To finish
-Shopify admin → Orders → filter date from 23 Mar 2026 → Export (CSV, plain). Then run:
-```
-python3 business_types.py orders_export.csv QLD
-python3 business_types.py orders_export.csv NSW   # any state
-```
+## Re-run
+- Any state or date range: rerun the two ShopifyQL groupings (domain, company) and re-classify.
+- Order-level classifier for a raw Shopify export (adds the trade-word-in-email tier): `business_types.py`.

@@ -1,0 +1,35 @@
+{
+ "qld_pro_mat_orders": 639,
+ "standard_personal_domain_orders": 547,
+ "non_standard_domain_orders": 92,
+ "company_field_orders": 103,
+ "likely_business_orders": 157,
+ "likely_business_pct": 24.6,
+ "by_source": {
+  "business email domain": 92,
+  "company name on personal email": 65
+ },
+ "by_type": {
+  "Unclear from name": 37,
+  "Mechanical, diesel & automotive": 28,
+  "Civil, earthmoving & plant hire": 24,
+  "Other services": 17,
+  "Farming, grazing & agriculture": 13,
+  "Building, plumbing & electrical": 12,
+  "Engineering, fabrication & industrial": 11,
+  "Government, education & corporate": 7,
+  "Transport & haulage": 5,
+  "Mining, resources & energy": 3
+ },
+ "by_type_excl_unclear_pct": {
+  "Mechanical, diesel & automotive": 23,
+  "Civil, earthmoving & plant hire": 20,
+  "Other services": 14,
+  "Farming, grazing & agriculture": 11,
+  "Building, plumbing & electrical": 10,
+  "Engineering, fabrication & industrial": 9,
+  "Government, education & corporate": 6,
+  "Transport & haulage": 4,
+  "Mining, resources & energy": 2
+ }
+}
