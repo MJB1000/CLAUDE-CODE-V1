@@ -3,18 +3,19 @@
  "standard_personal_domain_orders": 547,
  "non_standard_domain_orders": 92,
  "company_field_orders": 103,
- "likely_business_orders": 172,
- "likely_business_pct": 26.9,
+ "likely_business_orders": 178,
+ "likely_business_pct": 27.9,
  "by_source": {
   "business email domain": 92,
   "company name on personal email": 65,
-  "trade word in generic email": 15
+  "trade word in generic email": 15,
+  "expanded word pass": 6
  },
- "by_type": {
+ "by_type_clear": {
   "Unclear from name": 37,
-  "Mechanical, diesel & automotive": 31,
-  "Civil, earthmoving & plant hire": 29,
-  "Other services": 18,
+  "Mechanical, diesel & automotive": 33,
+  "Civil, earthmoving & plant hire": 31,
+  "Other services": 20,
   "Building, plumbing & electrical": 16,
   "Farming, grazing & agriculture": 15,
   "Engineering, fabrication & industrial": 11,
@@ -22,21 +23,10 @@
   "Transport & haulage": 5,
   "Mining, resources & energy": 3
  },
- "by_type_excl_unclear_pct": {
-  "Mechanical, diesel & automotive": 23,
-  "Civil, earthmoving & plant hire": 21,
-  "Other services": 13,
-  "Building, plumbing & electrical": 12,
-  "Farming, grazing & agriculture": 11,
-  "Engineering, fabrication & industrial": 8,
-  "Government, education & corporate": 5,
-  "Transport & haulage": 4,
-  "Mining, resources & energy": 2
- },
- "estimated_unclear_allocation": {
+ "estimated_from_unclear": {
   "Mechanical, diesel & automotive": 3,
-  "Other services": 16,
   "Civil, earthmoving & plant hire": 2,
+  "Other services": 16,
   "Farming, grazing & agriculture": 8,
   "Building, plumbing & electrical": 1,
   "Engineering, fabrication & industrial": 4,
@@ -44,15 +34,26 @@
   "Transport & haulage": 1,
   "Mining, resources & energy": 1
  },
- "by_type_with_estimates": {
-  "Mechanical, diesel & automotive": 34,
-  "Other services": 34,
-  "Civil, earthmoving & plant hire": 31,
+ "by_type_final": {
+  "Mechanical, diesel & automotive": 36,
+  "Other services": 36,
+  "Civil, earthmoving & plant hire": 33,
   "Farming, grazing & agriculture": 23,
   "Building, plumbing & electrical": 17,
   "Engineering, fabrication & industrial": 15,
   "Government, education & corporate": 8,
   "Transport & haulage": 6,
   "Mining, resources & energy": 4
+ },
+ "final_share_pct": {
+  "Mechanical, diesel & automotive": 20.2,
+  "Other services": 20.2,
+  "Civil, earthmoving & plant hire": 18.5,
+  "Farming, grazing & agriculture": 12.9,
+  "Building, plumbing & electrical": 9.6,
+  "Engineering, fabrication & industrial": 8.4,
+  "Government, education & corporate": 4.5,
+  "Transport & haulage": 3.4,
+  "Mining, resources & energy": 2.2
  }
 }
