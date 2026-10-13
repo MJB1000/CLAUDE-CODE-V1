@@ -1,24 +1,19 @@
-# 🛰️ Repo Radar — 2026-10-12
+# 🛰️ Repo Radar — 2026-10-13
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_10 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_7 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[VoltAgent/official-mcp-servers](https://github.com/VoltAgent/official-mcp-servers)** — ⭐ 296 · 27.6/day · — · since 2026-10-01
-   > A curated directory of 280+ official MCP servers from the companies behind the products. No unofficial forks, no abandoned projects.
-2. **[Kentucky-ai/opentakeoff](https://github.com/Kentucky-ai/opentakeoff)** — ⭐ 341 · 2.9/day · TypeScript · since 2026-06-17
-   > Open-source (AGPL-3.0) PDF takeoff for construction & flooring — the first engine an AI agent drives natively over MCP, not bolted on…
+1. **[zqc3117/Spotter](https://github.com/zqc3117/Spotter)** — ⭐ 155 · 11.1/day · Python · since 2026-09-29
+   > Official codebase for Spotter: Let the Embodied Model Lead, and the VLM Reflect for It
+2. **[yasewang1337-svg/winutil-cn](https://github.com/yasewang1337-svg/winutil-cn)** — ⭐ 570 · 4.8/day · PowerShell · since 2026-06-15
+   > 面向 Windows 11 的中文软件管理与系统维护工具，支持 Windows 10 / 11 x64 镜像制作与默认只读的 MCP 接口。基于 Chris Titus Tech Windows Utility。
 
 ## Multimodal AI
 
-1. **[opennookorg/betterwispr](https://github.com/opennookorg/betterwispr)** — ⭐ 188 · 44.7/day · Swift · since 2026-10-07
-   > Free, open-source, local-first dictation app for macOS. Hold a shortcut, speak, and text is typed into any app. On-device speech-to-text…
-2. **[MirroS-Lab/AgentGarten](https://github.com/MirroS-Lab/AgentGarten)** — ⭐ 156 · 40.3/day · Python · since 2026-10-08
-   > AgentGarten: Code Worlds for Evolving Agents
-3. **[UditAkhourii/cdaf](https://github.com/UditAkhourii/cdaf)** — ⭐ 202 · 4.3/day · Python · since 2026-08-26
-   > CDAF (Cached Descriptive Asset Files) - open sidecar format for video so AI agents stop re-analyzing the same footage. Spec, CLI, agent…
+_Nothing new this run._
 
 ## Marketing & analytics tech
 
@@ -26,8 +21,8 @@ _Nothing new this run._
 
 ## Web/app dev stack
 
-1. **[radiumcoders/23rd.dev](https://github.com/radiumcoders/23rd.dev)** — ⭐ 151 · 1.8/day · TypeScript · since 2026-07-19
-   > Opinionated UI Components for shippers. An open source library of tasteful Web components. Framework agnostic. Copy, paste, ship.
+1. **[deeplethe/solid-glass](https://github.com/deeplethe/solid-glass)** — ⭐ 230 · 230.0/day · TypeScript · since 2026-10-12
+   > A design system for AI applications. Material, physical, tactile, technical.
 
 ## Self-development & productivity
 
@@ -35,8 +30,12 @@ _Nothing new this run._
 
 ## Claude & agent design craft
 
-1. **[natoshikamoto/a1lon9bot](https://github.com/natoshikamoto/a1lon9bot)** — ⭐ 802 · 7.8/day · JavaScript · since 2026-07-01
-   > a1on9 bot — An AI agent built from the digital footprint of @a1on9. Powered by a1on9's entire tweet history, trading insights, market…
+1. **[oil-oil/oil-ui](https://github.com/oil-oil/oil-ui)** — ⭐ 1,385 · 106.9/day · Python · since 2026-09-30
+   > UI design skill for Claude Code, Codex and other AI agents: explore distinct directions, compare them side by side, refine against real…
+2. **[oil-oil/oil-motion](https://github.com/oil-oil/oil-motion)** — ⭐ 2,578 · 38.7/day · Python · since 2026-08-07
+   > Web animation skill for Claude Code & Codex. 帮你做跟着滚动和鼠标动的网页动画。
+3. **[justxor/claude-code-pro-course](https://github.com/justxor/claude-code-pro-course)** — ⭐ 291 · 23.1/day · Shell · since 2026-09-30
+   > Claude Code PRO — полный курс и гайд на русском: CLAUDE.md, settings, skills, subagents, hooks, MCP, плагины, CI. 8 лабораторных…
 
 ## Community & social media management
 
@@ -52,8 +51,8 @@ _Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-1. **[aindeev/agent-chrome-relay](https://github.com/aindeev/agent-chrome-relay)** — ⭐ 251 · 146.5/day · Go · since 2026-10-10
-   > Let your AI agents use your Chrome, signed in as you, in background tabs. By Alexey Indeev · blog: read.aindeev.com · X: @AlexeyIndeev
+1. **[rociiu/talorys](https://github.com/rociiu/talorys)** — ⭐ 905 · 334.4/day · TypeScript · since 2026-10-10
+   > Your personal AI agent in your own Cloudflare account. Chat, memory, tasks, notes and scheduled reminders, deployed with one command: npx…
 
 ## Ads & paid growth
 
@@ -61,10 +60,7 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[yangbin1322/hongguo-player](https://github.com/yangbin1322/hongguo-player)** — ⭐ 207 · 17.1/day · — · since 2026-09-29
-   > 红果短剧电脑版 · 不用安卓模拟器，直接在 Windows / macOS 上刷红果短剧 · 国内下载: hongguo.235698.xyz
-2. **[AbubakrChan/product-launch-motion](https://github.com/AbubakrChan/product-launch-motion)** — ⭐ 156 · 2.0/day · JavaScript · since 2026-07-27
-   > Claude Code skill for product launch motion design — make launch videos, promos and demo reels from code. HTML/CSS/GSAP compositions…
+_Nothing new this run._
 
 ## E-commerce & Shopify
 
