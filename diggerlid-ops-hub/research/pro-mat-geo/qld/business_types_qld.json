@@ -3,19 +3,20 @@
  "standard_personal_domain_orders": 547,
  "non_standard_domain_orders": 92,
  "company_field_orders": 103,
- "likely_business_orders": 157,
- "likely_business_pct": 24.6,
+ "likely_business_orders": 172,
+ "likely_business_pct": 26.9,
  "by_source": {
   "business email domain": 92,
-  "company name on personal email": 65
+  "company name on personal email": 65,
+  "trade word in generic email": 15
  },
  "by_type": {
   "Unclear from name": 37,
-  "Mechanical, diesel & automotive": 28,
-  "Civil, earthmoving & plant hire": 24,
-  "Other services": 17,
-  "Farming, grazing & agriculture": 13,
-  "Building, plumbing & electrical": 12,
+  "Mechanical, diesel & automotive": 31,
+  "Civil, earthmoving & plant hire": 29,
+  "Other services": 18,
+  "Building, plumbing & electrical": 16,
+  "Farming, grazing & agriculture": 15,
   "Engineering, fabrication & industrial": 11,
   "Government, education & corporate": 7,
   "Transport & haulage": 5,
@@ -23,12 +24,12 @@
  },
  "by_type_excl_unclear_pct": {
   "Mechanical, diesel & automotive": 23,
-  "Civil, earthmoving & plant hire": 20,
-  "Other services": 14,
+  "Civil, earthmoving & plant hire": 21,
+  "Other services": 13,
+  "Building, plumbing & electrical": 12,
   "Farming, grazing & agriculture": 11,
-  "Building, plumbing & electrical": 10,
-  "Engineering, fabrication & industrial": 9,
-  "Government, education & corporate": 6,
+  "Engineering, fabrication & industrial": 8,
+  "Government, education & corporate": 5,
   "Transport & haulage": 4,
   "Mining, resources & energy": 2
  }
