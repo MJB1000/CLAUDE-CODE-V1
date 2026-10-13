@@ -50,7 +50,7 @@ one. Several business orders bought 6 to 13 mats (fleet and workshop kit-outs).
 - More than one in four QLD PRO Mat orders is likely a business. That is still a floor: names-only
   addresses (e.g. a surname plus initials at Gmail) can belong to sole traders and can't be detected.
 - **Diesel mechanics and workshops** plus **civil, earthmoving and plant hire** make up 44% of identified
-  business buyers. Farming and grazing (cattle companies, stations, cropping) is next.
+  business buyers. Building trades and farming (cattle companies, stations, cropping) follow at 11 to 12% each.
 - Business buyers order bigger baskets. That supports a **multi-mat or fleet bundle** and a
   "kit out the crew / every service ute" angle.
 - Meta: test interest audiences for diesel fitters, heavy-vehicle mechanics, plant hire and earthmoving
