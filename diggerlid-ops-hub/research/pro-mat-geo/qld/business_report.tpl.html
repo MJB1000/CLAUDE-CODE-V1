@@ -1,0 +1,158 @@
+<title>Who Buys PRO Mats in QLD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one work-order column. ELI5 box, then three numbered findings, each one chart + two lines. */
+:root{
+  --bg:#fbfaf6; --surface:#f1efe7; --ink:#1b1a17; --ink2:#5a564d; --rule:#dedad0;
+  --land:#e9e5da; --landedge:#c9c3b4; --personal:#d6d0c1; --hi:#f2e600;
+  --mec:#d9480f; --civ:#a87d00; --farm:#3b7a3b; --oth:#77736a;
+  --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",Arial,sans-serif;
+  --f-data:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#161614; --surface:#201f1c; --ink:#efece3; --ink2:#aaa698; --rule:#34322d;
+  --land:#26251f; --landedge:#45423a; --personal:#45423b; --hi:#f2e600;
+  --mec:#ff7a3d; --civ:#e2b400; --farm:#6fb86f; --oth:#9a958a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#161614; --surface:#201f1c; --ink:#efece3; --ink2:#aaa698; --rule:#34322d;
+  --land:#26251f; --landedge:#45423a; --personal:#45423b; --hi:#f2e600;
+  --mec:#ff7a3d; --civ:#e2b400; --farm:#6fb86f; --oth:#9a958a; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 var(--f-body)}
+.wrap{max-width:780px;margin:0 auto;padding-inline:20px;padding-block:28px 44px;display:grid;gap:34px}
+.eyebrow{font:600 12px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.eyebrow b{background:var(--hi);color:#1b1a17;padding:4px 7px;letter-spacing:.1em}
+h1{font:700 clamp(32px,6vw,48px)/1.02 var(--f-display);margin:10px 0 8px;text-wrap:balance;text-transform:uppercase}
+.lede{margin:0;color:var(--ink2);max-width:64ch}
+.lede strong{color:var(--ink)}
+.eli5{background:var(--surface);border-left:5px solid var(--hi);padding:16px 20px}
+.eli5 h2{margin-bottom:10px}
+.eli5 ol{margin:0;padding-left:22px;display:grid;gap:8px}
+.eli5 li::marker{font:700 15px var(--f-display);color:var(--ink2)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-block:2px solid var(--ink)}
+.stat{padding:14px 12px 14px 0;min-width:0}
+.stat+.stat{padding-left:12px;border-left:1px solid var(--rule)}
+.stat .n{font:700 34px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.stat .l{font-size:13.5px;color:var(--ink2);margin-top:6px;line-height:1.35}
+h2{font:700 24px/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.02em;margin:0}
+.sec{display:grid;gap:10px}
+.sec .num{font:600 12px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.sub{font-size:14px;color:var(--ink2);margin:0}
+.take{margin:2px 0 0;max-width:68ch}
+.take strong{background:linear-gradient(transparent 62%,color-mix(in srgb,var(--hi) 55%,transparent) 62%)}
+.chart{overflow-x:auto}
+.chart svg{display:block;width:100%;min-width:560px;height:auto}
+.mapbox svg{display:block;width:100%;max-width:640px;height:auto;margin:0 auto}
+.grid{stroke:var(--rule);stroke-width:1}
+.avg{stroke:var(--ink);stroke-width:1.2;stroke-dasharray:3 3}
+.avgt{font:500 11px var(--f-data);fill:var(--ink)}
+.tick{font:500 11px var(--f-data);fill:var(--ink2)}
+.colh{font:600 11px var(--f-body);fill:var(--ink2);letter-spacing:.08em;text-transform:uppercase}
+.lab{font:400 13px var(--f-body);fill:var(--ink2)}
+.lab.city{font-weight:700;fill:var(--ink)}
+.val{font:500 12.5px var(--f-data);fill:var(--ink);font-variant-numeric:tabular-nums}
+.val.hi{font-weight:700}
+.pct{fill:var(--ink2)}
+.rb{fill:var(--ink)} .rp{fill:var(--personal)}
+.b.mec{fill:var(--mec)} .b.civ{fill:var(--civ)} .b.farm{fill:var(--farm)} .b.oth{fill:var(--oth)}
+.b.est{fill-opacity:.38}
+.land{fill:var(--land);stroke:var(--landedge);stroke-width:.8}
+.sbox{fill:none;stroke:var(--ink);stroke-width:1;stroke-dasharray:3 2}
+.lead{stroke:var(--ink);stroke-width:.8;stroke-dasharray:3 2}
+.inset{fill:var(--bg);stroke:var(--ink);stroke-width:1.2}
+.itl{font:600 11px var(--f-body);fill:var(--ink2);letter-spacing:.06em;text-transform:uppercase}
+.pl{font:italic 11px var(--f-body);fill:var(--ink2)}
+.d{stroke:var(--bg);stroke-width:1;fill-opacity:.92}
+.d.mec{fill:var(--mec)} .d.civ{fill:var(--civ)} .d.farm{fill:var(--farm)} .d.oth{fill:var(--oth)}
+.d.word{fill:none;stroke:var(--ink);stroke-width:1.4}
+.key{display:flex;gap:6px 18px;flex-wrap:wrap;font-size:13px;color:var(--ink2)}
+.key i{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-2px;margin-right:6px}
+.key i.sq{border-radius:2px}
+.key i.ring{background:none;border:1.5px solid var(--ink)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.cols>div{min-width:0;display:grid;gap:10px;align-content:start}
+ul{margin:0;padding-left:18px;display:grid;gap:8px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td{padding:6px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+td.n{text-align:right;font:500 13px var(--f-data);font-variant-numeric:tabular-nums;padding-left:12px;white-space:nowrap}
+tr.tot td{border-bottom:2px solid var(--ink);font-weight:700}
+.foot{font-size:12.5px;color:var(--ink2);border-top:1px solid var(--rule);padding-top:12px;line-height:1.55}
+code{font:500 12px var(--f-data)}
+@media (max-width:640px){.cols{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(3){padding-left:0;border-left:0}.stat:nth-child(n+3){border-top:1px solid var(--rule)}}
+</style>
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><b>RP-007</b><span>DiggerLid · PRO Mat · Queensland · 1 Mar to 13 Oct 2026</span></div>
+    <h1>Who buys PRO Mats in QLD</h1>
+    <p class="lede"><strong>Regional Queenslanders buy far more mats per person than city people, and about 1 in 4 orders comes from a business.</strong> This report combines where mats sell, weighted by population, with who is buying.</p>
+  </header>
+
+  <section class="eli5" aria-label="Plain-English summary">
+    <h2>The short version</h2>
+    <ol>
+      <li><strong>Country beats city.</strong> Per person, the Darling Downs buys about 12 times more mats than Brisbane.</li>
+      <li><strong>About 1 in 4 orders is a business.</strong> That's 173 of 639 orders, and it's a minimum.</li>
+      <li><strong>The businesses fix machines, move dirt or farm.</strong> Mechanics, civil and plant hire, and farmers make up half of them.</li>
+      <li><strong>Businesses buy more at once:</strong> about 2 mats per order, against 1 for everyone else.</li>
+      <li><strong>In the city, a third of buyers are businesses. In the country, a quarter are.</strong> Out there, farmers and operators buy on their personal email.</li>
+    </ol>
+  </section>
+
+  <section class="stats" aria-label="Key numbers">
+    <div class="stat"><div class="n">12×</div><div class="l">mats per person, Darling Downs vs Brisbane</div></div>
+    <div class="stat"><div class="n">27%</div><div class="l">of orders are likely businesses (173 of 639)</div></div>
+    <div class="stat"><div class="n">52%</div><div class="l">of businesses are mechanics, civil or farming</div></div>
+    <div class="stat"><div class="n">1.9 vs 1.2</div><div class="l">mats per order, business vs everyone else</div></div>
+  </section>
+
+  <section class="sec">
+    <div class="num">Finding 1 · Where mats sell</div>
+    <h2>Regional QLD buys the most per person</h2>
+    <p class="sub">PRO Mat orders per 10,000 residents, by region. The dark part of each bar is business buyers. Cities are in bold.</p>
+    <div class="chart">{{REGION}}</div>
+    <div class="key"><span><i class="sq" style="background:var(--ink)"></i>Business orders</span><span><i class="sq" style="background:var(--personal)"></i>Personal orders</span><span>Right column: business share of the region's orders</span></div>
+    <p class="take"><strong>Volume per person is a regional story; business share is a city story.</strong> The acreage fringe, Darling Downs and Central Highlands buy 4 to 6 times the QLD average. Brisbane and the Gold Coast barely buy per person, but a third of the orders they do place are businesses.</p>
+  </section>
+
+  <section class="sec">
+    <div class="num">Finding 2 · Who the businesses are</div>
+    <h2>Mechanics, dirt movers and farmers</h2>
+    <p class="sub">Likely business orders by trade (173 total). The faded end of each bar is a best guess from an unclear business name.</p>
+    <div class="chart">{{TRADES}}</div>
+    <p class="take"><strong>Three trades make up half of business buyers:</strong> diesel and mechanical workshops (20%), civil, earthmoving and plant hire (19%), and farming and grazing (13%).</p>
+  </section>
+
+  <section class="sec">
+    <div class="num">Finding 3 · Where the businesses are</div>
+    <h2>Business buyers on the map</h2>
+    <p class="sub">Each dot is a postcode, sized by its number of business orders and coloured by trade. South East QLD is enlarged.</p>
+    <div class="mapbox">{{MAP}}</div>
+    <div class="key"><span><i style="background:var(--mec)"></i>Mechanical &amp; diesel</span><span><i style="background:var(--civ)"></i>Civil &amp; plant hire</span><span><i style="background:var(--farm)"></i>Farming &amp; grazing</span><span><i style="background:var(--oth)"></i>Other trades &amp; services</span><span><i class="ring"></i>Trade word in email (type not tied to place)</span></div>
+    <p class="take"><strong>Mechanical and civil businesses cluster along the coast and the Brisbane-Ipswich corridor, while farming businesses sit inland.</strong> Outside Brisbane (48), the most business orders come from the Darling Downs (17), Mackay &amp; Isaac (15), Wide Bay (14) and the SEQ acreage fringe (13).</p>
+  </section>
+
+  <section class="cols">
+    <div>
+      <h2>What to do</h2>
+      <ul>
+        <li><strong>Spend Meta budget on regional QLD</strong> (Darling Downs, the SEQ acreage fringe, Central Highlands, Mackay, Gympie). Volume per person is highest there.</li>
+        <li><strong>Add a 3 or 5 mat bundle</strong> with "kit out every service ute" framing, aimed at workshops and plant hire businesses in Brisbane, Ipswich and Mackay.</li>
+        <li><strong>Target audiences</strong> of diesel fitters, heavy-vehicle mechanics, earthmoving and plant hire owners, and graziers.</li>
+        <li><strong>Add a checkout field</strong> labelled "Business name (for your tax invoice)", so more business buyers show up.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>How we found the businesses</h2>
+      <table>
+        <tr><td>Business email domain</td><td class="n">92</td></tr>
+        <tr><td>Company name at checkout, on a personal email</td><td class="n">60</td></tr>
+        <tr><td>Trade word in a personal email (e.g. plumbing@gmail)</td><td class="n">21</td></tr>
+        <tr class="tot"><td>Likely business orders</td><td class="n">173</td></tr>
+      </table>
+      <p class="sub">81 of the 547 orders on Gmail, Hotmail or Bigpond style addresses (15%) are businesses.</p>
+    </div>
+  </section>
+
+  <p class="foot">Source: Shopify (ShopifyQL), aggregate counts only. No emails, names or addresses were pulled or stored. Population: QGSO council estimates 2025, grouped into regions. Orders: 639 QLD PRO Mat orders, 1 Mar to 13 Oct 2026. 27% is a floor, because sole traders with plain name emails look like personal buyers. Trade-word matches are strong hints, not proof. 32 orders have a guessed trade, so allow about ±5 per trade. Method and data: <code>research/pro-mat-geo/qld/BUSINESS-TYPES.md</code>, <code>business_geo_qld.json</code>.</p>
+</div>
