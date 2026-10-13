@@ -30,18 +30,26 @@ Of the 547 orders on gmail, hotmail, bigpond, outlook and similar, about **80 (1
 | Likely business buyers | **172** | **27%** |
 | Personal, no business signal | 467 | 73% |
 
-| Business type | Orders | Share of classified |
-|---|---|---|
-| Mechanical, diesel & automotive | 31 | 23% |
-| Civil, earthmoving & plant hire | 29 | 21% |
-| Other services (landscaping, IT, consulting, hospitality, tree work) | 18 | 13% |
-| Building, plumbing & electrical | 16 | 12% |
-| Farming, grazing & agriculture | 15 | 11% |
-| Engineering, fabrication & industrial | 11 | 8% |
-| Government, education & corporate | 7 | 5% |
-| Transport & haulage | 5 | 4% |
-| Mining, resources & energy | 3 | 2% |
-| Unclear from name | 37 | n/a |
+| Business type | Clear from name | + Estimated (37 unclear) | Total | Share |
+|---|---|---|---|---|
+| Mechanical, diesel & automotive | 31 | 3 | **34** | 20% |
+| Other services | 18 | 16 | **34** | 20% |
+| Civil, earthmoving & plant hire | 29 | 2 | **31** | 18% |
+| Farming, grazing & agriculture | 15 | 8 | **23** | 13% |
+| Building, plumbing & electrical | 16 | 1 | **17** | 10% |
+| Engineering, fabrication & industrial | 11 | 4 | **15** | 9% |
+| Government, education & corporate | 7 | 1 | **8** | 5% |
+| Transport & haulage | 5 | 1 | **6** | 3% |
+| Mining, resources & energy | 3 | 1 | **4** | 2% |
+| **All likely businesses** | 135 | 37 | **172** | 100% |
+
+**Estimates for the 37 unclear names are low-confidence guesses from the name pattern alone:**
+- Initials or couple-name partnerships ("A B & C Surname", "Name & Name Surname") and rural-sounding
+  holdings, creeks or gates were read as **farming** (8).
+- "Fits" or custom names were read as **mechanical** (3). Group or site names were read as **civil** (2).
+  Tech-style names were read as **engineering** (4).
+- Personal-name domains, generic "enterprises" and opaque words went to **other services** (16). Some of
+  these may be sole traders buying personally.
 
 **Basket size:** orders with a company name average about **1.9 mats**, against **1.2** for orders without
 one. Several business orders bought 6 to 13 mats (fleet and workshop kit-outs).
@@ -49,8 +57,8 @@ one. Several business orders bought 6 to 13 mats (fleet and workshop kit-outs).
 ## What it means (hypothesis, label as such)
 - More than one in four QLD PRO Mat orders is likely a business. That is still a floor: names-only
   addresses (e.g. a surname plus initials at Gmail) can belong to sole traders and can't be detected.
-- **Diesel mechanics and workshops** plus **civil, earthmoving and plant hire** make up 44% of identified
-  business buyers. Building trades and farming (cattle companies, stations, cropping) follow at 11 to 12% each.
+- **Diesel mechanics and workshops** plus **civil, earthmoving and plant hire** make up 44% of clearly identified (38% once the unclear names are estimated)
+  business buyers. Farming moves up to 13% with the estimates (cattle companies, stations, family partnerships).
 - Business buyers order bigger baskets. That supports a **multi-mat or fleet bundle** and a
   "kit out the crew / every service ute" angle.
 - Meta: test interest audiences for diesel fitters, heavy-vehicle mechanics, plant hire and earthmoving

@@ -32,5 +32,27 @@
   "Government, education & corporate": 5,
   "Transport & haulage": 4,
   "Mining, resources & energy": 2
+ },
+ "estimated_unclear_allocation": {
+  "Mechanical, diesel & automotive": 3,
+  "Other services": 16,
+  "Civil, earthmoving & plant hire": 2,
+  "Farming, grazing & agriculture": 8,
+  "Building, plumbing & electrical": 1,
+  "Engineering, fabrication & industrial": 4,
+  "Government, education & corporate": 1,
+  "Transport & haulage": 1,
+  "Mining, resources & energy": 1
+ },
+ "by_type_with_estimates": {
+  "Mechanical, diesel & automotive": 34,
+  "Other services": 34,
+  "Civil, earthmoving & plant hire": 31,
+  "Farming, grazing & agriculture": 23,
+  "Building, plumbing & electrical": 17,
+  "Engineering, fabrication & industrial": 15,
+  "Government, education & corporate": 8,
+  "Transport & haulage": 6,
+  "Mining, resources & energy": 4
  }
 }
