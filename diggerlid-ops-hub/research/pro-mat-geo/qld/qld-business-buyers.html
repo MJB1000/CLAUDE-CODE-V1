@@ -1,0 +1,96 @@
+<title>Who Buys PRO Mats in QLD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one narrow work-order column; stats strip, one chart, two short lists. */
+:root{
+  --bg:#fbfaf6; --surface:#f1efe7; --ink:#1b1a17; --ink2:#55524a; --rule:#dedad0;
+  --bar:#8b877c; --core:#1b1a17; --est:#d8d3c4; --hi:#f2e600;
+  --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",Arial,sans-serif;
+  --f-data:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#161614; --surface:#201f1c; --ink:#efece3; --ink2:#a9a597; --rule:#34322d;
+  --bar:#7d7a70; --core:#efece3; --est:#46433c; --hi:#f2e600; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#161614; --surface:#201f1c; --ink:#efece3; --ink2:#a9a597; --rule:#34322d;
+  --bar:#7d7a70; --core:#efece3; --est:#46433c; --hi:#f2e600; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 var(--f-body)}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px;padding-block:28px 40px;display:grid;gap:26px}
+.eyebrow{font:600 12px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.eyebrow b{background:var(--hi);color:#1b1a17;padding:4px 7px;letter-spacing:.1em}
+h1{font:700 clamp(32px,6vw,46px)/1.02 var(--f-display);margin:10px 0 8px;text-wrap:balance;text-transform:uppercase;letter-spacing:.01em}
+.lede{margin:0;color:var(--ink2);max-width:62ch}
+.lede strong{color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-block:2px solid var(--ink)}
+.stat{padding:14px 14px 14px 0;min-width:0}
+.stat+.stat{padding-left:14px;border-left:1px solid var(--rule)}
+.stat .n{font:700 38px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.stat .l{font-size:14px;color:var(--ink2);margin-top:6px;line-height:1.35}
+h2{font:700 22px/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.02em;margin:0 0 4px}
+.sub{font-size:14px;color:var(--ink2);margin:0 0 12px}
+.chart{overflow-x:auto}
+.chart svg{display:block;width:100%;min-width:560px;height:auto}
+.grid{stroke:var(--rule);stroke-width:1}
+.tick{font:500 11px var(--f-data);fill:var(--ink2)}
+.lab{font:400 13px var(--f-body);fill:var(--ink2)}
+.lab.core{font-weight:700;fill:var(--ink)}
+.bar{fill:var(--bar)} .bar.core{fill:var(--core)} .est{fill:var(--est)}
+.val{font:500 12.5px var(--f-data);fill:var(--ink);font-variant-numeric:tabular-nums}
+.pct{fill:var(--ink2)}
+.key{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--ink2);margin-top:8px}
+.key i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-2px;margin-right:6px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.cols>div{min-width:0}
+ul{margin:0;padding-left:18px;display:grid;gap:8px}
+li::marker{color:var(--ink2)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td{padding:6px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+td.n{text-align:right;font:500 13px var(--f-data);font-variant-numeric:tabular-nums;padding-left:12px;white-space:nowrap}
+tr.tot td{border-bottom:2px solid var(--ink);font-weight:700}
+.foot{font-size:12.5px;color:var(--ink2);border-top:1px solid var(--rule);padding-top:12px;line-height:1.5}
+@media (max-width:600px){.cols{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat+.stat{padding-left:0;border-left:0;border-top:1px solid var(--rule)}}
+</style>
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><b>RP-007</b><span>DiggerLid · PRO Mat · Queensland · 13 Oct 2026</span></div>
+    <h1>Who buys PRO Mats in QLD</h1>
+    <p class="lede"><strong>About 28% of Queensland PRO Mat orders come from businesses</strong> (178 of 639 since March). Diesel workshops, civil and plant hire, and farming lead, and business orders carry more mats.</p>
+  </header>
+
+  <section class="stats" aria-label="Key numbers">
+    <div class="stat"><div class="n">28%</div><div class="l">of QLD PRO Mat orders are likely businesses (a floor)</div></div>
+    <div class="stat"><div class="n">1.9 vs 1.2</div><div class="l">mats per order: business vs everyone else</div></div>
+    <div class="stat"><div class="n">48%</div><div class="l">of business buyers check out with a Gmail-style address</div></div>
+  </section>
+
+  <section>
+    <h2>Business buyers by trade</h2>
+    <p class="sub">Orders, QLD PRO Mat, 1 Mar to 13 Oct 2026. The three core trades are in bold.</p>
+    <div class="chart"><svg viewBox="0 0 640 322" role="img" aria-label="Likely business buyers by type, QLD PRO Mat orders"><line x1="208.0" y1="4" x2="208.0" y2="300" class="grid"/><text x="208.0" y="316" class="tick" text-anchor="middle">0</text><line x1="297.5" y1="4" x2="297.5" y2="300" class="grid"/><text x="297.5" y="316" class="tick" text-anchor="middle">10</text><line x1="387.0" y1="4" x2="387.0" y2="300" class="grid"/><text x="387.0" y="316" class="tick" text-anchor="middle">20</text><line x1="476.5" y1="4" x2="476.5" y2="300" class="grid"/><text x="476.5" y="316" class="tick" text-anchor="middle">30</text><line x1="566.0" y1="4" x2="566.0" y2="300" class="grid"/><text x="566.0" y="316" class="tick" text-anchor="middle">40</text><text x="198" y="23.5" text-anchor="end" class="lab core">Mechanical, diesel & auto</text><rect x="208" y="8" width="295.4" height="22" rx="2" class="bar core"/><rect x="504.4" y="8" width="25.9" height="22" rx="2" class="est"/><text x="538.2" y="23.5" class="val">36 <tspan class="pct">20%</tspan></text><text x="198" y="55.5" text-anchor="end" class="lab">Other services & sole traders</text><rect x="208" y="40" width="179.0" height="22" rx="2" class="bar"/><rect x="388.0" y="40" width="142.2" height="22" rx="2" class="est"/><text x="538.2" y="55.5" class="val">36 <tspan class="pct">20%</tspan></text><text x="198" y="87.5" text-anchor="end" class="lab core">Civil, earthmoving & plant hire</text><rect x="208" y="72" width="277.4" height="22" rx="2" class="bar core"/><rect x="486.4" y="72" width="16.9" height="22" rx="2" class="est"/><text x="511.4" y="87.5" class="val">33 <tspan class="pct">19%</tspan></text><text x="198" y="119.5" text-anchor="end" class="lab core">Farming & grazing</text><rect x="208" y="104" width="134.2" height="22" rx="2" class="bar core"/><rect x="343.2" y="104" width="70.6" height="22" rx="2" class="est"/><text x="421.9" y="119.5" class="val">23 <tspan class="pct">13%</tspan></text><text x="198" y="151.5" text-anchor="end" class="lab">Building, plumbing & electrical</text><rect x="208" y="136" width="143.2" height="22" rx="2" class="bar"/><rect x="352.2" y="136" width="7.9" height="22" rx="2" class="est"/><text x="368.1" y="151.5" class="val">17 <tspan class="pct">10%</tspan></text><text x="198" y="183.5" text-anchor="end" class="lab">Engineering & fabrication</text><rect x="208" y="168" width="98.4" height="22" rx="2" class="bar"/><rect x="307.4" y="168" width="34.8" height="22" rx="2" class="est"/><text x="350.2" y="183.5" class="val">15 <tspan class="pct">8%</tspan></text><text x="198" y="215.5" text-anchor="end" class="lab">Govt, education & corporate</text><rect x="208" y="200" width="62.6" height="22" rx="2" class="bar"/><rect x="271.6" y="200" width="8.0" height="22" rx="2" class="est"/><text x="287.6" y="215.5" class="val">8 <tspan class="pct">4%</tspan></text><text x="198" y="247.5" text-anchor="end" class="lab">Transport & haulage</text><rect x="208" y="232" width="44.8" height="22" rx="2" class="bar"/><rect x="253.8" y="232" width="7.9" height="22" rx="2" class="est"/><text x="269.7" y="247.5" class="val">6 <tspan class="pct">3%</tspan></text><text x="198" y="279.5" text-anchor="end" class="lab">Mining & resources</text><rect x="208" y="264" width="26.8" height="22" rx="2" class="bar"/><rect x="235.8" y="264" width="8.0" height="22" rx="2" class="est"/><text x="251.8" y="279.5" class="val">4 <tspan class="pct">2%</tspan></text></svg></div>
+    <div class="key"><span><i style="background:var(--core)"></i><i style="background:var(--bar)"></i>Clear from business name (core trades darker)</span><span><i style="background:var(--est)"></i>Best guess from an unclear name (37 orders)</span></div>
+  </section>
+
+  <section class="cols">
+    <div>
+      <h2>What to do with it</h2>
+      <ul>
+        <li><strong>Multi-mat bundle</strong> (3 or 5 mats) with "kit out every service ute" framing. Business buyers already buy 6 to 13 at a time.</li>
+        <li><strong>Meta audiences in regional QLD:</strong> diesel fitters, heavy-vehicle mechanics, plant hire and earthmoving owners, graziers.</li>
+        <li><strong>Keep the consumer checkout.</strong> Half of business buyers use personal email, so trade accounts aren't needed. Add a "Business name (for your tax invoice)" field so more businesses identify themselves.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>How they were found</h2>
+      <table>
+        <tr><td>Business email domain</td><td class="n">92</td></tr>
+        <tr><td>Company name at checkout, on a personal email</td><td class="n">65</td></tr>
+        <tr><td>Trade word in a personal email (e.g. plumbing@gmail)</td><td class="n">21</td></tr>
+        <tr class="tot"><td>Likely business orders</td><td class="n">178</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <p class="foot">Source: Shopify (ShopifyQL), aggregate counts only. No emails, names or addresses were pulled or stored. 28% is a floor, because sole traders with plain name emails look like personal buyers. Trade-word matches (114 words) are strong hints, not proof. Allow about ±5 per trade. The full method is in <code>research/pro-mat-geo/qld/BUSINESS-TYPES.md</code>.</p>
+</div>
