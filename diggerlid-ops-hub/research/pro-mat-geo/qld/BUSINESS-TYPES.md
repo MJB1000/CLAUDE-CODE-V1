@@ -1,6 +1,8 @@
 # QLD PRO Mat buyers by business type (final, 13 Oct 2026)
 
-**Headline: about 28% of QLD PRO Mat orders are likely businesses (178 of 639).** Diesel and
+> **Final numbers (13 Oct, postcode-level recount): 173 of 639 orders (27%)**: 92 business domain, 60 company name on a personal email, 21 trade word. Mechanical 34, other services 34, civil 33, farming 23, building 16, engineering 15, govt/corporate 8, transport 6, mining 4. City business share 34% (Brisbane), 38% (Gold Coast); regional about 24%. Report page: `qld-business-buyers.html`. The tables below are the earlier name-matched pass (178) and are kept for the method.
+
+**Headline: about 27% of QLD PRO Mat orders are likely businesses (173 of 639).** Diesel and
 mechanical workshops, civil, earthmoving and plant hire, and farming make up just over half of them.
 Business orders average about 1.9 mats against 1.2 for everyone else.
 
