@@ -1,4 +1,4 @@
-# 🛰️ Repo Radar — 2026-10-14
+# 🛰️ Repo Radar — 2026-10-15
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
@@ -6,17 +6,17 @@ _13 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[bherbruck/solidcraft](https://github.com/bherbruck/solidcraft)** — ⭐ 1,816 · 291.1/day · Rust · since 2026-10-07
-   > SolidCraft: an open-source parametric 3D CAD application built in pure Rust. Desktop, web, and automation through MCP.
-2. **[trailhq/Trail-Code](https://github.com/trailhq/Trail-Code)** — ⭐ 9,964 · 97.3/day · TypeScript · since 2026-07-03
-   > Turbocharge Claude Code, Cursor, Codex, Gemini & every coding agent: faster, cheaper, with contextual understanding specific to your…
-3. **[crow-hq/llm-wiki-v2](https://github.com/crow-hq/llm-wiki-v2)** — ⭐ 209 · 10.9/day · Python · since 2026-09-24
-   > Turn your documents into a Markdown wiki that answers with citations. Runs locally with Ollama or any LLM provider. CROW classifier…
+1. **[edenfunf/reelmimic](https://github.com/edenfunf/reelmimic)** — ⭐ 3,168 · 195.5/day · JavaScript · since 2026-09-28
+   > Show it a video you love. Get a new video in the same style. An AI crew (Claude Code or Codex) plans, builds and reviews it with you.
+2. **[arielshad/3d-asset-server](https://github.com/arielshad/3d-asset-server)** — ⭐ 299 · 29.3/day · TypeScript · since 2026-10-04
+   > 3d assets api and mcp
+3. **[togg53192-cmd/jailbreaks](https://github.com/togg53192-cmd/jailbreaks)** — ⭐ 2,937 · 24.8/day · — · since 2026-06-18
+   > LIST OF ALL MY JAILBREAKS
 
 ## Multimodal AI
 
-1. **[tacshi/Soundcore](https://github.com/tacshi/Soundcore)** — ⭐ 168 · 1.8/day · Dart · since 2026-07-12
-   > soundcore Work（安克 AI 录音豆 / D3200）本地管理 App：BLE 配对连接、录音管理、AI 实时转写、Wi-Fi SoftAP 批量导出
+1. **[Darlingfxx02/no-tipe-releases](https://github.com/Darlingfxx02/no-tipe-releases)** — ⭐ 467 · 35.0/day · HTML · since 2026-10-01
+   > Free desktop dictation for macOS and Windows. Speak messages, emails and notes into your apps with local or cloud speech recognition.
 
 ## Marketing & analytics tech
 
@@ -24,25 +24,21 @@ _Nothing new this run._
 
 ## Web/app dev stack
 
-_Nothing new this run._
+1. **[VinkyDev/vibestart](https://github.com/VinkyDev/vibestart)** — ⭐ 156 · 14.3/day · TypeScript · since 2026-10-04
+   > Compose a full-stack TypeScript stack and get a cutting-edge, verified project made for AI coding agents, with type safety, lint, and tests…
 
 ## Self-development & productivity
 
-1. **[LingCore/WinShun](https://github.com/LingCore/WinShun)** — ⭐ 278 · 47.2/day · C++ · since 2026-10-08
-   > Win顺：免费开源的 Windows 快速搜索启动器。双击 Ctrl，拼音秒搜文件、全文搜索 Word/Excel/PDF、剪贴板历史（代替 Win+V）、对话框搜索、任务栏搜索、插件、AI 助手 MCP。Free Windows search launcher: pinyin…
-2. **[Licoy/Quosparr](https://github.com/Licoy/Quosparr)** — ⭐ 275 · 2.6/day · Go · since 2026-06-29
-   > 📊 Native macOS、Windows、Linux menu bar app for Codex and Grok: quota, reset-today status, reset credits, API-equivalent cost, local…
-3. **[bybit-exchange/kaas](https://github.com/bybit-exchange/kaas)** — ⭐ 150 · 2.0/day · Python · since 2026-07-29
-   > Turn scattered notes, docs and transcripts into a queryable Markdown wiki — an LLM knowledge-base compiler with MCP access, no embeddings…
+_Nothing new this run._
 
 ## Claude & agent design craft
 
-1. **[oil-oil/beautify-github-readme](https://github.com/oil-oil/beautify-github-readme)** — ⭐ 1,860 · 20.1/day · Python · since 2026-07-13
-   > README design skill for Claude Code & Codex. 帮你把 GitHub README 做得好看又好懂。
-2. **[Mahanaicoach/google-maps-scraper-kit](https://github.com/Mahanaicoach/google-maps-scraper-kit)** — ⭐ 1,424 · 12.4/day · Python · since 2026-06-21
-   > Free Google Maps scraper for lead generation. Exports phones, emails, websites and socials to CSV. Runs locally in Docker, no API keys…
-3. **[Sev7eEn7/dsh-sieve](https://github.com/Sev7eEn7/dsh-sieve)** — ⭐ 107 · 11.3/day · TypeScript · since 2026-10-04
-   > dsh-sieve: context engineering & token optimization plugin for DeepSeek Harness (DSH) — tool output filtering, context pruning, progressive…
+1. **[Arekejoker/qwen21-nsfw-pose-skill](https://github.com/Arekejoker/qwen21-nsfw-pose-skill)** — ⭐ 1,246 · 664.7/day · Python · since 2026-10-13
+   > Qwen-Image 2.1 NSFW/姿势出图 skill：作者级提示词配方 + NSFW LoRA + 136 姿势 VNCCS 人偶控制；适用 Claude Code / Codex / Cursor / OpenClaw
+2. **[agentvivekkumar/dontbemichael](https://github.com/agentvivekkumar/dontbemichael)** — ⭐ 498 · 16.7/day · TypeScript · since 2026-09-15
+   > A local multi-agent harness that works with your existing Claude Code, Codex subscriptions, allows you to run an office of agents
+3. **[OnyxAxisOwO/ObsidianArc](https://github.com/OnyxAxisOwO/ObsidianArc)** — ⭐ 498 · 10.9/day · Go · since 2026-08-30
+   > A self-hosted AI platform with a Go server, multi-provider routing, usage tracking and an admin console, with chat and agentic work modes.
 
 ## Community & social media management
 
@@ -58,8 +54,17 @@ _Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-1. **[lemma-work/lemma-platform](https://github.com/lemma-work/lemma-platform)** — ⭐ 553 · 4.9/day · Python · since 2026-06-23
-   > Multiplayer harness that shapes around your work. Agents, apps and workflows your team shares, used from Slack, Telegram, WhatsApp, Teams…
+1. **[outcrawlai/scout](https://github.com/outcrawlai/scout)** — ⭐ 646 · 399.2/day · TypeScript · since 2026-10-13
+   > Scout: the open-source browser agent, by Outcrawl. Mirrored automatically from Outcrawl's own repository.
+2. **[marclou/mailcheap](https://github.com/marclou/mailcheap)** — ⭐ 930 · 208.2/day · JavaScript · since 2026-10-10
+   > The affordable newsletter for the agentic era. Open source: self-host it, or use mailcheap.ai.
+3. **[mw00/project-maya](https://github.com/mw00/project-maya)** — ⭐ 848 · 105.3/day · C++ · since 2026-10-06
+   > Project Maya - run GLM-5.3-Flash (321B MoE) privately on your own GPU(s), from one card to 16, NVIDIA or AMD, Linux or Windows. Engine…
+
+🌱 **Rising fast** — small repos gaining stars (7d)
+
+4. **[SaarthurR/atticus-mac](https://github.com/SaarthurR/atticus-mac)** — ⭐ 157 · 📈 157⭐ in 4d · Python · since 2026-10-10
+   > Fast, free voice assistant for your Mac. No API key: runs on your Claude Pro or Max plan. Remembers you and learns your shortcuts. Hold…
 
 ## Ads & paid growth
 
@@ -67,10 +72,8 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[artemnovitckii/creator-lab](https://github.com/artemnovitckii/creator-lab)** — ⭐ 150 · 7.4/day · JavaScript · since 2026-09-23
-   > Research Instagram Reel scripts with Apify, Jev, and Fireworks or Groq. Bring your own keys, compare hooks, and record the patterns.
-2. **[linbei0/EcomGen](https://github.com/linbei0/EcomGen)** — ⭐ 150 · 2.6/day · TypeScript · since 2026-08-17
-   > Local-first AI e-commerce image suite generator for individual sellers. Pi Agent storyboards, 25 templates + reusable suites, product-truth…
+1. **[social-media-skills/skills](https://github.com/social-media-skills/skills)** — ⭐ 155 · 1.7/day · Shell · since 2026-07-16
+   > 106 social media skills for AI agents - strategy, writing, video, design, platform growth, publishing, and analytics. Works with Claude…
 
 ## E-commerce & Shopify
 
