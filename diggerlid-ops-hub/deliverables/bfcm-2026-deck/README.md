@@ -67,3 +67,13 @@ due dates are TBC. Slides kept: cover, one page, agenda, three-sale scorecard, s
 moves, offer, bundles, Christmas gifting, theme, deliverables, decisions, exec FAQ, close.
 
 Launch time decision (24 Sep): sale opens Wed 18 Nov at 12:00 PM (midday) AEDT, not 6:00 AM. Hype Mon 16 and Tue 17 Nov unchanged. Ending-soon ads run the final three days from Sun 29 Nov.
+
+## Final (19 Oct 2026): 30 slides
+`final/project/` is a snapshot of the live Slides artifact (deck.json plus one HTML file per slide). It supersedes
+the gen_deck scripts, which stop at deck 3.3. Changes since 3.3: dates moved to hype Tue 17 and Wed 18 Nov, sale
+Thu 19 Nov midday to Tue 1 Dec; bundles Hardcore Tradie $777, Ultimate Earthmover $732, Owner Operator $778;
+mid-sale becomes a new gifting market with a Titan Sox × DiggerLid × 3DPro pack on its own page; narrative is
+DiggerLid's Black Friday Adventure (warehouse shot, worksite 27 Oct, paddock with Ivan 28 Oct, bonus SANY yard and
+China cutaway, departure finale); slide 13 is the organic posting schedule; mid-sale ads are UGC-led (7 UGC, 3 video,
+3 image); four master checklist slides at the back. The checklist spreadsheet is `bfcm-2026-deliverables-checklist.xlsx`,
+and the team's live copy is the Google Sheet linked on slides 22 and 27.
