@@ -1,24 +1,22 @@
-# 🛰️ Repo Radar — 2026-10-18
+# 🛰️ Repo Radar — 2026-10-20
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_11 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_10 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[liseami/CCBaga](https://github.com/liseami/CCBaga)** — ⭐ 2,645 · 337.7/day · Rust · since 2026-10-11
-   > _no description_
-2. **[LiCinCan/blender-ai-mcp-addon](https://github.com/LiCinCan/blender-ai-mcp-addon)** — ⭐ 785 · 257.2/day · Python · since 2026-10-15
-   > AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with OpenAI, ChatGPT, Claude, Gemini…
-3. **[cranebeaker/coop-anything](https://github.com/cranebeaker/coop-anything)** — ⭐ 404 · 160.1/day · C · since 2026-10-16
-   > Co-op Anything: point your AI agent at any single-player game and play it with friends (online and/or splitscreen!). MCP server and…
+1. **[leemysw/yovoice](https://github.com/leemysw/yovoice)** — ⭐ 1,709 · 49.7/day · TypeScript · since 2026-09-15
+   > Open-source local AI audio & music studio for macOS & Windows. TTS, voice cloning, songs with lyrics, and multi-track scores — 100%…
+2. **[hanzohanzhe/Grandet](https://github.com/hanzohanzhe/Grandet)** — ⭐ 458 · 31.1/day · JavaScript · since 2026-10-05
+   > Find the cheapest API for any model and connect it from your AI agent: Grandet Skill and an anonymous MCP server, backed by listed prices…
+3. **[AhmadHassan-BTed/Turnitout-Humanizer](https://github.com/AhmadHassan-BTed/Turnitout-Humanizer)** — ⭐ 2,966 · 29.2/day · HTML · since 2026-07-10
+   > FREE FOREVER, NO LIMITS 100% Programmatic, Zero-AI Plagiarism Remover & Similarity Evader. Bypass Turnitin, iThenticate, GPTZero…
 
 🌱 **Rising fast** — small repos gaining stars (7d)
 
-4. **[with-pebbly/aseprite-ai-artist](https://github.com/with-pebbly/aseprite-ai-artist)** — ⭐ 409 · 📈 +177⭐/7d · TypeScript · since 2026-09-08
-   > Your coding agent paints pixel art in the Aseprite window you already have open. MCP server + skills for Claude Code, omp, Codex, Gemini…
-5. **[reality-opened/openreality](https://github.com/reality-opened/openreality)** — ⭐ 388 · 📈 +108⭐/7d · Python · since 2026-09-01
-   > Open Reality: phone video to AI-queryable 3D scenes. MCP tools for Claude/Codex/Cursor (npm openreality-mcp), the self-hostable broker, and…
+4. **[openbin-ai/binny](https://github.com/openbin-ai/binny)** — ⭐ 179 · 📈 179⭐ in 9d · Go · since 2026-10-10
+   > BINNY: an open source agent harness for reverse engineering. Plug in any model, or a local one.
 
 ## Multimodal AI
 
@@ -34,19 +32,15 @@ _Nothing new this run._
 
 ## Self-development & productivity
 
-1. **[CatVinci-Studio/Textus](https://github.com/CatVinci-Studio/Textus)** — ⭐ 321 · 3.1/day · TypeScript · since 2026-07-08
-   > The next-generation Markdown editor, with an AI writing assistant. Free and open source for macOS, Windows and Linux.
-2. **[HurricaHjz/SecondSelf](https://github.com/HurricaHjz/SecondSelf)** — ⭐ 156 · 1.3/day · Python · since 2026-06-24
-   > Second yourself. One agent that remembers you, with many hands to act for you: a multi-agent harness (Claude Code, with Codex helpers), a…
+1. **[jpzk/opensidian](https://github.com/jpzk/opensidian)** — ⭐ 238 · 4.6/day · Rust · since 2026-08-29
+   > A privacy-first, open-source platform for knowledge management and collaboration.
 
 ## Claude & agent design craft
 
-1. **[jwuthri-cloud/Tracely-ai](https://github.com/jwuthri-cloud/Tracely-ai)** — ⭐ 1,022 · 139.3/day · Python · since 2026-10-11
-   > Trace-native CI/CD for AI agents: grade production traces, cluster failures, freeze them into replayable regression tests, and block PRs…
-2. **[trhhubsd/ARTEX](https://github.com/trhhubsd/ARTEX)** — ⭐ 1,248 · 123.2/day · Go · since 2026-10-08
-   > ARTEX · AI autonomous penetration testing system (multi-agent LLM, Go + Next.js) · AI 自主渗透测试系统 · 百度 agent+ 攻防挑战赛冠军
-3. **[Leonxlnx/cinetic](https://github.com/Leonxlnx/cinetic)** — ⭐ 450 · 22.5/day · Python · since 2026-09-28
-   > Cinematic launch films and motion design from code, directed by your coding agent.
+1. **[keli-wen/agy-staff](https://github.com/keli-wen/agy-staff)** — ⭐ 757 · 12.1/day · JavaScript · since 2026-08-18
+   > Hire Google's Antigravity CLI (agy) as a fast Gemini staffer for Claude Code and OpenAI Codex.
+2. **[morluto/leantoken](https://github.com/morluto/leantoken)** — ⭐ 112 · 1.2/day · Rust · since 2026-07-15
+   > Code intelligence for agents: find the code that matters and keep your context window and tokens lean.
 
 ## Community & social media management
 
@@ -62,8 +56,8 @@ _Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-1. **[raullenchai/esp32-thinks](https://github.com/raullenchai/esp32-thinks)** — ⭐ 222 · 37.0/day · Shell · since 2026-10-12
-   > A multi-model Muse: personal AI voice assistant on ESP32 - wake word or knob, any OpenAI-compatible brain (STT/chat/TTS mix-and-match)…
+1. **[AIpRoBuilder/FlowX](https://github.com/AIpRoBuilder/FlowX)** — ⭐ 152 · 2.0/day · Python · since 2026-08-05
+   > MCP server and Python SDK that generates, runs and refines AI agent workflows from natural language (Generative Workflow, A2A, FastAPI).
 
 ## Ads & paid growth
 
@@ -79,7 +73,10 @@ _Nothing new this run._
 
 ## Brand systems & creative ops
 
-_Nothing new this run._
+1. **[acosta290/fluvy](https://github.com/acosta290/fluvy)** — ⭐ 174 · 7.7/day · TypeScript · since 2026-09-27
+   > A premium theme and card library for Home Assistant: fifty-five cards, a light and dark theme in fifteen palettes, five automatic…
+2. **[skydashnet/material-design-3-ui-skill](https://github.com/skydashnet/material-design-3-ui-skill)** — ⭐ 151 · 2.4/day · PowerShell · since 2026-08-17
+   > A reusable Agent Skill for designing, reviewing, and implementing UI/UX with Google Material Design 3, Material You, M3 Expressive…
 
 ---
 
