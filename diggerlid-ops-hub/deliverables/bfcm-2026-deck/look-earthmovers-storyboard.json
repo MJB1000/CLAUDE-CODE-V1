@@ -1,0 +1,181 @@
+{
+  "project": "jack-earthmovers-v1",
+  "title": "DIGGERLID · JACK · EARTHMOVERS · BLACK FRIDAY",
+  "version": "v1",
+  "aspect": "9:16",
+  "subject": "Jack studies earthmovers like wildlife, bursts a water main, Pro Enclosure keeps him dry",
+  "accent": "#f5eb19",
+  "ink": "#231f20",
+  "paper": "#ffffff",
+  "frame_bg": "#fbf7a3",
+  "frame_shadow": "#231f20",
+  "default_resolution": "2K",
+  "output_dir": "deliverables/jack-earthmovers-v1/images",
+  "pdf_dir": "deliverables/jack-earthmovers-v1/pdf",
+  "asset_refs": {
+    "jack": "assets/diggerlid/characters/jack.png",
+    "joel": "assets/diggerlid/founders/founder-b.png",
+    "luke": "assets/diggerlid/founders/founder-a.png",
+    "enclosure": "assets/diggerlid/products/pro-enclosure-hero.jpeg",
+    "frame1": "deliverables/jack-earthmovers-v1/images/01-E1-the-sighting.png",
+    "frame4": "deliverables/jack-earthmovers-v1/images/04-E4-the-demonstration.png"
+  },
+  "beats": [
+    {
+      "id": "strip",
+      "title": "JACK · EARTHMOVERS",
+      "description": "Five beats + end card.",
+      "frames": [
+        {
+          "n": 1,
+          "id": "E1",
+          "slug": "the-sighting",
+          "refs": [
+            "jack",
+            "joel",
+            "luke",
+            "enclosure"
+          ],
+          "resolution": null,
+          "title": "THE SIGHTING",
+          "caption": "",
+          "beat": "",
+          "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. Monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, confident gestural strokes, minimal shading, rough cinematic composition. Pencil tones ONLY — no colour anywhere EXCEPT the single DiggerLid yellow #f5eb19 accent named at the end. The cream paper is the only off-white. This is ONE FRAME of a five-frame vertical storyboard: drawing style, characters, clothes, the excavator and the job site must look IDENTICAL from frame to frame. The tone is a 1990s wildlife-documentary parody: the presenter treats the earthmovers like wild animals.\n\n[THE CAST — identical wherever they appear. Separate people, different faces.]\n• THE PRESENTER — reference \"jack\". A close likeness of that reference: a YOUNG man in his EARLY THIRTIES — lean, slim face, smooth taut skin, clean sharp jawline, high cheekbones, NOT middle-aged, NOT weathered. Dark tousled hair, dark eyebrows, a dark MOUSTACHE ONLY — chin, jaw and cheeks CLEAN-SHAVEN. WORN: wide-brimmed weathered LEATHER BUSH HAT, pale KHAKI safari shirt with two buttoned chest pockets and epaulettes, sleeves rolled, short KHAKI field shorts, bare knees, thick socks pulled up over scuffed tan lace-up WORK BOOTS. Earnest, whispery, supremely confident.\n• THE BROTHER IN THE CAP — reference \"joel\". BLACK BASEBALL CAP worn forward with a small badge, a dark MOUSTACHE **and** a short dark CHIN BEARD joined to it, stubble. Plain BLACK hoodie with DIGGERLID across the chest in hollow outlined capitals, dark work trousers, boots.\n• THE CURLY-HAIRED BROTHER — reference \"luke\". BARE-HEADED, thick dark hair with a loose CURLY top, dark MOUSTACHE and light stubble, no full beard. The same plain BLACK hoodie, dark work trousers, boots.\n• THE BIG OPERATOR — a burly earthmover in his fifties: BALD head with SUNGLASSES pushed up on it, a big bushy GREY BEARD, a long-sleeved HI-VIS WORK SHIRT with reflective tape stripes, stubby work shorts, boots. Arms folded, utterly deadpan.\n• THE YOUNG OPERATOR — a lanky earthmover in his twenties: a MULLET haircut, a thin wispy moustache, a HI-VIS SINGLET with reflective tape stripes, work shorts, boots, a takeaway coffee in one hand.\nThe presenter ALWAYS wears the bush hat and khaki. The cap brother ALWAYS has the cap and chin beard. The curly brother is ALWAYS bare-headed. The big operator is ALWAYS bald with a grey beard; the young operator ALWAYS has the mullet. Never swap hats or clothes, never blend faces.\n\n[THE JOB SITE — identical in every frame] An open rural earthmoving site on a bright overcast day: a flat pad of bare dirt, a shallow trench pegged out with string lines, a spoil heap, a white site ute parked by a paddock fence, gum trees behind. In the middle of it a compact MINI EXCAVATOR — tracked undercarriage, boom and dipper arm, a toothed digging BUCKET — with a DiggerLid PRO ENCLOSURE fitted over its operator station (reference \"enclosure\"): a tailored GREY heavy-duty fabric cab cover wrapping the canopy frame, with large CLEAR VINYL WINDOW PANELS front and side, a zip door on the side, and black webbing straps cinching it to the canopy posts.\n\n[Visual] SHOT 1 — THE SIGHTING. A wildlife-documentary shot, camera LOW in the long dry grass at the edge of the site.\nFOREGROUND, big and close to the lens: the PRESENTER crouched down low in the grass, peering through it like a naturalist who has spotted rare animals, turned to the camera and WHISPERING to it — one hand cupped beside his mouth, the other pointing back at the group, eyebrows raised, eyes wide with hushed excitement. Framed from the chest up.\nBACKGROUND, in the middle distance and smaller: the BROTHER IN THE CAP, the CURLY-HAIRED BROTHER, the BIG OPERATOR and the YOUNG OPERATOR standing in a relaxed circle beside the excavator, chatting, completely unaware they are being watched. Tall grass stalks blur across the bottom of the frame.\nSINGLE COLOUR ACCENT: the excavator's digging BUCKET only — rendered in DiggerLid yellow #f5eb19. Everything else is pencil greyscale, including the hi-vis clothing, which is drawn in grey tones with white reflective stripes. No other colour anywhere.\n[NO TEXT] The only lettering allowed is the outlined DIGGERLID on the brothers' hoodies, if they are in frame. Do NOT write any names, labels, arrows with words, captions, sound effects, speech bubbles, annotations or signage anywhere. No numbers.\n[CRITICAL] Every person has exactly two arms and two hands, attached where they belong. Only the people described are in the frame.\n[Format] 9:16 vertical, full-bleed portrait composition — the drawing runs right to the edges. No drawn frame line, no panel border, no margin, no letterboxing."
+        },
+        {
+          "n": 2,
+          "id": "E2",
+          "slug": "first-contact",
+          "refs": [
+            "jack",
+            "joel",
+            "luke",
+            "enclosure"
+          ],
+          "resolution": null,
+          "title": "FIRST CONTACT",
+          "caption": "",
+          "beat": "",
+          "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. Monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, confident gestural strokes, minimal shading, rough cinematic composition. Pencil tones ONLY — no colour anywhere EXCEPT the single DiggerLid yellow #f5eb19 accent named at the end. The cream paper is the only off-white. This is ONE FRAME of a five-frame vertical storyboard: drawing style, characters, clothes, the excavator and the job site must look IDENTICAL from frame to frame. The tone is a 1990s wildlife-documentary parody: the presenter treats the earthmovers like wild animals.\n\n[THE CAST — identical wherever they appear. Separate people, different faces.]\n• THE PRESENTER — reference \"jack\". A close likeness of that reference: a YOUNG man in his EARLY THIRTIES — lean, slim face, smooth taut skin, clean sharp jawline, high cheekbones, NOT middle-aged, NOT weathered. Dark tousled hair, dark eyebrows, a dark MOUSTACHE ONLY — chin, jaw and cheeks CLEAN-SHAVEN. WORN: wide-brimmed weathered LEATHER BUSH HAT, pale KHAKI safari shirt with two buttoned chest pockets and epaulettes, sleeves rolled, short KHAKI field shorts, bare knees, thick socks pulled up over scuffed tan lace-up WORK BOOTS. Earnest, whispery, supremely confident.\n• THE BROTHER IN THE CAP — reference \"joel\". BLACK BASEBALL CAP worn forward with a small badge, a dark MOUSTACHE **and** a short dark CHIN BEARD joined to it, stubble. Plain BLACK hoodie with DIGGERLID across the chest in hollow outlined capitals, dark work trousers, boots.\n• THE CURLY-HAIRED BROTHER — reference \"luke\". BARE-HEADED, thick dark hair with a loose CURLY top, dark MOUSTACHE and light stubble, no full beard. The same plain BLACK hoodie, dark work trousers, boots.\n• THE BIG OPERATOR — a burly earthmover in his fifties: BALD head with SUNGLASSES pushed up on it, a big bushy GREY BEARD, a long-sleeved HI-VIS WORK SHIRT with reflective tape stripes, stubby work shorts, boots. Arms folded, utterly deadpan.\n• THE YOUNG OPERATOR — a lanky earthmover in his twenties: a MULLET haircut, a thin wispy moustache, a HI-VIS SINGLET with reflective tape stripes, work shorts, boots, a takeaway coffee in one hand.\nThe presenter ALWAYS wears the bush hat and khaki. The cap brother ALWAYS has the cap and chin beard. The curly brother is ALWAYS bare-headed. The big operator is ALWAYS bald with a grey beard; the young operator ALWAYS has the mullet. Never swap hats or clothes, never blend faces.\n\n[THE JOB SITE — identical in every frame] An open rural earthmoving site on a bright overcast day: a flat pad of bare dirt, a shallow trench pegged out with string lines, a spoil heap, a white site ute parked by a paddock fence, gum trees behind. In the middle of it a compact MINI EXCAVATOR — tracked undercarriage, boom and dipper arm, a toothed digging BUCKET — with a DiggerLid PRO ENCLOSURE fitted over its operator station (reference \"enclosure\"): a tailored GREY heavy-duty fabric cab cover wrapping the canopy frame, with large CLEAR VINYL WINDOW PANELS front and side, a zip door on the side, and black webbing straps cinching it to the canopy posts.\n[Visual] SHOT 2 — FIRST CONTACT. A MEDIUM group shot beside the excavator, camera at eye level, all FIVE men STANDING upright in a loose circle, framed from the knees up — EXACTLY FIVE people, each appearing ONCE. Nobody is crouching; there is no long grass in the foreground. The PRESENTER, standing, has joined the circle and is leaning in close to the BIG OPERATOR, speaking slowly and carefully with both hands shaping a big imaginary hole in the air, like explaining something to a wild animal. The BIG OPERATOR stands with his arms folded, completely deadpan, looking back at him. The YOUNG OPERATOR has frozen with his coffee halfway to his mouth. The BROTHER IN THE CAP and the CURLY-HAIRED BROTHER exchange a weary sideways look. The excavator and its bucket stand behind them.\nSINGLE COLOUR ACCENT: the excavator's digging BUCKET only — rendered in DiggerLid yellow #f5eb19. Everything else is pencil greyscale, including the hi-vis clothing, which is drawn in grey tones with white reflective stripes. No other colour anywhere.\n[NO TEXT] The only lettering allowed is the outlined DIGGERLID on the brothers' hoodies, if they are in frame. Do NOT write any names, labels, arrows with words, captions, sound effects, speech bubbles, annotations or signage anywhere. No numbers.\n[CRITICAL] Every person has exactly two arms and two hands, attached where they belong. Only the people described are in the frame.\n[Format] 9:16 vertical, full-bleed portrait composition — the drawing runs right to the edges. No drawn frame line, no panel border, no margin, no letterboxing."
+        },
+        {
+          "n": 3,
+          "id": "E3",
+          "slug": "inviting-himself",
+          "refs": [
+            "jack",
+            "enclosure",
+            "joel",
+            "luke"
+          ],
+          "resolution": null,
+          "title": "INVITING HIMSELF",
+          "caption": "",
+          "beat": "",
+          "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. Monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, confident gestural strokes, minimal shading, rough cinematic composition. Pencil tones ONLY — no colour anywhere EXCEPT the single DiggerLid yellow #f5eb19 accent named at the end. The cream paper is the only off-white. This is ONE FRAME of a five-frame vertical storyboard: drawing style, characters, clothes, the excavator and the job site must look IDENTICAL from frame to frame. The tone is a 1990s wildlife-documentary parody: the presenter treats the earthmovers like wild animals.\n\n[THE CAST — identical wherever they appear. Separate people, different faces.]\n• THE PRESENTER — reference \"jack\". A close likeness of that reference: a YOUNG man in his EARLY THIRTIES — lean, slim face, smooth taut skin, clean sharp jawline, high cheekbones, NOT middle-aged, NOT weathered. Dark tousled hair, dark eyebrows, a dark MOUSTACHE ONLY — chin, jaw and cheeks CLEAN-SHAVEN. WORN: wide-brimmed weathered LEATHER BUSH HAT, pale KHAKI safari shirt with two buttoned chest pockets and epaulettes, sleeves rolled, short KHAKI field shorts, bare knees, thick socks pulled up over scuffed tan lace-up WORK BOOTS. Earnest, whispery, supremely confident.\n• THE BROTHER IN THE CAP — reference \"joel\". BLACK BASEBALL CAP worn forward with a small badge, a dark MOUSTACHE **and** a short dark CHIN BEARD joined to it, stubble. Plain BLACK hoodie with DIGGERLID across the chest in hollow outlined capitals, dark work trousers, boots.\n• THE CURLY-HAIRED BROTHER — reference \"luke\". BARE-HEADED, thick dark hair with a loose CURLY top, dark MOUSTACHE and light stubble, no full beard. The same plain BLACK hoodie, dark work trousers, boots.\n• THE BIG OPERATOR — a burly earthmover in his fifties: BALD head with SUNGLASSES pushed up on it, a big bushy GREY BEARD, a long-sleeved HI-VIS WORK SHIRT with reflective tape stripes, stubby work shorts, boots. Arms folded, utterly deadpan.\n• THE YOUNG OPERATOR — a lanky earthmover in his twenties: a MULLET haircut, a thin wispy moustache, a HI-VIS SINGLET with reflective tape stripes, work shorts, boots, a takeaway coffee in one hand.\nThe presenter ALWAYS wears the bush hat and khaki. The cap brother ALWAYS has the cap and chin beard. The curly brother is ALWAYS bare-headed. The big operator is ALWAYS bald with a grey beard; the young operator ALWAYS has the mullet. Never swap hats or clothes, never blend faces.\n\n[THE JOB SITE — identical in every frame] An open rural earthmoving site on a bright overcast day: a flat pad of bare dirt, a shallow trench pegged out with string lines, a spoil heap, a white site ute parked by a paddock fence, gum trees behind. In the middle of it a compact MINI EXCAVATOR — tracked undercarriage, boom and dipper arm, a toothed digging BUCKET — with a DiggerLid PRO ENCLOSURE fitted over its operator station (reference \"enclosure\"): a tailored GREY heavy-duty fabric cab cover wrapping the canopy frame, with large CLEAR VINYL WINDOW PANELS front and side, a zip door on the side, and black webbing straps cinching it to the canopy posts.\n[Visual] SHOT 3 — INVITING HIMSELF. A LOW-ANGLE shot looking UP at the side of the excavator, which fills the upper half of the frame. There is no long grass in the foreground and nobody is crouching. The PRESENTER is CLIMBING UP INTO THE CAB — one work boot up on the steel track, one hand gripping the canopy post, the Pro Enclosure's zip door rolled open — and he is grinning back over his shoulder toward the group, one thumb up, as if doing them a favour.\nBELOW HIM on the dirt, the BROTHER IN THE CAP, the CURLY-HAIRED BROTHER, the BIG OPERATOR and the YOUNG OPERATOR stand in a row, SPEECHLESS — mouths open, one pointing half-heartedly, nobody moving to stop him.\nSINGLE COLOUR ACCENT: the excavator's digging BUCKET only — rendered in DiggerLid yellow #f5eb19. Everything else is pencil greyscale, including the hi-vis clothing, which is drawn in grey tones with white reflective stripes. No other colour anywhere.\n[NO TEXT] The only lettering allowed is the outlined DIGGERLID on the brothers' hoodies, if they are in frame. Do NOT write any names, labels, arrows with words, captions, sound effects, speech bubbles, annotations or signage anywhere. No numbers.\n[CRITICAL] Every person has exactly two arms and two hands, attached where they belong. Only the people described are in the frame.\n[Format] 9:16 vertical, full-bleed portrait composition — the drawing runs right to the edges. No drawn frame line, no panel border, no margin, no letterboxing."
+        },
+        {
+          "n": 4,
+          "id": "E4",
+          "slug": "the-demonstration",
+          "refs": [
+            "frame1",
+            "enclosure",
+            "joel",
+            "luke"
+          ],
+          "resolution": null,
+          "title": "THE DEMONSTRATION",
+          "caption": "",
+          "beat": "",
+          "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. Monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, confident gestural strokes, minimal shading, rough cinematic composition. Pencil tones ONLY — no colour anywhere EXCEPT the single DiggerLid yellow #f5eb19 accent named at the end. The cream paper is the only off-white. This is ONE FRAME of a five-frame vertical storyboard: drawing style, characters, clothes, the excavator and the job site must look IDENTICAL from frame to frame. The tone is a 1990s wildlife-documentary parody: the presenter treats the earthmovers like wild animals.\n\n[THE CAST — identical wherever they appear. Separate people, different faces.]\n• THE PRESENTER — reference \"jack\". A close likeness of that reference: a YOUNG man in his EARLY THIRTIES — lean, slim face, smooth taut skin, clean sharp jawline, high cheekbones, NOT middle-aged, NOT weathered. Dark tousled hair, dark eyebrows, a dark MOUSTACHE ONLY — chin, jaw and cheeks CLEAN-SHAVEN. WORN: wide-brimmed weathered LEATHER BUSH HAT, pale KHAKI safari shirt with two buttoned chest pockets and epaulettes, sleeves rolled, short KHAKI field shorts, bare knees, thick socks pulled up over scuffed tan lace-up WORK BOOTS. Earnest, whispery, supremely confident.\n• THE BROTHER IN THE CAP — reference \"joel\". BLACK BASEBALL CAP worn forward with a small badge, a dark MOUSTACHE **and** a short dark CHIN BEARD joined to it, stubble. Plain BLACK hoodie with DIGGERLID across the chest in hollow outlined capitals, dark work trousers, boots.\n• THE CURLY-HAIRED BROTHER — reference \"luke\". BARE-HEADED, thick dark hair with a loose CURLY top, dark MOUSTACHE and light stubble, no full beard. The same plain BLACK hoodie, dark work trousers, boots.\n• THE BIG OPERATOR — a burly earthmover in his fifties: BALD head with SUNGLASSES pushed up on it, a big bushy GREY BEARD, a long-sleeved HI-VIS WORK SHIRT with reflective tape stripes, stubby work shorts, boots. Arms folded, utterly deadpan.\n• THE YOUNG OPERATOR — a lanky earthmover in his twenties: a MULLET haircut, a thin wispy moustache, a HI-VIS SINGLET with reflective tape stripes, work shorts, boots, a takeaway coffee in one hand.\nThe presenter ALWAYS wears the bush hat and khaki. The cap brother ALWAYS has the cap and chin beard. The curly brother is ALWAYS bare-headed. The big operator is ALWAYS bald with a grey beard; the young operator ALWAYS has the mullet. Never swap hats or clothes, never blend faces.\n\n[THE JOB SITE — identical in every frame] An open rural earthmoving site on a bright overcast day: a flat pad of bare dirt, a shallow trench pegged out with string lines, a spoil heap, a white site ute parked by a paddock fence, gum trees behind. In the middle of it a compact MINI EXCAVATOR — tracked undercarriage, boom and dipper arm, a toothed digging BUCKET — with a DiggerLid PRO ENCLOSURE fitted over its operator station (reference \"enclosure\"): a tailored GREY heavy-duty fabric cab cover wrapping the canopy frame, with large CLEAR VINYL WINDOW PANELS front and side, a zip door on the side, and black webbing straps cinching it to the canopy posts.\n[USE OF THE FRAME-1 REFERENCE] \"frame1\" is the first frame. Match its drawing style, the site, the excavator with its Pro Enclosure, and the four men's faces and clothes. NEW camera set-up — a wide shot.\n\n[Visual] SHOT 4 — THE DEMONSTRATION. A WIDE shot of the site. The excavator's BUCKET has just bitten into the dirt on its very first scoop and burst a buried WATER MAIN: a massive GEYSER OF WATER erupts straight up out of the hole, higher than the excavator, spraying and fanning out in heavy sheets and curtains, drenching everything around it, a shattered length of pipe poking up from the torn ground.\nThe PRESENTER sits inside the enclosed cab, visible behind the clear vinyl windows, perfectly dry.\nIn the FOREGROUND the BROTHER IN THE CAP, the CURLY-HAIRED BROTHER, the BIG OPERATOR and the YOUNG OPERATOR SCRAMBLE AWAY from the spray toward the camera — soaked, arms thrown over their heads, the young operator's coffee flying out of his hand. Nobody is hurt — it is just water.\nSINGLE COLOUR ACCENT: the excavator's digging BUCKET only — rendered in DiggerLid yellow #f5eb19. Everything else is pencil greyscale, including the hi-vis clothing, which is drawn in grey tones with white reflective stripes. No other colour anywhere.\n[NO TEXT] The only lettering allowed is the outlined DIGGERLID on the brothers' hoodies, if they are in frame. Do NOT write any names, labels, arrows with words, captions, sound effects, speech bubbles, annotations or signage anywhere. No numbers.\n[CRITICAL] Every person has exactly two arms and two hands, attached where they belong. Only the people described are in the frame.\n[Format] 9:16 vertical, full-bleed portrait composition — the drawing runs right to the edges. No drawn frame line, no panel border, no margin, no letterboxing."
+        },
+        {
+          "n": 5,
+          "id": "E5",
+          "slug": "the-recovery",
+          "refs": [
+            "jack",
+            "joel",
+            "enclosure"
+          ],
+          "resolution": null,
+          "title": "THE RECOVERY",
+          "caption": "",
+          "beat": "",
+          "prompt": "RENDER MODE — STRICT BLACK AND WHITE PENCIL STORYBOARD SKETCH. Monochrome graphite + ink wash on warm cream sketchbook paper: loose hand-drawn pencil and marker lines, confident gestural strokes, minimal shading, rough cinematic composition. Pencil tones ONLY — no colour anywhere EXCEPT the single DiggerLid yellow #f5eb19 accent named at the end. The cream paper is the only off-white. This is ONE FRAME of a five-frame vertical storyboard: drawing style, characters, clothes, the excavator and the job site must look IDENTICAL from frame to frame. The tone is a 1990s wildlife-documentary parody: the presenter treats the earthmovers like wild animals.\n\n[THE CAST — identical wherever they appear. Separate people, different faces.]\n• THE PRESENTER — reference \"jack\". A close likeness of that reference: a YOUNG man in his EARLY THIRTIES — lean, slim face, smooth taut skin, clean sharp jawline, high cheekbones, NOT middle-aged, NOT weathered. Dark tousled hair, dark eyebrows, a dark MOUSTACHE ONLY — chin, jaw and cheeks CLEAN-SHAVEN. WORN: wide-brimmed weathered LEATHER BUSH HAT, pale KHAKI safari shirt with two buttoned chest pockets and epaulettes, sleeves rolled, short KHAKI field shorts, bare knees, thick socks pulled up over scuffed tan lace-up WORK BOOTS. Earnest, whispery, supremely confident.\n• THE BROTHER IN THE CAP — reference \"joel\". BLACK BASEBALL CAP worn forward with a small badge, a dark MOUSTACHE **and** a short dark CHIN BEARD joined to it, stubble. Plain BLACK hoodie with DIGGERLID across the chest in hollow outlined capitals, dark work trousers, boots.\n• THE CURLY-HAIRED BROTHER — reference \"luke\". BARE-HEADED, thick dark hair with a loose CURLY top, dark MOUSTACHE and light stubble, no full beard. The same plain BLACK hoodie, dark work trousers, boots.\n• THE BIG OPERATOR — a burly earthmover in his fifties: BALD head with SUNGLASSES pushed up on it, a big bushy GREY BEARD, a long-sleeved HI-VIS WORK SHIRT with reflective tape stripes, stubby work shorts, boots. Arms folded, utterly deadpan.\n• THE YOUNG OPERATOR — a lanky earthmover in his twenties: a MULLET haircut, a thin wispy moustache, a HI-VIS SINGLET with reflective tape stripes, work shorts, boots, a takeaway coffee in one hand.\nThe presenter ALWAYS wears the bush hat and khaki. The cap brother ALWAYS has the cap and chin beard. The curly brother is ALWAYS bare-headed. The big operator is ALWAYS bald with a grey beard; the young operator ALWAYS has the mullet. Never swap hats or clothes, never blend faces.\n\n[THE JOB SITE — identical in every frame] An open rural earthmoving site on a bright overcast day: a flat pad of bare dirt, a shallow trench pegged out with string lines, a spoil heap, a white site ute parked by a paddock fence, gum trees behind. In the middle of it a compact MINI EXCAVATOR — tracked undercarriage, boom and dipper arm, a toothed digging BUCKET — with a DiggerLid PRO ENCLOSURE fitted over its operator station (reference \"enclosure\"): a tailored GREY heavy-duty fabric cab cover wrapping the canopy frame, with large CLEAR VINYL WINDOW PANELS front and side, a zip door on the side, and black webbing straps cinching it to the canopy posts.\n[Visual] SHOT 5 — THE RECOVERY. EXACTLY TWO PEOPLE ARE IN THIS FRAME: the presenter inside the cab, and the brother in the cap outside it. Nobody else — no operators, no curly-haired brother, no one running. A MEDIUM CLOSE shot from just outside the excavator cab, the cab filling most of the frame, looking in through the Pro Enclosure's clear side window. INSIDE the cab, dry and smug, the PRESENTER is ZIPPING THE ENCLOSURE DOOR SHUT with one hand, pulling the zip pull closed, looking extremely pleased with himself, chin up.\nA burst water main is spraying just out of shot: its water POUNDS against the outside of the grey fabric and streams down the CLEAR VINYL WINDOWS in sheets and rivulets.\nThrough the clear front window, outside and drenched: the BROTHER IN THE CAP, soaked through, cap dripping, POINTING at the ground and shouting up at the cab, exasperated. He is the only person outside in shot.\nThe Pro Enclosure carries the DiggerLid wordmark on its fabric: \"Digger Lid\" — capital D, i-g-g-e-r, a space, capital L, i-d — every letter the SAME colour, with a short solid horizontal BAR floating directly ABOVE the middle of the word.\nSINGLE COLOUR ACCENT: the short BAR above the Pro Enclosure's DiggerLid wordmark only — rendered in DiggerLid yellow #f5eb19. Everything else is pencil greyscale, including the hi-vis clothing, which is drawn in grey tones with white reflective stripes. No other colour anywhere.\n[NO TEXT] The only lettering allowed is the outlined DIGGERLID on the hoodie and the Digger Lid wordmark on the enclosure. Do NOT write any names, labels, arrows with words, captions, sound effects, speech bubbles, annotations or signage anywhere. No numbers.\n[CRITICAL] Every person has exactly two arms and two hands, attached where they belong. Only the people described are in the frame.\n[Format] 9:16 vertical, full-bleed portrait composition — the drawing runs right to the edges. No drawn frame line, no panel border, no margin, no letterboxing."
+        }
+      ]
+    }
+  ],
+  "strip": {
+    "title": "JACK · EARTHMOVERS",
+    "subtitle": "DIGGERLID · BLACK FRIDAY · 45s · 9:16 · STORYBOARD V1",
+    "out": "jack-earthmovers-strip.png",
+    "zip": "jack-earthmovers-frames.zip",
+    "card": {
+      "headline": [
+        [
+          "DIGGERLID",
+          "white"
+        ],
+        [
+          "BLACK FRIDAY",
+          "yellow"
+        ],
+        [
+          "[OFFER]",
+          "white"
+        ]
+      ],
+      "cta": "DIGGERLID.COM"
+    },
+    "frames": [
+      {
+        "n": 1,
+        "time": "0–8s",
+        "title": "THE SIGHTING",
+        "line": "JACK (to camera, hushed): \"Earthmovers. Keep the language simple. Big words can frighten them.\"",
+        "note": "Wildlife-doc low angle from the grass. The boys and two operators chat by the excavator, unaware."
+      },
+      {
+        "n": 2,
+        "time": "8–15s",
+        "title": "FIRST CONTACT",
+        "line": "JACK: \"What's the primary objective of this excavation?\"  OPERATOR: \"Digging a hole.\"  JACK: \"Thought so.\"",
+        "note": "He joins the group. Conversation stops. He nods knowingly."
+      },
+      {
+        "n": 3,
+        "time": "15–22s",
+        "title": "INVITING HIMSELF",
+        "line": "JACK: \"Let me show you a thing or two.\"  VO: \"The boys were speechless. Clearly, my reputation had preceded me.\"",
+        "note": "Climbs into the excavator without waiting for an answer."
+      },
+      {
+        "n": 4,
+        "time": "22–32s",
+        "title": "THE DEMONSTRATION",
+        "line": "VO: \"Within seconds, we'd found water. Much of it wet.\"",
+        "note": "First scoop hits a water main. Everyone scrambles out of the spray. Staged water effect."
+      },
+      {
+        "n": 5,
+        "time": "32–45s",
+        "title": "THE RECOVERY",
+        "line": "JACK: \"Luckily, the DiggerLid Pro Enclosure keeps you out of the rain.\"  JOEL: \"That's a water main, Jack!\"  JACK: \"Very localised weather.\"",
+        "note": "Zips the Pro Enclosure shut, dry and smug, water sheeting down the windows."
+      },
+      {
+        "n": 6,
+        "card": true,
+        "id": "E6",
+        "slug": "card",
+        "time": "END",
+        "title": "CARD",
+        "line": "DiggerLid Black Friday · [Offer] · diggerlid.com",
+        "note": "End card."
+      }
+    ]
+  }
+}
