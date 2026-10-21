@@ -1,22 +1,22 @@
-# 🛰️ Repo Radar — 2026-10-20
+# 🛰️ Repo Radar — 2026-10-21
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_10 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_11 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[leemysw/yovoice](https://github.com/leemysw/yovoice)** — ⭐ 1,709 · 49.7/day · TypeScript · since 2026-09-15
-   > Open-source local AI audio & music studio for macOS & Windows. TTS, voice cloning, songs with lyrics, and multi-track scores — 100%…
-2. **[hanzohanzhe/Grandet](https://github.com/hanzohanzhe/Grandet)** — ⭐ 458 · 31.1/day · JavaScript · since 2026-10-05
-   > Find the cheapest API for any model and connect it from your AI agent: Grandet Skill and an anonymous MCP server, backed by listed prices…
-3. **[AhmadHassan-BTed/Turnitout-Humanizer](https://github.com/AhmadHassan-BTed/Turnitout-Humanizer)** — ⭐ 2,966 · 29.2/day · HTML · since 2026-07-10
-   > FREE FOREVER, NO LIMITS 100% Programmatic, Zero-AI Plagiarism Remover & Similarity Evader. Bypass Turnitin, iThenticate, GPTZero…
+1. **[Gathin23/cleanyourtv](https://github.com/Gathin23/cleanyourtv)** — ⭐ 11,664 · 3181.6/day · Java · since 2026-10-17
+   > Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.
+2. **[Leonxlnx/earshot](https://github.com/Leonxlnx/earshot)** — ⭐ 1,945 · 339.9/day · Python · since 2026-10-15
+   > Ears for coding agents: let AI hear, review and make sound. CPU-only, open source.
+3. **[xerj-org/xerj](https://github.com/xerj-org/xerj)** — ⭐ 12,426 · 110.1/day · Rust · since 2026-06-30
+   > Local-first search engine and MCP server for AI agents. One Rust binary indexes code, docs, logs, JSONL/CSV and PDFs for BM25 full-text…
 
 🌱 **Rising fast** — small repos gaining stars (7d)
 
-4. **[openbin-ai/binny](https://github.com/openbin-ai/binny)** — ⭐ 179 · 📈 179⭐ in 9d · Go · since 2026-10-10
-   > BINNY: an open source agent harness for reverse engineering. Plug in any model, or a local one.
+4. **[Aletheore/Aletheore](https://github.com/Aletheore/Aletheore)** — ⭐ 633 · 📈 +388⭐/7d · Python · since 2026-07-13
+   > Evidence-grounded repository audit CLI - deterministic scanner, MCP server, live dashboard, and a GitHub Action that posts PR diffs.
 
 ## Multimodal AI
 
@@ -28,19 +28,22 @@ _Nothing new this run._
 
 ## Web/app dev stack
 
-_Nothing new this run._
+1. **[thordursk/gauge-ui](https://github.com/thordursk/gauge-ui)** — ⭐ 152 · 6.5/day · TypeScript · since 2026-09-27
+   > Composable SVG gauges for React, distributed as a shadcn registry.
 
 ## Self-development & productivity
 
-1. **[jpzk/opensidian](https://github.com/jpzk/opensidian)** — ⭐ 238 · 4.6/day · Rust · since 2026-08-29
-   > A privacy-first, open-source platform for knowledge management and collaboration.
+1. **[JiangNanGenius/floe-agent](https://github.com/JiangNanGenius/floe-agent)** — ⭐ 296 · 4.3/day · Swift · since 2026-08-12
+   > Open-source on-device AI agent workspace designed for iOS/iPadOS and Android: Linux environments, code execution, local web previews and…
 
 ## Claude & agent design craft
 
-1. **[keli-wen/agy-staff](https://github.com/keli-wen/agy-staff)** — ⭐ 757 · 12.1/day · JavaScript · since 2026-08-18
-   > Hire Google's Antigravity CLI (agy) as a fast Gemini staffer for Claude Code and OpenAI Codex.
-2. **[morluto/leantoken](https://github.com/morluto/leantoken)** — ⭐ 112 · 1.2/day · Rust · since 2026-07-15
-   > Code intelligence for agents: find the code that matters and keep your context window and tokens lean.
+1. **[JoasASantos/REA-Prompts](https://github.com/JoasASantos/REA-Prompts)** — ⭐ 943 · 875.6/day · — · since 2026-10-19
+   > Prompts for you to use REA (Reverse Engineer Anything), get the most out of it, and clone or break down any program
+2. **[vercel-labs/fx0](https://github.com/vercel-labs/fx0)** — ⭐ 304 · 237.3/day · TypeScript · since 2026-10-19
+   > A lightweight design agent built with libfx. Describe a page and an agent writes it as one HTML file.
+3. **[EvannZhongg/Nosis](https://github.com/EvannZhongg/Nosis)** — ⭐ 149 · 3.6/day · Python · since 2026-09-09
+   > Nosis is a lightweight personal agent runtime: per-session execution boundaries with OS-level sandboxing, computer use, a full built-in…
 
 ## Community & social media management
 
@@ -56,8 +59,8 @@ _Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-1. **[AIpRoBuilder/FlowX](https://github.com/AIpRoBuilder/FlowX)** — ⭐ 152 · 2.0/day · Python · since 2026-08-05
-   > MCP server and Python SDK that generates, runs and refines AI agent workflows from natural language (Generative Workflow, A2A, FastAPI).
+1. **[Superior-Trade/trading-terminal](https://github.com/Superior-Trade/trading-terminal)** — ⭐ 957 · 15.8/day · TypeScript · since 2026-08-21
+   > Self-hosted AI trading terminal for Hyperliquid: chart read in, validated Freqtrade/Nautilus-Trader strategy out, deployed live.
 
 ## Ads & paid growth
 
@@ -73,10 +76,8 @@ _Nothing new this run._
 
 ## Brand systems & creative ops
 
-1. **[acosta290/fluvy](https://github.com/acosta290/fluvy)** — ⭐ 174 · 7.7/day · TypeScript · since 2026-09-27
-   > A premium theme and card library for Home Assistant: fifty-five cards, a light and dark theme in fifteen palettes, five automatic…
-2. **[skydashnet/material-design-3-ui-skill](https://github.com/skydashnet/material-design-3-ui-skill)** — ⭐ 151 · 2.4/day · PowerShell · since 2026-08-17
-   > A reusable Agent Skill for designing, reviewing, and implementing UI/UX with Google Material Design 3, Material You, M3 Expressive…
+1. **[edisonmbli/refactoring-ui-skill](https://github.com/edisonmbli/refactoring-ui-skill)** — ⭐ 164 · 2.6/day · Python · since 2026-08-20
+   > Unofficial Claude Skill derived from the book Refactoring UI — a design rulebook and diagnostic layer for web UI. 151 tracked rules, design…
 
 ---
 
