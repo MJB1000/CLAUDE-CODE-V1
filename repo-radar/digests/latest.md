@@ -1,31 +1,24 @@
-# 🛰️ Repo Radar — 2026-10-22
+# 🛰️ Repo Radar — 2026-10-23
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_17 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_13 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[linguo2625469/workbuddy2api-panel](https://github.com/linguo2625469/workbuddy2api-panel)** — ⭐ 4,366 · 109.7/day · Go · since 2026-09-12
-   > 把腾讯WorkBuddy账号变成 OpenAI 兼容 API 的多账号网关，同时自动完成任务中心全部任务，附 Web 管理面板（账号池可视化 / 积分任务 / 配置热更新）。基于 Sliverkiss/workbuddy2api 的增强分支
-2. **[nano-muse/nanoMuse](https://github.com/nano-muse/nanoMuse)** — ⭐ 2,161 · 75.2/day · Swift · since 2026-09-23
-   > nanoMuse: an open-source personal agent for every device you own. One agent with a name and a look of its own that does things, keeps…
-3. **[springvoiceswell/semrush-ai-tool](https://github.com/springvoiceswell/semrush-ai-tool)** — ⭐ 539 · 20.1/day · JavaScript · since 2026-09-25
-   > Semrush SEO AI-powered analysis tool MCP server & CLI for keyword research, domain analytics, backlink analysis
-
-🌱 **Rising fast** — small repos gaining stars (7d)
-
-4. **[FengZhenfei/carrel](https://github.com/FengZhenfei/carrel)** — ⭐ 373 · 📈 +108⭐/7d · Python · since 2026-09-28
-   > Ontology-Augmented Generation for AI agents.
+1. **[simbasjungles/free-my-tv](https://github.com/simbasjungles/free-my-tv)** — ⭐ 3,425 · 1071.2/day · Java · since 2026-10-19
+   > A fast, ad-free home screen for Google TV. Open source, built with Claude Code. One button to undo.
+2. **[Sidiora-Labs/paxeer-monorepo](https://github.com/Sidiora-Labs/paxeer-monorepo)** — ⭐ 571 · 8.3/day · Go · since 2026-08-14
+   > Paxeer X is a Distributed HyperState Machine for payments, code execution and intent routing. Designed for Machines and the Users operating…
+3. **[apowerb/apowerb](https://github.com/apowerb/apowerb)** — ⭐ 150 · 1.8/day · Python · since 2026-07-29
+   > The open-source agentic framework to build, orchestrate, and operate production AI agents.
 
 ## Multimodal AI
 
-1. **[seacen/meetcap](https://github.com/seacen/meetcap)** — ⭐ 154 · 8.6/day · Shell · since 2026-10-04
-   > Powerful, free, context-aware AI native meeting assistant that transcribes locally on your computer, writes the minutes, and lets your AI…
-2. **[groundingpi/GroundingPI](https://github.com/groundingpi/GroundingPI)** — ⭐ 156 · 7.2/day · Python · since 2026-09-30
-   > A 4B grounding foundation model for physical intelligence. Unifies detection, referring, pointing, OCR, GUI, and layout grounding…
-3. **[Sallyn0225/eidolon-sc](https://github.com/Sallyn0225/eidolon-sc)** — ⭐ 189 · 7.1/day · Python · since 2026-09-25
-   > 和《偶像大师 闪耀色彩》偶像实时语音/文字对话的 AI 分身：日语原声 + 中文字幕、回忆原作剧情、跨角色共享记忆；支持 Google/GitHub 登录与自带密钥，Docker Compose 一键部署（参考 LAPLACE Eidolon）
+1. **[C4rohan/Lampline](https://github.com/C4rohan/Lampline)** — ⭐ 163 · 43.8/day · Python · since 2026-10-19
+   > Build AI phone agents on your own computer and test every change with an AI caller. Open source, runs free with no API keys, cents per call…
+2. **[CerealAxis/Nola-Translator](https://github.com/CerealAxis/Nola-Translator)** — ⭐ 246 · 10.0/day · TypeScript · since 2026-09-28
+   > Lightweight, powerful real-time speech translation with multilingual support and a multilingual UI.
 
 ## Marketing & analytics tech
 
@@ -33,19 +26,21 @@ _Nothing new this run._
 
 ## Web/app dev stack
 
-1. **[flohoeller/affectui](https://github.com/flohoeller/affectui)** — ⭐ 176 · 9.7/day · TypeScript · since 2026-10-03
-   > Handcrafted React components, illustrations and motion for AI products. One file each, calm motion, dark mode built in. Install with the…
+_Nothing new this run._
 
 ## Self-development & productivity
 
-_Nothing new this run._
+1. **[InukaAsith/TwinDesk](https://github.com/InukaAsith/TwinDesk)** — ⭐ 261 · 29.1/day · JavaScript · since 2026-10-14
+   > Use two computers as one desk: Mac, Windows and Linux on the same network. Share screens, mouse and keyboard, clipboard, files, sound…
 
 ## Claude & agent design craft
 
-1. **[INSANE0777/Awwwards-mcp](https://github.com/INSANE0777/Awwwards-mcp)** — ⭐ 282 · 8.4/day · TypeScript · since 2026-09-18
-   > Free, open-source MCP server that gives AI coding agents (Claude Code, Codex, Cursor, OpenCode, ZCode…) design inspiration from…
-2. **[bgts-ai-org/bgts-context-engine](https://github.com/bgts-ai-org/bgts-context-engine)** — ⭐ 162 · 3.7/day · Python · since 2026-09-08
-   > Deterministic code-graph context engine for AI coding agents - PostgreSQL + Apache AGE + pgvector, MCP & REST, no LLM in the loop.
+1. **[JeffKeeping/dsh-purge-plus](https://github.com/JeffKeeping/dsh-purge-plus)** — ⭐ 328 · 71.8/day · JavaScript · since 2026-10-18
+   > dsh-purge 的非官方分支（fork）：适配 DeepSeek Harness 0.2.1-rc.2、破甲内核 v3、设置页 UI 重做 / unofficial fork of YuJunZhiXue/dsh-purge (MIT)
+2. **[leopard627/fire-your-seo-agency](https://github.com/leopard627/fire-your-seo-agency)** — ⭐ 921 · 16.2/day · Python · since 2026-08-26
+   > Fire your SEO·GEO agency 🔥 A Claude Code skill that audits and optimizes SEO·AEO·GEO·LLMO·NEO(Naver) by itself — 월 50~350만 원짜리 'AI 검색 최적화'…
+3. **[BillionsBobby/JevRouter](https://github.com/BillionsBobby/JevRouter)** — ⭐ 465 · 13.4/day · TypeScript · since 2026-09-18
+   > A lightweight Jev-powered router for models, tools, and subagents
 
 ## Community & social media management
 
@@ -57,22 +52,17 @@ _Nothing new this run._
 
 ## Meta inbox & omnichannel AI agents
 
-1. **[rlaope/deepseek-bot](https://github.com/rlaope/deepseek-bot)** — ⭐ 68 · 4.3/day · TypeScript · since 2026-10-06
-   > DeepSeek Harness based personal agent, a self-hosted AI teammate that remembers you, messenger gateway and TUI with ultrafast
+1. **[brightbeanxyz/brightbean-chat](https://github.com/brightbeanxyz/brightbean-chat)** — ⭐ 42 · 0.7/day · Python · since 2026-08-20
+   > Open-source, self-hostable chat automation. Build visual flows, run them on Instagram, WhatsApp, Messenger, Telegram, SMS, and email…
 
 ## Wildcard — adjacent leverage
 
-1. **[Liu-zhongxian/zongzhu-bot](https://github.com/Liu-zhongxian/zongzhu-bot)** — ⭐ 216 · 40.3/day · C++ · since 2026-10-16
-   > 宗主：Waveshare 1.75C 圆屏 ESP32 上的 Grok Bot 语音终端，会眨眼的眼睛表情、字幕与朗读，含固件和后端源码（2.5.2.9）
-2. **[ctoldigital/axuse](https://github.com/ctoldigital/axuse)** — ⭐ 230 · 32.0/day · JavaScript · since 2026-10-14
-   > Accessibility-first browser & computer use for AI agents — one MCP server for every harness (Codex, Claude Code, OpenCode, Antigravity)…
-3. **[alextnetto/res](https://github.com/alextnetto/res)** — ⭐ 170 · 26.8/day · JavaScript · since 2026-10-15
-   > Agent skill to reverse engineer a SaaS product through the browser into a knowledge base for rebuilding it: screens, rules, data model…
-
-🌱 **Rising fast** — small repos gaining stars (7d)
-
-4. **[chienbm98/foxprofile](https://github.com/chienbm98/foxprofile)** — ⭐ 151 · 📈 151⭐ in 14d · Python · since 2026-10-07
-   > Free, open-source anti-detect browser profile manager: per-profile fingerprint, cookies and proxy, Camoufox and Chrome engines, desktop…
+1. **[tek-sys-hub/Rubix-lang](https://github.com/tek-sys-hub/Rubix-lang)** — ⭐ 1,902 · 503.6/day · Assembly · since 2026-10-19
+   > The 100% Pure x86-64 Assembly Systems Language
+2. **[devswha/ovis](https://github.com/devswha/ovis)** — ⭐ 1,365 · 38.8/day · TypeScript · since 2026-09-17
+   > Ovis (formerly herdr web UI): free, open-source browser and phone client for herdr. Chat and live terminal for Claude Code, Codex and every…
+3. **[peach-mitao/peach](https://github.com/peach-mitao/peach)** — ⭐ 2,466 · 38.4/day · Python · since 2026-08-19
+   > Peach 蜜桃：单用户、本地优先的个人媒体系统 · Single-user, local-first personal media system
 
 ## Ads & paid growth
 
@@ -80,10 +70,7 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[engenheirodevideo/get-brolls](https://github.com/engenheirodevideo/get-brolls)** — ⭐ 150 · 4.2/day · Python · since 2026-09-15
-   > Coleta, revisão em Storyboard e entrega segura de B-rolls para macOS e Windows.
-2. **[wassermanproductions/wassermans-filmmaker-suite](https://github.com/wassermanproductions/wassermans-filmmaker-suite)** — ⭐ 153 · 1.5/day · Shell · since 2026-07-11
-   > Wasserman's Filmmaker Suite — ScriptBreak, Cork Board, Master Canvas, Blockout, Motion Previs Studio, Storyboard Reference Studio, Circle…
+_Nothing new this run._
 
 ## E-commerce & Shopify
 
