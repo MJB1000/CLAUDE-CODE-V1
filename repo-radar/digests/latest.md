@@ -2,31 +2,33 @@
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_15 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_12 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[ollaya-dev/ollaya](https://github.com/ollaya-dev/ollaya)** — ⭐ 1,386 · 46.1/day · Rust · since 2026-09-23
-   > Jev-compatible API server for open decision models. Ollama for decision models: pull and serve 25 model families (Laya, pplx-decider, Clef…
-2. **[AhmadHassan-BTed/AutoSwarm-Shadow-Adapter](https://github.com/AhmadHassan-BTed/AutoSwarm-Shadow-Adapter)** — ⭐ 3,006 · 33.2/day · Python · since 2026-07-25
-   > Zero-modification Human-in-the-Loop adapter for OpenOPC's agentic DAG runtime.
-3. **[pinganbbOvO/ai-companion-kit](https://github.com/pinganbbOvO/ai-companion-kit)** — ⭐ 387 · 24.6/day · JavaScript · since 2026-10-08
-   > 给你的 AI 一副身体，和一点人味 —— 会记事、会看场合的 QQ 陪聊 + 能控制安卓手机的 MCP
+1. **[dagoSte/squadra](https://github.com/dagoSte/squadra)** — ⭐ 456 · 17.0/day · Python · since 2026-09-28
+   > Coordinate Claude, Codex and Cursor windows with shared tasks, acknowledgements, prechecks, parallel tests, source-bound proofs and…
+2. **[chipfighter/context-attachment-manager](https://github.com/chipfighter/context-attachment-manager)** — ⭐ 506 · 16.4/day · TypeScript · since 2026-09-24
+   > Long image chats in Codex and Claude, without the lag. The model manages its own images, pulling back only what it needs, and any image you…
+3. **[arcships/rutis](https://github.com/arcships/rutis)** — ⭐ 158 · 4.8/day · Rust · since 2026-09-22
+   > A plugin runtime for software that iterates on itself — the substrate where agents write, swap and hot-reload their own plugins in Rust…
 
 ## Multimodal AI
 
-1. **[MachHongHai/HaizFlow](https://github.com/MachHongHai/HaizFlow)** — ⭐ 207 · 1.9/day · Python · since 2026-07-06
-   > Free Windows desktop app for AI video translation, subtitles and dubbing, with local CPU/GPU models, voice cloning, batch processing and…
+1. **[andrisgauracs/whistle-esp32](https://github.com/andrisgauracs/whistle-esp32)** — ⭐ 160 · 27.5/day · C · since 2026-10-19
+   > Whistle speech-to-text running fully on an ESP32-S3: hold a button, say a colour in one of 7 languages, the LED does it. No network.
+2. **[niyongsheng/AudioScript](https://github.com/niyongsheng/AudioScript)** — ⭐ 203 · 19.1/day · Rust · since 2026-10-14
+   > [讯飞同传]免费平替——本地系统语音实时转写，国际会议、英文播客、生肉影视，屏幕浮窗、实时字幕、离线识别。
+3. **[microsoft/AesCode](https://github.com/microsoft/AesCode)** — ⭐ 154 · 1.6/day · Python · since 2026-07-23
+   > Aesthetic code generation with decoupled cross-modal rewards: turning prompts into editable, verifiable HTML/CSS infographics, with image…
 
 ## Marketing & analytics tech
 
-1. **[sergebulaev/x-skills](https://github.com/sergebulaev/x-skills)** — ⭐ 151 · 1.3/day · Python · since 2026-07-02
-   > X (Twitter) marketing skills for Claude Code and Codex: write tweets, threads, and replies in your voice, strip AI tells, and publish via…
+_Nothing new this run._
 
 ## Web/app dev stack
 
-1. **[Surajmaurya1/easyui](https://github.com/Surajmaurya1/easyui)** — ⭐ 163 · 2.4/day · TypeScript · since 2026-08-17
-   > _no description_
+_Nothing new this run._
 
 ## Self-development & productivity
 
@@ -34,12 +36,10 @@ _Nothing new this run._
 
 ## Claude & agent design craft
 
-1. **[Jakeschincariol/arena-skill](https://github.com/Jakeschincariol/arena-skill)** — ⭐ 924 · 34.9/day · Python · since 2026-09-27
-   > When Claude keeps giving you bad answers, make 100 versions of it fight to the death. Same task, 100 different strategies, a bracket, one…
-2. **[StartLuxLabs/DecisionPivot](https://github.com/StartLuxLabs/DecisionPivot)** — ⭐ 144 · 15.4/day · Python · since 2026-10-14
-   > DecisionPivot: a diagnostic benchmark for decision models in LLM systems. Contrast pairs that differ in one decisive detail, generators…
-3. **[google/elephant-goldfish-model](https://github.com/google/elephant-goldfish-model)** — ⭐ 306 · 7.6/day · Python · since 2026-09-13
-   > An open-source method and skill set created at Google for spec-driven development with LLMs
+1. **[1llu50ry/mcp-gamehacking](https://github.com/1llu50ry/mcp-gamehacking)** — ⭐ 350 · 17.7/day · TypeScript · since 2026-10-05
+   > MCP (Model Context Protocol) server for game hacking & reverse engineering. A structured knowledge base of **4,100+ skills** with full…
+2. **[Jaxton07/percho](https://github.com/Jaxton07/percho)** — ⭐ 467 · 6.0/day · TypeScript · since 2026-08-08
+   > Percho: Minimalist desktop GUI for the Pi coding agent — the same engine as the Pi CLI, in a clean visual interface. Multi-session chat…
 
 ## Community & social media management
 
@@ -55,12 +55,8 @@ _Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-1. **[shaongitbd/doory](https://github.com/shaongitbd/doory)** — ⭐ 1,796 · 128.3/day · TypeScript · since 2026-10-10
-   > Open source canva alternative
-2. **[JMS1717/ming-voice](https://github.com/JMS1717/ming-voice)** — ⭐ 175 · 59.2/day · Python · since 2026-10-21
-   > Low-latency local speech-to-speech voice assistant with Ming-3.0-audio-tiny on AMD and Nvidia GPUs. Easy setup on Windows and Linux
-3. **[Gamer92000/echo-dot-assist](https://github.com/Gamer92000/echo-dot-assist)** — ⭐ 166 · 5.2/day · C · since 2026-09-21
-   > Turn Amazon Echos (Echo Dot 3, Echo Dot 2, Echo 2) into local Home Assistant voice satellites. Keeps Amazon's mic processing and wake word…
+1. **[benord-labs/frink](https://github.com/benord-labs/frink)** — ⭐ 151 · 5.3/day · TypeScript · since 2026-09-26
+   > Desktop-first, open-source (MIT) application for running parallel agents, and multi-step custom workflows triggered by schedules, webhooks…
 
 ## Ads & paid growth
 
@@ -68,18 +64,20 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[appariciojunior/video-editor-skills](https://github.com/appariciojunior/video-editor-skills)** — ⭐ 170 · 170.0/day · — · since 2026-10-23
-   > Skills that teach Claude Code to be a first-pass video editor in DaVinci Resolve: transcript cuts, vlog pacing, B-roll, music & SFX, clean…
+1. **[kaomei/stickman-video-director](https://github.com/kaomei/stickman-video-director)** — ⭐ 2,896 · 35.0/day · Python · since 2026-08-03
+   > Open-source AI stickman video generator for faceless YouTube channels. Automate visuals, voiceover, captions, and sound effects—or direct…
+2. **[Ebony-Vinyl/EAC-design-world](https://github.com/Ebony-Vinyl/EAC-design-world)** — ⭐ 202 · 26.2/day · JavaScript · since 2026-10-17
+   > DeepSeek Harness 本地视频制作与设计插件：多轨剪辑、模板与设计体系、原生预览画布和真实文件导出
+3. **[HKUST-LongGroup/UniAVC](https://github.com/HKUST-LongGroup/UniAVC)** — ⭐ 242 · 9.8/day · Python · since 2026-09-30
+   > [arXiv 2026] Unified Audio-Video Creation via Progressive Training and Asymmetric Scheduling
 
 ## E-commerce & Shopify
 
-1. **[backtrue/thinkwithblack-skill](https://github.com/backtrue/thinkwithblack-skill)** — ⭐ 237 · 16.5/day · Python · since 2026-10-09
-   > 365 free AI marketing skills (zh-TW/en) for ChatGPT, Claude, Gemini, Claude Code & Cursor — copywriting, ads budget, margin, CRM, email…
+_Nothing new this run._
 
 ## Brand systems & creative ops
 
-1. **[arla6ka/design.how](https://github.com/arla6ka/design.how)** — ⭐ 161 · 6.3/day · TypeScript · since 2026-09-28
-   > Agent skills and design systems from design.how. Build a design system from your app, use agents to ship UI, enforce it in CI.
+_Nothing new this run._
 
 ---
 
