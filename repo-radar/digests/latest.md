@@ -1,17 +1,13 @@
-# 🛰️ Repo Radar — 2026-10-25
+# 🛰️ Repo Radar — 2026-10-27
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_9 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_7 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[miuuyy/Octopus-SI-OS](https://github.com/miuuyy/Octopus-SI-OS)** — ⭐ 382 · 23.0/day · Rust · since 2026-10-09
-   > A self-evolving agentic OS. A new architecture for agent execution, built on operating-system principles, with the harness as a path toward…
-2. **[Ablation-Tool/ablation](https://github.com/Ablation-Tool/ablation)** — ⭐ 224 · 7.0/day · Python · since 2026-09-23
-   > Ablation is an AI-assisted reverse engineering (AIARE) framework
-3. **[memoket/memoket-kite](https://github.com/memoket/memoket-kite)** — ⭐ 216 · 2.9/day · Python · since 2026-08-12
-   > An open-source, vector-free long-term memory engine for AI agents, achieving SOTA on LoCoMo and LongMemEval with significantly less context.
+1. **[bigfish1913/pi-rust](https://github.com/bigfish1913/pi-rust)** — ⭐ 157 · 2.2/day · Rust · since 2026-08-15
+   > Rust-native, library-first coding-agent runtime and terminal CLI inspired by Pi, with composable LLM providers, tools, sessions, and plugin…
 
 ## Multimodal AI
 
@@ -27,14 +23,15 @@ _Nothing new this run._
 
 ## Self-development & productivity
 
-_Nothing new this run._
+1. **[EXXETA/exxperts](https://github.com/EXXETA/exxperts)** — ⭐ 405 · 3.6/day · TypeScript · since 2026-07-07
+   > A free, open-source desktop app for getting work done with AI. It shows you what it would remember before it saves anything.
 
 ## Claude & agent design craft
 
-1. **[thetahealth/mirobody-env](https://github.com/thetahealth/mirobody-env)** — ⭐ 97 · 3.0/day · Python · since 2026-09-24
-   > HAEnv — synthetic longitudinal patients with code-derived gold, for evaluating health agents over time
-2. **[rookiestar28/MiniMaxH3-Studio](https://github.com/rookiestar28/MiniMaxH3-Studio)** — ⭐ 147 · 1.8/day · Python · since 2026-08-06
-   > Direct MiniMax H3 like a pro: Idea in, finished video out. A complete MiniMax H3 studio that lives in your ComfyUI.
+1. **[t3dotgg/tstack](https://github.com/t3dotgg/tstack)** — ⭐ 1,562 · 551.8/day · Python · since 2026-10-24
+   > The agent skills I use every day. Works with Claude Code and Codex.
+2. **[morganlinton/BeautifulRust](https://github.com/morganlinton/BeautifulRust)** — ⭐ 1,215 · 310.5/day · Python · since 2026-10-23
+   > Agent Skills that teach coding agents to write, review, and port idiomatic Rust, plus a tested clippy config. Works with Claude Code…
 
 ## Community & social media management
 
@@ -46,13 +43,16 @@ _Nothing new this run._
 
 ## Meta inbox & omnichannel AI agents
 
-1. **[heitorcarvalhohlbryzeis6-cloud/whatsapp-mcp-server](https://github.com/heitorcarvalhohlbryzeis6-cloud/whatsapp-mcp-server)** — ⭐ 58 · 18.4/day · HTML · since 2026-10-22
-   > WhatsApp MCP Server for AI Agents - TypeScript, Baileys and Cloud API
+_Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-1. **[TheSmokeDev/hermes-talk](https://github.com/TheSmokeDev/hermes-talk)** — ⭐ 159 · 1.9/day · Python · since 2026-08-02
-   > Hermes Talk: realtime duplex voice for Hermes Agent. Rides your ChatGPT or X Premium subscription, no API key needed. OpenAI, Grok, Gemini…
+1. **[Cattmonkey/ChaosIntelligence](https://github.com/Cattmonkey/ChaosIntelligence)** — ⭐ 200 · 57.2/day · Python · since 2026-10-23
+   > 把智能体当函数，把想法写成程序。Agent-native functional language with a CLI, Web IDE, goal-driven bots and live UI. Source-available; no AI training.
+2. **[klarluft/pitupitu](https://github.com/klarluft/pitupitu)** — ⭐ 212 · 22.0/day · Rust · since 2026-10-17
+   > Talk to Claude Code and Codex by voice, from your phone, on any of your machines. The open-source box agent for pitupitu.chat; your agents…
+3. **[HuskerMinion/techo5-dot](https://github.com/HuskerMinion/techo5-dot)** — ⭐ 150 · 3.7/day · Python · since 2026-09-16
+   > Linux firmware for the Echo Dot (2nd gen): no Fire OS, no Alexa. A local Home Assistant voice satellite with all seven mics, Bluetooth…
 
 ## Ads & paid growth
 
@@ -60,8 +60,7 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[kaomei/hand-drawn-video-prompts](https://github.com/kaomei/hand-drawn-video-prompts)** — ⭐ 282 · 3.1/day · — · since 2026-07-27
-   > Open-source AI skill for hand-drawn video prompts. Turn Chinese scripts into consistent 9:16 chibi storyboards, image prompts, and…
+_Nothing new this run._
 
 ## E-commerce & Shopify
 
@@ -69,8 +68,7 @@ _Nothing new this run._
 
 ## Brand systems & creative ops
 
-1. **[SideChainOversee/Adobe-InDesign](https://github.com/SideChainOversee/Adobe-InDesign)** — ⭐ 159 · 24.6/day · — · since 2026-10-19
-   > Secure Digital Asset Deployment Pipeline 2026, complete standalone setup. Pre-activated desktop edition for secure digital asset…
+_Nothing new this run._
 
 ---
 
