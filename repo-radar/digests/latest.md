@@ -1,13 +1,15 @@
-# 🛰️ Repo Radar — 2026-10-27
+# 🛰️ Repo Radar — 2026-10-28
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_7 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_8 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[bigfish1913/pi-rust](https://github.com/bigfish1913/pi-rust)** — ⭐ 157 · 2.2/day · Rust · since 2026-08-15
-   > Rust-native, library-first coding-agent runtime and terminal CLI inspired by Pi, with composable LLM providers, tools, sessions, and plugin…
+1. **[csr1010/whatsapp-ai-agent-sdk](https://github.com/csr1010/whatsapp-ai-agent-sdk)** — ⭐ 165 · 4.5/day · TypeScript · since 2026-09-21
+   > The open-source AI agent SDK for WhatsApp. Bring your own model, your own number, your own data. Local-first, no forced cloud, no vendor…
+2. **[slow-stack/mneme](https://github.com/slow-stack/mneme)** — ⭐ 187 · 2.5/day · JavaScript · since 2026-08-13
+   > 🧠 The memory that dreams — cross-session memory for DeepSeek Harness. Local SQLite + Markdown mirrors, autoDream consolidation, 4-way…
 
 ## Multimodal AI
 
@@ -23,15 +25,16 @@ _Nothing new this run._
 
 ## Self-development & productivity
 
-1. **[EXXETA/exxperts](https://github.com/EXXETA/exxperts)** — ⭐ 405 · 3.6/day · TypeScript · since 2026-07-07
-   > A free, open-source desktop app for getting work done with AI. It shows you what it would remember before it saves anything.
+_Nothing new this run._
 
 ## Claude & agent design craft
 
-1. **[t3dotgg/tstack](https://github.com/t3dotgg/tstack)** — ⭐ 1,562 · 551.8/day · Python · since 2026-10-24
-   > The agent skills I use every day. Works with Claude Code and Codex.
-2. **[morganlinton/BeautifulRust](https://github.com/morganlinton/BeautifulRust)** — ⭐ 1,215 · 310.5/day · Python · since 2026-10-23
-   > Agent Skills that teach coding agents to write, review, and port idiomatic Rust, plus a tested clippy config. Works with Claude Code…
+1. **[andyhuo520/digital-human-koubo](https://github.com/andyhuo520/digital-human-koubo)** — ⭐ 1,077 · 584.6/day · TypeScript · since 2026-10-26
+   > AI digital-human talking-head videos from one photo: Renoise MCP generation + 5 editing styles + 48 creator-grade packaging components…
+2. **[daveebbelaar/bama](https://github.com/daveebbelaar/bama)** — ⭐ 311 · 84.8/day · Swift · since 2026-10-24
+   > BAMA: Build Any Mac App. Agent skills to research, clone, design, build, optimize, and test native macOS apps with Swift and SwiftUI.
+3. **[lovisdotio/motion2code](https://github.com/lovisdotio/motion2code)** — ⭐ 293 · 37.3/day · HTML · since 2026-10-20
+   > Skills for coding agents: rebuild a motion design video as looping SVG + GSAP code, checked frame by frame against the source
 
 ## Community & social media management
 
@@ -47,12 +50,10 @@ _Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-1. **[Cattmonkey/ChaosIntelligence](https://github.com/Cattmonkey/ChaosIntelligence)** — ⭐ 200 · 57.2/day · Python · since 2026-10-23
-   > 把智能体当函数，把想法写成程序。Agent-native functional language with a CLI, Web IDE, goal-driven bots and live UI. Source-available; no AI training.
-2. **[klarluft/pitupitu](https://github.com/klarluft/pitupitu)** — ⭐ 212 · 22.0/day · Rust · since 2026-10-17
-   > Talk to Claude Code and Codex by voice, from your phone, on any of your machines. The open-source box agent for pitupitu.chat; your agents…
-3. **[HuskerMinion/techo5-dot](https://github.com/HuskerMinion/techo5-dot)** — ⭐ 150 · 3.7/day · Python · since 2026-09-16
-   > Linux firmware for the Echo Dot (2nd gen): no Fire OS, no Alexa. A local Home Assistant voice satellite with all seven mics, Bluetooth…
+1. **[AienTech/dossier](https://github.com/AienTech/dossier)** — ⭐ 1,502 · 62.2/day · TypeScript · since 2026-10-03
+   > A self-hosted job search app that writes tailored resumes and cover letters from your profile.
+2. **[imshaikot/browsentic](https://github.com/imshaikot/browsentic)** — ⭐ 221 · 2.3/day · TypeScript · since 2026-07-24
+   > An agentic browser harness: an AI side panel & orb in your own logged-in Chrome, Edge, Arc, Brave or even Firefox run by the…
 
 ## Ads & paid growth
 
@@ -60,7 +61,8 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-_Nothing new this run._
+1. **[liuhaisi2026212-maker/taishang-laojun](https://github.com/liuhaisi2026212-maker/taishang-laojun)** — ⭐ 185 · 32.4/day · Markdown · since 2026-10-22
+   > 太上老君·AI炼丹炉：抖音/小红书短视频创作 Skill。不知道拍啥、不会写稿，丢给你的 AI：找对标拆爆款、选题、系列策划、口播稿、标题、复盘、去AI味。Claude Code / Codex 等 npx 一行安装，豆包等聊天智能体用 Bot 版。
 
 ## E-commerce & Shopify
 
