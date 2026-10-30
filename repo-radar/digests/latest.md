@@ -1,17 +1,22 @@
-# 🛰️ Repo Radar — 2026-10-29
+# 🛰️ Repo Radar — 2026-10-30
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_7 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_8 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[jaikydota/BullFlow](https://github.com/jaikydota/BullFlow)** — ⭐ 203 · 13.8/day · TypeScript · since 2026-10-14
-   > 推量牛 BullFlow — 开源企业级 RAG 解决方案：从企业知识库、营销内容自动化生产到全域内容分发 | Open-source enterprise RAG solution: knowledge base → automated marketing content →…
+1. **[SAOS-3624/dsh-video-storyboard](https://github.com/SAOS-3624/dsh-video-storyboard)** — ⭐ 196 · 62.4/day · JavaScript · since 2026-10-26
+   > Scene-aware storyboard for DeepSeek Harness: 9-16 numbered cells with timestamps + transcript + an audio envelope, packed into ONE image…
+2. **[nightly-labs/openbot](https://github.com/nightly-labs/openbot)** — ⭐ 3,896 · 49.8/day · TypeScript · since 2026-08-12
+   > A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file…
+3. **[1llu50ry/mcp-reverse](https://github.com/1llu50ry/mcp-reverse)** — ⭐ 429 · 17.3/day · TypeScript · since 2026-10-05
+   > MCP (Model Context Protocol) server for game hacking & reverse engineering. A structured knowledge base of 4,100+ skills with full source…
 
 ## Multimodal AI
 
-_Nothing new this run._
+1. **[wenxuanzhang1209-cyber/meetdo](https://github.com/wenxuanzhang1209-cyber/meetdo)** — ⭐ 208 · 3.0/day · Python · since 2026-08-21
+   > MeetDo — open-source Meeting-to-Action AI by 筑听 · JKinco Listen. Self-hosted live meetings, local ASR/LLM, structured minutes, DOCX/PDF.
 
 ## Marketing & analytics tech
 
@@ -19,21 +24,21 @@ _Nothing new this run._
 
 ## Web/app dev stack
 
-_Nothing new this run._
+1. **[dgesteves/onsystem](https://github.com/dgesteves/onsystem)** — ⭐ 164 · 7.1/day · TypeScript · since 2026-10-06
+   > Keeps coding agents on your design system: catches palette colors, native elements and APIs your system lacks, at every edit and pull…
 
 ## Self-development & productivity
 
-1. **[flyl1u/fly-island](https://github.com/flyl1u/fly-island)** — ⭐ 306 · 2.6/day · TypeScript · since 2026-07-04
-   > A lightweight PC Dynamic Island that integrates QQ, WeChat, and email notifications, clipboard history, quick translation, a Codex status…
+_Nothing new this run._
 
 ## Claude & agent design craft
 
-1. **[DenisSergeevitch/ex-ussr-kinship-research](https://github.com/DenisSergeevitch/ex-ussr-kinship-research)** — ⭐ 1,183 · 325.5/day · Python · since 2026-10-25
-   > Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across…
-2. **[mileson/chaojifeng-video-design](https://github.com/mileson/chaojifeng-video-design)** — ⭐ 420 · 47.2/day · HTML · since 2026-10-20
-   > 超级峰的视频设计方法论｜面向 AI Agent 的视频主线、分镜、声画节奏、制作与交付验收 Skill
-3. **[langchain-ai/design-agent](https://github.com/langchain-ai/design-agent)** — ⭐ 317 · 29.2/day · JavaScript · since 2026-10-18
-   > Open-source design agent: on-brand stills, decks, diagrams, charts and motion graphics from a chat thread, built on Deep Agents.
+1. **[arjun988/blender-skills](https://github.com/arjun988/blender-skills)** — ⭐ 1,529 · 13.1/day · TypeScript · since 2026-07-05
+   > 94 specialist Blender skills for Cursor, Claude Code, Kiro & Codex -> MCP-powered production pipeline from blockout to engine export.
+2. **[feimacode/open-design-agent-kit](https://github.com/feimacode/open-design-agent-kit)** — ⭐ 461 · 11.5/day · HTML · since 2026-09-19
+   > Pro-grade UI design built into the coding agent you already use — GitHub Copilot Chat, Claude Code, Codex, Cursor. 270+ design skills, 150+…
+3. **[udaysharmadev/Gravitas](https://github.com/udaysharmadev/Gravitas)** — ⭐ 391 · 7.6/day · Python · since 2026-09-08
+   > Make Gemini code like Claude Models. Forces it to inspect files before editing, plan changes, test its work, and back up every “done” with…
 
 ## Community & social media management
 
@@ -57,10 +62,7 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[HeyChengC/wallstreet-explainer](https://github.com/HeyChengC/wallstreet-explainer)** — ⭐ 414 · 38.9/day · JavaScript · since 2026-10-18
-   > 华尔街式财经/科技解读短片 skill：设计思路、风格语言，以及找片、截图、配音、渲染和混音工具。
-2. **[HeyChengC/vibe-knowledge-film](https://github.com/HeyChengC/vibe-knowledge-film)** — ⭐ 768 · 34.3/day · JavaScript · since 2026-10-06
-   > 抖音爆款Vibe知识大赏知识短片skill，深度拆解爆款视频，复刻画风，导演分镜表，自动配音效，一键出片
+_Nothing new this run._
 
 ## E-commerce & Shopify
 
