@@ -1,22 +1,22 @@
-# 🛰️ Repo Radar — 2026-10-31
+# 🛰️ Repo Radar — 2026-11-01
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_10 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_13 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[ranxianglei/billion-context](https://github.com/ranxianglei/billion-context)** — ⭐ 3,447 · 40.2/day · TypeScript · since 2026-08-06
-   > A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and…
-2. **[poco-ai/Agentero](https://github.com/poco-ai/Agentero)** — ⭐ 1,065 · 9.2/day · TypeScript · since 2026-07-07
-   > Unified research workspace for humans & agents — PDF Q&A with citations, Vault, writing. 为人与 Agent 协作的科研工作台；补齐 Zotero 时代的人机上下文断点。
-3. **[JEen-wang/Adaptive-rag](https://github.com/JEen-wang/Adaptive-rag)** — ⭐ 194 · 6.1/day · Python · since 2026-09-29
-   > 按问题复杂度自动分流的电商客服 RAG：简单问题直接回答；复杂问题经过多跳检索并自我纠错；查单、退改通过工具调用完成，且高风险写操作必须先经人工确认。基于 FastAPI 和 LangGraph，混合检索并附带引用，内置离线评测与 Prometheus…
+1. **[zhuyansen/new-term-radar](https://github.com/zhuyansen/new-term-radar)** — ⭐ 2,001 · 101.5/day · Python · since 2026-10-12
+   > Daily radar for new AI terms: names of new models, products and repos, caught on X, Hugging Face, GitHub and sitemaps before keyword tools…
+2. **[ardeyouxipianyi/workbuddy2api-hub](https://github.com/ardeyouxipianyi/workbuddy2api-hub)** — ⭐ 3,334 · 67.2/day · Python · since 2026-09-12
+   > WorkBuddy 国际国内多账号反代网关，支持 Codex / Claude Code / DSH与标准 OpenAI 客户端。
+3. **[wanghao-SunSky/cs329z-chinese](https://github.com/wanghao-SunSky/cs329z-chinese)** — ⭐ 215 · 66.0/day · HTML · since 2026-10-28
+   > 斯坦福 Stanford CS329Z Engineering AI Agents 中文教程：面向 Python 开发者的 AI 智能体课程，19 讲与 4 项实践，涵盖 LLM、RAG、工具调用、记忆、多智能体、评测与安全。完整 Markdown、在线与离线…
 
 ## Multimodal AI
 
-1. **[starVLA/VLAct](https://github.com/starVLA/VLAct)** — ⭐ 150 · 2.3/day · Python · since 2026-08-25
-   > [NeurIPS 2026] Beyond Data Scaling: Representation-Centric Continued Pre-training for Vision-Language-Action Models
+1. **[DAGroup-PKU/PyRUA-Lean](https://github.com/DAGroup-PKU/PyRUA-Lean)** — ⭐ 154 · 4.2/day · Python · since 2026-09-25
+   > Fewer Tokens, Better Action: GPT-6 Astra Robot Agents with 14% Higher Success but 65% Fewer Tokens
 
 ## Marketing & analytics tech
 
@@ -24,18 +24,18 @@ _Nothing new this run._
 
 ## Web/app dev stack
 
-_Nothing new this run._
+1. **[NyxFoundation/nyxis](https://github.com/NyxFoundation/nyxis)** — ⭐ 313 · 53.6/day · Lean · since 2026-10-26
+   > A Lean backend framework whose authorization safety is formally proven. The developer writes only a Cedar schema and policies; handlers are…
 
 ## Self-development & productivity
 
-_Nothing new this run._
+1. **[microsoft/TokenEconomizer](https://github.com/microsoft/TokenEconomizer)** — ⭐ 3,055 · 162.1/day · Python · since 2026-10-13
+   > Experience-Driven Black-Box Cost Control for Coding Agents
 
 ## Claude & agent design craft
 
-1. **[jiwoochris/artex-global](https://github.com/jiwoochris/artex-global)** — ⭐ 2,400 · 87.5/day · Go · since 2026-10-03
-   > Global edition of ARTEX — an LLM multi-agent autonomous penetration-testing framework. English default, switchable to…
-2. **[SLEEPYBQ/MemoSync](https://github.com/SLEEPYBQ/MemoSync)** — ⭐ 124 · 2.2/day · TypeScript · since 2026-09-05
-   > Co-manage memory with your coding agent across sessions. A local workbench for Claude Code, Codex and Pi.
+1. **[patch-gg/pixelfx](https://github.com/patch-gg/pixelfx)** — ⭐ 1,406 · 807.7/day · JavaScript · since 2026-10-30
+   > 244 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own.
 
 ## Community & social media management
 
@@ -43,20 +43,19 @@ _Nothing new this run._
 
 ## Customer-service AI agents
 
-_Nothing new this run._
+1. **[aru-labs/lossless-memory](https://github.com/aru-labs/lossless-memory)** — ⭐ 156 · 2.7/day · Python · since 2026-09-04
+   > Lossless long-term memory for a personal AI: never summarize, keep every line, put a timestamp on everything.
 
 ## Meta inbox & omnichannel AI agents
 
-_Nothing new this run._
+1. **[UponRain83246/ai-telegram-business-bot-n8n-resocket](https://github.com/UponRain83246/ai-telegram-business-bot-n8n-resocket)** — ⭐ 68 · 20.3/day · — · since 2026-10-28
+   > Production n8n AI Telegram bot — dual-AI fallback, multi-modal (text/voice/image), lead qualification & self-healing reliability. Case…
+2. **[Piratelord54942/Telegram-Channel-Admin-rpocket](https://github.com/Piratelord54942/Telegram-Channel-Admin-rpocket)** — ⭐ 67 · 20.1/day · — · since 2026-10-28
+   > AI-powered Telegram content curation bot that parses donor channels, filters ads, rewrites posts using GPT, and manages moderation before…
 
 ## Wildcard — adjacent leverage
 
-1. **[davidondrej/cloudroom](https://github.com/davidondrej/cloudroom)** — ⭐ 1,106 · 25.6/day · TypeScript · since 2026-09-17
-   > cloudroom is the open-source platform to run 1,000+ agents productively
-2. **[YOLOW92/pagesift](https://github.com/YOLOW92/pagesift)** — ⭐ 175 · 17.0/day · Rust · since 2026-10-20
-   > Rust web scraper & crawler for AI agents: URLs, PDFs and Office files → clean Markdown/JSON. Firecrawl- and Jina Reader-compatible API, MCP…
-3. **[zickrian/isle](https://github.com/zickrian/isle)** — ⭐ 157 · 14.9/day · Rust · since 2026-10-20
-   > A notch-style island for GNOME that keeps your day one glance away: music with synced lyrics, notifications, calendar, focus timer, tasks…
+_Nothing new this run._
 
 ## Ads & paid growth
 
@@ -64,7 +63,10 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-_Nothing new this run._
+1. **[ryan-bergio03h1/Instagram-View-Booster-Free-Reel-Story-Views-Tool-2026](https://github.com/ryan-bergio03h1/Instagram-View-Booster-Free-Reel-Story-Views-Tool-2026)** — ⭐ 250 · 20.7/day · Python · since 2026-10-19
+   > Free Instagram view booster for Reels, Stories and Videos. Increase views, reach and engagement with smart delivery system. Easy to use…
+2. **[sandoctopuspanel64/TikTok-Video-Boost-2026---Advanced-Content-Performance-Tool](https://github.com/sandoctopuspanel64/TikTok-Video-Boost-2026---Advanced-Content-Performance-Tool)** — ⭐ 302 · 2.7/day · Python · since 2026-07-13
+   > Powerful TikTok software designed to increase video views, improve reach, and help creators grow their audience effectively in 2026.
 
 ## E-commerce & Shopify
 
@@ -72,8 +74,8 @@ _Nothing new this run._
 
 ## Brand systems & creative ops
 
-1. **[vmc-inner-circle/k-style-ui-ux](https://github.com/vmc-inner-circle/k-style-ui-ux)** — ⭐ 216 · 4.2/day · HTML · since 2026-09-09
-   > PRD 한 장으로 한국 앱 스타일 모바일 화면 초안을 15분 안팎에 만드는 Claude Code·Codex 플러그인
+1. **[op7418/dsh-guizang-design](https://github.com/op7418/dsh-guizang-design)** — ⭐ 192 · 136.6/day · HTML · since 2026-10-30
+   > 歸藏设计 · DeepSeek Harness 插件：网页 PPT、图文卡片、网页排版、去 AI 味四个 skill，一套设计系统；作品库、内容生产工作流、语气档案
 
 ---
 
