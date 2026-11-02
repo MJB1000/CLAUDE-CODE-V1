@@ -1,22 +1,22 @@
-# 🛰️ Repo Radar — 2026-11-01
+# 🛰️ Repo Radar — 2026-11-02
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_13 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_9 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[zhuyansen/new-term-radar](https://github.com/zhuyansen/new-term-radar)** — ⭐ 2,001 · 101.5/day · Python · since 2026-10-12
-   > Daily radar for new AI terms: names of new models, products and repos, caught on X, Hugging Face, GitHub and sitemaps before keyword tools…
-2. **[ardeyouxipianyi/workbuddy2api-hub](https://github.com/ardeyouxipianyi/workbuddy2api-hub)** — ⭐ 3,334 · 67.2/day · Python · since 2026-09-12
-   > WorkBuddy 国际国内多账号反代网关，支持 Codex / Claude Code / DSH与标准 OpenAI 客户端。
-3. **[wanghao-SunSky/cs329z-chinese](https://github.com/wanghao-SunSky/cs329z-chinese)** — ⭐ 215 · 66.0/day · HTML · since 2026-10-28
-   > 斯坦福 Stanford CS329Z Engineering AI Agents 中文教程：面向 Python 开发者的 AI 智能体课程，19 讲与 4 项实践，涵盖 LLM、RAG、工具调用、记忆、多智能体、评测与安全。完整 Markdown、在线与离线…
+1. **[emanuele-em/kanzo](https://github.com/emanuele-em/kanzo)** — ⭐ 603 · 79.6/day · Rust · since 2026-10-25
+   > Self-hosted, sharable kanban for humans and agents. One 4.5 MB binary, 4.5 MB of RAM, 10 to 60 tokens per agent reply, starts in 2 ms, zero…
+2. **[sahenjp/RustXNG](https://github.com/sahenjp/RustXNG)** — ⭐ 372 · 24.9/day · Rust · since 2026-10-18
+   > Self-hosted, SSRF-hardened web search and grounding engine for local AI agents (AGPL-3.0-or-later)
+3. **[keptinventory/kept](https://github.com/keptinventory/kept)** — ⭐ 451 · 12.1/day · TypeScript · since 2026-09-25
+   > Self-hosted, open-source inventory of everything you own and where it is. AI assistant and MCP server built in.
 
 ## Multimodal AI
 
-1. **[DAGroup-PKU/PyRUA-Lean](https://github.com/DAGroup-PKU/PyRUA-Lean)** — ⭐ 154 · 4.2/day · Python · since 2026-09-25
-   > Fewer Tokens, Better Action: GPT-6 Astra Robot Agents with 14% Higher Success but 65% Fewer Tokens
+1. **[AGIHunt/blurt](https://github.com/AGIHunt/blurt)** — ⭐ 202 · 5.4/day · Swift · since 2026-09-25
+   > The keyboard for the agent era: dictation, copy text from screen, translation, snaps and screen recordings for Claude Code, Codex and your…
 
 ## Marketing & analytics tech
 
@@ -24,18 +24,16 @@ _Nothing new this run._
 
 ## Web/app dev stack
 
-1. **[NyxFoundation/nyxis](https://github.com/NyxFoundation/nyxis)** — ⭐ 313 · 53.6/day · Lean · since 2026-10-26
-   > A Lean backend framework whose authorization safety is formally proven. The developer writes only a Cedar schema and policies; handlers are…
+_Nothing new this run._
 
 ## Self-development & productivity
 
-1. **[microsoft/TokenEconomizer](https://github.com/microsoft/TokenEconomizer)** — ⭐ 3,055 · 162.1/day · Python · since 2026-10-13
-   > Experience-Driven Black-Box Cost Control for Coding Agents
+_Nothing new this run._
 
 ## Claude & agent design craft
 
-1. **[patch-gg/pixelfx](https://github.com/patch-gg/pixelfx)** — ⭐ 1,406 · 807.7/day · JavaScript · since 2026-10-30
-   > 244 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own.
+1. **[EternalNight996/memory-eternal](https://github.com/EternalNight996/memory-eternal)** — ⭐ 114 · 1.8/day · JavaScript · since 2026-08-31
+   > Your AI forgets every session. Give it a memory it can trust: local-first, review-gated agent memory — one SQLite vault for DSH, Claude…
 
 ## Community & social media management
 
@@ -43,15 +41,13 @@ _Nothing new this run._
 
 ## Customer-service AI agents
 
-1. **[aru-labs/lossless-memory](https://github.com/aru-labs/lossless-memory)** — ⭐ 156 · 2.7/day · Python · since 2026-09-04
-   > Lossless long-term memory for a personal AI: never summarize, keep every line, put a timestamp on everything.
+1. **[GroundedCoreAI/nexusdesk](https://github.com/GroundedCoreAI/nexusdesk)** — ⭐ 156 · 3.9/day · Python · since 2026-09-23
+   > Open-source, self-hosted, extensible Agent platform built around ReAct and Harness engineering, with AI customer support as its first…
 
 ## Meta inbox & omnichannel AI agents
 
-1. **[UponRain83246/ai-telegram-business-bot-n8n-resocket](https://github.com/UponRain83246/ai-telegram-business-bot-n8n-resocket)** — ⭐ 68 · 20.3/day · — · since 2026-10-28
-   > Production n8n AI Telegram bot — dual-AI fallback, multi-modal (text/voice/image), lead qualification & self-healing reliability. Case…
-2. **[Piratelord54942/Telegram-Channel-Admin-rpocket](https://github.com/Piratelord54942/Telegram-Channel-Admin-rpocket)** — ⭐ 67 · 20.1/day · — · since 2026-10-28
-   > AI-powered Telegram content curation bot that parses donor channels, filters ads, rewrites posts using GPT, and manages moderation before…
+1. **[Hainrixz/whatsapp-closer-agentkit](https://github.com/Hainrixz/whatsapp-closer-agentkit)** — ⭐ 40 · 0.4/day · Python · since 2026-08-04
+   > Repo blueprint para Claude Code: no trae la app, trae las instrucciones para construirla en tu máquina paso a paso. Un agente que atiende…
 
 ## Wildcard — adjacent leverage
 
@@ -63,10 +59,8 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[ryan-bergio03h1/Instagram-View-Booster-Free-Reel-Story-Views-Tool-2026](https://github.com/ryan-bergio03h1/Instagram-View-Booster-Free-Reel-Story-Views-Tool-2026)** — ⭐ 250 · 20.7/day · Python · since 2026-10-19
-   > Free Instagram view booster for Reels, Stories and Videos. Increase views, reach and engagement with smart delivery system. Easy to use…
-2. **[sandoctopuspanel64/TikTok-Video-Boost-2026---Advanced-Content-Performance-Tool](https://github.com/sandoctopuspanel64/TikTok-Video-Boost-2026---Advanced-Content-Performance-Tool)** — ⭐ 302 · 2.7/day · Python · since 2026-07-13
-   > Powerful TikTok software designed to increase video views, improve reach, and help creators grow their audience effectively in 2026.
+1. **[wj-sidiss/otopilot](https://github.com/wj-sidiss/otopilot)** — ⭐ 180 · 9.9/day · JavaScript · since 2026-10-14
+   > Turn a topic into a finished YouTube Short/video: script, free & CC0 images, voice-over, subtitles, thumbnail. Runs locally, no key needed…
 
 ## E-commerce & Shopify
 
@@ -74,8 +68,8 @@ _Nothing new this run._
 
 ## Brand systems & creative ops
 
-1. **[op7418/dsh-guizang-design](https://github.com/op7418/dsh-guizang-design)** — ⭐ 192 · 136.6/day · HTML · since 2026-10-30
-   > 歸藏设计 · DeepSeek Harness 插件：网页 PPT、图文卡片、网页排版、去 AI 味四个 skill，一套设计系统；作品库、内容生产工作流、语气档案
+1. **[enmerasoftware/ai-design-check](https://github.com/enmerasoftware/ai-design-check)** — ⭐ 157 · 33.1/day · JavaScript · since 2026-10-28
+   > Design rules and a zero-dependency checker for interfaces built with AI coding agents, on the web and in SwiftUI and Jetpack Compose apps…
 
 ---
 
