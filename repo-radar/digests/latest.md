@@ -1,22 +1,24 @@
-# 🛰️ Repo Radar — 2026-11-02
+# 🛰️ Repo Radar — 2026-11-03
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_9 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_12 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[emanuele-em/kanzo](https://github.com/emanuele-em/kanzo)** — ⭐ 603 · 79.6/day · Rust · since 2026-10-25
-   > Self-hosted, sharable kanban for humans and agents. One 4.5 MB binary, 4.5 MB of RAM, 10 to 60 tokens per agent reply, starts in 2 ms, zero…
-2. **[sahenjp/RustXNG](https://github.com/sahenjp/RustXNG)** — ⭐ 372 · 24.9/day · Rust · since 2026-10-18
-   > Self-hosted, SSRF-hardened web search and grounding engine for local AI agents (AGPL-3.0-or-later)
-3. **[keptinventory/kept](https://github.com/keptinventory/kept)** — ⭐ 451 · 12.1/day · TypeScript · since 2026-09-25
-   > Self-hosted, open-source inventory of everything you own and where it is. AI assistant and MCP server built in.
+1. **[storytold/craft-anything](https://github.com/storytold/craft-anything)** — ⭐ 4,682 · 1864.4/day · Rust · since 2026-10-31
+   > Craft Anything: understand how any software works, and craft your own.
+2. **[qybaihe/bla](https://github.com/qybaihe/bla)** — ⭐ 1,995 · 224.1/day · JavaScript · since 2026-10-25
+   > 🛡️ BLA (Blind LLM Agents) — Adversarial defense shield that protects binaries, Electron apps, JS bundles, Python, and WebAssembly against…
+3. **[respanai/respan-gateway](https://github.com/respanai/respan-gateway)** — ⭐ 496 · 12.7/day · Rust · since 2026-09-25
+   > Open-source LLM gateway in Rust. One endpoint for OpenAI, Anthropic, Gemini and every other vendor. Any SDK, any model, any tool.
 
 ## Multimodal AI
 
-1. **[AGIHunt/blurt](https://github.com/AGIHunt/blurt)** — ⭐ 202 · 5.4/day · Swift · since 2026-09-25
-   > The keyboard for the agent era: dictation, copy text from screen, translation, snaps and screen recordings for Claude Code, Codex and your…
+1. **[chipfighter/framekeeper](https://github.com/chipfighter/framekeeper)** — ⭐ 759 · 19.0/day · TypeScript · since 2026-09-24
+   > Stop paying the multimodal tax. Your AI agent keeps every image it has seen but only sends the ones it needs: lighter chats, no endless…
+2. **[hehehai/AudioSmith](https://github.com/hehehai/AudioSmith)** — ⭐ 195 · 9.5/day · Go · since 2026-10-13
+   > Speech, voices, stories, audiobooks, dubbing and transcription, made on your Mac. Free and open source.
 
 ## Marketing & analytics tech
 
@@ -32,8 +34,10 @@ _Nothing new this run._
 
 ## Claude & agent design craft
 
-1. **[EternalNight996/memory-eternal](https://github.com/EternalNight996/memory-eternal)** — ⭐ 114 · 1.8/day · JavaScript · since 2026-08-31
-   > Your AI forgets every session. Give it a memory it can trust: local-first, review-gated agent memory — one SQLite vault for DSH, Claude…
+1. **[elvarofficial/teardown](https://github.com/elvarofficial/teardown)** — ⭐ 1,300 · 348.1/day · JavaScript · since 2026-10-30
+   > A Claude Code skill that turns any machine into a 3D simulator you can take apart
+2. **[zhanghao123vip/ai-manju-skills](https://github.com/zhanghao123vip/ai-manju-skills)** — ⭐ 499 · 166.9/day · — · since 2026-10-31
+   > 21 个题材的 AI 漫剧全流程 Skill：一句点子生成企划案、资产图提示词、分集剧本、分镜与视频提示词。可用于 Claude Code、WorkBuddy、DeepSeek
 
 ## Community & social media management
 
@@ -41,17 +45,18 @@ _Nothing new this run._
 
 ## Customer-service AI agents
 
-1. **[GroundedCoreAI/nexusdesk](https://github.com/GroundedCoreAI/nexusdesk)** — ⭐ 156 · 3.9/day · Python · since 2026-09-23
-   > Open-source, self-hosted, extensible Agent platform built around ReAct and Harness engineering, with AI customer support as its first…
+_Nothing new this run._
 
 ## Meta inbox & omnichannel AI agents
 
-1. **[Hainrixz/whatsapp-closer-agentkit](https://github.com/Hainrixz/whatsapp-closer-agentkit)** — ⭐ 40 · 0.4/day · Python · since 2026-08-04
-   > Repo blueprint para Claude Code: no trae la app, trae las instrucciones para construirla en tu máquina paso a paso. Un agente que atiende…
+_Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-_Nothing new this run._
+1. **[maxwilsoneng2098t9/tiktok-comment-automation](https://github.com/maxwilsoneng2098t9/tiktok-comment-automation)** — ⭐ 296 · 296.0/day · Python · since 2026-11-02
+   > TikTok Comment Automation Tool. Session-based workflow manager for engagement research and testing. Template rotation, rate limiting…
+2. **[vstorm-co/agenticos](https://github.com/vstorm-co/agenticos)** — ⭐ 189 · 2.0/day · Python · since 2026-07-31
+   > Open-source, self-hosted AI agent platform for your company's AI teammates. Build, run and govern agents on your own servers and models…
 
 ## Ads & paid growth
 
@@ -59,17 +64,19 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[wj-sidiss/otopilot](https://github.com/wj-sidiss/otopilot)** — ⭐ 180 · 9.9/day · JavaScript · since 2026-10-14
-   > Turn a topic into a finished YouTube Short/video: script, free & CC0 images, voice-over, subtitles, thumbnail. Runs locally, no key needed…
+1. **[parallelpan/hongguo-downloader](https://github.com/parallelpan/hongguo-downloader)** — ⭐ 438 · 156.2/day · — · since 2026-10-31
+   > 红果短剧下载工具：红果短剧 / 红果免费短剧 全集下载、批量下载与整剧打包 ZIP，粘贴分享链接即云端处理、按集取件，免安装网页版。Hongguo downloader — short drama downloader for cdrama & duanju: paste a…
+2. **[kurbaitaev/ghost-editor](https://github.com/kurbaitaev/ghost-editor)** — ⭐ 176 · 4.4/day · Python · since 2026-09-24
+   > Raw talking-head take in, finished reel out. Open-source AI video editor for Claude Code.
 
 ## E-commerce & Shopify
 
-_Nothing new this run._
+1. **[nexscope-ai/ecommerce-ai-tools](https://github.com/nexscope-ai/ecommerce-ai-tools)** — ⭐ 152 · 3.1/day · JavaScript · since 2026-09-14
+   > Official Nexscope guides for AI product video workflows, ecommerce Data APIs and free product listings. Compare workflows, watch examples…
 
 ## Brand systems & creative ops
 
-1. **[enmerasoftware/ai-design-check](https://github.com/enmerasoftware/ai-design-check)** — ⭐ 157 · 33.1/day · JavaScript · since 2026-10-28
-   > Design rules and a zero-dependency checker for interfaces built with AI coding agents, on the web and in SwiftUI and Jetpack Compose apps…
+_Nothing new this run._
 
 ---
 
