@@ -1,4 +1,4 @@
-# 🛰️ Repo Radar — 2026-11-09
+# 🛰️ Repo Radar — 2026-11-10
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
@@ -6,22 +6,17 @@ _10 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[Dongbumlee/ontosmith](https://github.com/Dongbumlee/ontosmith)** — ⭐ 214 · 12.1/day · Python · since 2026-10-22
-   > A decision-model-based ontology & knowledge-graph builder — builds governed knowledge graphs from your documents, every fact gated and…
-2. **[datamllab/HarborRL](https://github.com/datamllab/HarborRL)** — ⭐ 156 · 5.7/day · Python · since 2026-10-12
-   > An end-to-end framework for Agentic Reinforcement Learning.
+1. **[citizenhicks/mobius](https://github.com/citizenhicks/mobius)** — ⭐ 387 · 3.6/day · Rust · since 2026-07-24
+   > möbius is a small, frontend-neutral Rust framework for coding agents.
 
 ## Multimodal AI
 
-1. **[0xCoach/TaoSheng](https://github.com/0xCoach/TaoSheng)** — ⭐ 240 · 15.1/day · Kotlin · since 2026-10-24
-   > 涛声 TaoSheng：用一部安卓手机全天收音 → 转写 → 认人 → AI 整理成待办与记忆。无需硬件、无需账号，数据只在你手机里。
-2. **[SonicloudTech/mouse-mcp](https://github.com/SonicloudTech/mouse-mcp)** — ⭐ 211 · 10.7/day · TypeScript · since 2026-10-20
-   > Hardware mouse MCP server for AI agents on Windows x64. USB HID control and voice dictation; requires compatible uMouse hardware and…
+1. **[OmniJev/Flide](https://github.com/OmniJev/Flide)** — ⭐ 288 · 17.3/day · Python · since 2026-10-24
+   > 🔥🔥 The extremely fast inference engine for decision model
 
 ## Marketing & analytics tech
 
-1. **[talonthrushtrek/Investment-AI-Analyst-2026](https://github.com/talonthrushtrek/Investment-AI-Analyst-2026)** — ⭐ 195 · 1.7/day · JavaScript · since 2026-07-16
-   > Powerful AI-driven desktop application for investment analysis. Real-time market data processing, technical analysis, sentiment tracking…
+_Nothing new this run._
 
 ## Web/app dev stack
 
@@ -33,13 +28,13 @@ _Nothing new this run._
 
 ## Claude & agent design craft
 
-1. **[sulabhdubey/rta-smriti-brain](https://github.com/sulabhdubey/rta-smriti-brain)** — ⭐ 105 · 1.2/day · Python · since 2026-08-14
-   > Local-first, evidence-aware project memory for AI coding agents.
+1. **[jaredchu/context-docs](https://github.com/jaredchu/context-docs)** — ⭐ 188 · 4.2/day · Python · since 2026-09-26
+   > Agent skills for Codex and Claude Code that preserve project context, decisions and next steps across AI sessions in plain Markdown.
 
 ## Community & social media management
 
-1. **[R1zmu24/discord-server-raider](https://github.com/R1zmu24/discord-server-raider)** — ⭐ 332 · 152.2/day · TypeScript · since 2026-11-06
-   > Discord Server Raider: Community-Driven Bot for Discord and Telegram
+1. **[Shaitrish/37studio](https://github.com/Shaitrish/37studio)** — ⭐ 150 · 8.3/day · Go · since 2026-10-23
+   > Open-source AI alternative to Buffer and Opus Clip: Claude Code makes on-brand videos, posts them to 9 platforms and drafts replies…
 
 ## Customer-service AI agents
 
@@ -47,12 +42,15 @@ _Nothing new this run._
 
 ## Meta inbox & omnichannel AI agents
 
-_Nothing new this run._
+1. **[AfterEmberlaser87210/ai-telegram-business-bot-n8n-resocket](https://github.com/AfterEmberlaser87210/ai-telegram-business-bot-n8n-resocket)** — ⭐ 40 · 40.0/day · HTML · since 2026-11-09
+   > Production n8n AI Telegram bot — dual-AI fallback, multi-modal (text/voice/image), lead qualification & self-healing reliability. Case…
 
 ## Wildcard — adjacent leverage
 
-1. **[Tencent/LoopForge](https://github.com/Tencent/LoopForge)** — ⭐ 155 · 1.5/day · Go · since 2026-07-28
-   > Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates…
+1. **[qbeka/jev-job-search](https://github.com/qbeka/jev-job-search)** — ⭐ 336 · 8.6/day · TypeScript · since 2026-10-02
+   > Find software internships and new-grad jobs, fill the application forms, check every answer on the page, and send the ones you approve. JEV…
+2. **[ashwanthbalakrishnan5/hermes-whatsapp-voice](https://github.com/ashwanthbalakrishnan5/hermes-whatsapp-voice)** — ⭐ 151 · 6.2/day · Rust · since 2026-10-16
+   > Live WhatsApp voice calls with Hermes: call your bot, or let Hermes call you. Hermes plugin + whatsapp-rust sidecar + Gemini Live.
 
 ## Ads & paid growth
 
@@ -60,18 +58,18 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[dhruvthakur11/youtube-ai-video-editing-system](https://github.com/dhruvthakur11/youtube-ai-video-editing-system)** — ⭐ 332 · 154.1/day · HTML · since 2026-11-06
-   > Eyeline teleprompter meets editing agents: JSON-driven animation and motion graphics workflow
-2. **[leoquenikeny/premierepro-video-editor-2026](https://github.com/leoquenikeny/premierepro-video-editor-2026)** — ⭐ 332 · 153.4/day · HTML · since 2026-11-06
-   > PremierePro Video Editor 2026: Multi-Track Timeline and Lumetri Color Workflow
+1. **[Vibha-Ramprakash/claude-video-effects](https://github.com/Vibha-Ramprakash/claude-video-effects)** — ⭐ 831 · 44.2/day · Python · since 2026-10-22
+   > 51 free video effects for Claude Code: drop in a talking-head clip, type /effects orbit. Face tracking, behind-your-head layers. From Hop…
 
 ## E-commerce & Shopify
 
-_Nothing new this run._
+1. **[bighadj22/Wocart](https://github.com/bighadj22/Wocart)** — ⭐ 411 · 5.0/day · TypeScript · since 2026-08-20
+   > The open-source, COD-first e-commerce + delivery platform for Algeria built agentic-ready.
 
 ## Brand systems & creative ops
 
-_Nothing new this run._
+1. **[lobehub/lobe-mygo](https://github.com/lobehub/lobe-mygo)** — ⭐ 201 · 122.3/day · Go · since 2026-11-08
+   > 🍭 Lobe MyGo - the UI kit for native Go apps: Lobe UI design language for MyGo, drawn on the GPU in pure Go
 
 ---
 
