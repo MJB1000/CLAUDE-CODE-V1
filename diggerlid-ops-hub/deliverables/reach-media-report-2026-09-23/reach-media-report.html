@@ -1,0 +1,303 @@
+<title>Reach and Media Report</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=League+Spartan:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#fbfaf6;--ink:#231f20;--ink2:#3a3637;--mute:#6b6663;--line:#d9d5cc;--panel:#ffffff;--tint:#fbf7a3;--acc:#f5eb19;--bar:#231f20;--bar2:#b5afa3;--bar3:#8f8a80;--m1:#fdf9c4;--m2:#f5eb19;--m3:#c9bf2a;--m4:#8a8330;--m5:#231f20}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#161514;--ink:#f3f1ea;--ink2:#d8d4cb;--mute:#a8a39c;--line:#3a3736;--panel:#211f1e;--tint:#3a3711;--acc:#f5eb19;--bar:#f5eb19;--bar2:#5a5654;--bar3:#8a857e;--m1:#3a3711;--m2:#6b651a;--m3:#a39b22;--m4:#d4c91f;--m5:#f5eb19;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#161514;--ink:#f3f1ea;--ink2:#d8d4cb;--mute:#a8a39c;--line:#3a3736;--panel:#211f1e;--tint:#3a3711;--acc:#f5eb19;--bar:#f5eb19;--bar2:#5a5654;--bar3:#8a857e;--m1:#3a3711;--m2:#6b651a;--m3:#a39b22;--m4:#d4c91f;--m5:#f5eb19;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:'League Spartan',Arial,sans-serif;font-size:16px;line-height:1.4;padding-block:0 48px;padding-inline:16px;font-variant-numeric:tabular-nums}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2{font-family:'Roboto Condensed','Arial Narrow',Arial,sans-serif;text-transform:uppercase;line-height:1.05;margin:0;text-wrap:balance}
+h1{font-size:clamp(34px,6vw,64px);font-weight:700}
+h2{font-size:clamp(22px,3vw,28px);font-weight:700;margin:0 0 12px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+h2 small{font-family:'League Spartan',Arial,sans-serif;font-size:14px;text-transform:none;color:var(--mute);font-weight:400}
+p{margin:0}
+.banner{display:inline-block;background:var(--acc);color:#231f20;transform:skewX(-12deg);padding:6px 18px;margin:26px 0 10px}
+.banner span{display:inline-block;transform:skewX(12deg);font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:14px}
+header{border-bottom:3px solid var(--ink);padding-bottom:16px;margin-bottom:22px}
+header p{color:var(--mute);font-size:15px;margin-top:8px}
+.big{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:860px){.big{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.big{grid-template-columns:1fr}}
+.keyline{display:flex;gap:10px;align-items:center;margin:0 0 10px;font-size:13px;color:var(--mute)}
+.lbl{display:inline-block;padding:3px 10px;font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.6px;font-size:12px}
+.lbl.now{background:var(--ink);color:var(--bg)}
+.lbl.prev{border:1px solid var(--line);color:var(--mute)}
+.period{display:inline-block;font-family:'League Spartan',Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;background:var(--tint);color:var(--ink);padding:3px 9px;border:1px solid var(--ink)}
+:root[data-theme="dark"] .lbl.now{color:#161514}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lbl.now{color:#161514}}
+.k{background:var(--panel);border:2px solid var(--ink);padding:16px 18px 14px;display:flex;flex-direction:column;gap:2px;position:relative}
+.k.acc{background:var(--tint)}
+.k small{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.7px;padding-right:64px}
+.k b::after{content:attr(data-p);display:block;font-family:'League Spartan',Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--mute);margin-top:4px}
+.k b{font-family:'Roboto Condensed',Arial,sans-serif;font-size:clamp(40px,4.6vw,54px);font-weight:700;line-height:1;margin:4px 0 6px}
+.k span{font-size:14px;color:var(--ink2)}
+.k em{position:absolute;top:12px;right:12px;font-style:normal;font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;font-size:18px;background:var(--ink);color:var(--bg);padding:3px 8px}
+:root[data-theme="dark"] .k em{color:#161514}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .k em{color:#161514}}
+.mid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.m{border-top:4px solid var(--acc);background:var(--panel);border-bottom:1px solid var(--line);padding:10px 12px}
+.m b{font-family:'Roboto Condensed',Arial,sans-serif;font-size:34px;font-weight:700;line-height:1;display:block}
+.m small{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.6px}
+.m span{display:block;font-size:13px;color:var(--ink2);margin-top:3px}
+section{margin:30px 0 0}
+.grid32{display:grid;grid-template-columns:3fr 2fr;gap:16px;align-items:start}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.grid23{display:grid;grid-template-columns:2fr 3fr;gap:16px;align-items:start}
+@media (max-width:760px){.grid32,.grid23,.grid2{grid-template-columns:1fr}}
+figure{margin:0;background:var(--panel);border:1px solid var(--line);padding:12px}
+figcaption{font-size:13px;color:var(--mute);margin-top:6px}
+.legend{display:flex;gap:16px;font-size:13px;color:var(--mute);margin-bottom:6px;flex-wrap:wrap}
+.legend i{display:inline-block;width:12px;height:12px;vertical-align:-1px;margin-right:5px;border:1px solid var(--ink)}
+svg text{font-family:'League Spartan',Arial,sans-serif;fill:var(--ink)}
+svg .mute{fill:var(--mute)}
+svg .grid{stroke:var(--line)}
+svg .state{stroke:var(--ink);stroke-width:0.8;stroke-linejoin:round}
+.tw{overflow-x:auto;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:340px}
+th{background:var(--ink);color:var(--bg);text-align:left;padding:7px 10px;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+:root[data-theme="dark"] th{color:#161514}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) th{color:#161514}}
+td{padding:6px 10px;border-bottom:1px solid var(--line)}
+td.n{text-align:right;white-space:nowrap}
+td.up{font-weight:700}
+.pts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:760px){.pts{grid-template-columns:1fr}}
+.pt{background:var(--panel);border:2px solid var(--ink);padding:14px 16px}
+.pt h3{font-family:'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;font-size:20px;margin:0 0 8px;letter-spacing:.5px}
+.pt ol{margin:0;padding-left:20px;font-size:15px;line-height:1.45}
+.pt li{margin:4px 0}
+.pt li b{font-family:'Roboto Condensed',Arial,sans-serif;font-size:22px}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-size:13px;padding:5px 8px;border-radius:3px;display:none;z-index:5;white-space:nowrap}
+</style>
+<div class="wrap">
+<header>
+  <div class="banner"><span>DiggerLid · Reach and Media Report</span></div>
+  <h1>Reach and Media</h1>
+  <p>Last 12 months (23 Sep 2025 to 22 Sep 2026) against the 12 months before. AUD.</p>
+</header>
+
+<div class="keyline"><span class="lbl now">Last 12 months</span><span class="lbl prev">prev = the 12 months before</span><span>Last 12 months = 23 Sep 2025 to 22 Sep 2026. Prev = 23 Sep 2024 to 22 Sep 2025. Every number states its period; the email list size is the only all-time figure.</span></div>
+<div class="big">
+  <div class="k acc"><small>Media spend</small><b data-p="last 12 months">$1.5M</b><span>prev 12 months $790k</span><em>+86%</em></div>
+  <div class="k"><small>People reached</small><b data-p="last 12 months">6.8M</b><span>prev 12 months 3.0M</span><em>2.25×</em></div>
+  <div class="k acc"><small>Video plays</small><b data-p="last 12 months">72M</b><span>prev 12 months 27M</span><em>2.7×</em></div>
+  <div class="k"><small>Grease sales growth</small><b data-p="last 12 months vs prev 12">+44%</b><span>about 15,400 grease product orders, prev 12 months about 9,000</span><em>orders +71%</em></div>
+  <div class="k acc"><small>Machine operator orders</small><b data-p="last 12 months">~13,400</b><span>grease and covers · prev 12 months about 7,600</span><em>+77%</em></div>
+  <div class="k"><small>Email list size</small><b data-p="all time, at 22 Sep 2026">~44,800</b><span>about 18,600 a year ago · about 26,200 added in the last 12 months</span><em>+141%</em></div>
+</div>
+
+<section>
+  <h2>Media spend, month by month <span class="period">24 months · Oct 2024 to Sep 2026</span><small>calendar months; tiles compare the last 12 with the previous 12</small></h2>
+  <div class="grid32">
+    <figure>
+      <svg id="c0" viewBox="0 0 520 290" width="100%" role="img" aria-label="Monthly media spend October 2024 to September 2026, rising from about 47 thousand to a peak of 198 thousand in June 2026"></svg>
+      <figcaption>Monthly media spend, AUD thousands, by calendar month. September 2026 runs to the 22nd, so chart totals sit a little under the headline tiles, which use 23 Sep to 22 Sep windows.</figcaption>
+    </figure>
+    <div class="mid">
+      <div class="m"><small>Average month, last 12</small><b>$121k</b><span>prev 12 months $66k · +83%</span></div>
+      <div class="m"><small>Biggest month, last 12</small><b>$198k</b><span>June 2026 · prev 12 months peak $92k</span></div>
+      <div class="m"><small>Months over $100k, last 12</small><b>9 of 12</b><span>prev 12 months: none</span></div>
+      <div class="m"><small>Australia share, last 12</small><b>92%</b><span>of spend · prev 12 months 80%</span></div>
+      <div class="m"><small>BFCM month</small><b>$166k</b><span>Nov 2025 · Nov 2024 $67k</span></div>
+      <div class="m"><small>Link clicks, last 12</small><b>1.7M</b><span>prev 12 months 600k · 2.8×</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Growth against spend <span class="period">Last 12 months vs previous 12</span><small>everything grew faster than the budget</small></h2>
+  <div class="grid32">
+    <figure>
+      <svg id="c1" viewBox="0 0 520 250" width="100%" role="img" aria-label="Year on year change: spend 86%, people reached 125%, video plays 171%, full completions 259%, Australian orders 126%, new email profiles 241%"></svg>
+      <figcaption>Year-on-year change. Dotted line = spend, +86%.</figcaption>
+    </figure>
+    <div class="mid">
+      <div class="m"><small>Cost per person reached</small><b>21.7¢</b><span>prev 12 months 26.3¢ · −17%</span></div>
+      <div class="m"><small>Cost per click</small><b>$0.89</b><span>prev 12 months $1.32 · −32%</span></div>
+      <div class="m"><small>CPM</small><b>$11.61</b><span>prev 12 months $12.26 · −5%</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Video <span class="period">Monthly chart: 24 months · rest: last 12 vs previous 12</span><small>reach by month on the left; watch depth on the right</small></h2>
+  <div class="grid32">
+    <figure>
+      <svg id="c5" viewBox="0 0 520 250" width="100%" role="img" aria-label="Monthly impressions, October 2024 to September 2026, from 3.9 million to a peak of 14.5 million in June 2026"></svg>
+      <figcaption>Impressions served by month, millions (Oct 2024 to Sep 2026). Previous 12 months grey, last 12 black. Video plays by month will replace this series when the monthly export is in.</figcaption>
+    </figure>
+    <figure>
+      <svg id="c4" viewBox="0 0 520 300" width="100%" role="img" aria-label="Of every 100 plays, how many reach each milestone: 25 percent watched 10.5 to 13.1, 50 percent 5.1 to 7.0, 75 percent 3.2 to 4.5, 100 percent 1.2 to 1.5"></svg>
+      <div class="legend"><span><i style="background:var(--bar2)"></i>Previous 12 months</span><span><i style="background:var(--bar)"></i>Last 12 months</span></div>
+      <figcaption>Watch depth: of every 100 plays, how many reach each point. Last 12 months against the previous 12.</figcaption>
+    </figure>
+    <div class="mid">
+    <div class="m"><small>Hook rate</small><b>57%</b><span>press play · prev 12 months 41%</span></div>
+    <div class="m"><small>Video plays</small><b>72M</b><span>prev 12 months 27M · 2.7×</span></div>
+    <div class="m"><small>Watched half</small><b>5.0M</b><span>prev 12 months 1.4M · 3.7×</span></div>
+    <div class="m"><small>Watched to the end</small><b>1.1M</b><span>prev 12 months 310k · 3.6×</span></div>
+    <div class="m"><small>Finish rate per play</small><b>1.5%</b><span>prev 12 months 1.2% · +32%</span></div>
+    <div class="m"><small>Cost per video view</small><b>2.05¢</b><span>prev 12 months 2.98¢ · −31%</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Machine operators <span class="period">Last 12 months vs previous 12</span><small>customers buying grease or covers</small></h2>
+  <div class="mid" style="margin-bottom:12px">
+    <div class="m"><small>Operator orders</small><b>~13,400</b><span>prev 12 months about 7,600 · +77%</span></div>
+    <div class="m"><small>Operator sales growth</small><b>+35%</b><span>revenue, last 12 vs prev</span></div>
+    <div class="m"><small>Grease orders</small><b>+71%</b><span>about 9,000 to 15,400 product orders</span></div>
+    <div class="m"><small>Covers orders</small><b>+43%</b><span>about 3,100 to 4,500 product orders</span></div>
+  </div>
+  <div class="pts">
+    <div class="pt"><h3>Grease · sales +44%, orders +71%</h3><ol>
+      <li><b>+71% orders.</b> The grease system went from about 9,000 to 15,400 product orders; KAJO grease packs +39% orders and +50% sales.</li>
+      <li><b>3.4× coupler orders.</b> The coupler is now the entry point (about 1,500 to 5,100 orders) and the adapter follows it (+51%).</li>
+    </ol></div>
+    <div class="pt"><h3>Covers · sales +23%, orders +43%</h3><ol>
+      <li><b>+43% orders.</b> About 3,100 to 4,500, and every one of the eight cover lines grew.</li>
+      <li><b>Pro Enclosure still the anchor.</b> about 1,100 to 1,300 orders (+17%), sales +13%; the 1.7 Tonne cover +19% orders.</li>
+    </ol></div>
+  </div>
+</section>
+
+<section>
+  <h2>Australia by state <span class="period">Last 12 months vs previous 12</span><small>orders by billing state, rounded; map labels show last-12-month orders</small></h2>
+  <div class="grid23">
+    <figure>
+      <svg id="map" viewBox="0 0 470 400" width="100%" role="img" aria-label="Map of Australia shaded by growth in orders: NSW 4,990 orders up 114%, Queensland 4,315 up 131%, Victoria 3,367 up 113%, Western Australia 1,904 up 154%, South Australia 1,166 up 157%, Tasmania 444 up 114%, ACT 182 up 139%, Northern Territory 126 up 241%"></svg>
+      <figcaption>Shading = growth in orders (lighter +110%, darker +230%). Labels show rounded last-12-month orders. State boundaries simplified for display.</figcaption>
+    </figure>
+    <div>
+      <div class="tw"><table>
+        <tr><th>State</th><th>Prev</th><th>Last</th><th>Change</th></tr>
+        <tr><td>New South Wales</td><td class="n">≈2,300</td><td class="n">≈5,000</td><td class="n up">+114%</td></tr>
+        <tr><td>Queensland</td><td class="n">≈1,900</td><td class="n">≈4,300</td><td class="n up">+131%</td></tr>
+        <tr><td>Victoria</td><td class="n">≈1,600</td><td class="n">≈3,400</td><td class="n up">+113%</td></tr>
+        <tr><td>Western Australia</td><td class="n">≈750</td><td class="n">≈1,900</td><td class="n up">+154%</td></tr>
+        <tr><td>South Australia</td><td class="n">≈450</td><td class="n">≈1,200</td><td class="n up">+157%</td></tr>
+        <tr><td>Tasmania</td><td class="n">≈210</td><td class="n">≈440</td><td class="n up">+114%</td></tr>
+        <tr><td>ACT</td><td class="n">≈80</td><td class="n">≈180</td><td class="n up">+139%</td></tr>
+        <tr><td>Northern Territory</td><td class="n">≈40</td><td class="n">≈130</td><td class="n up">+241%</td></tr>
+        <tr><td><b>Australia</b></td><td class="n"><b>≈7,300</b></td><td class="n"><b>≈16,500</b></td><td class="n up">+126%</td></tr>
+      </table></div>
+      <div class="mid" style="margin-top:10px">
+        <div class="m"><small>Every state grew</small><b>8 of 8</b><span>slowest +113% (Victoria)</span></div>
+        <div class="m"><small>Fastest</small><b>NT</b><span>+241% · then SA +157%, WA +154%</span></div>
+        <div class="m"><small>East coast share</small><b>77%</b><span>NSW, QLD, VIC of Australian orders</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Email list <span class="period">List size: all time to 22 Sep 2026 · additions: last 12 vs previous 12</span><small>chart shows 24 calendar months</small></h2>
+  <div class="grid32">
+    <figure>
+      <div class="legend"><span><i style="background:var(--bar)"></i>Popup signups</span><span><i style="background:var(--bar3)"></i>Other new profiles</span></div>
+      <svg id="c3" viewBox="0 0 520 300" width="100%" role="img" aria-label="New email profiles by month, October 2024 to September 2026, with the popup share stacked"></svg>
+      <figcaption>New email profiles by month. Popup live from October 2025. September 2026 to the 22nd.</figcaption>
+    </figure>
+    <div class="mid">
+      <div class="m"><small>List size, all time</small><b>~44,800</b><span>about 18,600 a year ago · +141% in 12 months</span></div>
+      <div class="m"><small>New profiles, last 12</small><b>~26,200</b><span>prev 12 months about 7,700 · +241%</span></div>
+      <div class="m"><small>Per month, last 12</small><b>~2,200</b><span>prev 12 months about 640</span></div>
+      <div class="m"><small>Popup signups, last 12</small><b>~15,300</b><span>58% of new profiles · prev 12 months 9%</span></div>
+    </div>
+  </div>
+</section>
+</div>
+<div class="tip" id="tip"></div>
+<script>
+(function(){
+var tip=document.getElementById('tip');
+function show(e,t){tip.textContent=t;tip.style.display='block';tip.style.left=(e.clientX+12)+'px';tip.style.top=(e.clientY-28)+'px';}
+function hide(){tip.style.display='none';}
+function el(n,a){var e=document.createElementNS('http://www.w3.org/2000/svg',n);for(var k in a)e.setAttribute(k,a[k]);return e;}
+function fmt(v){return v>=1e6?(v/1e6).toFixed(2).replace(/\.?0+$/,'')+'M':v>=1e3?(v/1e3).toFixed(0)+'k':String(v);}
+var cs=getComputedStyle(document.documentElement);
+function tok(n){return cs.getPropertyValue(n).trim();}
+var C={bar:tok('--bar'),bar2:tok('--bar2'),bar3:tok('--bar3'),ink:tok('--ink'),bg:tok('--bg')};
+var W=520;
+// Chart 0: monthly spend
+var sp=[['Oct 24',46637],['Nov',67262],['Dec',72092],['Jan 25',57480],['Feb',58295],['Mar',64744],['Apr',61433],['May',54969],['Jun',91684],['Jul',91894],['Aug',69395],['Sep',58673],['Oct 25',108109],['Nov',166140],['Dec',94286],['Jan 26',48184],['Feb',84730],['Mar',100202],['Apr',108317],['May',122931],['Jun',197656],['Jul',162325],['Aug',156945],['Sep',107304]];
+var s0=document.getElementById('c0'),L0=44,H0=220,top0=14,gw0=W-L0-12,bw0=gw0/sp.length,mx0=200000;
+[0,50000,100000,150000,200000].forEach(function(t){var y=top0+H0-H0*t/mx0;s0.appendChild(el('line',{x1:L0,y1:y,x2:W-12,y2:y,class:'grid','stroke-width':'1'}));s0.appendChild(el('text',{x:L0-6,y:y+4,'font-size':'11','text-anchor':'end',class:'mute'})).textContent=t?'$'+(t/1000)+'k':'0';});
+sp.forEach(function(r,i){var x=L0+i*bw0+2,w=bw0-4,h=H0*r[1]/mx0,y=top0+H0-h;
+ var rect=el('rect',{x:x,y:y,width:w,height:h,fill:i<12?C.bar2:C.bar});
+ rect.addEventListener('mousemove',function(e){show(e,r[0]+': $'+r[1].toLocaleString())});rect.addEventListener('mouseleave',hide);s0.appendChild(rect);
+ if(i%3===0)s0.appendChild(el('text',{x:x+w/2,y:top0+H0+16,'font-size':'10','text-anchor':'middle',class:'mute'})).textContent=r[0];
+ if(r[1]>=150000||i===0||i===9)s0.appendChild(el('text',{x:x+w/2,y:y-4,'font-size':'10','text-anchor':'middle'})).textContent='$'+Math.round(r[1]/1000)+'k';});
+var x0=L0+12*bw0;s0.appendChild(el('line',{x1:x0,y1:top0,x2:x0,y2:top0+H0,stroke:C.ink,'stroke-dasharray':'3 3','stroke-width':'1'}));
+s0.appendChild(el('text',{x:x0+4,y:top0+10,'font-size':'10',class:'mute'})).textContent='last 12 months';
+s0.appendChild(el('text',{x:L0+2,y:top0+H0+34,'font-size':'11',class:'mute'})).textContent='Prev 12 calendar months: $795k';
+s0.appendChild(el('text',{x:x0+2,y:top0+H0+34,'font-size':'11','font-weight':'700'})).textContent='Last 12 calendar months: $1.46M';
+// Chart 1: YoY change
+var d1=[['Media spend',86],['People reached',125],['Video plays',171],['Full completions',259],['Australian orders',126],['New email profiles',241]];
+var s=document.getElementById('c1'),L=150,rowH=36,top=14,max=280;
+d1.forEach(function(r,i){var y=top+i*rowH,w=(W-L-60)*r[1]/max;
+ s.appendChild(el('text',{x:L-8,y:y+19,'text-anchor':'end','font-size':'13'})).textContent=r[0];
+ var rect=el('rect',{x:L,y:y+4,width:w,height:24,fill:r[0]==='Media spend'?C.bar2:C.bar});
+ rect.addEventListener('mousemove',function(e){show(e,r[0]+': +'+r[1]+'%')});rect.addEventListener('mouseleave',hide);s.appendChild(rect);
+ s.appendChild(el('text',{x:L+w+6,y:y+20,'font-size':'13','font-weight':'700'})).textContent='+'+r[1]+'%';});
+var sx=L+(W-L-60)*86/max;s.appendChild(el('line',{x1:sx,y1:top,x2:sx,y2:top+d1.length*rowH,stroke:C.ink,'stroke-dasharray':'3 3','stroke-width':'1'}));
+s.appendChild(el('text',{x:sx+4,y:top+d1.length*rowH+14,'font-size':'11',class:'mute'})).textContent='spend +86%';
+// Chart 5: monthly impressions
+var im=[['Oct 24',3932870],['Nov',4615068],['Dec',5450095],['Jan 25',5191739],['Feb',5128084],['Mar',5676536],['Apr',5354380],['May',4577642],['Jun',6891380],['Jul',7352781],['Aug',5629782],['Sep',4865178],['Oct 25',10845552],['Nov',13198004],['Dec',8235498],['Jan 26',5770216],['Feb',7960442],['Mar',8896064],['Apr',10620227],['May',11922744],['Jun',14452921],['Jul',13828430],['Aug',11575102],['Sep',8188698]];
+var s5=document.getElementById('c5'),L5=40,H5=190,top5=12,gw5=W-L5-12,bw5=gw5/im.length,mx5=15e6;
+[0,5e6,10e6,15e6].forEach(function(t){var y=top5+H5-H5*t/mx5;s5.appendChild(el('line',{x1:L5,y1:y,x2:W-12,y2:y,class:'grid','stroke-width':'1'}));s5.appendChild(el('text',{x:L5-6,y:y+4,'font-size':'11','text-anchor':'end',class:'mute'})).textContent=t?(t/1e6)+'M':'0';});
+im.forEach(function(r,i){var x=L5+i*bw5+2,w=bw5-4,h=H5*r[1]/mx5,y=top5+H5-h;
+ var rect=el('rect',{x:x,y:y,width:w,height:h,fill:i<12?C.bar2:C.bar});
+ rect.addEventListener('mousemove',function(e){show(e,r[0]+': '+(r[1]/1e6).toFixed(1)+'M impressions')});rect.addEventListener('mouseleave',hide);s5.appendChild(rect);
+ if(i%3===0)s5.appendChild(el('text',{x:x+w/2,y:top5+H5+16,'font-size':'10','text-anchor':'middle',class:'mute'})).textContent=r[0];
+ if(r[1]>=13e6||i===9||i===0)s5.appendChild(el('text',{x:x+w/2,y:y-4,'font-size':'10','text-anchor':'middle'})).textContent=(r[1]/1e6).toFixed(1)+'M';});
+var x5=L5+12*bw5;s5.appendChild(el('line',{x1:x5,y1:top5,x2:x5,y2:top5+H5,stroke:C.ink,'stroke-dasharray':'3 3','stroke-width':'1'}));
+s5.appendChild(el('text',{x:L5+2,y:top5+H5+34,'font-size':'11',class:'mute'})).textContent='Prev 12 calendar months: 65M';
+s5.appendChild(el('text',{x:x5+2,y:top5+H5+34,'font-size':'11','font-weight':'700'})).textContent='Last 12 calendar months: 126M';
+// Chart 4: of every 100 plays
+var d4=[['Watched 25%',10.5,13.1],['Watched 50%',5.1,7.0],['Watched 75%',3.2,4.5],['Watched 100%',1.2,1.5]];
+var s4=document.getElementById('c4'),L4=110,gw4=W-L4-70,mx4=15;
+[0,5,10,15].forEach(function(t){var x=L4+gw4*t/mx4;s4.appendChild(el('line',{x1:x,y1:8,x2:x,y2:8+d4.length*62,class:'grid','stroke-width':'1'}));s4.appendChild(el('text',{x:x,y:8+d4.length*62+14,'font-size':'11','text-anchor':'middle',class:'mute'})).textContent=t;});
+d4.forEach(function(r,i){var y=14+i*62;s4.appendChild(el('text',{x:L4-8,y:y+28,'text-anchor':'end','font-size':'12'})).textContent=r[0];
+ [[r[1],C.bar2,0,'Previous'],[r[2],C.bar,24,'Last']].forEach(function(b){var w=Math.max(gw4*b[0]/mx4,1.5);var rect=el('rect',{x:L4,y:y+b[2],width:w,height:20,fill:b[1]});
+  rect.addEventListener('mousemove',function(e){show(e,b[3]+' 12 months · '+r[0]+': '+b[0]+' of every 100 plays')});rect.addEventListener('mouseleave',hide);s4.appendChild(rect);
+  s4.appendChild(el('text',{x:L4+w+5,y:y+b[2]+14,'font-size':'11'})).textContent=b[0];});});
+// Map: simplified from public state boundary data
+var states={
+ WA:{d:"M15.3 184.3L15.0 180.2L16.2 185.2L16.9 183.1L17.6 186.8L17.9 185.1L18.3 187.4L20.7 185.6L20.7 183.7L17.4 181.1L15.6 177.0L16.6 174.5L19.4 178.7L18.7 182.2L19.9 182.0L20.6 179.4L22.8 185.1L24.6 183.4L24.1 179.8L24.9 178.8L22.0 175.8L18.3 169.2L18.8 167.4L17.8 167.4L15.4 162.5L16.2 156.9L19.6 152.3L20.1 146.5L18.2 142.4L21.9 134.6L24.1 134.0L22.9 137.7L23.3 139.6L24.0 139.4L23.3 141.2L23.6 141.9L25.5 140.8L25.7 141.7L29.1 134.3L38.4 131.0L43.1 125.9L45.6 125.1L46.3 123.2L49.0 123.3L51.0 121.4L51.3 122.2L52.9 119.8L53.1 121.8L57.0 120.5L56.9 121.7L59.2 122.6L63.9 121.4L68.0 117.7L68.2 118.4L75.3 117.1L78.1 113.6L83.3 114.9L98.8 109.8L103.5 105.6L106.2 101.2L105.8 99.8L107.7 99.2L107.0 98.3L108.0 97.0L114.1 93.3L114.2 91.9L111.9 91.7L111.9 83.9L115.3 79.8L116.7 80.6L116.4 78.4L119.3 78.7L118.2 77.5L120.2 74.3L121.4 74.0L121.8 74.8L120.5 76.4L122.5 77.6L122.6 80.2L127.4 87.4L127.4 81.4L131.0 83.3L129.8 81.0L131.6 79.4L129.8 80.0L128.8 78.3L126.5 77.2L127.8 76.1L126.6 76.6L125.7 75.5L128.3 75.4L126.6 74.2L128.9 74.1L127.1 73.1L127.8 72.9L127.1 72.0L129.5 71.9L130.6 74.9L130.7 73.3L131.9 74.1L131.0 72.3L133.4 73.1L136.5 76.0L136.3 73.8L142.4 74.3L136.3 73.7L136.9 70.7L137.6 72.3L139.1 71.1L138.7 68.9L140.2 68.0L139.0 67.6L137.5 70.0L136.2 66.9L137.5 66.0L136.5 65.8L137.2 64.3L139.5 64.3L139.8 61.8L140.3 62.9L141.3 62.3L142.8 63.5L143.2 65.0L144.0 64.1L147.6 66.7L143.8 63.8L144.3 61.8L141.9 62.7L143.6 60.8L141.6 61.9L141.2 61.0L143.3 60.2L143.8 58.7L144.8 60.7L148.3 60.7L146.9 60.2L148.3 59.0L145.4 58.7L146.7 57.7L144.7 56.5L146.4 55.1L145.2 55.2L147.0 53.6L147.7 55.1L148.7 53.5L149.6 54.2L149.9 50.6L151.0 51.1L150.1 55.1L151.9 52.9L153.0 55.3L153.1 53.9L154.6 53.8L153.7 52.3L155.9 49.6L153.9 48.8L153.8 47.9L155.1 48.4L154.1 47.2L155.7 47.1L155.2 48.3L156.4 47.6L155.7 48.9L156.8 50.6L158.0 50.1L157.7 48.6L160.2 47.4L158.9 48.9L160.6 50.6L161.1 48.8L161.6 49.5L162.4 48.6L161.8 47.7L164.0 47.8L162.2 45.7L164.1 45.2L166.6 47.8L167.1 46.9L167.3 47.7L167.7 46.9L169.7 47.4L175.5 54.4L178.4 55.9L176.0 64.7L177.3 63.7L177.4 61.0L179.8 64.5L178.1 60.0L178.9 58.8L179.6 59.4L179.5 58.2L180.5 59.4L179.9 57.7L181.7 59.2L180.3 56.8L187.0 57.7L187.0 242.6L168.6 248.8L153.5 249.2L141.0 255.6L134.6 257.2L131.7 263.1L126.9 267.3L125.1 266.9L122.8 268.2L121.2 266.4L111.2 268.2L110.0 266.1L107.7 267.0L103.0 266.0L92.8 267.7L88.5 267.2L84.2 269.0L82.0 271.2L83.3 272.3L81.6 272.1L81.2 273.3L76.0 273.1L70.8 276.4L70.4 278.1L67.9 278.3L68.1 279.3L65.4 278.4L64.3 279.5L66.2 280.2L62.5 279.5L61.7 280.5L58.7 279.3L60.0 278.6L56.7 279.7L49.3 279.2L44.0 277.3L39.4 272.6L34.9 270.9L34.5 272.1L33.3 270.8L33.0 262.8L37.0 264.0L40.3 260.5L39.7 253.3L40.8 251.7L40.1 252.8L40.8 254.7L40.3 252.8L41.6 252.6L40.5 248.9L41.5 248.1L41.1 246.6L43.7 244.8L41.0 246.6L40.5 242.2L33.6 229.6L32.5 224.5L33.0 218.4L31.6 214.3L28.3 210.6L27.9 207.4L23.9 203.2L23.1 196.5L19.6 190.2L12.7 181.7L14.0 182.7L14.3 180.2Z",c:[122, -25.5],prev:751,last:1904,name:"Western Australia"},
+ NT:{d:"M203.7 34.0L206.1 33.8L204.0 33.0L205.1 33.1L204.2 32.4L204.8 30.2L206.4 30.8L206.1 32.6L206.9 31.9L207.6 33.2L208.6 32.9L207.5 31.6L208.5 32.1L208.4 31.2L207.0 30.5L209.6 29.8L209.3 27.6L211.5 29.1L212.3 26.5L213.7 29.0L218.7 28.4L220.8 29.3L226.9 26.9L226.4 23.6L227.2 22.5L225.5 22.5L226.8 22.2L225.4 20.3L222.6 20.0L221.3 20.9L219.4 18.5L217.4 18.5L218.7 17.0L219.6 17.8L219.9 16.4L221.9 19.6L222.6 18.7L221.5 16.3L223.1 18.0L223.7 16.3L224.1 18.3L225.0 17.4L227.4 20.7L230.1 18.6L233.1 23.0L234.8 22.6L234.5 23.5L237.7 24.3L241.1 23.2L240.1 24.5L243.4 24.9L243.9 27.3L244.7 25.8L247.4 26.8L250.2 25.4L251.4 27.4L255.3 29.2L254.8 28.5L256.8 28.7L255.5 28.1L257.0 26.9L259.3 27.1L263.0 25.5L260.2 28.2L260.8 29.4L264.5 26.7L263.2 28.4L264.7 28.6L263.9 31.1L265.7 30.8L266.9 31.0L268.1 29.1L265.8 27.8L270.2 24.6L268.9 25.9L269.8 25.9L271.1 29.0L272.6 27.8L274.8 29.8L272.5 32.1L272.7 30.9L271.9 31.0L271.4 32.5L272.4 32.4L271.6 33.8L270.8 33.6L270.8 35.2L269.1 34.5L271.3 37.0L269.0 36.8L270.2 37.6L269.1 39.7L267.6 40.6L267.7 37.4L266.0 40.1L265.6 38.3L264.5 40.4L264.1 39.4L263.1 40.0L262.7 41.0L263.7 41.4L262.5 41.8L262.7 44.8L264.9 44.2L262.9 50.1L260.7 51.0L259.0 55.2L257.2 56.0L257.5 57.6L266.6 63.6L267.5 65.9L270.1 67.3L272.0 66.7L271.1 67.5L271.8 69.2L274.5 69.3L274.8 68.4L279.1 71.5L283.0 72.6L286.0 76.0L286.0 180.0L187.0 180.0L187.0 57.7L189.1 58.9L188.7 61.2L190.3 59.4L189.5 57.2L192.3 58.4L193.2 61.0L194.5 60.6L192.5 56.7L193.5 57.8L193.4 56.8L195.8 57.4L196.9 56.5L194.4 56.4L193.4 54.8L195.5 53.9L192.8 54.1L191.0 51.7L192.3 48.5L193.1 49.6L193.6 48.1L195.2 47.7L196.0 42.5L196.9 41.8L198.1 42.9L201.1 40.7L199.3 38.8L199.6 36.3L201.7 35.8L201.9 33.4L203.1 33.0ZM274.6 49.8L273.9 51.4L267.6 50.7L268.9 49.4L268.5 46.1L271.0 45.6L270.3 44.6L272.0 44.2L272.0 46.3L274.0 45.4L271.8 49.9ZM202.4 19.0L202.4 16.8L207.1 20.9L205.8 19.2L211.1 18.3L212.2 17.1L215.0 20.0L214.2 21.7L213.1 21.4L208.4 25.3L203.4 22.2ZM200.3 22.8L201.4 23.1L199.9 21.1L201.1 20.9L199.6 20.3L200.8 18.8L201.7 18.5L203.2 22.3L205.1 23.3L204.6 24.1L198.5 24.1L198.8 22.4Z",c:[133.8, -19.5],prev:37,last:126,name:"Northern Territory"},
+ SA:{d:"M291.5 277.3L291.9 276.1L286.9 269.5L284.8 273.6L283.3 280.3L273.0 281.7L275.1 277.8L279.9 278.0L279.9 269.5L285.8 263.1L283.9 259.9L286.6 258.3L283.3 250.6L283.7 257.0L282.1 256.5L280.0 258.4L277.3 264.3L270.5 266.9L265.2 272.0L265.0 274.0L263.3 273.8L262.8 276.3L261.6 276.9L263.9 276.0L264.0 278.8L261.3 277.4L259.8 278.4L256.1 274.3L254.5 274.0L255.3 272.7L257.0 275.1L258.7 274.7L257.5 273.6L257.3 274.5L255.8 267.8L251.1 263.9L251.3 261.8L249.2 259.6L249.7 258.9L248.1 258.8L248.9 259.7L246.1 258.9L245.0 257.3L245.6 259.2L243.8 257.6L242.7 253.9L244.4 254.7L244.9 252.3L242.6 250.8L240.3 252.0L240.5 250.4L241.5 250.3L238.3 247.1L235.3 247.6L236.4 248.3L232.4 248.3L228.2 245.4L222.2 246.3L210.6 240.1L206.9 241.7L187.0 242.6L187.0 180.0L319.0 180.0L318.6 312.6L315.3 312.7L312.4 311.1L306.2 304.5L304.4 300.5L306.3 299.2L306.4 297.1L301.1 288.8L294.4 284.7L291.7 286.1L287.1 285.9L290.9 282.8ZM287.5 288.3L283.2 288.4L280.1 290.8L277.3 289.7L271.8 290.7L269.9 288.6L271.9 286.9L281.8 285.2L281.4 287.0L283.6 287.0L283.3 288.3L285.3 286.9Z",c:[135.5, -29.5],prev:454,last:1166,name:"South Australia"},
+ QLD:{d:"M326.3 59.0L324.8 53.4L325.6 49.1L324.1 46.5L326.6 40.0L325.4 37.0L328.8 32.5L325.5 32.1L328.4 25.8L329.0 25.5L329.1 27.8L330.1 26.4L329.4 25.4L331.3 19.1L331.5 14.4L333.5 14.1L334.8 11.8L336.4 12.0L335.3 14.8L336.5 13.5L338.6 15.8L339.4 24.3L343.7 25.7L341.9 27.8L341.9 29.7L343.7 30.2L344.3 32.1L345.8 32.7L344.9 35.9L347.0 35.3L346.8 45.3L349.6 52.4L352.3 53.3L354.2 50.9L355.8 51.4L357.7 49.8L359.6 54.2L362.0 54.8L362.5 56.2L366.9 58.5L365.6 60.5L366.9 62.0L365.5 64.1L368.2 70.8L367.5 75.1L371.6 80.3L373.5 79.9L372.8 81.6L374.8 85.3L374.3 87.1L375.6 88.1L374.2 94.7L377.7 97.8L377.2 101.8L383.7 106.3L385.2 105.0L386.4 107.6L389.9 107.6L389.6 106.5L392.4 112.1L393.4 112.3L393.3 110.8L394.1 110.8L395.1 113.0L398.9 113.7L399.9 115.8L402.2 114.7L403.4 117.1L404.5 116.6L406.2 119.9L404.3 118.6L403.3 120.4L405.3 123.6L407.5 123.9L407.2 124.9L409.5 125.7L409.0 128.1L410.3 128.0L410.2 130.6L411.4 130.4L411.9 131.5L412.3 130.8L411.6 133.5L413.6 139.1L418.5 143.3L417.0 139.8L418.5 137.4L420.4 140.3L424.0 142.8L424.6 142.2L423.9 139.9L424.9 139.6L425.3 141.0L425.3 139.8L426.3 141.2L425.1 141.2L425.8 143.0L426.6 141.8L427.2 143.5L426.2 148.4L427.4 153.8L429.3 153.3L433.8 158.8L433.8 157.9L435.0 159.2L435.3 158.4L436.5 159.1L435.7 157.8L436.9 159.0L437.4 158.2L440.5 163.8L445.1 167.0L447.0 170.7L446.0 171.3L450.1 172.2L450.2 173.7L449.1 174.4L450.5 173.8L449.5 175.1L450.3 178.0L451.2 178.1L451.0 179.7L451.5 177.9L453.1 179.3L451.7 183.4L452.7 188.8L451.3 190.9L452.6 191.8L451.2 192.4L452.8 195.2L451.6 196.1L453.1 195.0L454.3 198.8L455.6 198.1L455.0 199.8L456.9 204.0L453.0 204.7L452.2 205.9L445.1 204.9L439.5 207.7L440.8 209.8L440.1 212.0L437.6 212.6L436.8 211.6L433.3 215.0L432.1 214.1L432.0 212.3L429.1 210.1L426.3 209.0L422.9 209.3L421.2 207.9L414.7 209.0L412.5 208.3L406.5 213.0L319.0 213.0L319.0 180.0L286.0 180.0L286.0 76.0L289.6 78.3L297.4 80.0L299.6 84.5L308.0 88.9L314.5 87.6L317.8 85.2L318.5 81.0L322.3 75.5L323.8 70.8L323.8 66.2ZM450.5 175.3L451.6 172.8L450.9 171.4L453.4 169.0L452.3 167.0L453.9 165.7L453.9 167.1L455.0 169.1L451.9 177.7Z",c:[144.5, -22.5],prev:1866,last:4315,name:"Queensland"},
+ NSW:{d:"M430.6 266.1L432.1 266.2L431.9 267.6L430.3 267.9L431.5 268.3L429.7 268.7L430.9 269.0L428.2 271.5L428.1 273.4L426.8 274.0L427.9 274.6L426.2 277.4L427.2 279.8L426.3 278.9L425.7 280.4L424.0 280.1L424.6 281.1L422.5 284.9L421.0 287.0L419.9 286.7L420.6 287.8L419.7 288.8L419.6 292.9L416.6 301.9L418.6 303.9L417.4 304.1L417.7 306.6L397.2 298.8L398.4 296.6L396.4 294.3L396.4 291.5L395.0 289.9L389.5 289.4L388.5 290.7L386.4 289.9L384.4 291.3L379.5 289.5L378.1 290.6L371.9 289.9L368.9 287.8L362.9 288.4L362.8 290.8L360.5 291.4L351.7 284.5L347.8 283.3L347.3 281.3L345.3 281.1L344.8 276.7L339.8 275.5L338.7 274.0L336.1 276.5L334.0 273.8L334.4 271.7L332.6 271.4L331.8 269.7L327.0 269.0L324.6 270.4L319.0 268.4L319.0 213.0L406.5 213.0L412.5 208.3L414.7 209.0L421.2 207.9L422.9 209.3L426.3 209.0L429.1 210.1L432.0 212.3L432.1 214.1L433.3 215.0L436.8 211.6L437.6 212.6L440.1 212.0L440.8 209.8L439.5 207.7L445.1 204.9L452.2 205.9L453.0 204.7L457.1 203.9L456.4 204.4L457.1 203.9L457.4 204.8L457.7 211.3L454.8 216.3L454.7 220.4L450.9 232.1L451.7 235.6L448.3 244.3L445.6 247.3L445.9 250.9L442.3 253.7L439.7 253.2L439.3 254.1L441.9 254.4L437.1 255.7L437.8 256.1L436.3 257.9L435.7 256.6L434.6 258.5L436.0 257.8L436.0 258.9L434.5 260.8L435.2 259.6L433.9 260.4L434.5 261.0L433.6 262.8L431.8 263.3L431.6 262.0L431.2 262.9L430.8 261.7L429.8 261.9L430.7 262.1L430.1 263.5L430.9 262.7L431.7 263.4L430.6 264.2L432.2 263.3L432.4 264.3L432.7 263.4L432.3 266.1Z",c:[146.5, -32],prev:2336,last:4990,name:"New South Wales"},
+ VIC:{d:"M364.5 316.3L361.8 317.5L359.2 315.3L362.2 315.8L364.3 313.6L361.9 310.3L356.0 313.2L359.6 313.3L359.4 314.9L355.7 315.6L346.6 321.4L334.1 315.8L331.6 316.3L327.2 314.8L325.6 315.4L325.9 316.5L323.1 316.3L322.2 314.4L318.6 312.6L318.6 267.8L324.6 270.4L327.0 269.0L331.8 269.7L332.6 271.4L334.4 271.7L334.0 273.8L336.1 276.5L338.7 274.0L339.8 275.5L344.8 276.7L345.3 281.1L347.3 281.3L347.8 283.3L353.2 285.5L357.6 289.9L360.5 291.4L362.8 290.8L362.9 288.4L368.9 287.8L371.9 289.9L378.1 290.6L379.5 289.5L385.4 291.3L386.4 289.9L388.5 290.7L389.5 289.4L391.1 290.0L392.8 289.2L396.0 290.5L396.4 294.3L398.4 296.6L397.2 298.8L417.7 306.6L412.3 309.5L399.2 309.9L393.7 311.5L383.7 319.0L376.3 319.6L377.2 322.0L379.3 320.7L378.7 324.4L375.5 321.2L373.1 322.0L371.4 319.3L367.1 317.9L367.6 316.5L369.0 316.1L368.4 314.6L365.8 314.5L365.6 316.5Z",c:[143.9, -36.7],prev:1580,last:3367,name:"Victoria"},
+ TAS:{d:"M360.3 345.7L358.7 345.1L360.0 341.1L360.4 342.2L364.3 343.2L365.8 342.9L365.9 341.8L366.5 343.3L376.8 347.2L377.9 346.7L378.3 347.6L378.1 346.8L379.9 346.3L380.7 347.9L380.2 346.6L382.5 345.9L386.3 349.9L382.7 345.6L388.1 344.4L389.8 345.1L392.4 343.0L394.9 343.7L395.3 342.1L398.5 343.3L399.8 344.9L398.7 345.6L399.7 347.9L398.6 348.6L399.9 348.1L398.7 350.3L399.8 358.5L398.8 358.7L399.3 357.4L397.8 356.0L397.0 356.9L398.6 357.1L396.5 357.3L395.2 359.8L396.3 359.8L396.1 361.6L394.6 362.1L395.6 363.4L394.7 365.3L392.4 365.9L391.5 364.6L390.4 365.0L391.7 365.3L390.5 365.5L391.1 366.8L389.6 367.6L390.3 366.0L389.5 366.3L387.9 364.0L386.3 364.5L388.5 365.2L388.8 367.6L387.9 367.2L387.9 369.5L386.8 370.1L385.9 368.8L384.8 369.1L385.3 367.6L384.4 368.8L386.1 370.2L384.8 370.6L385.7 370.9L385.2 371.9L384.2 371.6L385.0 372.3L383.6 374.0L381.8 374.0L380.2 372.1L380.6 373.0L376.4 372.3L374.3 373.3L373.1 371.2L375.6 371.5L376.5 370.5L374.0 370.7L373.1 369.3L372.3 370.5L370.5 367.6L368.4 366.9L367.0 363.2L365.9 362.8L364.8 358.2L368.0 360.4L368.2 361.8L368.0 360.8L369.8 360.9L368.6 360.8L369.1 359.9L366.7 357.7L365.5 358.4L365.2 355.3L362.0 352.6L363.6 351.6L362.1 352.3L360.2 349.6L359.3 345.6ZM399.7 336.3L396.5 336.7L394.4 334.3L394.7 333.0L393.2 332.6L395.6 331.0L399.2 333.6L398.5 335.3L399.2 334.9ZM353.5 333.3L351.2 335.7L350.2 333.1L351.4 329.4L353.2 330.4Z",c:[146.6, -42.1],prev:207,last:444,name:"Tasmania"},
+ ACT:{d:"M411.4 282.5L408.6 283.6L407.5 289.1L404.4 286.1L404.9 282.4L408.3 280.4Z",c:[149.1, -35.3],prev:76,last:182,name:"ACT"}};
+var mp=document.getElementById('map');
+function px(p){return [(p[0]-112)*11,(-10-p[1])*11+4];}
+var ramp=[tok('--m1'),tok('--m2'),tok('--m3'),tok('--m4'),tok('--m5')];
+function shade(g){var i=Math.min(4,Math.max(0,Math.floor((g-110)/30)));return ramp[i];}
+var lab=[];
+['WA','NT','SA','QLD','NSW','VIC','TAS','ACT'].forEach(function(k){var st=states[k],g=Math.round((st.last/st.prev-1)*100);
+ var path=el('path',{d:st.d,fill:shade(g),class:'state'});
+ path.addEventListener('mousemove',function(e){show(e,st.name+': about '+(Math.round(st.last/(st.last>=1000?100:10))*(st.last>=1000?100:10)).toLocaleString()+' orders, +'+g+'%')});path.addEventListener('mouseleave',hide);mp.appendChild(path);
+ lab.push([k,st,g]);});
+lab.forEach(function(a){var k=a[0],st=a[1],g=a[2],c=px(st.c),dark=g>=200;
+ if(k==='ACT'){var o=px(st.c);c=[o[0]+34,o[1]+36];mp.appendChild(el('line',{x1:o[0]+3,y1:o[1]+2,x2:c[0]-14,y2:c[1]-16,stroke:C.ink,'stroke-width':'1'}));}
+ if(k==='VIC'){c=[c[0]-6,c[1]+2];}
+ var t1=el('text',{x:c[0],y:c[1]-6,'font-size':'12','font-weight':'700','text-anchor':'middle',style:'fill:'+(dark?tok('--acc'):C.ink)});t1.textContent=k;mp.appendChild(t1);
+ var t2=el('text',{x:c[0],y:c[1]+8,'font-size':'11','text-anchor':'middle',style:'fill:'+(dark?tok('--acc'):C.ink)});t2.textContent="≈"+(Math.round(st.last/(st.last>=1000?100:10))*(st.last>=1000?100:10)).toLocaleString()+' · +'+g+'%';mp.appendChild(t2);});
+// map legend
+[['+110%',0],['+140%',1],['+170%',2],['+200%',3],['+230%',4]].forEach(function(l,i){mp.appendChild(el('rect',{x:14+i*54,y:378,width:14,height:12,fill:ramp[i],stroke:C.ink,'stroke-width':'0.5'}));mp.appendChild(el('text',{x:31+i*54,y:388,'font-size':'10',class:'mute'})).textContent=l[0];});
+// Chart 3: monthly email profiles
+var m=[['Oct 24',585,44],['Nov',776,57],['Dec',722,64],['Jan 25',593,35],['Feb',546,65],['Mar',567,54],['Apr',494,34],['May',553,57],['Jun',986,88],['Jul',669,58],['Aug',604,66],['Sep',575,58],['Oct 25',1950,1207],['Nov',3331,2006],['Dec',1861,1246],['Jan 26',1288,893],['Feb',1679,1127],['Mar',1708,1121],['Apr',1747,1185],['May',2409,1413],['Jun',3657,1356],['Jul',2422,1327],['Aug',2576,1578],['Sep',1558,858]];
+var s3=document.getElementById('c3'),L3=44,H3=230,top3=12,gw3=W-L3-12,bw=gw3/m.length,mx3=4000;
+[0,1000,2000,3000,4000].forEach(function(t){var y=top3+H3-H3*t/mx3;s3.appendChild(el('line',{x1:L3,y1:y,x2:W-12,y2:y,class:'grid','stroke-width':'1'}));s3.appendChild(el('text',{x:L3-6,y:y+4,'font-size':'11','text-anchor':'end',class:'mute'})).textContent=t?fmt(t):'0';});
+m.forEach(function(r,i){var x=L3+i*bw+2,w=bw-4,hT=H3*r[1]/mx3,hA=H3*r[2]/mx3,yT=top3+H3-hT;
+ var other=el('rect',{x:x,y:yT,width:w,height:hT-hA,fill:C.bar3});var alia=el('rect',{x:x,y:top3+H3-hA+(hA?2:0),width:w,height:Math.max(hA-(hA?2:0),0),fill:C.bar});
+ [other,alia].forEach(function(b){b.addEventListener('mousemove',function(e){show(e,r[0]+': '+r[1].toLocaleString()+' new profiles, '+r[2].toLocaleString()+' via popup')});b.addEventListener('mouseleave',hide);s3.appendChild(b);});
+ if(i%3===0)s3.appendChild(el('text',{x:x+w/2,y:top3+H3+16,'font-size':'10','text-anchor':'middle',class:'mute'})).textContent=r[0];
+ if(r[1]>=3300||i===0)s3.appendChild(el('text',{x:x+w/2,y:yT-4,'font-size':'10','text-anchor':'middle'})).textContent=r[1].toLocaleString();});
+var xs=L3+12*bw;s3.appendChild(el('line',{x1:xs,y1:top3,x2:xs,y2:top3+H3,stroke:C.ink,'stroke-dasharray':'3 3','stroke-width':'1'}));
+s3.appendChild(el('text',{x:xs+4,y:top3+10,'font-size':'10',class:'mute'})).textContent='popup live';
+})();
+</script>

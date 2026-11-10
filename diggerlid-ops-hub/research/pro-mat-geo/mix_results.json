@@ -1,0 +1,282 @@
+{
+ "national": {
+  "units": 1274,
+  "mix_%": {
+   "OG": 25.7,
+   "Orange": 28.2,
+   "Grey": 21.8,
+   "Camo": 14.9,
+   "Pink": 9.4
+  }
+ },
+ "QLD": {
+  "units": 371,
+  "mix_%": {
+   "OG": 19.7,
+   "Orange": 32.1,
+   "Grey": 20.2,
+   "Camo": 18.1,
+   "Pink": 10.0
+  },
+  "index_vs_national": {
+   "OG": 77,
+   "Orange": 114,
+   "Grey": 93,
+   "Camo": 121,
+   "Pink": 106
+  }
+ },
+ "NSW": {
+  "units": 340,
+  "mix_%": {
+   "OG": 26.2,
+   "Orange": 25.0,
+   "Grey": 26.5,
+   "Camo": 12.1,
+   "Pink": 10.3
+  },
+  "index_vs_national": {
+   "OG": 102,
+   "Orange": 89,
+   "Grey": 121,
+   "Camo": 81,
+   "Pink": 109
+  }
+ },
+ "VIC": {
+  "units": 232,
+  "mix_%": {
+   "OG": 28.0,
+   "Orange": 30.6,
+   "Grey": 16.8,
+   "Camo": 17.2,
+   "Pink": 7.3
+  },
+  "index_vs_national": {
+   "OG": 109,
+   "Orange": 109,
+   "Grey": 77,
+   "Camo": 116,
+   "Pink": 78
+  }
+ },
+ "WA": {
+  "units": 191,
+  "mix_%": {
+   "OG": 29.8,
+   "Orange": 22.5,
+   "Grey": 25.1,
+   "Camo": 12.6,
+   "Pink": 9.9
+  },
+  "index_vs_national": {
+   "OG": 116,
+   "Orange": 80,
+   "Grey": 115,
+   "Camo": 84,
+   "Pink": 106
+  }
+ },
+ "SA": {
+  "units": 93,
+  "mix_%": {
+   "OG": 32.3,
+   "Orange": 33.3,
+   "Grey": 17.2,
+   "Camo": 11.8,
+   "Pink": 5.4
+  },
+  "index_vs_national": {
+   "OG": 126,
+   "Orange": 118,
+   "Grey": 79,
+   "Camo": 79,
+   "Pink": 57
+  }
+ },
+ "TAS": {
+  "units": 19,
+  "mix_%": {
+   "OG": 36.8,
+   "Orange": 21.1,
+   "Grey": 26.3,
+   "Camo": 10.5,
+   "Pink": 5.3
+  },
+  "index_vs_national": {
+   "OG": 144,
+   "Orange": 75,
+   "Grey": 121,
+   "Camo": 71,
+   "Pink": 56
+  }
+ },
+ "NT": {
+  "units": 19,
+  "mix_%": {
+   "OG": 15.8,
+   "Orange": 15.8,
+   "Grey": 15.8,
+   "Camo": 21.1,
+   "Pink": 31.6
+  },
+  "index_vs_national": {
+   "OG": 62,
+   "Orange": 56,
+   "Grey": 72,
+   "Camo": 141,
+   "Pink": 335
+  }
+ },
+ "ACT": {
+  "units": 9,
+  "mix_%": {
+   "OG": 33.3,
+   "Orange": 33.3,
+   "Grey": 22.2,
+   "Camo": 11.1,
+   "Pink": 0.0
+  },
+  "index_vs_national": {
+   "OG": 130,
+   "Orange": 118,
+   "Grey": 102,
+   "Camo": 75,
+   "Pink": 0
+  }
+ },
+ "capital": {
+  "units": 396,
+  "mix_%": {
+   "OG": 28.8,
+   "Orange": 29.8,
+   "Grey": 17.9,
+   "Camo": 16.2,
+   "Pink": 7.3
+  },
+  "index_vs_national": {
+   "OG": 112,
+   "Orange": 106,
+   "Grey": 82,
+   "Camo": 108,
+   "Pink": 78
+  }
+ },
+ "regional": {
+  "units": 878,
+  "mix_%": {
+   "OG": 24.3,
+   "Orange": 27.4,
+   "Grey": 23.6,
+   "Camo": 14.4,
+   "Pink": 10.4
+  },
+  "index_vs_national": {
+   "OG": 95,
+   "Orange": 97,
+   "Grey": 108,
+   "Camo": 96,
+   "Pink": 110
+  }
+ },
+ "QLD capital": {
+  "units": 69,
+  "mix_%": {
+   "OG": 19,
+   "Orange": 45,
+   "Grey": 16,
+   "Camo": 16,
+   "Pink": 4
+  }
+ },
+ "QLD regional": {
+  "units": 302,
+  "mix_%": {
+   "OG": 20,
+   "Orange": 29,
+   "Grey": 21,
+   "Camo": 19,
+   "Pink": 11
+  }
+ },
+ "NSW capital": {
+  "units": 83,
+  "mix_%": {
+   "OG": 33,
+   "Orange": 22,
+   "Grey": 24,
+   "Camo": 16,
+   "Pink": 6
+  }
+ },
+ "NSW regional": {
+  "units": 257,
+  "mix_%": {
+   "OG": 24,
+   "Orange": 26,
+   "Grey": 27,
+   "Camo": 11,
+   "Pink": 12
+  }
+ },
+ "VIC capital": {
+  "units": 91,
+  "mix_%": {
+   "OG": 30,
+   "Orange": 30,
+   "Grey": 12,
+   "Camo": 23,
+   "Pink": 5
+  }
+ },
+ "VIC regional": {
+  "units": 141,
+  "mix_%": {
+   "OG": 27,
+   "Orange": 31,
+   "Grey": 20,
+   "Camo": 13,
+   "Pink": 9
+  }
+ },
+ "WA capital": {
+  "units": 103,
+  "mix_%": {
+   "OG": 30,
+   "Orange": 24,
+   "Grey": 19,
+   "Camo": 14,
+   "Pink": 13
+  }
+ },
+ "WA regional": {
+  "units": 88,
+  "mix_%": {
+   "OG": 30,
+   "Orange": 20,
+   "Grey": 32,
+   "Camo": 11,
+   "Pink": 7
+  }
+ },
+ "SA capital": {
+  "units": 29,
+  "mix_%": {
+   "OG": 41,
+   "Orange": 38,
+   "Grey": 14,
+   "Camo": 3,
+   "Pink": 3
+  }
+ },
+ "SA regional": {
+  "units": 64,
+  "mix_%": {
+   "OG": 28,
+   "Orange": 31,
+   "Grey": 19,
+   "Camo": 16,
+   "Pink": 6
+  }
+ }
+}

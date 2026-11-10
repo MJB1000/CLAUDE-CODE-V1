@@ -1,0 +1,488 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DiggerLid Repeat Rate &amp; Style of Sale</title><style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&display=swap');
+:root{--k:#231f20;--y:#f5eb19;--g:#8a8a8a;--lg:#e6e6e6;--paper:#ffffff;--muted:#555}
+*{box-sizing:border-box}
+body{margin:0;background:#d9d9d9;color:var(--k);font-family:'League Spartan',Bahnschrift,'Segoe UI',Arial,sans-serif;font-size:14.5px;line-height:1.45}
+.page{background:var(--paper);width:210mm;min-height:297mm;margin:12px auto;padding:16mm 16mm 18mm;position:relative;page-break-after:always;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.page:last-child{page-break-after:auto}
+.banner{background:var(--k);color:var(--y);padding:10px 18px 8px;display:inline-block;clip-path:polygon(0 0,100% 0,100% 88%,0 100%);font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:13px;margin-bottom:10px}
+h1{font-size:34px;line-height:1.05;margin:6px 0 4px;font-weight:800;text-transform:uppercase}
+h2{font-size:24px;margin:0 0 6px;font-weight:800;text-transform:uppercase;letter-spacing:.01em}
+h3{font-size:15px;margin:16px 0 6px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+p{margin:6px 0}
+.lead{font-size:16.5px;font-weight:600}
+.sub{color:var(--muted);font-size:13px}
+.verdict{border:2px solid var(--k);border-left:14px solid var(--y);padding:10px 14px;margin:12px 0;font-size:15px}
+.verdict b{text-transform:uppercase}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}
+.kpi{border:1.5px solid var(--k);padding:10px 10px 8px}
+.kpi .v{font-size:28px;font-weight:800;line-height:1}
+.kpi .l{font-size:11.5px;color:var(--muted);margin-top:4px}
+.kpi.hl{background:var(--y)}
+table{border-collapse:collapse;width:100%;font-size:12.5px;margin:8px 0}
+th{background:var(--k);color:#fff;text-align:left;padding:6px 8px;font-weight:700;font-size:11.5px;text-transform:uppercase;letter-spacing:.03em}
+td{padding:5px 8px;border-bottom:1px solid var(--lg)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+tr.hl td{background:#fff9b0;font-weight:700}
+.chart{margin:10px 0 4px}
+.cap{font-size:11.5px;color:var(--muted);margin:0 0 10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.foot{position:absolute;bottom:9mm;left:16mm;right:16mm;display:flex;justify-content:space-between;font-size:10.5px;color:var(--muted);border-top:1px solid var(--lg);padding-top:6px}
+.logo{border:1.5px dashed var(--g);color:var(--g);font-size:11px;padding:10px 14px;display:inline-block;letter-spacing:.08em;text-transform:uppercase}
+.cover{display:flex;flex-direction:column;justify-content:space-between}
+.cover .big{font-size:52px;line-height:.98;font-weight:800;text-transform:uppercase;margin:24px 0 10px}
+.stamp{font-family:Impact,'League Spartan',sans-serif;background:var(--y);color:var(--k);display:inline-block;padding:6px 14px;font-size:22px;letter-spacing:.06em;text-transform:uppercase;transform:rotate(-2deg)}
+.stripe{height:14px;background:repeating-linear-gradient(135deg,var(--y) 0 18px,var(--k) 18px 36px);margin:14px 0}
+ul{margin:6px 0 6px 18px;padding:0} li{margin:3px 0}
+pre{font-size:10.5px;background:#f4f4f4;padding:10px;overflow:auto;border:1px solid var(--lg)}
+@page{size:A4;margin:0}
+@media print{body{background:#fff} .page{margin:0;box-shadow:none;width:210mm;height:297mm;overflow:hidden;padding:14mm 14mm 16mm} .page.flow{height:auto;min-height:297mm;overflow:visible;page-break-inside:auto} .foot{bottom:8mm;left:14mm;right:14mm}}
+</style></head><body>
+<div class="page cover">
+ <div>
+  <div class="logo">DiggerLid logo</div>
+  <div class="stripe"></div>
+  <div class="banner">Research report · RP-003 &amp; RP-004</div>
+  <div class="big">Repeat rate<br>&amp; style of sale</div>
+  <p class="lead">How often DiggerLid customers come back, what changes when grease or PRO Mat is isolated, which Ecommerce Equation band the business sits in, and why our sales run on a Hybrid curve anyway.</p>
+  <p class="sub">Prepared for Matt (Head of Growth) · Data as at 22 September 2026 · Source: Shopify analytics (ShopifyQL), Klaviyo send log</p>
+ </div>
+ <div>
+  <div class="kpis">
+   <div class="kpi hl"><div class="v">21.4%</div><div class="l">Repeat rate, last 12 months (share of customers who bought more than once)</div></div>
+   <div class="kpi"><div class="v">16.4%</div><div class="l">Same, without grease</div></div>
+   <div class="kpi"><div class="v">7.7%</div><div class="l">PRO Mat buyers only</div></div>
+   <div class="kpi"><div class="v">~5%</div><div class="l">Mid-sale revenue per day (Hybrid signature)</div></div>
+  </div>
+  <div class="stamp">Keep Working &amp; Keep Earning!</div>
+ </div>
+</div>
+<div class="page">
+ <div class="banner">1 · The answer in one page</div>
+ <h2>Low repeat, on the Hybrid line</h2>
+ <div class="verdict"><b>Classification:</b> DiggerLid is a <b>Low-repeat</b> store that sits on the boundary of <b>Hybrid</b>. 17.7% of all customers have ever bought twice; on the last-12-month returning-customer measure it is 21.4%. Grease is the only thing that gets us to the line. Remove it and we are Low with no ambiguity. PRO Mat on its own is deep Low.</div>
+ <div class="chart"><svg viewBox="0 0 760 175" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="League Spartan, Arial, sans-serif"><rect x="40.0" y="20" width="280.0" height="48" fill="#ffffff" stroke="#231f20" stroke-width="1.2"/><text x="46.0" y="36" font-size="13" font-weight="700" fill="#231f20">Low repeat</text><text x="46.0" y="52" font-size="11" fill="#231f20">0-19% · 25% of EE cohort</text><rect x="320.0" y="20" width="280.0" height="48" fill="#fff9b0" stroke="#231f20" stroke-width="1.2"/><text x="326.0" y="36" font-size="13" font-weight="700" fill="#231f20">Hybrid</text><text x="326.0" y="52" font-size="11" fill="#231f20">20-39% · 48% of EE cohort</text><rect x="600.0" y="20" width="140.0" height="48" fill="#f5eb19" stroke="#231f20" stroke-width="1.2"/><text x="606.0" y="36" font-size="13" font-weight="700" fill="#231f20">High repeat</text><text x="606.0" y="52" font-size="11" fill="#231f20">40%+ · 27% of EE cohort</text><line x1="40.0" y1="68" x2="40.0" y2="74" stroke="#231f20"/><text x="40.0" y="86" font-size="10" fill="#8a8a8a" text-anchor="middle">0%</text><line x1="180.0" y1="68" x2="180.0" y2="74" stroke="#231f20"/><text x="180.0" y="86" font-size="10" fill="#8a8a8a" text-anchor="middle">10%</text><line x1="320.0" y1="68" x2="320.0" y2="74" stroke="#231f20"/><text x="320.0" y="86" font-size="10" fill="#8a8a8a" text-anchor="middle">20%</text><line x1="460.0" y1="68" x2="460.0" y2="74" stroke="#231f20"/><text x="460.0" y="86" font-size="10" fill="#8a8a8a" text-anchor="middle">30%</text><line x1="600.0" y1="68" x2="600.0" y2="74" stroke="#231f20"/><text x="600.0" y="86" font-size="10" fill="#8a8a8a" text-anchor="middle">40%</text><line x1="740.0" y1="68" x2="740.0" y2="74" stroke="#231f20"/><text x="740.0" y="86" font-size="10" fill="#8a8a8a" text-anchor="middle">50%</text><line x1="106.6" y1="68" x2="106.6" y2="89" stroke="#231f20" stroke-width="1" stroke-dasharray="2,2"/><circle cx="106.6" cy="98" r="9" fill="#fff" stroke="#231f20" stroke-width="1.5"/><text x="106.6" y="102" font-size="11" font-weight="700" fill="#231f20" text-anchor="middle">6</text><line x1="147.7" y1="68" x2="147.7" y2="111" stroke="#231f20" stroke-width="1" stroke-dasharray="2,2"/><circle cx="147.7" cy="120" r="9" fill="#fff" stroke="#231f20" stroke-width="1.5"/><text x="147.7" y="124" font-size="11" font-weight="700" fill="#231f20" text-anchor="middle">5</text><line x1="234.1" y1="68" x2="234.1" y2="89" stroke="#231f20" stroke-width="1" stroke-dasharray="2,2"/><circle cx="234.1" cy="98" r="9" fill="#fff" stroke="#231f20" stroke-width="1.5"/><text x="234.1" y="102" font-size="11" font-weight="700" fill="#231f20" text-anchor="middle">4</text><line x1="269.3" y1="68" x2="269.3" y2="111" stroke="#231f20" stroke-width="1" stroke-dasharray="2,2"/><circle cx="269.3" cy="120" r="9" fill="#fff" stroke="#231f20" stroke-width="1.5"/><text x="269.3" y="124" font-size="11" font-weight="700" fill="#231f20" text-anchor="middle">3</text><line x1="287.8" y1="68" x2="287.8" y2="89" stroke="#231f20" stroke-width="1.6" stroke-dasharray=""/><circle cx="287.8" cy="98" r="9" fill="#f5eb19" stroke="#231f20" stroke-width="1.5"/><text x="287.8" y="102" font-size="11" font-weight="700" fill="#231f20" text-anchor="middle">1</text><line x1="339.4" y1="68" x2="339.4" y2="111" stroke="#231f20" stroke-width="1.6" stroke-dasharray=""/><circle cx="339.4" cy="120" r="9" fill="#f5eb19" stroke="#231f20" stroke-width="1.5"/><text x="339.4" y="124" font-size="11" font-weight="700" fill="#231f20" text-anchor="middle">2</text><circle cx="46" cy="138" r="6" fill="#f5eb19" stroke="#231f20"/><text x="46" y="141" font-size="8.5" font-weight="700" fill="#231f20" text-anchor="middle">1</text><text x="58" y="142" font-size="11" fill="#231f20" font-weight="700">Store, lifetime: 17.7%</text><circle cx="406" cy="138" r="6" fill="#f5eb19" stroke="#231f20"/><text x="406" y="141" font-size="8.5" font-weight="700" fill="#231f20" text-anchor="middle">2</text><text x="418" y="142" font-size="11" fill="#231f20" font-weight="700">Store, 12 mo: 21.4%</text><circle cx="46" cy="152" r="6" fill="#fff" stroke="#231f20"/><text x="46" y="155" font-size="8.5" font-weight="700" fill="#231f20" text-anchor="middle">3</text><text x="58" y="156" font-size="11" fill="#231f20" font-weight="400">Ex-grease, 12 mo: 16.4%</text><circle cx="406" cy="152" r="6" fill="#fff" stroke="#231f20"/><text x="406" y="155" font-size="8.5" font-weight="700" fill="#231f20" text-anchor="middle">4</text><text x="418" y="156" font-size="11" fill="#231f20" font-weight="400">Ex-grease, lifetime: 13.9%</text><circle cx="46" cy="166" r="6" fill="#fff" stroke="#231f20"/><text x="46" y="169" font-size="8.5" font-weight="700" fill="#231f20" text-anchor="middle">5</text><text x="58" y="170" font-size="11" fill="#231f20" font-weight="400">PRO Mat cohort: 7.7%</text><circle cx="406" cy="166" r="6" fill="#fff" stroke="#231f20"/><text x="406" y="169" font-size="8.5" font-weight="700" fill="#231f20" text-anchor="middle">6</text><text x="418" y="170" font-size="11" fill="#231f20" font-weight="400">PRO Mat-first: 4.8%</text></svg></div>
+ <p class="cap">Ecommerce Equation "Style of Sale" bands with DiggerLid's measured repeat rates. Repeat rate = share of customers who have purchased more than once. Cohort shares are the EE member distribution shown on the slide.</p>
+ <h3>What each number means</h3>
+ <table>
+  <tr><th>Question</th><th class="n">Repeat rate</th><th>EE band</th><th>Read</th></tr>
+  <tr class="hl"><td>Whole store, last 12 months</td><td class="n">21.4%</td><td>Hybrid (bottom edge)</td><td>The like-for-like number EE peers quote</td></tr>
+  <tr><td>Whole store, lifetime (every customer since 2019)</td><td class="n">17.7%</td><td>Low</td><td>Dragged down by the 88% of last year's customers who are under 12 months old</td></tr>
+  <tr><td>Without grease, last 12 months</td><td class="n">16.4%</td><td>Low</td><td>Durables only: covers, enclosure, DiggerShield, PRO Mat, accessories</td></tr>
+  <tr><td>Without grease, lifetime</td><td class="n">13.9%</td><td>Low</td><td></td></tr>
+  <tr><td>PRO Mat buyers acquired since launch, any second order</td><td class="n">7.7%</td><td>Low</td><td>Below the store's same-age average (10.5%)</td></tr>
+  <tr><td>PRO Mat-first customers who bought anything again</td><td class="n">4.8%</td><td>Low</td><td>Pure acquisition product</td></tr>
+ </table>
+ <h3>Why it matters</h3>
+ <p>In EE terms a Low-repeat store wins on first-order economics: average order value, first-order gross profit after marketing, and immediate payback of acquisition cost. That matches our cohort finding that 12-month lifetime value is roughly the first order. Grease is the single retention lever with any mass. Our sales, however, behave like a Hybrid store's sales (section 5), which changes how we should forecast them but not which levers we pull.</p>
+ <div class="foot"><span>DiggerLid · Repeat Rate &amp; Style of Sale · RP-003 / RP-004</span><span>22 September 2026 · page 1</span></div>
+</div>
+<div class="page">
+ <div class="banner">2 · What is our repeat rate?</div>
+ <h2>21.4% in the last 12 months · 17.7% lifetime</h2>
+ <p>Repeat rate here is the Ecommerce Equation definition: the share of customers who have placed more than one order. It is measured directly from Shopify's customer records, so there is no sampling or export involved.</p>
+ <div class="kpis">
+  <div class="kpi"><div class="v">27,061</div><div class="l">Customers ever</div></div>
+  <div class="kpi"><div class="v">4,790</div><div class="l">Bought more than once (17.7%)</div></div>
+  <div class="kpi"><div class="v">14,552</div><div class="l">Customers, Sep 2025 to Aug 2026</div></div>
+  <div class="kpi hl"><div class="v">3,112</div><div class="l">Of them returning (21.4%)</div></div>
+ </div>
+ <div class="two">
+  <div>
+   <h3>How many times customers order</h3>
+   <div class="chart"><svg viewBox="0 0 380 200" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="League Spartan, Arial, sans-serif"><rect x="65.5" y="43.3" width="46.5" height="116.7" fill="#f5eb19" stroke="#231f20"/><text x="88.8" y="37.3" font-size="12" font-weight="700" fill="#231f20" text-anchor="middle">82.3%</text><text x="88.8" y="176" font-size="11" fill="#231f20" text-anchor="middle">1 order</text><rect x="143.0" y="142.4" width="46.5" height="17.6" fill="#f5eb19" stroke="#231f20"/><text x="166.2" y="136.4" font-size="12" font-weight="700" fill="#231f20" text-anchor="middle">12.4%</text><text x="166.2" y="176" font-size="11" fill="#231f20" text-anchor="middle">2 orders</text><rect x="220.5" y="155.2" width="46.5" height="4.8" fill="#f5eb19" stroke="#231f20"/><text x="243.8" y="149.2" font-size="12" font-weight="700" fill="#231f20" text-anchor="middle">3.4%</text><text x="243.8" y="176" font-size="11" fill="#231f20" text-anchor="middle">3 orders</text><rect x="298.0" y="157.2" width="46.5" height="2.8" fill="#f5eb19" stroke="#231f20"/><text x="321.2" y="151.2" font-size="12" font-weight="700" fill="#231f20" text-anchor="middle">2.0%</text><text x="321.2" y="176" font-size="11" fill="#231f20" text-anchor="middle">4+ orders</text><line x1="50" y1="160" x2="360" y2="160" stroke="#231f20"/></svg></div>
+   <p class="cap">Share of all 27,061 customers by lifetime order count. 5.3% have ordered three or more times.</p>
+  </div>
+  <div>
+   <h3>What returning customers are worth</h3>
+   <table>
+    <tr><th></th><th class="n">Lifetime</th><th class="n">Last 12 mo</th></tr>
+    <tr><td>Share of orders from returning customers</td><td class="n">21.1%</td><td class="n">23.6%</td></tr>
+    <tr><td>Share of net revenue from returning customers</td><td class="n">19.6%</td><td class="n">24.0%</td></tr>
+    <tr><td>Returning orders per returning customer</td><td class="n">1.51</td><td class="n">1.27</td></tr>
+   </table>
+   <p class="cap">Roughly one dollar in four comes from someone who has bought before. That is stable across both windows.</p>
+  </div>
+ </div>
+ <h3>Reading the two numbers together</h3>
+ <p>The lifetime figure (17.7%) is the honest all-time count, but it is depressed by growth: 12,745 of last year's 14,552 customers were first-time buyers and most have not had time to come back. The 12-month figure (21.4%) is Shopify's returning-customer rate, which is what most EE members read off their dashboard, so it is the fair comparison. Either way the store lives within a few points of the Low/Hybrid line.</p>
+ <div class="foot"><span>DiggerLid · Repeat Rate &amp; Style of Sale · RP-003 / RP-004</span><span>22 September 2026 · page 2</span></div>
+</div>
+<div class="page">
+ <div class="banner">3 · What is it without grease?</div>
+ <h2>16.4% last 12 months · 13.9% lifetime · Low, unambiguously</h2>
+ <p>Same definition, with the grease system (packs, gun, battery adapter, coupler, coupling caps) and free gifts removed from every order. What is left is the machine-protection and accessories business.</p>
+ <div class="kpis">
+  <div class="kpi"><div class="v">17,926</div><div class="l">Non-grease buyers, lifetime</div></div>
+  <div class="kpi"><div class="v">13.9%</div><div class="l">Returned for a non-grease order (2,485)</div></div>
+  <div class="kpi"><div class="v">16.4%</div><div class="l">Last 12 months (1,362 of 8,316)</div></div>
+  <div class="kpi hl"><div class="v">6.7%</div><div class="l">Extra orders per buyer generated inside the 12-month window</div></div>
+ </div>
+ <p>Grease adds four to five points of repeat rate and is the only reason the blended store reaches the Hybrid line. Within the last 12 months alone, non-grease buyers produced just 6.7% additional orders; most of the 16.4% is older customers coming back for a second machine or an accessory, not a reorder cycle.</p>
+ <h3>Repeat by product set (all time, extra orders per buyer)</h3>
+ <div class="chart"><svg viewBox="0 0 760 212" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="League Spartan, Arial, sans-serif"><text x="320" y="25.4" font-size="12" fill="#231f20" text-anchor="end">Grease system (packs, gun, adapter, coupler, caps)</text><rect x="330" y="10" width="360" height="22" fill="#e6e6e6"/><rect x="330" y="10" width="309.7" height="22" fill="#f5eb19" stroke="#231f20" stroke-width="1"/><text x="645.7" y="25.4" font-size="12" font-weight="700" fill="#231f20">31.0%</text><text x="320" y="57.4" font-size="12" fill="#231f20" text-anchor="end">Whole store</text><rect x="330" y="42" width="360" height="22" fill="#e6e6e6"/><rect x="330" y="42" width="267.5" height="22" fill="#f5eb19" stroke="#231f20" stroke-width="1"/><text x="603.5" y="57.4" font-size="12" font-weight="700" fill="#231f20">26.8%</text><text x="320" y="89.4" font-size="12" fill="#231f20" text-anchor="end">Covers (7 cover products)</text><rect x="330" y="74" width="360" height="22" fill="#e6e6e6"/><rect x="330" y="74" width="110.6" height="22" fill="#f5eb19" stroke="#231f20" stroke-width="1"/><text x="446.6" y="89.4" font-size="12" font-weight="700" fill="#231f20">11.1%</text><text x="320" y="121.4" font-size="12" fill="#231f20" text-anchor="end">Accessories (10 products)</text><rect x="330" y="106" width="360" height="22" fill="#e6e6e6"/><rect x="330" y="106" width="105.7" height="22" fill="#f5eb19" stroke="#231f20" stroke-width="1"/><text x="441.7" y="121.4" font-size="12" font-weight="700" fill="#231f20">10.6%</text><text x="320" y="153.4" font-size="12" fill="#231f20" text-anchor="end">Machine protection (all durables)</text><rect x="330" y="138" width="360" height="22" fill="#e6e6e6"/><rect x="330" y="138" width="97.6" height="22" fill="#f5eb19" stroke="#231f20" stroke-width="1"/><text x="433.6" y="153.4" font-size="12" font-weight="700" fill="#231f20">9.8%</text><text x="320" y="185.4" font-size="12" fill="#231f20" text-anchor="end">PRO Mat (portable protection)</text><rect x="330" y="170" width="360" height="22" fill="#e6e6e6"/><rect x="330" y="170" width="25.6" height="22" fill="#f5eb19" stroke="#231f20" stroke-width="1"/><text x="361.6" y="185.4" font-size="12" font-weight="700" fill="#231f20">2.6%</text></svg></div>
+ <p class="cap">Distinct orders containing the set ÷ distinct buyers of the set, minus one. This is the closest live measure of repeat at product level and an upper bound on the share of buyers with two or more orders of that set.</p>
+ <h3>Outliers worth knowing</h3>
+ <ul>
+  <li><b>Reorderers switch variant.</b> Grease Packs repeat at 26.8% as a product but no single variant exceeds 15% (LZR2 13.7%, LC002 10.3%, HD800 8.1%). Second orders change size or grade. The 40-piece packs are the stickiest variants (14 to 15%). Hammer Paste: 0% repeat across 93 buyers.</li>
+  <li><b>The battery adapter's 8.4% is a second-platform effect.</b> Milwaukee 7.1%, Makita 3.1%, DeWALT 0.9%: people buy a second adapter for another battery system, not a replacement.</li>
+  <li><b>Cheap and universal covers repeat like fleet buyers.</b> Universal covers 9.3% and Quicky 7.2% at product level versus 2% for the premium 1.7-tonne cover: extra machines, not replacements.</li>
+ </ul>
+ <div class="foot"><span>DiggerLid · Repeat Rate &amp; Style of Sale · RP-003 / RP-004</span><span>22 September 2026 · page 3</span></div>
+</div>
+<div class="page">
+ <div class="banner">4 · What is it for PRO Mat customers only?</div>
+ <h2>2.0% to 11.0% depending on the cut · deep Low</h2>
+ <p>PRO Mat has been on sale since 25 August 2025. Every fair cut of its 3,168 buyers lands well inside the Low band, and the like-for-like comparison (7.7%) is below the store's same-age average (10.5%). The one number above 10% is padded by older customers' orders placed before PRO Mat existed.</p>
+ <div class="chart"><svg viewBox="0 0 760 180" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="League Spartan, Arial, sans-serif"><text x="320" y="25.4" font-size="12" fill="#231f20" text-anchor="end">Bought a PRO Mat twice or more</text><rect x="330" y="10" width="360" height="22" fill="#e6e6e6"/><rect x="330" y="10" width="51.9" height="22" fill="#f5eb19" stroke="#231f20" stroke-width="1"/><text x="387.9" y="25.4" font-size="12" font-weight="700" fill="#231f20">2.0%</text><text x="320" y="57.4" font-size="12" fill="#231f20" text-anchor="end">PRO Mat-first, bought anything again</text><rect x="330" y="42" width="360" height="22" fill="#e6e6e6"/><rect x="330" y="42" width="122.4" height="22" fill="#f5eb19" stroke="#231f20" stroke-width="1"/><text x="458.4" y="57.4" font-size="12" font-weight="700" fill="#231f20">4.8%</text><text x="320" y="89.4" font-size="12" fill="#231f20" text-anchor="end">Since-launch cohort, any 2nd order</text><rect x="330" y="74" width="360" height="22" fill="#e6e6e6"/><rect x="330" y="74" width="197.8" height="22" fill="#f5eb19" stroke="#231f20" stroke-width="1"/><text x="533.8" y="89.4" font-size="12" font-weight="700" fill="#231f20">7.7%</text><text x="320" y="121.4" font-size="12" fill="#231f20" text-anchor="end">All customers acquired same period</text><rect x="330" y="106" width="360" height="22" fill="#e6e6e6"/><rect x="330" y="106" width="271.3" height="22" fill="#f5eb19" stroke="#231f20" stroke-width="1"/><text x="607.3" y="121.4" font-size="12" font-weight="700" fill="#231f20">10.5%</text><text x="320" y="153.4" font-size="12" fill="#231f20" text-anchor="end">PRO Mat buyers, lifetime store orders</text><rect x="330" y="138" width="360" height="22" fill="#e6e6e6"/><rect x="330" y="138" width="281.7" height="22" fill="#f5eb19" stroke="#231f20" stroke-width="1"/><text x="617.7" y="153.4" font-size="12" font-weight="700" fill="#231f20">11.0%</text></svg></div>
+ <p class="cap">Share of customers with two or more orders under each definition. Source: Shopify customer records filtered to PRO Mat purchasers.</p>
+ <div class="kpis">
+  <div class="kpi hl"><div class="v">93.5%</div><div class="l">PRO Mat buyers who were new to DiggerLid on that order (2,962 of 3,168)</div></div>
+  <div class="kpi"><div class="v">206</div><div class="l">Existing customers who added a PRO Mat later</div></div>
+  <div class="kpi"><div class="v">64</div><div class="l">Bought a mat on first order and again later</div></div>
+  <div class="kpi"><div class="v">77</div><div class="l">Came back for something other than a mat</div></div>
+ </div>
+ <h3>What PRO Mat is</h3>
+ <p>It is the purest acquisition product in the range: more than nine in ten buyers meet the brand through it. Once bought it is one-and-done, with roughly 2% buying another mat and 5% buying anything else within its first 13 months. There is no retention layer to invest in. The only repeat path is a post-purchase cross-sell into the grease system, which is where the store's repeat behaviour actually lives.</p>
+ <div class="verdict">Run PRO Mat entirely on first-order economics: average order value through the PLUS and colour mix and bundles, gross profit after marketing at the first order, acquisition cost paid back on day one.</div>
+ <div class="foot"><span>DiggerLid · Repeat Rate &amp; Style of Sale · RP-003 / RP-004</span><span>22 September 2026 · page 4</span></div>
+</div>
+<div class="page">
+ <div class="banner">5 · Which category are we in?</div>
+ <h2>Low repeat, borderline Hybrid</h2>
+ <p>The Ecommerce Equation splits stores into three styles of sale by repeat rate. Most members sit in Hybrid; a quarter are Low repeat.</p>
+ <table>
+  <tr><th></th><th class="n">Low repeat</th><th class="n">Hybrid</th><th class="n">High repeat</th></tr>
+  <tr><td>Repeat rate band</td><td class="n">0 to 19%</td><td class="n">20 to 39%</td><td class="n">40%+</td></tr>
+  <tr><td>Share of EE cohort</td><td class="n">25%</td><td class="n">48%</td><td class="n">27%</td></tr>
+  <tr class="hl"><td>DiggerLid, whole store</td><td class="n">17.7% (lifetime)</td><td class="n">21.4% (last 12 mo)</td><td class="n"></td></tr>
+  <tr><td>DiggerLid without grease</td><td class="n">13.9% (lifetime) · 16.4% (12 mo)</td><td class="n"></td><td class="n"></td></tr>
+  <tr><td>PRO Mat customers only</td><td class="n">4.8% to 7.7%</td><td class="n"></td><td class="n"></td></tr>
+  <tr><td>Grease system, extra orders per buyer</td><td class="n"></td><td class="n">31.0%</td><td class="n"></td></tr>
+ </table>
+ <h3>How to use the classification</h3>
+ <div class="two">
+  <div>
+   <p><b>You would tick Hybrid on the form</b> (12-month returning-customer rate 21.4%) but you should <b>run the business as Low repeat</b>. The margin is a few points and it is entirely grease.</p>
+   <p><b>Low-repeat levers:</b> first-order AOV (bundles, PLUS mix, percentage-plus-gift offers rather than flat dollars), first-order gross profit after marketing, acquisition efficiency measured on first-order payback, conversion rate and revenue per visitor.</p>
+  </div>
+  <div>
+   <p><b>The one Hybrid lever:</b> grease reorder. Roughly one in four grease-pack buyers reorders, and bulk (40-piece) buyers are the stickiest. A restock reminder at around 90 days, a bulk-size nudge, or a subscription is the only retention programme with enough customers behind it to move the store-level number. Crossing 25% on the 12-month measure would make the Hybrid label genuine.</p>
+   <p><b>Do not build retention programmes for durables.</b> Covers, enclosures, DiggerShield and PRO Mat repeat at 2 to 11% and the repeat that exists is multi-machine owners, not loyalty.</p>
+  </div>
+ </div>
+ <div class="stripe"></div>
+ <p class="sub">Method note: repeat rates use Shopify's new-versus-returning order flag and the customers dataset (orders per customer), both exact. Product-set figures use distinct orders ÷ distinct buyers and are upper bounds. Free gifts and package protection are excluded from product tables. About 3,000 buyers sit under legacy product titles and are unattributed at product level.</p>
+ <div class="foot"><span>DiggerLid · Repeat Rate &amp; Style of Sale · RP-003 / RP-004</span><span>22 September 2026 · page 5</span></div>
+</div>
+<div class="page">
+ <div class="banner">6 · Our Hybrid sale pattern</div>
+ <h2>Hybrid-shaped sales on a Low-repeat base</h2>
+ <p>Our two big sales do not look like the Low-repeat curve. The mid-sale plateau sits at about 5% of sale revenue per day in both, which is the Hybrid signature (Low-repeat stores run a flat 8 to 9%). Each sale concentrates about 30% of its revenue into one 48-hour spike; BFCM puts it at the launch, EOFY puts it at the June 30 tax deadline.</p>
+ <div class="chart"><svg viewBox="0 0 760 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="League Spartan, Arial, sans-serif"><line x1="55" y1="255.0" x2="740" y2="255.0" stroke="#e6e6e6"/><text x="47" y="259.0" font-size="10" fill="#8a8a8a" text-anchor="end">0%</text><line x1="55" y1="221.4" x2="740" y2="221.4" stroke="#e6e6e6"/><text x="47" y="225.4" font-size="10" fill="#8a8a8a" text-anchor="end">5%</text><line x1="55" y1="187.9" x2="740" y2="187.9" stroke="#e6e6e6"/><text x="47" y="191.9" font-size="10" fill="#8a8a8a" text-anchor="end">10%</text><line x1="55" y1="154.3" x2="740" y2="154.3" stroke="#e6e6e6"/><text x="47" y="158.3" font-size="10" fill="#8a8a8a" text-anchor="end">15%</text><line x1="55" y1="120.7" x2="740" y2="120.7" stroke="#e6e6e6"/><text x="47" y="124.7" font-size="10" fill="#8a8a8a" text-anchor="end">20%</text><line x1="55" y1="87.1" x2="740" y2="87.1" stroke="#e6e6e6"/><text x="47" y="91.1" font-size="10" fill="#8a8a8a" text-anchor="end">25%</text><line x1="55" y1="53.6" x2="740" y2="53.6" stroke="#e6e6e6"/><text x="47" y="57.6" font-size="10" fill="#8a8a8a" text-anchor="end">30%</text><line x1="55" y1="20.0" x2="740" y2="20.0" stroke="#e6e6e6"/><text x="47" y="24.0" font-size="10" fill="#8a8a8a" text-anchor="end">35%</text><text x="397.5" y="292" font-size="11" fill="#8a8a8a" text-anchor="middle">Start of sale → end of sale (position normalised so a 12-day and a 14-day sale overlay)</text><polyline points="55.0,170.7 107.7,209.1 160.4,216.7 213.1,227.6 265.8,220.4 318.5,223.3 371.2,227.9 423.8,219.0 476.5,222.4 529.2,223.5 581.9,230.2 634.6,209.8 687.3,177.3 740.0,120.6" fill="none" stroke="#231f20" stroke-width="3" stroke-dasharray="" stroke-linejoin="round"/><polyline points="55.0,134.8 107.7,164.1 160.4,204.2 213.1,211.9 265.8,218.7 318.5,218.7 371.2,227.2 423.8,218.2 476.5,218.7 529.2,226.1 581.9,228.2 634.6,220.1 687.3,217.6 740.0,190.2" fill="none" stroke="#231f20" stroke-width="2.5" stroke-dasharray="6,4" stroke-linejoin="round"/><polyline points="55.0,53.6 117.3,140.9 179.5,187.9 241.8,197.9 304.1,211.4 366.4,218.1 428.6,221.4 490.9,224.8 553.2,228.1 615.5,224.8 677.7,221.4 740.0,214.7" fill="none" stroke="#e0d000" stroke-width="2" stroke-dasharray="" stroke-linejoin="round"/><polyline points="55.0,120.7 117.3,161.0 179.5,191.2 241.8,197.9 304.1,201.3 366.4,204.6 428.6,204.6 490.9,204.6 553.2,208.0 615.5,211.4 677.7,214.7 740.0,218.1" fill="none" stroke="#9a9a9a" stroke-width="2" stroke-dasharray="2,3" stroke-linejoin="round"/><line x1="490" y1="26" x2="518" y2="26" stroke="#231f20" stroke-width="3" stroke-dasharray=""/><text x="524" y="30" font-size="11" fill="#231f20">EOFY 2026 (14 days)</text><line x1="490" y1="42" x2="518" y2="42" stroke="#231f20" stroke-width="2.5" stroke-dasharray="6,4"/><text x="524" y="46" font-size="11" fill="#231f20">BFCM 2025 (14 days)</text><line x1="490" y1="58" x2="518" y2="58" stroke="#e0d000" stroke-width="2" stroke-dasharray=""/><text x="524" y="62" font-size="11" fill="#231f20">EE Hybrid reference (approx.)</text><line x1="490" y1="74" x2="518" y2="74" stroke="#9a9a9a" stroke-width="2" stroke-dasharray="2,3"/><text x="524" y="78" font-size="11" fill="#231f20">EE Low-repeat reference (approx.)</text></svg></div>
+ <p class="cap">Share of total sale net revenue by day. EOFY 2026: 17 to 30 June, $543,385. BFCM 2025: 18 November to 1 December, $534,584. EE reference curves are traced from the Style of Sale slides and are approximate.</p>
+ <table>
+  <tr><th>Phase</th><th class="n">EOFY 2026</th><th class="n">BFCM 2025</th><th class="n">EE Low</th><th class="n">EE Hybrid</th></tr>
+  <tr><td>Launch 48 hours</td><td class="n">19.4%</td><td class="n">31.4%</td><td class="n">~25%</td><td class="n">~35%</td></tr>
+  <tr class="hl"><td>Mid-sale plateau, per day (days 3 to 12)</td><td class="n">4.9%</td><td class="n">5.3%</td><td class="n">8 to 9%</td><td class="n">~5%</td></tr>
+  <tr><td>Last 48 hours</td><td class="n">31.6%</td><td class="n">15.2%</td><td class="n">~10%</td><td class="n">~10%</td></tr>
+ </table>
+ <div class="foot"><span>DiggerLid · Repeat Rate &amp; Style of Sale · RP-003 / RP-004</span><span>22 September 2026 · page 6</span></div>
+</div>
+<div class="page">
+ <div class="banner">6 · Our Hybrid sale pattern (continued)</div>
+ <h2>Who buys at the spikes</h2>
+ <p>In the EE model a Hybrid or High-repeat sale spikes because the loyal base buys the moment the sale opens. That is not what happens here. The returning-customer share of revenue during both sales is the same as an ordinary month, and the peak days are 70 to 74% new customers. The spike is urgency acting on acquisition traffic (paid social plus email reach), not the base coming back.</p>
+ <div class="chart"><svg viewBox="0 0 760 230" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="League Spartan, Arial, sans-serif"><line x1="55" y1="185.0" x2="740" y2="185.0" stroke="#e6e6e6"/><text x="47" y="189.0" font-size="10" fill="#8a8a8a" text-anchor="end">0%</text><line x1="55" y1="152.0" x2="740" y2="152.0" stroke="#e6e6e6"/><text x="47" y="156.0" font-size="10" fill="#8a8a8a" text-anchor="end">10%</text><line x1="55" y1="119.0" x2="740" y2="119.0" stroke="#e6e6e6"/><text x="47" y="123.0" font-size="10" fill="#8a8a8a" text-anchor="end">20%</text><line x1="55" y1="86.0" x2="740" y2="86.0" stroke="#e6e6e6"/><text x="47" y="90.0" font-size="10" fill="#8a8a8a" text-anchor="end">30%</text><line x1="55" y1="53.0" x2="740" y2="53.0" stroke="#e6e6e6"/><text x="47" y="57.0" font-size="10" fill="#8a8a8a" text-anchor="end">40%</text><line x1="55" y1="20.0" x2="740" y2="20.0" stroke="#e6e6e6"/><text x="47" y="24.0" font-size="10" fill="#8a8a8a" text-anchor="end">50%</text><rect x="92.7" y="90.3" width="48.0" height="94.7" fill="#f5eb19" stroke="#231f20"/><text x="116.7" y="86.3" font-size="10.5" font-weight="700" fill="#231f20" text-anchor="middle">29%</text><rect x="140.6" y="112.2" width="48.0" height="72.8" fill="#231f20" stroke="#231f20"/><text x="164.6" y="108.2" font-size="10.5" font-weight="700" fill="#231f20" text-anchor="middle">22%</text><text x="140.6" y="201" font-size="11" fill="#231f20" text-anchor="middle">Whole sale</text><rect x="263.9" y="83.1" width="48.0" height="101.9" fill="#f5eb19" stroke="#231f20"/><text x="287.9" y="79.1" font-size="10.5" font-weight="700" fill="#231f20" text-anchor="middle">31%</text><rect x="311.9" y="104.6" width="48.0" height="80.4" fill="#231f20" stroke="#231f20"/><text x="335.9" y="100.6" font-size="10.5" font-weight="700" fill="#231f20" text-anchor="middle">24%</text><text x="311.9" y="201" font-size="11" fill="#231f20" text-anchor="middle">Launch 48h</text><rect x="435.2" y="85.5" width="48.0" height="99.5" fill="#f5eb19" stroke="#231f20"/><text x="459.2" y="81.5" font-size="10.5" font-weight="700" fill="#231f20" text-anchor="middle">30%</text><rect x="483.1" y="126.5" width="48.0" height="58.5" fill="#231f20" stroke="#231f20"/><text x="507.1" y="122.5" font-size="10.5" font-weight="700" fill="#231f20" text-anchor="middle">18%</text><text x="483.1" y="201" font-size="11" fill="#231f20" text-anchor="middle">Mid-sale d3-12</text><rect x="606.4" y="102.3" width="48.0" height="82.7" fill="#f5eb19" stroke="#231f20"/><text x="630.4" y="98.3" font-size="10.5" font-weight="700" fill="#231f20" text-anchor="middle">25%</text><rect x="654.4" y="78.2" width="48.0" height="106.8" fill="#231f20" stroke="#231f20"/><text x="678.4" y="74.2" font-size="10.5" font-weight="700" fill="#231f20" text-anchor="middle">32%</text><text x="654.4" y="201" font-size="11" fill="#231f20" text-anchor="middle">Last 48h</text><line x1="55" y1="104.3" x2="740" y2="104.3" stroke="#231f20" stroke-dasharray="5,4" stroke-width="1.5"/><rect x="55" y="212" width="12" height="12" fill="#f5eb19" stroke="#231f20"/><text x="71" y="222" font-size="11">EOFY 2026</text><rect x="155" y="212" width="12" height="12" fill="#231f20"/><text x="171" y="222" font-size="11">BFCM 2025</text><line x1="255" y1="218" x2="283" y2="218" stroke="#231f20" stroke-dasharray="5,4" stroke-width="1.5"/><text x="289" y="222" font-size="11">Business as usual, Aug 2026: 24.5%</text></svg></div>
+ <p class="cap">Returning-customer share of net revenue by sale phase, against the August 2026 business-as-usual month.</p>
+ <div class="two">
+  <div>
+   <h3>What it means</h3>
+   <ul>
+    <li><b>Forecast with the Hybrid curve.</b> About 30% of sale revenue in the first 48 hours, roughly 5% per day through the middle, 10 to 15% in the last 48 hours when Cyber Monday closes it. On a $605k November that is about $180k for the launch weekend and $30k a day on the plateau.</li>
+    <li><b>Pull Low-repeat levers.</b> Launch-day buyers are 70% new, so launch creative and paid budget are acquisition plays. Do not starve prospecting on day one to protect retargeting.</li>
+    <li><b>The plateau is the upside.</b> The Knock-Off 3:30 daily-drop mechanic is a plateau-lifter; measure it against the 5% per day baseline.</li>
+   </ul>
+  </div>
+  <div>
+   <h3>Why EOFY and BFCM are mirror images</h3>
+   <p>The urgency sits at opposite ends. BFCM's urgency is the launch itself. EOFY's is an external deadline, so customers wait: the last day alone did $109k on 356 orders, 74% of them new. Same total, same plateau, opposite skew. Plan BFCM to front-load spend and stock; plan EOFY to back-load them.</p>
+   <h3>Email moves who buys</h3>
+   <p>Segmented sends to the engaged base lifted returning share to 43% on Cyber Monday and 42% on EOFY day nine. Full-database blasts did not move it. One engaged-segment send mid-sale and one at close are worth more than another blast to everyone.</p>
+  </div>
+ </div>
+ <p class="sub">Caveats: two sales only, 14-day windows against EE's 12-day reference (positions are normalised in the chart). Launch-day share depends on launch hour; both launched early afternoon. Black Friday itself shows 18 returning orders netting to $411 (refunds), treated as noise.</p>
+ <div class="foot"><span>DiggerLid · Repeat Rate &amp; Style of Sale · RP-003 / RP-004</span><span>22 September 2026 · page 7</span></div>
+</div>
+<div class="page flow">
+ <div class="banner">Appendix · Machine-readable source data</div>
+ <h2>Source data</h2>
+ <p class="sub">The full appendix is shipped alongside this report as <code>repeat-rate-style-of-sale-DATA.md</code> (Markdown tables plus the ShopifyQL used). It is reproduced here in full for completeness.</p>
+ <pre># DiggerLid repeat rate and style of sale: source data appendix
+
+Generated 22 September 2026. All figures from Shopify analytics (ShopifyQL) unless stated. Windows: lifetime = 2019-01-01 to 2026-09-20; TTM = 2025-09-01 to 2026-08-31.
+
+## A. Store repeat rate (EE definition: customers with more than one order)
+
+| metric | lifetime | ttm |
+|---|---|---|
+| customers | 27061 | 14552 |
+| customers_with_2plus_orders | 4790 | 3112 |
+| repeat_rate_pct | 17.70 | 21.39 |
+| orders | 34301 | 16698 |
+| returning_orders | 7235 | 3949 |
+| net_sales_aud | 10549164 | 4592722 |
+| returning_net_sales_aud | 2070988 | 1103077 |
+
+Query: `FROM sales SHOW orders, customers, net_sales GROUP BY new_or_returning_customer SINCE &lt;start&gt; UNTIL &lt;end&gt;` (Returning customers = customers who placed a non-first order in the window).
+
+### A2. Orders per customer distribution (lifetime)
+
+| orders_per_customer | customers |
+|---|---|
+| 1 | 22260 |
+| 2 | 3358 |
+| 3 | 907 |
+| 4 | 311 |
+| 5 | 107 |
+| 6 | 64 |
+| 7 | 26 |
+| 8 | 11 |
+| 9 | 7 |
+| 10 | 5 |
+| 13 | 2 |
+| 14 | 1 |
+| 16 | 2 |
+
+Query: `FROM customers SHOW total_number_of_orders GROUP BY customer_number_of_orders SINCE 2019-01-01 UNTIL 2026-09-20` (customers = total_number_of_orders / bucket).
+
+## B. Without grease
+
+Excluded titles: KAJO Grease Packs, Battery Grease Gun KAJO Adapter, Quick Release Grease Coupler, KAJO Grease Gun, Hydraulic Coupling Cap Set, Pack Mine First, Package Protection, all GWP items.
+
+| metric | lifetime | ttm |
+|---|---|---|
+| non_grease_buyers | 17926 | 8316 |
+| returning_non_grease_buyers | 2485 | 1362 |
+| repeat_rate_pct | 13.86 | 16.38 |
+| non_grease_orders | 20445 | 8870 |
+| non_grease_net_sales_aud | 6263275 |  |
+| returning_non_grease_net_aud | 763843 |  |
+
+## C. PRO Mat only (product id 8213717909674, live since 2025-08-25)
+
+| metric | value |
+|---|---|
+| buyers_total | 3168 |
+| buyers_first_order_new_to_brand | 2962 |
+| buyers_on_returning_order | 270 |
+| bought_on_first_and_again | 64 |
+| promat_first_then_any_second_order | 141 |
+| since_launch_cohort_customers | 3055 |
+| since_launch_cohort_2plus | 235 |
+| benchmark_all_customers_since_launch | 13650 |
+| benchmark_2plus | 1440 |
+| lifetime_customers | 3167 |
+| lifetime_2plus | 347 |
+| promat_orders_total | 3249 |
+
+### C2. PRO Mat buyers, orders-per-customer distribution (lifetime)
+
+| orders_per_customer | customers |
+|---|---|
+| 1 | 2820 |
+| 2 | 246 |
+| 3 | 57 |
+| 4 | 25 |
+| 5 | 8 |
+| 6 | 2 |
+| 7 | 3 |
+| 8 | 1 |
+| 9 | 2 |
+| 10 | 1 |
+| 14 | 1 |
+| 16 | 1 |
+
+Query: `FROM customers SHOW total_number_of_orders WHERE products_purchased MATCHES (id = 8213717909674) GROUP BY customer_number_of_orders SINCE &lt;start&gt; UNTIL 2026-09-20`.
+
+## D. Product-set repeat (all time; repeat_orders_per_buyer_pct = orders/buyers - 1)
+
+| set | buyers | orders | repeat_orders_per_buyer_pct |
+|---|---|---|---|
+| Grease system (packs, gun, adapter, coupler, caps) | 13300 | 17419 | 31.0 |
+| Whole store | 27061 | 34301 | 26.8 |
+| Covers (7 cover products) | 7035 | 7813 | 11.1 |
+| Accessories (10 products) | 6236 | 6895 | 10.6 |
+| Machine protection (all durables) | 13262 | 14556 | 9.8 |
+| PRO Mat (portable protection) | 3168 | 3249 | 2.6 |
+
+### D2. Products
+
+| product | group | buyers | orders | repeat_orders_per_buyer_pct |
+|---|---|---|---|---|
+| KAJO Grease Packs | Grease | 8708 | 11039 | 26.8 |
+| Battery Grease Gun KAJO Adapter | Grease | 7073 | 7668 | 8.4 |
+| KAJO Grease Gun | Grease | 2059 | 2230 | 8.3 |
+| Quick Release Grease Coupler | Grease | 6328 | 6582 | 4.0 |
+| Hydraulic Coupling Cap Set | Accessories | 1460 | 1579 | 8.2 |
+| Excavator Phone Cradle | Accessories | 3245 | 3418 | 5.3 |
+| Digger Wipes | Accessories | 1029 | 1057 | 2.7 |
+| Drink/ Tool Caddy | Accessories | 1515 | 1552 | 2.4 |
+| Excavator Boom Bottle Opener | Accessories | 941 | 955 | 1.5 |
+| Magnetic Tool Mat | Accessories | 172 | 177 | 2.9 |
+| Trucker Cap | Accessories | 183 | 194 | 6.0 |
+| DIGHEAD Beanie | Accessories | 116 | 121 | 4.3 |
+| Proper Thicc Hoodie | Accessories | 56 | 56 | 0.0 |
+| Work Tee | Accessories | 23 | 25 | 8.7 |
+| Universal / Engine Covers | Covers | 935 | 1022 | 9.3 |
+| Quicky Cover | Covers | 2383 | 2554 | 7.2 |
+| Skid Steer Loader Cover | Covers | 233 | 248 | 6.4 |
+| Mini Loader Cover | Covers | 808 | 857 | 6.1 |
+| Draw Bar Cover | Covers | 921 | 944 | 2.5 |
+| 1.7 Tonne Excavator Cover | Covers | 2503 | 2558 | 2.2 |
+| Micro Excavator Cover | Covers | 270 | 274 | 1.5 |
+| PRO Mat | Portable protection | 3168 | 3249 | 2.6 |
+| Pro Excavator Enclosure | Other protection | 3248 | 3352 | 3.2 |
+| DiggerShield Kit | Other protection | 622 | 644 | 3.5 |
+| The Hauler Luggage Bag | Other protection | 73 | 74 | 1.4 |
+
+### D3. Variants
+
+
+**KAJO Grease Packs**
+
+| variant | buyers | orders | repeat_pct |
+|---|---|---|---|
+| LZR2 | 4607 | 5240 | 13.7 |
+| HD800 | 1452 | 1569 | 8.1 |
+| LC002 | 1119 | 1234 | 10.3 |
+| LZR2 / 20 pcs | 982 | 1056 | 7.5 |
+| LC002 / 20 pcs | 368 | 393 | 6.8 |
+| LC002 + 3% MOS2 | 310 | 332 | 7.1 |
+| 9 pcs / 2050 | 252 | 260 | 3.2 |
+| LZR2 / 40 pcs | 215 | 245 | 14.0 |
+| 20 pcs / 2050 | 197 | 209 | 6.1 |
+| CASX (580g) | 164 | 171 | 4.3 |
+| Hammer Paste | 93 | 93 | 0.0 |
+| LC002 + 3% MOS2 / 20 pcs | 87 | 98 | 12.6 |
+| HD800 / 20 pcs | 86 | 86 | 0.0 |
+| LC002 / 40 pcs | 66 | 76 | 15.2 |
+| 40 pcs / 2050 | 64 | 73 | 14.1 |
+
+**Battery Grease Gun KAJO Adapter**
+
+| variant | buyers | orders | repeat_pct |
+|---|---|---|---|
+| Milwaukee 18v | 4481 | 4797 | 7.1 |
+| Makita 18v | 1877 | 1936 | 3.1 |
+| Ryobi 18v | 348 | 359 | 3.2 |
+| DeWALT 18v | 327 | 330 | 0.9 |
+| AEG 18v | 154 | 154 | 0.0 |
+| 400g Guns 18v/20v | 130 | 135 | 3.8 |
+| Macnaught 18v | 102 | 108 | 5.9 |
+| Metabo 18v | 40 | 41 | 2.5 |
+
+**Quicky Cover**
+
+| variant | buyers | orders | repeat_pct |
+|---|---|---|---|
+| (default) | 2026 | 2158 | 6.5 |
+| Tan | 238 | 239 | 0.4 |
+| Black | 94 | 96 | 2.1 |
+| Grey Camo | 63 | 63 | 0.0 |
+
+**Universal / Engine Covers**
+
+| variant | buyers | orders | repeat_pct |
+|---|---|---|---|
+| 450x450x450mm | 598 | 633 | 5.9 |
+| 600x600x450mm | 491 | 519 | 5.7 |
+
+
+Query: `FROM sales SHOW orders, customers, net_sales GROUP BY product_title [, product_variant_title] SINCE 2019-01-01 UNTIL 2026-09-20`.
+
+## E. Sale curves (net sales AUD, orders; New vs Returning)
+
+
+### EOFY 2026 (launch 2026-06-17 13:55 AEST, close 2026-06-30)
+
+| day_index | date | net_new | orders_new | net_returning | orders_returning | net_total | pct_of_sale | returning_rev_share_pct |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 2026-06-17 | 46649.11 | 160 | 21595.41 | 68 | 68244.52 | 12.56 | 31.6 |
+| 2 | 2026-06-18 | 26209.66 | 123 | 10949.93 | 39 | 37159.59 | 6.84 | 29.5 |
+| 3 | 2026-06-19 | 19235.34 | 92 | 11722.43 | 41 | 30957.77 | 5.70 | 37.9 |
+| 4 | 2026-06-20 | 17118.93 | 83 | 5031.96 | 17 | 22150.89 | 4.08 | 22.7 |
+| 5 | 2026-06-21 | 20696.75 | 107 | 7292.50 | 28 | 27989.25 | 5.15 | 26.1 |
+| 6 | 2026-06-22 | 18493.61 | 99 | 7126.54 | 29 | 25620.15 | 4.71 | 27.8 |
+| 7 | 2026-06-23 | 16388.23 | 90 | 5568.23 | 28 | 21956.46 | 4.04 | 25.4 |
+| 8 | 2026-06-24 | 18548.70 | 86 | 10547.03 | 30 | 29095.73 | 5.35 | 36.2 |
+| 9 | 2026-06-25 | 15310.98 | 76 | 11111.00 | 25 | 26421.98 | 4.86 | 42.1 |
+| 10 | 2026-06-26 | 19761.27 | 64 | 5758.53 | 27 | 25519.80 | 4.70 | 22.6 |
+| 11 | 2026-06-27 | 14368.68 | 69 | 5677.06 | 21 | 20045.74 | 3.69 | 28.3 |
+| 12 | 2026-06-28 | 26108.03 | 95 | 10456.80 | 32 | 36564.83 | 6.73 | 28.6 |
+| 13 | 2026-06-29 | 48123.53 | 170 | 14774.20 | 52 | 62897.73 | 11.58 | 23.5 |
+| 14 | 2026-06-30 | 80497.87 | 254 | 28262.28 | 102 | 108760.15 | 20.02 | 26.0 |
+
+### BFCM 2025 (launch 2025-11-18 15:05 AEDT, close 2025-12-01)
+
+| day_index | date | net_new | orders_new | net_returning | orders_returning | net_total | pct_of_sale | returning_rev_share_pct |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 2025-11-18 | 67384.73 | 171 | 28339.71 | 80 | 95724.44 | 17.91 | 29.6 |
+| 2 | 2025-11-19 | 59768.46 | 164 | 12593.78 | 53 | 72362.24 | 13.54 | 17.4 |
+| 3 | 2025-11-20 | 32343.71 | 108 | 8099.79 | 32 | 40443.50 | 7.57 | 20.0 |
+| 4 | 2025-11-21 | 28973.21 | 101 | 5331.75 | 21 | 34304.96 | 6.42 | 15.5 |
+| 5 | 2025-11-22 | 25142.50 | 94 | 3748.24 | 15 | 28890.74 | 5.40 | 13.0 |
+| 6 | 2025-11-23 | 23398.33 | 85 | 5502.88 | 18 | 28901.21 | 5.41 | 19.0 |
+| 7 | 2025-11-24 | 19268.29 | 66 | 2872.75 | 14 | 22141.04 | 4.14 | 13.0 |
+| 8 | 2025-11-25 | 18504.39 | 61 | 10826.03 | 33 | 29330.42 | 5.49 | 36.9 |
+| 9 | 2025-11-26 | 23594.41 | 85 | 5290.68 | 21 | 28885.09 | 5.40 | 18.3 |
+| 10 | 2025-11-27 | 19845.00 | 66 | 3182.60 | 20 | 23027.60 | 4.31 | 13.8 |
+| 11 | 2025-11-28 | 20914.05 | 72 | 410.69 | 18 | 21324.74 | 3.99 | 1.9 |
+| 12 | 2025-11-29 | 22501.98 | 75 | 5306.97 | 16 | 27808.95 | 5.20 | 19.1 |
+| 13 | 2025-11-30 | 25630.43 | 84 | 4178.20 | 9 | 29808.63 | 5.58 | 14.0 |
+| 14 | 2025-12-01 | 29463.01 | 105 | 22167.60 | 72 | 51630.61 | 9.66 | 42.9 |
+
+
+Pre-sale baseline net/day: EOFY (13-16 Jun) 10906; BFCM (13-17 Nov) 7136. BAU reference Aug 2026: net 454597.24, returning net 111217.31, orders 1650, returning orders 409.
+
+
+EE reference curves (approximate traces of the Style of Sale slides, 12-day sale, % of revenue per day):
+
+| day | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| hybrid | 30 | 17 | 10 | 8.5 | 6.5 | 5.5 | 5 | 4.5 | 4 | 4.5 | 5 | 6 |
+| low_repeat | 20 | 14 | 9.5 | 8.5 | 8 | 7.5 | 7.5 | 7.5 | 7 | 6.5 | 6 | 5.5 |
+| high_repeat | 41 | 20 | 9 | 8 | 6 | 3 | 2.5 | 2 | 1.5 | 5 | 3 | 4 |
+
+Query: `FROM sales SHOW net_sales, orders GROUP BY new_or_returning_customer TIMESERIES day SINCE &lt;launch&gt; UNTIL &lt;close&gt; ORDER BY day ASC`.
+
+## F. Klaviyo send log used to define sale windows
+
+| sale | send | date |
+|---|---|---|
+| EOFY 2026 | Account warming (Engaged 180D) | 2026-06-10 |
+| EOFY 2026 | Hype #1 AU/INT | 2026-06-15 |
+| EOFY 2026 | Launch #1 AU/INT | 2026-06-17 |
+| EOFY 2026 | Plain text follow #1 | 2026-06-19 |
+| EOFY 2026 | Email #3 grease customers | 2026-06-21 |
+| EOFY 2026 | Mid email #4 | 2026-06-24 |
+| EOFY 2026 | Plain text follow #2 | 2026-06-28 |
+| EOFY 2026 | Last day #6 / Thank you #7 | 2026-06-30 |
+| BFCM 2025 | Hype #1 | 2025-11-15 |
+| BFCM 2025 | Hype #2 | 2025-11-16 |
+| BFCM 2025 | Launch | 2025-11-18 |
+| BFCM 2025 | Plain text 24h after launch | 2025-11-19 |
+| BFCM 2025 | Mid sale #1 (Engaged 30D) | 2025-11-25 |
+| BFCM 2025 | Black Friday | 2025-11-28 |
+
+## G. Ecommerce Equation bands
+
+| band | repeat_rate | share_of_ee_cohort_pct |
+|---|---|---|
+| Low repeat | 0-19% | 25 |
+| Hybrid | 20-39% | 48 |
+| High repeat | 40%+ | 27 |
+</pre>
+ <div class="foot"><span>DiggerLid · Repeat Rate &amp; Style of Sale · RP-003 / RP-004</span><span>22 September 2026 · page 8</span></div>
+</div></body></html>

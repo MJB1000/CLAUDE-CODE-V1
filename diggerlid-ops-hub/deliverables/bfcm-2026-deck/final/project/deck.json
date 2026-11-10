@@ -1,0 +1,83 @@
+{
+ "v": 4,
+ "attachments": {},
+ "cover": "jack",
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-09-22T13:20:00Z"
+ },
+ "title": "DiggerLid BFCM 2026 Campaign Plan",
+ "order": [
+  "cover",
+  "onepage",
+  "agenda",
+  "scorecard",
+  "curve",
+  "moves",
+  "offer",
+  "bundles-alt",
+  "gifting",
+  "theme",
+  "jack",
+  "territories",
+  "journey",
+  "creative",
+  "hype-ads",
+  "launch-ads",
+  "midsale-eos-ads",
+  "shoot",
+  "shoot-warehouse",
+  "shoot-worksite",
+  "shoot-paddock",
+  "deliverables",
+  "s-amend",
+  "concept-bucket",
+  "concept-frosty",
+  "concept-earth",
+  "check-paid-1",
+  "check-paid-2",
+  "check-organic-1",
+  "check-organic-2"
+ ],
+ "sections": {
+  "intro": {
+   "description": "The plan on one page and the agenda",
+   "start": "cover"
+  },
+  "research": {
+   "description": "The last three sales side by side and the shape of a sale",
+   "start": "scorecard"
+  },
+  "strategy": {
+   "description": "Eight moves for 2026",
+   "start": "moves"
+  },
+  "offer": {
+   "description": "Offer, bundles, Christmas gifting, theme, creative deliverables",
+   "start": "offer"
+  },
+  "amendment": {
+   "description": "Concept storyboards",
+   "start": "s-amend"
+  },
+  "checklists": {
+   "description": "Master checklists: paid ads, then organic and owned",
+   "start": "check-paid-1"
+  }
+ },
+ "faces": {
+  "roboto-condensed": {
+   "family": "Roboto Condensed",
+   "href": "https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap"
+  },
+  "league-spartan": {
+   "family": "League Spartan",
+   "href": "https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap"
+  },
+  "anton": {
+   "family": "Anton",
+   "href": "https://fonts.googleapis.com/css2?family=Anton&display=swap"
+  }
+ },
+ "designSystems": []
+}
