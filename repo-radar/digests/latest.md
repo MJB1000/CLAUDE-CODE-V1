@@ -1,17 +1,17 @@
-# 🛰️ Repo Radar — 2026-11-11
+# 🛰️ Repo Radar — 2026-11-12
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_9 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_10 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[kuafuai/andee](https://github.com/kuafuai/andee)** — ⭐ 4,453 · 81.7/day · Kotlin · since 2026-09-17
-   > Andee lives on your phone or Mac and uses any app like you do—no integrations, no root, any model; memory and passwords never leave your…
-2. **[Zleap-AI/SAG-Wiki](https://github.com/Zleap-AI/SAG-Wiki)** — ⭐ 867 · 37.0/day · Rust · since 2026-10-18
-   > A lightweight knowledge base for people and agents, with ultra fast indexing and most precise retrieval.
-3. **[zaxiu88888/issue-rag](https://github.com/zaxiu88888/issue-rag)** — ⭐ 247 · 25.8/day · Python · since 2026-11-01
-   > RAG over GitHub issues, with a hand-reviewed eval set and an audit of the judge itself. Reports the interval, not just the best number.
+1. **[Edge0-AI/Edge0](https://github.com/Edge0-AI/Edge0)** — ⭐ 10,051 · 155.7/day · C++ · since 2026-09-08
+   > Run 35B MoE models in ~2.5 GB of RAM. Weights stream from SSD; a trained router predicts loads a step ahead. Mac, iPhone, Android, Windows…
+2. **[Zaneris/passenger](https://github.com/Zaneris/passenger)** — ⭐ 541 · 17.4/day · C# · since 2026-10-11
+   > An open-source IDE for C# and .NET, built with Avalonia, for Windows, macOS and Linux: a Roslyn-powered editor, its own debugger with Hot…
+3. **[codepawl/67.js](https://github.com/codepawl/67.js)** — ⭐ 519 · 15.1/day · JavaScript · since 2026-10-08
+   > 3D engine that AI agents drive
 
 ## Multimodal AI
 
@@ -23,17 +23,20 @@ _Nothing new this run._
 
 ## Web/app dev stack
 
-1. **[yilecoding/fastapi-react-admin](https://github.com/yilecoding/fastapi-react-admin)** — ⭐ 154 · 1.9/day · Python · since 2026-08-21
-   > Admin foundation on FastAPI + React 19 + shadcn/ui — row-level permissions, multi-tab that keeps state, approval workflow, permission-bound…
+_Nothing new this run._
 
 ## Self-development & productivity
 
-1. **[mattabate/life-distributable](https://github.com/mattabate/life-distributable)** — ⭐ 372 · 8.5/day · Go · since 2026-09-28
-   > A personal agent that works on your life around the clock, on a Mac you own. One sentence to Claude Code installs it.
+_Nothing new this run._
 
 ## Claude & agent design craft
 
-_Nothing new this run._
+1. **[ShuaiMXu/happyhands](https://github.com/ShuaiMXu/happyhands)** — ⭐ 436 · 24.9/day · JavaScript · since 2026-10-25
+   > Open-source, AI-assisted UI design review for coding agents. Inspect screenshots, scope code changes and compare results in a local…
+2. **[Future-Proof-DS/interactive-ai-ml-tools](https://github.com/Future-Proof-DS/interactive-ai-ml-tools)** — ⭐ 136 · 14.3/day · — · since 2026-11-02
+   > Free interactive tools for data scientists to learn MLOps, ML system design and agentic analytics: a production ML system map, ML project…
+3. **[Avinash-jetwani/jevmem](https://github.com/Avinash-jetwani/jevmem)** — ⭐ 146 · 2.9/day · TypeScript · since 2026-09-22
+   > Shared project rules and memory for AI coding agents. Decisions, rules and failed approaches in one JEVMEM.md in your repo, read by Claude…
 
 ## Community & social media management
 
@@ -45,16 +48,15 @@ _Nothing new this run._
 
 ## Meta inbox & omnichannel AI agents
 
-_Nothing new this run._
+1. **[n8n-io/nod](https://github.com/n8n-io/nod)** — ⭐ 491 · 10.3/day · TypeScript · since 2026-09-25
+   > Open source personal agent with its own computer. It chases invoices, preps your calls and cancels trials on real websites, and asks before…
 
 ## Wildcard — adjacent leverage
 
-1. **[adventists-ai/sophon-realtime](https://github.com/adventists-ai/sophon-realtime)** — ⭐ 229 · 37.4/day · Python · since 2026-11-04
-   > Sophon-Realtime v1: open full-duplex voice models that hear your tone and speak with one. Tag and Flash run on one GPU with vLLM-Omni; E2E…
-2. **[TIGER-AI-Lab/WebsiteBench](https://github.com/TIGER-AI-Lab/WebsiteBench)** — ⭐ 196 · 30.1/day · Python · since 2026-11-04
-   > Can AI agents rebuild websites through browser exploration?
-3. **[simonlin1212/vibe-astock](https://github.com/simonlin1212/vibe-astock)** — ⭐ 1,000 · 9.6/day · TypeScript · since 2026-07-29
-   > Vibe AStock：A 股短线复盘与跟踪工作台 · 盯盘异动、情绪复盘（连板天梯、题材轮动、明日验证）、AI 复盘与周报、交易日志、盘前提醒，182 个数据端点。支持 Claude Code、Codex、WorkBuddy 订阅或任意模型 API。 | A…
+1. **[agentes-chat/agentes-chat](https://github.com/agentes-chat/agentes-chat)** — ⭐ 284 · 92.5/day · TypeScript · since 2026-11-09
+   > Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude…
+2. **[Paradigm-Study/claude-share](https://github.com/Paradigm-Study/claude-share)** — ⭐ 1,000 · 25.0/day · TypeScript · since 2026-10-03
+   > Multiplayer sessions for Claude Code. Share a link, work together live, and review the same replies, tools and previews.
 
 ## Ads & paid growth
 
@@ -62,8 +64,8 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[mrpaidsocial/mrpaidsocial-video-editor-agent](https://github.com/mrpaidsocial/mrpaidsocial-video-editor-agent)** — ⭐ 151 · 2.1/day · Python · since 2026-08-29
-   > Claude Code skill pack: edit short-form videos end to end — style-clone a reference reel, build a branded motion-graphics edit, ElevenLabs…
+1. **[threerocks/article2media](https://github.com/threerocks/article2media)** — ⭐ 204 · 54.1/day · JavaScript · since 2026-11-08
+   > 把一篇文章或一条视频（抖音、B 站、YouTube，先转逐字稿）一键做成小红书图文、杂志长图、公众号排版和 AI 配音口播短视频的开源 Claude Code / Codex Skill。21 套主题，自动验收，零 npm 依赖。
 
 ## E-commerce & Shopify
 
