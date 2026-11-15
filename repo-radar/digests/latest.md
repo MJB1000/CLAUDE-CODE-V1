@@ -1,22 +1,38 @@
-# 🛰️ Repo Radar — 2026-11-14
+# 🛰️ Repo Radar — 2026-11-15
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_12 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_19 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[vercel-labs/ui](https://github.com/vercel-labs/ui)** — ⭐ 3,863 · 210.6/day · TypeScript · since 2026-10-26
-   > A library of behaviors for agents to build the next generation of user interfaces.
-2. **[simpsoka/zigzag](https://github.com/simpsoka/zigzag)** — ⭐ 615 · 41.0/day · Rust · since 2026-10-30
-   > Free, open-source embroidery software for Mac and Windows. Turn SVG artwork into machine embroidery, edit stitches visually, and create…
-3. **[chutingyean/Agent-Cockpit](https://github.com/chutingyean/Agent-Cockpit)** — ⭐ 500 · 27.3/day · JavaScript · since 2026-10-26
-   > Evidence-chain whiteboard + MCP server for AI research agents: every claim traces back to the run and code that produced it. 讓 AI agent…
+1. **[onehumanbeing/esp32-iphone-agent](https://github.com/onehumanbeing/esp32-iphone-agent)** — ⭐ 4,967 · 145.0/day · Swift · since 2026-10-11
+   > Let an AI model use a real iPhone with a $7 ESP32: AirPlay eyes, USB HID hands, any OpenAI-compatible vision model. No Mac, no developer…
+2. **[dansugc/reverse-engineer-marketing](https://github.com/dansugc/reverse-engineer-marketing)** — ⭐ 637 · 23.2/day · TypeScript · since 2026-10-18
+   > Paste a link, get the whole marketing machine behind it: paid ads, organic social, SEO, Reddit, founders, funnel — evidence-cited. CLI, MCP…
+3. **[codepawl/crucible](https://github.com/codepawl/crucible)** — ⭐ 641 · 17.2/day · JavaScript · since 2026-10-08
+   > 3D engine that AI agents drive
+
+🌱 **Rising fast** — small repos gaining stars (7d)
+
+4. **[TencentCloud/octop-harness](https://github.com/TencentCloud/octop-harness)** — ⭐ 157 · 📈 +12⭐/7d · Python · since 2026-09-24
+   > A production-grade agent runtime engineered from the Harness Engineering philosophy.
 
 ## Multimodal AI
 
-1. **[FrigadeHQ/yogurt](https://github.com/FrigadeHQ/yogurt)** — ⭐ 1,280 · 394.6/day · TypeScript · since 2026-11-10
-   > Private AI meeting notes that stay on your computer. A free, open-source alternative to Granola for Mac, Windows and Linux.
+1. **[Topkiflare74/ai--manus2.0](https://github.com/Topkiflare74/ai--manus2.0)** — ⭐ 677 · 677.0/day · — · since 2026-11-14
+   > AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.
+2. **[topapothecarycanal/ai--manus2.0](https://github.com/topapothecarycanal/ai--manus2.0)** — ⭐ 666 · 666.0/day · — · since 2026-11-14
+   > AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.
+3. **[toppatronweave/ai--manus2.0](https://github.com/toppatronweave/ai--manus2.0)** — ⭐ 665 · 665.0/day · — · since 2026-11-14
+   > AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.
+
+🌱 **Rising fast** — small repos gaining stars (7d)
+
+4. **[topconstableinlet67/ai--manus2.0](https://github.com/topconstableinlet67/ai--manus2.0)** — ⭐ 663 · 📈 663⭐ in 1d · — · since 2026-11-14
+   > AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.
+5. **[TitanShieldRavine/ai--manus2.0](https://github.com/TitanShieldRavine/ai--manus2.0)** — ⭐ 659 · 📈 659⭐ in 1d · — · since 2026-11-14
+   > AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.
 
 ## Marketing & analytics tech
 
@@ -24,21 +40,19 @@ _Nothing new this run._
 
 ## Web/app dev stack
 
-1. **[WizisCool/oh-my-cpa](https://github.com/WizisCool/oh-my-cpa)** — ⭐ 387 · 6.2/day · TypeScript · since 2026-09-12
-   > Modern web console for CLIProxyAPI v8+ with provider and OAuth management, live routing, request analytics, pricing, and MCP.
+_Nothing new this run._
 
 ## Self-development & productivity
 
-_Nothing new this run._
+1. **[StashDock/StashDock](https://github.com/StashDock/StashDock)** — ⭐ 342 · 12.9/day · HTML · since 2026-10-19
+   > Your AI-native personal context library. Collect, organize and reuse context across AI conversations.
 
 ## Claude & agent design craft
 
-1. **[mdiri-ai/SoduWork](https://github.com/mdiri-ai/SoduWork)** — ⭐ 678 · 42.5/day · JavaScript · since 2026-10-29
-   > The AI-native engine for teams and their agents. Multi-harness, multi-agent, self-hosted.
-2. **[duyunzhoudyz/dyz-med-paper-skills](https://github.com/duyunzhoudyz/dyz-med-paper-skills)** — ⭐ 370 · 29.7/day · Python · since 2026-11-01
-   > 面向中国医生与医学研究生的医学论文写作 Agent Skills：32 个技能覆盖 PubMed 文献检索、统计分析、中英写作、选刊投稿与审稿修回，适用于 Claude Code、Codex。Medical writing skills for Claude Code &…
-3. **[viettranx/3dviz-pro-max](https://github.com/viettranx/3dviz-pro-max)** — ⭐ 1,283 · 19.7/day · JavaScript · since 2026-09-10
-   > Agent skill for creative 3D visualization: turn an idea into a Three.js/Blender scene worth exploring. Claude Code + Codex plugin, 223…
+1. **[jackson-cmd/risk-aware-trading-agents](https://github.com/jackson-cmd/risk-aware-trading-agents)** — ⭐ 124 · 42.0/day · Python · since 2026-11-12
+   > AI trading agents for US stocks with news backtesting that can't see the future: a public LLM trading agent leaderboard (rta-bench-1)…
+2. **[lalipa2003-arch/JailbreakHub](https://github.com/lalipa2003-arch/JailbreakHub)** — ⭐ 366 · 7.6/day · Roff · since 2026-09-27
+   > A Hub/research area, for jailbreaking LLM's, and breaking their safety filters.
 
 ## Community & social media management
 
@@ -54,12 +68,12 @@ _Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-1. **[HolyArrs/HolyArrs](https://github.com/HolyArrs/HolyArrs)** — ⭐ 1,103 · 270.2/day · Go · since 2026-11-09
-   > One self-hosted app for your shows, movies and music.
-2. **[edgerunners-2/capri-ai-desktop](https://github.com/edgerunners-2/capri-ai-desktop)** — ⭐ 1,710 · 18.8/day · Python · since 2026-08-15
-   > Cyberpunk AI desktop agent & voice companion for Windows. Supports Claude Code, Ollama, DeepSeek, Discord calls & screen automation.
-3. **[cloudflare/kitesurf](https://github.com/cloudflare/kitesurf)** — ⭐ 574 · 12.8/day · TypeScript · since 2026-09-30
-   > Kitesurf is an experimental browser engine that runs on Cloudflare Workers.
+1. **[InlitX/GymMane](https://github.com/InlitX/GymMane)** — ⭐ 1,722 · 17.0/day · Dart · since 2026-08-05
+   > Offline gym log for Android. No account, no ads, no internet.
+2. **[Sev7eNup/NodePilot](https://github.com/Sev7eNup/NodePilot)** — ⭐ 196 · 1.7/day · C# · since 2026-07-21
+   > Agentless Windows workflow orchestration. Self-hosted, open source, alternative to System Center Orchestrator with SCOrch workflow import.
+3. **[ldbumble/taskuary](https://github.com/ldbumble/taskuary)** — ⭐ 150 · 1.7/day · Python · since 2026-08-17
+   > Your AI work partner. Mail, chats and tickets become one list in the right order; your agents do the work, and nothing goes out until you…
 
 ## Ads & paid growth
 
@@ -67,8 +81,12 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[DevedevT/FFmpeg-GUI-Editor-Windows](https://github.com/DevedevT/FFmpeg-GUI-Editor-Windows)** — ⭐ 541 · 446.9/day · Visual Basic .NET · since 2026-11-12
-   > Lightweight portable FFmpeg GUI & lossless video trimmer for Windows (ready-to-use .exe). Supports English, Russian, Chinese, German…
+1. **[angela-cook-1988/vegas-pro-23-desktop](https://github.com/angela-cook-1988/vegas-pro-23-desktop)** — ⭐ 305 · 273.3/day · C++ · since 2026-11-13
+   > VEGAS Pro 23 2026 desktop setup with timeline editing, color correction, keyframe animation and DVD/Blu-ray authoring tools for Windows 11
+2. **[fendouai/ViralForge](https://github.com/fendouai/ViralForge)** — ⭐ 167 · 44.5/day · TypeScript · since 2026-11-11
+   > Agent-native viral video studio: one-click replicate viral short videos, deconstruct video hooks and scripts into a Viral DNA report, and…
+3. **[howznguyen/shorts-kit](https://github.com/howznguyen/shorts-kit)** — ⭐ 159 · 15.5/day · TypeScript · since 2026-11-04
+   > Make narrated vertical shorts (TikTok, YouTube Shorts, Reels) with a coding agent and Remotion. 9+ agent skills, 20+ story flows, fact…
 
 ## E-commerce & Shopify
 
@@ -76,7 +94,8 @@ _Nothing new this run._
 
 ## Brand systems & creative ops
 
-_Nothing new this run._
+1. **[ckryptickunal/OpenDesigner](https://github.com/ckryptickunal/OpenDesigner)** — ⭐ 152 · 2.9/day · Python · since 2026-09-23
+   > A free, open-source add-on for Claude, ChatGPT, Codex and Cursor that turns a few plain answers into a design system, so everything you…
 
 ---
 
