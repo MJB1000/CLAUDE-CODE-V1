@@ -1,37 +1,32 @@
-# 🛰️ Repo Radar — 2026-11-15
+# 🛰️ Repo Radar — 2026-11-16
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_19 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_14 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[onehumanbeing/esp32-iphone-agent](https://github.com/onehumanbeing/esp32-iphone-agent)** — ⭐ 4,967 · 145.0/day · Swift · since 2026-10-11
-   > Let an AI model use a real iPhone with a $7 ESP32: AirPlay eyes, USB HID hands, any OpenAI-compatible vision model. No Mac, no developer…
-2. **[dansugc/reverse-engineer-marketing](https://github.com/dansugc/reverse-engineer-marketing)** — ⭐ 637 · 23.2/day · TypeScript · since 2026-10-18
-   > Paste a link, get the whole marketing machine behind it: paid ads, organic social, SEO, Reddit, founders, funnel — evidence-cited. CLI, MCP…
-3. **[codepawl/crucible](https://github.com/codepawl/crucible)** — ⭐ 641 · 17.2/day · JavaScript · since 2026-10-08
-   > 3D engine that AI agents drive
-
-🌱 **Rising fast** — small repos gaining stars (7d)
-
-4. **[TencentCloud/octop-harness](https://github.com/TencentCloud/octop-harness)** — ⭐ 157 · 📈 +12⭐/7d · Python · since 2026-09-24
-   > A production-grade agent runtime engineered from the Harness Engineering philosophy.
+1. **[hitkeeen/blender-ai-mcp-addon](https://github.com/hitkeeen/blender-ai-mcp-addon)** — ⭐ 1,209 · 350.0/day · — · since 2026-11-12
+   > AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama…
+2. **[expo/exact](https://github.com/expo/exact)** — ⭐ 4,325 · 309.0/day · Rust · since 2026-11-02
+   > Write an app once. It runs natively on the web, macOS, iOS, and Linux, and an AI agent can build it, run it, see it, and test it on every…
+3. **[DIYgod/pinky](https://github.com/DIYgod/pinky)** — ⭐ 2,221 · 237.4/day · Go · since 2026-11-06
+   > Let AI use your iPhone or Android phone, with you in the loop: any MCP agent from macOS, Windows or Linux, or Pinky itself, right on the…
 
 ## Multimodal AI
 
-1. **[Topkiflare74/ai--manus2.0](https://github.com/Topkiflare74/ai--manus2.0)** — ⭐ 677 · 677.0/day · — · since 2026-11-14
+1. **[violetkomodolimit/ai--manus2.0](https://github.com/violetkomodolimit/ai--manus2.0)** — ⭐ 375 · 299.8/day · — · since 2026-11-14
    > AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.
-2. **[topapothecarycanal/ai--manus2.0](https://github.com/topapothecarycanal/ai--manus2.0)** — ⭐ 666 · 666.0/day · — · since 2026-11-14
+2. **[trackersnailgrip/ai--manus2.0](https://github.com/trackersnailgrip/ai--manus2.0)** — ⭐ 373 · 298.2/day · — · since 2026-11-14
    > AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.
-3. **[toppatronweave/ai--manus2.0](https://github.com/toppatronweave/ai--manus2.0)** — ⭐ 665 · 665.0/day · — · since 2026-11-14
+3. **[taboospecialistblade/ai--manus2.0](https://github.com/taboospecialistblade/ai--manus2.0)** — ⭐ 371 · 296.6/day · — · since 2026-11-14
    > AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.
 
 🌱 **Rising fast** — small repos gaining stars (7d)
 
-4. **[topconstableinlet67/ai--manus2.0](https://github.com/topconstableinlet67/ai--manus2.0)** — ⭐ 663 · 📈 663⭐ in 1d · — · since 2026-11-14
+4. **[Ultimateakiln/ai--manus2.0](https://github.com/Ultimateakiln/ai--manus2.0)** — ⭐ 371 · 📈 371⭐ in 1d · — · since 2026-11-14
    > AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.
-5. **[TitanShieldRavine/ai--manus2.0](https://github.com/TitanShieldRavine/ai--manus2.0)** — ⭐ 659 · 📈 659⭐ in 1d · — · since 2026-11-14
+5. **[TrapBladesmith/ai--manus2.0](https://github.com/TrapBladesmith/ai--manus2.0)** — ⭐ 370 · 📈 370⭐ in 1d · — · since 2026-11-14
    > AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.
 
 ## Marketing & analytics tech
@@ -44,15 +39,19 @@ _Nothing new this run._
 
 ## Self-development & productivity
 
-1. **[StashDock/StashDock](https://github.com/StashDock/StashDock)** — ⭐ 342 · 12.9/day · HTML · since 2026-10-19
-   > Your AI-native personal context library. Collect, organize and reuse context across AI conversations.
+1. **[cam-gardner/microsoft-office-desktop](https://github.com/cam-gardner/microsoft-office-desktop)** — ⭐ 356 · 307.0/day · C++ · since 2026-11-14
+   > Microsoft Office 2026 desktop setup with document authoring, spreadsheet engine, presentation module and bundled multilingual interface for…
+2. **[andy-wells-73/microsoft-outlook-desktop](https://github.com/andy-wells-73/microsoft-outlook-desktop)** — ⭐ 356 · 306.9/day · C++ · since 2026-11-14
+   > Microsoft Outlook 2026 desktop setup with unified inbox, calendar sync, contact store and offline profile support for Windows 11
 
 ## Claude & agent design craft
 
-1. **[jackson-cmd/risk-aware-trading-agents](https://github.com/jackson-cmd/risk-aware-trading-agents)** — ⭐ 124 · 42.0/day · Python · since 2026-11-12
-   > AI trading agents for US stocks with news backtesting that can't see the future: a public LLM trading agent leaderboard (rta-bench-1)…
-2. **[lalipa2003-arch/JailbreakHub](https://github.com/lalipa2003-arch/JailbreakHub)** — ⭐ 366 · 7.6/day · Roff · since 2026-09-27
-   > A Hub/research area, for jailbreaking LLM's, and breaking their safety filters.
+1. **[credoksopho1984/blender-ai-copilot-studio](https://github.com/credoksopho1984/blender-ai-copilot-studio)** — ⭐ 513 · 158.0/day · — · since 2026-11-12
+   > An AI copilot and MCP server for Blender that turns plain-language briefs into scene operations—inside a visual chat studio with…
+2. **[Barty-Bart/motion-graphics](https://github.com/Barty-Bart/motion-graphics)** — ⭐ 1,288 · 25.0/day · HTML · since 2026-09-25
+   > Motion-graphics skills for Claude Code and Codex.
+3. **[1llu50ry/Decompile](https://github.com/1llu50ry/Decompile)** — ⭐ 574 · 13.7/day · TypeScript · since 2026-10-05
+   > MCP (Model Context Protocol) server for game hacking & reverse engineering. A structured knowledge base of 4,100+ skills with full source…
 
 ## Community & social media management
 
@@ -68,12 +67,7 @@ _Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-1. **[InlitX/GymMane](https://github.com/InlitX/GymMane)** — ⭐ 1,722 · 17.0/day · Dart · since 2026-08-05
-   > Offline gym log for Android. No account, no ads, no internet.
-2. **[Sev7eNup/NodePilot](https://github.com/Sev7eNup/NodePilot)** — ⭐ 196 · 1.7/day · C# · since 2026-07-21
-   > Agentless Windows workflow orchestration. Self-hosted, open source, alternative to System Center Orchestrator with SCOrch workflow import.
-3. **[ldbumble/taskuary](https://github.com/ldbumble/taskuary)** — ⭐ 150 · 1.7/day · Python · since 2026-08-17
-   > Your AI work partner. Mail, chats and tickets become one list in the right order; your agents do the work, and nothing goes out until you…
+_Nothing new this run._
 
 ## Ads & paid growth
 
@@ -81,12 +75,8 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[angela-cook-1988/vegas-pro-23-desktop](https://github.com/angela-cook-1988/vegas-pro-23-desktop)** — ⭐ 305 · 273.3/day · C++ · since 2026-11-13
-   > VEGAS Pro 23 2026 desktop setup with timeline editing, color correction, keyframe animation and DVD/Blu-ray authoring tools for Windows 11
-2. **[fendouai/ViralForge](https://github.com/fendouai/ViralForge)** — ⭐ 167 · 44.5/day · TypeScript · since 2026-11-11
-   > Agent-native viral video studio: one-click replicate viral short videos, deconstruct video hooks and scripts into a Viral DNA report, and…
-3. **[howznguyen/shorts-kit](https://github.com/howznguyen/shorts-kit)** — ⭐ 159 · 15.5/day · TypeScript · since 2026-11-04
-   > Make narrated vertical shorts (TikTok, YouTube Shorts, Reels) with a coding agent and Remotion. 9+ agent skills, 20+ story flows, fact…
+1. **[81199000/DouDuo](https://github.com/81199000/DouDuo)** — ⭐ 152 · 14.5/day · Swift · since 2026-11-05
+   > DouDuo：适配 iPhone Duo / iPad 的第三方抖音客户端——原生播放、秒开 + 50 条预缓存、横滑快进、弹幕、评论、直播聊天、搜索、喜欢/收藏/历史
 
 ## E-commerce & Shopify
 
@@ -94,8 +84,7 @@ _Nothing new this run._
 
 ## Brand systems & creative ops
 
-1. **[ckryptickunal/OpenDesigner](https://github.com/ckryptickunal/OpenDesigner)** — ⭐ 152 · 2.9/day · Python · since 2026-09-23
-   > A free, open-source add-on for Claude, ChatGPT, Codex and Cursor that turns a few plain answers into a design system, so everything you…
+_Nothing new this run._
 
 ---
 
