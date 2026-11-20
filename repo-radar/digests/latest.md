@@ -1,4 +1,4 @@
-# 🛰️ Repo Radar — 2026-11-19
+# 🛰️ Repo Radar — 2026-11-20
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
@@ -6,15 +6,17 @@ _16 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[erkamyaman/rust-anything](https://github.com/erkamyaman/rust-anything)** — ⭐ 3,484 · 1334.1/day · Rust · since 2026-11-16
-   > Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and…
-2. **[BkashJEE/hermes-bot-forge](https://github.com/BkashJEE/hermes-bot-forge)** — ⭐ 151 · 2.4/day · Python · since 2026-09-17
-   > Hermes Agent plugin: say 'make me a <role>' and your agent builds a complete, working Bot — name, face, SOUL.md, memory, tools, skills…
+1. **[bookwjitchieni1986/blender-ai-mcp-addon](https://github.com/bookwjitchieni1986/blender-ai-mcp-addon)** — ⭐ 638 · 638.0/day · — · since 2026-11-19
+   > AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama…
+2. **[BaaRai/ARTEX](https://github.com/BaaRai/ARTEX)** — ⭐ 12,166 · 288.1/day · Go · since 2026-10-08
+   > ARTEX - AI autonomous penetration testing system (English translation; upstream: Autumn-27/ARTEX, AGPL-3.0)
+3. **[dsh-market/dsh-market](https://github.com/dsh-market/dsh-market)** — ⭐ 12,993 · 132.7/day · TypeScript · since 2026-08-14
+   > The plugin market inside DeepSeek Harness — browse, search, one-click install · DSH 可视化插件市场
 
 ## Multimodal AI
 
-1. **[joeseesun/subcast](https://github.com/joeseesun/subcast)** — ⭐ 164 · 62.0/day · TypeScript · since 2026-11-16
-   > 海外播客与 YouTube 的双语字幕、精读和 AI 问答桌面 App | Bilingual subtitles, deep reads and AI Q&A for overseas podcasts and YouTube
+1. **[zhuzhangxue/wechat-chat-export](https://github.com/zhuzhangxue/wechat-chat-export)** — ⭐ 158 · 1.9/day · Python · since 2026-08-29
+   > Windows 微信 4.1.12+ 聊天记录本地导出工具：TXT / Markdown / JSON，支持图片、文件、语音、视频、本地语音转文字和聊天预览，面向 GPT、Claude、Gemini 等 LLM。 | Local-first WeChat chat…
 
 ## Marketing & analytics tech
 
@@ -22,38 +24,35 @@ _Nothing new this run._
 
 ## Web/app dev stack
 
-1. **[yile2020/fastapi-react-admin](https://github.com/yile2020/fastapi-react-admin)** — ⭐ 233 · 2.6/day · Python · since 2026-08-21
-   > Admin foundation on FastAPI + React 19 + shadcn/ui — row-level permissions, multi-tab that keeps state, approval workflow, permission-bound…
+_Nothing new this run._
 
 ## Self-development & productivity
 
-1. **[TixXin/Fuyu](https://github.com/TixXin/Fuyu)** — ⭐ 416 · 26.3/day · TypeScript · since 2026-11-03
-   > Fuyu (浮屿) — a lightweight dynamic island for Windows & macOS: message alerts from Telegram, Discord, WhatsApp, QQ and WeChat, Claude Code /…
+1. **[GlitchAwakened/Favnyr](https://github.com/GlitchAwakened/Favnyr)** — ⭐ 361 · 3.9/day · Rust · since 2026-08-18
+   > A workspace-based, multi-pane file manager for Windows and Linux
 
 ## Claude & agent design craft
 
-1. **[precygtrucqui1981/blender-ai-copilot-lab](https://github.com/precygtrucqui1981/blender-ai-copilot-lab)** — ⭐ 507 · 80.4/day · — · since 2026-11-12
-   > An AI lab for Blender where manager–worker–reviewer agent teams run multi-step scene briefs as supervised experiments—a live task board…
-2. **[XiaoyeCodes/code-animation-prompts](https://github.com/XiaoyeCodes/code-animation-prompts)** — ⭐ 1,292 · 62.5/day · HTML · since 2026-10-29
-   > 341 种代码动画风格提示词、196 张参考静帧与离线挑选器，封装为 Claude Code / Codex Skill，支持一键导入与 HTML 视频渲染。
-3. **[Continuum-AI-Corp/OrcaPromptVault](https://github.com/Continuum-AI-Corp/OrcaPromptVault)** — ⭐ 396 · 6.1/day · — · since 2026-09-15
-   > The open archive of how AI agents actually work. A versioned, verifiable archive of system prompts, developer instructions, tool schemas…
+1. **[simplexai-labs/linger](https://github.com/simplexai-labs/linger)** — ⭐ 1,752 · 176.0/day · TypeScript · since 2026-11-10
+   > Linger is An Open-Source Personal Agent That Runs Fully on Your PC. We aim to break Big Tech’s grip on AI by bringing powerful local AI to…
+2. **[jackulau/coding.sh](https://github.com/jackulau/coding.sh)** — ⭐ 117 · 9.0/day · TypeScript · since 2026-11-07
+   > Open-source, local-first observability and evals for AI agents: see what Claude Code, Codex, Cursor and others did and what it cost.
 
 ## Community & social media management
 
-1. **[mhmdmonner439-alt/tiktok-accounts-generator](https://github.com/mhmdmonner439-alt/tiktok-accounts-generator)** — ⭐ 153 · 47.0/day · TypeScript · since 2026-11-15
-   > TikTok Accounts Generator - Community-Driven Bot for Discord and Telegram
-2. **[juliusodeke2021-web/tiktok-account-creator](https://github.com/juliusodeke2021-web/tiktok-account-creator)** — ⭐ 153 · 47.0/day · TypeScript · since 2026-11-15
-   > Feature-rich TikTok Account Creator bot for Discord and Telegram, built with and for the community
-3. **[Peshiemaina21/telegram-news-autopilot](https://github.com/Peshiemaina21/telegram-news-autopilot)** — ⭐ 153 · 47.0/day · TypeScript · since 2026-11-15
-   > Telegram Autopilot: Community-Driven, Feature-Rich Bot for Discord and Telegram
+1. **[pranto123mollick/meeting-agent](https://github.com/pranto123mollick/meeting-agent)** — ⭐ 153 · 35.8/day · TypeScript · since 2026-11-15
+   > Meeting Agent: Community-Driven Discord and Telegram Bot with Rich Features
+2. **[mackgn/instagram-liker-bot](https://github.com/mackgn/instagram-liker-bot)** — ⭐ 153 · 35.8/day · Python · since 2026-11-15
+   > Instagram Liker Bot for Discord and Telegram: Community-Driven, Feature-Rich Automation
+3. **[mieramiera/external-raid-bot](https://github.com/mieramiera/external-raid-bot)** — ⭐ 153 · 35.7/day · HTML · since 2026-11-15
+   > Open source community raid bot for Discord and Telegram servers with external apps enabled
 
 🌱 **Rising fast** — small repos gaining stars (7d)
 
-4. **[dimasyanto028-ux/sns-automation-bot](https://github.com/dimasyanto028-ux/sns-automation-bot)** — ⭐ 153 · 📈 153⭐ in 3d · Dockerfile · since 2026-11-15
-   > Bot - Community-Driven for Discord and Telegram
-5. **[santiagosnsbd-ship-it/ml-signal-finder-bot](https://github.com/santiagosnsbd-ship-it/ml-signal-finder-bot)** — ⭐ 153 · 📈 153⭐ in 3d · Python · since 2026-11-15
-   > ML Signal Bot: Community-Driven ML Signal Sender for Discord and Telegram
+4. **[Chairul30/binance-trading-bot](https://github.com/Chairul30/binance-trading-bot)** — ⭐ 153 · 📈 153⭐ in 4d · TypeScript · since 2026-11-15
+   > Feature-rich Binance Bot for Discord and Telegram, built with and for the community
+5. **[csidrenaetis26-lang/autotrade-bot](https://github.com/csidrenaetis26-lang/autotrade-bot)** — ⭐ 153 · 📈 153⭐ in 4d · HTML · since 2026-11-15
+   > AutoTrade Bot - Community-Driven Automated Real-Time Trading for Discord and Telegram
 
 ## Customer-service AI agents
 
@@ -61,12 +60,15 @@ _Nothing new this run._
 
 ## Meta inbox & omnichannel AI agents
 
-_Nothing new this run._
+1. **[Xeven777/openinstadm](https://github.com/Xeven777/openinstadm)** — ⭐ 40 · 0.4/day · TypeScript · since 2026-08-11
+   > Manychat alternative. Instagram comment to DM automation. Totally free + self hostable
+2. **[Bwmxmdgo/BWM-XMD-GO-V2](https://github.com/Bwmxmdgo/BWM-XMD-GO-V2)** — ⭐ 40 · 0.4/day · JavaScript · since 2026-07-29
+   > XMD is a powerful WhatsApp automation platform developed by BWM XMD Company and founded by Ibrahim Adams. It provides advanced messaging…
 
 ## Wildcard — adjacent leverage
 
-1. **[skyelan1999/aide](https://github.com/skyelan1999/aide)** — ⭐ 189 · 3.3/day · Go · since 2026-09-23
-   > Self-hosted AI workspace for developers and engineers. Bring your own models, work with local or SSH projects, and automate coding and…
+1. **[havenicec/google-qr-sms-helper](https://github.com/havenicec/google-qr-sms-helper)** — ⭐ 281 · 11.4/day · JavaScript · since 2026-10-26
+   > Chrome Extension (MV3) to switch Google's mandatory QR code verification back to standard 6-digit SMS verification via iPad Mini profile &…
 
 ## Ads & paid growth
 
@@ -74,10 +76,8 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[LemonFace0309/charles-skills](https://github.com/LemonFace0309/charles-skills)** — ⭐ 192 · 16.0/day · JavaScript · since 2026-11-07
-   > Skills for Claude Code and Codex: design craft, reel editing, quality-of-life helpers, and every skill from my reels
-2. **[notivn/AIEV](https://github.com/notivn/AIEV)** — ⭐ 160 · 1.4/day · TypeScript · since 2026-07-30
-   > Automatic AI video editing. Claude directs HyperFrames (HTML + GSAP motion graphics) and Remotion (timeline assembly) to turn raw footage…
+1. **[Bodila51/gtavi-claudecode](https://github.com/Bodila51/gtavi-claudecode)** — ⭐ 922 · 675.0/day · Python · since 2026-11-18
+   > Claude Code plugin that turns GTA 6 streams into paid vertical clips: live campaigns, trending videos, best moments, 9:16 cuts with hooks…
 
 ## E-commerce & Shopify
 
