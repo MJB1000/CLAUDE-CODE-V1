@@ -1,29 +1,23 @@
-# 🛰️ Repo Radar — 2026-11-21
+# 🛰️ Repo Radar — 2026-11-22
 
 ![Repo Radar](https://raw.githubusercontent.com/MJB1000/claude-code-v1/main/repo-radar/assets/banner.png)
 
-_16 new · last 120d · ≥150⭐ · momentum + 7-day risers._
+_15 new · last 120d · ≥150⭐ · momentum + 7-day risers._
 
 ## AI agents & LLM tooling
 
-1. **[modelflare-ai/AnyModelBot](https://github.com/modelflare-ai/AnyModelBot)** — ⭐ 4,880 · 197.2/day · Python · since 2026-10-27
-   > 🤖 Open-source, local-first alternative to Grok Bot, OpenAI dots and Claude Duet. Your own AI bots on any model: GPT, Claude, Gemini, Grok…
-2. **[gogoymh/auto-ontology-mcp](https://github.com/gogoymh/auto-ontology-mcp)** — ⭐ 516 · 35.3/day · Python · since 2026-11-06
-   > NVIDIA Auto Ontology's semantic layer and a personal knowledge base as an MCP server for Claude, ChatGPT and other MCP clients. No LLM API…
-3. **[limenagent/prodagent](https://github.com/limenagent/prodagent)** — ⭐ 150 · 1.4/day · Python · since 2026-08-04
-   > A minimal, readable agent-framework kernel — understand how LangGraph/ADK work under the hood. 1800行代码的 agent 框架内核，理解 LangGraph/ADK 底层的工作原理
+1. **[starlinghq/starling](https://github.com/starlinghq/starling)** — ⭐ 233 · 5.8/day · C# · since 2026-10-13
+   > Local AI in .NET, with no Python sidecar and no API key: embeddings, entity extraction, image and video search and chat on ONNX Runtime…
+2. **[MiaoWuNYA/rikkahub-sillytavern-android](https://github.com/MiaoWuNYA/rikkahub-sillytavern-android)** — ⭐ 230 · 3.7/day · Kotlin · since 2026-09-20
+   > 安卓AI聊天端:开箱即聊，无损导入酒馆卡，专属RP模式，高定制主题，创造模式，RAG记忆，缓存强省用量，防空回，主动信息，前端卡支持，QQbot，AI群聊，插件系统，强兼容中转站。手机移动端原生支持，求 Star 收藏⭐Android AI Chatbox: lossless…
 
 ## Multimodal AI
 
-1. **[chaw1/datakeel](https://github.com/chaw1/datakeel)** — ⭐ 230 · 8.1/day · Python · since 2026-10-23
-   > Local-first dataset workbench for visual QA, human-approved releases, and traceable metrics.
-2. **[mallahyari/nemotron-asr-streaming-farsi](https://github.com/mallahyari/nemotron-asr-streaming-farsi)** — ⭐ 152 · 3.1/day · Python · since 2026-10-03
-   > Streaming Persian (Farsi) speech recognition: fine-tuning NVIDIA Nemotron 3.5 ASR streaming. Data prep, training, evaluation, inference.
+_Nothing new this run._
 
 ## Marketing & analytics tech
 
-1. **[annayal-consumerxai/prod-FARM-IOS-Core](https://github.com/annayal-consumerxai/prod-FARM-IOS-Core)** — ⭐ 1,890 · 22.0/day · TypeScript · since 2026-08-27
-   > A farm of real iPhones, run from your Mac. Open-source iOS device automation with live control, a Postgres-backed scheduler, and TikTok…
+_Nothing new this run._
 
 ## Web/app dev stack
 
@@ -31,21 +25,19 @@ _Nothing new this run._
 
 ## Self-development & productivity
 
-1. **[71chili/logseq-novara-knowledge-vault](https://github.com/71chili/logseq-novara-knowledge-vault)** — ⭐ 152 · 60.2/day · HTML · since 2026-11-18
-   > Logseq Novara Knowledge Vault structures notes into a linked, queryable knowledge base.
-2. **[victorthairu47-spec/obsidian-second-brain-vault](https://github.com/victorthairu47-spec/obsidian-second-brain-vault)** — ⭐ 152 · 48.2/day · TypeScript · since 2026-11-17
-   > Obsidian Second Brain Vault - Knowledge Management Desktop Software
+1. **[Vaultite/vaultite](https://github.com/Vaultite/vaultite)** — ⭐ 184 · 4.1/day · TypeScript · since 2026-10-08
+   > Own your memories. A fast and local AI native knowledge base, in plain Markdown files. A free and open source Obsidian/Notion alternative
 
 ## Claude & agent design craft
 
-_Nothing new this run._
+1. **[Domush/antigravity-plugin-context-mode](https://github.com/Domush/antigravity-plugin-context-mode)** — ⭐ 113 · 15.6/day · JavaScript · since 2026-11-14
+   > Reduce context size by 90%+ *and* make your agent smarter. Antigravity Context Mode is a local-first plugin built specifically for the…
+2. **[y5ez3g/facadecode](https://github.com/y5ez3g/facadecode)** — ⭐ 507 · 12.2/day · TypeScript · since 2026-10-11
+   > The multi-agent orchestrator for VS Code. Run Claude Code, Codex, and other agent CLIs that start, message, and operate each other across…
 
 ## Community & social media management
 
-1. **[bitictlab-droid/autoq-bot](https://github.com/bitictlab-droid/autoq-bot)** — ⭐ 153 · 28.8/day · HTML · since 2026-11-15
-   > Community-driven Discord and Telegram bot with rich features, built together with AutoQ contributors
-2. **[ASDA580277/agentower-remote-control](https://github.com/ASDA580277/agentower-remote-control)** — ⭐ 153 · 28.8/day · HTML · since 2026-11-15
-   > Agentower Remote Control: Community Bot for Discord and Telegram
+_Nothing new this run._
 
 ## Customer-service AI agents
 
@@ -57,12 +49,12 @@ _Nothing new this run._
 
 ## Wildcard — adjacent leverage
 
-1. **[umbra0688/windows-clipboard-manager-sync](https://github.com/umbra0688/windows-clipboard-manager-sync)** — ⭐ 239 · 198.1/day · Dart · since 2026-11-19
-   > Free open-source Windows clipboard manager with searchable history, smart collections, keyboard shortcuts and cloud sync.
-2. **[serveroshq/panel](https://github.com/serveroshq/panel)** — ⭐ 1,180 · 97.6/day · PHP · since 2026-11-09
-   > The open source ServerOS panel: one place to run the Linux servers you already own.
-3. **[TubeLabHQ/youtube-research-skills](https://github.com/TubeLabHQ/youtube-research-skills)** — ⭐ 190 · 11.7/day · JavaScript · since 2026-11-04
-   > AI agent skills for YouTube research. Outlier videos, niche finding & validation, competitor research, comment mining, title formulas…
+1. **[cloveric/tarobird](https://github.com/cloveric/tarobird)** — ⭐ 160 · 9.4/day · TypeScript · since 2026-11-05
+   > Codex, Claude Code, DeepSeek and other agent CLIs on your computer, together in one desktop & mobile IM. Work and vibe code with AI agents…
+2. **[omdsh-dev/dsh-ego-browser](https://github.com/omdsh-dev/dsh-ego-browser)** — ⭐ 562 · 5.3/day · TypeScript · since 2026-08-07
+   > DSH（DeepSeek Harness）插件：把 ego-lite 浏览器（给 AI Agent 用的 Chromium）接入 HARNESS——13 个结构化 ego_* 工具（文本语义快照、语义定位点击、表单填充、截图、CDP 控制、任务空间隔离），内置 ego…
+3. **[dbx0/executioner](https://github.com/dbx0/executioner)** — ⭐ 151 · 4.5/day · TypeScript · since 2026-10-19
+   > The agentic pentesting environment that lives on your machine. AI agent teams, visual workflows and your own tools, 100% local.
 
 ## Ads & paid growth
 
@@ -70,12 +62,19 @@ _Nothing new this run._
 
 ## Short-form video & content production
 
-1. **[w272732-a11y/premiere-pro-for-windows](https://github.com/w272732-a11y/premiere-pro-for-windows)** — ⭐ 152 · 152.0/day · TypeScript · since 2026-11-20
-   > Edit and render video projects on Windows with Premiere Pro workflows.
-2. **[hajiasif0787-spec/losslesscut-corena-video-trim](https://github.com/hajiasif0787-spec/losslesscut-corena-video-trim)** — ⭐ 152 · 60.2/day · HTML · since 2026-11-18
-   > Rapid video trimming through a focused, visual workflow for cleaner cuts.
-3. **[xianyu110/ecommerce-video-skills](https://github.com/xianyu110/ecommerce-video-skills)** — ⭐ 150 · 3.2/day · Python · since 2026-10-04
-   > 12 个电商短视频 Agent Skills：3秒钩子、卖点分镜、图生视频提示词、edge-tts 配音、字幕花字、ffmpeg 自动成片、抖音/TikTok Shop/视频号导出、直播切片、多语言配音、封面A/B · Claude Code / Codex / Cursor
+1. **[dan-leelab19f7/roblox-game-hub-fisch-auto-cast-instant-portable-x64](https://github.com/dan-leelab19f7/roblox-game-hub-fisch-auto-cast-instant-portable-x64)** — ⭐ 385 · 385.0/day · Jupyter Notebook · since 2026-11-21
+   > Roblox Game Hub Fisch Auto-Cast, Instant Reel & Aurora Totem Macro: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON…
+2. **[ericgarciacode03f3/creative-video-adobe-cc-v4-universal-portable-x64](https://github.com/ericgarciacode03f3/creative-video-adobe-cc-v4-universal-portable-x64)** — ⭐ 373 · 373.0/day · Jupyter Notebook · since 2026-11-21
+   > Creative & Video Pro Suite Adobe cc-bridge v4.2 Universal 2026 Creative Cloud runtime-updater: native 64-bit Windows 10/11 portable x64…
+3. **[leon-moore-v9/creative-video-topaz-ai-photo-ai-portable-x64](https://github.com/leon-moore-v9/creative-video-topaz-ai-photo-ai-portable-x64)** — ⭐ 370 · 370.0/day · Jupyter Notebook · since 2026-11-21
+   > Creative & Video Pro Suite Topaz Video AI 6.1 + Photo AI 4 TensorRT Offline Model Pack: native 64-bit Windows 10/11 portable x64 build with…
+
+🌱 **Rising fast** — small repos gaining stars (7d)
+
+4. **[sergey-techdev1998d6/fisch-script-macro-win11](https://github.com/sergey-techdev1998d6/fisch-script-macro-win11)** — ⭐ 258 · 📈 258⭐ in 1d · CMake · since 2026-11-22
+   > Fisch Script & Macro V12 — Auto-Cast, Instant Reel, Duping & Aurora Totem Hub (Windows 10/11 x64): native 64-bit Windows 10/11 portable x64…
+5. **[bgleeson180-afk/cinema-4d-sacerin-motion-studio](https://github.com/bgleeson180-afk/cinema-4d-sacerin-motion-studio)** — ⭐ 201 · 📈 201⭐ in 1d · HTML · since 2026-11-21
+   > Builds Cinema 4D Sacerin motion scenes through a structured studio workflow.
 
 ## E-commerce & Shopify
 
@@ -83,7 +82,10 @@ _Nothing new this run._
 
 ## Brand systems & creative ops
 
-_Nothing new this run._
+1. **[NEORUAA/Glasmio](https://github.com/NEORUAA/Glasmio)** — ⭐ 151 · 5.7/day · Kotlin · since 2026-10-26
+   > A Jetpack Compose UI framework bringing a faithful 1:1 recreation of iOS 27 Liquid Glass, animations, controls, and interactions to Android.
+2. **[bradfrost/skills](https://github.com/bradfrost/skills)** — ⭐ 151 · 1.7/day · Python · since 2026-08-26
+   > Brad Frost's agent skills to help with different dimensions of work and life
 
 ---
 
