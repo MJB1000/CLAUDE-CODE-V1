@@ -1,0 +1,89 @@
+{
+ "period": "2026-08-06 to 2026-10-13, net items sold, shipping region Queensland unless stated",
+ "australia": {
+  "O": 340,
+  "R": 360,
+  "G": 281,
+  "C": 192,
+  "P": 121
+ },
+ "qld": {
+  "O": 83,
+  "R": 119,
+  "G": 75,
+  "C": 67,
+  "P": 37
+ },
+ "qld_business": {
+  "O": 26,
+  "R": 43,
+  "G": 33,
+  "C": 15,
+  "P": 14
+ },
+ "qld_personal": {
+  "O": 57,
+  "R": 76,
+  "G": 42,
+  "C": 52,
+  "P": 23
+ },
+ "qld_net_sales": {
+  "O": 14930.27,
+  "R": 28886.49,
+  "G": 18037.62,
+  "C": 15955.81,
+  "P": 9286.43
+ },
+ "qld_order_lines": {
+  "O": 71,
+  "R": 93,
+  "G": 57,
+  "C": 54,
+  "P": 29
+ },
+ "qld_business_order_lines": {
+  "O": 14,
+  "R": 29,
+  "G": 22,
+  "C": 9,
+  "P": 7
+ },
+ "area_order": [
+  "Brisbane, Gold & Sunshine Coasts",
+  "SEQ fringe & southern inland",
+  "Central QLD, Wide Bay & Mackay",
+  "North QLD & Outback"
+ ],
+ "areas": {
+  "SEQ fringe & southern inland": {
+   "O": 27,
+   "R": 33,
+   "C": 22,
+   "G": 18,
+   "P": 8
+  },
+  "North QLD & Outback": {
+   "P": 15,
+   "G": 13,
+   "C": 12,
+   "R": 11,
+   "O": 11
+  },
+  "Central QLD, Wide Bay & Mackay": {
+   "G": 28,
+   "R": 34,
+   "O": 28,
+   "C": 18,
+   "P": 9
+  },
+  "Brisbane, Gold & Sunshine Coasts": {
+   "R": 39,
+   "G": 16,
+   "C": 14,
+   "O": 16,
+   "P": 5
+  }
+ },
+ "notes": "business = business email domain or company name at checkout (trade-word-only buyers not included)."
+}

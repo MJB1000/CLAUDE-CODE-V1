@@ -1,0 +1,518 @@
+{
+ "total_orders": 639,
+ "business_orders": 173,
+ "business_pct": 27.1,
+ "types": {
+  "Mechanical, diesel & automotive": 34,
+  "Other services": 34,
+  "Civil, earthmoving & plant hire": 33,
+  "Farming, grazing & agriculture": 23,
+  "Building, plumbing & electrical": 16,
+  "Engineering, fabrication & industrial": 15,
+  "Government, education & corporate": 8,
+  "Transport & haulage": 6,
+  "Mining, resources & energy": 4
+ },
+ "types_estimated_part": {
+  "Engineering, fabrication & industrial": 4,
+  "Other services": 14,
+  "Farming, grazing & agriculture": 8,
+  "Civil, earthmoving & plant hire": 2,
+  "Transport & haulage": 1,
+  "Mechanical, diesel & automotive": 1,
+  "Government, education & corporate": 1,
+  "Mining, resources & energy": 1
+ },
+ "regions": {
+  "Gympie region": {
+   "orders": 19,
+   "biz": 3,
+   "pop": 58487,
+   "orders_per_10k": 3.25,
+   "biz_pct": 15.8
+  },
+  "Wide Bay & Burnett": {
+   "orders": 53,
+   "biz": 14,
+   "pop": 277183,
+   "orders_per_10k": 1.91,
+   "biz_pct": 26.4
+  },
+  "Mackay, Isaac & Whitsunday": {
+   "orders": 52,
+   "biz": 15,
+   "pop": 193813,
+   "orders_per_10k": 2.68,
+   "biz_pct": 28.8
+  },
+  "Rockhampton, Livingstone, Gladstone & Banana": {
+   "orders": 62,
+   "biz": 11,
+   "pop": 213652,
+   "orders_per_10k": 2.9,
+   "biz_pct": 17.7
+  },
+  "SEQ fringe: Scenic Rim, Somerset & rural Logan/Ipswich": {
+   "orders": 46,
+   "biz": 13,
+   "pop": 73883,
+   "orders_per_10k": 6.23,
+   "biz_pct": 28.3
+  },
+  "Darling Downs & South West": {
+   "orders": 64,
+   "biz": 17,
+   "pop": 108469,
+   "orders_per_10k": 5.9,
+   "biz_pct": 26.6
+  },
+  "Toowoomba & Lockyer": {
+   "orders": 38,
+   "biz": 11,
+   "pop": 232334,
+   "orders_per_10k": 1.64,
+   "biz_pct": 28.9
+  },
+  "Cairns, Tablelands & Far North": {
+   "orders": 40,
+   "biz": 7,
+   "pop": 287118,
+   "orders_per_10k": 1.39,
+   "biz_pct": 17.5
+  },
+  "Greater Brisbane (metro postcodes)": {
+   "orders": 141,
+   "biz": 48,
+   "pop": 2752364,
+   "orders_per_10k": 0.51,
+   "biz_pct": 34.0
+  },
+  "Central Highlands": {
+   "orders": 14,
+   "biz": 2,
+   "pop": 29481,
+   "orders_per_10k": 4.75,
+   "biz_pct": 14.3
+  },
+  "Gold Coast": {
+   "orders": 29,
+   "biz": 11,
+   "pop": 691230,
+   "orders_per_10k": 0.42,
+   "biz_pct": 37.9
+  },
+  "Townsville, Burdekin & Charters Towers": {
+   "orders": 34,
+   "biz": 9,
+   "pop": 246762,
+   "orders_per_10k": 1.38,
+   "biz_pct": 26.5
+  },
+  "Outback (Mt Isa, Longreach etc.)": {
+   "orders": 11,
+   "biz": 3,
+   "pop": 39251,
+   "orders_per_10k": 2.8,
+   "biz_pct": 27.3
+  },
+  "Sunshine Coast & Noosa": {
+   "orders": 30,
+   "biz": 8,
+   "pop": 441508,
+   "orders_per_10k": 0.68,
+   "biz_pct": 26.7
+  },
+  "Other / unassigned": {
+   "orders": 6,
+   "biz": 1,
+   "pop": null,
+   "orders_per_10k": null,
+   "biz_pct": 16.7
+  }
+ },
+ "pc_business": {
+  "4000": {
+   "Government, education & corporate": 1
+  },
+  "4006": {
+   "Other services": 1
+  },
+  "4008": {
+   "Government, education & corporate": 1
+  },
+  "4014": {
+   "Other services": 1
+  },
+  "4019": {
+   "Building, plumbing & electrical": 1
+  },
+  "4021": {
+   "Building, plumbing & electrical": 1
+  },
+  "4035": {
+   "Other services": 1
+  },
+  "4053": {
+   "Building, plumbing & electrical": 1
+  },
+  "4105": {
+   "Building, plumbing & electrical": 1
+  },
+  "4106": {
+   "Mechanical, diesel & automotive": 1
+  },
+  "4107": {
+   "Engineering, fabrication & industrial": 2
+  },
+  "4108": {
+   "Engineering, fabrication & industrial": 1
+  },
+  "4123": {
+   "Civil, earthmoving & plant hire": 1
+  },
+  "4125": {
+   "Mechanical, diesel & automotive": 1
+  },
+  "4127": {
+   "Other services": 1
+  },
+  "4128": {
+   "Government, education & corporate": 1
+  },
+  "4129": {
+   "Engineering, fabrication & industrial": 1
+  },
+  "4132": {
+   "Engineering, fabrication & industrial": 1
+  },
+  "4151": {
+   "Transport & haulage": 1
+  },
+  "4156": {
+   "Building, plumbing & electrical": 1
+  },
+  "4157": {
+   "Government, education & corporate": 1
+  },
+  "4159": {
+   "Transport & haulage": 1
+  },
+  "4163": {
+   "Other services": 1
+  },
+  "4164": {
+   "Trade word in email": 1
+  },
+  "4165": {
+   "Mechanical, diesel & automotive": 1,
+   "Trade word in email": 1
+  },
+  "4172": {
+   "Other services": 1
+  },
+  "4207": {
+   "Civil, earthmoving & plant hire": 1,
+   "Trade word in email": 1
+  },
+  "4208": {
+   "Civil, earthmoving & plant hire": 1,
+   "Other services": 1,
+   "Trade word in email": 1
+  },
+  "4210": {
+   "Other services": 1
+  },
+  "4212": {
+   "Mechanical, diesel & automotive": 1
+  },
+  "4213": {
+   "Civil, earthmoving & plant hire": 1
+  },
+  "4216": {
+   "Government, education & corporate": 1
+  },
+  "4218": {
+   "Other services": 1
+  },
+  "4220": {
+   "Mechanical, diesel & automotive": 1
+  },
+  "4224": {
+   "Civil, earthmoving & plant hire": 1
+  },
+  "4225": {
+   "Trade word in email": 1
+  },
+  "4270": {
+   "Trade word in email": 1
+  },
+  "4275": {
+   "Trade word in email": 1
+  },
+  "4280": {
+   "Other services": 1
+  },
+  "4285": {
+   "Other services": 1
+  },
+  "4300": {
+   "Other services": 1,
+   "Civil, earthmoving & plant hire": 1,
+   "Transport & haulage": 1
+  },
+  "4301": {
+   "Other services": 1
+  },
+  "4305": {
+   "Mechanical, diesel & automotive": 1,
+   "Transport & haulage": 1
+  },
+  "4306": {
+   "Engineering, fabrication & industrial": 1,
+   "Other services": 1,
+   "Civil, earthmoving & plant hire": 2,
+   "Trade word in email": 2
+  },
+  "4309": {
+   "Civil, earthmoving & plant hire": 1
+  },
+  "4311": {
+   "Mechanical, diesel & automotive": 1
+  },
+  "4312": {
+   "Farming, grazing & agriculture": 1
+  },
+  "4340": {
+   "Trade word in email": 1
+  },
+  "4341": {
+   "Mechanical, diesel & automotive": 1,
+   "Engineering, fabrication & industrial": 1,
+   "Other services": 1
+  },
+  "4350": {
+   "Mechanical, diesel & automotive": 1,
+   "Civil, earthmoving & plant hire": 2,
+   "Other services": 1
+  },
+  "4352": {
+   "Other services": 1
+  },
+  "4357": {
+   "Other services": 1,
+   "Civil, earthmoving & plant hire": 1
+  },
+  "4370": {
+   "Engineering, fabrication & industrial": 1,
+   "Farming, grazing & agriculture": 1
+  },
+  "4380": {
+   "Other services": 1
+  },
+  "4390": {
+   "Civil, earthmoving & plant hire": 1
+  },
+  "4405": {
+   "Mechanical, diesel & automotive": 2,
+   "Farming, grazing & agriculture": 1
+  },
+  "4410": {
+   "Trade word in email": 1
+  },
+  "4413": {
+   "Mining, resources & energy": 1,
+   "Mechanical, diesel & automotive": 1
+  },
+  "4415": {
+   "Civil, earthmoving & plant hire": 1
+  },
+  "4454": {
+   "Farming, grazing & agriculture": 1
+  },
+  "4455": {
+   "Other services": 1,
+   "Government, education & corporate": 1,
+   "Mining, resources & energy": 1,
+   "Building, plumbing & electrical": 1
+  },
+  "4487": {
+   "Civil, earthmoving & plant hire": 1
+  },
+  "4504": {
+   "Other services": 1,
+   "Transport & haulage": 1
+  },
+  "4506": {
+   "Other services": 1,
+   "Mechanical, diesel & automotive": 1,
+   "Civil, earthmoving & plant hire": 1
+  },
+  "4509": {
+   "Other services": 1
+  },
+  "4510": {
+   "Building, plumbing & electrical": 1,
+   "Trade word in email": 3
+  },
+  "4515": {
+   "Building, plumbing & electrical": 1
+  },
+  "4516": {
+   "Trade word in email": 1
+  },
+  "4521": {
+   "Civil, earthmoving & plant hire": 1
+  },
+  "4552": {
+   "Farming, grazing & agriculture": 1
+  },
+  "4553": {
+   "Engineering, fabrication & industrial": 1,
+   "Civil, earthmoving & plant hire": 1
+  },
+  "4555": {
+   "Engineering, fabrication & industrial": 1,
+   "Trade word in email": 1
+  },
+  "4556": {
+   "Engineering, fabrication & industrial": 2
+  },
+  "4560": {
+   "Farming, grazing & agriculture": 1
+  },
+  "4570": {
+   "Farming, grazing & agriculture": 3
+  },
+  "4605": {
+   "Farming, grazing & agriculture": 1
+  },
+  "4610": {
+   "Farming, grazing & agriculture": 1,
+   "Mechanical, diesel & automotive": 1
+  },
+  "4621": {
+   "Engineering, fabrication & industrial": 1
+  },
+  "4626": {
+   "Farming, grazing & agriculture": 1
+  },
+  "4630": {
+   "Building, plumbing & electrical": 1
+  },
+  "4650": {
+   "Other services": 1
+  },
+  "4655": {
+   "Farming, grazing & agriculture": 1
+  },
+  "4670": {
+   "Mechanical, diesel & automotive": 2,
+   "Other services": 1
+  },
+  "4671": {
+   "Mechanical, diesel & automotive": 2,
+   "Trade word in email": 1
+  },
+  "4677": {
+   "Civil, earthmoving & plant hire": 1,
+   "Farming, grazing & agriculture": 1
+  },
+  "4680": {
+   "Building, plumbing & electrical": 1,
+   "Mining, resources & energy": 1,
+   "Other services": 1
+  },
+  "4700": {
+   "Civil, earthmoving & plant hire": 1
+  },
+  "4701": {
+   "Civil, earthmoving & plant hire": 3,
+   "Building, plumbing & electrical": 1
+  },
+  "4702": {
+   "Mechanical, diesel & automotive": 1
+  },
+  "4720": {
+   "Trade word in email": 1
+  },
+  "4721": {
+   "Farming, grazing & agriculture": 1
+  },
+  "4722": {
+   "Farming, grazing & agriculture": 1
+  },
+  "4740": {
+   "Transport & haulage": 1,
+   "Other services": 2,
+   "Mechanical, diesel & automotive": 2,
+   "Civil, earthmoving & plant hire": 1,
+   "Trade word in email": 1
+  },
+  "4742": {
+   "Engineering, fabrication & industrial": 1
+  },
+  "4745": {
+   "Farming, grazing & agriculture": 1
+  },
+  "4746": {
+   "Government, education & corporate": 1
+  },
+  "4751": {
+   "Mechanical, diesel & automotive": 3
+  },
+  "4802": {
+   "Building, plumbing & electrical": 1
+  },
+  "4807": {
+   "Farming, grazing & agriculture": 1
+  },
+  "4814": {
+   "Civil, earthmoving & plant hire": 1
+  },
+  "4816": {
+   "Trade word in email": 1
+  },
+  "4818": {
+   "Civil, earthmoving & plant hire": 1,
+   "Engineering, fabrication & industrial": 1,
+   "Mechanical, diesel & automotive": 1
+  },
+  "4820": {
+   "Mechanical, diesel & automotive": 1
+  },
+  "4824": {
+   "Farming, grazing & agriculture": 1
+  },
+  "4825": {
+   "Other services": 1,
+   "Mining, resources & energy": 1
+  },
+  "4828": {
+   "Farming, grazing & agriculture": 1
+  },
+  "4850": {
+   "Government, education & corporate": 1
+  },
+  "4870": {
+   "Other services": 1
+  },
+  "4872": {
+   "Mechanical, diesel & automotive": 1
+  },
+  "4873": {
+   "Farming, grazing & agriculture": 1
+  },
+  "4878": {
+   "Mechanical, diesel & automotive": 1
+  },
+  "4881": {
+   "Mechanical, diesel & automotive": 1
+  },
+  "4882": {
+   "Trade word in email": 1
+  },
+  "4885": {
+   "Other services": 1
+  }
+ }
+}

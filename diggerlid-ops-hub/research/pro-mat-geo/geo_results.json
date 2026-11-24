@@ -1,0 +1,351 @@
+{
+ "population_share": {
+  "NSW": 31.1,
+  "VIC": 25.6,
+  "QLD": 20.6,
+  "SA": 6.9,
+  "WA": 11.1,
+  "TAS": 2.1,
+  "NT": 1.0,
+  "ACT": 1.8
+ },
+ "All PRO Mat": {
+  "units": 2870,
+  "share": {
+   "NSW": 25.7,
+   "VIC": 19.6,
+   "QLD": 28.0,
+   "SA": 7.1,
+   "WA": 15.3,
+   "TAS": 2.0,
+   "NT": 1.7,
+   "ACT": 0.6
+  },
+  "index": {
+   "NSW": 83,
+   "VIC": 77,
+   "QLD": 136,
+   "SA": 104,
+   "WA": 138,
+   "TAS": 94,
+   "NT": 177,
+   "ACT": 36
+  },
+  "per_100k": {
+   "NSW": 8.5,
+   "VIC": 7.9,
+   "QLD": 14.0,
+   "SA": 10.6,
+   "WA": 14.1,
+   "TAS": 9.6,
+   "NT": 18.2,
+   "ACT": 3.7
+  },
+  "metro_share_of_units": 32.6,
+  "metro_index": 49,
+  "regional_index": 205
+ },
+ "Original": {
+  "units": 1923,
+  "share": {
+   "NSW": 25.4,
+   "VIC": 20.6,
+   "QLD": 26.3,
+   "SA": 7.3,
+   "WA": 15.8,
+   "TAS": 2.3,
+   "NT": 1.7,
+   "ACT": 0.6
+  },
+  "index": {
+   "NSW": 82,
+   "VIC": 80,
+   "QLD": 128,
+   "SA": 107,
+   "WA": 143,
+   "TAS": 110,
+   "NT": 178,
+   "ACT": 36
+  },
+  "per_100k": {
+   "NSW": 5.6,
+   "VIC": 5.5,
+   "QLD": 8.8,
+   "SA": 7.4,
+   "WA": 9.8,
+   "TAS": 7.6,
+   "NT": 12.3,
+   "ACT": 2.5
+  },
+  "metro_share_of_units": 34.0,
+  "metro_index": 51,
+  "regional_index": 201
+ },
+ "Plus (all)": {
+  "units": 947,
+  "share": {
+   "NSW": 26.5,
+   "VIC": 17.6,
+   "QLD": 31.5,
+   "SA": 6.7,
+   "WA": 14.1,
+   "TAS": 1.3,
+   "NT": 1.7,
+   "ACT": 0.6
+  },
+  "index": {
+   "NSW": 85,
+   "VIC": 69,
+   "QLD": 153,
+   "SA": 97,
+   "WA": 128,
+   "TAS": 61,
+   "NT": 175,
+   "ACT": 36
+  },
+  "per_100k": {
+   "NSW": 2.9,
+   "VIC": 2.3,
+   "QLD": 5.2,
+   "SA": 3.3,
+   "WA": 4.3,
+   "TAS": 2.1,
+   "NT": 6.0,
+   "ACT": 1.2
+  },
+  "metro_share_of_units": 29.8,
+  "metro_index": 44,
+  "regional_index": 214
+ },
+ "Plus Orange": {
+  "units": 359,
+  "share": {
+   "NSW": 23.7,
+   "VIC": 19.8,
+   "QLD": 33.1,
+   "SA": 8.6,
+   "WA": 12.0,
+   "TAS": 1.1,
+   "NT": 0.8,
+   "ACT": 0.8
+  },
+  "index": {
+   "NSW": 76,
+   "VIC": 77,
+   "QLD": 161,
+   "SA": 126,
+   "WA": 108,
+   "TAS": 54,
+   "NT": 87,
+   "ACT": 48
+  },
+  "per_100k": {
+   "NSW": 1.0,
+   "VIC": 1.0,
+   "QLD": 2.1,
+   "SA": 1.6,
+   "WA": 1.4,
+   "TAS": 0.7,
+   "NT": 1.1,
+   "ACT": 0.6
+  },
+  "metro_share_of_units": 32.9,
+  "metro_index": 49,
+  "regional_index": 204
+ },
+ "Plus Grey": {
+  "units": 278,
+  "share": {
+   "NSW": 32.4,
+   "VIC": 14.0,
+   "QLD": 27.0,
+   "SA": 5.8,
+   "WA": 17.3,
+   "TAS": 1.8,
+   "NT": 1.1,
+   "ACT": 0.7
+  },
+  "index": {
+   "NSW": 104,
+   "VIC": 55,
+   "QLD": 131,
+   "SA": 84,
+   "WA": 156,
+   "TAS": 86,
+   "NT": 112,
+   "ACT": 41
+  },
+  "per_100k": {
+   "NSW": 1.0,
+   "VIC": 0.5,
+   "QLD": 1.3,
+   "SA": 0.8,
+   "WA": 1.6,
+   "TAS": 0.9,
+   "NT": 1.1,
+   "ACT": 0.4
+  },
+  "metro_share_of_units": 25.5,
+  "metro_index": 38,
+  "regional_index": 227
+ },
+ "Plus Camo": {
+  "units": 190,
+  "share": {
+   "NSW": 21.6,
+   "VIC": 21.1,
+   "QLD": 35.3,
+   "SA": 5.8,
+   "WA": 12.6,
+   "TAS": 1.1,
+   "NT": 2.1,
+   "ACT": 0.5
+  },
+  "index": {
+   "NSW": 69,
+   "VIC": 82,
+   "QLD": 172,
+   "SA": 84,
+   "WA": 114,
+   "TAS": 51,
+   "NT": 219,
+   "ACT": 30
+  },
+  "per_100k": {
+   "NSW": 0.5,
+   "VIC": 0.6,
+   "QLD": 1.2,
+   "SA": 0.6,
+   "WA": 0.8,
+   "TAS": 0.3,
+   "NT": 1.5,
+   "ACT": 0.2
+  },
+  "metro_share_of_units": 33.7,
+  "metro_index": 50,
+  "regional_index": 202
+ },
+ "Plus Pink": {
+  "units": 120,
+  "share": {
+   "NSW": 29.2,
+   "VIC": 14.2,
+   "QLD": 30.8,
+   "SA": 4.2,
+   "WA": 15.8,
+   "TAS": 0.8,
+   "NT": 5.0,
+   "ACT": 0.0
+  },
+  "index": {
+   "NSW": 94,
+   "VIC": 55,
+   "QLD": 150,
+   "SA": 61,
+   "WA": 143,
+   "TAS": 40,
+   "NT": 519,
+   "ACT": 0
+  },
+  "per_100k": {
+   "NSW": 0.4,
+   "VIC": 0.2,
+   "QLD": 0.6,
+   "SA": 0.3,
+   "WA": 0.6,
+   "TAS": 0.2,
+   "NT": 2.2,
+   "ACT": 0.0
+  },
+  "metro_share_of_units": 24.2,
+  "metro_index": 36,
+  "regional_index": 231
+ },
+ "brand_share": {
+  "NSW": 29.5,
+  "VIC": 20.3,
+  "QLD": 26.6,
+  "SA": 7.4,
+  "WA": 11.6,
+  "TAS": 2.8,
+  "NT": 0.9,
+  "ACT": 1.0
+ },
+ "brand_index": {
+  "NSW": 95,
+  "VIC": 79,
+  "QLD": 129,
+  "SA": 107,
+  "WA": 105,
+  "TAS": 132,
+  "NT": 96,
+  "ACT": 58
+ },
+ "metro_vs_regional_by_state": {
+  "NSW": {
+   "units": 739,
+   "metro_units": 183,
+   "metro_%units": 24.8,
+   "metro_%pop": 65.0,
+   "metro_per_100k": 3.2,
+   "regional_per_100k": 18.3
+  },
+  "VIC": {
+   "units": 563,
+   "metro_units": 244,
+   "metro_%units": 43.3,
+   "metro_%pop": 76.0,
+   "metro_per_100k": 4.5,
+   "regional_per_100k": 18.6
+  },
+  "QLD": {
+   "units": 803,
+   "metro_units": 170,
+   "metro_%units": 21.2,
+   "metro_%pop": 49.4,
+   "metro_per_100k": 6.0,
+   "regional_per_100k": 21.8
+  },
+  "SA": {
+   "units": 204,
+   "metro_units": 65,
+   "metro_%units": 31.9,
+   "metro_%pop": 77.8,
+   "metro_per_100k": 4.4,
+   "regional_per_100k": 32.6
+  },
+  "WA": {
+   "units": 438,
+   "metro_units": 224,
+   "metro_%units": 51.1,
+   "metro_%pop": 79.2,
+   "metro_per_100k": 9.1,
+   "regional_per_100k": 33.3
+  },
+  "TAS": {
+   "units": 56,
+   "metro_units": 7,
+   "metro_%units": 12.5,
+   "metro_%pop": 44.0,
+   "metro_per_100k": 2.7,
+   "regional_per_100k": 15.1
+  },
+  "NT": {
+   "units": 49,
+   "metro_units": 25,
+   "metro_%units": 51.0,
+   "metro_%pop": 59.2,
+   "metro_per_100k": 15.7,
+   "regional_per_100k": 21.9
+  },
+  "ACT": {
+   "units": 18,
+   "metro_units": 18,
+   "metro_%units": 100.0,
+   "metro_%pop": 99.0,
+   "metro_per_100k": 3.7,
+   "regional_per_100k": 0.0
+  }
+ },
+ "national_capital_pop_share": 67.2
+}

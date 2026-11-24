@@ -12,7 +12,7 @@
 | 3 | `KLAVIYO_API_KEY` | Klaviyo private key | read metrics/profiles | ✅ already set (powers /api/emails) |
 | 4 | `SHOPIFY_SHOP` | `digger-lid.myshopify.com` | — | optional (lets /api/mer compute revenue itself) |
 | 5 | `SHOPIFY_TOKEN` | Admin API token | `read_orders` | optional, pairs with #4 |
-| 6 | `ALIA_API_KEY` | Alia popup API bearer | read events/stats | ⚠️ **ROTATE** (old one pasted in chat) then set — unlocks /api/popup (task #7) |
+| 6 | `ALIA_API_KEY` | Alia popup API bearer | read events/stats | ⚠️ **ROTATE** (pasted in chat again 2026-09-22; used transiently, not stored) then set — unlocks /api/popup (task #7) |
 | 7 | `POSTHOG_API_KEY` | PostHog personal API key | read (project 475333, US cloud) | ⚠️ **ROTATE** (pasted in chat) then set — unlocks automated experiment reads |
 
 ## B. Per-person connector access (no shared keys — each Claude account connects its own)
